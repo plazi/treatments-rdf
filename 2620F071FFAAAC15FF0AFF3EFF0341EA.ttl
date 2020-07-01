@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Malpighiales>
@@ -21,6 +22,14 @@
         dwc:order          "Malpighiales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Phloeothrips_mali_Fitch._1855>
         a                             dwcFP:TaxonConcept ;
@@ -34,27 +43,6 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Fitch., 1855" ;
         dwc:species                   "mali" .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Leptothrips_macroocellatus_Watson_2017>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Leptothrips_macroocellatus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Phlaeothripidae" ;
-        dwc:genus                     "Leptothrips" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Watson" ;
-        dwc:species                   "macroocellatus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptothrips_macroocellatus>
         a                  dwcFP:TaxonName ;
@@ -81,12 +69,11 @@
         dwc:species        "curcas" .
 
 <http://treatment.plazi.org/id/2620F071FFAAAC15FF0AFF3EFF0341EA>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Leptothrips_macroocellatus_Watson_2017> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Leptothrips_aspersus_macro_Johansen_1987> , <http://taxon-concept.plazi.org/id/Animalia/Leptothrips_aspersus_macro_Watson_1913> , <http://taxon-concept.plazi.org/id/Animalia/Leptothrips_confusus_Johansen_1987> , <http://taxon-concept.plazi.org/id/Plantae/Jatropha_curcas_L._1753> , <http://taxon-concept.plazi.org/id/Animalia/Phloeothrips_mali_Fitch._1855> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4294.3.1> ;
-        dc:creator                "Mound, Laurence" , "O’Donnell, Cheryle" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.832566> , <http://taxon-name.plazi.org/id/Animalia/Leptothrips_aspersus_macro> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <https://doi.org/10.11646/zootaxa.4294.3.1> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Leptothrips_macroocellatus> ;
+        dc:creator           "O’Donnell, Cheryle" , "Mound, Laurence" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.832566> .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptothrips_aspersus>
         a                  dwcFP:TaxonName ;
@@ -104,6 +91,19 @@
         a                        fabio:Figure ;
         dc:description           "FIGURES 17 – 24. Leptothrips species of North America – pronotum. (17) maliaffinis holotype; (18) mali; (19) papago; (20) heliomanes; (21) macroocellatus; (22) fasciculatus; (23) pini; (24) purpuratus." ;
         fabio:hasRepresentation  "https://zenodo.org/record/832566/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leptothrips_aspersus_macro_Mound_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Leptothrips_aspersus_macro> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Phlaeothripidae" ;
+        dwc:genus         "Leptothrips" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Thysanoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "subSpecies" ;
+        dwc:species       "aspersus" ;
+        dwc:subSpecies    "macro" .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
@@ -154,32 +154,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Leptothrips_confusus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Leptothrips" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Phlaeothripidae" ;
-        dwc:genus          "Leptothrips" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Thysanoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "confusus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Leptothrips_aspersus_macro_Watson_1913>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Leptothrips_aspersus_macro> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Phlaeothripidae" ;
-        dwc:genus                     "Leptothrips" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Watson, 1913" ;
-        dwc:species                   "aspersus" ;
-        dwc:subSpecies                "macro" .
-
 <http://taxon-name.plazi.org/id/Animalia/Thysanoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -229,16 +203,6 @@
         dwc:rank           "species" ;
         dwc:species        "mali" .
 
-<http://taxon-name.plazi.org/id/Plantae>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Plantae" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Leptothrips_confusus_Johansen_1987>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Leptothrips_confusus> ;
@@ -249,8 +213,18 @@
         dwc:order                     "Thysanoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Johansen, 1987: 89" ;
+        dwc:scientificNameAuthorship  "Johansen, 1987" ;
         dwc:species                   "confusus" .
+
+<http://taxon-name.plazi.org/id/Plantae>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Plantae" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptothrips_aspersus_macro>
         a                  dwcFP:TaxonName ;
@@ -276,20 +250,6 @@
         bibo:startPage  "301" ;
         bibo:volume     "4294" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.832566> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Leptothrips_aspersus_macro_Johansen_1987>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Leptothrips_aspersus_macro> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Phlaeothripidae" ;
-        dwc:genus                     "Leptothrips" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Johansen, 1987" ;
-        dwc:species                   "aspersus" ;
-        dwc:subSpecies                "macro" .
 
 <http://taxon-name.plazi.org/id/Plantae/Jatropha>
         a                  dwcFP:TaxonName ;

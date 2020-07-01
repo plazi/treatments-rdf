@@ -11,34 +11,60 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Raja_say>
+<http://taxon-name.plazi.org/id/Animalia/Raja>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Raja" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rajidae> ;
         dwc:class          "Elasmobranchii" ;
         dwc:family         "Rajidae" ;
         dwc:genus          "Raja" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Rajiformes" ;
         dwc:phylum         "Chordata" ;
-        dwc:rank           "species" ;
-        dwc:species        "say" .
+        dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
+<http://taxon-concept.plazi.org/id/Animalia/Hypanus_Rafinesque_1818>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hypanus> ;
+        dwc:class                     "Elasmobranchii" ;
+        dwc:family                    "Dasyatidae" ;
+        dwc:genus                     "Hypanus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Myliobatiformes" ;
+        dwc:phylum                    "Chordata" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Rafinesque, 1818:272" , "Rafinesque, 1818" .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmobranchii>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+        dwc:class          "Elasmobranchii" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Chordata" ;
-        dwc:rank           "phylum" .
+        dwc:rank           "class" .
 
-<http://treatment.plazi.org/id/03A7CA1D8560145BE7C6FA67FD4C0693>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hypanus_Rafinesque_1818> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Raja_say_Lesueur_2016> ;
-        trt:publishedIn           <http://doi.org/10.11646/zootaxa.4139.3.2> ;
-        dc:creator                "Manjaji-Matsumoto, B. Mabel" , "Naylor, Gavin J. P." , "Last, Peter R." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Hypanus_rudis> , <http://taxon-name.plazi.org/id/Animalia/Dasyatis_guttata> .
+<http://taxon-name.plazi.org/id/Animalia/Dasyatidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Myliobatiformes> ;
+        dwc:class          "Elasmobranchii" ;
+        dwc:family         "Dasyatidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Myliobatiformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Dasyatis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Dasyatidae> ;
+        dwc:class          "Elasmobranchii" ;
+        dwc:family         "Dasyatidae" ;
+        dwc:genus          "Dasyatis" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Myliobatiformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Raja_say_Lesueur_2016>
         a                             dwcFP:TaxonConcept ;
@@ -53,32 +79,37 @@
         dwc:scientificNameAuthorship  "Lesueur, 1817 (Eschmeyer et al., 2016)" ;
         dwc:species                   "say" .
 
-<http://taxon-name.plazi.org/id/Animalia/Rajiformes>
+<http://taxon-name.plazi.org/id/Animalia/Myliobatiformes>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Elasmobranchii> ;
         dwc:class          "Elasmobranchii" ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Rajiformes" ;
+        dwc:order          "Myliobatiformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia/Elasmobranchii>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-        dwc:class          "Elasmobranchii" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "class" .
+<http://doi.org/10.11646/zootaxa.4139.3.2>
+        a               fabio:JournalArticle ;
+        dc:creator      "Naylor, Gavin J. P." , "Manjaji-Matsumoto, B. Mabel" , "Last, Peter R." ;
+        dc:date         "2016" ;
+        dc:title        "A revised classification of the family Dasyatidae (Chondrichthyes: Myliobatiformes) based on new morphological and molecular insights" ;
+        bibo:endPage    "368" ;
+        bibo:issue      "3" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "345" ;
+        bibo:volume     "4139" .
 
-<http://taxon-name.plazi.org/id/Animalia/Rajidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rajiformes> ;
-        dwc:class          "Elasmobranchii" ;
-        dwc:family         "Rajidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Rajiformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "family" .
+<http://taxon-concept.plazi.org/id/Animalia/Dasyatis_guttata_Last_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Dasyatis_guttata> ;
+        dwc:class         "Elasmobranchii" ;
+        dwc:family        "Dasyatidae" ;
+        dwc:genus         "Dasyatis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Myliobatiformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "guttata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hypanus_rudis>
         a                  dwcFP:TaxonName ;
@@ -104,21 +135,6 @@
         dwc:rank           "species" ;
         dwc:species        "guttata" .
 
-<http://taxon-name.plazi.org/id/Animalia/Dasyatidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Myliobatiformes> ;
-        dwc:class          "Elasmobranchii" ;
-        dwc:family         "Dasyatidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Myliobatiformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
 <http://taxon-name.plazi.org/id/Animalia/Hypanus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dasyatidae" ;
@@ -130,56 +146,64 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Dasyatis>
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Dasyatidae> ;
-        dwc:class          "Elasmobranchii" ;
-        dwc:family         "Dasyatidae" ;
-        dwc:genus          "Dasyatis" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Myliobatiformes" ;
         dwc:phylum         "Chordata" ;
-        dwc:rank           "genus" .
+        dwc:rank           "phylum" .
 
-<http://doi.org/10.11646/zootaxa.4139.3.2>
-        a               fabio:JournalArticle ;
-        dc:creator      "Naylor, Gavin J. P." , "Manjaji-Matsumoto, B. Mabel" , "Last, Peter R." ;
-        dc:date         "2016" ;
-        dc:title        "A revised classification of the family Dasyatidae (Chondrichthyes: Myliobatiformes) based on new morphological and molecular insights" ;
-        bibo:endPage    "368" ;
-        bibo:issue      "3" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "345" ;
-        bibo:volume     "4139" .
-
-<http://taxon-name.plazi.org/id/Animalia/Raja>
+<http://taxon-name.plazi.org/id/Animalia/Raja_say>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rajidae> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Raja" ;
         dwc:class          "Elasmobranchii" ;
         dwc:family         "Rajidae" ;
         dwc:genus          "Raja" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Rajiformes" ;
         dwc:phylum         "Chordata" ;
-        dwc:rank           "genus" .
+        dwc:rank           "species" ;
+        dwc:species        "say" .
 
-<http://taxon-name.plazi.org/id/Animalia/Myliobatiformes>
+<http://taxon-name.plazi.org/id/Animalia/Rajidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rajiformes> ;
+        dwc:class          "Elasmobranchii" ;
+        dwc:family         "Rajidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Rajiformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Rajiformes>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Elasmobranchii> ;
         dwc:class          "Elasmobranchii" ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Myliobatiformes" ;
+        dwc:order          "Rajiformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "order" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Hypanus_Rafinesque_1818>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hypanus> ;
-        dwc:class                     "Elasmobranchii" ;
-        dwc:family                    "Dasyatidae" ;
-        dwc:genus                     "Hypanus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Myliobatiformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Rafinesque, 1818" .
+<http://taxon-concept.plazi.org/id/Animalia/Hypanus_rudis_Last_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hypanus_rudis> ;
+        dwc:class         "Elasmobranchii" ;
+        dwc:family        "Dasyatidae" ;
+        dwc:genus         "Hypanus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Myliobatiformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "rudis" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://treatment.plazi.org/id/03A7CA1D8560145BE7C6FA67FD4C0693>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hypanus_Rafinesque_1818> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Dasyatis_guttata_Last_2016> , <http://taxon-concept.plazi.org/id/Animalia/Raja_say_Lesueur_2016> , <http://taxon-concept.plazi.org/id/Animalia/Hypanus_Rafinesque_1818> ;
+        trt:publishedIn           <http://doi.org/10.11646/zootaxa.4139.3.2> ;
+        dc:creator                "Manjaji-Matsumoto, B. Mabel" , "Naylor, Gavin J. P." , "Last, Peter R." .

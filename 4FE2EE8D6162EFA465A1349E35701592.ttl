@@ -11,24 +11,39 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://treatment.plazi.org/id/4FE2EE8D6162EFA465A1349E35701592>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_Laporte_1840> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.826.26488> ;
-        dc:creator                "Marin-Armijos, Diego" , "Vaz-De-Mello, Fernando Z." , "Chamorro, William" , "senjo, Angelico" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum_curvispinum> , <http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum> , <http://taxon-name.plazi.org/id/Animalia/O._spiniferum> , <http://taxon-name.plazi.org/id/Animalia/Oxysternon> , <http://taxon-name.plazi.org/id/Animalia/Oxysternon_curvispinum> .
+<http://dx.doi.org/10.3897/zookeys.826.26488>
+        a               fabio:JournalArticle ;
+        dc:creator      "Chamorro, William" , "Vaz-De-Mello, Fernando Z." , "Marin-Armijos, Diego" , "senjo, Angelico" ;
+        dc:date         "2019" ;
+        dc:title        "Scarabaeinae dung beetles from Ecuador: a catalog, nomenclatural acts, and distribution records" ;
+        bibo:endPage    "343" ;
+        bibo:journal    "ZooKeys" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "826" .
 
-<http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
+<http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxysternon" ;
         dwc:class          "Insecta" ;
         dwc:family         "Scarabaeidae" ;
+        dwc:genus          "Oxysternon" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+        dwc:rank           "subspecies" , "species" ;
+        dwc:species        "spiniferum" ;
+        dwc:subspecies     "curvispinum" , "spiniferum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_Laporte_1840>
         a                             dwcFP:TaxonConcept ;
@@ -43,6 +58,109 @@
         dwc:scientificNameAuthorship  "Laporte, 1840" ;
         dwc:species                   "spiniferum" ;
         dwc:subGenus                  "Mioxysternon" .
+
+<http://taxon-concept.plazi.org/id/Animalia/O._spiniferum__2019>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/O._spiniferum> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Scarabaeidae" ;
+        dwc:genus                     "O." ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "subspecies" ;
+        dwc:scientificNameAuthorship  "" ;
+        dwc:species                   "spiniferum" ;
+        dwc:subspecies                "curvispinum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_curvispinum_Chamorro_2019>
+        a                       dwcFP:TaxonConcept ;
+        trt:hasTaxonName        <http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum_curvispinum> ;
+        dwc:class               "Insecta" ;
+        dwc:family              "Scarabaeidae" ;
+        dwc:genus               "Oxysternon" ;
+        dwc:infraspecific-rank  "var." ;
+        dwc:kingdom             "Animalia" ;
+        dwc:order               "Coleoptera" ;
+        dwc:phylum              "Arthropoda" ;
+        dwc:rank                "variety" ;
+        dwc:species             "spiniferum" ;
+        dwc:variety             "curvispinum" .
+
+<http://taxon-name.plazi.org/id/Animalia/O._spiniferum>
+        a               dwcFP:TaxonName ;
+        dwc:rank        "subspecies" ;
+        dwc:subspecies  "curvispinum" .
+
+<http://treatment.plazi.org/id/4FE2EE8D6162EFA465A1349E35701592>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_Laporte_1840> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Oxysternon_curvispinum_Chamorro_2019> , <http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_Chamorro_2019> , <http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_curvispinum_Chamorro_2019> , <http://taxon-concept.plazi.org/id/Animalia/O._spiniferum__2019> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.826.26488> ;
+        dc:creator                "Marin-Armijos, Diego" , "Vaz-De-Mello, Fernando Z." , "Chamorro, William" , "senjo, Angelico" .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Scarabaeidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum_curvispinum>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Scarabaeidae" ;
+        dwc:genus          "Oxysternon" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "variety" ;
+        dwc:species        "spiniferum" ;
+        dwc:variety        "curvispinum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Oxysternon_curvispinum>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxysternon" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Scarabaeidae" ;
+        dwc:genus          "Oxysternon" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "curvispinum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oxysternon_curvispinum_Chamorro_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Oxysternon_curvispinum> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Scarabaeidae" ;
+        dwc:genus         "Oxysternon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "curvispinum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -60,79 +178,27 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxysternon" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Scarabaeidae" ;
-        dwc:genus          "Oxysternon" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subspecies" , "species" ;
-        dwc:species        "spiniferum" ;
-        dwc:subspecies     "curvispinum" , "spiniferum" .
+<http://taxon-concept.plazi.org/id/Animalia/Oxysternon_spiniferum_Chamorro_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Scarabaeidae" ;
+        dwc:genus         "Oxysternon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "subspecies" ;
+        dwc:species       "spiniferum" ;
+        dwc:subGenus      "Mioxysternon" ;
+        dwc:subspecies    "spiniferum" , "curvispinum" .
 
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/O._spiniferum>
-        a               dwcFP:TaxonName ;
-        dwc:rank        "subspecies" ;
-        dwc:subspecies  "curvispinum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Oxysternon_curvispinum>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxysternon" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Scarabaeidae" ;
-        dwc:genus          "Oxysternon" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "curvispinum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum_curvispinum>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxysternon_spiniferum" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Scarabaeidae" ;
-        dwc:genus          "Oxysternon" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "variety" ;
-        dwc:species        "spiniferum" ;
-        dwc:variety        "curvispinum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://dx.doi.org/10.3897/zookeys.826.26488>
-        a               fabio:JournalArticle ;
-        dc:creator      "Chamorro, William" , "Vaz-De-Mello, Fernando Z." , "Marin-Armijos, Diego" , "senjo, Angelico" ;
-        dc:date         "2019" ;
-        dc:title        "Scarabaeinae dung beetles from Ecuador: a catalog, nomenclatural acts, and distribution records" ;
-        bibo:endPage    "343" ;
-        bibo:journal    "ZooKeys" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "826" .
+<http://taxon-concept.plazi.org/id/Animalia/Oxysternon_Chamorro_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Oxysternon> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Scarabaeidae" ;
+        dwc:genus         "Oxysternon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .

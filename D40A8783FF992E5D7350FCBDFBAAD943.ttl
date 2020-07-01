@@ -11,15 +11,15 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://treatment.plazi.org/id/D40A8783FF992E5D7350FCBDFBAAD943>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_Lamb_2005> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Halaiba_Parent_1929> , <http://taxon-concept.plazi.org/id/Animalia/Camptoneura_Parent_1930> , <http://taxon-concept.plazi.org/id/Animalia/Camptoneura_Fieber_1858> , <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_Lamb_1922> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.170753> ;
-        dc:creator                "SCOTT E. BROOKS" ;
-        cito:cites                <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_cavicola_Parent_1929> , <http://taxon-name.plazi.org/id/Animalia/Argyrochlamys_impudicus> , <http://dx.doi.org/10.5281/zenodo.170759> , <http://taxon-name.plazi.org/id/Animalia/Halaiba> , <http://taxon-name.plazi.org/id/Animalia/Camptoneura_decolor> , <http://taxon-name.plazi.org/id/Animalia/Halaiba_cavicola> , <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_breviseta_Parent_1939> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.170753> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Argyrochlamys> ;
+        dc:creator           "SCOTT E. BROOKS" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.170759> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_Lamb_1922>
         a                             dwcFP:TaxonConcept ;
@@ -63,14 +63,6 @@
         dwc:rank                      "genus" ;
         dwc:scientificNameAuthorship  "Parent, 1929a: 56" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Camptoneura_Fieber_1858>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Camptoneura> ;
-        dwc:genus                     "Camptoneura" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Fieber 1858" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_cavicola_Parent_1929>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Argyrochlamys_cavicola> ;
@@ -83,6 +75,17 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Parent, 1929a" ;
         dwc:species                   "cavicola" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Halaiba_BROOKS_2005>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Halaiba> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Dolichopodidae" ;
+        dwc:genus         "Halaiba" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_breviseta_Parent_1939>
         a                             dwcFP:TaxonConcept ;
@@ -119,30 +122,6 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Argyrochlamys_Lamb_2005>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Argyrochlamys> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Dolichopodidae" ;
-        dwc:genus                     "Argyrochlamys" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Lamb" .
-
-<http://taxon-name.plazi.org/id/Animalia/Argyrochlamys_impudicus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Argyrochlamys" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Dolichopodidae" ;
-        dwc:genus          "Argyrochlamys" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "impudicus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;
@@ -185,26 +164,6 @@
         dwc:genus    "Camptoneura" ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Halaiba_cavicola>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Halaiba" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Dolichopodidae" ;
-        dwc:genus          "Halaiba" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "cavicola" .
-
-<http://taxon-name.plazi.org/id/Animalia/Camptoneura_decolor>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Camptoneura" ;
-        dwc:genus          "Camptoneura" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:rank           "species" ;
-        dwc:species        "decolor" .
 
 <http://taxon-name.plazi.org/id/Animalia/Argyrochlamys_breviseta>
         a                  dwcFP:TaxonName ;

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://publication.plazi.org/id/E3B79C8FF6B0B87BE406EA4948E96A3B>
@@ -31,11 +32,23 @@
         dwc:rank           "phylum" .
 
 <http://treatment.plazi.org/id/CE8FA5E25AC2AAA1B1ACD45494A71376>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Neoarius_graeffei_Marceniuk_2007> ;
-        trt:publishedIn           <http://publication.plazi.org/id/E3B79C8FF6B0B87BE406EA4948E96A3B> ;
-        dc:creator                "Naércio A. Menezes" , "Alexandre P. Marceniuk" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Arius_curtisii> , <http://taxon-name.plazi.org/id/Animalia/Arius_australis> , <http://taxon-name.plazi.org/id/Animalia/Arius_graeffei> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://publication.plazi.org/id/E3B79C8FF6B0B87BE406EA4948E96A3B> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Neoarius_graeffei> ;
+        dc:creator           "Naércio A. Menezes" , "Alexandre P. Marceniuk" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arius_graeffei_Marceniuk_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Arius_graeffei> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:6E765364-495A-44A8-809E-1667ACEAE38A" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Ariidae" ;
+        dwc:genus         "Arius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "graeffei" .
 
 <http://taxon-name.plazi.org/id/Animalia/Siluriformes>
         a                  dwcFP:TaxonName ;
@@ -93,20 +106,17 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Neoarius_graeffei_Marceniuk_2007>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Neoarius_graeffei> ;
-        dwc:authority      "Marceniuk, 2007" ;
-        dwc:authorityName  "Marceniuk" ;
-        dwc:authorityYear  "2007" ;
+<http://taxon-name.plazi.org/id/Animalia/Arius_australis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Arius" ;
         dwc:class          "Actinopterygii" ;
         dwc:family         "Ariidae" ;
-        dwc:genus          "Neoarius" ;
+        dwc:genus          "Arius" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Siluriformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "species" ;
-        dwc:species        "graeffei" .
+        dwc:species        "australis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoarius>
         a                  dwcFP:TaxonName ;
@@ -119,14 +129,28 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Arius_australis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Arius" ;
-        dwc:class          "Actinopterygii" ;
-        dwc:family         "Ariidae" ;
-        dwc:genus          "Arius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Siluriformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "species" ;
-        dwc:species        "australis" .
+<http://taxon-concept.plazi.org/id/Animalia/Arius_australis_Marceniuk_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Arius_australis> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:C4BFEB1D-20B0-4D27-A07B-3ECCF31E8976" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Ariidae" ;
+        dwc:genus         "Arius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "australis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arius_curtisii_Marceniuk_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Arius_curtisii> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:522A5E46-D461-49F4-9DD8-CFB77C5278FD" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Ariidae" ;
+        dwc:genus         "Arius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "curtisii" .

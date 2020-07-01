@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -29,12 +30,10 @@
         dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/7C18C7443A77FFC9FF12E13EA783FA1E>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Eucharitolus_dorcadioides_White_1855> ;
-        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Leiopus_dorcadioides_White_1855> , <http://taxon-concept.plazi.org/id/Animalia/Urgleptes_dorcadioides_Gilmour_1959> , <http://taxon-concept.plazi.org/id/Animalia/Lepturges_dorcadioides_Bates_1863> ;
-        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.211115> ;
-        dc:creator               "R, Juan Pablo Botero" , "Monné, Miguel A." ;
-        cito:cites               <http://taxon-name.plazi.org/id/Animalia/Lepturges_dorcadioides> , <http://taxon-name.plazi.org/id/Animalia/Urgleptes_dorcadioides> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.211115> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Eucharitolus_dorcadioides> ;
+        dc:creator           "Monné, Miguel A." , "R, Juan Pablo Botero" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eucharitolus>
         a                  dwcFP:TaxonName ;
@@ -51,6 +50,18 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepturges_dorcadioides_R_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Lepturges_dorcadioides> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cerambycidae" ;
+        dwc:genus         "Lepturges" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "dorcadioides" .
 
 <http://dx.doi.org/10.5281/zenodo.211115>
         a               fabio:JournalArticle ;
@@ -97,19 +108,6 @@
         dwc:rank           "species" ;
         dwc:species        "dorcadioides" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Urgleptes_dorcadioides_Gilmour_1959>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Urgleptes_dorcadioides> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cerambycidae" ;
-        dwc:genus                     "Urgleptes" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Gilmour, 1959" ;
-        dwc:species                   "dorcadioides" .
-
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -119,28 +117,14 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Eucharitolus_dorcadioides_White_1855>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eucharitolus_dorcadioides> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cerambycidae" ;
-        dwc:genus                     "Eucharitolus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "White, 1855" ;
-        dwc:species                   "dorcadioides" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lepturges_dorcadioides_Bates_1863>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lepturges_dorcadioides> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cerambycidae" ;
-        dwc:genus                     "Lepturges" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Bates, 1863" ;
-        dwc:species                   "dorcadioides" .
+<http://taxon-concept.plazi.org/id/Animalia/Urgleptes_dorcadioides_R_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Urgleptes_dorcadioides> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cerambycidae" ;
+        dwc:genus         "Urgleptes" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "dorcadioides" .

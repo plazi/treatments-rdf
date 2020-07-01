@@ -11,55 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-name.plazi.org/id/Animalia/Madrepora_obscura>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Madrepora" ;
-        dwc:class          "Anthozoa" ;
-        dwc:family         "Oculinidae" ;
-        dwc:genus          "Madrepora" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Scleractinia" ;
-        dwc:phylum         "Cnidaria" ;
-        dwc:rank           "species" ;
-        dwc:species        "obscura" .
-
-<http://treatment.plazi.org/id/03AA87CAFFB0FFE4FE76FF30FB574D61>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Acropora_humilis_Dana_1846> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Madrepora_humilis_Dana_1846> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_spectabilis_Brook_1892> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_obscura_Brook_1893> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.2163512> ;
-        dc:creator                "Muir, Paul R." , "Done, Barbara J." , "Wallace, Carden C." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.2163728> .
-
-<http://dx.doi.org/10.5281/zenodo.2163728>
-        a                        fabio:Figure ;
-        dc:description           "FIG. 43. Acropora humilis, Seychelles, 2006 (photo: P. Muir). Map of documented distribution: blue squares = MTQ specimens; pink squares = literature records; orange diamonds = type localities (where given), including primary synonyms." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/2163728/files/figure.png" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Madrepora_obscura_Brook_1893>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Madrepora_obscura> ;
-        dwc:class                     "Anthozoa" ;
-        dwc:family                    "Oculinidae" ;
-        dwc:genus                     "Madrepora" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Scleractinia" ;
-        dwc:phylum                    "Cnidaria" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Brook, 1893: 129" ;
-        dwc:species                   "obscura" .
-
-<http://taxon-name.plazi.org/id/Animalia/Acroporidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Scleractinia> ;
-        dwc:class          "Anthozoa" ;
-        dwc:family         "Acroporidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Scleractinia" ;
-        dwc:phylum         "Cnidaria" ;
-        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Acropora_humilis_Dana_1846>
         a                             dwcFP:TaxonConcept ;
@@ -74,14 +27,25 @@
         dwc:scientificNameAuthorship  "(Dana, 1846)" ;
         dwc:species                   "humilis" .
 
-<http://taxon-name.plazi.org/id/Animalia/Scleractinia>
+<http://taxon-name.plazi.org/id/Animalia/Anthozoa>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Anthozoa> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cnidaria> ;
         dwc:class          "Anthozoa" ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Scleractinia" ;
         dwc:phylum         "Cnidaria" ;
-        dwc:rank           "order" .
+        dwc:rank           "class" .
+
+<http://dx.doi.org/10.5281/zenodo.2163512>
+        a               fabio:JournalArticle ;
+        dc:creator      "Muir, Paul R." , "Done, Barbara J." , "Wallace, Carden C." ;
+        dc:date         "2012" ;
+        dc:title        "Revision and catalogue of worldwide staghorn corals Acropora and Isopora (Scleractinia: Acroporidae) in the Museum of Tropical Queensland" ;
+        bibo:endPage    "258" ;
+        bibo:journal    "Memoirs of the Queensland Museu Nature" ;
+        bibo:pubDate    "2012-06-30" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "57" ;
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.2163728> .
 
 <http://taxon-name.plazi.org/id/Animalia/Madrepora_spectabilis>
         a                  dwcFP:TaxonName ;
@@ -95,10 +59,15 @@
         dwc:rank           "species" ;
         dwc:species        "spectabilis" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-name.plazi.org/id/Animalia/Acroporidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Scleractinia> ;
+        dwc:class          "Anthozoa" ;
+        dwc:family         "Acroporidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Scleractinia" ;
+        dwc:phylum         "Cnidaria" ;
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Madrepora_humilis_Dana_1846>
         a                             dwcFP:TaxonConcept ;
@@ -113,13 +82,18 @@
         dwc:scientificNameAuthorship  "Dana, 1846: 483" ;
         dwc:species                   "humilis" .
 
-<http://taxon-name.plazi.org/id/Animalia/Anthozoa>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cnidaria> ;
-        dwc:class          "Anthozoa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Cnidaria" ;
-        dwc:rank           "class" .
+<http://taxon-concept.plazi.org/id/Animalia/Madrepora_obscura_Brook_1893>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Madrepora_obscura> ;
+        dwc:class                     "Anthozoa" ;
+        dwc:family                    "Oculinidae" ;
+        dwc:genus                     "Madrepora" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Scleractinia" ;
+        dwc:phylum                    "Cnidaria" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Brook, 1893: 129" ;
+        dwc:species                   "obscura" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Madrepora_spectabilis_Brook_1892>
         a                             dwcFP:TaxonConcept ;
@@ -134,12 +108,37 @@
         dwc:scientificNameAuthorship  "Brook, 1892: 462" ;
         dwc:species                   "spectabilis" .
 
+<http://taxon-name.plazi.org/id/Animalia/Madrepora_obscura>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Madrepora" ;
+        dwc:class          "Anthozoa" ;
+        dwc:family         "Oculinidae" ;
+        dwc:genus          "Madrepora" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Scleractinia" ;
+        dwc:phylum         "Cnidaria" ;
+        dwc:rank           "species" ;
+        dwc:species        "obscura" .
+
 <http://taxon-name.plazi.org/id/Animalia/Cnidaria>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Cnidaria" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Madrepora_fruticosa_Brook_1892>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Madrepora_fruticosa> ;
+        dwc:class                     "Anthozoa" ;
+        dwc:family                    "Oculinidae" ;
+        dwc:genus                     "Madrepora" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Scleractinia" ;
+        dwc:phylum                    "Cnidaria" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Brook, 1892: 457" ;
+        dwc:species                   "fruticosa" .
 
 <http://taxon-name.plazi.org/id/Animalia/Acropora_humilis>
         a                  dwcFP:TaxonName ;
@@ -153,6 +152,57 @@
         dwc:rank           "species" ;
         dwc:species        "humilis" .
 
+<http://taxon-name.plazi.org/id/Animalia/Scleractinia>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Anthozoa> ;
+        dwc:class          "Anthozoa" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Scleractinia" ;
+        dwc:phylum         "Cnidaria" ;
+        dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia/Madrepora_guppyi>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Madrepora" ;
+        dwc:class          "Anthozoa" ;
+        dwc:family         "Oculinidae" ;
+        dwc:genus          "Madrepora" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Scleractinia" ;
+        dwc:phylum         "Cnidaria" ;
+        dwc:rank           "species" ;
+        dwc:species        "guppyi" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://treatment.plazi.org/id/03AA87CAFFB0FFE4FE76FF30FB574D61>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Acropora_humilis_Dana_1846> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Madrepora_humilis_Dana_1846> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_spectabilis_Brook_1892> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_guppyi_Brook_1892> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_fruticosa_Brook_1892> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_obscura_Brook_1893> ;
+        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.2163512> ;
+        dc:creator                "Muir, Paul R." , "Done, Barbara J." , "Wallace, Carden C." ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.2163728> .
+
+<http://dx.doi.org/10.5281/zenodo.2163728>
+        a                        fabio:Figure ;
+        dc:description           "FIG. 43. Acropora humilis, Seychelles, 2006 (photo: P. Muir). Map of documented distribution: blue squares = MTQ specimens; pink squares = literature records; orange diamonds = type localities (where given), including primary synonyms." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/2163728/files/figure.png" .
+
+<http://taxon-name.plazi.org/id/Animalia/Madrepora_fruticosa>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Madrepora" ;
+        dwc:class          "Anthozoa" ;
+        dwc:family         "Oculinidae" ;
+        dwc:genus          "Madrepora" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Scleractinia" ;
+        dwc:phylum         "Cnidaria" ;
+        dwc:rank           "species" ;
+        dwc:species        "fruticosa" .
+
 <http://taxon-name.plazi.org/id/Animalia/Acropora>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Acroporidae> ;
@@ -164,14 +214,15 @@
         dwc:phylum         "Cnidaria" ;
         dwc:rank           "genus" .
 
-<http://dx.doi.org/10.5281/zenodo.2163512>
-        a               fabio:JournalArticle ;
-        dc:creator      "Muir, Paul R." , "Done, Barbara J." , "Wallace, Carden C." ;
-        dc:date         "2012" ;
-        dc:title        "Revision and catalogue of worldwide staghorn corals Acropora and Isopora (Scleractinia: Acroporidae) in the Museum of Tropical Queensland" ;
-        bibo:endPage    "258" ;
-        bibo:journal    "Memoirs of the Queensland Museu Nature" ;
-        bibo:pubDate    "2012-06-30" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "57" ;
-        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.2163728> .
+<http://taxon-concept.plazi.org/id/Animalia/Madrepora_guppyi_Brook_1892>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Madrepora_guppyi> ;
+        dwc:class                     "Anthozoa" ;
+        dwc:family                    "Oculinidae" ;
+        dwc:genus                     "Madrepora" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Scleractinia" ;
+        dwc:phylum                    "Cnidaria" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Brook, 1892: 458" ;
+        dwc:species                   "guppyi" .

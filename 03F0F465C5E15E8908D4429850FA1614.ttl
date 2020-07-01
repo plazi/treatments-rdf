@@ -11,14 +11,28 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
+<http://taxon-concept.plazi.org/id/Animalia/Phalaena_linneella_Clerck_1759>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Phalaena_linneella> ;
+        dwc:genus                     "Phalaena" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Clerck, 1759" ;
+        dwc:species                   "linneella" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parametriotinae_Kaila_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Parametriotinae> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Elachistidae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Lepidoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "subFamily" ;
+        dwc:subFamily     "Parametriotinae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -28,26 +42,14 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://taxon-name.plazi.org/id/Animalia/Parametriotinae>
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Elachistidae" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
-        dwc:family         "Elachistidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Lepidoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subFamily" ;
-        dwc:subFamily      "Parametriotinae" .
-
-<http://taxon-name.plazi.org/id/Animalia/Elachistidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Elachistidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Lepidoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Elachista_linnaeella>
         a                  dwcFP:TaxonName ;
@@ -61,14 +63,27 @@
         dwc:rank           "species" ;
         dwc:species        "linnaeella" .
 
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+<http://taxon-name.plazi.org/id/Animalia/Parametriotinae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Elachistidae" ;
         dwc:class          "Insecta" ;
+        dwc:family         "Elachistidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Lepidoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
+        dwc:rank           "subFamily" ;
+        dwc:subFamily      "Parametriotinae" .
+
+<http://treatment.plazi.org/id/03F0F465C5E15E8908D4429850FA1614>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Elachista_linnaeella_Zeller_1839> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Parametriotinae_Kaila_2019> , <http://taxon-concept.plazi.org/id/Animalia/Elachistidae_Kaila_2019> , <http://taxon-concept.plazi.org/id/Animalia/Phalaena_linneella_Clerck_1759> , <http://taxon-concept.plazi.org/id/Animalia/__> ;
+        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4632.1.1> ;
+        dc:creator                "Kaila, Lauri" .
+
+<http://taxon-concept.plazi.org/id/Animalia/__>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Elachista>
         a                  dwcFP:TaxonName ;
@@ -81,10 +96,63 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<https://doi.org/10.11646/zootaxa.4632.1.1>
+        a               fabio:JournalArticle ;
+        dc:creator      "Kaila, Lauri" ;
+        dc:date         "2019" ;
+        dc:title        "An annotated catalogue of Elachistinae of the World (Lepidoptera: Gelechioidea: Elachistidae)" ;
+        bibo:endPage    "231" ;
+        bibo:issue      "1" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:pubDate    "2019-07-11" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "4632" .
+
+<http://taxon-name.plazi.org/id/Animalia/Phalaena>
         a            dwcFP:TaxonName ;
+        dwc:genus    "Phalaena" ;
         dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+        dwc:rank     "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Elachistidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Elachistidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Lepidoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elachistidae_Kaila_2019>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Elachistidae> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Elachistidae" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Lepidoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "family" ;
+        dwc:scientificNameAuthorship  "Kaila, 2009" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Phalaena_linneella>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phalaena" ;
+        dwc:genus          "Phalaena" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:rank           "species" ;
+        dwc:species        "linneella" .
+
+<http://taxon-name.plazi.org/id/Animalia/>
+        a         dwcFP:TaxonName ;
+        dwc:rank  "" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Elachista_linnaeella_Zeller_1839>
         a                             dwcFP:TaxonConcept ;
@@ -99,55 +167,7 @@
         dwc:scientificNameAuthorship  "Zeller, 1839" ;
         dwc:species                   "linnaeella" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Phalaena_linneella_Clerck_1759>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Phalaena_linneella> ;
-        dwc:genus                     "Phalaena" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Clerck, 1759" ;
-        dwc:species                   "linneella" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Elachistidae_Kaila_2009>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Elachistidae> ;
-        dwc:class         "Insecta" ;
-        dwc:family        "Elachistidae" ;
-        dwc:kingdom       "Animalia" ;
-        dwc:order         "Lepidoptera" ;
-        dwc:phylum        "Arthropoda" ;
-        dwc:rank          "family" .
-
-<http://treatment.plazi.org/id/03F0F465C5E15E8908D4429850FA1614>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Elachista_linnaeella_Zeller_1839> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Elachistidae_Kaila_2009> , <http://taxon-concept.plazi.org/id/Animalia/Phalaena_linneella_Clerck_1759> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4632.1.1> ;
-        dc:creator                "Kaila, Lauri" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Parametriotinae> .
-
-<http://taxon-name.plazi.org/id/Animalia/Phalaena_linneella>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phalaena" ;
-        dwc:genus          "Phalaena" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:rank           "species" ;
-        dwc:species        "linneella" .
-
-<http://taxon-name.plazi.org/id/Animalia/Phalaena>
+<http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
-        dwc:genus    "Phalaena" ;
         dwc:kingdom  "Animalia" ;
-        dwc:rank     "genus" .
-
-<https://doi.org/10.11646/zootaxa.4632.1.1>
-        a               fabio:JournalArticle ;
-        dc:creator      "Kaila, Lauri" ;
-        dc:date         "2019" ;
-        dc:title        "An annotated catalogue of Elachistinae of the World (Lepidoptera: Gelechioidea: Elachistidae)" ;
-        bibo:endPage    "231" ;
-        bibo:issue      "1" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:pubDate    "2019-07-11" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "4632" .
+        dwc:rank     "kingdom" .

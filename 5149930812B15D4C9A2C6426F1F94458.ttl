@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Equilabium_pubescens>
@@ -47,12 +48,10 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/5149930812B15D4C9A2C6426F1F94458>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Equilabium_pubescens_Paton_2019> ;
-        trt:deprecates           <http://taxon-concept.plazi.org/id/Plantae/Plectranthus_manganjensis_Baker_1900> ;
-        trt:publishedIn          <http://dx.doi.org/10.3897/phytokeys.129.34988> ;
-        dc:creator               "Culham, Alastair" , "Smitha, Kokkaraniyil" , "Paton, Alan J." , "Mwanyambo, Montfort" , "Forster, Paul I." , "Suddee, Somran" , "Wilson, Trevor C." , "Govaerts, Rafael H. A." , "Phillipson, Peter B." ;
-        cito:cites               <http://taxon-name.plazi.org/id/Plantae/Plectranthus_pubescens> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/phytokeys.129.34988> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Equilabium_pubescens> ;
+        dc:creator           "Culham, Alastair" , "Smitha, Kokkaraniyil" , "Paton, Alan J." , "Mwanyambo, Montfort" , "Forster, Paul I." , "Suddee, Somran" , "Wilson, Trevor C." , "Govaerts, Rafael H. A." , "Phillipson, Peter B." .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
@@ -71,6 +70,18 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "order" .
 
+<http://taxon-concept.plazi.org/id/Plantae/Plectranthus_pubescens_Paton_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Plectranthus_pubescens> ;
+        dwc:class         "Magnoliopsida" ;
+        dwc:family        "Lamiaceae" ;
+        dwc:genus         "Plectranthus" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Lamiales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "species" ;
+        dwc:species       "pubescens" .
+
 <http://taxon-name.plazi.org/id/Plantae/Lamiaceae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Lamiales> ;
@@ -81,12 +92,37 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "family" .
 
+<http://taxon-name.plazi.org/id/Plantae/Plectranthus_nyikensis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Plectranthus" ;
+        dwc:class          "Magnoliopsida" ;
+        dwc:family         "Lamiaceae" ;
+        dwc:genus          "Plectranthus" ;
+        dwc:kingdom        "Plantae" ;
+        dwc:order          "Lamiales" ;
+        dwc:phylum         "Tracheophyta" ;
+        dwc:rank           "species" ;
+        dwc:species        "nyikensis" .
+
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Plectranthus_nyikensis_Baker_1900>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Plectranthus_nyikensis> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Lamiaceae" ;
+        dwc:genus                     "Plectranthus" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Lamiales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Baker, 1900" ;
+        dwc:species                   "nyikensis" .
 
 <http://taxon-name.plazi.org/id/Plantae/Plectranthus_manganjensis>
         a                  dwcFP:TaxonName ;
@@ -104,20 +140,6 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Plantae" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Plantae/Equilabium_pubescens_Paton_2019>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Equilabium_pubescens> ;
-        dwc:LSID                      "51499308-12B1-5D4C-9A2C-6426F1F94458" ;
-        dwc:class                     "Magnoliopsida" ;
-        dwc:family                    "Lamiaceae" ;
-        dwc:genus                     "Equilabium" ;
-        dwc:kingdom                   "Plantae" ;
-        dwc:order                     "Lamiales" ;
-        dwc:phylum                    "Tracheophyta" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "(Baker) Mwany. & A. J. Paton" ;
-        dwc:species                   "pubescens" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Plectranthus_manganjensis_Baker_1900>
         a                             dwcFP:TaxonConcept ;

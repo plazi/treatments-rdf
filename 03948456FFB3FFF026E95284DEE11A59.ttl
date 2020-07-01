@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
@@ -24,27 +25,20 @@
 <http://treatment.plazi.org/id/03948456FFB3FFF026E95284DEE11A59>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Gyropus_parasetosus_Werneck_1935> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Echimyidae_Valim_2008> ;
         trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.274532> ;
-        dc:creator                "Linardi, Pedro Marcos" , "Valim, Michel P." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Echimyidae> , <http://taxon-name.plazi.org/id/Animalia/Gyropus> , <http://taxon-name.plazi.org/id/Animalia/Proechimys_longicaudatus> , <http://taxon-name.plazi.org/id/Animalia/Proechimys_spinosus> .
+        dc:creator                "Linardi, Pedro Marcos" , "Valim, Michel P." .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Proechimys>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Echimyidae> ;
-        dwc:class          "Mammalia" ;
-        dwc:family         "Echimyidae" ;
-        dwc:genus          "Proechimys" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Rodentia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Gyropus_Valim_2008>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Gyropus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Gyropidae" ;
+        dwc:genus         "Gyropus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Phthiraptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Gyropus_parasetosus>
         a                  dwcFP:TaxonName ;
@@ -57,6 +51,16 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "parasetosus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Echimyidae_Valim_2008>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Echimyidae> ;
+        dwc:class         "Mammalia" ;
+        dwc:family        "Echimyidae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Rodentia" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "family" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -86,14 +90,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-        dwc:class          "Mammalia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "class" .
-
 <http://dx.doi.org/10.5281/zenodo.274532>
         a               fabio:JournalArticle ;
         dc:creator      "Linardi, Pedro Marcos" , "Valim, Michel P." ;
@@ -104,15 +100,6 @@
         bibo:startPage  "1" ;
         bibo:volume     "1899" .
 
-<http://taxon-name.plazi.org/id/Animalia/Rodentia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-        dwc:class          "Mammalia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Rodentia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "order" .
-
 <http://taxon-name.plazi.org/id/Animalia/Phthiraptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -121,28 +108,6 @@
         dwc:order          "Phthiraptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Echimyidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-        dwc:class          "Mammalia" ;
-        dwc:family         "Echimyidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Rodentia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Proechimys_spinosus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Proechimys" ;
-        dwc:class          "Mammalia" ;
-        dwc:family         "Echimyidae" ;
-        dwc:genus          "Proechimys" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Rodentia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "species" ;
-        dwc:species        "spinosus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Gyropus>
         a                  dwcFP:TaxonName ;
@@ -154,18 +119,6 @@
         dwc:order          "Phthiraptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Proechimys_longicaudatus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Proechimys" ;
-        dwc:class          "Mammalia" ;
-        dwc:family         "Echimyidae" ;
-        dwc:genus          "Proechimys" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Rodentia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "species" ;
-        dwc:species        "longicaudatus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;

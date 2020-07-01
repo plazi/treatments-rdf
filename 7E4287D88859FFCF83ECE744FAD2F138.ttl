@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
@@ -33,12 +34,11 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/7E4287D88859FFCF83ECE744FAD2F138>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Labiobaetis_mustus_Kang_1996> ;
-        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Pseudocloeon_mustum_Soldan_2003> , <http://taxon-concept.plazi.org/id/Animalia/Baetis_mustus_Soldan_2003> , <http://taxon-concept.plazi.org/id/Animalia/Baetis_mustus_Kang_1996> ;
-        trt:publishedIn          <http://dx.doi.org/10.11646/zootaxa.3815.3.5> ;
-        dc:creator               "Tong, Xiaoli" , "Shi, Weifang" ;
-        cito:cites               <http://dx.doi.org/10.5281/zenodo.225979> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3815.3.5> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Labiobaetis_mustus> ;
+        dc:creator           "Tong, Xiaoli" , "Shi, Weifang" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.225979> .
 
 <http://taxon-name.plazi.org/id/Animalia/Ephemeroptera>
         a                  dwcFP:TaxonName ;
@@ -54,33 +54,10 @@
         dc:description           "FIGURES 20 – 23. Labiobaetis mustus (Kang & Yang). 20, habitus of male imago (excluding abdominal segment X); 21, hind wing of female imago; 22, genital forceps; 23, habitus of male nymph." ;
         fabio:hasRepresentation  "https://zenodo.org/record/225979/files/figure.png" .
 
-<http://taxon-name.plazi.org/id/Animalia/Pseudocloeon>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Baetidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Baetidae" ;
-        dwc:genus          "Pseudocloeon" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Ephemeroptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudocloeon_mustum>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pseudocloeon" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Baetidae" ;
-        dwc:genus          "Pseudocloeon" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Ephemeroptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "mustum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Labiobaetis_mustus>
         a                  dwcFP:TaxonName ;
@@ -93,46 +70,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "mustus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Pseudocloeon_mustum_Soldan_2003>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pseudocloeon_mustum> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Baetidae" ;
-        dwc:genus                     "Pseudocloeon" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Ephemeroptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Soldan & Yang, 2003: 415" ;
-        dwc:species                   "mustum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Baetis_mustus_Soldan_2003>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Baetis_mustus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Baetidae" ;
-        dwc:genus                     "Baetis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Ephemeroptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Kang & Yang, 1996: 63" ;
-        dwc:species                   "mustus" ;
-        dwc:subGenus                  "Labiobaetis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Labiobaetis_mustus_Kang_1996>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Labiobaetis_mustus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Baetidae" ;
-        dwc:genus                     "Labiobaetis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Ephemeroptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Kang & Yang, 1996" ;
-        dwc:species                   "mustus" .
 
 <http://dx.doi.org/10.11646/zootaxa.3815.3.5>
         a               fabio:JournalArticle ;

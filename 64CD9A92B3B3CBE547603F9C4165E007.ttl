@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -28,16 +29,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://taxon-name.plazi.org/id/Animalia/Hydrophilidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Hydrophilidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
 <http://taxon-name.plazi.org/id/Animalia/Phaenonotum_dubium>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phaenonotum" ;
@@ -51,11 +42,20 @@
         dwc:species        "dubium" .
 
 <http://treatment.plazi.org/id/64CD9A92B3B3CBE547603F9C4165E007>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Phaenonotum_dubium_Deler-Hernandez_2016> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.579.7748> ;
-        dc:creator                "Fikacek, Martin" , "Deler-Hernandez, Albert" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Phaenonotum_exstriatum> , <http://taxon-name.plazi.org/id/Animalia/Phaenonotum> , <http://taxon-name.plazi.org/id/Animalia/Hydrophilus_exstriatus> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/zookeys.579.7748> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Phaenonotum_dubium> ;
+        dc:creator           "Fikacek, Martin" , "Deler-Hernandez, Albert" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydrophilidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Hydrophilidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Phaenonotum_exstriatum>
         a                  dwcFP:TaxonName ;
@@ -68,6 +68,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "exstriatum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phaenonotum_exstriatum_Deler-Hernandez_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Phaenonotum_exstriatum> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Hydrophilidae" ;
+        dwc:genus         "Phaenonotum" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "exstriatum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Phaenonotum>
         a                  dwcFP:TaxonName ;
@@ -96,6 +108,29 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Hydrophilus_exstriatus_Deler-Hernandez_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hydrophilus_exstriatus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Hydrophilidae" ;
+        dwc:genus         "Hydrophilus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "exstriatus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phaenonotum_Deler-Hernandez_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Phaenonotum> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Hydrophilidae" ;
+        dwc:genus         "Phaenonotum" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -104,19 +139,6 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Phaenonotum_dubium_Deler-Hernandez_2016>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Phaenonotum_dubium> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Hydrophilidae" ;
-        dwc:genus                     "Phaenonotum" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sharp, 1882 (= Phaenonotum exstriatum (Say, 1835 ))" ;
-        dwc:species                   "dubium" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hydrophilus_exstriatus>
         a                  dwcFP:TaxonName ;

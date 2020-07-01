@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Provorticidae>
@@ -47,21 +48,43 @@
         dwc:species        "canadensis" .
 
 <http://treatment.plazi.org/id/443987C2BB2A2676FF4D2D1D6A33FDB5>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.184571> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Baicalellia_forcipifera> ;
-        dc:creator           "Artois, Tom" , "Schockaert, Ernest" , "Volonterio, Odile" , "Steenkiste, Niels Van" ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.184579> , <http://dx.doi.org/10.5281/zenodo.184578> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Baicalellia_forcipifera_Steenkiste_2008> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Baicalellia_canadensis_Steenkiste_2008> , <http://taxon-concept.plazi.org/id/Animalia/Baicalellia_forcipifera_Steenkiste_2008> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.184571> ;
+        dc:creator               "Volonterio, Odile" , "Artois, Tom" , "Schockaert, Ernest" , "Steenkiste, Niels Van" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.184578> , <http://dx.doi.org/10.5281/zenodo.184579> .
 
 <http://dx.doi.org/10.5281/zenodo.184579>
         a                        fabio:Figure ;
         dc:description           "FIGURE 8. Baicalellia forcipifera n. sp. (A) Habitus of a live animal. Polliculus cochlearis n. g. n. sp. (B) General organisation of an animal based on serial sections. (C) Stylet and accessory stylet (from the paratype). (D) Reconstruction of the atrial organs from the right side (arrow indicates intracapsular seminal vesicle)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/184579/files/figure.png" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Baicalellia_canadensis_Steenkiste_2008>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Baicalellia_canadensis> ;
+        dwc:class         "Rhabditophora" ;
+        dwc:family        "Provorticidae" ;
+        dwc:genus         "Baicalellia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Rhabdocoela" ;
+        dwc:phylum        "Platyhelminthes" ;
+        dwc:rank          "species" ;
+        dwc:species       "canadensis" .
+
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
+        dwc:class          "Rhabditophora" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Rhabdocoela" ;
+        dwc:phylum         "Platyhelminthes" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Baicalellia>
         a                  dwcFP:TaxonName ;
@@ -74,14 +97,20 @@
         dwc:phylum         "Platyhelminthes" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
+<http://taxon-concept.plazi.org/id/Animalia/Baicalellia_forcipifera_Steenkiste_2008>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Baicalellia_forcipifera> ;
+        dwc:authority      "Steenkiste, 2008" ;
+        dwc:authorityName  "Steenkiste" ;
+        dwc:authorityYear  "2008" ;
         dwc:class          "Rhabditophora" ;
+        dwc:family         "Provorticidae" ;
+        dwc:genus          "Baicalellia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Rhabdocoela" ;
         dwc:phylum         "Platyhelminthes" ;
-        dwc:rank           "order" .
+        dwc:rank           "species" ;
+        dwc:species        "forcipifera" .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
         a                  dwcFP:TaxonName ;
@@ -97,6 +126,17 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Platyhelminthes" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Baicalellia_Steenkiste_2008>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Baicalellia> ;
+        dwc:class         "Rhabditophora" ;
+        dwc:family        "Provorticidae" ;
+        dwc:genus         "Baicalellia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Rhabdocoela" ;
+        dwc:phylum        "Platyhelminthes" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Baicalellia_forcipifera>
         a                  dwcFP:TaxonName ;

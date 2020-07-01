@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Protozoa/Gymnostomatea>
@@ -89,10 +90,9 @@
 <http://treatment.plazi.org/id/AA61DC68FFBC032DFF43FCBEFB9AF95C>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_procerus_Song_1989> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_proceroformis_Song_1989> , <http://taxon-concept.plazi.org/id/Protozoa/Hemiophrys_Matis_1961> , <http://taxon-concept.plazi.org/id/Protozoa/Litonotus_Tirjakova_1993> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_proceroformis_Song_1989> , <http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_procerus_Vďačný_2014> , <http://taxon-concept.plazi.org/id/Protozoa/Litonotus_Vďačný_2014> , <http://taxon-concept.plazi.org/id/Protozoa/Hemiophrys_Vďačný_2014> ;
         trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3760.4.1> ;
-        dc:creator                "Vďačný, Peter" , "Rajter, Ľubomír" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Protozoa/Amphileptus> , <http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_Matis_1995> , <http://taxon-name.plazi.org/id/Protozoa/Litonotus> , <http://taxon-name.plazi.org/id/Protozoa/Hemiophrys> .
+        dc:creator                "Rajter, Ľubomír" , "Vďačný, Peter" .
 
 <http://taxon-name.plazi.org/id/Protozoa/Amphileptus>
         a                  dwcFP:TaxonName ;
@@ -105,6 +105,17 @@
         dwc:phylum         "Ciliophora" ;
         dwc:rank           "genus" .
 
+<http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_Vďačný_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Protozoa/Amphileptus> ;
+        dwc:class         "Gymnostomatea" ;
+        dwc:family        "Amphileptidae" ;
+        dwc:genus         "Amphileptus" ;
+        dwc:kingdom       "Protozoa" ;
+        dwc:order         "Pleurostomatida" ;
+        dwc:phylum        "Ciliophora" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Protozoa/Hemiophrys>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Protozoa/Amphileptidae" ;
@@ -115,18 +126,6 @@
         dwc:order          "Pleurostomatida" ;
         dwc:phylum         "Ciliophora" ;
         dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_Matis_1995>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Protozoa/Amphileptus> ;
-        dwc:class                     "Gymnostomatea" ;
-        dwc:family                    "Amphileptidae" ;
-        dwc:genus                     "Amphileptus" ;
-        dwc:kingdom                   "Protozoa" ;
-        dwc:order                     "Pleurostomatida" ;
-        dwc:phylum                    "Ciliophora" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Matis & Tirjaková 1995" .
 
 <http://taxon-name.plazi.org/id/Protozoa/Litonotidae>
         a                  dwcFP:TaxonName ;
@@ -158,18 +157,6 @@
         bibo:startPage  "501" ;
         bibo:volume     "3760" .
 
-<http://taxon-concept.plazi.org/id/Protozoa/Hemiophrys_Matis_1961>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Protozoa/Hemiophrys> ;
-        dwc:class                     "Gymnostomatea" ;
-        dwc:family                    "Amphileptidae" ;
-        dwc:genus                     "Hemiophrys" ;
-        dwc:kingdom                   "Protozoa" ;
-        dwc:order                     "Pleurostomatida" ;
-        dwc:phylum                    "Ciliophora" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Matis 1961" .
-
 <http://taxon-concept.plazi.org/id/Protozoa/Amphileptus_proceroformis_Song_1989>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Protozoa/Amphileptus_proceroformis> ;
@@ -183,19 +170,29 @@
         dwc:scientificNameAuthorship  "Song & Wilbert, 1989" ;
         dwc:species                   "proceroformis" .
 
-<http://taxon-concept.plazi.org/id/Protozoa/Litonotus_Tirjakova_1993>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Protozoa/Litonotus> ;
-        dwc:class                     "Gymnostomatea" ;
-        dwc:family                    "Litonotidae" ;
-        dwc:genus                     "Litonotus" ;
-        dwc:kingdom                   "Protozoa" ;
-        dwc:order                     "Pleurostomatida" ;
-        dwc:phylum                    "Ciliophora" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Tirjaková 1993" .
+<http://taxon-concept.plazi.org/id/Protozoa/Hemiophrys_Vďačný_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Protozoa/Hemiophrys> ;
+        dwc:class         "Gymnostomatea" ;
+        dwc:family        "Amphileptidae" ;
+        dwc:genus         "Hemiophrys" ;
+        dwc:kingdom       "Protozoa" ;
+        dwc:order         "Pleurostomatida" ;
+        dwc:phylum        "Ciliophora" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Protozoa>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Protozoa" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Protozoa/Litonotus_Vďačný_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Protozoa/Litonotus> ;
+        dwc:class         "Gymnostomatea" ;
+        dwc:family        "Litonotidae" ;
+        dwc:genus         "Litonotus" ;
+        dwc:kingdom       "Protozoa" ;
+        dwc:order         "Pleurostomatida" ;
+        dwc:phylum        "Ciliophora" ;
+        dwc:rank          "genus" .

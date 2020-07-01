@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -29,11 +30,33 @@
         dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/8D61F54B8B8379A59849D903D0997C02>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Pheidole_morrisi_Wilson_2003> ;
-        trt:publishedIn           <http://publication.plazi.org/id/A91F8D984DB0B911B8B6DFE9067AB44B> ;
-        dc:creator                "Wilson, E. O." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisii_vanceae> , <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisi_impexa> , <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisii> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://publication.plazi.org/id/A91F8D984DB0B911B8B6DFE9067AB44B> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Pheidole_morrisi> ;
+        dc:creator           "Wilson, E. O." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheidole_morrisii_vanceae_Wilson_2003>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisii_vanceae> ;
+        dwc:LSID-HNS      "urn:lsid:biosci.ohio-state.edu:osuc_concepts:250178" ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Formicidae" ;
+        dwc:genus         "Pheidole" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "variety" ;
+        dwc:species       "morrisii" ;
+        dwc:variety       "vanceae" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisii_vanceae>
         a                  dwcFP:TaxonName ;
@@ -47,31 +70,6 @@
         dwc:rank           "variety" ;
         dwc:species        "morrisii" ;
         dwc:variety        "vanceae" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Pheidole_morrisi_Wilson_2003>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisi> ;
-        dwc:LSID-HNS       "urn:lsid:biosci.ohio-state.edu:osuc_concepts:181807" ;
-        dwc:authority      "Wilson, 2003" ;
-        dwc:authorityName  "Wilson" ;
-        dwc:authorityYear  "2003" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Formicidae" ;
-        dwc:genus          "Pheidole" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "morrisi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Formicidae>
         a                  dwcFP:TaxonName ;
@@ -87,6 +85,20 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheidole_morrisi_impexa_Wilson_2003>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisi_impexa> ;
+        dwc:LSID-HNS      "urn:lsid:biosci.ohio-state.edu:osuc_concepts:241339" ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Formicidae" ;
+        dwc:genus         "Pheidole" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "variety" ;
+        dwc:species       "morrisi" ;
+        dwc:variety       "impexa" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisi>
         a                  dwcFP:TaxonName ;
@@ -139,3 +151,16 @@
 <http://publication.plazi.org/id/A91F8D984DB0B911B8B6DFE9067AB44B>
         dc:creator  "Wilson, E. O." ;
         dc:title    "Pheidole in the New World. A dominant, hyperdiverse ant genus." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheidole_morrisii_Wilson_2003>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pheidole_morrisii> ;
+        dwc:LSID-HNS      "urn:lsid:biosci.ohio-state.edu:osuc_concepts:33880" ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Formicidae" ;
+        dwc:genus         "Pheidole" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "morrisii" .

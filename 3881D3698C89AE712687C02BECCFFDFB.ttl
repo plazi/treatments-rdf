@@ -11,22 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_freidbergi>
         a                  dwcFP:TaxonName ;
@@ -40,15 +26,35 @@
         dwc:rank           "species" ;
         dwc:species        "freidbergi" .
 
-<http://taxon-name.plazi.org/id/Animalia/Canacidae>
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
-        dwc:family         "Canacidae" ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+        dwc:rank           "class" .
+
+<http://dx.doi.org/10.3897/zookeys.162.2370>
+        a               fabio:JournalArticle ;
+        dc:creator      "Marinoni, Luciane" , "Mathis, Wayne N." ;
+        dc:date         "2012" ;
+        dc:title        "A conspectus on the Canacidae (Diptera) of Brazil" ;
+        bibo:endPage    "92" ;
+        bibo:journal    "ZooKeys" ;
+        bibo:startPage  "59" ;
+        bibo:volume     "162" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tethina_lasiophthalma_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tethina_lasiophthalma> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Canacidae" ;
+        dwc:genus         "Tethina" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "lasiophthalma" .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhicnoessa_ferruginea>
         a                  dwcFP:TaxonName ;
@@ -58,40 +64,74 @@
         dwc:rank           "species" ;
         dwc:species        "ferruginea" .
 
-<http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_insularis>
+<http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Canacidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Canacidae" ;
         dwc:genus          "Dasyrhicnoessa" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "insularis" .
+        dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
+<http://taxon-concept.plazi.org/id/Animalia/Dasyrhicnoessa_freidbergi_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_freidbergi> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Canacidae" ;
+        dwc:genus         "Dasyrhicnoessa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "freidbergi" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dasyrhicnoessa_insularis_Mathis_2012>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_insularis> ;
-        dwc:LSID                      "http://species-id.net/wiki/Dasyrhicnoessa_insularis" ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Canacidae" ;
-        dwc:genus                     "Dasyrhicnoessa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Aldrich" ;
-        dwc:species                   "insularis" .
+<http://taxon-concept.plazi.org/id/Animalia/Rhicnoessa_insularis_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Rhicnoessa_insularis> ;
+        dwc:genus         "Rhicnoessa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "insularis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dasyrhicnoessa_ferruginea_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_ferruginea> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Canacidae" ;
+        dwc:genus         "Dasyrhicnoessa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "ferruginea" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tethina_insularis_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tethina_insularis> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Canacidae" ;
+        dwc:genus         "Tethina" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "insularis" .
+
+<http://treatment.plazi.org/id/3881D3698C89AE712687C02BECCFFDFB>
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/zookeys.162.2370> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Dasyrhicnoessa_insularis> ;
+        dc:creator           "Marinoni, Luciane" , "Mathis, Wayne N." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhicnoessa_ferruginea_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Rhicnoessa_ferruginea> ;
+        dwc:genus         "Rhicnoessa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "ferruginea" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tethina_lasiophthalma>
         a                  dwcFP:TaxonName ;
@@ -105,35 +145,57 @@
         dwc:rank           "species" ;
         dwc:species        "lasiophthalma" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa>
+<http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_insularis>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Canacidae> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa" ;
         dwc:class          "Insecta" ;
         dwc:family         "Canacidae" ;
         dwc:genus          "Dasyrhicnoessa" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
+        dwc:rank           "species" ;
+        dwc:species        "insularis" .
 
-<http://treatment.plazi.org/id/3881D3698C89AE712687C02BECCFFDFB>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Dasyrhicnoessa_insularis_Mathis_2012> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.162.2370> ;
-        dc:creator                "Marinoni, Luciane" , "Mathis, Wayne N." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Tethina_lasiophthalma> , <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_freidbergi> , <http://taxon-name.plazi.org/id/Animalia/Rhicnoessa_insularis> , <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_lasiophthalma> , <http://taxon-name.plazi.org/id/Animalia/Tethina_insularis> , <http://taxon-name.plazi.org/id/Animalia/Rhicnoessa_ferruginea> , <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_ferruginea> .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
 
-<http://dx.doi.org/10.3897/zookeys.162.2370>
-        a               fabio:JournalArticle ;
-        dc:creator      "Marinoni, Luciane" , "Mathis, Wayne N." ;
-        dc:date         "2012" ;
-        dc:title        "A conspectus on the Canacidae (Diptera) of Brazil" ;
-        bibo:endPage    "92" ;
-        bibo:journal    "ZooKeys" ;
-        bibo:startPage  "59" ;
-        bibo:volume     "162" .
+<http://taxon-concept.plazi.org/id/Animalia/Dasyrhicnoessa_lasiophthalma_Mathis_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Dasyrhicnoessa_lasiophthalma> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Canacidae" ;
+        dwc:genus         "Dasyrhicnoessa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "lasiophthalma" .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Canacidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Canacidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .

@@ -11,34 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://treatment.plazi.org/id/571110BDDE97A87BB1E16171BA527A0E>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cicada_orni_Linnaeus_1758> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.4.e8051> ;
-        dc:creator                "Kunte, Krushnamegh" , "Price, Benjamin Wills" , "Allan, Elizabeth Louise" , "Sarkar, Vivek" , "Marathe, Kiran" , "Simon, Chris" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Tettigonia_punctata> , <http://taxon-name.plazi.org/id/Animalia/Tettigonia_orni> , <http://taxon-name.plazi.org/id/Animalia/Macroprotopus_oleae> , <http://taxon-name.plazi.org/id/Animalia/Cicada_pallida> , <http://taxon-name.plazi.org/id/Animalia/Cicada_orni> .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cicada>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:genus          "Cicada" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.3897/BDJ.4.e8051>
         a               fabio:JournalArticle ;
@@ -62,10 +36,13 @@
         dwc:rank           "species" ;
         dwc:species        "pallida" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cicada_orni>
         a                  dwcFP:TaxonName ;
@@ -80,13 +57,36 @@
         dwc:species        "orni" ;
         dwc:subspecies     "lesbosiensis" .
 
-<http://taxon-name.plazi.org/id/Animalia/Macroprotopus_oleae>
+<http://taxon-concept.plazi.org/id/Animalia/Tettigonia_punctata_Price_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tettigonia_punctata> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cicadellidae" ;
+        dwc:genus         "Tettigonia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "punctata" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Macroprotopus_oleae_Price_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Macroprotopus_oleae> ;
+        dwc:genus         "Macroprotopus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "oleae" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicada>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Macroprotopus" ;
-        dwc:genus          "Macroprotopus" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Cicadellidae" ;
+        dwc:genus          "Cicada" ;
         dwc:kingdom        "Animalia" ;
-        dwc:rank           "species" ;
-        dwc:species        "oleae" .
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tettigonia_punctata>
         a                  dwcFP:TaxonName ;
@@ -99,6 +99,65 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "punctata" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Cicadellidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Macroprotopus_oleae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Macroprotopus" ;
+        dwc:genus          "Macroprotopus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:rank           "species" ;
+        dwc:species        "oleae" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
+<http://treatment.plazi.org/id/571110BDDE97A87BB1E16171BA527A0E>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cicada_orni_Linnaeus_1758> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Tettigonia_punctata_Price_2016> , <http://taxon-concept.plazi.org/id/Animalia/Cicada_pallida_Price_2016> , <http://taxon-concept.plazi.org/id/Animalia/Tettigonia_orni_Price_2016> , <http://taxon-concept.plazi.org/id/Animalia/Cicada_orni_Price_2016> , <http://taxon-concept.plazi.org/id/Animalia/Macroprotopus_oleae_Price_2016> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.4.e8051> ;
+        dc:creator                "Kunte, Krushnamegh" , "Price, Benjamin Wills" , "Allan, Elizabeth Louise" , "Sarkar, Vivek" , "Marathe, Kiran" , "Simon, Chris" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cicada_orni_Price_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Cicada_orni> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cicadellidae" ;
+        dwc:genus         "Cicada" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "subspecies" ;
+        dwc:species       "orni" ;
+        dwc:subspecies    "lesbosiensis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cicada_pallida_Price_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Cicada_pallida> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cicadellidae" ;
+        dwc:genus         "Cicada" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "pallida" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cicada_orni_Linnaeus_1758>
         a                             dwcFP:TaxonConcept ;
@@ -113,11 +172,17 @@
         dwc:scientificNameAuthorship  "Linnaeus, 1758" ;
         dwc:species                   "orni" .
 
-<http://taxon-name.plazi.org/id/Animalia/Macroprotopus>
-        a            dwcFP:TaxonName ;
-        dwc:genus    "Macroprotopus" ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Tettigonia_orni_Price_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tettigonia_orni> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cicadellidae" ;
+        dwc:genus         "Tettigonia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "orni" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tettigonia>
         a                  dwcFP:TaxonName ;
@@ -130,6 +195,12 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
+<http://taxon-name.plazi.org/id/Animalia/Macroprotopus>
+        a            dwcFP:TaxonName ;
+        dwc:genus    "Macroprotopus" ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
@@ -137,20 +208,7 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .

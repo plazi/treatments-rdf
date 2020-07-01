@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.3826959>
@@ -58,13 +59,25 @@
         dwc:species        "orientalis" ;
         dwc:subSpecies     "arabica" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_nilotica_Vallot_1802>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_nilotica> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Vespidae" ;
+        dwc:genus                     "Vespa" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Vallot, 1802: 170" ;
+        dwc:species                   "nilotica" .
+
 <http://treatment.plazi.org/id/514381547E4EFF88FCBD10403BCAF9E6>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_Linnaeus_2020> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Vespa_crabro_fusca_Christ_1791> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_quadripunctata_Forskal_1775> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_aegyptiaca_Andre_1884> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_zavattarii_Capra_1933> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_jurinei_Saussure_1854> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_indica_Wroughton_1889> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_aegyptiaca_Vallot_1802> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_somalica_Soika_1934> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_turcica_Drury_1773> , <http://taxon-concept.plazi.org/id/Animalia/Lapsus_Pacheco_1964> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_arabica_Soika_1957> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3847022> ;
-        dc:creator                "Kimsey, Lynn" , "Smith-Pardo, Allan H." , "Carpenter, James M." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.3826927> , <http://dx.doi.org/10.5281/zenodo.3826959> , <http://taxon-name.plazi.org/id/Animalia/Vespa_mocsaryana> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://doi.org/10.5281/zenodo.3847022> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Vespa_orientalis> ;
+        dc:creator           "Kimsey, Lynn" , "Carpenter, James M." , "Smith-Pardo, Allan H." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.3826959> , <http://dx.doi.org/10.5281/zenodo.3826927> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -73,6 +86,15 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Vespa_orientalis_somalica>
         a                  dwcFP:TaxonName ;
@@ -87,40 +109,17 @@
         dwc:species        "orientalis" ;
         dwc:variety        "somalica" .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+<http://taxon-name.plazi.org/id/Animalia/Vespa_mocsaryana>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
         dwc:class          "Insecta" ;
+        dwc:family         "Vespidae" ;
+        dwc:genus          "Vespa" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lapsus_Pacheco_1964>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lapsus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Heteroceridae" ;
-        dwc:genus                     "Lapsus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Pacheco, 1964" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_somalica_Soika_1934>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_orientalis_somalica> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Vespidae" ;
-        dwc:genus                     "Vespa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "Giordani Soika, 1934: 184" ;
-        dwc:species                   "orientalis" ;
-        dwc:variety                   "somalica" .
+        dwc:rank           "species" ;
+        dwc:species        "mocsaryana" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Vespa_quadripunctata_Forskal_1775>
         a                             dwcFP:TaxonConcept ;
@@ -135,17 +134,19 @@
         dwc:scientificNameAuthorship  "Forskal, 1775: 84" ;
         dwc:species                   "quadripunctata" .
 
-<http://taxon-name.plazi.org/id/Animalia/Vespa_mocsaryana>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "mocsaryana" .
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_somalica_Soika_1934>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_orientalis_somalica> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Vespidae" ;
+        dwc:genus                     "Vespa" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "variety" ;
+        dwc:scientificNameAuthorship  "Giordani Soika, 1934: 184" ;
+        dwc:species                   "orientalis" ;
+        dwc:variety                   "somalica" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Vespa_aegyptiaca_Vallot_1802>
         a                             dwcFP:TaxonConcept ;
@@ -247,18 +248,6 @@
         dwc:rank           "species" ;
         dwc:species        "indica" .
 
-<http://taxon-name.plazi.org/id/Animalia/Vespa_aegyptiaca>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "aegyptiaca" .
-
 <http://taxon-name.plazi.org/id/Animalia/Vespa_orientalis>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
@@ -270,6 +259,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "orientalis" .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa_aegyptiaca>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Vespidae" ;
+        dwc:genus          "Vespa" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "aegyptiaca" .
 
 <http://taxon-name.plazi.org/id/Animalia/Vespa_quadripunctata>
         a                  dwcFP:TaxonName ;
@@ -287,6 +288,30 @@
         a                        fabio:Figure ;
         dc:description           "Figs. 9–12. Vespa morphology. (a, b) Dorsal view of metasoma. (c, d) Dorsal view of basal metasomal terga. Fig. 10. (a, b) Dorsal view of scutum. (c, d) Dorsal view of metasoma. Fig. 11. (a, b) Lateral view of head. (c, d) Dorsal view of metasoma. Fig. 12. (a, b) Front view of clypeus.(c-f) Dorsal view of metanotum. Figs. 9a, 9b,V. orientalis. Figs. 9c, 10b, d, V. affinis. Fig. 9d, V. crabro. Figs. 10a, 10c, 11b, 11c, V. mocsaryana. Fig. 11a, V. fumida. Fig. 11d. V. dybowskii. Figs. 12a, 12f, V. multimaculata. Figs. 12b, d, e, V. bicolor. Fig. 12c, V. luctuosa." ;
         fabio:hasRepresentation  "https://zenodo.org/record/3826927/files/figure.png" .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa_nilotica>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Vespidae" ;
+        dwc:genus          "Vespa" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "nilotica" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_mocsaryana_Smith-Pardo_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Vespa_mocsaryana> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Vespidae" ;
+        dwc:genus         "Vespa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "mocsaryana" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Vespa_jurinei_Saussure_1854>
         a                             dwcFP:TaxonConcept ;
@@ -319,39 +344,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "jurinei" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_orientalis_Linnaeus_2020>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_orientalis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Vespidae" ;
-        dwc:genus                     "Vespa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Linnaeus" ;
-        dwc:species                   "orientalis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Lapsus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Heteroceridae" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Heteroceridae" ;
-        dwc:genus          "Lapsus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Vespa_indica_Wroughton_1889>
         a                             dwcFP:TaxonConcept ;
@@ -435,13 +427,3 @@
         dwc:scientificNameAuthorship  "Christ, 1791: 216" ;
         dwc:species                   "crabro" ;
         dwc:subSpecies                "fusca" .
-
-<http://taxon-name.plazi.org/id/Animalia/Heteroceridae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Heteroceridae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .

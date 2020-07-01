@@ -11,12 +11,86 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://dx.doi.org/10.5281/zenodo.3294185>
-        a                        fabio:Figure ;
-        dc:description           "FIGURES 25–26. FIGURE 25. Cionus flavopunctatus. a: body in dorsal view (male), b: body in lateral view (male), c: rostrum in lateral view (female), d: penis in ventral view, e: penis in lateral view, f: apex of penis in dorsal view. Not to scale. FIGURE 26. Cionus auriculus. a: body in dorsal view (male), b: body in lateral view (male), c: rostrum in lateral view (female), d: penis in ventral view, e: penis in lateral view, f: apex of penis in dorsal view. Not to scale." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/3294185/files/figure.png" .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<https://doi.org/10.11646/zootaxa.4631.1.1>
+        a               fabio:JournalArticle ;
+        dc:creator      "Košťál, Michael" , "Caldara, Roberto" ;
+        dc:date         "2019" ;
+        dc:title        "Revision of Palaearctic species of the genus Cionus Clairville (Coleoptera: Curculionidae: Cionini)" ;
+        bibo:endPage    "144" ;
+        bibo:issue      "1" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:pubDate    "2019-07-10" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "4631" ;
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.3294185> .
+
+<http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus_auriculus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Curculionidae" ;
+        dwc:genus          "Cionus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "variety" ;
+        dwc:species        "hortulanus" ;
+        dwc:variety        "auriculus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cionus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Curculionidae" ;
+        dwc:genus          "Cionus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://treatment.plazi.org/id/C61E7211FFAF4C37FF4031F6337FB441>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cionus_auriculus_Reitter_1904> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Košťál_2019> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Kostal_1904> ;
+        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4631.1.1> ;
+        dc:creator                "Caldara, Roberto" , "Košťál, Michael" ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.3294185> .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cionus_auriculus_Reitter_1904>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_auriculus> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Curculionidae" ;
+        dwc:genus                     "Cionus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Reitter, 1904" ;
+        dwc:species                   "auriculus" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Kostal_1904>
         a                             dwcFP:TaxonConcept ;
@@ -32,37 +106,22 @@
         dwc:species                   "hortulanus" ;
         dwc:variety                   "auriculus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Hustache_1932>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus_auriculus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "Reitter, 1904: 50" ;
-        dwc:species                   "hortulanus" ;
-        dwc:variety                   "auriculus" .
+<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Košťál_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Curculionidae" ;
+        dwc:genus         "Cionus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "hortulanus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Curculionidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+<http://dx.doi.org/10.5281/zenodo.3294185>
+        a                        fabio:Figure ;
+        dc:description           "FIGURES 25–26. FIGURE 25. Cionus flavopunctatus. a: body in dorsal view (male), b: body in lateral view (male), c: rostrum in lateral view (female), d: penis in ventral view, e: penis in lateral view, f: apex of penis in dorsal view. Not to scale. FIGURE 26. Cionus auriculus. a: body in dorsal view (male), b: body in lateral view (male), c: rostrum in lateral view (female), d: penis in ventral view, e: penis in lateral view, f: apex of penis in dorsal view. Not to scale." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/3294185/files/figure.png" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus>
         a                  dwcFP:TaxonName ;
@@ -76,117 +135,14 @@
         dwc:rank           "species" ;
         dwc:species        "hortulanus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Hoffmann_1958>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus_auriculus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "Reitter, 1904: 50" ;
-        dwc:species                   "hortulanus" ;
-        dwc:variety                   "auriculus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus_auriculus>
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
-        dwc:family         "Curculionidae" ;
-        dwc:genus          "Cionus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "variety" ;
-        dwc:species        "hortulanus" ;
-        dwc:variety        "auriculus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_auriculus_Reitter_1904>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_auriculus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Reitter, 1904" ;
-        dwc:species                   "auriculus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Wingelmuller_1914>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Wingelmüller, 1914: 187" ;
-        dwc:species                   "hortulanus" .
-
-<https://doi.org/10.11646/zootaxa.4631.1.1>
-        a               fabio:JournalArticle ;
-        dc:creator      "Košťál, Michael" , "Caldara, Roberto" ;
-        dc:date         "2019" ;
-        dc:title        "Revision of Palaearctic species of the genus Cionus Clairville (Coleoptera: Curculionidae: Cionini)" ;
-        bibo:endPage    "144" ;
-        bibo:issue      "1" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:pubDate    "2019-07-10" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "4631" ;
-        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.3294185> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Reitter_1904>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus_auriculus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "Reitter, 1904: 50" ;
-        dwc:species                   "hortulanus" ;
-        dwc:variety                   "auriculus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Caldara_2013>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus_auriculus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "Reitter, 1904: 50" ;
-        dwc:species                   "hortulanus" ;
-        dwc:variety                   "auriculus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cionus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Curculionidae" ;
-        dwc:genus          "Cionus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cionus_auriculus>
         a                  dwcFP:TaxonName ;
@@ -200,50 +156,12 @@
         dwc:rank           "species" ;
         dwc:species        "auriculus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
+        dwc:family         "Curculionidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Wingelmuller_1937>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "1937: 167" ;
-        dwc:species                   "hortulanus" .
-
-<http://treatment.plazi.org/id/C61E7211FFAF4C37FF4031F6337FB441>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cionus_auriculus_Reitter_1904> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Kostal_1904> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Caldara_2013> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Wingelmuller_1937> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Wingelmuller_1914> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Hoffmann_1958> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Wingelmuller_1921> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Hustache_1932> , <http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_auriculus_Reitter_1904> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4631.1.1> ;
-        dc:creator                "Caldara, Roberto" , "Košťál, Michael" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus> , <http://dx.doi.org/10.5281/zenodo.3294185> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cionus_hortulanus_Wingelmuller_1921>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cionus_hortulanus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Curculionidae" ;
-        dwc:genus                     "Cionus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "1921: 103" ;
-        dwc:species                   "hortulanus" .
+        dwc:rank           "family" .

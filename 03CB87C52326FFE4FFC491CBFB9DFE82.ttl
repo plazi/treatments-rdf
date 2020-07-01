@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Orchidaceae>
@@ -24,11 +25,10 @@
         dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/03CB87C52326FFE4FFC491CBFB9DFE82>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Bartholina_Jarvis_2007> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.250878> ;
-        dc:creator                "Jarvis, Charlie" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Plantae/Orchis_burmanniana> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.250878> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Bartholina> ;
+        dc:creator           "Jarvis, Charlie" .
 
 <http://dx.doi.org/10.5281/zenodo.250878>
         dc:creator  "Jarvis, Charlie" ;
@@ -84,6 +84,11 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "phylum" .
 
+<http://taxon-name.plazi.org/id/Plantae>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Plantae" ;
+        dwc:rank     "kingdom" .
+
 <http://taxon-name.plazi.org/id/Plantae/Liliopsida>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
@@ -92,21 +97,15 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "class" .
 
-<http://taxon-name.plazi.org/id/Plantae>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Plantae" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Plantae/Bartholina_Jarvis_2007>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Plantae/Bartholina> ;
-        dwc:authority      "Jarvis, 2007" ;
-        dwc:authorityName  "Jarvis" ;
-        dwc:authorityYear  "2007" ;
-        dwc:class          "Liliopsida" ;
-        dwc:family         "Orchidaceae" ;
-        dwc:genus          "Bartholina" ;
-        dwc:kingdom        "Plantae" ;
-        dwc:order          "Asparagales" ;
-        dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "genus" .
+<http://taxon-concept.plazi.org/id/Plantae/Orchis_burmanniana_Linnaeus_2007>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Orchis_burmanniana> ;
+        dwc:class                     "Liliopsida" ;
+        dwc:family                    "Orchidaceae" ;
+        dwc:genus                     "Orchis" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Asparagales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Linnaeus" ;
+        dwc:species                   "burmanniana" .

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Malpighiales>
@@ -35,26 +36,21 @@
         dwc:species        "filiformis" .
 
 <http://treatment.plazi.org/id/E51FA5151236F0C84991CA56ECDCD879>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Acalypha_urophylla_Munoz_2018> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Plantae/Acalypha_reticulata_urophylla_Leandri_1948> , <http://taxon-concept.plazi.org/id/Plantae/Acalypha_filiformis_urophylla_Govaerts_2000> , <http://taxon-concept.plazi.org/id/Plantae/Acalypha_goudotiana_Baill_1861> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/phytokeys.108.27284> ;
-        dc:creator                "Munoz, Iris Montero" , "Levin, Geoffrey A." , "Cardiel, Jose Maria" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata_goudotiana> , <http://taxon-name.plazi.org/id/Plantae/Acalypha> , <http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata_urophylla> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/phytokeys.108.27284> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Acalypha_urophylla> ;
+        dc:creator           "Levin, Geoffrey A." , "Cardiel, Jose Maria" , "Munoz, Iris Montero" .
 
-<http://taxon-concept.plazi.org/id/Plantae/Acalypha_urophylla_Munoz_2018>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Acalypha_urophylla> ;
-        dwc:LSID                      "E51FA515-1236-F0C8-4991-CA56ECDCD879" ;
-        dwc:class                     "Magnoliopsida" ;
-        dwc:family                    "Euphorbiaceae" ;
-        dwc:genus                     "Acalypha" ;
-        dwc:kingdom                   "Plantae" ;
-        dwc:order                     "Malpighiales" ;
-        dwc:phylum                    "Tracheophyta" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Boivin ex Baill., Adansonia 1: 273. 1861." ;
-        dwc:species                   "urophylla" .
+<http://taxon-concept.plazi.org/id/Plantae/Acalypha_Munoz_2018>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Acalypha> ;
+        dwc:class         "Magnoliopsida" ;
+        dwc:family        "Euphorbiaceae" ;
+        dwc:genus         "Acalypha" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Malpighiales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "family" .
 
 <http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata_urophylla>
         a                  dwcFP:TaxonName ;
@@ -99,16 +95,6 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "family" .
 
-<http://dx.doi.org/10.3897/phytokeys.108.27284>
-        a               fabio:JournalArticle ;
-        dc:creator      "Levin, Geoffrey A." , "Cardiel, Jose Maria" , "Munoz, Iris Montero" ;
-        dc:date         "2018" ;
-        dc:title        "Nomenclatural review of Acalypha (Euphorbiaceae) of the Western Indian Ocean Region (Madagascar, the Comoros Archipelago, the Mascarene Islands and the Seychelles Archipelago)" ;
-        bibo:endPage    "116" ;
-        bibo:journal    "PhytoKeys" ;
-        bibo:startPage  "85" ;
-        bibo:volume     "108" .
-
 <http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata_goudotiana>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata" ;
@@ -122,6 +108,16 @@
         dwc:species        "reticulata" ;
         dwc:variety        "goudotiana" .
 
+<http://dx.doi.org/10.3897/phytokeys.108.27284>
+        a               fabio:JournalArticle ;
+        dc:creator      "Levin, Geoffrey A." , "Cardiel, Jose Maria" , "Munoz, Iris Montero" ;
+        dc:date         "2018" ;
+        dc:title        "Nomenclatural review of Acalypha (Euphorbiaceae) of the Western Indian Ocean Region (Madagascar, the Comoros Archipelago, the Mascarene Islands and the Seychelles Archipelago)" ;
+        bibo:endPage    "116" ;
+        bibo:journal    "PhytoKeys" ;
+        bibo:startPage  "85" ;
+        bibo:volume     "108" .
+
 <http://taxon-name.plazi.org/id/Plantae/Acalypha>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> ;
@@ -133,6 +129,34 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "genus" .
 
+<http://taxon-name.plazi.org/id/Plantae/Acalypha_filiformis_goudotiana>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Acalypha_filiformis" ;
+        dwc:class          "Magnoliopsida" ;
+        dwc:family         "Euphorbiaceae" ;
+        dwc:genus          "Acalypha" ;
+        dwc:kingdom        "Plantae" ;
+        dwc:order          "Malpighiales" ;
+        dwc:phylum         "Tracheophyta" ;
+        dwc:rank           "variety" ;
+        dwc:species        "filiformis" ;
+        dwc:variety        "goudotiana" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Acalypha_reticulata_urophylla_Munoz_2018>
+        a                       dwcFP:TaxonConcept ;
+        trt:hasTaxonName        <http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata_urophylla> ;
+        dwc:class               "Magnoliopsida" ;
+        dwc:family              "Euphorbiaceae" ;
+        dwc:form                "glabrescens" , "typique" , "vohitrae" , "longa" ;
+        dwc:genus               "Acalypha" ;
+        dwc:infraspecific-rank  "f." , "var." ;
+        dwc:kingdom             "Plantae" ;
+        dwc:order               "Malpighiales" ;
+        dwc:phylum              "Tracheophyta" ;
+        dwc:rank                "variety" , "form" ;
+        dwc:species             "reticulata" ;
+        dwc:variety             "urophylla" .
+
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
@@ -140,6 +164,21 @@
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Acalypha_filiformis_goudotiana_Govaerts_2000>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Acalypha_filiformis_goudotiana> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Euphorbiaceae" ;
+        dwc:genus                     "Acalypha" ;
+        dwc:infraspecific-rank        "var." ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Malpighiales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "variety" ;
+        dwc:scientificNameAuthorship  "Govaerts, 2000" ;
+        dwc:species                   "filiformis" ;
+        dwc:variety                   "goudotiana" .
 
 <http://taxon-name.plazi.org/id/Plantae/Acalypha_goudotiana>
         a                  dwcFP:TaxonName ;
@@ -226,3 +265,17 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Baill, 1861" ;
         dwc:species                   "goudotiana" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Acalypha_reticulata_goudotiana_Munoz_2018>
+        a                       dwcFP:TaxonConcept ;
+        trt:hasTaxonName        <http://taxon-name.plazi.org/id/Plantae/Acalypha_reticulata_goudotiana> ;
+        dwc:class               "Magnoliopsida" ;
+        dwc:family              "Euphorbiaceae" ;
+        dwc:genus               "Acalypha" ;
+        dwc:infraspecific-rank  "var." ;
+        dwc:kingdom             "Plantae" ;
+        dwc:order               "Malpighiales" ;
+        dwc:phylum              "Tracheophyta" ;
+        dwc:rank                "variety" ;
+        dwc:species             "reticulata" ;
+        dwc:variety             "goudotiana" .

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
@@ -30,17 +31,21 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia/Oxyethira_elora>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oxyethira" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Hydroptilidae" ;
-        dwc:genus          "Oxyethira" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Trichoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "elora" .
+<http://taxon-concept.plazi.org/id/Animalia/__>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/> .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oxyethira_elora_Wells_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Oxyethira_elora> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Hydroptilidae" ;
+        dwc:genus         "Oxyethira" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Trichoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "elora" .
 
 <http://dx.doi.org/10.5281/zenodo.279936>
         a               fabio:JournalArticle ;
@@ -78,27 +83,11 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Oxyethira_columba_Neboiss_2012>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxyethira_columba> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Hydroptilidae" ;
-        dwc:genus                     "Oxyethira" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Trichoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Neboiss" ;
-        dwc:species                   "columba" ;
-        dwc:subGenus                  "Trichoglene" .
-
 <http://treatment.plazi.org/id/03D61735AB7BA3385A9A35F8CBCBD9FD>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Oxyethira_columba_Neboiss_2012> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Oxyethira_elora_Olah_2010> , <http://taxon-concept.plazi.org/id/Animalia/Trichoglene_columba_Neboiss_1977> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.279936> ;
-        dc:creator                "Wells, Alice" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Oxyethira_elora> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.279936> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Oxyethira_columba> ;
+        dc:creator           "Wells, Alice" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trichoglene_columba_Neboiss_1977>
         a                             dwcFP:TaxonConcept ;
@@ -112,6 +101,10 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Neboiss, 1977: 43" ;
         dwc:species                   "columba" .
+
+<http://taxon-name.plazi.org/id/Animalia/>
+        a         dwcFP:TaxonName ;
+        dwc:rank  "" .
 
 <http://taxon-name.plazi.org/id/Animalia/Oxyethira_columba>
         a                  dwcFP:TaxonName ;
@@ -135,7 +128,7 @@
         dwc:order                     "Trichoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Olah & Johanson, 2010: 33" ;
+        dwc:scientificNameAuthorship  "Olah & Johanson, 2010" ;
         dwc:species                   "elora" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>

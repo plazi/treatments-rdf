@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Atomaria_wollastoni_Sharp_1867>
@@ -25,10 +26,9 @@
 <http://treatment.plazi.org/id/8F41F428B256D719F5D03235FC4A1EC0>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Atomaria_wollastoni_Sharp_1867> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Atomaria_ochracea_Zimmerman_1869> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Atomaria_wollastoni_Majka_2010> , <http://taxon-concept.plazi.org/id/Plantae/Pinaceae_Majka_2010> , <http://taxon-concept.plazi.org/id/Animalia/Atomaria_ochracea_Zimmerman_1869> , <http://taxon-concept.plazi.org/id/Fungi/Fomitopsis_pinicola_Karst._2010> , <http://taxon-concept.plazi.org/id/Fungi/Polyporaceae_Majka_2010> , <http://taxon-concept.plazi.org/id/Plantae/Picea_mariana_Majka_2010> ;
         trt:publishedIn           <http://doi.org/10.5281/zenodo.3789532> ;
-        dc:creator                "Johnson, Colin" , "Majka, Christopher" , "Langor, David" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Fungi/Fomitopsis_pinicola> , <http://taxon-name.plazi.org/id/Plantae/Picea_mariana> , <http://taxon-name.plazi.org/id/Plantae/Pinaceae> , <http://taxon-name.plazi.org/id/Fungi/Polyporaceae> .
+        dc:creator                "Johnson, Colin" , "Majka, Christopher" , "Langor, David" .
 
 <http://taxon-name.plazi.org/id/Plantae/Pinopsida>
         a                  dwcFP:TaxonName ;
@@ -58,6 +58,19 @@
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Picea_mariana_Majka_2010>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Picea_mariana> ;
+        dwc:class                     "Pinopsida" ;
+        dwc:family                    "Pinaceae" ;
+        dwc:genus                     "Picea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Pinales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "(Mill.)" ;
+        dwc:species                   "mariana" .
 
 <http://taxon-name.plazi.org/id/Fungi/Polyporaceae>
         a                  dwcFP:TaxonName ;
@@ -140,6 +153,19 @@
         dwc:rank           "species" ;
         dwc:species        "wollastoni" .
 
+<http://taxon-concept.plazi.org/id/Fungi/Fomitopsis_pinicola_Karst._2010>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Fungi/Fomitopsis_pinicola> ;
+        dwc:class                     "Agaricomycetes" ;
+        dwc:family                    "Fomitopsidaceae" ;
+        dwc:genus                     "Fomitopsis" ;
+        dwc:kingdom                   "Fungi" ;
+        dwc:order                     "Polyporales" ;
+        dwc:phylum                    "Basidiomycota" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "(Fr.) Karst." ;
+        dwc:species                   "pinicola" .
+
 <http://taxon-name.plazi.org/id/Plantae/Pinales>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Pinopsida> ;
@@ -158,6 +184,21 @@
         dwc:phylum         "Basidiomycota" ;
         dwc:rank           "order" .
 
+<http://taxon-concept.plazi.org/id/Fungi/Polyporaceae_Majka_2010>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Fungi/Polyporaceae> ;
+        dwc:class         "Agaricomycetes" ;
+        dwc:family        "Polyporaceae" ;
+        dwc:kingdom       "Fungi" ;
+        dwc:order         "Polyporales" ;
+        dwc:phylum        "Basidiomycota" ;
+        dwc:rank          "family" .
+
+<http://taxon-name.plazi.org/id/Fungi>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Fungi" ;
+        dwc:rank     "kingdom" .
+
 <http://taxon-name.plazi.org/id/Fungi/Fomitopsidaceae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Polyporales> ;
@@ -168,11 +209,6 @@
         dwc:phylum         "Basidiomycota" ;
         dwc:rank           "family" .
 
-<http://taxon-name.plazi.org/id/Fungi>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Fungi" ;
-        dwc:rank     "kingdom" .
-
 <http://taxon-name.plazi.org/id/Fungi/Agaricomycetes>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Basidiomycota> ;
@@ -180,6 +216,16 @@
         dwc:kingdom        "Fungi" ;
         dwc:phylum         "Basidiomycota" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinaceae_Majka_2010>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+        dwc:class         "Pinopsida" ;
+        dwc:family        "Pinaceae" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Pinales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "family" .
 
 <http://taxon-name.plazi.org/id/Plantae/Picea>
         a                  dwcFP:TaxonName ;

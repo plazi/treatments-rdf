@@ -11,27 +11,36 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://treatment.plazi.org/id/EF69D43AFFA5FFEBFF74FAEAFE67FA00>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Anastatus_gastropachae_Ashmead_1904> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Yu_1998> , <http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Sheng_1998> , <http://taxon-concept.plazi.org/id/Animalia/Anastatus_bifasciatus_Geoffroy_1785> , <http://taxon-concept.plazi.org/id/Animalia/Anastatus_bifasciatus_Ishii_1938> , <http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Peng_2017> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3797143> ;
-        dc:creator                "Xiang, Jiawei" , "Gibson, Gary A. P." , "Tang, Lu" , "Peng, Lingfei" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.3772903> , <http://dx.doi.org/10.5281/zenodo.3772929> .
-
-<http://taxon-name.plazi.org/id/Animalia/Anastatus_bifasciatus>
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anastatus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Eupelmidae" ;
-        dwc:genus          "Anastatus" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "bifasciatus" .
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Yu_1998>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_huangi> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Eupelmidae" ;
+        dwc:genus                     "Anastatus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Sheng and Yu, 1998: 5 - 7" ;
+        dwc:species                   "huangi" .
 
 <http://doi.org/10.5281/zenodo.3797143>
         a               fabio:JournalArticle ;
@@ -46,9 +55,23 @@
         bibo:volume     "4767" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.3772903> , <http://dx.doi.org/10.5281/zenodo.3772929> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Peng_2017>
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
+<http://dx.doi.org/10.5281/zenodo.3772903>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 1. Anastatus (Anastatus) bifasciatus female. A, Dorsal habitus (2018-72); B, lateral habitus (2018-72); C, antenna (2018-72) [insert: pedicel and basal two flagellomeres]; D, fore wing (2018-73); E, frontal head (2018-72); F, base of fore wing (2018-73); G, mesonotum (2018-72); H, profemur, posterior view (2018-82); I, mesotibial apical spur and mesotarsus (2018-82).Abbreviations: aod = longitudinal diameter of anterior ocellus, bac = basal cell, cua = cubital area, flx = flagellomere number, mcf = mediocubital fold, mdf = medial fold, osd = distance between anterior ocellus and scrobal depression, pdl = pedicel, vna = vanal area." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/3772903/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Anastatus_bifasciatus_Peng_2020>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_huangi> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_bifasciatus> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Eupelmidae" ;
         dwc:genus                     "Anastatus" ;
@@ -56,8 +79,33 @@
         dwc:order                     "Hymenoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sheng and Yu, 1998: 5 - 7" ;
-        dwc:species                   "huangi" .
+        dwc:scientificNameAuthorship  "(Geoffroy)" ;
+        dwc:species                   "bifasciatus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Anastatus_bifasciatus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anastatus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Eupelmidae" ;
+        dwc:genus          "Anastatus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "bifasciatus" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://treatment.plazi.org/id/EF69D43AFFA5FFEBFF74FAEAFE67FA00>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Anastatus_gastropachae_Ashmead_1904> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Anastatus_bifasciatus_Peng_2020> , <http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Yu_1998> ;
+        trt:publishedIn           <http://doi.org/10.5281/zenodo.3797143> ;
+        dc:creator                "Xiang, Jiawei" , "Gibson, Gary A. P." , "Tang, Lu" , "Peng, Lingfei" ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.3772903> , <http://dx.doi.org/10.5281/zenodo.3772929> .
 
 <http://taxon-name.plazi.org/id/Animalia/Eupelmidae>
         a                  dwcFP:TaxonName ;
@@ -81,36 +129,6 @@
         dwc:rank           "species" ;
         dwc:species        "huangi" .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Sheng_1998>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_huangi> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Eupelmidae" ;
-        dwc:genus                     "Anastatus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sheng and Yu, 1998: 5 - 7" ;
-        dwc:species                   "huangi" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
 <http://taxon-name.plazi.org/id/Animalia/Anastatus_gastropachae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anastatus" ;
@@ -123,9 +141,9 @@
         dwc:rank           "species" ;
         dwc:species        "gastropachae" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Anastatus_bifasciatus_Geoffroy_1785>
+<http://taxon-concept.plazi.org/id/Animalia/Anastatus_gastropachae_Ashmead_1904>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_bifasciatus> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_gastropachae> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Eupelmidae" ;
         dwc:genus                     "Anastatus" ;
@@ -133,8 +151,9 @@
         dwc:order                     "Hymenoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "(Geoffroy)" ;
-        dwc:species                   "bifasciatus" .
+        dwc:scientificNameAuthorship  "Ashmead, 1904" ;
+        dwc:species                   "gastropachae" ;
+        dwc:subGenus                  "Anastatus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Anastatus>
         a                  dwcFP:TaxonName ;
@@ -151,60 +170,3 @@
         a                        fabio:Figure ;
         dc:description           "FIGURE 14. Anastatus (Anastatus) gastropachae female. A, Lateral habitus (2019-38); B, dorsal habitus (2019-37); C, head frontal (2019-40); D, antenna (2019-424) [insert: apical three funiculars and clava, vertical lines indicate length of antennomeres]; E, dorsal mesosoma (2019-37); F, lateral mesosoma (2019-38); G, mesotibial apical spur and mesotarsus (2019-42); H, fore wing (2019-39); I, fore wing (2019-41)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/3772929/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://dx.doi.org/10.5281/zenodo.3772903>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 1. Anastatus (Anastatus) bifasciatus female. A, Dorsal habitus (2018-72); B, lateral habitus (2018-72); C, antenna (2018-72) [insert: pedicel and basal two flagellomeres]; D, fore wing (2018-73); E, frontal head (2018-72); F, base of fore wing (2018-73); G, mesonotum (2018-72); H, profemur, posterior view (2018-82); I, mesotibial apical spur and mesotarsus (2018-82).Abbreviations: aod = longitudinal diameter of anterior ocellus, bac = basal cell, cua = cubital area, flx = flagellomere number, mcf = mediocubital fold, mdf = medial fold, osd = distance between anterior ocellus and scrobal depression, pdl = pedicel, vna = vanal area." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/3772903/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Anastatus_gastropachae_Ashmead_1904>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_gastropachae> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Eupelmidae" ;
-        dwc:genus                     "Anastatus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Ashmead, 1904" ;
-        dwc:species                   "gastropachae" ;
-        dwc:subGenus                  "Anastatus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Anastatus_huangi_Yu_1998>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_huangi> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Eupelmidae" ;
-        dwc:genus                     "Anastatus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sheng and Yu, 1998: 5 - 7" ;
-        dwc:species                   "huangi" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Anastatus_bifasciatus_Ishii_1938>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anastatus_bifasciatus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Eupelmidae" ;
-        dwc:genus                     "Anastatus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "(Geoffroy)" ;
-        dwc:species                   "bifasciatus" .

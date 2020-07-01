@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -35,12 +36,11 @@
         fabio:hasRepresentation  "https://zenodo.org/record/556054/files/figure.png" .
 
 <http://treatment.plazi.org/id/03DD87FCFF8996499B95FC2A4B1DFE90>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hadropenaeus_modestus_Alves-Júnior_2017> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Haliporus_modestus_Bouvier_1905> , <http://taxon-concept.plazi.org/id/Animalia/Haliporus_modestus_Edwards_1909> , <http://taxon-concept.plazi.org/id/Animalia/Hymenopenaeus_modestus_Smith_1885> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4254.4.4> ;
-        dc:creator                "Souza-Filho, Jesser F." , "Alves-Júnior, Flavio De Almeida" , "Araújo, Marina De Sá Leitão Câmara De" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Hymenopenaeus_modestus> , <http://dx.doi.org/10.5281/zenodo.556054> , <http://dx.doi.org/10.5281/zenodo.556055> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <https://doi.org/10.11646/zootaxa.4254.4.4> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Hadropenaeus_modestus> ;
+        dc:creator           "Souza-Filho, Jesser F." , "Araújo, Marina De Sá Leitão Câmara De" , "Alves-Júnior, Flavio De Almeida" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.556055> , <http://dx.doi.org/10.5281/zenodo.556054> .
 
 <http://taxon-name.plazi.org/id/Animalia/Hadropenaeus_modestus>
         a                  dwcFP:TaxonName ;
@@ -53,6 +53,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "modestus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hymenopenaeus_modestus_Alves-Júnior_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hymenopenaeus_modestus> ;
+        dwc:class         "Malacostraca" ;
+        dwc:family        "Solenoceridae" ;
+        dwc:genus         "Hymenopenaeus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Decapoda" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "modestus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -68,34 +80,6 @@
         dwc:order          "Decapoda" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Haliporus_modestus_Edwards_1909>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Haliporus_modestus> ;
-        dwc:class                     "Malacostraca" ;
-        dwc:family                    "Solenoceridae" ;
-        dwc:genus                     "Haliporus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Decapoda" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Bouvier, 1905:980" ;
-        dwc:species                   "modestus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hadropenaeus_modestus_Alves-Júnior_2017>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Hadropenaeus_modestus> ;
-        dwc:authority      "Alves-Júnior, 2017" ;
-        dwc:authorityName  "Alves-Júnior" ;
-        dwc:authorityYear  "2017" ;
-        dwc:class          "Malacostraca" ;
-        dwc:family         "Solenoceridae" ;
-        dwc:genus          "Hadropenaeus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Decapoda" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "modestus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hadropenaeus>
         a                  dwcFP:TaxonName ;
@@ -132,19 +116,6 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Bouvier, 1905:980" ;
-        dwc:species                   "modestus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hymenopenaeus_modestus_Smith_1885>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hymenopenaeus_modestus> ;
-        dwc:class                     "Malacostraca" ;
-        dwc:family                    "Solenoceridae" ;
-        dwc:genus                     "Hymenopenaeus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Decapoda" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Smith , 1885" ;
         dwc:species                   "modestus" .
 
 <https://doi.org/10.11646/zootaxa.4254.4.4>

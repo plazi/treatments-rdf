@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Polypodiopsida>
@@ -183,12 +184,10 @@
         bibo:volume     "3786" .
 
 <http://treatment.plazi.org/id/03CE87C7AA0CFFCAFF3AFB28FE01F95E>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hemerodromiinae_Ivković_2014> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Chelifera_vockerothi_Vaillant_1973> , <http://taxon-concept.plazi.org/id/Plantae/Pteris_aquiline_Strobl_1899> , <http://taxon-concept.plazi.org/id/Animalia/Hemerodromia_baetica_Collin_1927> , <http://taxon-concept.plazi.org/id/Animalia/Chelifera_stigmatica_Schiner_1862> ;
-        trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3786.5.3> ;
-        dc:creator                "Sainz-Bariaín, Marta" , "Zamora-Muñoz, Carmen" , "Ivković, Marija" , "Sinclair, Bradley J." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Hemerodromia_planti> , <http://taxon-name.plazi.org/id/Plantae/Nevada> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3786.5.3> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Hemerodromiinae> ;
+        dc:creator           "Sinclair, Bradley J." , "Sainz-Bariaín, Marta" , "Zamora-Muñoz, Carmen" , "Ivković, Marija" .
 
 <http://taxon-name.plazi.org/id/Plantae/Pteridaceae>
         a                  dwcFP:TaxonName ;
@@ -207,6 +206,18 @@
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemerodromia_planti>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hemerodromia" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Empididae" ;
+        dwc:genus          "Hemerodromia" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "planti" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chelifera>
         a                  dwcFP:TaxonName ;
@@ -238,31 +249,18 @@
         dwc:rank           "species" ;
         dwc:species        "baetica" .
 
-<http://taxon-name.plazi.org/id/Animalia/Hemerodromia_planti>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hemerodromia" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Empididae" ;
-        dwc:genus          "Hemerodromia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "planti" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hemerodromiinae_Ivković_2014>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Hemerodromiinae> ;
-        dwc:authority      "Ivković, 2014" ;
-        dwc:authorityName  "Ivković" ;
-        dwc:authorityYear  "2014" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Empididae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subFamily" ;
-        dwc:subFamily      "Hemerodromiinae" .
+<http://taxon-concept.plazi.org/id/Animalia/Hemerodromia_planti_Ivkovic_2014>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hemerodromia_planti> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Empididae" ;
+        dwc:genus                     "Hemerodromia" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Ivkovic & Sinclair" ;
+        dwc:species                   "planti" .
 
 <http://taxon-name.plazi.org/id/Plantae/Brassicaceae>
         a                  dwcFP:TaxonName ;
@@ -273,6 +271,17 @@
         dwc:order          "Brassicales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Nevada_Ivković_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Nevada> ;
+        dwc:class         "Magnoliopsida" ;
+        dwc:family        "Brassicaceae" ;
+        dwc:genus         "Nevada" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Brassicales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;

@@ -11,15 +11,14 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://treatment.plazi.org/id/03D687CA24623B45FF65FD4EE5117E46>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Ceratothripoides_claratris_Shumsher_2009> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Taeniothrips_claratris_Shumsher_1946> , <http://taxon-concept.plazi.org/id/Animalia/Mycterothrips_moultoni_Seshadri_1954> , <http://taxon-concept.plazi.org/id/Animalia/Mycterothrips_moultoni_Bhatti_2003> , <http://taxon-concept.plazi.org/id/Animalia/Ceratothrips_reticulatus_Reyes_1994> , <http://taxon-concept.plazi.org/id/Animalia/Mycterothrips_moultoni_Reyes_1994> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.190287> ;
-        dc:creator                "Nickle, David A." , "Mound, Laurence A." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Taeniothrips_claratris> , <http://taxon-name.plazi.org/id/Animalia/Taeniothrips_cameroni> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.190287> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Ceratothripoides_claratris> ;
+        dc:creator           "Nickle, David A." , "Mound, Laurence A." .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -52,6 +51,10 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
+<http://taxon-concept.plazi.org/id/Animalia/__>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/> .
+
 <http://taxon-name.plazi.org/id/Animalia/Mycterothrips>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thripidae> ;
@@ -63,42 +66,29 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ceratothrips>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thripidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Thripidae" ;
-        dwc:genus          "Ceratothrips" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Thysanoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Taeniothrips_claratris_Mound_2009>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Taeniothrips_claratris> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Thripidae" ;
+        dwc:genus         "Taeniothrips" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Thysanoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "claratris" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Ceratothrips_reticulatus_Reyes_1994>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ceratothrips_reticulatus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Thripidae" ;
-        dwc:genus                     "Ceratothrips" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Reyes, 1994: 183" ;
-        dwc:species                   "reticulatus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Mycterothrips_moultoni_Reyes_1994>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mycterothrips_moultoni> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Thripidae" ;
-        dwc:genus                     "Mycterothrips" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Seshadri & Ananthakrishnan, 1954: 213" ;
-        dwc:species                   "moultoni" .
+<http://taxon-concept.plazi.org/id/Animalia/Taeniothrips_cameroni_Mound_2009>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Taeniothrips_cameroni> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Thripidae" ;
+        dwc:genus         "Taeniothrips" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Thysanoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "cameroni" .
 
 <http://taxon-name.plazi.org/id/Animalia/Thysanoptera>
         a                  dwcFP:TaxonName ;
@@ -122,6 +112,13 @@
         dwc:scientificNameAuthorship  "Seshadri & Ananthakrishnan, 1954: 213" ;
         dwc:species                   "moultoni" .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
 <http://taxon-name.plazi.org/id/Animalia/Ceratothripoides>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thripidae> ;
@@ -133,49 +130,9 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ceratothrips_reticulatus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ceratothrips" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Thripidae" ;
-        dwc:genus          "Ceratothrips" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Thysanoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "reticulatus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ceratothripoides_claratris_Shumsher_2009>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ceratothripoides_claratris> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Thripidae" ;
-        dwc:genus                     "Ceratothripoides" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Shumsher" ;
-        dwc:species                   "claratris" .
-
-<http://taxon-name.plazi.org/id/Animalia/Taeniothrips_cameroni>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Taeniothrips" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Thripidae" ;
-        dwc:genus          "Taeniothrips" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Thysanoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "cameroni" .
+<http://taxon-name.plazi.org/id/Animalia/>
+        a         dwcFP:TaxonName ;
+        dwc:rank  "" .
 
 <http://taxon-name.plazi.org/id/Animalia/Mycterothrips_moultoni>
         a                  dwcFP:TaxonName ;
@@ -188,6 +145,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "moultoni" .
+
+<http://taxon-name.plazi.org/id/Animalia/Ceratothripoides_claratris>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ceratothripoides" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Thripidae" ;
+        dwc:genus          "Ceratothripoides" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Thysanoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "claratris" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -204,27 +173,14 @@
         bibo:startPage  "57" ;
         bibo:volume     "2230" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ceratothripoides_claratris>
+<http://taxon-name.plazi.org/id/Animalia/Taeniothrips_cameroni>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ceratothripoides" ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Taeniothrips" ;
         dwc:class          "Insecta" ;
         dwc:family         "Thripidae" ;
-        dwc:genus          "Ceratothripoides" ;
+        dwc:genus          "Taeniothrips" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "claratris" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Mycterothrips_moultoni_Bhatti_2003>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mycterothrips_moultoni> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Thripidae" ;
-        dwc:genus                     "Mycterothrips" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Thysanoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Seshadri & Ananthakrishnan, 1954: 213" ;
-        dwc:species                   "moultoni" .
+        dwc:species        "cameroni" .

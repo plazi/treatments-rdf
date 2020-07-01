@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -50,17 +51,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Sphinx>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Sphingidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Sphingidae" ;
-        dwc:genus          "Sphinx" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Lepidoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -73,22 +63,9 @@
 <http://treatment.plazi.org/id/C57087809126F3384197F880FD5AD7A9>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Bembecia_Hubner_1819> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Bembecia_Westwood_1840> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Sphinx_ichneumoniformis_Gorbunov_2017> , <http://taxon-concept.plazi.org/id/Animalia/Dipsosphecia_Pung._2017> , <http://taxon-concept.plazi.org/id/Animalia/Bembecia_Gorbunov_2017> ;
         trt:publishedIn           <https://doi.org/10.11646/zootaxa.4273.4.6> ;
-        dc:creator                "Marusov, Anatoly A." , "Krupitsky, Anatoly V." , "Gorbunov, Oleg G." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Sphinx_ichneumoniformis> , <http://taxon-name.plazi.org/id/Animalia/Bembecia> , <http://taxon-name.plazi.org/id/Animalia/Dipsosphecia> .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphinx_ichneumoniformis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Sphinx" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Sphingidae" ;
-        dwc:genus          "Sphinx" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Lepidoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "ichneumoniformis" .
+        dc:creator                "Marusov, Anatoly A." , "Krupitsky, Anatoly V." , "Gorbunov, Oleg G." .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -116,27 +93,40 @@
         bibo:startPage  "559" ;
         bibo:volume     "4273" .
 
-<http://taxon-name.plazi.org/id/Animalia/Sphingidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Sphingidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Lepidoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Bembecia_Westwood_1840>
+<http://taxon-concept.plazi.org/id/Animalia/Dipsosphecia_Pung._2017>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Bembecia> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dipsosphecia> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Sesiidae" ;
-        dwc:genus                     "Bembecia" ;
+        dwc:genus                     "Dipsosphecia" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "Lepidoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Westwood 1840" .
+        dwc:scientificNameAuthorship  "Pung." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphinx_ichneumoniformis_Gorbunov_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Sphinx_ichneumoniformis> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Sphingidae" ;
+        dwc:genus         "Sphinx" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Lepidoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "ichneumoniformis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bembecia_Gorbunov_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Bembecia> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Sesiidae" ;
+        dwc:genus         "Bembecia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Lepidoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Bembecia_Hubner_1819>
         a                             dwcFP:TaxonConcept ;

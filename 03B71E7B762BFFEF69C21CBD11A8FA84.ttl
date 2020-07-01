@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemipenthes>
@@ -24,31 +25,13 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Hemipenthes_seminigra_Loew_2009>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hemipenthes_seminigra> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Bombyliidae" ;
-        dwc:genus                     "Hemipenthes" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Loew" ;
-        dwc:species                   "seminigra" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Anthrax_eumenes_Painter_1962>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anthrax_eumenes> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Bombyliidae" ;
-        dwc:genus                     "Anthrax" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Osten Sacken, 1886b: 115" ;
-        dwc:species                   "eumenes" .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Anthrax>
         a                  dwcFP:TaxonName ;
@@ -86,6 +69,13 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
+<http://treatment.plazi.org/id/03B71E7B762BFFEF69C21CBD11A8FA84>
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.187152> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Hemipenthes_seminigra> ;
+        dc:creator           "Ávalos-Hernández, Omar" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.187178> , <http://dx.doi.org/10.5281/zenodo.187174> .
+
 <http://taxon-name.plazi.org/id/Animalia/Anthrax_eumenes>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anthrax" ;
@@ -97,27 +87,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "eumenes" .
-
-<http://treatment.plazi.org/id/03B71E7B762BFFEF69C21CBD11A8FA84>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hemipenthes_seminigra_Loew_2009> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Anthrax_eumenes_Osten_1886> , <http://taxon-concept.plazi.org/id/Animalia/Anthrax_eumenes_Painter_1962> , <http://taxon-concept.plazi.org/id/Animalia/Anthrax_eumenes_Sacken_1886> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.187152> ;
-        dc:creator                "Ávalos-Hernández, Omar" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Villa_eumenes> , <http://taxon-name.plazi.org/id/Animalia/Hemipenthes_eumenes> , <http://dx.doi.org/10.5281/zenodo.187178> , <http://dx.doi.org/10.5281/zenodo.187174> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Anthrax_eumenes_Osten_1886>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anthrax_eumenes> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Bombyliidae" ;
-        dwc:genus                     "Anthrax" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Osten Sacken, 1886b: 115" ;
-        dwc:species                   "eumenes" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -170,11 +139,3 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .

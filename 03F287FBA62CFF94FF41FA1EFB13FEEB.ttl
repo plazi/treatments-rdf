@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
@@ -24,12 +25,10 @@
         dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/03F287FBA62CFF94FF41FA1EFB13FEEB>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Phymatodes_hirtellus_LeConte_2010> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Phymatodes_hirtellus_densipennis_Casey_1912> , <http://taxon-concept.plazi.org/id/Animalia/Callidium_hirtellum_LeConte_1873> , <http://taxon-concept.plazi.org/id/Animalia/Phymatodes_ursae_Knull_1940> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.294195> ;
-        dc:creator                "Swift, Ian P." , "Ray, Ann M." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Plantae/Pinaceae> , <http://taxon-name.plazi.org/id/Plantae/Pinus> , <http://taxon-name.plazi.org/id/Animalia/America> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.294195> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Phymatodes_hirtellus> ;
+        dc:creator           "Ray, Ann M." , "Swift, Ian P." .
 
 <http://taxon-name.plazi.org/id/Animalia/Phymatodes_hirtellus>
         a                  dwcFP:TaxonName ;
@@ -68,18 +67,6 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
-
-<http://taxon-name.plazi.org/id/Animalia/Phymatodes_ursae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phymatodes" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cerambycidae" ;
-        dwc:genus          "Phymatodes" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "ursae" .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
@@ -123,18 +110,26 @@
         dwc:scientificNameAuthorship  "LeConte, 1873:172" ;
         dwc:species                   "hirtellum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Phymatodes_ursae_Knull_1940>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Phymatodes_ursae> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cerambycidae" ;
-        dwc:genus                     "Phymatodes" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Knull, 1940:556" ;
-        dwc:species                   "ursae" .
+<http://taxon-concept.plazi.org/id/Plantae/Pinus_Swift_2010>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Pinus> ;
+        dwc:class         "Pinopsida" ;
+        dwc:family        "Pinaceae" ;
+        dwc:genus         "Pinus" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Pinales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "genus" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinaceae_Swift_2010>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+        dwc:class         "Pinopsida" ;
+        dwc:family        "Pinaceae" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Pinales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/America>
         a                  dwcFP:TaxonName ;
@@ -188,6 +183,17 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
 
+<http://taxon-concept.plazi.org/id/Animalia/America_Swift_2010>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/America> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cerambycidae" ;
+        dwc:genus         "America" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -231,19 +237,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "hirtellum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Phymatodes_hirtellus_LeConte_2010>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Phymatodes_hirtellus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cerambycidae" ;
-        dwc:genus                     "Phymatodes" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "LeConte" ;
-        dwc:species                   "hirtellus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Pinaceae>
         a                  dwcFP:TaxonName ;

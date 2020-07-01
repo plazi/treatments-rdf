@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -28,6 +29,20 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Calisto_aquilum_occidentalis_Nunez_2013>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Calisto_aquilum_occidentalis> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Nymphalidae" ;
+        dwc:genus                     "Calisto" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Lepidoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "subSpecies" ;
+        dwc:scientificNameAuthorship  "Nunez" ;
+        dwc:species                   "aquilum" ;
+        dwc:subSpecies                "occidentalis" .
+
 <http://dx.doi.org/10.5281/zenodo.249428>
         a                        fabio:Figure ;
         dc:description           "FIGURES 33 – 36. Geographical distribution of new species of Cuban Calisto. 33 — Map of Cuba showing areas where the new taxa were found. 34 — Middle rectangle in figure 33, localities where Calisto torrei sp. n. (black circles) and Calisto aquilum sp. n. (white stars) have been found in the Guamuhaya massif. 35 — Rigth rectangle in figure 33, localities where Calisto dissimulatum sp. n. has been found in the Sierra Maestra and Nipe – Sagua – Baracoa massifs. 36 — Left rectangle in figure 33, localities where Calistoaquilum occidentalis ssp. n. has been found in the middle portion of the Guaniguanico massif." ;
@@ -43,11 +58,11 @@
         dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/03C287DEFFD0931FFF47FACA01D0FD57>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3669.4.5> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Calisto_aquilum_occidentalis> ;
-        dc:creator           "Matos- Maraví, Pável F." , "Wahlberg, Niklas" , "Aguila, Rayner Núñez" ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.249428> , <http://dx.doi.org/10.5281/zenodo.249433> , <http://dx.doi.org/10.5281/zenodo.249425> , <http://dx.doi.org/10.5281/zenodo.249427> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Calisto_aquilum_occidentalis_Nunez_2013> ;
+        trt:publishedIn          <http://dx.doi.org/10.11646/zootaxa.3669.4.5> ;
+        dc:creator               "Matos- Maraví, Pável F." , "Wahlberg, Niklas" , "Aguila, Rayner Núñez" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.249428> , <http://dx.doi.org/10.5281/zenodo.249433> , <http://dx.doi.org/10.5281/zenodo.249425> , <http://dx.doi.org/10.5281/zenodo.249427> .
 
 <http://dx.doi.org/10.11646/zootaxa.3669.4.5>
         a               fabio:JournalArticle ;
@@ -86,18 +101,16 @@
         dc:description           "FIGURES 23 – 32. Shape and location of androconial patch, and male and female genitalia of Cuban Calisto. Androconial patch: 23 — Calisto torrei sp. n., 24 — Calisto dissimulatum sp. n., 25 — Calisto aquilum sp. n. Male genitalia, from top to bottom main body in lateral view, aedeagus in lateral view, and aedeagus in dorsal view (scale bar 0.5 mm): 26 — Calisto torrei sp. n., 27 — Calisto dissimulatum sp. n., 28 — Calisto aquilum sp. n. Female genitalia, ventral view (scale bar 0.5 mm): 29 — Calisto torrei sp. n., 30 — Calisto dissimulatum sp. n., 31 — Calisto aquilum sp. n. 32 — Calisto aquilum occidentalis ssp. n." ;
         fabio:hasRepresentation  "https://zenodo.org/record/249427/files/figure.png" .
 
-<http://taxon-name.plazi.org/id/Animalia/Calisto_aquilum_occidentalis>
+<http://taxon-name.plazi.org/id/Animalia/Calisto>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Calisto_aquilum" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nymphalidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Nymphalidae" ;
         dwc:genus          "Calisto" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Lepidoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subSpecies" ;
-        dwc:species        "aquilum" ;
-        dwc:subSpecies     "occidentalis" .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Calisto_aquilum>
         a                  dwcFP:TaxonName ;
@@ -111,16 +124,18 @@
         dwc:rank           "species" ;
         dwc:species        "aquilum" .
 
-<http://taxon-name.plazi.org/id/Animalia/Calisto>
+<http://taxon-name.plazi.org/id/Animalia/Calisto_aquilum_occidentalis>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nymphalidae> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Calisto_aquilum" ;
         dwc:class          "Insecta" ;
         dwc:family         "Nymphalidae" ;
         dwc:genus          "Calisto" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Lepidoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
+        dwc:rank           "subSpecies" ;
+        dwc:species        "aquilum" ;
+        dwc:subSpecies     "occidentalis" .
 
 <http://dx.doi.org/10.5281/zenodo.249425>
         a                        fabio:Figure ;

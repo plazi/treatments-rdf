@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.252967>
@@ -49,12 +50,11 @@
         dwc:species                   "puschi" .
 
 <http://treatment.plazi.org/id/373F87D7FF15FF02FF5FAD13FC00402A>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Harzhauser_2016> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Conus_Partsch-Hornes_1851> , <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Atanackovic_1963> , <http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Landau_2013> , <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Strausz_1962> , <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Voia_2001> , <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Pavlovsky_1957> , <http://taxon-concept.plazi.org/id/Animalia/Conus_haueri_Hornes_1851> , <http://taxon-concept.plazi.org/id/Animalia/Conus_extensus_Hornes_1851> , <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Chira_2001> , <http://taxon-concept.plazi.org/id/Animalia/Conus_elatus_Sacco_1893> , <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Davoli_1972> , <http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Kovacs_2013> ;
-        trt:publishedIn           <http://doi.org/10.11646/zootaxa.4210.1.1> ;
-        dc:creator                "Harzhauser, Mathias" , "Landau, Bernard" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.252995> , <http://taxon-name.plazi.org/id/Animalia/__haueriana> , <http://dx.doi.org/10.5281/zenodo.252967> , <http://taxon-name.plazi.org/id/Animalia/Plagioconus> , <http://taxon-name.plazi.org/id/Animalia/Conus_elatus> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://doi.org/10.11646/zootaxa.4210.1.1> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Plagioconus> ;
+        dc:creator           "Landau, Bernard" , "Harzhauser, Mathias" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.252967> , <http://dx.doi.org/10.5281/zenodo.252995> .
 
 <http://taxon-name.plazi.org/id/Animalia/Conus_elatus>
         a                  dwcFP:TaxonName ;
@@ -67,6 +67,14 @@
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
         dwc:species        "elatus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+        dwc:class          "Gastropoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Pavlovsky_1957>
         a                             dwcFP:TaxonConcept ;
@@ -82,19 +90,6 @@
         dwc:species                   "puschi" ;
         dwc:subGenus                  "Chelyconus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-        dwc:class          "Gastropoda" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" .
-
-<http://taxon-name.plazi.org/id/Animalia/__haueriana>
-        a            dwcFP:TaxonName ;
-        dwc:rank     "variety" ;
-        dwc:variety  "haueriana" .
-
 <http://taxon-name.plazi.org/id/Animalia/Plagioconus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Conidae" ;
@@ -105,31 +100,6 @@
         dwc:order          "Neogastropoda" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Conus_extensus_Hornes_1851>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_extensus> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Conidae" ;
-        dwc:genus                     "Conus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Hornes, 1851" ;
-        dwc:species                   "extensus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Conus_haueri>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Conus" ;
-        dwc:class          "Gastropoda" ;
-        dwc:family         "Conidae" ;
-        dwc:genus          "Conus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "species" ;
-        dwc:species        "haueri" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Conus_Partsch-Hornes_1851>
         a                             dwcFP:TaxonConcept ;
@@ -142,31 +112,6 @@
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "genus" ;
         dwc:scientificNameAuthorship  "Haueri Partsch-Hornes 1851: 34" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Conus_haueri_Hornes_1851>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_haueri> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Conidae" ;
-        dwc:genus                     "Conus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "in Hornes 1851" ;
-        dwc:species                   "haueri" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Landau_2013>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Plagioconus> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Conidae" ;
-        dwc:genus                     "Plagioconus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Landau et al . 2013" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Atanackovic_1963>
         a                             dwcFP:TaxonConcept ;
@@ -182,6 +127,17 @@
         dwc:species                   "puschi" ;
         dwc:subGenus                  "Chelyconus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Harzhauser_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Plagioconus> ;
+        dwc:class         "Gastropoda" ;
+        dwc:family        "Conidae" ;
+        dwc:genus         "Plagioconus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Neogastropoda" ;
+        dwc:phylum        "Mollusca" ;
+        dwc:rank          "genus" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Strausz_1962>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_puschi> ;
@@ -196,19 +152,19 @@
         dwc:species                   "puschi" ;
         dwc:subGenus                  "Chelyconus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Harzhauser_2016>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Plagioconus> ;
-        dwc:authority      "Harzhauser, 2016" ;
-        dwc:authorityName  "Harzhauser" ;
-        dwc:authorityYear  "2016" ;
-        dwc:class          "Gastropoda" ;
-        dwc:family         "Conidae" ;
-        dwc:genus          "Plagioconus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti_1847>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_puschi> ;
+        dwc:class                     "Gastropoda" ;
+        dwc:family                    "Conidae" ;
+        dwc:genus                     "Conus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Neogastropoda" ;
+        dwc:phylum                    "Mollusca" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Michelotti, 1847" ;
+        dwc:species                   "puschi" ;
+        dwc:subGenus                  "Chelyconus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
         a                  dwcFP:TaxonName ;
@@ -229,20 +185,6 @@
         dwc:phylum         "Mollusca" ;
         dwc:rank           "family" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Voia_2001>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_puschi> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Conidae" ;
-        dwc:genus                     "Conus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Michelotti-Chira & Voia 2001: 156" ;
-        dwc:species                   "puschi" ;
-        dwc:subGenus                  "Chelyconus" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Conus_puschi_Michelotti-Chira_2001>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_puschi> ;
@@ -257,48 +199,23 @@
         dwc:species                   "puschi" ;
         dwc:subGenus                  "Chelyconus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Plagioconus_Kovacs_2013>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Plagioconus> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Conidae" ;
-        dwc:genus                     "Plagioconus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Kovács & Vicián 2013" .
+<http://taxon-concept.plazi.org/id/Animalia/Conus_elatus_Harzhauser_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Conus_elatus> ;
+        dwc:class         "Gastropoda" ;
+        dwc:family        "Conidae" ;
+        dwc:genus         "Conus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Neogastropoda" ;
+        dwc:phylum        "Mollusca" ;
+        dwc:rank          "species" ;
+        dwc:species       "elatus" ;
+        dwc:subGenus      "Leptoconus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Conus_extensus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Conus" ;
-        dwc:class          "Gastropoda" ;
-        dwc:family         "Conidae" ;
-        dwc:genus          "Conus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "species" ;
-        dwc:species        "extensus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Conus_elatus_Sacco_1893>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conus_elatus> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Conidae" ;
-        dwc:genus                     "Conus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sacco 1893a" ;
-        dwc:species                   "elatus" ;
-        dwc:subGenus                  "Leptoconus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -87,11 +88,12 @@
         dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/039D1968FFBAAB01FF02FE41FAFA71CE>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.206060> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Clunio_jonesi> ;
-        dc:creator           "Andersen, Trond" , "Saether, Ole A." ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.206066> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Clunio_jonesi_Saether_2011> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Clunio_africanus_Freeman_1962> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.206060> ;
+        dc:creator               "Andersen, Trond" , "Saether, Ole A." ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.206066> .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;
@@ -112,6 +114,21 @@
         dc:description           "FIGURE 23 – 27. Clunio jonesi sp. n., male. 23 — antenna; 24 — wing; 25 — hypopygium, dorsal view; 26 — hypopygium, ventral view; 27 — apodemes, dorsal view to the left, ventral view to the right." ;
         fabio:hasRepresentation  "https://zenodo.org/record/206066/files/figure.png" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Clunio_jonesi_Saether_2011>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Clunio_jonesi> ;
+        dwc:authority      "Saether, 2011" ;
+        dwc:authorityName  "Saether" ;
+        dwc:authorityYear  "2011" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Chironomidae" ;
+        dwc:genus          "Clunio" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "jonesi" .
+
 <http://taxon-name.plazi.org/id/Animalia/Clunio>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
@@ -122,16 +139,3 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Clunio_africanus_Hesse_1937>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Clunio_africanus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Clunio" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Freeman (1962: 78)" ;
-        dwc:species                   "africanus" .

@@ -11,56 +11,12 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Araneus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/FAMILIA> ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "FAMILIA" ;
-        dwc:genus          "Araneus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "ORDO" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/FAMILIA>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/ORDO> ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "FAMILIA" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "ORDO" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Mygale_avicularia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Mygale" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "FAMILIA" ;
-        dwc:genus          "Mygale" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "ORDO" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "avicularia" .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneus_hirtipes>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Araneus" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "FAMILIA" ;
-        dwc:genus          "Araneus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "ORDO" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "hirtipes" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Mygale_avicularia_Sonnini_1802>
+<http://taxon-concept.plazi.org/id/Animalia/Mygale_hirtipes_Sonnini_1802>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mygale_avicularia> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mygale_hirtipes> ;
         dwc:class                     "Arachnida" ;
         dwc:family                    "FAMILIA" ;
         dwc:genus                     "Mygale" ;
@@ -69,7 +25,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Latreille in Sonnini, 1802" ;
-        dwc:species                   "avicularia" .
+        dwc:species                   "hirtipes" .
 
 <http://taxon-name.plazi.org/id/Animalia/ORDO>
         a                  dwcFP:TaxonName ;
@@ -79,6 +35,12 @@
         dwc:order          "ORDO" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
+
+<http://treatment.plazi.org/id/2E809F4A21522BB062F7E13593DEE68C>
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/zookeys.659.10717> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Araneus_hirtipes> ;
+        dc:creator           "Bertani, Rogerio" , "Fukushima, Caroline Sayuri" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eurypelma_hirtipes_Koch_1850>
         a                             dwcFP:TaxonConcept ;
@@ -93,10 +55,15 @@
         dwc:scientificNameAuthorship  "Koch, 1850" ;
         dwc:species                   "hirtipes" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-name.plazi.org/id/Animalia/FAMILIA>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/ORDO> ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "FAMILIA" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "ORDO" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arachnida>
         a                  dwcFP:TaxonName ;
@@ -106,26 +73,64 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://treatment.plazi.org/id/2E809F4A21522BB062F7E13593DEE68C>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Araneus_hirtipes_Fukushima_2017> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Mygale_avicularia_Sonnini_1802> , <http://taxon-concept.plazi.org/id/Animalia/Eurypelma_hirtipes_Koch_1850> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.659.10717> ;
-        dc:creator                "Fukushima, Caroline Sayuri" , "Bertani, Rogerio" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Avicularia_hirtipes> , <http://taxon-name.plazi.org/id/Animalia/Aranea_hirtipes> , <http://taxon-name.plazi.org/id/Animalia/Avicularia_versicolor> .
+<http://taxon-concept.plazi.org/id/Animalia/Aranea_hirtipes_Fukushima_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Aranea_hirtipes> ;
+        dwc:family        "FAMILIA" ;
+        dwc:genus         "Aranea" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "ORDO" ;
+        dwc:rank          "species" ;
+        dwc:species       "hirtipes" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Araneus_hirtipes_Fukushima_2017>
+<http://taxon-concept.plazi.org/id/Animalia/Mygale_versicolor_Sonnini_1802>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Araneus_hirtipes> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mygale_versicolor> ;
         dwc:class                     "Arachnida" ;
         dwc:family                    "FAMILIA" ;
-        dwc:genus                     "Araneus" ;
+        dwc:genus                     "Mygale" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "ORDO" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "(Fabricius, 1787), nomen dubium" ;
-        dwc:species                   "hirtipes" .
+        dwc:scientificNameAuthorship  "Latreille in Sonnini, 1802" ;
+        dwc:species                   "versicolor" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mygale_avicularia_Sonnini_1802>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mygale_avicularia> ;
+        dwc:class                     "Arachnida" ;
+        dwc:family                    "FAMILIA" ;
+        dwc:genus                     "Mygale" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "ORDO" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Latreille in Sonnini, 1802" ;
+        dwc:species                   "avicularia" .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/FAMILIA> ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "FAMILIA" ;
+        dwc:genus          "Araneus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "ORDO" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneus_hirtipes>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Araneus" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "FAMILIA" ;
+        dwc:genus          "Araneus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "ORDO" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "hirtipes" .
 
 <http://dx.doi.org/10.3897/zookeys.659.10717>
         a               fabio:JournalArticle ;
@@ -154,3 +159,56 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Avicularia_hirtipes_Fukushima_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Avicularia_hirtipes> ;
+        dwc:class         "Arachnida" ;
+        dwc:family        "FAMILIA" ;
+        dwc:genus         "Avicularia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "ORDO" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "hirtipes" .
+
+<http://taxon-name.plazi.org/id/Animalia/Mygale_avicularia>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Mygale" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "FAMILIA" ;
+        dwc:genus          "Mygale" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "ORDO" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "avicularia" .
+
+<http://taxon-name.plazi.org/id/Animalia/Mygale_versicolor>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Mygale" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "FAMILIA" ;
+        dwc:genus          "Mygale" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "ORDO" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "versicolor" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Avicularia_versicolor_Fukushima_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Avicularia_versicolor> ;
+        dwc:class         "Arachnida" ;
+        dwc:family        "FAMILIA" ;
+        dwc:genus         "Avicularia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "ORDO" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "versicolor" .

@@ -11,48 +11,73 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://doi.org/10.5281/zenodo.3501411>
-        a               fabio:JournalArticle ;
-        dc:creator      "Lindquist, Evert E." , "Britto, Erika P. J." , "De, Gilberto J." ;
-        dc:date         "2011" ;
-        dc:title        "Redescription of Lasioseius floridensis Berlese, 1916 (Acari: Mesostigmata: Blattisociidae), with notes on closely related species" ;
-        bibo:endPage    "15" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "2905" .
-
 <http://treatment.plazi.org/id/03C7ED57FF9D332AFF0E866AFBDCFA69>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_floridensis_Berlese_2011> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_arboreus_Chant_1963> , <http://taxon-concept.plazi.org/id/Animalia/__floridensis_Berlese_1916> , <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_penicilliger_Mineiro_2009> , <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_arboreus_Lindquist_1964> , <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_penicilliger_Berlese_1916> , <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_fimetorum_Karg_1971> , <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_arboreus_Karg_1971> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3501411> ;
-        dc:creator                "Lindquist, Evert E." , "Britto, Erika P. J." , "De, Gilberto J." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Lasioseius_penicilliger> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://doi.org/10.5281/zenodo.3501411> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Lasioseius_floridensis> ;
+        dc:creator           "De, Gilberto J." , "Lindquist, Evert E." , "Britto, Erika P. J." .
 
-<http://taxon-name.plazi.org/id/Animalia/Mesostigmata>
+<http://taxon-name.plazi.org/id/Animalia/Lasioseius_arboreus>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
         dwc:class          "Arachnida" ;
+        dwc:family         "Ascidae" ;
+        dwc:genus          "Lasioseius" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Mesostigmata" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
+        dwc:rank           "species" ;
+        dwc:species        "arboreus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_penicilliger_Mineiro_2009>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lasioseius_penicilliger> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Ascidae" ;
-        dwc:genus                     "Lasioseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Mineiro et al ., 2009" ;
-        dwc:species                   "penicilliger" ;
-        dwc:subGenus                  "Zercoseius" .
+<http://taxon-name.plazi.org/id/Animalia/Ascidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mesostigmata> ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "Ascidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Mesostigmata" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Lasioseius_floridensis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "Ascidae" ;
+        dwc:genus          "Lasioseius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Mesostigmata" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "floridensis" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Arachnida" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Lasioseius_penicilliger>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "Ascidae" ;
+        dwc:genus          "Lasioseius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Mesostigmata" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "penicilliger" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Lasioseius_arboreus_Chant_1963>
         a                             dwcFP:TaxonConcept ;
@@ -67,87 +92,18 @@
         dwc:scientificNameAuthorship  "Chant, 1963: 291" ;
         dwc:species                   "arboreus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ascidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mesostigmata> ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Ascidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Mesostigmata" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_floridensis_Berlese_2011>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lasioseius_floridensis> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Ascidae" ;
-        dwc:genus                     "Lasioseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Berlese" ;
-        dwc:species                   "floridensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Arachnida" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-concept.plazi.org/id/Animalia/__floridensis_Berlese_1916>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/__floridensis> ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "Berlese, 1916: 44" ;
-        dwc:variety                   "floridensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Lasioseius_penicilliger>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Ascidae" ;
-        dwc:genus          "Lasioseius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Mesostigmata" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "penicilliger" .
-
-<http://taxon-name.plazi.org/id/Animalia/Lasioseius_arboreus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Ascidae" ;
-        dwc:genus          "Lasioseius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Mesostigmata" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "arboreus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_arboreus_Lindquist_1964>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lasioseius_arboreus> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Ascidae" ;
-        dwc:genus                     "Lasioseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Chant, 1963: 291" ;
-        dwc:species                   "arboreus" .
+<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_penicilliger_Britto_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Lasioseius_penicilliger> ;
+        dwc:class         "Arachnida" ;
+        dwc:family        "Ascidae" ;
+        dwc:genus         "Lasioseius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Mesostigmata" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "penicilliger" ;
+        dwc:subGenus      "Zercoseius" .
 
 <http://taxon-name.plazi.org/id/Animalia/Lasioseius>
         a                  dwcFP:TaxonName ;
@@ -160,76 +116,28 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/__floridensis>
-        a            dwcFP:TaxonName ;
-        dwc:rank     "variety" ;
-        dwc:variety  "floridensis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_arboreus_Karg_1971>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lasioseius_arboreus> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Ascidae" ;
-        dwc:genus                     "Lasioseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Chant, 1963: 291" ;
-        dwc:species                   "arboreus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Lasioseius_fimetorum>
+<http://taxon-name.plazi.org/id/Animalia/Mesostigmata>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
         dwc:class          "Arachnida" ;
-        dwc:family         "Ascidae" ;
-        dwc:genus          "Lasioseius" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Mesostigmata" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "fimetorum" .
+        dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Lasioseius_floridensis>
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lasioseius" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Ascidae" ;
-        dwc:genus          "Lasioseius" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
-        dwc:order          "Mesostigmata" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "floridensis" .
+        dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_fimetorum_Karg_1971>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lasioseius_fimetorum> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Ascidae" ;
-        dwc:genus                     "Lasioseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Karg, 1971: 248" ;
-        dwc:species                   "fimetorum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lasioseius_penicilliger_Berlese_1916>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lasioseius_penicilliger> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Ascidae" ;
-        dwc:genus                     "Lasioseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Berlese, 1916" ;
-        dwc:species                   "penicilliger" ;
-        dwc:subGenus                  "Zercoseius" .
+<http://doi.org/10.5281/zenodo.3501411>
+        a               fabio:JournalArticle ;
+        dc:creator      "Lindquist, Evert E." , "Britto, Erika P. J." , "De, Gilberto J." ;
+        dc:date         "2011" ;
+        dc:title        "Redescription of Lasioseius floridensis Berlese, 1916 (Acari: Mesostigmata: Blattisociidae), with notes on closely related species" ;
+        bibo:endPage    "15" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "2905" .

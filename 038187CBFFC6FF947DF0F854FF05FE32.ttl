@@ -11,19 +11,28 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<https://doi.org/10.11646/zootaxa.4323.1.2>
-        a               fabio:JournalArticle ;
-        dc:creator      "Zhao, Tie-Xiong" ;
-        dc:date         "2017" ;
-        dc:title        "A study on the genus Stenus Latreille from Zhuji City of Zhejiang, East China (Coleoptera, Staphylinidae)" ;
-        bibo:endPage    "38" ;
-        bibo:issue      "1" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:pubDate    "2017-09-20" ;
-        bibo:startPage  "25" ;
-        bibo:volume     "4323" .
+<http://taxon-name.plazi.org/id/Animalia/Stenus_japonicus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Staphylinidae" ;
+        dwc:genus          "Stenus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "japonicus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
         a                  dwcFP:TaxonName ;
@@ -35,31 +44,33 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Benick_1940>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_niponensis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Cameron, 1930 d: 205" ;
-        dwc:species                   "niponensis" .
+<http://taxon-name.plazi.org/id/Animalia/Stenus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Staphylinidae" ;
+        dwc:genus          "Stenus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_civicus_Puthz_1967>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_civicus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "L. Benick, 1941: 284" ;
-        dwc:species                   "civicus" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenus_civicus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Staphylinidae" ;
+        dwc:genus          "Stenus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "civicus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stenus_insularis_Sahlberg_1887>
         a                             dwcFP:TaxonConcept ;
@@ -74,15 +85,48 @@
         dwc:scientificNameAuthorship  "J. Sahlberg, 1887: 53" ;
         dwc:species                   "insularis" .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
+<http://treatment.plazi.org/id/038187CBFFC6FF947DF0F854FF05FE32>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Stenus_japonicus_Sharp_1874> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Stenus_civicus_Benick_1941> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Cameron_1930> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_insularis_Sahlberg_1887> ;
+        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4323.1.2> ;
+        dc:creator                "Zhao, Tie-Xiong" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenus_civicus_Benick_1941>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_civicus> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Staphylinidae" ;
+        dwc:genus                     "Stenus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "L. Benick, 1941: 284" ;
+        dwc:species                   "civicus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
+        dwc:rank           "order" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Naomi_1994>
+<http://taxon-name.plazi.org/id/Animalia/Stenus_niponensis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Staphylinidae" ;
+        dwc:genus          "Stenus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "niponensis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Cameron_1930>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_niponensis> ;
         dwc:class                     "Insecta" ;
@@ -108,56 +152,6 @@
         dwc:scientificNameAuthorship  "Sharp, 1874" ;
         dwc:species                   "japonicus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_civicus_Benick_1941>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_civicus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "L. Benick, 1941: 284" ;
-        dwc:species                   "civicus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenus_necessarius>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Stenus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "necessarius" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_sinensis_Benick_1940>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_sinensis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "L. Benick, 1940: 562" ;
-        dwc:species                   "sinensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenus_japonicus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Stenus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "japonicus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Stenus_insularis>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
@@ -170,50 +164,6 @@
         dwc:rank           "species" ;
         dwc:species        "insularis" .
 
-<http://treatment.plazi.org/id/038187CBFFC6FF947DF0F854FF05FE32>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Stenus_japonicus_Sharp_1874> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Naomi_1994> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_civicus_Puthz_1967> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_insularis_Benick_1922> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_insularis_Sahlberg_1887> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Cameron_1930> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_necessarius_Benick_1922> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_sinensis_Benick_1940> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Benick_1940> , <http://taxon-concept.plazi.org/id/Animalia/Stenus_civicus_Benick_1941> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4323.1.2> ;
-        dc:creator                "Zhao, Tie-Xiong" .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Stenus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_necessarius_Benick_1922>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_necessarius> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "L. Benick, 1922: 176" ;
-        dwc:species                   "necessarius" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_insularis_Benick_1922>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_insularis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "J. Sahlberg, 1887: 53" ;
-        dwc:species                   "insularis" .
-
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
@@ -221,65 +171,14 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Stenus_niponensis_Cameron_1930>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenus_niponensis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Stenus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Cameron, 1930 d: 205" ;
-        dwc:species                   "niponensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenus_civicus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Stenus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "civicus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenus_niponensis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Stenus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "niponensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenus_sinensis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Stenus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "sinensis" .
+<https://doi.org/10.11646/zootaxa.4323.1.2>
+        a               fabio:JournalArticle ;
+        dc:creator      "Zhao, Tie-Xiong" ;
+        dc:date         "2017" ;
+        dc:title        "A study on the genus Stenus Latreille from Zhuji City of Zhejiang, East China (Coleoptera, Staphylinidae)" ;
+        bibo:endPage    "38" ;
+        bibo:issue      "1" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:pubDate    "2017-09-20" ;
+        bibo:startPage  "25" ;
+        bibo:volume     "4323" .

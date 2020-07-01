@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -32,7 +33,7 @@
         dwc:rank           "species" ;
         dwc:species        "cubensis" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_heterodonta_cubensis_Williams_1955>
+<http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_heterodonta_cubensis_Williams_2018>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ankylocythere_heterodonta_cubensis> ;
         dwc:class                     "Ostracoda" ;
@@ -42,14 +43,14 @@
         dwc:order                     "Podocopida" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "(Rioja)" ;
+        dwc:scientificNameAuthorship  "(Rioja)" , "Williams & Weaver, 1955" , "(Rioja, 1955)" ;
         dwc:species                   "heterodonta" ;
         dwc:subSpecies                "cubensis" .
 
 <http://treatment.plazi.org/id/0C49C83C1A29FF973886FC9E93024749>
         a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_cubensis_Hobbs_1966> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_heterodonta_cubensis_Williams_1955> ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_cubensis_Rioja_1955> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_heterodonta_cubensis_Williams_2018> , <http://taxon-concept.plazi.org/id/Animalia/Entocythere_heterodonta_cubensis_Rioja_1955> ;
         trt:publishedIn           <https://doi.org/10.11646/zootaxa.4448.1.1> ;
         dc:creator                "Weaver, Patricia G." , "Williams, Bronwyn W." ;
         cito:cites                <http://dx.doi.org/10.5281/zenodo.1444494> .
@@ -66,6 +67,19 @@
         bibo:startPage  "1" ;
         bibo:volume     "4448" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.1444494> .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_cubensis_Rioja_1955>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ankylocythere_cubensis> ;
+        dwc:class                     "Ostracoda" ;
+        dwc:family                    "Entocytheridae" ;
+        dwc:genus                     "Ankylocythere" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Podocopida" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "(Rioja, 1955) Hobbs, 1966" ;
+        dwc:species                   "cubensis" .
 
 <http://dx.doi.org/10.5281/zenodo.1444494>
         a                        fabio:Figure ;
@@ -90,15 +104,6 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
-<http://taxon-name.plazi.org/id/Animalia/Podocopida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
-        dwc:class          "Ostracoda" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Podocopida" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
 <http://taxon-name.plazi.org/id/Animalia/Ankylocythere>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Entocytheridae> ;
@@ -110,18 +115,14 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Ankylocythere_cubensis_Hobbs_1966>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ankylocythere_cubensis> ;
-        dwc:class                     "Ostracoda" ;
-        dwc:family                    "Entocytheridae" ;
-        dwc:genus                     "Ankylocythere" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Podocopida" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "(Rioja, 1955) Hobbs, 1966" ;
-        dwc:species                   "cubensis" .
+<http://taxon-name.plazi.org/id/Animalia/Podocopida>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
+        dwc:class          "Ostracoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Podocopida" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ostracoda>
         a                  dwcFP:TaxonName ;
@@ -130,6 +131,20 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Entocythere_heterodonta_cubensis_Rioja_1955>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Entocythere_heterodonta_cubensis> ;
+        dwc:class                     "Ostracoda" ;
+        dwc:family                    "Entocytheridae" ;
+        dwc:genus                     "Entocythere" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Podocopida" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "subSpecies" ;
+        dwc:scientificNameAuthorship  "Rioja (1955: 193)" , "Rioja, 1955" ;
+        dwc:species                   "heterodonta" ;
+        dwc:subSpecies                "cubensis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Entocytheridae>
         a                  dwcFP:TaxonName ;
@@ -140,3 +155,39 @@
         dwc:order          "Podocopida" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Entocythere_heterodonta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Entocythere> ;
+        dwc:class          "Ostracoda" ;
+        dwc:family         "Entocytheridae" ;
+        dwc:genus          "Entocythere" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Podocopida" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "heterodonta" .
+
+<http://taxon-name.plazi.org/id/Animalia/Entocythere>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Entocytheridae> ;
+        dwc:class          "Ostracoda" ;
+        dwc:family         "Entocytheridae" ;
+        dwc:genus          "Entocythere" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Podocopida" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Entocythere_heterodonta_cubensis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Entocythere_heterodonta" ;
+        dwc:class          "Ostracoda" ;
+        dwc:family         "Entocytheridae" ;
+        dwc:genus          "Entocythere" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Podocopida" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "subSpecies" ;
+        dwc:species        "heterodonta" ;
+        dwc:subSpecies     "cubensis" .

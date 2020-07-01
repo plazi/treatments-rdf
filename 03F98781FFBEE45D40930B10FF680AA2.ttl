@@ -11,20 +11,41 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Jay_1839>
+<http://treatment.plazi.org/id/03F98781FFBEE45D40930B10FF680AA2>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Polygona_infundibulum_Gmelin_1791> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Gmelin_1791> , <http://taxon-concept.plazi.org/id/Animalia/Turbinellus_infundibulum_Guppy_1877> , <http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_Higgins_1877> , <http://taxon-concept.plazi.org/id/Animalia/Polygona_infundibulum_Vermeij_2006> , <http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Jay_1839> ;
+        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4585.2.2> ;
+        dc:creator                "Snyder, Martin Avery" , "Lyons, William G." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Turbinellus_infundibulum_Guppy_1877>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Murex_infundibulum> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Turbinellus_infundibulum> ;
         dwc:class                     "Gastropoda" ;
-        dwc:family                    "Melanopsidae" ;
-        dwc:genus                     "Murex" ;
+        dwc:family                    "Turbinellidae" ;
+        dwc:genus                     "Turbinellus" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "Neogastropoda" ;
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  ": Jay, 1839: 76" ;
+        dwc:scientificNameAuthorship  ": Guppy, 1877: 142" ;
         dwc:species                   "infundibulum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+        dwc:class          "Gastropoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Polygona_infundibulum_Gmelin_1791>
         a                             dwcFP:TaxonConcept ;
@@ -52,88 +73,44 @@
         dwc:scientificNameAuthorship  "Gmelin, 1791: 3554" ;
         dwc:species                   "infundibulum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Polygona_lactea_Matthews-Cascou_1991>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Polygona_lactea> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Fasciolariidae" ;
-        dwc:genus                     "Polygona" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Matthews-Cascou, Matthews & Rocha, 1991" ;
-        dwc:species                   "lactea" .
+<https://doi.org/10.11646/zootaxa.4585.2.2>
+        a               fabio:JournalArticle ;
+        dc:creator      "Snyder, Martin Avery" , "Lyons, William G." ;
+        dc:date         "2019" ;
+        dc:title        "Fasciolariidae (Gastropoda: Neogastropoda) of French Guiana and nearby regions, with descriptions of two new species and comments on marine zoogeography of northeastern South America" ;
+        bibo:endPage    "268" ;
+        bibo:issue      "2" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:pubDate    "2019-04-12" ;
+        bibo:startPage  "239" ;
+        bibo:volume     "4585" .
 
-<http://taxon-name.plazi.org/id/Animalia/Polygona_bernadensis>
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Polygona" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+        dwc:class          "Gastropoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Neogastropoda" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia/Polygona>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Fasciolariidae> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Fasciolariidae" ;
         dwc:genus          "Polygona" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Neogastropoda" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "species" ;
-        dwc:species        "bernadensis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Mawe_1823>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Murex_infundibulum> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Melanopsidae" ;
-        dwc:genus                     "Murex" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Gmelin, 1791: 3554" ;
-        dwc:species                   "infundibulum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_auct_Gmelin_1791>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Latirus_infundibulum_auct> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Fasciolariidae" ;
-        dwc:genus                     "Latirus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Gmelin, 1791" ;
-        dwc:species                   "infundibulum" ;
-        dwc:subSpecies                "auct" .
-
-<http://taxon-name.plazi.org/id/Animalia/Fasciolariidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
-        dwc:class          "Gastropoda" ;
-        dwc:family         "Fasciolariidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-        dwc:class          "Gastropoda" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" .
-
-<http://taxon-name.plazi.org/id/Animalia/Latirus_infundibulum_auct>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Latirus_infundibulum" ;
-        dwc:class          "Gastropoda" ;
-        dwc:family         "Fasciolariidae" ;
-        dwc:genus          "Latirus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "subSpecies" ;
-        dwc:species        "infundibulum" ;
-        dwc:subSpecies     "auct" .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Polygona_infundibulum>
         a                  dwcFP:TaxonName ;
@@ -147,12 +124,18 @@
         dwc:rank           "species" ;
         dwc:species        "infundibulum" .
 
-<http://treatment.plazi.org/id/03F98781FFBEE45D40930B10FF680AA2>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Polygona_infundibulum_Gmelin_1791> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_Dautzenberg_1900> , <http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_auct_Gmelin_1791> , <http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Gmelin_1791> , <http://taxon-concept.plazi.org/id/Animalia/Polygona_lactea_Matthews-Cascou_1991> , <http://taxon-concept.plazi.org/id/Animalia/Turbinellus_infundibulum_Guppy_1877> , <http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_Higgins_1877> , <http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Mawe_1823> , <http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Jay_1839> , <http://taxon-concept.plazi.org/id/Animalia/Polygona_bernadensis_Vermeij_2006> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4585.2.2> ;
-        dc:creator                "Snyder, Martin Avery" , "Lyons, William G." .
+<http://taxon-concept.plazi.org/id/Animalia/Murex_infundibulum_Jay_1839>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Murex_infundibulum> ;
+        dwc:class                     "Gastropoda" ;
+        dwc:family                    "Melanopsidae" ;
+        dwc:genus                     "Murex" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Neogastropoda" ;
+        dwc:phylum                    "Mollusca" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  ": Jay, 1839: 76" ;
+        dwc:species                   "infundibulum" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_Higgins_1877>
         a                             dwcFP:TaxonConcept ;
@@ -167,97 +150,12 @@
         dwc:scientificNameAuthorship  ": Higgins, 1877: 417" ;
         dwc:species                   "infundibulum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Latirus_infundibulum_Dautzenberg_1900>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Latirus_infundibulum> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Fasciolariidae" ;
-        dwc:genus                     "Latirus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  ": Higgins, 1877: 417" ;
-        dwc:species                   "infundibulum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Polygona>
+<http://taxon-name.plazi.org/id/Animalia/Fasciolariidae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Fasciolariidae> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Fasciolariidae" ;
-        dwc:genus          "Polygona" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Neogastropoda" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-        dwc:class          "Gastropoda" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" .
-
-<https://doi.org/10.11646/zootaxa.4585.2.2>
-        a               fabio:JournalArticle ;
-        dc:creator      "Snyder, Martin Avery" , "Lyons, William G." ;
-        dc:date         "2019" ;
-        dc:title        "Fasciolariidae (Gastropoda: Neogastropoda) of French Guiana and nearby regions, with descriptions of two new species and comments on marine zoogeography of northeastern South America" ;
-        bibo:endPage    "268" ;
-        bibo:issue      "2" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:pubDate    "2019-04-12" ;
-        bibo:startPage  "239" ;
-        bibo:volume     "4585" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Turbinellus_infundibulum_Guppy_1877>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Turbinellus_infundibulum> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Turbinellidae" ;
-        dwc:genus                     "Turbinellus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  ": Guppy, 1877: 142" ;
-        dwc:species                   "infundibulum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Polygona_lactea>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Polygona" ;
-        dwc:class          "Gastropoda" ;
-        dwc:family         "Fasciolariidae" ;
-        dwc:genus          "Polygona" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Neogastropoda" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "species" ;
-        dwc:species        "lactea" .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Polygona_bernadensis_Vermeij_2006>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Polygona_bernadensis> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Fasciolariidae" ;
-        dwc:genus                     "Polygona" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neogastropoda" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  ": Vermeij & Snyder, 2006" ;
-        dwc:species                   "bernadensis" .
+        dwc:rank           "family" .

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -45,10 +46,10 @@
 
 <http://treatment.plazi.org/id/2A668781C426FFE3F17CF930FD8A5A71>
         a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Eluma_caelata_Reboleira_2015> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Armadillidium_caelatum_J._1877> , <http://taxon-concept.plazi.org/id/Animalia/Eluma_purpurascens_A._1946> , <http://taxon-concept.plazi.org/id/Animalia/Armadillidium_caelatum_Miers_1877> , <http://taxon-concept.plazi.org/id/Animalia/Eluma_purpurascens_Budde-Lund_1885> ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Eluma_caelata_Miers_1877> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Eluma_purpurascens_Budde-Lund_1885> , <http://taxon-concept.plazi.org/id/Animalia/Armadillidium_caelatum_Miers_1877> ;
         trt:publishedIn           <http://doi.org/10.5281/zenodo.3815805> ;
-        dc:creator                "Taiti, Stefano" , "Oromí, Pedro" , "Reboleira, Ana Sofia P. S." , "Gonçalves, Fernando" .
+        dc:creator                "Taiti, Stefano" , "Oromí, Pedro" , "Gonçalves, Fernando" , "Reboleira, Ana Sofia P. S." .
 
 <http://taxon-name.plazi.org/id/Animalia/Armadillidiidae>
         a                  dwcFP:TaxonName ;
@@ -59,6 +60,19 @@
         dwc:order          "Isopoda" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eluma_caelata_Miers_1877>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eluma_caelata> ;
+        dwc:class                     "Malacostraca" ;
+        dwc:family                    "Armadillidiidae" ;
+        dwc:genus                     "Eluma" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Isopoda" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "(Miers, 1877)" ;
+        dwc:species                   "caelata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eluma_purpurascens>
         a                  dwcFP:TaxonName ;
@@ -72,23 +86,21 @@
         dwc:rank           "species" ;
         dwc:species        "purpurascens" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Eluma_purpurascens_A._1946>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eluma_purpurascens> ;
-        dwc:class                     "Malacostraca" ;
-        dwc:family                    "Armadillidiidae" ;
-        dwc:genus                     "Eluma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Isopoda" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Budde-Lund, 1885" ;
-        dwc:species                   "purpurascens" .
-
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Armadillidium>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Armadillidiidae> ;
+        dwc:class          "Malacostraca" ;
+        dwc:family         "Armadillidiidae" ;
+        dwc:genus          "Armadillidium" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Isopoda" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Armadillidium_caelatum_Miers_1877>
         a                             dwcFP:TaxonConcept ;
@@ -102,17 +114,6 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Miers, 1877: 665" ;
         dwc:species                   "caelatum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Armadillidium>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Armadillidiidae> ;
-        dwc:class          "Malacostraca" ;
-        dwc:family         "Armadillidiidae" ;
-        dwc:genus          "Armadillidium" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Isopoda" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Malacostraca>
         a                  dwcFP:TaxonName ;
@@ -134,19 +135,6 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Budde-Lund, 1885" ;
         dwc:species                   "purpurascens" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Armadillidium_caelatum_J._1877>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Armadillidium_caelatum> ;
-        dwc:class                     "Malacostraca" ;
-        dwc:family                    "Armadillidiidae" ;
-        dwc:genus                     "Armadillidium" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Isopoda" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Miers, 1877: 665" ;
-        dwc:species                   "caelatum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eluma_caelata>
         a                  dwcFP:TaxonName ;
@@ -179,16 +167,3 @@
         dwc:order          "Isopoda" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Eluma_caelata_Reboleira_2015>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eluma_caelata> ;
-        dwc:class                     "Malacostraca" ;
-        dwc:family                    "Armadillidiidae" ;
-        dwc:genus                     "Eluma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Isopoda" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "(Miers, 1877)" ;
-        dwc:species                   "caelata" .

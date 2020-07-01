@@ -11,16 +11,111 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hahnia_zhejiangensis_Song_1982>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hahnia_zhejiangensis> ;
+        dwc:class                     "Arachnida" ;
+        dwc:family                    "Hahniidae" ;
+        dwc:genus                     "Hahnia" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Araneae" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Song & Zheng, 1982" ;
+        dwc:species                   "zhejiangensis" .
+
+<http://treatment.plazi.org/id/03DC87833169FFF5FF76FF2F6DAFFCFB>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hahnia_zhejiangensis_Song_1982> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Hahnia_yueluensis_Yin_1983> , <http://taxon-concept.plazi.org/id/Animalia/Hahnia_thorntoni_Brignoli_1982> ;
+        trt:publishedIn           <http://doi.org/10.5281/zenodo.3508484> ;
+        dc:creator                "Zhang, Yao-Guang" , "Zhang, Zhi-Sheng" ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.249262> , <http://dx.doi.org/10.5281/zenodo.249264> , <http://dx.doi.org/10.5281/zenodo.249263> .
+
+<http://dx.doi.org/10.5281/zenodo.249263>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 9. Hahnia zhejiangensis Song & Zheng, 1982, male from Mt. Yuelu, China. A. Habitus, dorsal; B. Same, lateral; C. Same, ventral; D. Eyes, dorsal; E. Chelicerae, ventral; F. Chelicera, lateral, showing stridulatory files; G. Left palp, ventral; H. Same, retrolateral; I. Same, dorsal." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/249263/files/figure.png" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hahnia>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hahniidae> ;
         dwc:class          "Arachnida" ;
+        dwc:family         "Hahniidae" ;
+        dwc:genus          "Hahnia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Araneae" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
+        dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Arachnida" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://doi.org/10.5281/zenodo.3508484>
+        a               fabio:JournalArticle ;
+        dc:creator      "Zhang, Zhi-Sheng" , "Zhang, Yao-Guang" ;
+        dc:date         "2013" ;
+        dc:title        "Synonymy and misidentification of three Hahnia species (Araneae: Hahniidae) from China" ;
+        bibo:endPage    "533" ;
+        bibo:issue      "4" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "521" ;
+        bibo:volume     "3682" ;
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.249263> , <http://dx.doi.org/10.5281/zenodo.249264> , <http://dx.doi.org/10.5281/zenodo.249262> .
+
+<http://taxon-name.plazi.org/id/Animalia/Hahnia_thorntoni>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hahnia" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "Hahniidae" ;
+        dwc:genus          "Hahnia" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Araneae" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "thorntoni" .
+
+<http://dx.doi.org/10.5281/zenodo.249264>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 10. Hahnia zhejiangensis Song & Zheng, 1982, females from Mt. Jinyun, China (A – E) and Mt. Yuelu, China (F – G). A. Habitus, dorsal; B. Same, lateral; C. Same, ventral; D, F. Epigyne, ventral; E, G. Vulva, dorsal." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/249264/files/figure.png" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hahnia_yueluensis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hahnia" ;
+        dwc:class          "Arachnida" ;
+        dwc:family         "Hahniidae" ;
+        dwc:genus          "Hahnia" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Araneae" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "yueluensis" .
+
+<http://dx.doi.org/10.5281/zenodo.249262>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 8. Hahnia zhejiangensis Song & Zheng, 1982, paratype of ‘ H. thorntoni ’ from Hong Kong of China. A. Right palp, ventral; B. Same, retrolateral; C. Same, dorsal." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/249262/files/figure.png" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Hahnia_yueluensis_Yin_1983>
         a                             dwcFP:TaxonConcept ;
@@ -47,52 +142,6 @@
         dwc:rank           "species" ;
         dwc:species        "zhejiangensis" .
 
-<http://taxon-name.plazi.org/id/Animalia/Hahnia_thorntoni>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hahnia" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Hahniidae" ;
-        dwc:genus          "Hahnia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Araneae" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "thorntoni" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hahnia_thortoni>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hahnia" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Hahniidae" ;
-        dwc:genus          "Hahnia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Araneae" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "thortoni" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hahniidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Hahniidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Araneae" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://doi.org/10.5281/zenodo.3508484>
-        a               fabio:JournalArticle ;
-        dc:creator      "Zhang, Zhi-Sheng" , "Zhang, Yao-Guang" ;
-        dc:date         "2013" ;
-        dc:title        "Synonymy and misidentification of three Hahnia species (Araneae: Hahniidae) from China" ;
-        bibo:endPage    "533" ;
-        bibo:issue      "4" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "521" ;
-        bibo:volume     "3682" ;
-        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.249263> , <http://dx.doi.org/10.5281/zenodo.249264> , <http://dx.doi.org/10.5281/zenodo.249262> .
-
 <http://taxon-concept.plazi.org/id/Animalia/Hahnia_thorntoni_Brignoli_1982>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hahnia_thorntoni> ;
@@ -106,107 +155,21 @@
         dwc:scientificNameAuthorship  "Brignoli, 1982: 346" ;
         dwc:species                   "thorntoni" .
 
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
         dwc:class          "Arachnida" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hahnia_yueluensis_Song_1987>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hahnia_yueluensis> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Hahniidae" ;
-        dwc:genus                     "Hahnia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Araneae" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Yin & Wang, 1983: 143" ;
-        dwc:species                   "yueluensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hahnia_yueluensis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hahnia" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Hahniidae" ;
-        dwc:genus          "Hahnia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Araneae" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "yueluensis" .
+        dwc:rank           "order" .
 
-<http://dx.doi.org/10.5281/zenodo.249264>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 10. Hahnia zhejiangensis Song & Zheng, 1982, females from Mt. Jinyun, China (A – E) and Mt. Yuelu, China (F – G). A. Habitus, dorsal; B. Same, lateral; C. Same, ventral; D, F. Epigyne, ventral; E, G. Vulva, dorsal." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/249264/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hahnia>
+<http://taxon-name.plazi.org/id/Animalia/Hahniidae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hahniidae> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
         dwc:class          "Arachnida" ;
         dwc:family         "Hahniidae" ;
-        dwc:genus          "Hahnia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Araneae" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://dx.doi.org/10.5281/zenodo.249263>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 9. Hahnia zhejiangensis Song & Zheng, 1982, male from Mt. Yuelu, China. A. Habitus, dorsal; B. Same, lateral; C. Same, ventral; D. Eyes, dorsal; E. Chelicerae, ventral; F. Chelicera, lateral, showing stridulatory files; G. Left palp, ventral; H. Same, retrolateral; I. Same, dorsal." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/249263/files/figure.png" .
-
-<http://treatment.plazi.org/id/03DC87833169FFF5FF76FF2F6DAFFCFB>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Hahnia_zhejiangensis_Song_1982> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Hahnia_yueluensis_Song_1987> , <http://taxon-concept.plazi.org/id/Animalia/Hahnia_yueluensis_Yin_1983> , <http://taxon-concept.plazi.org/id/Animalia/Hahnia_thorntoni_Brignoli_1982> , <http://taxon-concept.plazi.org/id/Animalia/Hahnia_thorntoni_Song_1987> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3508484> ;
-        dc:creator                "Zhang, Yao-Guang" , "Zhang, Zhi-Sheng" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.249262> , <http://dx.doi.org/10.5281/zenodo.249264> , <http://dx.doi.org/10.5281/zenodo.249263> , <http://taxon-name.plazi.org/id/Animalia/Hahnia_thortoni> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hahnia_zhejiangensis_Song_1982>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hahnia_zhejiangensis> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Hahniidae" ;
-        dwc:genus                     "Hahnia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Araneae" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Song & Zheng, 1982" ;
-        dwc:species                   "zhejiangensis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hahnia_thorntoni_Song_1987>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hahnia_thorntoni> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Hahniidae" ;
-        dwc:genus                     "Hahnia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Araneae" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Brignoli, 1982: 346" ;
-        dwc:species                   "thorntoni" .
-
-<http://dx.doi.org/10.5281/zenodo.249262>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 8. Hahnia zhejiangensis Song & Zheng, 1982, paratype of ‘ H. thorntoni ’ from Hong Kong of China. A. Right palp, ventral; B. Same, retrolateral; C. Same, dorsal." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/249262/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+        dwc:rank           "family" .

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Aves>
@@ -28,19 +29,6 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Icteridae_Cremonte_2007>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Icteridae> ;
-        dwc:authority      "Cremonte, 2007" ;
-        dwc:authorityName  "Cremonte" ;
-        dwc:authorityYear  "2007" ;
-        dwc:class          "Aves" ;
-        dwc:family         "Icteridae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Passeriformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "family" .
-
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
@@ -56,6 +44,15 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
 
+<http://taxon-name.plazi.org/id/Animalia/Passeriformes>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+        dwc:class          "Aves" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Passeriformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "order" .
+
 <http://dx.doi.org/10.5281/zenodo.273687>
         a               fabio:JournalArticle ;
         dc:creator      "Drago, Fabiana B." , "Cremonte, Florencia" ;
@@ -66,17 +63,8 @@
         bibo:startPage  "1" ;
         bibo:volume     "1403" .
 
-<http://taxon-name.plazi.org/id/Animalia/Passeriformes>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Aves> ;
-        dwc:class          "Aves" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Passeriformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "order" .
-
 <http://treatment.plazi.org/id/03E5F213FFC8F76340EDFD53FC3C9B68>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Icteridae_Cremonte_2007> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.273687> ;
-        dc:creator                "Drago, Fabiana B." , "Cremonte, Florencia" .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.273687> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Icteridae> ;
+        dc:creator           "Drago, Fabiana B." , "Cremonte, Florencia" .

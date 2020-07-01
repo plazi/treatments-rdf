@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -26,12 +27,11 @@
         fabio:hasRepresentation  "https://zenodo.org/record/178103/files/figure.png" .
 
 <http://treatment.plazi.org/id/03CC87F43D60FF8CFF29FC46FDD4F8BD>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Transeius_msabahaensis_Moraes_2007> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Amblyseius_msabahaensis_Moraes_2004> , <http://taxon-concept.plazi.org/id/Animalia/Neoseiulus_msabahaensis_Moraes_2004> , <http://taxon-concept.plazi.org/id/Animalia/Amblyseius_msabahaensis_Moraes_1989> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.178081> ;
-        dc:creator                "Hanna, Rachid" , "Ueckermann, Eddie A." , "Yaninek, John S." , "Zannou, Ignace D." , "Oliveira, Anibal R." , "De, Gilberto J." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.178103> , <http://taxon-name.plazi.org/id/Animalia/Amblyseius_msabahaensis> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.178081> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Transeius_msabahaensis> ;
+        dc:creator           "Hanna, Rachid" , "Ueckermann, Eddie A." , "Yaninek, John S." , "Zannou, Ignace D." , "Oliveira, Anibal R." , "De, Gilberto J." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.178103> .
 
 <http://dx.doi.org/10.5281/zenodo.178081>
         a               fabio:JournalArticle ;
@@ -56,20 +56,20 @@
         dwc:rank           "species" ;
         dwc:species        "msabahaensis" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Neoseiulus_msabahaensis_Moraes_2004>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoseiulus_msabahaensis> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Phytoseiidae" ;
-        dwc:genus                     "Neoseiulus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Moraes et al. 2004: 134" ;
-        dwc:species                   "msabahaensis" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Amblyseius_msabahaensis_Moraes_2004>
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Arachnida" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amblyseius_msabahaensis_Moraes_2007>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Amblyseius_msabahaensis> ;
         dwc:class                     "Arachnida" ;
@@ -81,32 +81,6 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Moraes & McMurtry" ;
         dwc:species                   "msabahaensis" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Transeius_msabahaensis_Moraes_2007>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Transeius_msabahaensis> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Phytoseiidae" ;
-        dwc:genus                     "Transeius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Moraes & McMurtry" ;
-        dwc:species                   "msabahaensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Arachnida" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Transeius>
         a                  dwcFP:TaxonName ;
@@ -127,19 +101,6 @@
         dwc:order          "Mesostigmata" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Amblyseius_msabahaensis_Moraes_1989>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Amblyseius_msabahaensis> ;
-        dwc:class                     "Arachnida" ;
-        dwc:family                    "Phytoseiidae" ;
-        dwc:genus                     "Amblyseius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Mesostigmata" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Moraes & McMurtry" ;
-        dwc:species                   "msabahaensis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Phytoseiidae>
         a                  dwcFP:TaxonName ;

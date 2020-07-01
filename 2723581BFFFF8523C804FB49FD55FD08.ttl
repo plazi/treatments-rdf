@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -28,17 +29,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://taxon-name.plazi.org/id/Animalia/Tetrapedia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Apidae" ;
-        dwc:genus          "Tetrapedia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -48,17 +38,16 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia/Tetrapedia_haeckeli>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetrapedia" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Apidae" ;
-        dwc:genus          "Tetrapedia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "haeckeli" .
+<http://taxon-concept.plazi.org/id/Animalia/Amphipedia_Aguiar_2005>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Amphipedia> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Apidae" ;
+        dwc:genus         "Amphipedia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Apidae>
         a                  dwcFP:TaxonName ;
@@ -70,18 +59,28 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
+<http://taxon-name.plazi.org/id/Animalia/Paratetrapedia_Amphipedia>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Paratetrapedia" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Apidae" ;
+        dwc:genus          "Paratetrapedia" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "subGenus" ;
+        dwc:subGenus       "Amphipedia" .
+
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
 <http://treatment.plazi.org/id/2723581BFFFF8523C804FB49FD55FD08>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Paratetrapedia_Aguiar_2005> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_haeckeli_Friese_1910> , <http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_pygmaea_Schrottky_1902> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.170446> ;
-        dc:creator                "Aguiar, Antonio J. C." , "Melo, Gabriel A. R." ;
-        cito:cites                <http://taxon-concept.plazi.org/id/Animalia/Paratetrapedia_Amphipedia_Michener_1957> , <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_haeckeli> , <http://taxon-concept.plazi.org/id/Animalia/Paratetrapedia_Lophopedia_Michener_1957> , <http://taxon-name.plazi.org/id/Animalia/Amphipedia> , <http://taxon-name.plazi.org/id/Animalia/Lophopedia> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.170446> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Paratetrapedia> ;
+        dc:creator           "Melo, Gabriel A. R." , "Aguiar, Antonio J. C." .
 
 <http://taxon-name.plazi.org/id/Animalia/Amphipedia>
         a                  dwcFP:TaxonName ;
@@ -93,6 +92,19 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paratetrapedia_Amphipedia_Michener_1957>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Paratetrapedia_Amphipedia> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Apidae" ;
+        dwc:genus                     "Paratetrapedia" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "subGenus" ;
+        dwc:scientificNameAuthorship  "Michener & Moure, 1957: 413" ;
+        dwc:subGenus                  "Amphipedia" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Paratetrapedia_Lophopedia_Michener_1957>
         a                             dwcFP:TaxonConcept ;
@@ -107,45 +119,28 @@
         dwc:scientificNameAuthorship  "Michener & Moure, 1957: 413" ;
         dwc:subGenus                  "Lophopedia" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_haeckeli_Friese_1910>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_haeckeli> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Apidae" ;
-        dwc:genus                     "Tetrapedia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Friese, 1910" ;
-        dwc:species                   "haeckeli" .
+<http://taxon-concept.plazi.org/id/Animalia/Lophopedia_Aguiar_2005>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Lophopedia> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Apidae" ;
+        dwc:genus         "Lophopedia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_pygmaea_Schrottky_1902>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_pygmaea> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Apidae" ;
-        dwc:genus                     "Tetrapedia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Schrottky, 1902" ;
-        dwc:species                   "pygmaea" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Paratetrapedia_Aguiar_2005>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Paratetrapedia> ;
-        dwc:authority      "Aguiar, 2005" ;
-        dwc:authorityName  "Aguiar" ;
-        dwc:authorityYear  "2005" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Apidae" ;
-        dwc:genus          "Paratetrapedia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_haeckeli_Aguiar_2005>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_haeckeli> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Apidae" ;
+        dwc:genus         "Tetrapedia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "haeckeli" .
 
 <http://taxon-name.plazi.org/id/Animalia/Paratetrapedia>
         a                  dwcFP:TaxonName ;
@@ -157,18 +152,6 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Tetrapedia_pygmaea>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetrapedia" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Apidae" ;
-        dwc:genus          "Tetrapedia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "pygmaea" .
 
 <http://taxon-name.plazi.org/id/Animalia/Paratetrapedia_Lophopedia>
         a                  dwcFP:TaxonName ;

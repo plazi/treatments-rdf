@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Ipomoea_cairica>
@@ -71,24 +72,11 @@
         dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/4FA4A2C8CABEB049C1AA92625B24980E>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Ipomoea_heptaphylla_Sweet_2020> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Plantae/Convolvulus_heptaphyllus_Rottler_1803> , <http://taxon-concept.plazi.org/id/Plantae/Ipomoea_radicans_Blume_1826> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/phytokeys.143.32821> ;
-        dc:creator                "Williams, Bethany R. M." , "Scotland, Robert W." , "Munoz-Rodriguez, Pablo" , "Wood, John R. I." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Plantae/Ipomoea_cairica> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_pulchella> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_radicans> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_pulchella_lineariloba> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_spiralis> , <http://dx.doi.org/10.5281/zenodo.> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_wrightii> , <http://taxon-name.plazi.org/id/Plantae/Convolvulus_heptaphyllus> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_capillifolia> , <http://taxon-name.plazi.org/id/Plantae/Ipomoea_gracilipes> .
-
-<http://taxon-name.plazi.org/id/Plantae/Convolvulus_heptaphyllus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Convolvulus" ;
-        dwc:class          "Magnoliopsida" ;
-        dwc:family         "Convolvulaceae" ;
-        dwc:genus          "Convolvulus" ;
-        dwc:kingdom        "Plantae" ;
-        dwc:order          "Solanales" ;
-        dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "species" ;
-        dwc:species        "heptaphyllus" .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/phytokeys.143.32821> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Ipomoea_heptaphylla> ;
+        dc:creator           "Scotland, Robert W." , "Williams, Bethany R. M." , "Munoz-Rodriguez, Pablo" , "Wood, John R. I." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Plantae/Ipomoea_spiralis>
         a                  dwcFP:TaxonName ;
@@ -102,6 +90,18 @@
         dwc:rank           "species" ;
         dwc:species        "spiralis" .
 
+<http://taxon-name.plazi.org/id/Plantae/Convolvulus_heptaphyllus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Convolvulus" ;
+        dwc:class          "Magnoliopsida" ;
+        dwc:family         "Convolvulaceae" ;
+        dwc:genus          "Convolvulus" ;
+        dwc:kingdom        "Plantae" ;
+        dwc:order          "Solanales" ;
+        dwc:phylum         "Tracheophyta" ;
+        dwc:rank           "species" ;
+        dwc:species        "heptaphyllus" .
+
 <http://taxon-name.plazi.org/id/Plantae/Solanales>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
@@ -111,12 +111,17 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+<http://taxon-name.plazi.org/id/Plantae/Ipomoea_wrightii>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Ipomoea" ;
+        dwc:class          "Magnoliopsida" ;
+        dwc:family         "Convolvulaceae" ;
+        dwc:genus          "Ipomoea" ;
         dwc:kingdom        "Plantae" ;
+        dwc:order          "Solanales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "phylum" .
+        dwc:rank           "species" ;
+        dwc:species        "wrightii" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Convolvulus_heptaphyllus_Rottler_1803>
         a                             dwcFP:TaxonConcept ;
@@ -131,17 +136,39 @@
         dwc:scientificNameAuthorship  "Rottler & Willd.(1803)" ;
         dwc:species                   "heptaphyllus" .
 
-<http://taxon-name.plazi.org/id/Plantae/Ipomoea_wrightii>
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Ipomoea" ;
-        dwc:class          "Magnoliopsida" ;
-        dwc:family         "Convolvulaceae" ;
-        dwc:genus          "Ipomoea" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
         dwc:kingdom        "Plantae" ;
-        dwc:order          "Solanales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "species" ;
-        dwc:species        "wrightii" .
+        dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_capillifolia_Wood_2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_capillifolia> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Ipomoea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Bertero ex Choisy in A.P. de Candolle, Prodr." ;
+        dwc:species                   "capillifolia" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_pulchella_lineariloba_Hassl._2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_pulchella_lineariloba> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Ipomoea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "variety" ;
+        dwc:scientificNameAuthorship  "Hassl., Fedde" ;
+        dwc:species                   "pulchella" ;
+        dwc:variety                   "lineariloba" .
 
 <http://taxon-name.plazi.org/id/Plantae/Convolvulus>
         a                  dwcFP:TaxonName ;
@@ -153,6 +180,19 @@
         dwc:order          "Solanales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_radicans_Wood_2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_radicans> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Ipomoea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Bertero ex Choisy in A.P. de Candolle, Prodr." ;
+        dwc:species                   "radicans" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Ipomoea_radicans_Blume_1826>
         a                             dwcFP:TaxonConcept ;
@@ -167,6 +207,44 @@
         dwc:scientificNameAuthorship  "Blume (1826)" ;
         dwc:species                   "radicans" .
 
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_gracilipes_Hassl._2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_gracilipes> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Ipomoea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Hassl., Fedde" ;
+        dwc:species                   "gracilipes" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_pulchella_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Ipomoea_pulchella> ;
+        dwc:class         "Magnoliopsida" ;
+        dwc:family        "Convolvulaceae" ;
+        dwc:genus         "Ipomoea" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Solanales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "species" ;
+        dwc:species       "pulchella" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Convolvulus_heptaphyllus_Roxb._2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Convolvulus_heptaphyllus> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Convolvulus" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Roxb., Fl. Ind." ;
+        dwc:species                   "heptaphyllus" .
+
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
@@ -174,6 +252,19 @@
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_spiralis_House_2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_spiralis> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Ipomoea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "House" ;
+        dwc:species                   "spiralis" .
 
 <http://taxon-name.plazi.org/id/Plantae/Ipomoea_pulchella_lineariloba>
         a                  dwcFP:TaxonName ;
@@ -187,19 +278,6 @@
         dwc:rank           "variety" ;
         dwc:species        "pulchella" ;
         dwc:variety        "lineariloba" .
-
-<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_heptaphylla_Sweet_2020>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_heptaphylla> ;
-        dwc:class                     "Magnoliopsida" ;
-        dwc:family                    "Convolvulaceae" ;
-        dwc:genus                     "Ipomoea" ;
-        dwc:kingdom                   "Plantae" ;
-        dwc:order                     "Solanales" ;
-        dwc:phylum                    "Tracheophyta" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sweet" ;
-        dwc:species                   "heptaphylla" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -217,6 +295,31 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
         dwc:species        "radicans" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_cairica_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Ipomoea_cairica> ;
+        dwc:class         "Magnoliopsida" ;
+        dwc:family        "Convolvulaceae" ;
+        dwc:genus         "Ipomoea" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Solanales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "species" ;
+        dwc:species       "cairica" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_wrightii_Wood_2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ipomoea_wrightii> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Ipomoea" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "A. Gray, Syn. Fl. N. Amer." ;
+        dwc:species                   "wrightii" .
 
 <http://taxon-name.plazi.org/id/Plantae>
         a            dwcFP:TaxonName ;

@@ -11,14 +11,21 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
+<http://taxon-concept.plazi.org/id/Animalia/Conilepia_cao_Dubatolov_2016>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Conilepia_cao> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Arctiidae" ;
+        dwc:genus                     "Conilepia" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Lepidoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Dubatolov, Zolotuhin & Witt" ;
+        dwc:species                   "cao" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -39,11 +46,11 @@
         dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/1371EA016F60FFAB4DEAAAB7FB41FF52>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://doi.org/10.11646/zootaxa.4107.2.3> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Conilepia_cao> ;
-        dc:creator           "Witt, Thomas J." , "Zolotuhin, Vadim V." , "Dubatolov, Vladimir V." ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.260862> , <http://dx.doi.org/10.5281/zenodo.260861> , <http://dx.doi.org/10.5281/zenodo.260859> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Conilepia_cao_Dubatolov_2016> ;
+        trt:publishedIn          <http://doi.org/10.11646/zootaxa.4107.2.3> ;
+        dc:creator               "Witt, Thomas J." , "Zolotuhin, Vadim V." , "Dubatolov, Vladimir V." ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.260862> , <http://dx.doi.org/10.5281/zenodo.260861> , <http://dx.doi.org/10.5281/zenodo.260859> .
 
 <http://dx.doi.org/10.5281/zenodo.260861>
         a                        fabio:Figure ;
@@ -69,18 +76,6 @@
         dc:description           "FIGURES 56 – 57. Distribution maps of Lithosia (56) and Conilepia (57): 56 — L. quadra (black rings) and L. yuennanensis (green rings); 57 — C. nigricosta (black rings, larger rings show the province locality without exact data), C. sikkima (red rings), C. cao (blue rings)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/260862/files/figure.png" .
 
-<http://doi.org/10.11646/zootaxa.4107.2.3>
-        a               fabio:JournalArticle ;
-        dc:creator      "Zolotuhin, Vadim V." , "Dubatolov, Vladimir V." , "Witt, Thomas J." ;
-        dc:date         "2016" ;
-        dc:title        "Revision of Lithosia Fabricius, 1798 and Conilepia Hampson, 1900 (Lepidoptera, Arctiidae)" ;
-        bibo:endPage    "196" ;
-        bibo:issue      "2" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "175" ;
-        bibo:volume     "4107" ;
-        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.260859> , <http://dx.doi.org/10.5281/zenodo.260862> , <http://dx.doi.org/10.5281/zenodo.260861> .
-
 <http://taxon-name.plazi.org/id/Animalia/Conilepia_cao>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Conilepia" ;
@@ -92,6 +87,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "cao" .
+
+<http://doi.org/10.11646/zootaxa.4107.2.3>
+        a               fabio:JournalArticle ;
+        dc:creator      "Zolotuhin, Vadim V." , "Dubatolov, Vladimir V." , "Witt, Thomas J." ;
+        dc:date         "2016" ;
+        dc:title        "Revision of Lithosia Fabricius, 1798 and Conilepia Hampson, 1900 (Lepidoptera, Arctiidae)" ;
+        bibo:endPage    "196" ;
+        bibo:issue      "2" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "175" ;
+        bibo:volume     "4107" ;
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.260859> , <http://dx.doi.org/10.5281/zenodo.260862> , <http://dx.doi.org/10.5281/zenodo.260861> .
 
 <http://dx.doi.org/10.5281/zenodo.260859>
         a                        fabio:Figure ;
@@ -108,3 +115,10 @@
         dwc:order          "Lepidoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .

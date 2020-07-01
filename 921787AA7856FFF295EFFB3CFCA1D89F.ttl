@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.185055>
@@ -42,12 +43,11 @@
         dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/921787AA7856FFF295EFFB3CFCA1D89F>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Leofa_pulchellus_Distant_2009> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Prasutagus_pulchellus_Zahniser_2008> , <http://taxon-concept.plazi.org/id/Animalia/Prasutagus_pulchellus_Distant_1918> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.185055> ;
-        dc:creator                "Zhang, Yalin" , "Duan, Yani" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.185057> , <http://dx.doi.org/10.5281/zenodo.185056> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.185055> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Leofa_pulchellus> ;
+        dc:creator           "Zhang, Yalin" , "Duan, Yani" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.185057> , <http://dx.doi.org/10.5281/zenodo.185056> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Prasutagus_pulchellus_Distant_1918>
         a                             dwcFP:TaxonConcept ;
@@ -67,37 +67,10 @@
         dc:description           "FIGURE 1. A – J, Leofa (Prasutagus) species. A – H, Leofa (Prasutagus) pulchellus Distant (A – G, India H, China), A: head and thorax; B: face; C: male pygofer, lateral view; D: subgenital plate, style and connective, dorsal view; E: aedeagus and paraphysis dorsal view; F: aedeagus and paraphysis, left lateral view; G: aedeagus ventral view; H: apex of left pygofer process; I – J: Leofa (Prasutagus) curtulus (Motschulsky), I, aedeagus, left lateral view (type male, Jassus? curtulus Motschulsky, from Vilbaste, 1975); J, dorsal habitus (syntype male Deltocephalus oneratus Melichar, from Distant, 1908)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/185056/files/figure.png" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Prasutagus_pulchellus_Zahniser_2008>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Prasutagus_pulchellus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cicadellidae" ;
-        dwc:genus                     "Prasutagus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Distant, 1918: 53" ;
-        dwc:species                   "pulchellus" .
-
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Leofa_pulchellus_Distant_2009>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Leofa_pulchellus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cicadellidae" ;
-        dwc:genus                     "Leofa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Distant" ;
-        dwc:species                   "pulchellus" ;
-        dwc:subGenus                  "Prasutagus" .
 
 <http://dx.doi.org/10.5281/zenodo.185057>
         a                        fabio:Figure ;
@@ -123,16 +96,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
 
-<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
 <http://taxon-name.plazi.org/id/Animalia/Leofa>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
@@ -143,3 +106,13 @@
         dwc:order          "Hemiptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Cicadellidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.213726>
@@ -30,12 +31,24 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/03BBD012FFD6FFBEB5B808B5FDDECB1E>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Chinavia_napaea_Stal_2012> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Kirkaldy_1909> , <http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Lethierry_1893> , <http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Stal_1872> , <http://taxon-concept.plazi.org/id/Animalia/Acrosternum_napaeum_Rolston_1983> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.213725> ;
-        dc:creator                "Grazia, Jocelia" , "Genevcius, Bruno C." , "Schwertner, Cristiano F." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.213749> , <http://dx.doi.org/10.5281/zenodo.213753> , <http://taxon-name.plazi.org/id/Animalia/Acrosternum_napaeum> , <http://taxon-name.plazi.org/id/Animalia/Chinavia_napea> , <http://dx.doi.org/10.5281/zenodo.213726> , <http://taxon-name.plazi.org/id/Animalia/Nezara_napaea> , <http://dx.doi.org/10.5281/zenodo.213737> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.213725> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Chinavia_napaea> ;
+        dc:creator           "Grazia, Jocelia" , "Genevcius, Bruno C." , "Schwertner, Cristiano F." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.213749> , <http://dx.doi.org/10.5281/zenodo.213753> , <http://dx.doi.org/10.5281/zenodo.213726> , <http://dx.doi.org/10.5281/zenodo.213737> .
+
+<http://taxon-concept.plazi.org/id/Animalia/Acrosternum_napaeum_Genevcius_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Acrosternum_napaeum> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Pentatomidae" ;
+        dwc:genus         "Acrosternum" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "napaeum" ;
+        dwc:subGenus      "Chinavia" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -57,11 +70,6 @@
         bibo:volume     "3434" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.213737> , <http://dx.doi.org/10.5281/zenodo.213749> , <http://dx.doi.org/10.5281/zenodo.213726> , <http://dx.doi.org/10.5281/zenodo.213753> .
 
-<http://dx.doi.org/10.5281/zenodo.213753>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 29. Dorsal and ventral view of C. napaea (Holotype, Ƥ)." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/213753/files/figure.png" .
-
 <http://taxon-name.plazi.org/id/Animalia/Acrosternum>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
@@ -72,6 +80,24 @@
         dwc:order          "Hemiptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://dx.doi.org/10.5281/zenodo.213753>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 29. Dorsal and ventral view of C. napaea (Holotype, ♀)." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/213753/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Genevcius_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Nezara_napaea> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Pentatomidae" ;
+        dwc:genus         "Nezara" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "napaea" ;
+        dwc:subGenus      "Acrosternum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pentatomidae>
         a                  dwcFP:TaxonName ;
@@ -85,7 +111,7 @@
 
 <http://dx.doi.org/10.5281/zenodo.213749>
         a                        fabio:Figure ;
-        dc:description           "FIGURE 25. Ventral view of female genitalia: C. obstinata (a), C. difficilis (b) and C. napaea (c), showing gonocoxites 8 and 9 (gc 8 and gc 9), laterotergites 8 and 9 (la 8 and la 9), segment X (X), sutural angles (sa) and excavations (ex) on the posterior margins of gonocoxites 8 of C. napaea (c)." ;
+        dc:description           "FIGURE 25. Ventral view of female genitalia: C. obstinata (a), C. difficilis (b) and C. napaea (c), showing gonocoxites 8 and 9 (gc8 and gc9), laterotergites 8 and 9 (la8 and la9), segment X (X), sutural angles (sa) and excavations (ex) on the posterior margins of gonocoxites 8 of C. napaea (c)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/213749/files/figure.png" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
@@ -96,18 +122,6 @@
         dwc:order          "Hemiptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Chinavia_napea>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chinavia" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Pentatomidae" ;
-        dwc:genus          "Chinavia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "napea" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chinavia_napaea>
         a                  dwcFP:TaxonName ;
@@ -121,36 +135,9 @@
         dwc:rank           "species" ;
         dwc:species        "napaea" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Acrosternum_napaeum_Rolston_1983>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Acrosternum_napaeum> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Pentatomidae" ;
-        dwc:genus                     "Acrosternum" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Rolston, 1983" ;
-        dwc:species                   "napaeum" ;
-        dwc:subGenus                  "Chinavia" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Lethierry_1893>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Nezara_napaea> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Pentatomidae" ;
-        dwc:genus                     "Nezara" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Lethierry & Severin, 1893" ;
-        dwc:species                   "napaea" .
-
 <http://dx.doi.org/10.5281/zenodo.213737>
         a                        fabio:Figure ;
-        dc:description           "FIGURE 12. Shape of gonocoxites 8 (gc 8): flat in C. difficilis (a), convex in C. napaea (b)." ;
+        dc:description           "FIGURE 12. Shape of gonocoxites 8 (gc8): flat in C. difficilis (a), convex in C. napaea (b)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/213737/files/figure.png" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -177,19 +164,6 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chinavia_napaea_Stal_2012>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chinavia_napaea> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Pentatomidae" ;
-        dwc:genus                     "Chinavia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Stal" ;
-        dwc:species                   "napaea" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Stal_1872>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Nezara_napaea> ;
@@ -202,17 +176,3 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Stal, 1872: 42" ;
         dwc:species                   "napaea" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Nezara_napaea_Kirkaldy_1909>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Nezara_napaea> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Pentatomidae" ;
-        dwc:genus                     "Nezara" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Kirkaldy, 1909" ;
-        dwc:species                   "napaea" ;
-        dwc:subGenus                  "Acrosternum" .

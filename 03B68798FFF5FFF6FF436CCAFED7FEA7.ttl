@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.261985>
@@ -68,12 +69,11 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/03B68798FFF5FFF6FF436CCAFED7FEA7>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Amphipholizona_perplexa_Nielsen_1932> ;
-        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Amphigyptis_perplexa_Nielsen_1932> , <http://taxon-concept.plazi.org/id/Animalia/Amphiuridae_Hendler_1988> , <http://taxon-concept.plazi.org/id/Animalia/Amphiuridae_Martynov_2010> , <http://taxon-concept.plazi.org/id/Animalia/Amphigyptis_perplexa_Fell_1960> ;
-        trt:publishedIn          <http://dx.doi.org/10.11646/zootaxa.4097.3.6> ;
-        dc:creator               "Christoffersen, Martin Lindsey" , "Dias, Thelma Lúcia Pereira" , "Solís-Marín, Francisco Alonso" , "Gondim, Anne Isabelley" ;
-        cito:cites               <http://taxon-name.plazi.org/id/Animalia/Amphipholis> , <http://taxon-name.plazi.org/id/Animalia/Ophiolepididae> , <http://taxon-name.plazi.org/id/Animalia/Amphiuridae> , <http://dx.doi.org/10.5281/zenodo.261985> , <http://dx.doi.org/10.5281/zenodo.261986> , <http://dx.doi.org/10.5281/zenodo.261984> , <http://taxon-name.plazi.org/id/Animalia/Hemieuryalidae> , <http://taxon-name.plazi.org/id/Animalia/Amphipholizona> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.4097.3.6> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Amphipholizona_perplexa> ;
+        dc:creator           "Christoffersen, Martin Lindsey" , "Dias, Thelma Lúcia Pereira" , "Solís-Marín, Francisco Alonso" , "Gondim, Anne Isabelley" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.261985> , <http://dx.doi.org/10.5281/zenodo.261986> , <http://dx.doi.org/10.5281/zenodo.261984> .
 
 <http://taxon-name.plazi.org/id/Animalia/Ophiuroidea>
         a                  dwcFP:TaxonName ;
@@ -92,19 +92,6 @@
         dwc:order          "Ophiurida" ;
         dwc:phylum         "Echinodermata" ;
         dwc:rank           "family" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Amphipholizona_perplexa_Nielsen_1932>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Amphipholizona_perplexa> ;
-        dwc:class                     "Ophiuroidea" ;
-        dwc:family                    "Ophiolepididae" ;
-        dwc:genus                     "Amphipholizona" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Ophiurida" ;
-        dwc:phylum                    "Echinodermata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Nielsen, 1932" ;
-        dwc:species                   "perplexa" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Amphiuridae_Martynov_2010>
         a                             dwcFP:TaxonConcept ;
@@ -127,6 +114,27 @@
         dwc:phylum         "Echinodermata" ;
         dwc:rank           "family" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Amphipholizona_Gondim_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Amphipholizona> ;
+        dwc:class         "Ophiuroidea" ;
+        dwc:family        "Ophiolepididae" ;
+        dwc:genus         "Amphipholizona" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Ophiurida" ;
+        dwc:phylum        "Echinodermata" ;
+        dwc:rank          "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ophiolepididae_Gondim_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Ophiolepididae> ;
+        dwc:class         "Ophiuroidea" ;
+        dwc:family        "Ophiolepididae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Ophiurida" ;
+        dwc:phylum        "Echinodermata" ;
+        dwc:rank          "family" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Amphiuridae_Hendler_1988>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Amphiuridae> ;
@@ -137,6 +145,26 @@
         dwc:phylum                    "Echinodermata" ;
         dwc:rank                      "family" ;
         dwc:scientificNameAuthorship  "Hendler 1988" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hemieuryalidae_Gondim_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hemieuryalidae> ;
+        dwc:class         "Ophiuroidea" ;
+        dwc:family        "Hemieuryalidae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Ophiurida" ;
+        dwc:phylum        "Echinodermata" ;
+        dwc:rank          "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amphiuridae_Gondim_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Amphiuridae> ;
+        dwc:class         "Ophiuroidea" ;
+        dwc:family        "Amphiuridae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Ophiurida" ;
+        dwc:phylum        "Echinodermata" ;
+        dwc:rank          "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Echinodermata>
         a                  dwcFP:TaxonName ;
@@ -169,19 +197,6 @@
         dwc:phylum         "Echinodermata" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Amphigyptis_perplexa_Fell_1960>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Amphigyptis_perplexa> ;
-        dwc:class                     "Ophiuroidea" ;
-        dwc:family                    "Hemieuryalidae" ;
-        dwc:genus                     "Amphigyptis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Ophiurida" ;
-        dwc:phylum                    "Echinodermata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Nielsen, 1932: 306" ;
-        dwc:species                   "perplexa" .
-
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
@@ -191,3 +206,14 @@
         a                        fabio:Figure ;
         dc:description           "FIGURE 6. Images of type material of Amphipholizona perplexa (Nielsen, 1932) new comb. and pictures of distinct specimens showing some diferences in the patterns of dorsal plates of the disc: (A – B) Photos of syntypes ZMUC OPH 251; (C) Illustrations provided by Nielsen (1932) in original description of species; (D) juvenile specimen showing the primary plates; (D – E) specimens without defined primary plates. (Photos of syntypes courtesy of Tom Schiøtte and 6 F courtesy of Rafael B. Moura). CPP: centrodorsal plate; RPP: radial primary plates; RS: radial shield." ;
         fabio:hasRepresentation  "https://zenodo.org/record/261986/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amphipholis_Gondim_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Amphipholis> ;
+        dwc:class         "Ophiuroidea" ;
+        dwc:family        "Amphiuridae" ;
+        dwc:genus         "Amphipholis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Ophiurida" ;
+        dwc:phylum        "Echinodermata" ;
+        dwc:rank          "genus" .

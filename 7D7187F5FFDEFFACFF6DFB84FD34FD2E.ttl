@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.187957>
@@ -51,16 +52,25 @@
         dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/7D7187F5FFDEFFACFF6DFB84FD34FD2E>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.187954> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Sphaenorhynchus_botocudo> ;
-        dc:creator           "Gasparini, João Luiz" , "Almeida, Antonio De Pádua" , "Caramaschi, Ulisses" ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.187957> , <http://dx.doi.org/10.5281/zenodo.187956> , <http://dx.doi.org/10.5281/zenodo.187955> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Sphaenorhynchus_botocudo_Caramaschi_2009> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.187954> ;
+        dc:creator               "Gasparini, João Luiz" , "Almeida, Antonio De Pádua" , "Caramaschi, Ulisses" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.187957> , <http://dx.doi.org/10.5281/zenodo.187956> , <http://dx.doi.org/10.5281/zenodo.187955> .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Anura>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
+        dwc:class          "Amphibia" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Anura" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hylidae>
         a                  dwcFP:TaxonName ;
@@ -72,15 +82,6 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
 
-<http://taxon-name.plazi.org/id/Animalia/Anura>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
-        dwc:class          "Amphibia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Anura" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "order" .
-
 <http://taxon-name.plazi.org/id/Animalia/Sphaenorhynchus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hylidae> ;
@@ -91,6 +92,21 @@
         dwc:order          "Anura" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphaenorhynchus_botocudo_Caramaschi_2009>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Sphaenorhynchus_botocudo> ;
+        dwc:authority      "Caramaschi, 2009" ;
+        dwc:authorityName  "Caramaschi" ;
+        dwc:authorityYear  "2009" ;
+        dwc:class          "Amphibia" ;
+        dwc:family         "Hylidae" ;
+        dwc:genus          "Sphaenorhynchus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Anura" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "species" ;
+        dwc:species        "botocudo" .
 
 <http://dx.doi.org/10.5281/zenodo.187956>
         a                        fabio:Figure ;

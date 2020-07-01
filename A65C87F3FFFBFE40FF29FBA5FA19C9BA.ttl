@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Pangasella_volkovitshi>
@@ -60,12 +61,10 @@
         bibo:volume     "3047" .
 
 <http://treatment.plazi.org/id/A65C87F3FFFBFE40FF29FBA5FA19C9BA>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Tephritis_Latreille_2011> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Pangasella_Richter_1995> , <http://taxon-concept.plazi.org/id/Animalia/Pangasella_volkovitshi_Richter_1995> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.201981> ;
-        dc:creator                "Korneyev, Valery A." , "Zarghani, Ebrahim" , "Namin, Saeed Mohamadzade" , "Khaghaninia, Samad" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Trupanea> , <http://taxon-name.plazi.org/id/Animalia/Tephritis> , <http://taxon-name.plazi.org/id/Animalia/Acanthiophilus> , <http://taxon-concept.plazi.org/id/Animalia/Tephritis_angulatofasciata_Portschinsky_1892> , <http://taxon-name.plazi.org/id/Animalia/Tephritini> , <http://taxon-concept.plazi.org/id/Animalia/Tephritis_admissa_Hering_1961> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.201981> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Tephritis> ;
+        dc:creator           "Korneyev, Valery A." , "Namin, Saeed Mohamadzade" , "Zarghani, Ebrahim" , "Khaghaninia, Samad" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -75,16 +74,28 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://taxon-name.plazi.org/id/Animalia/Acanthiophilus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tephritidae" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Tephritidae" ;
-        dwc:genus          "Acanthiophilus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Trupanea_Scrank_2011>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Trupanea> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Tephritidae" ;
+        dwc:genus                     "Trupanea" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Scrank" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tephritis_Khaghaninia_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tephritis> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Tephritidae" ;
+        dwc:genus         "Tephritis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tephritis>
         a                  dwcFP:TaxonName ;
@@ -97,6 +108,40 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Acanthiophilus_Rondani_2011>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Acanthiophilus> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Tephritidae" ;
+        dwc:genus                     "Acanthiophilus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Rondani" .
+
+<http://taxon-name.plazi.org/id/Animalia/Acanthiophilus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tephritidae" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Tephritidae" ;
+        dwc:genus          "Acanthiophilus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tephritini_Khaghaninia_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tephritini> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Tephritidae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "tribe" ;
+        dwc:tribe         "Tephritini" .
+
 <http://taxon-name.plazi.org/id/Animalia/Trupanea>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tephritidae" ;
@@ -107,6 +152,31 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Acrorellia_Wang_1990>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Acrorellia> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Tephritidae" ;
+        dwc:genus                     "Acrorellia" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Wang, 1990" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Musca_arnicae_Linnaeus_1758>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Musca_arnicae> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Anthomyiidae" ;
+        dwc:genus                     "Musca" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Linnaeus 1758" ;
+        dwc:species                   "arnicae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tephritini>
         a                  dwcFP:TaxonName ;
@@ -175,6 +245,19 @@
         dwc:scientificNameAuthorship  "Richter 1995" ;
         dwc:species                   "volkovitshi" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Acrorellia_sinica_Wang_1990>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Acrorellia_sinica> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Tephritidae" ;
+        dwc:genus                     "Acrorellia" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Wang 1990" ;
+        dwc:species                   "sinica" .
+
 <http://taxon-name.plazi.org/id/Animalia/Tephritidae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
@@ -211,15 +294,3 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Tephritis_Latreille_2011>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tephritis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Tephritidae" ;
-        dwc:genus                     "Tephritis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Latreille" .

@@ -11,7 +11,23 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Lypoglossa_lateralis>
         a                  dwcFP:TaxonName ;
@@ -25,16 +41,29 @@
         dwc:rank           "species" ;
         dwc:species        "lateralis" .
 
-<http://dx.doi.org/10.5281/zenodo.158194>
-        a               fabio:JournalArticle ;
-        dc:creator      "Gusarov, Vladimir I." ;
-        dc:date         "2004" ;
-        dc:title        "A revision of the genus Lypoglossa Fenyes, 1918 (Coleoptera: Staphylinidae: Aleocharinae)" ;
-        bibo:endPage    "36" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "747" ;
-        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.158212> , <http://dx.doi.org/10.5281/zenodo.158197> .
+<http://taxon-name.plazi.org/id/Animalia/Lypoglossa>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Staphylinidae" ;
+        dwc:genus          "Lypoglossa" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Mannerheim_1830>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxypoda_lateralis> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Staphylinidae" ;
+        dwc:genus                     "Oxypoda" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Mannerheim, 1830: 70" ;
+        dwc:species                   "lateralis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
         a                  dwcFP:TaxonName ;
@@ -46,31 +75,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Benick_1974>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Atheta_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Atheta" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Scheerpeltz, 1968: 159" ;
-        dwc:species                   "lateralis" ;
-        dwc:subGenus                  "Megacrotona" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_Fenyes_1920>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxypoda> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Oxypoda" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Fenyes, 1920" .
+<http://treatment.plazi.org/id/AE6A87977C41FFF1FEB7C4B1FBF0C03A>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Lypoglossa_lateralis_Mannerheim_1830> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Scheerpeltz_1968> , <http://taxon-concept.plazi.org/id/Animalia/Lypoglossa_lateralis_Gusarov_2004> , <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Brundin_1952> , <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_Gusarov_2004> , <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Mannerheim_1830> ;
+        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.158194> ;
+        dc:creator                "Gusarov, Vladimir I." ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.158212> , <http://dx.doi.org/10.5281/zenodo.158197> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Lypoglossa_lateralis_Mannerheim_1830>
         a                             dwcFP:TaxonConcept ;
@@ -84,6 +100,17 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Mannerheim, 1830" ;
         dwc:species                   "lateralis" .
+
+<http://dx.doi.org/10.5281/zenodo.158194>
+        a               fabio:JournalArticle ;
+        dc:creator      "Gusarov, Vladimir I." ;
+        dc:date         "2004" ;
+        dc:title        "A revision of the genus Lypoglossa Fenyes, 1918 (Coleoptera: Staphylinidae: Aleocharinae)" ;
+        bibo:endPage    "36" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "747" ;
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.158212> , <http://dx.doi.org/10.5281/zenodo.158197> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Brundin_1952>
         a                             dwcFP:TaxonConcept ;
@@ -99,13 +126,35 @@
         dwc:species                   "lateralis" ;
         dwc:subGenus                  "Acrotona" .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
+<http://dx.doi.org/10.5281/zenodo.158197>
+        a                        fabio:Figure ;
+        dc:description           "FIGURES 12 – 17. Details of Lypoglossa angularis fenyesi (Bernhauer) (male, 7 km NNE McCarthy, Alaska (12, 15, 17 )) and L. lateralis (Mannerheim) (male, 10 km E Amguema, Chukotka Pen., Russia (13 – 14, 16 )). 12 – 13 — right antenna; 14 — mentum; 15 — right metatarsus, posterior view; 16 — pronotum; 17 — meso­ and metathorax. Scale bar 0.1 mm (14), 0.4 mm (12 – 13, 15 – 17)." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/158197/files/figure.png" .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
+        dwc:rank           "order" .
+
+<http://dx.doi.org/10.5281/zenodo.158212>
+        a                        fabio:Figure ;
+        dc:description           "FIGURES 72 – 78. Genitalia of Lypoglossa lateralis (Mannerheim) (male, 30 km N Magadan (72 – 77), and female, 25 km N Magadan (78), Chukotka Peninsula, Russia). 72 — median lobe, parameral view; 73 — apex of median lobe, parameral view; 74 — median lobe, lateral view; 75 — apex of median lobe, lateral view; 76 — apex of left paramere; 77 — sclerite of left paramere; 78 — spermatheca. Scale bar 0.1 mm (73, 75 – 77), 0.2 mm (72, 74, 78)." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/158212/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_Gusarov_2004>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Oxypoda> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Staphylinidae" ;
+        dwc:genus         "Oxypoda" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Scheerpeltz_1968>
         a                             dwcFP:TaxonConcept ;
@@ -120,145 +169,3 @@
         dwc:scientificNameAuthorship  "Scheerpeltz, 1968: 159" ;
         dwc:species                   "lateralis" ;
         dwc:subGenus                  "Megacrotona" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Hoebeke_1992>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Atheta_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Atheta" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Scheerpeltz, 1968: 159" ;
-        dwc:species                   "lateralis" ;
-        dwc:subGenus                  "Megacrotona" .
-
-<http://dx.doi.org/10.5281/zenodo.158197>
-        a                        fabio:Figure ;
-        dc:description           "FIGURES 12 – 17. Details of Lypoglossa angularis fenyesi (Bernhauer) (male, 7 km NNE McCarthy, Alaska (12, 15, 17 )) and L. lateralis (Mannerheim) (male, 10 km E Amguema, Chukotka Pen., Russia (13 – 14, 16 )). 12 – 13 — right antenna; 14 — mentum; 15 — right metatarsus, posterior view; 16 — pronotum; 17 — meso­ and metathorax. Scale bar 0.1 mm (14), 0.4 mm (12 – 13, 15 – 17)." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/158197/files/figure.png" .
-
-<http://treatment.plazi.org/id/AE6A87977C41FFF1FEB7C4B1FBF0C03A>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Lypoglossa_lateralis_Mannerheim_1830> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_Fenyes_1920> , <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Scheerpeltz_1968> , <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Fenyes_1920> , <http://taxon-concept.plazi.org/id/Animalia/Megacrotona_lateralis_Lohse_1974> , <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Brundin_1952> , <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Mannerheim_1830> , <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Benick_1974> , <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Lohse_1985> , <http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Hoebeke_1992> , <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Bernhauer_1926> , <http://taxon-concept.plazi.org/id/Animalia/Oxypoda_Bernhauer_1926> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.158194> ;
-        dc:creator                "Gusarov, Vladimir I." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.158212> , <http://dx.doi.org/10.5281/zenodo.158197> , <http://taxon-name.plazi.org/id/Animalia/Oxypoda> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Atheta_lateralis_Lohse_1985>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Atheta_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Atheta" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Scheerpeltz, 1968: 159" ;
-        dwc:species                   "lateralis" ;
-        dwc:subGenus                  "Megacrotona" .
-
-<http://taxon-name.plazi.org/id/Animalia/Lypoglossa>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:genus          "Lypoglossa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Bernhauer_1926>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxypoda_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Oxypoda" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Bernhauer & Scheerpeltz, 1926: 748" ;
-        dwc:species                   "lateralis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_Bernhauer_1926>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxypoda> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Oxypoda" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Bernhauer & Scheerpeltz, 1926" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Fenyes_1920>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxypoda_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Oxypoda" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Fenyes, 1920: 366" ;
-        dwc:species                   "lateralis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Oxypoda_lateralis_Mannerheim_1830>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Oxypoda_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Oxypoda" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Mannerheim, 1830: 70" ;
-        dwc:species                   "lateralis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Megacrotona_lateralis_Lohse_1974>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megacrotona_lateralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Staphylinidae" ;
-        dwc:genus                     "Megacrotona" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Benick and Lohse, 1974: 103" ;
-        dwc:species                   "lateralis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://dx.doi.org/10.5281/zenodo.158212>
-        a                        fabio:Figure ;
-        dc:description           "FIGURES 72 – 78. Genitalia of Lypoglossa lateralis (Mannerheim) (male, 30 km N Magadan (72 – 77), and female, 25 km N Magadan (78), Chukotka Peninsula, Russia). 72 — median lobe, parameral view; 73 — apex of median lobe, parameral view; 74 — median lobe, lateral view; 75 — apex of median lobe, lateral view; 76 — apex of left paramere; 77 — sclerite of left paramere; 78 — spermatheca. Scale bar 0.1 mm (73, 75 – 77), 0.2 mm (72, 74, 78)." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/158212/files/figure.png" .

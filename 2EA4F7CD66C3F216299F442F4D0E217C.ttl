@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <https://doi.org/10.5281/zenodo.291971>
@@ -18,11 +19,10 @@
         dc:title    "Chapter 7: Linnaean Plant Names and their Types (part O)" .
 
 <http://treatment.plazi.org/id/2EA4F7CD66C3F216299F442F4D0E217C>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Hedyotis_brevicalyx_Sivar._2007> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Plantae/Oldenlandia_umbellata_Linnaeus_1753> ;
-        trt:publishedIn           <https://doi.org/10.5281/zenodo.291971> ;
-        dc:creator                "Jarvis, Charlie" .
+        a                    trt:Treatment ;
+        trt:publishedIn      <https://doi.org/10.5281/zenodo.291971> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Hedyotis_brevicalyx> ;
+        dc:creator           "Jarvis, Charlie" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
@@ -42,17 +42,6 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "family" .
 
-<http://taxon-name.plazi.org/id/Plantae/Oldenlandia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Rubiaceae> ;
-        dwc:class          "Magnoliopsida" ;
-        dwc:family         "Rubiaceae" ;
-        dwc:genus          "Oldenlandia" ;
-        dwc:kingdom        "Plantae" ;
-        dwc:order          "Gentianales" ;
-        dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "genus" .
-
 <http://taxon-name.plazi.org/id/Plantae/Hedyotis_brevicalyx>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Hedyotis" ;
@@ -65,18 +54,16 @@
         dwc:rank           "species" ;
         dwc:species        "brevicalyx" .
 
-<http://taxon-concept.plazi.org/id/Plantae/Hedyotis_brevicalyx_Sivar._2007>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Hedyotis_brevicalyx> ;
-        dwc:class                     "Magnoliopsida" ;
-        dwc:family                    "Rubiaceae" ;
-        dwc:genus                     "Hedyotis" ;
-        dwc:kingdom                   "Plantae" ;
-        dwc:order                     "Gentianales" ;
-        dwc:phylum                    "Tracheophyta" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sivar." ;
-        dwc:species                   "brevicalyx" .
+<http://taxon-name.plazi.org/id/Plantae/Oldenlandia>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Rubiaceae> ;
+        dwc:class          "Magnoliopsida" ;
+        dwc:family         "Rubiaceae" ;
+        dwc:genus          "Oldenlandia" ;
+        dwc:kingdom        "Plantae" ;
+        dwc:order          "Gentianales" ;
+        dwc:phylum         "Tracheophyta" ;
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Hedyotis>
         a                  dwcFP:TaxonName ;
@@ -117,7 +104,12 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Plantae/Oldenlandia_umbellata_Linnaeus_1753>
+<http://taxon-name.plazi.org/id/Plantae>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Plantae" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Oldenlandia_umbellata_Linnaeus_2007>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Oldenlandia_umbellata> ;
         dwc:class                     "Magnoliopsida" ;
@@ -129,8 +121,3 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Linnaeus" ;
         dwc:species                   "umbellata" .
-
-<http://taxon-name.plazi.org/id/Plantae>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Plantae" ;
-        dwc:rank     "kingdom" .

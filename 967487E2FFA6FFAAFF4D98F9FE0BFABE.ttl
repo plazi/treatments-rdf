@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.257344>
@@ -31,12 +32,11 @@
         dwc:species        "densepilosa" .
 
 <http://treatment.plazi.org/id/967487E2FFA6FFAAFF4D98F9FE0BFABE>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Neoephydra_ciligena_Rondani_2016> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_lopesi_Wirth_1968> , <http://taxon-concept.plazi.org/id/Animalia/Parydra_ciligena_Wirth_1968> , <http://taxon-concept.plazi.org/id/Animalia/Neoephydra_densepilosa_Mathis_2008> , <http://taxon-concept.plazi.org/id/Animalia/Neoephydra_lopesi_Mathis_2008> , <http://taxon-concept.plazi.org/id/Animalia/Ephydra_ciligena_Rondani_1868> , <http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_lopesi_Oliveira_1954> , <http://taxon-concept.plazi.org/id/Animalia/Ephydra_densepilosa_Hendel_1930> , <http://taxon-concept.plazi.org/id/Animalia/Neoephydra_grumanni_Mathis_2008> , <http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_densepilosa_Hendel_1933> , <http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_prionoptera_Cresson_1935> ;
-        trt:publishedIn           <http://doi.org/10.11646/zootaxa.4116.1.1> ;
-        dc:creator                "Marinoni, Luciane" , "Mathis, Wayne N." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Neoephydra_densepilosa> , <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_ciligena> , <http://taxon-name.plazi.org/id/Animalia/Neoephydra_lopesi> , <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_densepilosa> , <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_prionoptera> , <http://dx.doi.org/10.5281/zenodo.257344> , <http://taxon-name.plazi.org/id/Animalia/Parydra_ciligena> , <http://taxon-name.plazi.org/id/Animalia/Neoephydra_grumanni> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://doi.org/10.11646/zootaxa.4116.1.1> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Neoephydra_ciligena> ;
+        dc:creator           "Marinoni, Luciane" , "Mathis, Wayne N." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.257344> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -45,6 +45,42 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parydra_ciligena_Mathis_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Parydra_ciligena> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ephydridae" ;
+        dwc:genus         "Parydra" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "ciligena" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_grumanni_Mathis_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Neoephydra_grumanni> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ephydridae" ;
+        dwc:genus         "Neoephydra" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "grumanni" .
+
+<http://taxon-name.plazi.org/id/Animalia/Dimecoenia_grumanni>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dimecoenia" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Ephydridae" ;
+        dwc:genus          "Dimecoenia" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "grumanni" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ephydridae>
         a                  dwcFP:TaxonName ;
@@ -55,6 +91,18 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_prionoptera_Mathis_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_prionoptera> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ephydridae" ;
+        dwc:genus         "Dimecoenia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "prionoptera" .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoephydra_ciligena>
         a                  dwcFP:TaxonName ;
@@ -67,19 +115,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "ciligena" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_densepilosa_Mathis_2008>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoephydra_densepilosa> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Neoephydra" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Mathis 2008" ;
-        dwc:species                   "densepilosa" .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoephydra>
         a                  dwcFP:TaxonName ;
@@ -104,19 +139,6 @@
         bibo:volume     "4116" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.257344> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_lopesi_Mathis_2008>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoephydra_lopesi> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Neoephydra" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Mathis 2008" ;
-        dwc:species                   "lopesi" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Ephydra_densepilosa_Hendel_1930>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ephydra_densepilosa> ;
@@ -129,19 +151,6 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Hendel 1930: 152" ;
         dwc:species                   "densepilosa" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_ciligena_Rondani_2016>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoephydra_ciligena> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Neoephydra" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Rondani" ;
-        dwc:species                   "ciligena" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_lopesi_Oliveira_1954>
         a                             dwcFP:TaxonConcept ;
@@ -156,31 +165,29 @@
         dwc:scientificNameAuthorship  "Oliveira 1954b: 269" ;
         dwc:species                   "lopesi" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_prionoptera_Cresson_1935>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_prionoptera> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Dimecoenia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Cresson 1935" ;
-        dwc:species                   "prionoptera" .
+<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_densepilosa_Mathis_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Neoephydra_densepilosa> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ephydridae" ;
+        dwc:genus         "Neoephydra" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "densepilosa" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_lopesi_Wirth_1968>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_lopesi> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Dimecoenia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Oliveira 1954b: 269" ;
-        dwc:species                   "lopesi" .
+<http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_densepilosa_Mathis_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_densepilosa> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ephydridae" ;
+        dwc:genus         "Dimecoenia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "densepilosa" .
 
 <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_lopesi>
         a                  dwcFP:TaxonName ;
@@ -194,18 +201,17 @@
         dwc:rank           "species" ;
         dwc:species        "lopesi" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_densepilosa_Hendel_1933>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_densepilosa> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Dimecoenia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Hendel 1933" ;
-        dwc:species                   "densepilosa" .
+<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_lopesi_Mathis_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Neoephydra_lopesi> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ephydridae" ;
+        dwc:genus         "Neoephydra" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "lopesi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
@@ -214,18 +220,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Parydra_ciligena_Wirth_1968>
+<http://taxon-concept.plazi.org/id/Animalia/Dimecoenia_grumanni_Oliveira_1954>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Parydra_ciligena> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dimecoenia_grumanni> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Parydra" ;
+        dwc:genus                     "Dimecoenia" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "Diptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Wirth 1968" ;
-        dwc:species                   "ciligena" .
+        dwc:scientificNameAuthorship  "Oliveira 1954b: 272" ;
+        dwc:species                   "grumanni" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;
@@ -265,16 +271,3 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Rondani 1868: 32" ;
         dwc:species                   "ciligena" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Neoephydra_grumanni_Mathis_2008>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoephydra_grumanni> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ephydridae" ;
-        dwc:genus                     "Neoephydra" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Mathis 2008" ;
-        dwc:species                   "grumanni" .

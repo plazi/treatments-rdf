@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.274582>
@@ -19,12 +20,11 @@
         fabio:hasRepresentation  "https://zenodo.org/record/274582/files/figure.png" .
 
 <http://treatment.plazi.org/id/03C787A4FF9A322F12ECF8B7FEC2FEC7>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Apterodorcus_bacchus_E_2008> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Lucanus_bacchus_Westwood_1845> , <http://taxon-concept.plazi.org/id/Animalia/Dorcus_bipunctatus_Philippi_1859> , <http://taxon-concept.plazi.org/id/Animalia/Dorcus_chilensis_Dejean_1833> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.274579> ;
-        dc:creator                "E, José Mondaca" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.274581> , <http://dx.doi.org/10.5281/zenodo.274584> , <http://dx.doi.org/10.5281/zenodo.274583> , <http://taxon-name.plazi.org/id/Animalia/Lucanus_bacchus> , <http://dx.doi.org/10.5281/zenodo.274580> , <http://taxon-name.plazi.org/id/Animalia/Lucanus> , <http://dx.doi.org/10.5281/zenodo.274582> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.274579> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Apterodorcus_bacchus> ;
+        dc:creator           "E, José Mondaca" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.274580> , <http://dx.doi.org/10.5281/zenodo.274581> , <http://dx.doi.org/10.5281/zenodo.274584> , <http://dx.doi.org/10.5281/zenodo.274583> , <http://dx.doi.org/10.5281/zenodo.274582> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -50,6 +50,17 @@
         dc:description           "FIGURES 2 – 5. Dorsal habitus of Apterodorcus species: 2) A. bacchus, major male; 3) A. tristis, major male; 4) A. bacchus, female; 5) A. tristis, female." ;
         fabio:hasRepresentation  "https://zenodo.org/record/274581/files/figure.png" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Lucanus_E_2008>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Lucanus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Lucanidae" ;
+        dwc:genus         "Lucanus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Apterodorcus_bacchus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Apterodorcus" ;
@@ -66,21 +77,6 @@
         a                        fabio:Figure ;
         dc:description           "FIGURE 1. Distribution of Apterodorcus species: A. bacchus (circles), and A. tristis (triangles). Regions of Chile indicated by Roman numeral, provinces of Argentina by postal code (Q = Neuquén, U = Chubut, R = Río Negro)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/274580/files/figure.png" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Apterodorcus_bacchus_E_2008>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Apterodorcus_bacchus> ;
-        dwc:authority      "E, 2008" ;
-        dwc:authorityName  "E" ;
-        dwc:authorityYear  "2008" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Lucanidae" ;
-        dwc:genus          "Apterodorcus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "bacchus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dorcus_chilensis_Dejean_1833>
         a                             dwcFP:TaxonConcept ;
@@ -107,6 +103,19 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "F. Philippi, 1859: 656" ;
         dwc:species                   "bipunctatus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lucanus_bacchus_Hope_2008>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lucanus_bacchus> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Lucanidae" ;
+        dwc:genus                     "Lucanus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Hope" ;
+        dwc:species                   "bacchus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Dorcus>
         a                  dwcFP:TaxonName ;
@@ -194,19 +203,6 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lucanus_bacchus_Westwood_1845>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lucanus_bacchus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Lucanidae" ;
-        dwc:genus                     "Lucanus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Hope" ;
-        dwc:species                   "bacchus" .
 
 <http://dx.doi.org/10.5281/zenodo.274579>
         a               fabio:JournalArticle ;

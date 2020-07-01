@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Chordata>
@@ -21,11 +22,10 @@
         dwc:rank           "phylum" .
 
 <http://treatment.plazi.org/id/865687AC8E094467FF0F0E68FEFF7C0D>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/POMACANTHIDAE_Golani_2018> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Holacanthus_asfur_Forsskål_1775> , <http://taxon-concept.plazi.org/id/Animalia/Pomacanthus_asfur_Niebuhr_1775> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4509.1.1> ;
-        dc:creator                "Fricke, Ronald" , "Golani, Daniel" .
+        a                    trt:Treatment ;
+        trt:publishedIn      <https://doi.org/10.11646/zootaxa.4509.1.1> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/POMACANTHIDAE> ;
+        dc:creator           "Fricke, Ronald" , "Golani, Daniel" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pomacanthus>
         a                  dwcFP:TaxonName ;
@@ -62,6 +62,19 @@
         dwc:rank           "species" ;
         dwc:species        "asfur" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Holacanthus_asfur_Golani_2018>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Holacanthus_asfur> ;
+        dwc:class                     "Actinopterygii" ;
+        dwc:family                    "Chaetodontidae" ;
+        dwc:genus                     "Holacanthus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Perciformes" ;
+        dwc:phylum                    "Chordata" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Forsskål, 1775" ;
+        dwc:species                   "asfur" .
+
 <http://taxon-name.plazi.org/id/Animalia/POMACANTHIDAE>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Perciformes" ;
@@ -71,6 +84,18 @@
         dwc:order          "Perciformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Pomacanthus_maculosus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pomacanthus" ;
+        dwc:class          "Actinopterygii" ;
+        dwc:family         "Chaetodontidae" ;
+        dwc:genus          "Pomacanthus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Perciformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "species" ;
+        dwc:species        "maculosus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -85,19 +110,6 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "class" .
 
-<http://taxon-concept.plazi.org/id/Animalia/POMACANTHIDAE_Golani_2018>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/POMACANTHIDAE> ;
-        dwc:authority      "Golani, 2018" ;
-        dwc:authorityName  "Golani" ;
-        dwc:authorityYear  "2018" ;
-        dwc:class          "Actinopterygii" ;
-        dwc:family         "Pomacanthidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Perciformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "family" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Pomacanthus_asfur_Niebuhr_1775>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pomacanthus_asfur> ;
@@ -111,18 +123,6 @@
         dwc:scientificNameAuthorship  "(Forsskal in Niebuhr 1775)" ;
         dwc:species                   "asfur" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Holacanthus_asfur_Forsskål_1775>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Holacanthus_asfur> ;
-        dwc:class         "Actinopterygii" ;
-        dwc:family        "Chaetodontidae" ;
-        dwc:genus         "Holacanthus" ;
-        dwc:kingdom       "Animalia" ;
-        dwc:order         "Perciformes" ;
-        dwc:phylum        "Chordata" ;
-        dwc:rank          "species" ;
-        dwc:species       "asfur" .
-
 <http://taxon-name.plazi.org/id/Animalia/Perciformes>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
@@ -131,3 +131,16 @@
         dwc:order          "Perciformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "order" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pomacanthus_maculosus_Niebuhr_1775>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pomacanthus_maculosus> ;
+        dwc:class                     "Actinopterygii" ;
+        dwc:family                    "Chaetodontidae" ;
+        dwc:genus                     "Pomacanthus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Perciformes" ;
+        dwc:phylum                    "Chordata" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "(Forsskal in Niebuhr 1775)" ;
+        dwc:species                   "maculosus" .

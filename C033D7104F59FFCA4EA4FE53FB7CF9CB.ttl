@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Chordata>
@@ -19,13 +20,6 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "phylum" .
-
-<http://treatment.plazi.org/id/C033D7104F59FFCA4EA4FE53FB7CF9CB>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.257769> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Brycon_howesi> ;
-        dc:creator           "Lima, Flávio C. T." ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.257794> , <http://dx.doi.org/10.5281/zenodo.257775> , <http://dx.doi.org/10.5281/zenodo.257774> .
 
 <http://taxon-name.plazi.org/id/Animalia/Bryconidae>
         a                  dwcFP:TaxonName ;
@@ -37,10 +31,30 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
 
+<http://treatment.plazi.org/id/C033D7104F59FFCA4EA4FE53FB7CF9CB>
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Brycon_howesi_Lima_2017> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Brycon_opalinus_Lima_2017> , <http://taxon-concept.plazi.org/id/Animalia/Brycon_insignis_Steindachner_1877> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.257769> ;
+        dc:creator               "Lima, Flávio C. T." ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.257794> , <http://dx.doi.org/10.5281/zenodo.257775> , <http://dx.doi.org/10.5281/zenodo.257774> .
+
 <http://dx.doi.org/10.5281/zenodo.257774>
         a                        fabio:Figure ;
         dc:description           "FIGURE 5. Diagrammatic representation of the patterns of dark colour markings found among cis-andean Brycon species, represented by selected species. A. Brycon stolzmanni. B. Brycon coxeyi. C. Brycon insignis. D. Brycon nattereri. E. Brycon hilarii. F. Brycon whitei. G. Brycon amazonicus. H. Brycon gouldingi. I. Brycon melanopterus. J-L. Brycon falcatus." ;
         fabio:hasRepresentation  "https://zenodo.org/record/257774/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brycon_opalinus_Lima_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Brycon_opalinus> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Bryconidae" ;
+        dwc:genus         "Brycon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Characiformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "opalinus" .
 
 <http://dx.doi.org/10.5281/zenodo.257794>
         a                        fabio:Figure ;
@@ -114,19 +128,6 @@
         bibo:volume     "4222" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.257774> , <http://dx.doi.org/10.5281/zenodo.257794> , <http://dx.doi.org/10.5281/zenodo.257775> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Brycon_opalinus_Gery_1992>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Brycon_opalinus> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Bryconidae" ;
-        dwc:genus                     "Brycon" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Characiformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Géry & Mahnert, 1992" ;
-        dwc:species                   "opalinus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Brycon>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Bryconidae> ;
@@ -147,18 +148,20 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "order" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Brycon_insignis_Godinho_1999>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Brycon_insignis> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Bryconidae" ;
-        dwc:genus                     "Brycon" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Characiformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Steindachner, 1877: 587" ;
-        dwc:species                   "insignis" .
+<http://taxon-concept.plazi.org/id/Animalia/Brycon_howesi_Lima_2017>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Brycon_howesi> ;
+        dwc:authority      "Lima, 2017" ;
+        dwc:authorityName  "Lima" ;
+        dwc:authorityYear  "2017" ;
+        dwc:class          "Actinopterygii" ;
+        dwc:family         "Bryconidae" ;
+        dwc:genus          "Brycon" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Characiformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "species" ;
+        dwc:species        "howesi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Brycon_howesi>
         a                  dwcFP:TaxonName ;

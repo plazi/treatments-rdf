@@ -11,57 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://treatment.plazi.org/id/3CBB620171C01F37C24A4047CD9E84BF>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Dolerus_madidus_Klug_1818> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.2.e1168> ;
-        dc:creator                "Livermore, Laurence" , "Knight, Guy T." , "Liston, Andrew D." , "Sheppard, David A." , "Broad, Gavin R." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Dolerus_schulthessi> , <http://taxon-name.plazi.org/id/Animalia/Tenthredo_lateritius> , <http://taxon-name.plazi.org/id/Animalia/Dolerus_chappelli> , <http://taxon-name.plazi.org/id/Animalia/Tenthredo_madida> , <http://taxon-name.plazi.org/id/Animalia/Tenthredo> .
-
-<http://taxon-name.plazi.org/id/Animalia/Dolerus_schulthessi>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dolerus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Hymenoptera" ;
-        dwc:genus          "Dolerus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "schulthessi" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> , <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Hymenoptera" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" , "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Tenthredo>
-        a            dwcFP:TaxonName ;
-        dwc:genus    "Tenthredo" ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "genus" .
 
 <http://dx.doi.org/10.3897/BDJ.2.e1168>
         a               fabio:JournalArticle ;
@@ -73,18 +24,70 @@
         bibo:startPage  "1168" ;
         bibo:volume     "2" .
 
-<http://taxon-name.plazi.org/id/Animalia/Tenthredo_lateritius>
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenthredo_lateritius_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tenthredo_lateritius> ;
+        dwc:genus         "Tenthredo" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "lateritius" .
+
+<http://taxon-name.plazi.org/id/Animalia/Tenthredo>
+        a            dwcFP:TaxonName ;
+        dwc:genus    "Tenthredo" ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> , <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Hymenoptera" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" , "order" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dolerus_schulthessi__2014>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dolerus_schulthessi> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Hymenoptera" ;
+        dwc:genus                     "Dolerus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "" ;
+        dwc:species                   "schulthessi" .
+
+<http://taxon-name.plazi.org/id/Animalia/Tenthredo_madida>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tenthredo" ;
         dwc:genus          "Tenthredo" ;
         dwc:kingdom        "Animalia" ;
         dwc:rank           "species" ;
-        dwc:species        "lateritius" .
+        dwc:species        "madida" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-name.plazi.org/id/Animalia/Dolerus_chappelli>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dolerus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Hymenoptera" ;
+        dwc:genus          "Dolerus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "chappelli" .
 
 <http://taxon-name.plazi.org/id/Animalia/Dolerus_madidus>
         a                  dwcFP:TaxonName ;
@@ -98,7 +101,15 @@
         dwc:rank           "species" ;
         dwc:species        "madidus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Dolerus_chappelli>
+<http://taxon-concept.plazi.org/id/Animalia/Tenthredo_madida_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tenthredo_madida> ;
+        dwc:genus         "Tenthredo" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "madida" .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolerus_schulthessi>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dolerus" ;
         dwc:class          "Insecta" ;
@@ -108,7 +119,27 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "chappelli" .
+        dwc:species        "schulthessi" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dolerus_chappelli__2014>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dolerus_chappelli> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Hymenoptera" ;
+        dwc:genus                     "Dolerus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "" ;
+        dwc:species                   "chappelli" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dolerus_madidus_Klug_1818>
         a                             dwcFP:TaxonConcept ;
@@ -124,6 +155,25 @@
         dwc:species                   "madidus" ;
         dwc:subGenus                  "Achaetoprion" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Tenthredo_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tenthredo> ;
+        dwc:genus         "Tenthredo" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .
+
+<http://treatment.plazi.org/id/3CBB620171C01F37C24A4047CD9E84BF>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Dolerus_madidus_Klug_1818> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Dolerus_chappelli__2014> , <http://taxon-concept.plazi.org/id/Animalia/Tenthredo_Liston_2014> , <http://taxon-concept.plazi.org/id/Animalia/Tenthredo_madida_Liston_2014> , <http://taxon-concept.plazi.org/id/Animalia/Dolerus_schulthessi__2014> , <http://taxon-concept.plazi.org/id/Animalia/Tenthredo_lateritius_Liston_2014> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.2.e1168> ;
+        dc:creator                "Livermore, Laurence" , "Knight, Guy T." , "Liston, Andrew D." , "Sheppard, David A." , "Broad, Gavin R." .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
 <http://taxon-name.plazi.org/id/Animalia/Dolerus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
@@ -135,10 +185,10 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Tenthredo_madida>
+<http://taxon-name.plazi.org/id/Animalia/Tenthredo_lateritius>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tenthredo" ;
         dwc:genus          "Tenthredo" ;
         dwc:kingdom        "Animalia" ;
         dwc:rank           "species" ;
-        dwc:species        "madida" .
+        dwc:species        "lateritius" .

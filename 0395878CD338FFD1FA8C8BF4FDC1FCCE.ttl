@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Pitangus>
@@ -34,6 +35,23 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Muscidae_Turienzo_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Muscidae> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Muscidae" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "family" .
+
+<http://taxon-concept.plazi.org/id/Plantae/DIPTERA_Turienzo_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/DIPTERA> ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Diptera" ;
+        dwc:rank          "order" .
+
 <http://dx.doi.org/10.5281/zenodo.178338>
         a               fabio:JournalArticle ;
         dc:creator      "Iorio, Osvaldo Di" , "Turienzo, Paola" ;
@@ -54,12 +72,11 @@
         dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/0395878CD338FFD1FA8C8BF4FDC1FCCE>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/TYRANNIDAE_Turienzo_2007> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Philornis_seguyi_Garcia_1952> , <http://taxon-concept.plazi.org/id/Animalia/Philornis_anomala_Garcia_1952> , <http://taxon-concept.plazi.org/id/Animalia/Philornis_torquans_Nielsen_1913> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.178338> ;
-        dc:creator                "Turienzo, Paola" , "Iorio, Osvaldo Di" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Plantae/DIPTERA> , <http://taxon-name.plazi.org/id/Animalia/Muscidae> , <http://taxon-name.plazi.org/id/Animalia/Philornis_anomala> , <http://dx.doi.org/10.5281/zenodo.178347> , <http://taxon-name.plazi.org/id/Animalia/Philornis_nielsen> , <http://taxon-name.plazi.org/id/Animalia/Pitangus_sulphuratus> , <http://taxon-name.plazi.org/id/Animalia/Pitangus> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.178338> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/TYRANNIDAE> ;
+        dc:creator           "Iorio, Osvaldo Di" , "Turienzo, Paola" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.178347> .
 
 <http://dx.doi.org/10.5281/zenodo.178347>
         a                        fabio:Figure ;
@@ -141,6 +158,18 @@
         dwc:order    "Diptera" ;
         dwc:rank     "order" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Philornis_anomala_Turienzo_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Philornis_anomala> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Muscidae" ;
+        dwc:genus         "Philornis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "anomala" .
+
 <http://taxon-name.plazi.org/id/Animalia/Aves>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
@@ -149,19 +178,6 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "class" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Philornis_anomala_Garcia_1952>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Philornis_anomala> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Muscidae" ;
-        dwc:genus                     "Philornis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "García 1952" ;
-        dwc:species                   "anomala" .
-
 <http://taxon-name.plazi.org/id/Animalia/Chordata>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
@@ -169,30 +185,28 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/TYRANNIDAE_Turienzo_2007>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/TYRANNIDAE> ;
-        dwc:authority      "Turienzo, 2007" ;
-        dwc:authorityName  "Turienzo" ;
-        dwc:authorityYear  "2007" ;
-        dwc:class          "Aves" ;
-        dwc:family         "Tyrannidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Passeriformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "family" .
+<http://taxon-concept.plazi.org/id/Animalia/Pitangus_Turienzo_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pitangus> ;
+        dwc:class         "Aves" ;
+        dwc:family        "Tyrannidae" ;
+        dwc:genus         "Pitangus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Passeriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Philornis_nielsen>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Philornis" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Muscidae" ;
-        dwc:genus          "Philornis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "nielsen" .
+<http://taxon-concept.plazi.org/id/Animalia/Pitangus_sulphuratus_Turienzo_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pitangus_sulphuratus> ;
+        dwc:class         "Aves" ;
+        dwc:family        "Tyrannidae" ;
+        dwc:genus         "Pitangus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Passeriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "sulphuratus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Philornis_torquans_Nielsen_1913>
         a                             dwcFP:TaxonConcept ;
@@ -237,6 +251,18 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Philornis_nielsen_Turienzo_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Philornis_nielsen> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Muscidae" ;
+        dwc:genus         "Philornis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "nielsen" .
 
 <http://taxon-name.plazi.org/id/Animalia/Philornis_anomala>
         a                  dwcFP:TaxonName ;

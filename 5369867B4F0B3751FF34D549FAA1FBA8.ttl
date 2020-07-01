@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Nothris_verbascella_clarella_Amsel_1935>
@@ -66,12 +67,11 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/5369867B4F0B3751FF34D549FAA1FBA8>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Nothris_verbascella_Karsholt_2015> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Tinea_verbascella_Denis_1775> , <http://taxon-concept.plazi.org/id/Animalia/Nothris_discretella_Rebel_1889> , <http://taxon-concept.plazi.org/id/Animalia/Nothris_verbascella_clarella_Amsel_1935> ;
-        trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.4059.3.3> ;
-        dc:creator                "Karsholt, Ole" , "Šumpich, Jan" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.236352> , <http://dx.doi.org/10.5281/zenodo.236346> , <http://dx.doi.org/10.5281/zenodo.236358> , <http://dx.doi.org/10.5281/zenodo.236356> , <http://taxon-name.plazi.org/id/Animalia/Tinea_verbascella> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.4059.3.3> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Nothris_verbascella> ;
+        dc:creator           "Šumpich, Jan" , "Karsholt, Ole" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.236358> , <http://dx.doi.org/10.5281/zenodo.236356> , <http://dx.doi.org/10.5281/zenodo.236352> , <http://dx.doi.org/10.5281/zenodo.236346> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Nothris_discretella_Rebel_1889>
         a                             dwcFP:TaxonConcept ;
@@ -143,27 +143,24 @@
         dwc:rank           "species" ;
         dwc:species        "discretella" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Nothris_verbascella_Karsholt_2015>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Nothris_verbascella> ;
-        dwc:authority      "Karsholt, 2015" ;
-        dwc:authorityName  "Karsholt" ;
-        dwc:authorityYear  "2015" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Gelechiidae" ;
-        dwc:genus          "Nothris" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Lepidoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "verbascella" .
-
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tinea_verbascella_Karsholt_2015>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tinea_verbascella> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Tineidae" ;
+        dwc:genus         "Tinea" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Lepidoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "verbascella" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -181,16 +178,3 @@
         bibo:startPage  "471" ;
         bibo:volume     "4059" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.236352> , <http://dx.doi.org/10.5281/zenodo.236346> , <http://dx.doi.org/10.5281/zenodo.236358> , <http://dx.doi.org/10.5281/zenodo.236356> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Tinea_verbascella_Denis_1775>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tinea_verbascella> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Tineidae" ;
-        dwc:genus                     "Tinea" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Lepidoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Denis & Schiffermüller], 1775" ;
-        dwc:species                   "verbascella" .

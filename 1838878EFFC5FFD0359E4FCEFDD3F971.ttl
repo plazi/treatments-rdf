@@ -11,15 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Extrarius_Boschung_1989>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Extrarius> ;
-        dwc:genus                     "Extrarius" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Boschung 1989" .
 
 <http://taxon-name.plazi.org/id/Animalia/Macrhybopsis_etnieri>
         a                  dwcFP:TaxonName ;
@@ -34,11 +27,12 @@
         dwc:species        "etnieri" .
 
 <http://treatment.plazi.org/id/1838878EFFC5FFD0359E4FCEFDD3F971>
-        a                    trt:Treatment ;
-        trt:publishedIn      <https://doi.org/10.11646/zootaxa.4247.5.1> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Macrhybopsis_etnieri> ;
-        dc:creator           "Powers, Steven L." , "Mayden, Richard L." , "Gilbert, Carter R." ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.439151> , <http://dx.doi.org/10.5281/zenodo.439150> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_etnieri_Gilbert_2017> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Extrarius_Gilbert_2017> , <http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_aestivalis_Gilbert_2017> , <http://taxon-concept.plazi.org/id/Animalia/Hybopsis_aestivalis_Gilbert_2017> , <http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_etnieri_Gilbert_2017> , <http://taxon-concept.plazi.org/id/Animalia/Hybopsis_hyostomus_Gilbert_2017> , <http://taxon-concept.plazi.org/id/Animalia/Nocomis_hyostomus_Gilbert_2017> ;
+        trt:publishedIn          <https://doi.org/10.11646/zootaxa.4247.5.1> ;
+        dc:creator               "Mayden, Richard L." , "Gilbert, Carter R." , "Powers, Steven L." ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.439151> , <http://dx.doi.org/10.5281/zenodo.439150> .
 
 <https://doi.org/10.11646/zootaxa.4247.5.1>
         a               fabio:JournalArticle ;
@@ -52,28 +46,17 @@
         bibo:volume     "4247" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.439151> , <http://dx.doi.org/10.5281/zenodo.439150> .
 
+<http://dx.doi.org/10.5281/zenodo.439151>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 2. Distribution of southeastern species of Macrhybopsis east of the Mississippi River. Individual species are identified by symbol and color. Circles with half blue and half red represent locations where M. boschungi and M. etnieri occur syntopically." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/439151/files/figure.png" .
+
 <http://taxon-name.plazi.org/id/Animalia/Hybopsis>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cyprinidae> ;
         dwc:class          "Actinopterygii" ;
         dwc:family         "Cyprinidae" ;
         dwc:genus          "Hybopsis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Cypriniformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "genus" .
-
-<http://dx.doi.org/10.5281/zenodo.439151>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 2. Distribution of southeastern species of Macrhybopsis east of the Mississippi River. Individual species are identified by symbol and color. Circles with half blue and half red represent locations where M. boschungi and M. etnieri occur syntopically." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/439151/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia/Macrhybopsis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cyprinidae> ;
-        dwc:class          "Actinopterygii" ;
-        dwc:family         "Cyprinidae" ;
-        dwc:genus          "Macrhybopsis" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Cypriniformes" ;
         dwc:phylum         "Chordata" ;
@@ -91,6 +74,40 @@
         dwc:rank           "species" ;
         dwc:species        "hyostomus" .
 
+<http://taxon-name.plazi.org/id/Animalia/Macrhybopsis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cyprinidae> ;
+        dwc:class          "Actinopterygii" ;
+        dwc:family         "Cyprinidae" ;
+        dwc:genus          "Macrhybopsis" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Cypriniformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hybopsis_hyostomus_Gilbert_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hybopsis_hyostomus> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Cyprinidae" ;
+        dwc:genus         "Hybopsis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Cypriniformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "hyostomus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_Gilbert_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Macrhybopsis> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Cyprinidae" ;
+        dwc:genus         "Macrhybopsis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Cypriniformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Hybopsis_aestivalis>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Hybopsis" ;
@@ -102,6 +119,18 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "species" ;
         dwc:species        "aestivalis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hybopsis_aestivalis_Gilbert_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hybopsis_aestivalis> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Cyprinidae" ;
+        dwc:genus         "Hybopsis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Cypriniformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "aestivalis" .
 
 <http://dx.doi.org/10.5281/zenodo.439150>
         a                        fabio:Figure ;
@@ -115,18 +144,6 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "class" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_Boschung_2004>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Macrhybopsis> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Cyprinidae" ;
-        dwc:genus                     "Macrhybopsis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Cypriniformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Boschung & Mayden 2004" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cypriniformes>
         a                  dwcFP:TaxonName ;
@@ -144,18 +161,18 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Hybopsis_aestivalis_Smith-Vaniz_1968>
+<http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_etnieri_Gilbert_2017>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Hybopsis_aestivalis> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Macrhybopsis_etnieri> ;
         dwc:class                     "Actinopterygii" ;
         dwc:family                    "Cyprinidae" ;
-        dwc:genus                     "Hybopsis" ;
+        dwc:genus                     "Macrhybopsis" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "Cypriniformes" ;
         dwc:phylum                    "Chordata" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Smith-Vaniz 1968" ;
-        dwc:species                   "aestivalis" .
+        dwc:scientificNameAuthorship  "Gilbert & Mayden" ;
+        dwc:species                   "etnieri" .
 
 <http://taxon-name.plazi.org/id/Animalia/Extrarius>
         a            dwcFP:TaxonName ;
@@ -163,17 +180,29 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Macrhybopsis_pallida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Macrhybopsis" ;
-        dwc:class          "Actinopterygii" ;
-        dwc:family         "Cyprinidae" ;
-        dwc:genus          "Macrhybopsis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Cypriniformes" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "species" ;
-        dwc:species        "pallida" .
+<http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_aestivalis_Gilbert_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Macrhybopsis_aestivalis> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Cyprinidae" ;
+        dwc:genus         "Macrhybopsis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Cypriniformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "aestivalis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nocomis_hyostomus_Gilbert_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Nocomis_hyostomus> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Cyprinidae" ;
+        dwc:genus         "Nocomis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Cypriniformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "hyostomus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cyprinidae>
         a                  dwcFP:TaxonName ;
@@ -190,15 +219,9 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Macrhybopsis_aestivalis_Boschung_1992>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Macrhybopsis_aestivalis> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Cyprinidae" ;
-        dwc:genus                     "Macrhybopsis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Cypriniformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Boschung 1992" ;
-        dwc:species                   "aestivalis" .
+<http://taxon-concept.plazi.org/id/Animalia/Extrarius_Gilbert_2017>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Extrarius> ;
+        dwc:genus         "Extrarius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .

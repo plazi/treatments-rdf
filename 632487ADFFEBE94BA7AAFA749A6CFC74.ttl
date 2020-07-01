@@ -11,7 +11,15 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -21,18 +29,71 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Cosmopsaltria_Platylomia_Distant_1905>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria_Platylomia> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cicadidae" ;
-        dwc:genus                     "Cosmopsaltria" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subGenus" ;
-        dwc:scientificNameAuthorship  "Stal, 1870: 708" ;
-        dwc:subGenus                  "Platylomia" .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria_Platylomia>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Cicadidae" ;
+        dwc:genus          "Cosmopsaltria" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "subGenus" ;
+        dwc:subGenus       "Platylomia" .
+
+<http://taxon-name.plazi.org/id/Animalia/Haphsa>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cicadidae" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Cicadidae" ;
+        dwc:genus          "Haphsa" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Haphsa_Wang_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Haphsa> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cicadidae" ;
+        dwc:genus         "Haphsa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Cicadidae" ;
+        dwc:genus          "Cosmopsaltria" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://treatment.plazi.org/id/632487ADFFEBE94BA7AAFA749A6CFC74>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Platylomia_Stal_1870> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Haphsa_Wang_2014> , <http://taxon-concept.plazi.org/id/Animalia/Haphsa_Distant_1905> , <http://taxon-concept.plazi.org/id/Animalia/Platylomia_Wang_2014> , <http://taxon-concept.plazi.org/id/Animalia/Cosmopsaltria_Platylomia_Stal_1870> ;
+        trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3811.1.9> ;
+        dc:creator                "Wei, Cong" , "Wang, Xu" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Haphsa_Distant_1905>
         a                             dwcFP:TaxonConcept ;
@@ -46,38 +107,16 @@
         dwc:rank                      "genus" ;
         dwc:scientificNameAuthorship  "Distant, 1905" .
 
-<http://taxon-name.plazi.org/id/Animalia/Cicada>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:genus          "Cicada" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Tettigonia_spinosa>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tettigonia" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:genus          "Tettigonia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "spinosa" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+<http://dx.doi.org/10.11646/zootaxa.3811.1.9>
+        a               fabio:JournalArticle ;
+        dc:creator      "Wei, Cong" , "Wang, Xu" ;
+        dc:date         "2014" ;
+        dc:title        "Review of the cicada genus Platylomia Stål (Hemiptera, Cicadidae) from China, with description and bioacoustics of a new species from Mts. Qinling" ;
+        bibo:endPage    "145" ;
+        bibo:issue      "1" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "137" ;
+        bibo:volume     "3811" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cicadidae>
         a                  dwcFP:TaxonName ;
@@ -89,14 +128,16 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+<http://taxon-name.plazi.org/id/Animalia/Platylomia>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cicadidae" ;
         dwc:class          "Insecta" ;
+        dwc:family         "Cicadidae" ;
+        dwc:genus          "Platylomia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hemiptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cosmopsaltria_Platylomia_Stal_1870>
         a                             dwcFP:TaxonConcept ;
@@ -111,39 +152,6 @@
         dwc:scientificNameAuthorship  "Stal, 1870: 708" ;
         dwc:subGenus                  "Platylomia" .
 
-<http://taxon-name.plazi.org/id/Animalia/Haphsa>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cicadidae" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadidae" ;
-        dwc:genus          "Haphsa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Platylomia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cicadidae" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadidae" ;
-        dwc:genus          "Platylomia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Tettigonia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:genus          "Tettigonia" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Platylomia_Stal_1870>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Platylomia> ;
@@ -156,80 +164,13 @@
         dwc:rank                      "genus" ;
         dwc:scientificNameAuthorship  "Stal, 1870" .
 
-<http://dx.doi.org/10.11646/zootaxa.3811.1.9>
-        a               fabio:JournalArticle ;
-        dc:creator      "Wei, Cong" , "Wang, Xu" ;
-        dc:date         "2014" ;
-        dc:title        "Review of the cicada genus Platylomia Stål (Hemiptera, Cicadidae) from China, with description and bioacoustics of a new species from Mts. Qinling" ;
-        bibo:endPage    "145" ;
-        bibo:issue      "1" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "137" ;
-        bibo:volume     "3811" .
-
-<http://treatment.plazi.org/id/632487ADFFEBE94BA7AAFA749A6CFC74>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Platylomia_Stal_1870> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Platylomia_Distant_1905> , <http://taxon-concept.plazi.org/id/Animalia/Haphsa_Distant_1905> , <http://taxon-concept.plazi.org/id/Animalia/Cosmopsaltria_Platylomia_Stal_1870> , <http://taxon-concept.plazi.org/id/Animalia/Cosmopsaltria_Platylomia_Distant_1905> ;
-        trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3811.1.9> ;
-        dc:creator                "Wei, Cong" , "Wang, Xu" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Platylomia> , <http://taxon-name.plazi.org/id/Animalia/Tettigonia_spinosa> , <http://taxon-name.plazi.org/id/Animalia/Haphsa> , <http://taxon-name.plazi.org/id/Animalia/Cicada_flavida> .
-
-<http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cicadidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadidae" ;
-        dwc:genus          "Cosmopsaltria" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cicada_flavida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cicada" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadellidae" ;
-        dwc:genus          "Cicada" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "flavida" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria_Platylomia>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cosmopsaltria" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Cicadidae" ;
-        dwc:genus          "Cosmopsaltria" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subGenus" ;
-        dwc:subGenus       "Platylomia" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Platylomia_Distant_1905>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Platylomia> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Cicadidae" ;
-        dwc:genus                     "Platylomia" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Distant, 1905a: 65" .
+<http://taxon-concept.plazi.org/id/Animalia/Platylomia_Wang_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Platylomia> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Cicadidae" ;
+        dwc:genus         "Platylomia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hemiptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .

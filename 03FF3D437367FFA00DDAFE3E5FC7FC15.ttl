@@ -11,17 +11,15 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://dx.doi.org/10.5281/zenodo.184929>
-        a               fabio:JournalArticle ;
-        dc:creator      "Yan, Chuncai" , "Wang, Xinhua" , "Jin, Zhaohui" ;
-        dc:date         "2008" ;
-        dc:title        "Paracladopelma Harnisch from the Sino-Indian Region (Diptera: Chironomidae)" ;
-        bibo:endPage    "29" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "1934" .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -31,7 +29,26 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Harnischia_nais_Roback_1957>
+<http://taxon-name.plazi.org/id/Animalia/Chironomidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Chironomidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Harnischia_nais_Townes_2008>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Harnischia_nais> ;
         dwc:class                     "Insecta" ;
@@ -45,33 +62,49 @@
         dwc:species                   "nais" ;
         dwc:subGenus                  "Cladopelma" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Zorina_2006>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chironomus_nais> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Chironomus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Townes" ;
-        dwc:species                   "nais" ;
-        dwc:subGenus                  "Cryptochironomus" .
+<http://taxon-name.plazi.org/id/Animalia/Paracladopelma_nais>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Paracladopelma" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Chironomidae" ;
+        dwc:genus          "Paracladopelma" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "nais" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Sublette_1965>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chironomus_nais> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Chironomus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Townes" ;
-        dwc:species                   "nais" ;
-        dwc:subGenus                  "Cryptochironomus" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://treatment.plazi.org/id/03FF3D437367FFA00DDAFE3E5FC7FC15>
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.184929> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Paracladopelma_nais> ;
+        dc:creator           "Wang, Xinhua" , "Jin, Zhaohui" , "Yan, Chuncai" .
+
+<http://taxon-name.plazi.org/id/Animalia/Paracladopelma>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Chironomidae" ;
+        dwc:genus          "Paracladopelma" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://dx.doi.org/10.5281/zenodo.184929>
+        a               fabio:JournalArticle ;
+        dc:creator      "Yan, Chuncai" , "Wang, Xinhua" , "Jin, Zhaohui" ;
+        dc:date         "2008" ;
+        dc:title        "Paracladopelma Harnisch from the Sino-Indian Region (Diptera: Chironomidae)" ;
+        bibo:endPage    "29" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "1934" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Harnischia_nais_Townes_1945>
         a                             dwcFP:TaxonConcept ;
@@ -87,107 +120,6 @@
         dwc:species                   "nais" ;
         dwc:subGenus                  "Cladopelma" .
 
-<http://treatment.plazi.org/id/03FF3D437367FFA00DDAFE3E5FC7FC15>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Paracladopelma_nais_Townes_2008> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Townes_1952> , <http://taxon-concept.plazi.org/id/Animalia/Harnischia_nais_Townes_1945> , <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Johannsen_1952> , <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Hudson_1971> , <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Zorina_2006> , <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Jackson_1977> , <http://taxon-concept.plazi.org/id/Animalia/Harnischia_nais_Roback_1957> , <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Sublette_1965> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.184929> ;
-        dc:creator                "Jin, Zhaohui" , "Yan, Chuncai" , "Wang, Xinhua" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Harnischia_nais> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Hudson_1971>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chironomus_nais> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Chironomus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Townes" ;
-        dwc:species                   "nais" ;
-        dwc:subGenus                  "Cryptochironomus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Johannsen_1952>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chironomus_nais> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Chironomus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Townes" ;
-        dwc:species                   "nais" ;
-        dwc:subGenus                  "Cryptochironomus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Jackson_1977>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chironomus_nais> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Chironomus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Townes" ;
-        dwc:species                   "nais" ;
-        dwc:subGenus                  "Cryptochironomus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Chironomidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Chironomidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Paracladopelma_nais_Townes_2008>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Paracladopelma_nais> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Chironomidae" ;
-        dwc:genus                     "Paracladopelma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Townes" ;
-        dwc:species                   "nais" .
-
-<http://taxon-name.plazi.org/id/Animalia/Paracladopelma_nais>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Paracladopelma" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Chironomidae" ;
-        dwc:genus          "Paracladopelma" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "nais" .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Chironomus_nais_Townes_1952>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chironomus_nais> ;
@@ -201,19 +133,3 @@
         dwc:scientificNameAuthorship  "Townes" ;
         dwc:species                   "nais" ;
         dwc:subGenus                  "Cryptochironomus" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Paracladopelma>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Chironomidae" ;
-        dwc:genus          "Paracladopelma" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .

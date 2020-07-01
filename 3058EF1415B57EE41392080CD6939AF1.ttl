@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Plantae/Ipomoea_coccinea>
@@ -35,21 +36,6 @@
         bibo:startPage  "1" ;
         bibo:volume     "143" .
 
-<http://taxon-concept.plazi.org/id/Plantae/Ipomoea_coccinea_Wood_2020>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Plantae/Ipomoea_coccinea> ;
-        dwc:authority      "Wood, 2020" ;
-        dwc:authorityName  "Wood" ;
-        dwc:authorityYear  "2020" ;
-        dwc:class          "Magnoliopsida" ;
-        dwc:family         "Convolvulaceae" ;
-        dwc:genus          "Ipomoea" ;
-        dwc:kingdom        "Plantae" ;
-        dwc:order          "Solanales" ;
-        dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "species" ;
-        dwc:species        "coccinea" .
-
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
@@ -57,6 +43,20 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Convolvulus_coccineus_typicus_Kuntze_2020>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Convolvulus_coccineus_typicus> ;
+        dwc:class                     "Magnoliopsida" ;
+        dwc:family                    "Convolvulaceae" ;
+        dwc:genus                     "Convolvulus" ;
+        dwc:kingdom                   "Plantae" ;
+        dwc:order                     "Solanales" ;
+        dwc:phylum                    "Tracheophyta" ;
+        dwc:rank                      "variety" ;
+        dwc:scientificNameAuthorship  "Kuntze" ;
+        dwc:species                   "coccineus" ;
+        dwc:variety                   "typicus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Convolvulaceae>
         a                  dwcFP:TaxonName ;
@@ -68,6 +68,15 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "family" .
 
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
 <http://taxon-name.plazi.org/id/Animalia/Pteromalidae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
@@ -77,15 +86,6 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Plantae/Solanales>
         a                  dwcFP:TaxonName ;
@@ -126,11 +126,41 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/3058EF1415B57EE41392080CD6939AF1>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Ipomoea_coccinea_Wood_2020> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/phytokeys.143.32821> ;
-        dc:creator                "Williams, Bethany R. M." , "Scotland, Robert W." , "Wood, John R. I." , "Munoz-Rodriguez, Pablo" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Plantae/Convolvulus_coccineus_typicus> , <http://taxon-name.plazi.org/id/Plantae/Convolvulus_coccineus> , <http://taxon-name.plazi.org/id/Plantae/Mina_coccinea> , <http://taxon-name.plazi.org/id/Plantae/Quamoclit_coccinea> , <http://taxon-name.plazi.org/id/Plantae/Neorthosis_coccinea> , <http://taxon-name.plazi.org/id/Animalia/Espinosa> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/phytokeys.143.32821> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Ipomoea_coccinea> ;
+        dc:creator           "Scotland, Robert W." , "Williams, Bethany R. M." , "Munoz-Rodriguez, Pablo" , "Wood, John R. I." .
+
+<http://taxon-concept.plazi.org/id/Plantae/Neorthosis_coccinea_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Neorthosis_coccinea> ;
+        dwc:genus         "Neorthosis" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:rank          "species" ;
+        dwc:species       "coccinea" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Espinosa_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Espinosa> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Pteromalidae" ;
+        dwc:genus         "Espinosa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Convolvulus_coccineus_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Convolvulus_coccineus> ;
+        dwc:class         "Magnoliopsida" ;
+        dwc:family        "Convolvulaceae" ;
+        dwc:genus         "Convolvulus" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:order         "Solanales" ;
+        dwc:phylum        "Tracheophyta" ;
+        dwc:rank          "species" ;
+        dwc:species       "coccineus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Convolvulus_coccineus>
         a                  dwcFP:TaxonName ;
@@ -143,6 +173,14 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
         dwc:species        "coccineus" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Mina_coccinea_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Mina_coccinea> ;
+        dwc:genus         "Mina" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:rank          "species" ;
+        dwc:species       "coccinea" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
@@ -158,6 +196,14 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Plantae/Quamoclit_coccinea_Wood_2020>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Plantae/Quamoclit_coccinea> ;
+        dwc:genus         "Quamoclit" ;
+        dwc:kingdom       "Plantae" ;
+        dwc:rank          "species" ;
+        dwc:species       "coccinea" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;

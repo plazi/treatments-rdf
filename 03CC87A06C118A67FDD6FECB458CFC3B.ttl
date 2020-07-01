@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Chersaecia_shanensis>
@@ -56,29 +57,6 @@
         dc:description           "Fig. 5. Photos (A, C, E) and schematic drawings (B, D, F) of parietal plicae and lamellae of Plectopylinae Möllendorff, 1898. A–B. Chersaecia shanensis (Stoliczka, 1873), loc. 20091018C (PGB, ex coll. Ohara). C–D. Chersaecia perrierae (Gude, 1898), loc. 20091019A (PGB). E–F. Chersaecia magna (Gude, 1897) comb. nov., holotype (NHMUK 1922.8.29.37). Posterior lamella indicated with red colour, anterior lamella and homologous structures indicated with blue. Not to scale. Photos: B. Páll-Gergely (A, C) and H. Taylor (E)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/3817717/files/figure.png" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Helix_trilamellaris_H._1875>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Helix_trilamellaris> ;
-        dwc:genus                     "Helix" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Godwin-Austen, 1875 a: 43 - 44" ;
-        dwc:species                   "trilamellaris" ;
-        dwc:subGenus                  "Plectopylis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Plectopylis_shanensis_F._1873>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Plectopylis_shanensis> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Plectopylidae" ;
-        dwc:genus                     "Plectopylis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Stylommatophora" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Stoliczka, 1873: 170" ;
-        dwc:species                   "shanensis" .
-
 <http://taxon-name.plazi.org/id/Animalia/Helix>
         a            dwcFP:TaxonName ;
         dwc:genus    "Helix" ;
@@ -110,13 +88,22 @@
         dwc:rank           "species" ;
         dwc:species        "shawensis" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Helix_shanensis_Páll-Gergely_2018>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Helix_shanensis> ;
+        dwc:genus         "Helix" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "shanensis" ;
+        dwc:subGenus      "Plectopylis" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Helix_trilamellaris_Godwin-Austen_1875>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Helix_trilamellaris> ;
         dwc:genus                     "Helix" ;
         dwc:kingdom                   "Animalia" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Godwin-Austen, 1875 a: 43 - 44" ;
+        dwc:scientificNameAuthorship  "Godwin-Austen, 1875" , "Godwin-Austen, 1875 a: 43 - 44" ;
         dwc:species                   "trilamellaris" ;
         dwc:subGenus                  "Plectopylis" .
 
@@ -145,7 +132,16 @@
         dwc:scientificNameAuthorship  "Stoliczka, 1873: 170" ;
         dwc:species                   "shanensis" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chersaecia_shanensis_Páll-Gergely_2018>
+<http://taxon-concept.plazi.org/id/Animalia/Helix_shawensis_Páll-Gergely_2018>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Helix_shawensis> ;
+        dwc:genus         "Helix" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "shawensis" ;
+        dwc:subGenus      "Plectopylis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chersaecia_shanensis_Stoliczka_1873>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chersaecia_shanensis> ;
         dwc:class                     "Gastropoda" ;
@@ -163,30 +159,20 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
+<http://treatment.plazi.org/id/03CC87A06C118A67FDD6FECB458CFC3B>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Chersaecia_shanensis_Stoliczka_1873> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Helix_shawensis_Páll-Gergely_2018> , <http://taxon-concept.plazi.org/id/Animalia/Helix_trilamellaris_Godwin-Austen_1875> , <http://taxon-concept.plazi.org/id/Animalia/Plectopylis_shanensis_Stoliczka_1873> , <http://taxon-concept.plazi.org/id/Animalia/Helix_shanensis_Páll-Gergely_2018> ;
+        trt:publishedIn           <http://doi.org/10.5281/zenodo.3818764> ;
+        dc:creator                "Páll-Gergely, Barna" ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.3817755> , <http://dx.doi.org/10.5281/zenodo.3817731> , <http://dx.doi.org/10.5281/zenodo.3817717> .
+
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "phylum" .
-
-<http://treatment.plazi.org/id/03CC87A06C118A67FDD6FECB458CFC3B>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Chersaecia_shanensis_Páll-Gergely_2018> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Helix_shanensis_W._1887> , <http://taxon-concept.plazi.org/id/Animalia/Helix_trilamellaris_Godwin-Austen_1875> , <http://taxon-concept.plazi.org/id/Animalia/Plectopylis_shanensis_F._1873> , <http://taxon-concept.plazi.org/id/Animalia/Plectopylis_shanensis_Stoliczka_1873> , <http://taxon-concept.plazi.org/id/Animalia/Helix_trilamellaris_H._1875> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3818764> ;
-        dc:creator                "Páll-Gergely, Barna" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.3817755> , <http://dx.doi.org/10.5281/zenodo.3817731> , <http://taxon-name.plazi.org/id/Animalia/Helix_shanensis> , <http://taxon-name.plazi.org/id/Animalia/Helix_shawensis> , <http://dx.doi.org/10.5281/zenodo.3817717> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Helix_shanensis_W._1887>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Helix_shanensis> ;
-        dwc:genus                     "Helix" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Tryon 1887: 162–163" ;
-        dwc:species                   "shanensis" ;
-        dwc:subGenus                  "Plectopylis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Helix_trilamellaris>
         a                  dwcFP:TaxonName ;

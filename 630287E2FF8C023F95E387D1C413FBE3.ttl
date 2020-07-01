@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.274829>
@@ -19,28 +20,32 @@
         fabio:hasRepresentation  "https://zenodo.org/record/274829/files/figure.png" .
 
 <http://treatment.plazi.org/id/630287E2FF8C023F95E387D1C413FBE3>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.274824> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Halichoeres_sazimai> ;
-        dc:creator           "Rocha, Luiz A." , "Ferreira, Carlos E. L." , "Luiz, Osmar J." ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.274825> , <http://dx.doi.org/10.5281/zenodo.274829> , <http://dx.doi.org/10.5281/zenodo.274828> , <http://dx.doi.org/10.5281/zenodo.274827> , <http://dx.doi.org/10.5281/zenodo.274826> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Halichoeres_sazimai_Luiz_2009> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Halichoeres_bathyphilus_Figueiredo_1985> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.274824> ;
+        dc:creator               "Rocha, Luiz A." , "Ferreira, Carlos E. L." , "Luiz, Osmar J." ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.274825> , <http://dx.doi.org/10.5281/zenodo.274829> , <http://dx.doi.org/10.5281/zenodo.274828> , <http://dx.doi.org/10.5281/zenodo.274827> , <http://dx.doi.org/10.5281/zenodo.274826> .
+
+<http://taxon-concept.plazi.org/id/Animalia/Halichoeres_sazimai_Luiz_2009>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Halichoeres_sazimai> ;
+        dwc:authority      "Luiz, 2009" ;
+        dwc:authorityName  "Luiz" ;
+        dwc:authorityYear  "2009" ;
+        dwc:class          "Actinopterygii" ;
+        dwc:family         "Labridae" ;
+        dwc:genus          "Halichoeres" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Perciformes" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "species" ;
+        dwc:species        "sazimai" .
 
 <http://dx.doi.org/10.5281/zenodo.274828>
         a                        fabio:Figure ;
         dc:description           "FIGURE 4. Mandibular apparatus of Halichoeres sazimai, showing the posterior canine (ZUEC 6324, female, 171 mm). Photograph by J. L. Gasparini and J. - C. Joyeux." ;
         fabio:hasRepresentation  "https://zenodo.org/record/274828/files/figure.png" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Halichoeres_Moura_2003>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Halichoeres> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Labridae" ;
-        dwc:genus                     "Halichoeres" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Perciformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Moura & Sazima 2003" .
 
 <http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
         a                  dwcFP:TaxonName ;
@@ -84,24 +89,6 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "phylum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Halichoeres_bathyphilus_Menezes_1985>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Halichoeres_bathyphilus> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Labridae" ;
-        dwc:genus                     "Halichoeres" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Perciformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Menezes and Figueiredo 1985: 32" ;
-        dwc:species                   "bathyphilus" .
-
-<http://dx.doi.org/10.5281/zenodo.274826>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 2. Comparison of color photographs of Halichoeres bathyphilus (A) terminal phase male, (B) initial phase / female and H. sazimai (C) terminal phase male, (D) initial phase / female. Photographs by (A-B) W. Smith-Vaniz and (C- D) A. Carvalho-Filho." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/274826/files/figure.png" .
-
 <http://taxon-name.plazi.org/id/Animalia/Halichoeres>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Labridae> ;
@@ -113,23 +100,26 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "genus" .
 
+<http://dx.doi.org/10.5281/zenodo.274826>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 2. Comparison of color photographs of Halichoeres bathyphilus (A) terminal phase male, (B) initial phase / female and H. sazimai (C) terminal phase male, (D) initial phase / female. Photographs by (A-B) W. Smith-Vaniz and (C- D) A. Carvalho-Filho." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/274826/files/figure.png" .
+
 <http://dx.doi.org/10.5281/zenodo.274825>
         a                        fabio:Figure ;
         dc:description           "FIGURE 1. Underwater photographs of Halichoeres sazimai: (A) terminal phase male, (B) initial phase / female, and (C) newly collected recruit. Photographs by (A-B) O. J. Luiz Jr., and (C) A. Carvalho-Filho." ;
         fabio:hasRepresentation  "https://zenodo.org/record/274825/files/figure.png" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Halichoeres_bathyphilus_Moura_1999>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Halichoeres_bathyphilus> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Labridae" ;
-        dwc:genus                     "Halichoeres" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Perciformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Menezes and Figueiredo 1985: 32" ;
-        dwc:species                   "bathyphilus" .
+<http://taxon-concept.plazi.org/id/Animalia/Halichoeres_Luiz_2009>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Halichoeres> ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Labridae" ;
+        dwc:genus         "Halichoeres" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Perciformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Halichoeres_bathyphilus>
         a                  dwcFP:TaxonName ;

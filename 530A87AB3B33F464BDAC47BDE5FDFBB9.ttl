@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Bryozoa>
@@ -46,10 +47,10 @@
 <http://treatment.plazi.org/id/530A87AB3B33F464BDAC47BDE5FDFBB9>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Patinella_Gray_1848> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Disporella_novaehollandiae_d'Orbigny_1853> , <http://taxon-concept.plazi.org/id/Animalia/Lichenopora_Defrance_1823> , <http://taxon-concept.plazi.org/id/Animalia/Disporella_hispida_Gray_1848> , <http://taxon-concept.plazi.org/id/Animalia/Discoporella_fimbriata_Busk_1875> , <http://taxon-concept.plazi.org/id/Animalia/Disporella_Gray_1848> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Disporella_novaehollandiae_d'Orbigny_1853> , <http://taxon-concept.plazi.org/id/Animalia/Patinella_Gray_1848> , <http://taxon-concept.plazi.org/id/Animalia/Lichenopora_Defrance_1823> , <http://taxon-concept.plazi.org/id/Animalia/Disporella_hispida_Gray_1848> , <http://taxon-concept.plazi.org/id/Animalia/Discoporella_fimbriata_Busk_1875> , <http://taxon-concept.plazi.org/id/Animalia/Disporella_Gray_1848> , <http://taxon-concept.plazi.org/id/Animalia/Madrepora_Liu_2019> ;
         trt:publishedIn           <https://doi.org/10.11646/zootaxa.4603.3.3> ;
         dc:creator                "Liu, H." , "Zágoršek, K." , "Liu, X." ;
-        cito:cites                <http://taxon-concept.plazi.org/id/Animalia/Patinella_verrucaria_Linnaeus_1758> , <http://dx.doi.org/10.5281/zenodo.2702311> , <http://taxon-concept.plazi.org/id/Animalia/Patinella_radiata_Audouin_1826> , <http://taxon-name.plazi.org/id/Animalia/Madrepora> .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.2702311> .
 
 <http://taxon-name.plazi.org/id/Animalia/Patinella_radiata>
         a                  dwcFP:TaxonName ;
@@ -165,6 +166,17 @@
         dwc:rank           "species" ;
         dwc:species        "novaehollandiae" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Madrepora_Liu_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Madrepora> ;
+        dwc:class         "Anthozoa" ;
+        dwc:family        "Oculinidae" ;
+        dwc:genus         "Madrepora" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Scleractinia" ;
+        dwc:phylum        "Cnidaria" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Discoporella_fimbriata>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Discoporella" ;
@@ -176,18 +188,6 @@
         dwc:phylum         "Bryozoa" ;
         dwc:rank           "species" ;
         dwc:species        "fimbriata" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Patinella_verrucaria_Linnaeus_1758>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Patinella_verrucaria> ;
-        dwc:class         "Stenolaemata" ;
-        dwc:family        "Lichenoporidae" ;
-        dwc:genus         "Patinella" ;
-        dwc:kingdom       "Animalia" ;
-        dwc:order         "Cyclostomatida" ;
-        dwc:phylum        "Bryozoa" ;
-        dwc:rank          "species" ;
-        dwc:species       "verrucaria" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cnidaria>
         a                  dwcFP:TaxonName ;
@@ -203,6 +203,19 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Bryozoa" ;
         dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Patinella_verrucaria_Liu_2019>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Patinella_verrucaria> ;
+        dwc:class                     "Stenolaemata" ;
+        dwc:family                    "Lichenoporidae" ;
+        dwc:genus                     "Patinella" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Cyclostomatida" ;
+        dwc:phylum                    "Bryozoa" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Linnaeus, 1758" ;
+        dwc:species                   "verrucaria" .
 
 <http://taxon-name.plazi.org/id/Animalia/Madrepora>
         a                  dwcFP:TaxonName ;
@@ -332,18 +345,19 @@
         dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Patinella_Gray_1848>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Patinella> ;
-        dwc:authority      "Liu, 2019" ;
-        dwc:authorityName  "Liu" ;
-        dwc:authorityYear  "2019" ;
-        dwc:class          "Stenolaemata" ;
-        dwc:family         "Lichenoporidae" ;
-        dwc:genus          "Patinella" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Cyclostomatida" ;
-        dwc:phylum         "Bryozoa" ;
-        dwc:rank           "genus" .
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Patinella> ;
+        dwc:authority                 "Liu, 2019" ;
+        dwc:authorityName             "Liu" ;
+        dwc:authorityYear             "2019" ;
+        dwc:class                     "Stenolaemata" ;
+        dwc:family                    "Lichenoporidae" ;
+        dwc:genus                     "Patinella" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Cyclostomatida" ;
+        dwc:phylum                    "Bryozoa" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Gray, 1848" .
 
 <http://taxon-name.plazi.org/id/Animalia/Patinella>
         a                  dwcFP:TaxonName ;

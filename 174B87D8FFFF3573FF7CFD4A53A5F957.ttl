@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stenomastax_dentata_Cameron_1945>
@@ -19,7 +20,7 @@
         dwc:genus                     "Stenomastax" ;
         dwc:kingdom                   "Animalia" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Cameron 1945" ;
+        dwc:scientificNameAuthorship  "Cameron 1945: 162" , "Cameron 1945" ;
         dwc:species                   "dentata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
@@ -44,6 +45,14 @@
         dwc:rank           "species" ;
         dwc:species        "plana" .
 
+<http://taxon-name.plazi.org/id/Animalia/Stenomastax_sulcicollis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Stenomastax" ;
+        dwc:genus          "Stenomastax" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:rank           "species" ;
+        dwc:species        "sulcicollis" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Homalota_nigrescens_Fauvel_1905>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Homalota_nigrescens> ;
@@ -66,26 +75,53 @@
         dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/174B87D8FFFF3573FF7CFD4A53A5F957>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/HOMALOTINA_Leschen_2015> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Homalota_nigrescens_Fauvel_1905> , <http://taxon-concept.plazi.org/id/Animalia/Aleochara_plana_Gyllenhal_1810> , <http://taxon-concept.plazi.org/id/Animalia/Stenomastax_dentata_Cameron_1945> , <http://taxon-concept.plazi.org/id/Animalia/Stenomastax_Cameron_1933> ;
-        trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.4028.3.1> ;
-        dc:creator                "Leschen, Richard A. B." , "Newton, Alfred F." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Homalota> , <http://taxon-name.plazi.org/id/Animalia/Stenomastax> , <http://taxon-name.plazi.org/id/Animalia/Thectura> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.4028.3.1> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/HOMALOTINA> ;
+        dc:creator           "Newton, Alfred F." , "Leschen, Richard A. B." .
 
-<http://taxon-concept.plazi.org/id/Animalia/HOMALOTINA_Leschen_2015>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/HOMALOTINA> ;
-        dwc:authority      "Leschen, 2015" ;
-        dwc:authorityName  "Leschen" ;
-        dwc:authorityYear  "2015" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Staphylinidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subTribe" ;
-        dwc:subTribe       "Homalotina" .
+<http://taxon-concept.plazi.org/id/Animalia/Stenomastax_sulcicollis_Cameron_1945>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Stenomastax_sulcicollis> ;
+        dwc:genus                     "Stenomastax" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Cameron 1945: 161" ;
+        dwc:species                   "sulcicollis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Homalota_Mannerheim_1830>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Homalota> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Staphylinidae" ;
+        dwc:genus                     "Homalota" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Mannerheim 1830: 73" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Homalota_Leschen_2015>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Homalota> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Staphylinidae" ;
+        dwc:genus         "Homalota" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thectura_Leschen_2015>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Thectura> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Staphylinidae" ;
+        dwc:genus         "Thectura" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Aleochara>
         a                  dwcFP:TaxonName ;
@@ -124,7 +160,7 @@
         dwc:genus                     "Stenomastax" ;
         dwc:kingdom                   "Animalia" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Cameron 1933" .
+        dwc:scientificNameAuthorship  "Cameron 1933: 352" , "Cameron 1933" .
 
 <http://dx.doi.org/10.11646/zootaxa.4028.3.1>
         a               fabio:JournalArticle ;
@@ -143,6 +179,13 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenomastax_Leschen_2015>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Stenomastax> ;
+        dwc:genus         "Stenomastax" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Aleochara_plana_Gyllenhal_1810>
         a                             dwcFP:TaxonConcept ;

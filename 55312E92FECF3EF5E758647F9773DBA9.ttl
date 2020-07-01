@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.3897/JHR.36.6491>
@@ -39,12 +40,10 @@
         dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/55312E92FECF3EF5E758647F9773DBA9>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Bembix_carinata_Gess_2014> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Plantae/Hymenoptera_Linnaeus_1758> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/JHR.36.6491> ;
-        dc:creator                "Gess, Sarah K." , "Gess, Friedrich W." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Bembex_undulata> , <http://taxon-name.plazi.org/id/Animalia/Bembex_carinata> , <http://taxon-name.plazi.org/id/Animalia/Bembicinae> , <http://taxon-name.plazi.org/id/Animalia/Sphecidae> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/JHR.36.6491> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Bembix_carinata> ;
+        dc:creator           "Gess, Sarah K." , "Gess, Friedrich W." .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -66,6 +65,14 @@
         dwc:rank           "species" ;
         dwc:species        "carinata" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Bembex_undulata_Gess_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Bembex_undulata> ;
+        dwc:genus         "Bembex" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "undulata" .
+
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -74,6 +81,13 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
+        dwc:kingdom        "Plantae" ;
+        dwc:phylum         "Tracheophyta" ;
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Plantae/Malvaceae>
         a                  dwcFP:TaxonName ;
@@ -84,13 +98,6 @@
         dwc:order          "Malvales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
-        dwc:kingdom        "Plantae" ;
-        dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Bembicinae>
         a              dwcFP:TaxonName ;
@@ -120,19 +127,13 @@
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Bembix_carinata_Gess_2014>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Bembix_carinata> ;
-        dwc:LSID                      "http://species-id.net/wiki/Bembix_carinata" ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Crabronidae" ;
-        dwc:genus                     "Bembix" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "F. Smith" ;
-        dwc:species                   "carinata" .
+<http://taxon-concept.plazi.org/id/Animalia/Bembex_carinata_Gess_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Bembex_carinata> ;
+        dwc:genus         "Bembex" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "carinata" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
@@ -159,6 +160,18 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphecidae_Gess_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Sphecidae> ;
+        dwc:family        "Sphecidae" ;
+        dwc:rank          "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bembicinae_Gess_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Bembicinae> ;
+        dwc:rank          "subFamily" ;
+        dwc:subFamily     "Bembicinae" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Labuanium>
@@ -50,11 +51,12 @@
         dwc:species        "mindanaoensis" .
 
 <http://treatment.plazi.org/id/1F7E3802983AFFD9FF1EE70B68E9C49F>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.185266> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Parasesarma_paucitorum> ;
-        dc:creator           "Ng, Peter K. L." , "Rahayu, Dwi Listyo" ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.185270> , <http://dx.doi.org/10.5281/zenodo.185269> , <http://dx.doi.org/10.5281/zenodo.185268> , <http://dx.doi.org/10.5281/zenodo.185267> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Parasesarma_paucitorum_Rahayu_2009> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Parasesarma_leptosoma_Rahayu_2009> , <http://taxon-concept.plazi.org/id/Animalia/Sesarma_limbense_Rathbun_1914> , <http://taxon-concept.plazi.org/id/Animalia/Labuanium_trapezoideum_Edwards_1837> , <http://taxon-concept.plazi.org/id/Animalia/Bresedium_philippinense_Rathbun_1914> , <http://taxon-concept.plazi.org/id/Animalia/Sesarmops_impressus_Edwards_1837> , <http://taxon-concept.plazi.org/id/Animalia/Parasesarma_paucitorum_Rahayu_2009> , <http://taxon-concept.plazi.org/id/Animalia/Sesarmops_mindanaoensis_Rathbun_1914> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.185266> ;
+        dc:creator               "Ng, Peter K. L." , "Rahayu, Dwi Listyo" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.185268> , <http://dx.doi.org/10.5281/zenodo.185267> , <http://dx.doi.org/10.5281/zenodo.185270> , <http://dx.doi.org/10.5281/zenodo.185269> .
 
 <http://taxon-name.plazi.org/id/Animalia/Sesarma_limbense>
         a                  dwcFP:TaxonName ;
@@ -184,6 +186,17 @@
         dwc:rank           "species" ;
         dwc:species        "trapezoideum" .
 
+<http://taxon-name.plazi.org/id/Animalia/Sesarmops>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Sesarmidae> ;
+        dwc:class          "Malacostraca" ;
+        dwc:family         "Sesarmidae" ;
+        dwc:genus          "Sesarmops" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Decapoda" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
@@ -214,17 +227,6 @@
         bibo:volume     "1980" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.185270> , <http://dx.doi.org/10.5281/zenodo.185268> , <http://dx.doi.org/10.5281/zenodo.185269> , <http://dx.doi.org/10.5281/zenodo.185267> .
 
-<http://taxon-name.plazi.org/id/Animalia/Sesarmops>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Sesarmidae> ;
-        dwc:class          "Malacostraca" ;
-        dwc:family         "Sesarmidae" ;
-        dwc:genus          "Sesarmops" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Decapoda" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-concept.plazi.org/id/Animalia/Sesarmops_mindanaoensis_Rathbun_1914>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Sesarmops_mindanaoensis> ;
@@ -237,6 +239,18 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Rathbun, 1914" ;
         dwc:species                   "mindanaoensis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parasesarma_leptosoma_Rahayu_2009>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Parasesarma_leptosoma> ;
+        dwc:class         "Malacostraca" ;
+        dwc:family        "Sesarmidae" ;
+        dwc:genus         "Parasesarma" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Decapoda" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "leptosoma" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sesarma_limbense_Rathbun_1914>
         a                             dwcFP:TaxonConcept ;
@@ -252,10 +266,18 @@
         dwc:species                   "limbense" ;
         dwc:subGenus                  "Holometopus" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-concept.plazi.org/id/Animalia/Labuanium_trapezoideum_Edwards_1837>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Labuanium_trapezoideum> ;
+        dwc:class                     "Malacostraca" ;
+        dwc:family                    "Sesarmidae" ;
+        dwc:genus                     "Labuanium" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Decapoda" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "H. Milne Edwards, 1837" ;
+        dwc:species                   "trapezoideum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Bresedium_philippinense>
         a                  dwcFP:TaxonName ;
@@ -269,18 +291,25 @@
         dwc:rank           "species" ;
         dwc:species        "philippinense" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Labuanium_trapezoideum_Edwards_1837>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Labuanium_trapezoideum> ;
-        dwc:class                     "Malacostraca" ;
-        dwc:family                    "Sesarmidae" ;
-        dwc:genus                     "Labuanium" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Decapoda" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "H. Milne Edwards, 1837" ;
-        dwc:species                   "trapezoideum" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parasesarma_paucitorum_Rahayu_2009>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Parasesarma_paucitorum> ;
+        dwc:authority      "Rahayu, 2009" ;
+        dwc:authorityName  "Rahayu" ;
+        dwc:authorityYear  "2009" ;
+        dwc:class          "Malacostraca" ;
+        dwc:family         "Sesarmidae" ;
+        dwc:genus          "Parasesarma" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Decapoda" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "paucitorum" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Bresedium_philippinense_Rathbun_1914>
         a                             dwcFP:TaxonConcept ;

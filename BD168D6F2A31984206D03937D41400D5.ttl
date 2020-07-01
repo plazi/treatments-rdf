@@ -11,14 +11,19 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://treatment.plazi.org/id/BD168D6F2A31984206D03937D41400D5>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Pediobius_alcaeus_Walker_1839> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.4.e8013> ;
-        dc:creator                "Dale-Skey, Natalie" , "Livermore, Laurence" , "Noyes, John S." , "Askew, Richard R." , "Broad, Gavin R." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Elachestus> , <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_longfellowi> , <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_politus> , <http://taxon-name.plazi.org/id/Animalia/Entedon_alcaeus> , <http://taxon-name.plazi.org/id/Animalia/Epipleurotropis> , <http://taxon-name.plazi.org/id/Animalia/Entedon> , <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_beon> .
+<http://taxon-name.plazi.org/id/Animalia/Pediobius>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Eulophidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Eulophidae" ;
+        dwc:genus          "Pediobius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -28,6 +33,35 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
+<http://dx.doi.org/10.3897/BDJ.4.e8013>
+        a               fabio:JournalArticle ;
+        dc:creator      "Askew, Richard R." , "Livermore, Laurence" , "Broad, Gavin R." , "Noyes, John S." , "Dale-Skey, Natalie" ;
+        dc:date         "2016" ;
+        dc:title        "Checklist of British and Irish Hymenoptera - Chalcidoidea and Mymarommatoidea" ;
+        bibo:endPage    "8013" ;
+        bibo:journal    "Biodiversity Data Journal" ;
+        bibo:startPage  "8013" ;
+        bibo:volume     "4" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Entedon_alcaeus_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Entedon_alcaeus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Eulophidae" ;
+        dwc:genus         "Entedon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "alcaeus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_politus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chalcidoidea" ;
+        dwc:genus          "Chalcidoidea" ;
+        dwc:rank           "species" ;
+        dwc:species        "politus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -36,13 +70,6 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_beon>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chalcidoidea" ;
-        dwc:genus          "Chalcidoidea" ;
-        dwc:rank           "species" ;
-        dwc:species        "beon" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pediobius_alcaeus_Walker_1839>
         a                             dwcFP:TaxonConcept ;
@@ -57,6 +84,60 @@
         dwc:scientificNameAuthorship  "Walker, 1839" ;
         dwc:species                   "alcaeus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Entedon_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Entedon> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Eulophidae" ;
+        dwc:genus         "Entedon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
+<http://treatment.plazi.org/id/BD168D6F2A31984206D03937D41400D5>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Pediobius_alcaeus_Walker_1839> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Entedon_alcaeus_Dale-Skey_2016> , <http://taxon-concept.plazi.org/id/Animalia/Chalcidoidea_politus_Dale-Skey_2016> , <http://taxon-concept.plazi.org/id/Animalia/Chalcidoidea_beon_Dale-Skey_2016> , <http://taxon-concept.plazi.org/id/Animalia/Epipleurotropis_Dale-Skey_2016> , <http://taxon-concept.plazi.org/id/Animalia/Elachestus_Dale-Skey_2016> , <http://taxon-concept.plazi.org/id/Animalia/Entedon_Dale-Skey_2016> , <http://taxon-concept.plazi.org/id/Animalia/Chalcidoidea_longfellowi_Dale-Skey_2016> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.4.e8013> ;
+        dc:creator                "Dale-Skey, Natalie" , "Livermore, Laurence" , "Noyes, John S." , "Askew, Richard R." , "Broad, Gavin R." .
+
+<http://taxon-name.plazi.org/id/Animalia/Epipleurotropis>
+        a            dwcFP:TaxonName ;
+        dwc:genus    "Epipleurotropis" ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chalcidoidea_beon_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_beon> ;
+        dwc:genus         "Chalcidoidea" ;
+        dwc:rank          "species" ;
+        dwc:species       "beon" .
+
+<http://taxon-name.plazi.org/id/Animalia/Eulophidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Eulophidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chalcidoidea_longfellowi_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_longfellowi> ;
+        dwc:genus         "Chalcidoidea" ;
+        dwc:rank          "species" ;
+        dwc:species       "longfellowi" .
+
+<http://taxon-name.plazi.org/id/Animalia/Elachestus>
+        a            dwcFP:TaxonName ;
+        dwc:genus    "Elachestus" ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Pediobius_alcaeus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pediobius" ;
@@ -69,10 +150,24 @@
         dwc:rank           "species" ;
         dwc:species        "alcaeus" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-concept.plazi.org/id/Animalia/Chalcidoidea_politus_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_politus> ;
+        dwc:genus         "Chalcidoidea" ;
+        dwc:rank          "species" ;
+        dwc:species       "politus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Chalcidoidea>
+        a          dwcFP:TaxonName ;
+        dwc:genus  "Chalcidoidea" ;
+        dwc:rank   "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_longfellowi>
         a                  dwcFP:TaxonName ;
@@ -81,64 +176,28 @@
         dwc:rank           "species" ;
         dwc:species        "longfellowi" .
 
-<http://taxon-name.plazi.org/id/Animalia/Elachestus>
-        a            dwcFP:TaxonName ;
-        dwc:genus    "Elachestus" ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "genus" .
+<http://taxon-concept.plazi.org/id/Animalia/Epipleurotropis_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Epipleurotropis> ;
+        dwc:genus         "Epipleurotropis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_politus>
+<http://taxon-name.plazi.org/id/Animalia/Chalcidoidea_beon>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chalcidoidea" ;
         dwc:genus          "Chalcidoidea" ;
         dwc:rank           "species" ;
-        dwc:species        "politus" .
+        dwc:species        "beon" .
 
-<http://dx.doi.org/10.3897/BDJ.4.e8013>
-        a               fabio:JournalArticle ;
-        dc:creator      "Askew, Richard R." , "Livermore, Laurence" , "Broad, Gavin R." , "Noyes, John S." , "Dale-Skey, Natalie" ;
-        dc:date         "2016" ;
-        dc:title        "Checklist of British and Irish Hymenoptera - Chalcidoidea and Mymarommatoidea" ;
-        bibo:endPage    "8013" ;
-        bibo:journal    "Biodiversity Data Journal" ;
-        bibo:startPage  "8013" ;
-        bibo:volume     "4" .
-
-<http://taxon-name.plazi.org/id/Animalia/Chalcidoidea>
-        a          dwcFP:TaxonName ;
-        dwc:genus  "Chalcidoidea" ;
-        dwc:rank   "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Pediobius>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Eulophidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Eulophidae" ;
-        dwc:genus          "Pediobius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Eulophidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Eulophidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Epipleurotropis>
+<http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
-        dwc:genus    "Epipleurotropis" ;
         dwc:kingdom  "Animalia" ;
-        dwc:rank     "genus" .
+        dwc:rank     "kingdom" .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
+<http://taxon-concept.plazi.org/id/Animalia/Elachestus_Dale-Skey_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Elachestus> ;
+        dwc:genus         "Elachestus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .

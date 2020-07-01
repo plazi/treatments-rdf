@@ -11,9 +11,39 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Ophion_longicornis>
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://treatment.plazi.org/id/A270EE7EFC22FFB4F377AC5B3104F80C>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Ophion_scutellaris_Thomson_1888> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Ophion_longicornis_Brauns_1889> , <http://taxon-concept.plazi.org/id/Animalia/Ophion_stigmaticus_Morley_1915> , <http://taxon-concept.plazi.org/id/Animalia/Ophion_scutellaris_Thomson_1192> ;
+        trt:publishedIn           <http://doi.org/10.5281/zenodo.3477005> ;
+        dc:creator                "Cederberg, Björn" , "Johansson, Niklas" ;
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.3476424> , <http://dx.doi.org/10.5281/zenodo.3476438> , <http://dx.doi.org/10.5281/zenodo.3476414> .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ophion_scutellaris_Thomson_1888>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ophion_scutellaris> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Ichneumonidae" ;
+        dwc:genus                     "Ophion" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Thomson, 1888" ;
+        dwc:species                   "scutellaris" .
+
+<http://taxon-name.plazi.org/id/Animalia/Ophion_scutellaris>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ophion" ;
         dwc:class          "Insecta" ;
@@ -23,26 +53,31 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "longicornis" .
+        dwc:species        "scutellaris" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ophion>
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
-        dwc:family         "Ichneumonidae" ;
-        dwc:genus          "Ophion" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
+        dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
         dwc:class          "Insecta" ;
+        dwc:family         "Ichneumonidae" ;
         dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
+        dwc:rank           "family" .
+
+<http://dx.doi.org/10.5281/zenodo.3476414>
+        a                        fabio:Figure ;
+        dc:description           "Fig. 6. A–D. Scutellum, dorsal view. A. Ophion luteus (Linnaeus, 1758). B. O. areolaris Brauns, 1889. C. O. inclinans Johansson sp. nov., holotype, ♀ (NHRS-HEVA000008667). D. O. dispar Brauns, 1895. E–H. Firsttergite, lateral view.E. O.inclinansJohanssonsp.nov.,holotype,♀ (NHRS-HEVA000008667). F. O. dispar. G. O. artemisiae Boie, 1855. H. O. luteus. I–J. Shape of male parameres, lateral view. I. Ophion sp. cf. pseudocostatus Meyer, 1935. J. O. artemisiae." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/3476414/files/figure.png" .
 
 <http://doi.org/10.5281/zenodo.3477005>
         a               fabio:JournalArticle ;
@@ -56,40 +91,30 @@
         bibo:volume     "550" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.3476438> , <http://dx.doi.org/10.5281/zenodo.3476424> , <http://dx.doi.org/10.5281/zenodo.3476414> .
 
-<http://dx.doi.org/10.5281/zenodo.3476424>
-        a                        fabio:Figure ;
-        dc:description           "Fig. 10. Generalized carination of propodeum in females, posterodorsal view. A. Ophion luteus (Linnaeus, 1758)/O. scutellaris Thomson, 1888/O. obscuratus Fabricius, 1792. B. O. costatus Ratzeburg, 1848. C. O. brocki Johansson sp. nov., paratype, ♀ (NHRS-HEVA000008633). D. O. confusus Johansson sp. nov., holotype, ♀ (NHRS-HEVA000008637). E. O. crassicornis Brock, 1982. F. O. artemisiae Boie, 1855. G. O. ellenae Johansson sp. nov., paratype, ♀ (NHRS-HEVA000008655). H. O. perkinsi Brock, 1982. I. O. ocellaris Ulbricht, 1926. J. O. areolaris Brauns, 1889. K. O. dispar Brauns, 1895. L. O. tenuicornis Johansson sp. nov., paratype, ♀ (NHRS-HEVA000008743). M. O. longigena Thomson, 1888. N. O. brevicornis Morley, 1915. O. O. forticornis Morley, 1915." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/3476424/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+<http://taxon-name.plazi.org/id/Animalia/Ophion>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://dx.doi.org/10.5281/zenodo.3476414>
-        a                        fabio:Figure ;
-        dc:description           "Fig. 6. A–D. Scutellum, dorsal view. A. Ophion luteus (Linnaeus, 1758). B. O. areolaris Brauns, 1889. C. O. inclinans Johansson sp. nov., holotype, ♀ (NHRS-HEVA000008667). D. O. dispar Brauns, 1895. E–H. Firsttergite, lateral view.E. O.inclinansJohanssonsp.nov.,holotype,♀ (NHRS-HEVA000008667). F. O. dispar. G. O. artemisiae Boie, 1855. H. O. luteus. I–J. Shape of male parameres, lateral view. I. Ophion sp. cf. pseudocostatus Meyer, 1935. J. O. artemisiae." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/3476414/files/figure.png" .
-
-<http://taxon-name.plazi.org/id/Animalia/Ophion_stigmaticus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ophion" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:genus          "Ophion" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "stigmaticus" .
+        dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Ophion_stigmaticus_C._1915>
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://dx.doi.org/10.5281/zenodo.3476424>
+        a                        fabio:Figure ;
+        dc:description           "Fig. 10. Generalized carination of propodeum in females, posterodorsal view. A. Ophion luteus (Linnaeus, 1758)/O. scutellaris Thomson, 1888/O. obscuratus Fabricius, 1792. B. O. costatus Ratzeburg, 1848. C. O. brocki Johansson sp. nov., paratype, ♀ (NHRS-HEVA000008633). D. O. confusus Johansson sp. nov., holotype, ♀ (NHRS-HEVA000008637). E. O. crassicornis Brock, 1982. F. O. artemisiae Boie, 1855. G. O. ellenae Johansson sp. nov., paratype, ♀ (NHRS-HEVA000008655). H. O. perkinsi Brock, 1982. I. O. ocellaris Ulbricht, 1926. J. O. areolaris Brauns, 1889. K. O. dispar Brauns, 1895. L. O. tenuicornis Johansson sp. nov., paratype, ♀ (NHRS-HEVA000008743). M. O. longigena Thomson, 1888. N. O. brevicornis Morley, 1915. O. O. forticornis Morley, 1915." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/3476424/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ophion_longicornis_Brauns_1889>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ophion_stigmaticus> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ophion_longicornis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Ichneumonidae" ;
         dwc:genus                     "Ophion" ;
@@ -97,18 +122,8 @@
         dwc:order                     "Hymenoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morley, 1915: 271" ;
-        dwc:species                   "stigmaticus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Ichneumonidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+        dwc:scientificNameAuthorship  "Brauns, 1889: 92" ;
+        dwc:species                   "longicornis" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ophion_stigmaticus_Morley_1915>
         a                             dwcFP:TaxonConcept ;
@@ -128,7 +143,7 @@
         dc:description           "Fig. 16. A–B. Right fore wing. A. Ophion scutellaris Thomson, 1888. B. O. wuestneii Kriechbaumer, 1882. C–D. Right hind femur of female, lateral view. C. O. wuestneii. D. O. inclinans Johansson sp. nov., holotype, ♀ (NHRS-HEVA000008667). E–F. Head, anterior view of female. E. Ophion kevoensis Jussila, 1965. F. Ophion broadi Johansson sp. nov. paratype, ♀ (NHRS-HEVA000008950)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/3476438/files/figure.png" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ophion_scutellaris>
+<http://taxon-name.plazi.org/id/Animalia/Ophion_longicornis>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ophion" ;
         dwc:class          "Insecta" ;
@@ -138,41 +153,19 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "scutellaris" .
+        dwc:species        "longicornis" .
 
-<http://treatment.plazi.org/id/A270EE7EFC22FFB4F377AC5B3104F80C>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Ophion_scutellaris_Thomson_1888> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Ophion_longicornis_S._1889> , <http://taxon-concept.plazi.org/id/Animalia/Ophion_longicornis_Brauns_1889> , <http://taxon-concept.plazi.org/id/Animalia/Ophion_stigmaticus_Morley_1915> , <http://taxon-concept.plazi.org/id/Animalia/Ophion_stigmaticus_C._1915> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3477005> ;
-        dc:creator                "Cederberg, Björn" , "Johansson, Niklas" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.3476424> , <http://dx.doi.org/10.5281/zenodo.3476438> , <http://dx.doi.org/10.5281/zenodo.3476414> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ophion_longicornis_S._1889>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ophion_longicornis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ichneumonidae" ;
-        dwc:genus                     "Ophion" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Brauns, 1889: 92" ;
-        dwc:species                   "longicornis" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ophion_scutellaris_Thomson_1888>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ophion_scutellaris> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ichneumonidae" ;
-        dwc:genus                     "Ophion" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Thomson, 1888" ;
-        dwc:species                   "scutellaris" .
+<http://taxon-name.plazi.org/id/Animalia/Ophion_stigmaticus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ophion" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Ichneumonidae" ;
+        dwc:genus          "Ophion" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "stigmaticus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
@@ -180,21 +173,3 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ophion_longicornis_Brauns_1889>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ophion_longicornis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Ichneumonidae" ;
-        dwc:genus                     "Ophion" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Brauns, 1889: 92" ;
-        dwc:species                   "longicornis" .

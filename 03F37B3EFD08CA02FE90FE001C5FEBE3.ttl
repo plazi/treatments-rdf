@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Megachile_Zonomegachile_Michener_2000>
@@ -67,11 +68,10 @@
         dwc:species                   "mucida" .
 
 <http://treatment.plazi.org/id/03F37B3EFD08CA02FE90FE001C5FEBE3>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Megachile_Zonomegachile_Raw_2002> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_Cresson_1878> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_Mitchell_1935> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_albipila_Friese_1911> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_Friese_1911> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_semimucida_Cockerell_1909> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_mariannae_Torre_1896> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_semimucida_Mitchell_1927> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_audax_Mitchell_1924> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_Perez_1895> , <http://taxon-concept.plazi.org/id/Animalia/Megachile_Zonomegachile_Michener_2000> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.155887> ;
-        dc:creator                "Raw, Anthony" .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.155887> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Megachile_Zonomegachile> ;
+        dc:creator           "Raw, Anthony" .
 
 <http://taxon-name.plazi.org/id/Animalia/Megachile_audax>
         a                  dwcFP:TaxonName ;
@@ -99,18 +99,18 @@
         dwc:species                   "mucida" ;
         dwc:subGenus                  "Delomegachile" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_Perez_1895>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megachile_mucida> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Megachilidae" ;
-        dwc:genus                     "Megachile" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Perez 1895: 23" ;
-        dwc:species                   "mucida" .
+<http://taxon-name.plazi.org/id/Animalia/Megachile_mucida_semimucida>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Megachile_mucida" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Megachilidae" ;
+        dwc:genus          "Megachile" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "subSpecies" ;
+        dwc:species        "mucida" ;
+        dwc:subSpecies     "semimucida" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_semimucida_Cockerell_1909>
         a                             dwcFP:TaxonConcept ;
@@ -125,31 +125,6 @@
         dwc:scientificNameAuthorship  "Cockerell 1909a: 26" ;
         dwc:species                   "mucida" ;
         dwc:subSpecies                "semimucida" .
-
-<http://taxon-name.plazi.org/id/Animalia/Megachile_albipila>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Megachile" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Megachilidae" ;
-        dwc:genus          "Megachile" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "albipila" .
-
-<http://taxon-name.plazi.org/id/Animalia/Megachile_mucida_semimucida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Megachile_mucida" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Megachilidae" ;
-        dwc:genus          "Megachile" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subSpecies" ;
-        dwc:species        "mucida" ;
-        dwc:subSpecies     "semimucida" .
 
 <http://dx.doi.org/10.5281/zenodo.155887>
         a               fabio:JournalArticle ;
@@ -185,19 +160,6 @@
         dwc:rank           "subGenus" ;
         dwc:subGenus       "Zonomegachile" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Megachile_mariannae_Torre_1896>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megachile_mariannae> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Megachilidae" ;
-        dwc:genus                     "Megachile" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Dalla Torre 1896" ;
-        dwc:species                   "mariannae" .
-
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
@@ -218,6 +180,19 @@
         dwc:scientificNameAuthorship  "Mitchell 1924: 161" ;
         dwc:species                   "audax" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Megachile_mariannae_Torre_1896>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megachile_mariannae> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Megachilidae" ;
+        dwc:genus                     "Megachile" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Dalla Torre 1896" ;
+        dwc:species                   "mariannae" .
+
 <http://taxon-name.plazi.org/id/Animalia/Megachile_mucida>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Megachile" ;
@@ -229,32 +204,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "mucida" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Megachile_albipila_Friese_1911>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megachile_albipila> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Megachilidae" ;
-        dwc:genus                     "Megachile" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Friese 1911: 219" ;
-        dwc:species                   "albipila" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_Friese_1911>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megachile_mucida> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Megachilidae" ;
-        dwc:genus                     "Megachile" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Cresson 1878: 118" ;
-        dwc:species                   "mucida" .
 
 <http://taxon-name.plazi.org/id/Animalia/Megachile>
         a                  dwcFP:TaxonName ;
@@ -271,32 +220,3 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Megachile_mucida_semimucida_Mitchell_1927>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megachile_mucida_semimucida> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Megachilidae" ;
-        dwc:genus                     "Megachile" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Cockerell 1909a: 26" ;
-        dwc:species                   "mucida" ;
-        dwc:subSpecies                "semimucida" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Megachile_Zonomegachile_Raw_2002>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Megachile_Zonomegachile> ;
-        dwc:authority      "Raw, 2002" ;
-        dwc:authorityName  "Raw" ;
-        dwc:authorityYear  "2002" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Megachilidae" ;
-        dwc:genus          "Megachile" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subGenus" ;
-        dwc:subGenus       "Zonomegachile" .

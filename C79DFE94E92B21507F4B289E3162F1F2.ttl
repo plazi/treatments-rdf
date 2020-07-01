@@ -11,14 +11,14 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://treatment.plazi.org/id/C79DFE94E92B21507F4B289E3162F1F2>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Monomorium_brasiliense_Fernández_2007> ;
-        trt:publishedIn           <http://publication.plazi.org/id/957FD8B17253F06939C72181DFEF0E78> ;
-        dc:creator                "Fernández, F." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Monomorium_monomorium_brasiliense> , <http://taxon-name.plazi.org/id/Animalia/Monomorium_minutum_brasiliense> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://publication.plazi.org/id/957FD8B17253F06939C72181DFEF0E78> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Monomorium_brasiliense> ;
+        dc:creator           "Fernández, F." .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -41,6 +41,18 @@
         dwc:species        "monomorium" ;
         dwc:subSpecies     "brasiliense" .
 
+<http://taxon-name.plazi.org/id/Animalia/Monomorium_minutum>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Formicidae" ;
+        dwc:genus          "Monomorium" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "minutum" .
+
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -62,17 +74,19 @@
         dwc:rank           "species" ;
         dwc:species        "brasiliense" .
 
-<http://taxon-name.plazi.org/id/Animalia/Monomorium_minutum>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Formicidae" ;
-        dwc:genus          "Monomorium" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "minutum" .
+<http://taxon-concept.plazi.org/id/Animalia/Monomorium_minutum_brasiliense_Fernández_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Monomorium_minutum_brasiliense> ;
+        dwc:LSID-HNS      "urn:lsid:biosci.ohio-state.edu:osuc_concepts:140347" ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Formicidae" ;
+        dwc:genus         "Monomorium" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "subSpecies" ;
+        dwc:species       "minutum" ;
+        dwc:subSpecies    "brasiliense" .
 
 <http://taxon-name.plazi.org/id/Animalia/Monomorium>
         a                  dwcFP:TaxonName ;
@@ -111,6 +125,20 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Monomorium_monomorium_brasiliense_Fernández_2007>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Monomorium_monomorium_brasiliense> ;
+        dwc:LSID-HNS      "urn:lsid:biosci.ohio-state.edu:osuc_concepts:231131" ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Formicidae" ;
+        dwc:genus         "Monomorium" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "subSpecies" ;
+        dwc:species       "monomorium" ;
+        dwc:subSpecies    "brasiliense" .
+
 <http://taxon-name.plazi.org/id/Animalia/Monomorium_minutum_brasiliense>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Monomorium_minutum" ;
@@ -135,22 +163,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "monomorium" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Monomorium_brasiliense_Fernández_2007>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Monomorium_brasiliense> ;
-        dwc:LSID-HNS       "urn:lsid:biosci.ohio-state.edu:osuc_concepts:31424" ;
-        dwc:authority      "Fernández, 2007" ;
-        dwc:authorityName  "Fernández" ;
-        dwc:authorityYear  "2007" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Formicidae" ;
-        dwc:genus          "Monomorium" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "brasiliense" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;

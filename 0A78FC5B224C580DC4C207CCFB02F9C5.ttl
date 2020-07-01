@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -34,12 +35,11 @@
         dwc:variety  "flavirnana" .
 
 <http://treatment.plazi.org/id/0A78FC5B224C580DC4C207CCFB02F9C5>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Colobostema_flavimanum_Strobl_1898> ;
-        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/__flavirnana_Strobl_1898> ;
-        trt:publishedIn          <http://dx.doi.org/10.5169/seals-403072> ;
-        dc:creator               "Jean-Paul Haenni" ;
-        cito:cites               <http://dx.doi.org/10.5281/zenodo.270244> , <http://taxon-name.plazi.org/id/Animalia/Scatopsidae> , <http://taxon-name.plazi.org/id/Animalia/Scatopse_tristis> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5169/seals-403072> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Colobostema_flavimanum> ;
+        dc:creator           "Jean-Paul Haenni" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.270244> .
 
 <http://dx.doi.org/10.5169/seals-403072>
         a               fabio:JournalArticle ;
@@ -73,15 +73,15 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://dx.doi.org/10.5281/zenodo.270244>
-        a                        fabio:Figure ;
-        dc:description           "Fig. 3. Colobostema flavimanum (Strobl): A. Tergite 7, ♂. - B. Sternite 7, ♂. - C. Genital capsule, ♂, ventral. - D. Tip of aedeagus, ♂. - E. Genital capsule with epandrium, ♂, dorsal. - F. Wing venation, ♂." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/270244/files/figure.png" .
-
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://dx.doi.org/10.5281/zenodo.270244>
+        a                        fabio:Figure ;
+        dc:description           "Fig. 3. Colobostema flavimanum (Strobl): A. Tergite 7, ♂. - B. Sternite 7, ♂. - C. Genital capsule, ♂, ventral. - D. Tip of aedeagus, ♂. - E. Genital capsule with epandrium, ♂, dorsal. - F. Wing venation, ♂." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/270244/files/figure.png" .
 
 <http://taxon-name.plazi.org/id/Animalia/Scatopsidae>
         a                  dwcFP:TaxonName ;
@@ -93,18 +93,28 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Colobostema_flavimanum_Strobl_1898>
+<http://taxon-concept.plazi.org/id/Animalia/Scatopse_tristis_Haenni_2013>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Scatopse_tristis> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Scatopsidae" ;
+        dwc:genus         "Scatopse" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Diptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "tristis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scatopsidae_Fliegen_2013>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Colobostema_flavimanum> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Scatopsidae> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Scatopsidae" ;
-        dwc:genus                     "Colobostema" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "Diptera" ;
         dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Strobl, 1898" ;
-        dwc:species                   "flavimanum" .
+        dwc:rank                      "family" ;
+        dwc:scientificNameAuthorship  "Fliegen" .
 
 <http://taxon-concept.plazi.org/id/Animalia/__flavirnana_Strobl_1898>
         a                             dwcFP:TaxonConcept ;

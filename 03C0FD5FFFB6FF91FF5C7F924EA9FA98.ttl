@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -65,12 +66,10 @@
         dwc:species        "angustulus" .
 
 <http://treatment.plazi.org/id/03C0FD5FFFB6FF91FF5C7F924EA9FA98>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Agrilus_angustulus_angustulus_Illiger_2012> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Buprestis_pavida_Fabricius_1792> , <http://taxon-concept.plazi.org/id/Animalia/Buprestis_angustula_Illiger_1803> , <http://taxon-concept.plazi.org/id/Animalia/Agrilus_angustulus_Illiger_1803> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.280934> ;
-        dc:creator                "Jendek, Eduard" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Buprestis_pavida> , <http://taxon-name.plazi.org/id/Animalia/Buprestis> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.280934> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Agrilus_angustulus_angustulus> ;
+        dc:creator           "Jendek, Eduard" .
 
 <http://taxon-name.plazi.org/id/Animalia/Buprestidae>
         a                  dwcFP:TaxonName ;
@@ -81,18 +80,6 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Buprestis_pavida>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Buprestis" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Buprestidae" ;
-        dwc:genus          "Buprestis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "pavida" .
 
 <http://dx.doi.org/10.5281/zenodo.280934>
         a               fabio:JournalArticle ;
@@ -117,6 +104,18 @@
         dwc:scientificNameAuthorship  "Illiger, 1803" ;
         dwc:species                   "angustula" .
 
+<http://taxon-name.plazi.org/id/Animalia/Buprestis_pavida>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Buprestis" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Buprestidae" ;
+        dwc:genus          "Buprestis" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "pavida" .
+
 <http://taxon-name.plazi.org/id/Animalia/Buprestis_angustula>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Buprestis" ;
@@ -128,17 +127,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "angustula" .
-
-<http://taxon-name.plazi.org/id/Animalia/Buprestis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Buprestidae" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Buprestidae" ;
-        dwc:genus          "Buprestis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Agrilus_angustulus_Illiger_1803>
         a                             dwcFP:TaxonConcept ;
@@ -158,6 +146,17 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Buprestis_Jendek_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Buprestis> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Buprestidae" ;
+        dwc:genus         "Buprestis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -166,20 +165,6 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Agrilus_angustulus_angustulus_Illiger_2012>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Agrilus_angustulus_angustulus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Buprestidae" ;
-        dwc:genus                     "Agrilus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Coleoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Illiger" ;
-        dwc:species                   "angustulus" ;
-        dwc:subSpecies                "angustulus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Agrilus_angustulus_angustulus>
         a                  dwcFP:TaxonName ;
@@ -193,3 +178,15 @@
         dwc:rank           "subSpecies" ;
         dwc:species        "angustulus" ;
         dwc:subSpecies     "angustulus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Buprestis_pavida_Jendek_2012>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Buprestis_pavida> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Buprestidae" ;
+        dwc:genus         "Buprestis" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "pavida" .

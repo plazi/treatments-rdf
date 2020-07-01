@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.5281/zenodo.234070>
@@ -31,11 +32,12 @@
         dwc:species        "setosa" .
 
 <http://treatment.plazi.org/id/9A3E87FEEB41FFFCD2F7FEFAFB7CFC88>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3919.3.5> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Tharyx_alaskensis> ;
-        dc:creator           "Blake, James A." ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.234070> , <http://dx.doi.org/10.5281/zenodo.234071> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Tharyx_alaskensis_Blake_2015> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Chaetozone_setosa_Pettibone_1954> ;
+        trt:publishedIn          <http://dx.doi.org/10.11646/zootaxa.3919.3.5> ;
+        dc:creator               "Blake, James A." ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.234070> , <http://dx.doi.org/10.5281/zenodo.234071> .
 
 <http://taxon-name.plazi.org/id/Animalia/Tharyx_alaskensis>
         a                  dwcFP:TaxonName ;
@@ -68,6 +70,21 @@
         bibo:volume     "3919" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.234071> , <http://dx.doi.org/10.5281/zenodo.234070> .
 
+<http://taxon-concept.plazi.org/id/Animalia/Tharyx_alaskensis_Blake_2015>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Tharyx_alaskensis> ;
+        dwc:authority      "Blake, 2015" ;
+        dwc:authorityName  "Blake" ;
+        dwc:authorityYear  "2015" ;
+        dwc:class          "Polychaeta" ;
+        dwc:family         "Cirratulidae" ;
+        dwc:genus          "Tharyx" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Terebellida" ;
+        dwc:phylum         "Annelida" ;
+        dwc:rank           "species" ;
+        dwc:species        "alaskensis" .
+
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
@@ -77,19 +94,6 @@
         a                        fabio:Figure ;
         dc:description           "FIGURE 20. Tharyx alaskensis n. sp. A, anterior end, dorsal view; B, posterior end dorsal view; C, juvenile, entire animal, lateral view. (All paratypes, LACM-AHF Poly 6555; stained with Shirlastain A)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/234071/files/figure.png" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Chaetozone_gracilis_Busdosh_1984>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chaetozone_gracilis> ;
-        dwc:class                     "Polychaeta" ;
-        dwc:family                    "Cirratulidae" ;
-        dwc:genus                     "Chaetozone" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Terebellida" ;
-        dwc:phylum                    "Annelida" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Busdosh 1984" ;
-        dwc:species                   "gracilis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Terebellida>
         a                  dwcFP:TaxonName ;
@@ -152,15 +156,3 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Pettibone 1954: 287" ;
         dwc:species                   "setosa" .
-
-<http://taxon-name.plazi.org/id/Animalia/Chaetozone_gracilis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chaetozone" ;
-        dwc:class          "Polychaeta" ;
-        dwc:family         "Cirratulidae" ;
-        dwc:genus          "Chaetozone" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Terebellida" ;
-        dwc:phylum         "Annelida" ;
-        dwc:rank           "species" ;
-        dwc:species        "gracilis" .

@@ -11,14 +11,36 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://treatment.plazi.org/id/A37BE51C2FE00257DDFF7390C4B4978A>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Monoblastus_caudatus_Hartig_1837> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.4.e9042> ;
-        dc:creator                "Broad, Gavin R." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Phaestus> , <http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_sericeus> , <http://taxon-name.plazi.org/id/Animalia/Tryphon> , <http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_lateralis> , <http://taxon-name.plazi.org/id/Animalia/Tryphon_caudatus> .
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea>
+        a          dwcFP:TaxonName ;
+        dwc:genus  "Ichneumonoidea" ;
+        dwc:rank   "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tryphon_caudatus_Broad_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tryphon_caudatus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ichneumonidae" ;
+        dwc:genus         "Tryphon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "caudatus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phaestus_Broad_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Phaestus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ichneumonidae" ;
+        dwc:genus         "Phaestus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -27,6 +49,13 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_sericeus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea" ;
+        dwc:genus          "Ichneumonoidea" ;
+        dwc:rank           "species" ;
+        dwc:species        "sericeus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
@@ -37,22 +66,12 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
+<http://taxon-name.plazi.org/id/Animalia/Phaestus>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ichneumonidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Monoblastus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Ichneumonidae" ;
-        dwc:genus          "Monoblastus" ;
+        dwc:genus          "Phaestus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
@@ -70,10 +89,15 @@
         dwc:rank           "species" ;
         dwc:species        "caudatus" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Ichneumonidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.3897/BDJ.4.e9042>
         a               fabio:JournalArticle ;
@@ -85,19 +109,33 @@
         bibo:startPage  "9042" ;
         bibo:volume     "4" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_lateralis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea" ;
-        dwc:genus          "Ichneumonoidea" ;
-        dwc:rank           "species" ;
-        dwc:species        "lateralis" .
+<http://taxon-concept.plazi.org/id/Animalia/Ichneumonoidea_sericeus_Broad_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_sericeus> ;
+        dwc:genus         "Ichneumonoidea" ;
+        dwc:rank          "species" ;
+        dwc:species       "sericeus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Phaestus>
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ichneumonidae" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://treatment.plazi.org/id/A37BE51C2FE00257DDFF7390C4B4978A>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Monoblastus_caudatus_Hartig_1837> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Phaestus_Broad_2016> , <http://taxon-concept.plazi.org/id/Animalia/Ichneumonoidea_sericeus_Broad_2016> , <http://taxon-concept.plazi.org/id/Animalia/Tryphon_Broad_2016> , <http://taxon-concept.plazi.org/id/Animalia/Ichneumonoidea_lateralis_Broad_2016> , <http://taxon-concept.plazi.org/id/Animalia/Tryphon_caudatus_Broad_2016> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.4.e9042> ;
+        dc:creator                "Broad, Gavin R." .
+
+<http://taxon-name.plazi.org/id/Animalia/Monoblastus>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
-        dwc:genus          "Phaestus" ;
+        dwc:genus          "Monoblastus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
@@ -116,21 +154,32 @@
         dwc:scientificNameAuthorship  "Hartig, 1837" ;
         dwc:species                   "caudatus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_sericeus>
+<http://taxon-concept.plazi.org/id/Animalia/Tryphon_Broad_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tryphon> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Ichneumonidae" ;
+        dwc:genus         "Tryphon" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_lateralis>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea" ;
         dwc:genus          "Ichneumonoidea" ;
         dwc:rank           "species" ;
-        dwc:species        "sericeus" .
+        dwc:species        "lateralis" .
 
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea>
-        a          dwcFP:TaxonName ;
-        dwc:genus  "Ichneumonoidea" ;
-        dwc:rank   "genus" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
+<http://taxon-concept.plazi.org/id/Animalia/Ichneumonoidea_lateralis_Broad_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonoidea_lateralis> ;
+        dwc:genus         "Ichneumonoidea" ;
+        dwc:rank          "species" ;
+        dwc:species       "lateralis" .

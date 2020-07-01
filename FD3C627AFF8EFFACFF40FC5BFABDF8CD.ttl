@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -60,10 +61,11 @@
         dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/FD3C627AFF8EFFACFF40FC5BFABDF8CD>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.158856> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Leonardius_kellyae> ;
-        dc:creator           "John H. Martin" .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Leonardius_kellyae_Martin_2004> ;
+        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Metaleurodicus_Quaintance_2004> , <http://taxon-concept.plazi.org/id/Animalia/Aleurodicus_Metaleurodicus_Quaintance_1913> ;
+        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.158856> ;
+        dc:creator               "John H. Martin" .
 
 <http://dx.doi.org/10.5281/zenodo.158856>
         a               fabio:JournalArticle ;
@@ -97,6 +99,21 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Leonardius_kellyae_Martin_2004>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Leonardius_kellyae> ;
+        dwc:authority      "Martin, 2004" ;
+        dwc:authorityName  "Martin" ;
+        dwc:authorityYear  "2004" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Aleyrodidae" ;
+        dwc:genus          "Leonardius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "kellyae" .
+
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
@@ -114,6 +131,18 @@
         dwc:rank           "subGenus" ;
         dwc:subGenus       "Metaleurodicus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Metaleurodicus_Quaintance_2004>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Metaleurodicus> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Aleyrodidae" ;
+        dwc:genus                     "Metaleurodicus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hemiptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "genus" ;
+        dwc:scientificNameAuthorship  "Quaintance & Baker" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Aleurodicus_Metaleurodicus_Quaintance_1913>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Aleurodicus_Metaleurodicus> ;
@@ -126,56 +155,6 @@
         dwc:rank                      "subGenus" ;
         dwc:scientificNameAuthorship  "Quaintance & Baker, 1913: 73" ;
         dwc:subGenus                  "Metaleurodicus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Aleurodicus_minima>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Aleurodicus" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Aleyrodidae" ;
-        dwc:genus          "Aleurodicus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hemiptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "minima" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Aleurodicus_minima_Quaintance_1900>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Aleurodicus_minima> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Aleyrodidae" ;
-        dwc:genus                     "Aleurodicus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Quaintance, 1900: 47" ;
-        dwc:species                   "minima" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Aleurodicus_Metaleurodicus_Quaintance_1900>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Aleurodicus_Metaleurodicus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Aleyrodidae" ;
-        dwc:genus                     "Aleurodicus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subGenus" ;
-        dwc:scientificNameAuthorship  "Quaintance & Baker, 1913: 73" ;
-        dwc:subGenus                  "Metaleurodicus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Metaleurodicus_Bondar_1923>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Metaleurodicus> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Aleyrodidae" ;
-        dwc:genus                     "Metaleurodicus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hemiptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Quaintance & Baker" .
 
 <http://taxon-name.plazi.org/id/Animalia/Leonardius>
         a                  dwcFP:TaxonName ;

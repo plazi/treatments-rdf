@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -51,31 +52,17 @@
         bibo:volume     "181" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.156855> , <http://dx.doi.org/10.5281/zenodo.156846> , <http://dx.doi.org/10.5281/zenodo.156848> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Geron_rufipes_Macquart_2003>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Geron_rufipes> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Bombyliidae" ;
-        dwc:genus                     "Geron" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Macquart" ;
-        dwc:species                   "rufipes" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Geron_litoralis_Painter_1965>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Geron_litoralis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Bombyliidae" ;
-        dwc:genus                     "Geron" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Painter, 1932: 145" ;
-        dwc:species                   "litoralis" .
+<http://taxon-name.plazi.org/id/Animalia/Geron_grandis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Geron" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Bombyliidae" ;
+        dwc:genus          "Geron" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "grandis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;
@@ -116,16 +103,6 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
-<http://taxon-name.plazi.org/id/Animalia/Bombyliidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Bombyliidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Diptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
 <http://taxon-name.plazi.org/id/Animalia/Geron>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Bombyliidae> ;
@@ -136,6 +113,16 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Bombyliidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Bombyliidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Diptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.5281/zenodo.156848>
         a                        fabio:Figure ;
@@ -148,14 +135,26 @@
         fabio:hasRepresentation  "https://zenodo.org/record/156846/files/figure.png" .
 
 <http://treatment.plazi.org/id/FB38C637FFE3FFE2FE9A224AD9FDFC4A>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Geron_rufipes_Macquart_2003> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Geron_litoralis_Painter_1932> , <http://taxon-concept.plazi.org/id/Animalia/Geron_litoralis_Painter_1965> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.156842> ;
-        dc:creator                "Hall, Jack C." , "Evenhuis, Neal L." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.156846> , <http://dx.doi.org/10.5281/zenodo.156848> , <http://dx.doi.org/10.5281/zenodo.156855> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.156842> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Geron_rufipes> ;
+        dc:creator           "Evenhuis, Neal L." , "Hall, Jack C." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.156846> , <http://dx.doi.org/10.5281/zenodo.156855> , <http://dx.doi.org/10.5281/zenodo.156848> .
 
 <http://dx.doi.org/10.5281/zenodo.156855>
         a                        fabio:Figure ;
         dc:description           "FIGURES 50 – 53. Geron male genitalia. 50, G. peucon Hall & Evenhuis, sp. nov.; a, lateral view; b, gonocoxa, ventral view. 51, G. prosopidis Hall & Evenhuis, sp. nov.; a, lateral view; b, gonocoxa, ventral view. 52, G. rufipes Macquart; a, lateral view; b, tip of gonocoxa, dorsal view. 53, G. senilis (Fabricius); a, lateral view; b, gonocoxa, dorsal view, phallic complex removed." ;
         fabio:hasRepresentation  "https://zenodo.org/record/156855/files/figure.png" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Geron_grandis_Painter_1932>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Geron_grandis> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Bombyliidae" ;
+        dwc:genus                     "Geron" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Diptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Painter, 1932: 145" ;
+        dwc:species                   "grandis" .

@@ -11,20 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_acerbulum_Fischer_1890>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ctenopoma_acerbulum> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Anabantidae" ;
-        dwc:genus                     "Ctenopoma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Perciformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morelet, 1851" ;
-        dwc:species                   "acerbulum" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_subangulata_Martens_1886>
         a                             dwcFP:TaxonConcept ;
@@ -39,17 +27,17 @@
         dwc:scientificNameAuthorship  "Martens, 1886" ;
         dwc:species                   "subangulata" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Cistula_Pfeiffer_1858>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cistula> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Pomatiidae" ;
-        dwc:genus                     "Cistula" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neotaenioglossa" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Pfeiffer, 1858" .
+<http://taxon-name.plazi.org/id/Animalia/Cistula_subangulata>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cistula" ;
+        dwc:class          "Gastropoda" ;
+        dwc:family         "Pomatiidae" ;
+        dwc:genus          "Cistula" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Neotaenioglossa" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "species" ;
+        dwc:species        "subangulata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pomatiidae>
         a                  dwcFP:TaxonName ;
@@ -72,6 +60,18 @@
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
         dwc:species        "trochleare" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyclostoma_acerbulum>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cyclostoma" ;
+        dwc:class          "Gastropoda" ;
+        dwc:family         "Assimineidae" ;
+        dwc:genus          "Cyclostoma" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Littorinimorpha" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "species" ;
+        dwc:species        "acerbulum" .
 
 <http://dx.doi.org/10.5281/zenodo.252714>
         a                        fabio:Figure ;
@@ -126,55 +126,73 @@
 <http://treatment.plazi.org/id/03E087C1FF850253F681FA0CFEEA2A35>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Parachondria_rubicundus_Morelet_1849> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Gouldipoma_rubicundum_Morelet_1849> , <http://taxon-concept.plazi.org/id/Animalia/Gouldipoma_rubicundum_Watters_2006> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_subangulatum_Martens_1890> , <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_acerbulum_Morelet_1851> , <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_subangulata_Fischer_1890> , <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_subangulata_Martens_1886> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_subangulatum_Martens_1886> , <http://taxon-concept.plazi.org/id/Animalia/Choanopoma_rubicundum_Solem_1961> , <http://taxon-concept.plazi.org/id/Animalia/Parachondrops_Watters_2006> , <http://taxon-concept.plazi.org/id/Animalia/Cistula_Pfeiffer_1858> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_acerbulum_Martens_1890> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_acerbulum_Morelet_1851> , <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_acerbulum_Fischer_1890> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_trochleare_Pfeiffer_1852> , <http://taxon-concept.plazi.org/id/Animalia/Choanopoma_rubicundum_Morelet_1849> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_rubicundum_Morelet_1849> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_rubicundum_Pfeiffer_1851> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Gouldipoma_rubicundum_Morelet_1849> , <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_acerbulum_Morelet_1851> , <http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_subangulata_Martens_1886> , <http://taxon-concept.plazi.org/id/Animalia/Cistula_subangulata_Martens_1886> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_subangulatum_Martens_1886> , <http://taxon-concept.plazi.org/id/Animalia/Cyclostoma_rubicundum_Morelet_1849> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_acerbulum_Morelet_1851> , <http://taxon-concept.plazi.org/id/Animalia/Parachondrops_Watters_2014> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_trochleare_Pfeiffer_1852> , <http://taxon-concept.plazi.org/id/Animalia/Cistula_Watters_2014> , <http://taxon-concept.plazi.org/id/Animalia/Choanopoma_rubicundum_Morelet_1849> , <http://taxon-concept.plazi.org/id/Animalia/Cyclostoma_acerbulum_Morelet_1851> , <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_rubicundum_Morelet_1849> ;
         trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3878.4.1> ;
         dc:creator                "Watters, G. Thomas" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.252711> , <http://dx.doi.org/10.5281/zenodo.252713> , <http://taxon-name.plazi.org/id/Animalia/Cistula> , <http://dx.doi.org/10.5281/zenodo.252714> , <http://taxon-name.plazi.org/id/Animalia/Parachondrops> .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.252711> , <http://dx.doi.org/10.5281/zenodo.252713> , <http://dx.doi.org/10.5281/zenodo.252714> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chondropoma_subangulatum_Martens_1890>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chondropoma_subangulatum> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Pomatiidae" ;
-        dwc:genus                     "Chondropoma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neotaenioglossa" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Martens, 1886" ;
-        dwc:species                   "subangulatum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Chondropoma_rubicundum_Pfeiffer_1851>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chondropoma_rubicundum> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Pomatiidae" ;
-        dwc:genus                     "Chondropoma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neotaenioglossa" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morelet, 1849" ;
-        dwc:species                   "rubicundum" .
+<http://taxon-name.plazi.org/id/Animalia/Littorinimorpha>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+        dwc:class          "Gastropoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Littorinimorpha" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "order" .
 
 <http://dx.doi.org/10.5281/zenodo.252713>
         a                        fabio:Figure ;
         dc:description           "FIGURE 12 A – D. Distribution maps. A. Choanopomops largillierti (Pfeiffer, 1846) (black); Parachondria rubicundus (Morelet, 1849) (red); Parachondria cordovanus Pfeiffer, 1857 (blue); Paridoxipoma enigmaticum new species (white). B. Halotudora sumichrasti (Crosse & Fischer, 1874) (blue); Halotudora gaigei (Bequaert & Clench, 1931) (black); Diplopoma osberti (Tristram, 1861) (red); Halotudora gruneri (Pfeiffer, 1846) (white). C. Gouldipoma chiapasense (Crosse & Fischer, 1877) (red); Diplopoma rigidulum (Morelet, 1851) (black); Tudorisca andrewsae (Ancey, 1886) (blue); Gouldipoma coltrorum new species (white); Gouldipoma thomasi (Solem, 1961) (purple). D. Gouldipoma trochlearis (Pfeiffer, 1852) (red); Halotudora kuesteri (Pfeiffer, 1852) (black); Gouldipoma terecostatum (Thompson, 1966) (blue); Gouldipoma chrysostiria new species (purple); Gouldipoma callipeplum (Solem, 1961) (white)." ;
         fabio:hasRepresentation  "https://zenodo.org/record/252713/files/figure.png" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Choanopoma_rubicundum_Solem_1961>
+<http://taxon-concept.plazi.org/id/Animalia/Cistula_subangulata_Martens_1886>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Choanopoma_rubicundum> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cistula_subangulata> ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Pomatiidae" ;
-        dwc:genus                     "Choanopoma" ;
+        dwc:genus                     "Cistula" ;
         dwc:kingdom                   "Animalia" ;
         dwc:order                     "Neotaenioglossa" ;
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morelet, 1849" ;
-        dwc:species                   "rubicundum" ;
-        dwc:subGenus                  "Choanopomops" .
+        dwc:scientificNameAuthorship  "Martens, 1886: 162" ;
+        dwc:species                   "subangulata" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyclostoma_rubicundum_Morelet_1849>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cyclostoma_rubicundum> ;
+        dwc:class                     "Gastropoda" ;
+        dwc:family                    "Assimineidae" ;
+        dwc:genus                     "Cyclostoma" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Littorinimorpha" ;
+        dwc:phylum                    "Mollusca" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Morelet, 1849: 22" ;
+        dwc:species                   "rubicundum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyclostoma_rubicundum>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cyclostoma" ;
+        dwc:class          "Gastropoda" ;
+        dwc:family         "Assimineidae" ;
+        dwc:genus          "Cyclostoma" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Littorinimorpha" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "species" ;
+        dwc:species        "rubicundum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyclostoma>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Assimineidae> ;
+        dwc:class          "Gastropoda" ;
+        dwc:family         "Assimineidae" ;
+        dwc:genus          "Cyclostoma" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Littorinimorpha" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chondropoma_subangulatum_Martens_1886>
         a                             dwcFP:TaxonConcept ;
@@ -188,18 +206,6 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Martens, 1886" ;
         dwc:species                   "subangulatum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Parachondrops_Watters_2006>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Parachondrops> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Pomatiidae" ;
-        dwc:genus                     "Parachondrops" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neotaenioglossa" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Watters, 2006" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cistula>
         a                  dwcFP:TaxonName ;
@@ -245,18 +251,16 @@
         dwc:scientificNameAuthorship  "Morelet, 1851" ;
         dwc:species                   "acerbulum" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chondropoma_rubicundum_Morelet_1849>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chondropoma_rubicundum> ;
-        dwc:class                     "Gastropoda" ;
-        dwc:family                    "Pomatiidae" ;
-        dwc:genus                     "Chondropoma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neotaenioglossa" ;
-        dwc:phylum                    "Mollusca" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morelet, 1849" ;
-        dwc:species                   "rubicundum" .
+<http://taxon-concept.plazi.org/id/Animalia/Cistula_Watters_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Cistula> ;
+        dwc:class         "Gastropoda" ;
+        dwc:family        "Pomatiidae" ;
+        dwc:genus         "Cistula" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Neotaenioglossa" ;
+        dwc:phylum        "Mollusca" ;
+        dwc:rank          "genus" .
 
 <http://dx.doi.org/10.11646/zootaxa.3878.4.1>
         a               fabio:JournalArticle ;
@@ -270,9 +274,9 @@
         bibo:volume     "3878" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.252713> , <http://dx.doi.org/10.5281/zenodo.252711> , <http://dx.doi.org/10.5281/zenodo.252714> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chondropoma_acerbulum_Martens_1890>
+<http://taxon-concept.plazi.org/id/Animalia/Chondropoma_rubicundum_Morelet_1849>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chondropoma_acerbulum> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chondropoma_rubicundum> ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Pomatiidae" ;
         dwc:genus                     "Chondropoma" ;
@@ -280,39 +284,38 @@
         dwc:order                     "Neotaenioglossa" ;
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morelet, 1851" ;
-        dwc:species                   "acerbulum" .
+        dwc:scientificNameAuthorship  "Morelet, 1849" ;
+        dwc:species                   "rubicundum" ;
+        dwc:subGenus                  "Chondropomium" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Gouldipoma_rubicundum_Watters_2006>
+<http://taxon-concept.plazi.org/id/Animalia/Cyclostoma_acerbulum_Morelet_1851>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Gouldipoma_rubicundum> ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cyclostoma_acerbulum> ;
         dwc:class                     "Gastropoda" ;
-        dwc:family                    "Annulariidae" ;
-        dwc:genus                     "Gouldipoma" ;
+        dwc:family                    "Assimineidae" ;
+        dwc:genus                     "Cyclostoma" ;
         dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Neotaenioglossa" ;
+        dwc:order                     "Littorinimorpha" ;
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Morelet, 1849" ;
-        dwc:species                   "rubicundum" .
+        dwc:scientificNameAuthorship  "Morelet, 1851: 19" ;
+        dwc:species                   "acerbulum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parachondrops_Watters_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Parachondrops> ;
+        dwc:class         "Gastropoda" ;
+        dwc:family        "Pomatiidae" ;
+        dwc:genus         "Parachondrops" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Neotaenioglossa" ;
+        dwc:phylum        "Mollusca" ;
+        dwc:rank          "genus" .
 
 <http://dx.doi.org/10.5281/zenodo.252711>
         a                        fabio:Figure ;
         dc:description           "FIGURE 10 A – O. Parachondria rubicundus (Morelet, 1849). A. Cyclostoma rubicundum Morelet, 1849: NHMUK 93.2.4.689 - 91, holotype, 15 mm. B. UF 207737, 13.8 mm. C. UF 216798, 12.8 mm. D. GTW 13723 b, 11.7 mm. E. GTW 13723 b, 14.0 mm. F. Cyclostoma acerbulum Morelet, 1851: NHMUK 1893 - 2 - 4.706, possible syntype, ca. 9 mm, photo courtesy J. Ablett (NHMUK). G. UF 2077430, 9.3 mm. H. GTW 14640 a, 8.9 mm. I. UF 190107, 10.4 mm. J. UF 190254, 11.4 mm. K. GTW 13723 a, 8.7 mm. L. UF 19146, 10.3 mm. M. UF 207687, 12.9 mm. N – O. UF 207745, 11.1 mm." ;
         fabio:hasRepresentation  "https://zenodo.org/record/252711/files/figure.png" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ctenopoma_subangulata_Fischer_1890>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ctenopoma_subangulata> ;
-        dwc:class                     "Actinopterygii" ;
-        dwc:family                    "Anabantidae" ;
-        dwc:genus                     "Ctenopoma" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Perciformes" ;
-        dwc:phylum                    "Chordata" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Martens, 1886" ;
-        dwc:species                   "subangulata" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Parachondria_rubicundus_Morelet_1849>
         a                             dwcFP:TaxonConcept ;
@@ -326,6 +329,16 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Morelet, 1849" ;
         dwc:species                   "rubicundus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Assimineidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
+        dwc:class          "Gastropoda" ;
+        dwc:family         "Assimineidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Littorinimorpha" ;
+        dwc:phylum         "Mollusca" ;
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;

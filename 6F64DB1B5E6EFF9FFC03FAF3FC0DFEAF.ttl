@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://dx.doi.org/10.1111/zoj.12362>
@@ -25,14 +26,6 @@
         bibo:volume     "177" ;
         fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.269772> , <http://dx.doi.org/10.5281/zenodo.269763> , <http://dx.doi.org/10.5281/zenodo.269756> , <http://dx.doi.org/10.5281/zenodo.269771> , <http://dx.doi.org/10.5281/zenodo.269769> .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
@@ -41,6 +34,21 @@
         dwc:order          "Hemiptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Heraeus_tiputini_Dellapé_2016>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Heraeus_tiputini> ;
+        dwc:authority      "Dellapé, 2016" ;
+        dwc:authorityName  "Dellapé" ;
+        dwc:authorityYear  "2016" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Rhyparochromidae" ;
+        dwc:genus          "Heraeus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hemiptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "tiputini" .
 
 <http://taxon-name.plazi.org/id/Animalia/Heraeus>
         a                  dwcFP:TaxonName ;
@@ -79,11 +87,11 @@
         dwc:rank     "kingdom" .
 
 <http://treatment.plazi.org/id/6F64DB1B5E6EFF9FFC03FAF3FC0DFEAF>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.1111/zoj.12362> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Heraeus_tiputini> ;
-        dc:creator           "Thomas J. Henry" , "Pablo M. Dellapé" , "María C. Melo" ;
-        cito:cites           <http://dx.doi.org/10.5281/zenodo.269771> , <http://dx.doi.org/10.5281/zenodo.269769> , <http://dx.doi.org/10.5281/zenodo.269756> , <http://dx.doi.org/10.5281/zenodo.269772> , <http://dx.doi.org/10.5281/zenodo.269763> .
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Heraeus_tiputini_Dellapé_2016> ;
+        trt:publishedIn          <http://dx.doi.org/10.1111/zoj.12362> ;
+        dc:creator               "Thomas J. Henry" , "Pablo M. Dellapé" , "María C. Melo" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.269771> , <http://dx.doi.org/10.5281/zenodo.269769> , <http://dx.doi.org/10.5281/zenodo.269756> , <http://dx.doi.org/10.5281/zenodo.269772> , <http://dx.doi.org/10.5281/zenodo.269763> .
 
 <http://dx.doi.org/10.5281/zenodo.269769>
         a                        fabio:Figure ;
@@ -102,15 +110,15 @@
         dwc:rank           "species" ;
         dwc:species        "tiputini" .
 
-<http://dx.doi.org/10.5281/zenodo.269756>
-        a                        fabio:Figure ;
-        dc:description           "Figure 8. Aedeagus. A, Heraeus coquilletti Barber, 1914; B, Heraeus costalis sp. nov.; C, Heraeus setosus sp. nov.; D, Heraeus caliginosus Slater & Baranowski, 1994; E, Heraeus guttatus (Dallas, 1852); F, Heraeus chamamecinus sp. nov., anterior view; G, Heraeus chamamecinus sp. nov., lateral view; H, Heraeus illitus Distant, 1882; I, Heraeus tiputini sp. nov." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/269756/files/figure.png" .
-
 <http://dx.doi.org/10.5281/zenodo.269771>
         a                        fabio:Figure ;
         dc:description           "Figure 23. Male genitalia. Heraeus splendens sp. nov.: A, pygophore, dorsal view; B, pygophore, lateral view; C, right paramere, inner view; D, right paramere, external view. Heraeus tiputini sp. nov.: E, pygophore, dorsal view; F, pygophore, lateral view; G, right paramere, inner view; H, right paramere, external view." ;
         fabio:hasRepresentation  "https://zenodo.org/record/269771/files/figure.png" .
+
+<http://dx.doi.org/10.5281/zenodo.269756>
+        a                        fabio:Figure ;
+        dc:description           "Figure 8. Aedeagus. A, Heraeus coquilletti Barber, 1914; B, Heraeus costalis sp. nov.; C, Heraeus setosus sp. nov.; D, Heraeus caliginosus Slater & Baranowski, 1994; E, Heraeus guttatus (Dallas, 1852); F, Heraeus chamamecinus sp. nov., anterior view; G, Heraeus chamamecinus sp. nov., lateral view; H, Heraeus illitus Distant, 1882; I, Heraeus tiputini sp. nov." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/269756/files/figure.png" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
@@ -118,3 +126,11 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .

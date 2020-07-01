@@ -11,50 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Tenthredo_albipes>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tenthredo" ;
-        dwc:genus          "Tenthredo" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:rank           "species" ;
-        dwc:species        "albipes" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cladius>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tenthredinidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Tenthredinidae" ;
-        dwc:genus          "Cladius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.3897/BDJ.2.e1168>
         a               fabio:JournalArticle ;
@@ -66,10 +24,34 @@
         bibo:startPage  "1168" ;
         bibo:volume     "2" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cladius_pallipes_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Cladius_pallipes> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Tenthredinidae" ;
+        dwc:genus         "Cladius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "pallipes" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cladius_compressicornis>
         a                  dwcFP:TaxonName ;
@@ -82,25 +64,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "compressicornis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Cladius_pallipes>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cladius" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Tenthredinidae" ;
-        dwc:genus          "Cladius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "pallipes" .
-
-<http://treatment.plazi.org/id/5727F5859C94FCF90C944F5D09C6B1B2>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cladius_compressicornis_Fabricius_1804> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.2.e1168> ;
-        dc:creator                "Livermore, Laurence" , "Knight, Guy T." , "Broad, Gavin R." , "Sheppard, David A." , "Liston, Andrew D." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Tenthredo> , <http://taxon-name.plazi.org/id/Animalia/Cladius_padi> , <http://taxon-name.plazi.org/id/Animalia/Tenthredo_compressicornis> , <http://taxon-name.plazi.org/id/Animalia/Tenthredo_albipes> , <http://taxon-name.plazi.org/id/Animalia/Cladius_pallipes> .
 
 <http://taxon-name.plazi.org/id/Animalia/Cladius_padi>
         a                  dwcFP:TaxonName ;
@@ -124,6 +87,48 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
+<http://taxon-name.plazi.org/id/Animalia/Cladius_pallipes>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cladius" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Tenthredinidae" ;
+        dwc:genus          "Cladius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "pallipes" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenthredo_albipes_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tenthredo_albipes> ;
+        dwc:genus         "Tenthredo" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "albipes" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenthredo_compressicornis_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tenthredo_compressicornis> ;
+        dwc:genus         "Tenthredo" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "compressicornis" .
+
+<http://treatment.plazi.org/id/5727F5859C94FCF90C944F5D09C6B1B2>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cladius_compressicornis_Fabricius_1804> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Cladius_pallipes_Liston_2014> , <http://taxon-concept.plazi.org/id/Animalia/Tenthredo_compressicornis_Liston_2014> , <http://taxon-concept.plazi.org/id/Animalia/Tenthredo_albipes_Liston_2014> , <http://taxon-concept.plazi.org/id/Animalia/Tenthredo_Liston_2014> , <http://taxon-concept.plazi.org/id/Animalia/Cladius_padi_Liston_2014> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.2.e1168> ;
+        dc:creator                "Livermore, Laurence" , "Knight, Guy T." , "Broad, Gavin R." , "Sheppard, David A." , "Liston, Andrew D." .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Cladius_compressicornis_Fabricius_1804>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cladius_compressicornis> ;
@@ -136,3 +141,46 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Fabricius, 1804" ;
         dwc:species                   "compressicornis" .
+
+<http://taxon-name.plazi.org/id/Animalia/Cladius>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tenthredinidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Tenthredinidae" ;
+        dwc:genus          "Cladius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Tenthredo_albipes>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tenthredo" ;
+        dwc:genus          "Tenthredo" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:rank           "species" ;
+        dwc:species        "albipes" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenthredo_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Tenthredo> ;
+        dwc:genus         "Tenthredo" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cladius_padi_Liston_2014>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Cladius_padi> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Tenthredinidae" ;
+        dwc:genus         "Cladius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "padi" .

@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Lispe>
@@ -33,12 +34,11 @@
         dwc:species        "atrifrontata" .
 
 <http://treatment.plazi.org/id/3219654CFFC1FFE337E853D522E5FDA6>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Lispe_sydneyensis_Schiner_2019> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Xenolispa_sydneyensis_Malloch_1923> , <http://taxon-concept.plazi.org/id/Animalia/Lispa_sydneyensis_Stein_1919> , <http://taxon-concept.plazi.org/id/Animalia/Lispe_atrifrontata_Malloch_1922> , <http://taxon-concept.plazi.org/id/Animalia/Xenolispa_atrifrontata_Malloch_1922> ;
-        trt:publishedIn           <https://doi.org/10.11646/zootaxa.4557.1.1> ;
-        dc:creator                "Pont, Adrian C." ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.2584572> , <http://taxon-name.plazi.org/id/Animalia/Lispa_sydneyensis> , <http://dx.doi.org/10.5281/zenodo.2584570> , <http://dx.doi.org/10.5281/zenodo.2584576> , <http://dx.doi.org/10.5281/zenodo.2584574> , <http://taxon-name.plazi.org/id/Animalia/Xenolispa_sydneyensis> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <https://doi.org/10.11646/zootaxa.4557.1.1> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Lispe_sydneyensis> ;
+        dc:creator           "Pont, Adrian C." ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.2584576> , <http://dx.doi.org/10.5281/zenodo.2584572> , <http://dx.doi.org/10.5281/zenodo.2584574> , <http://dx.doi.org/10.5281/zenodo.2584570> .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -58,15 +58,6 @@
         dc:description           "FIGURES 95–97. Lispe sydneyensis Schiner. ♀ ovipositor. 95. Dorsal view. 96. Ventral view. 97. Lateral view. (ACT, Black Mt.)" ;
         fabio:hasRepresentation  "https://zenodo.org/record/2584576/files/figure.png" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Xenolispa_sydneyensis_Malloch_1923>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Xenolispa_sydneyensis> ;
-        dwc:genus                     "Xenolispa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Malloch, 1923" ;
-        dwc:species                   "sydneyensis" .
-
 <http://taxon-name.plazi.org/id/Animalia/Anthomyiidae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
@@ -83,29 +74,8 @@
         dwc:genus                     "Xenolispa" ;
         dwc:kingdom                   "Animalia" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Malloch, 1922: 280" ;
+        dwc:scientificNameAuthorship  "Malloch, 1922: 280" , "Malloch, 1922" ;
         dwc:species                   "atrifrontata" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lispe_atrifrontata_Malloch_1922>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Lispe_atrifrontata> ;
-        dwc:class         "Insecta" ;
-        dwc:family        "Anthomyiidae" ;
-        dwc:genus         "Lispe" ;
-        dwc:kingdom       "Animalia" ;
-        dwc:order         "Diptera" ;
-        dwc:phylum        "Arthropoda" ;
-        dwc:rank          "species" ;
-        dwc:species       "atrifrontata" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Lispa_sydneyensis_Stein_1919>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lispa_sydneyensis> ;
-        dwc:genus                     "Lispa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Stein, 1919" ;
-        dwc:species                   "sydneyensis" .
 
 <https://doi.org/10.11646/zootaxa.4557.1.1>
         a               fabio:JournalArticle ;
@@ -153,31 +123,34 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
 <http://taxon-name.plazi.org/id/Animalia/Xenolispa>
         a            dwcFP:TaxonName ;
         dwc:genus    "Xenolispa" ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "genus" .
 
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Xenolispa_sydneyensis_Pont_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Xenolispa_sydneyensis> ;
+        dwc:genus         "Xenolispa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "sydneyensis" .
+
 <http://dx.doi.org/10.5281/zenodo.2584572>
         a                        fabio:Figure ;
         dc:description           "FIGURES 88–90. Lispe sydneyensis Schiner. 88. ♂ abdomen, dorsal view. 89. ♀ abdomen, dorsal view. 90. ♂ abdomen, lateral view. (WA, Thames River Estuary.)" ;
         fabio:hasRepresentation  "https://zenodo.org/record/2584572/files/figure.png" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lispe_sydneyensis_Schiner_2019>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lispe_sydneyensis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Anthomyiidae" ;
-        dwc:genus                     "Lispe" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Diptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Schiner" ;
-        dwc:species                   "sydneyensis" .
+<http://taxon-concept.plazi.org/id/Animalia/Lispa_sydneyensis_Pont_2019>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Lispa_sydneyensis> ;
+        dwc:genus         "Lispa" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "sydneyensis" .

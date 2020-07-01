@@ -11,12 +11,15 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-name.plazi.org/id/Animalia/Pogonomyrma>
-        a          dwcFP:TaxonName ;
-        dwc:genus  "Pogonomyrma" ;
-        dwc:rank   "genus" .
+<http://taxon-name.plazi.org/id/Animalia/Pogonomyrma_theresiae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pogonomyrma" ;
+        dwc:genus          "Pogonomyrma" ;
+        dwc:rank           "species" ;
+        dwc:species        "theresiae" .
 
 <http://publication.plazi.org/id/1B737ABFC1D2A95AC119C2CEC10933BA>
         a               fabio:JournalArticle ;
@@ -28,15 +31,24 @@
         bibo:startPage  "303" ;
         bibo:volume     "43" .
 
-<http://treatment.plazi.org/id/FB2FE1C7896B8C93EE7585E53BAACEBF>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://publication.plazi.org/id/1B737ABFC1D2A95AC119C2CEC10933BA> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Pogonomyrma_theresiae> ;
-        dc:creator           "Forel, A." .
+<http://taxon-name.plazi.org/id/Animalia/Pogonomyrma>
+        a          dwcFP:TaxonName ;
+        dwc:genus  "Pogonomyrma" ;
+        dwc:rank   "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia/Pogonomyrma_theresiae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pogonomyrma" ;
+<http://taxon-concept.plazi.org/id/Animalia/Pogonomyrma_theresiae_Forel_1899>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Pogonomyrma_theresiae> ;
+        dwc:LSID-HNS       "urn:lsid:biosci.ohio-state.edu:osuc_concepts:231011" ;
+        dwc:authority      "Forel, 1899" ;
+        dwc:authorityName  "Forel" ;
+        dwc:authorityYear  "1899" ;
         dwc:genus          "Pogonomyrma" ;
         dwc:rank           "species" ;
         dwc:species        "theresiae" .
+
+<http://treatment.plazi.org/id/FB2FE1C7896B8C93EE7585E53BAACEBF>
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Pogonomyrma_theresiae_Forel_1899> ;
+        trt:publishedIn          <http://publication.plazi.org/id/1B737ABFC1D2A95AC119C2CEC10933BA> ;
+        dc:creator               "Forel, A." .

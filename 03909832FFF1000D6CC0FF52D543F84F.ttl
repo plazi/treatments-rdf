@@ -11,14 +11,15 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://treatment.plazi.org/id/03909832FFF1000D6CC0FF52D543F84F>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Branchinella_simplex_Linder_2012> ;
-        trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.254592> ;
-        dc:creator                "Timms, Brian V" ;
-        cito:cites                <http://dx.doi.org/10.5281/zenodo.254601> , <http://dx.doi.org/10.5281/zenodo.254603> , <http://dx.doi.org/10.5281/zenodo.254593> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.254592> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Branchinella_simplex> ;
+        dc:creator           "Timms, Brian V" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.254601> , <http://dx.doi.org/10.5281/zenodo.254603> , <http://dx.doi.org/10.5281/zenodo.254593> .
 
 <http://dx.doi.org/10.5281/zenodo.254601>
         a                        fabio:Figure ;
@@ -33,6 +34,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
+<http://taxon-name.plazi.org/id/Animalia/Branchinella_wellardi>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Branchinella" ;
+        dwc:class          "Branchiopoda" ;
+        dwc:family         "Thamnocephalidae" ;
+        dwc:genus          "Branchinella" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Anostraca" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "wellardi" .
+
 <http://dx.doi.org/10.5281/zenodo.254593>
         a                        fabio:Figure ;
         dc:description           "FIGURE 1. Resting eggs of selected species of Branchinella. A, B. affinis; B, B. clandestina n. syn.; C, B. anatinorhyncha; D, B. compacta; E, B. erosa sp. nov.; D, B. compacta; F, B. hearnii sp. nov.; G, B. herrodi sp. nov.; H, B. simplex; J, B. wellardi. Scale bars 50 µm. Images modified from Timms and Lindsay, 2011." ;
@@ -42,6 +55,19 @@
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Branchinella_wellardi_Milner_1929>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Branchinella_wellardi> ;
+        dwc:class                     "Branchiopoda" ;
+        dwc:family                    "Thamnocephalidae" ;
+        dwc:genus                     "Branchinella" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Anostraca" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Milner, 1929" ;
+        dwc:species                   "wellardi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Anostraca>
         a                  dwcFP:TaxonName ;
@@ -57,17 +83,6 @@
         dc:description           "FIGURE 11. Branchinella simplex Linder. A, male head with second antenna, dorsal view, Lake Carey; B, male head with second antenna, dorsal view, William Ck; C, penis; D female head, normal and post mature; E, brood chamber, ventral view. Scale bars 1 mm." ;
         fabio:hasRepresentation  "https://zenodo.org/record/254603/files/figure.png" .
 
-<http://taxon-name.plazi.org/id/Animalia/Branchinella>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thamnocephalidae> ;
-        dwc:class          "Branchiopoda" ;
-        dwc:family         "Thamnocephalidae" ;
-        dwc:genus          "Branchinella" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Anostraca" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Branchinella_simplex>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Branchinella" ;
@@ -80,18 +95,16 @@
         dwc:rank           "species" ;
         dwc:species        "simplex" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Branchinella_simplex_Linder_2012>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Branchinella_simplex> ;
-        dwc:class                     "Branchiopoda" ;
-        dwc:family                    "Thamnocephalidae" ;
-        dwc:genus                     "Branchinella" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Anostraca" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Linder" ;
-        dwc:species                   "simplex" .
+<http://taxon-name.plazi.org/id/Animalia/Branchinella>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thamnocephalidae> ;
+        dwc:class          "Branchiopoda" ;
+        dwc:family         "Thamnocephalidae" ;
+        dwc:genus          "Branchinella" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Anostraca" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;

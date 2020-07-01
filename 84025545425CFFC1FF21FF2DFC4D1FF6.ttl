@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Thyropisthus_induratus>
@@ -26,12 +27,11 @@
         dwc:species        "induratus" .
 
 <http://treatment.plazi.org/id/84025545425CFFC1FF21FF2DFC4D1FF6>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Thyropygus_uncinatus_Demange_1961> ;
-        trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Thyropisthus_induratus_uncinatus_Demange_1961> , <http://taxon-concept.plazi.org/id/Animalia/Thyropygus_allevatus_uncinatus_Hoffman_1975> ;
-        trt:publishedIn          <http://dx.doi.org/10.5281/zenodo.202425> ;
-        dc:creator               "Panha, Somsak" , "Enghoff, Henrik" , "Pimvichai, Piyatida" ;
-        cito:cites               <http://dx.doi.org/10.5281/zenodo.202436> , <http://dx.doi.org/10.5281/zenodo.202431> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://dx.doi.org/10.5281/zenodo.202425> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Thyropygus_uncinatus> ;
+        dc:creator           "Panha, Somsak" , "Enghoff, Henrik" , "Pimvichai, Piyatida" ;
+        cito:cites           <http://dx.doi.org/10.5281/zenodo.202436> , <http://dx.doi.org/10.5281/zenodo.202431> .
 
 <http://taxon-name.plazi.org/id/Animalia/Spirostreptida>
         a                  dwcFP:TaxonName ;
@@ -85,6 +85,10 @@
         dwc:species                   "induratus" ;
         dwc:subSpecies                "uncinatus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/__>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/> .
+
 <http://dx.doi.org/10.5281/zenodo.202425>
         a               fabio:JournalArticle ;
         dc:creator      "Enghoff, Henrik" , "Panha, Somsak" , "Pimvichai, Piyatida" ;
@@ -107,19 +111,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Thyropygus_uncinatus_Demange_1961>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Thyropygus_uncinatus> ;
-        dwc:class                     "Diplopoda" ;
-        dwc:family                    "Harpagophoridae" ;
-        dwc:genus                     "Thyropygus" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Spirostreptida" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Demange, 1961" ;
-        dwc:species                   "uncinatus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Harpagophoridae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Spirostreptida> ;
@@ -136,6 +127,10 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/>
+        a         dwcFP:TaxonName ;
+        dwc:rank  "" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diplopoda>
         a                  dwcFP:TaxonName ;
@@ -163,6 +158,11 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
+<http://dx.doi.org/10.5281/zenodo.202431>
+        a                        fabio:Figure ;
+        dc:description           "FIGURE 5. Thyropygus uncinatus (specimen from Koh Sichang, except B and C), gonopods. A: anterior view, left telopodite removed. B: anterior view, anterior coxal fold (specimen from Ban Nong Phue). C: anterior view, anterior coxal fold (specimen from Simathani Hotel) D: posterior view, left telopodite removed. E: left telopodite, posterior-mesal view. F: left telopodite, anterior-lateral view." ;
+        fabio:hasRepresentation  "https://zenodo.org/record/202431/files/figure.png" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Thyropygus_allevatus_uncinatus_Hoffman_1975>
         a                             dwcFP:TaxonConcept ;
         trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Thyropygus_allevatus_uncinatus> ;
@@ -176,11 +176,6 @@
         dwc:scientificNameAuthorship  "Hoffman 1975: 136" ;
         dwc:species                   "allevatus" ;
         dwc:subSpecies                "uncinatus" .
-
-<http://dx.doi.org/10.5281/zenodo.202431>
-        a                        fabio:Figure ;
-        dc:description           "FIGURE 5. Thyropygus uncinatus (specimen from Koh Sichang, except B and C), gonopods. A: anterior view, left telopodite removed. B: anterior view, anterior coxal fold (specimen from Ban Nong Phue). C: anterior view, anterior coxal fold (specimen from Simathani Hotel) D: posterior view, left telopodite removed. E: left telopodite, posterior-mesal view. F: left telopodite, anterior-lateral view." ;
-        fabio:hasRepresentation  "https://zenodo.org/record/202431/files/figure.png" .
 
 <http://taxon-name.plazi.org/id/Animalia/Thyropisthus_induratus_uncinatus>
         a                  dwcFP:TaxonName ;

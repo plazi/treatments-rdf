@@ -11,14 +11,15 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://treatment.plazi.org/id/1F52051FFFF66B23EFD5FA09932AF918>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Vespa_ducalis_Smith_1852> ;
-        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Vespa_tropica_pseudosoror_Vecht_1959> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_ducalis_pulchra_Buysson_1905> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_matsumurai_Sonan_1935> , <http://taxon-concept.plazi.org/id/Animalia/Vespa_tropica_loochooensis_Bequeart_1936> ;
-        trt:publishedIn           <http://doi.org/10.5281/zenodo.3864234> ;
-        dc:creator                "Gawas, Sandesh M." , "Pannure, Arati" , "Kumar, Girish" , "Carpenter, James M." , "Gupta, Ankita" .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -27,6 +28,59 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa_ducalis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Vespidae" ;
+        dwc:genus          "Vespa" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "ducalis" .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Vespidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://treatment.plazi.org/id/1F52051FFFF66B23EFD5FA09932AF918>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Vespa_ducalis_Smith_1852> ;
+        trt:publishedIn           <http://doi.org/10.5281/zenodo.3864234> ;
+        dc:creator                "Carpenter, James M." , "Gupta, Ankita" , "Pannure, Arati" , "Kumar, Girish" , "Gawas, Sandesh M." .
+
+<http://doi.org/10.5281/zenodo.3864234>
+        a               fabio:JournalArticle ;
+        dc:creator      "Kumar, Girish" , "Pannure, Arati" , "Gupta, Ankita" , "Gawas, Sandesh M." , "Carpenter, James M." ;
+        dc:date         "2020" ;
+        dc:title        "An annotated distributional checklist of Vespidae (Hymenoptera: Vespoidea) of India" ;
+        bibo:endPage    "87" ;
+        bibo:issue      "1" ;
+        bibo:journal    "Zootaxa" ;
+        bibo:startPage  "1" ;
+        bibo:volume     "4784" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Vespa_ducalis_Smith_1852>
         a                             dwcFP:TaxonConcept ;
@@ -41,87 +95,6 @@
         dwc:scientificNameAuthorship  "Smith, 1852" ;
         dwc:species                   "ducalis" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_matsumurai_Sonan_1935>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_matsumurai> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Vespidae" ;
-        dwc:genus                     "Vespa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Sonan, 1935: 370" ;
-        dwc:species                   "matsumurai" .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://doi.org/10.5281/zenodo.3864234>
-        a               fabio:JournalArticle ;
-        dc:creator      "Kumar, Girish" , "Pannure, Arati" , "Gupta, Ankita" , "Gawas, Sandesh M." , "Carpenter, James M." ;
-        dc:date         "2020" ;
-        dc:title        "An annotated distributional checklist of Vespidae (Hymenoptera: Vespoidea) of India" ;
-        bibo:endPage    "87" ;
-        bibo:issue      "1" ;
-        bibo:journal    "Zootaxa" ;
-        bibo:startPage  "1" ;
-        bibo:volume     "4784" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespa_ducalis_pulchra>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa_ducalis" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "variety" ;
-        dwc:species        "ducalis" ;
-        dwc:variety        "pulchra" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespidae>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespa_ducalis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "ducalis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespa_tropica_loochooensis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa_tropica" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subSpecies" ;
-        dwc:species        "tropica" ;
-        dwc:subSpecies     "loochooensis" .
-
 <http://taxon-name.plazi.org/id/Animalia/Vespa>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
@@ -132,94 +105,3 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespa_tropica>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "tropica" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespa_tropica_pseudosoror>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa_tropica" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subSpecies" ;
-        dwc:species        "tropica" ;
-        dwc:subSpecies     "pseudosoror" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_ducalis_pulchra_Buysson_1905>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_ducalis_pulchra> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Vespidae" ;
-        dwc:genus                     "Vespa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "variety" ;
-        dwc:scientificNameAuthorship  "du Buysson, 1905" ;
-        dwc:species                   "ducalis" ;
-        dwc:variety                   "pulchra" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_tropica_loochooensis_Bequeart_1936>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_tropica_loochooensis> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Vespidae" ;
-        dwc:genus                     "Vespa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Bequeart, 1936: 336" ;
-        dwc:species                   "tropica" ;
-        dwc:subSpecies                "loochooensis" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_tropica_pseudosoror_Vecht_1959>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Vespa_tropica_pseudosoror> ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Vespidae" ;
-        dwc:genus                     "Vespa" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "van der Vecht, 1959 c: 224" ;
-        dwc:species                   "tropica" ;
-        dwc:subSpecies                "pseudosoror" .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespa_matsumurai>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Vespa" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Vespidae" ;
-        dwc:genus          "Vespa" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "matsumurai" .

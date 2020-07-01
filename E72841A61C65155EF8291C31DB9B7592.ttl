@@ -11,6 +11,7 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
@@ -30,11 +31,10 @@
         dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/E72841A61C65155EF8291C31DB9B7592>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Carabodes_subarcticus_Weigmann_2006> ;
-        trt:publishedIn           <http://publication.plazi.org/id/C42A1701D0249465F0F7DB7A71A67EAC> ;
-        dc:creator                "Miko, L." , "Weigmann, G." ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Carabodes_elongatus_subarcticus> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://publication.plazi.org/id/C42A1701D0249465F0F7DB7A71A67EAC> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Carabodes_subarcticus> ;
+        dc:creator           "Miko, L." , "Weigmann, G." .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabodes_elongatus_subarcticus>
         a                  dwcFP:TaxonName ;
@@ -49,6 +49,19 @@
         dwc:species        "elongatus" ;
         dwc:variety        "subarcticus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Carabodes_elongatus_subarcticus_Weigmann_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Carabodes_elongatus_subarcticus> ;
+        dwc:class         "Arachnida" ;
+        dwc:family        "Carabodidae" ;
+        dwc:genus         "Carabodes" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Sarcoptiformes" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "variety" ;
+        dwc:species       "elongatus" ;
+        dwc:variety       "subarcticus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Carabodes_elongatus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabodes> ;
@@ -61,6 +74,10 @@
         dwc:rank           "species" ;
         dwc:species        "elongatus" .
 
+<http://publication.plazi.org/id/C42A1701D0249465F0F7DB7A71A67EAC>
+        dc:creator  "Miko, L." , "Weigmann, G." ;
+        dc:title    "Hornmilben (Oribatida) [pages 213 to 260]" .
+
 <http://taxon-name.plazi.org/id/Animalia/Carabodes_subarcticus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabodes" ;
@@ -72,10 +89,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "subarcticus" .
-
-<http://publication.plazi.org/id/C42A1701D0249465F0F7DB7A71A67EAC>
-        dc:creator  "Miko, L." , "Weigmann, G." ;
-        dc:title    "Hornmilben (Oribatida) [pages 213 to 260]" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -110,18 +123,3 @@
         dwc:order          "Sarcoptiformes" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Carabodes_subarcticus_Weigmann_2006>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Carabodes_subarcticus> ;
-        dwc:authority      "Weigmann, 2006" ;
-        dwc:authorityName  "Weigmann" ;
-        dwc:authorityYear  "2006" ;
-        dwc:class          "Arachnida" ;
-        dwc:family         "Carabodidae" ;
-        dwc:genus          "Carabodes" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Sarcoptiformes" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "subarcticus" .

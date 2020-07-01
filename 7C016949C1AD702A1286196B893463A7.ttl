@@ -11,14 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -27,6 +21,22 @@
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Curculionidae" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Madarides_Bouchard_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Madarides> ;
+        dwc:genus         "Madarides" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptoschoinini>
         a          dwcFP:TaxonName ;
@@ -37,13 +47,6 @@
         a          dwcFP:TaxonName ;
         dwc:rank   "tribe" , "Tribe" ;
         dwc:tribe  "Madarini" .
-
-<http://treatment.plazi.org/id/7C016949C1AD702A1286196B893463A7>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Madarini_Jekel_1865> ;
-        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.88.807> ;
-        dc:creator                "Bouchard, Patrice" , "Reid, Chris A. M." , "Davies, Anthony E." , "Schmitt, Michael" , "Newton, Alfred F." , "Smith, Andrew B. T." , "Alonso-Zarazaga, Miguel A." , "Lyal, Chris H. C." , "Ślipinski, S. Adam" , "Lawrence, John F." , "Bousquet, Yves" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Madarides> , <http://taxon-name.plazi.org/id/Animalia/Madarus> , <http://taxon-name.plazi.org/id/Animalia/Madarini> , <http://taxon-name.plazi.org/id/Animalia/Barymerini> , <http://taxon-name.plazi.org/id/Animalia/Leptoschoinini> .
 
 <http://taxon-name.plazi.org/id/Animalia/Madarus>
         a                  dwcFP:TaxonName ;
@@ -56,37 +59,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Madarini_Jekel_1865>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Madarini> ;
-        dwc:rank                      "Tribe" ;
-        dwc:scientificNameAuthorship  "Jekel, 1865" ;
-        dwc:tribe                     "Madarini" .
-
-<http://taxon-name.plazi.org/id/Animalia/Madarides>
-        a          dwcFP:TaxonName ;
-        dwc:genus  "Madarides" ;
-        dwc:rank   "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
-
-<http://taxon-name.plazi.org/id/Animalia/Barymerini>
-        a          dwcFP:TaxonName ;
-        dwc:rank   "tribe" ;
-        dwc:tribe  "Barymerini" .
-
 <http://dx.doi.org/10.3897/zookeys.88.807>
         a               fabio:JournalArticle ;
         dc:creator      "Smith, Andrew B. T." , "Newton, Alfred F." , "Reid, Chris A. M." , "Schmitt, Michael" , "Bouchard, Patrice" , "Ślipinski, S. Adam" , "Bousquet, Yves" , "Alonso-Zarazaga, Miguel A." , "Davies, Anthony E." , "Lyal, Chris H. C." , "Lawrence, John F." ;
@@ -97,12 +69,76 @@
         bibo:startPage  "1" ;
         bibo:volume     "88" .
 
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+<http://treatment.plazi.org/id/7C016949C1AD702A1286196B893463A7>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Madarini_Jekel_1865> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Leptoschoinini_Bouchard_2011> , <http://taxon-concept.plazi.org/id/Animalia/Madarus_Bouchard_2011> , <http://taxon-concept.plazi.org/id/Animalia/Barymerini_Bouchard_2011> , <http://taxon-concept.plazi.org/id/Animalia/Madarides_Bouchard_2011> , <http://taxon-concept.plazi.org/id/Animalia/Madarini_Bouchard_2011> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.88.807> ;
+        dc:creator                "Bouchard, Patrice" , "Reid, Chris A. M." , "Davies, Anthony E." , "Schmitt, Michael" , "Newton, Alfred F." , "Smith, Andrew B. T." , "Alonso-Zarazaga, Miguel A." , "Lyal, Chris H. C." , "Ślipinski, S. Adam" , "Lawrence, John F." , "Bousquet, Yves" .
+
+<http://taxon-name.plazi.org/id/Animalia/Barymerini>
+        a          dwcFP:TaxonName ;
+        dwc:rank   "tribe" ;
+        dwc:tribe  "Barymerini" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Madarini_Jekel_1865>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Madarini> ;
+        dwc:rank                      "Tribe" ;
+        dwc:scientificNameAuthorship  "Jekel, 1865" ;
+        dwc:tribe                     "Madarini" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Barymerini_Bouchard_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Barymerini> ;
+        dwc:rank          "tribe" ;
+        dwc:tribe         "Barymerini" .
+
+<http://taxon-name.plazi.org/id/Animalia/Madarides>
+        a          dwcFP:TaxonName ;
+        dwc:genus  "Madarides" ;
+        dwc:rank   "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leptoschoinini_Bouchard_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Leptoschoinini> ;
+        dwc:rank          "tribe" ;
+        dwc:tribe         "Leptoschoinini" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
-        dwc:family         "Curculionidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+        dwc:rank           "order" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Madarini_Bouchard_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Madarini> ;
+        dwc:rank          "tribe" ;
+        dwc:tribe         "Madarini" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Madarus_Bouchard_2011>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Madarus> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Curculionidae" ;
+        dwc:genus         "Madarus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .

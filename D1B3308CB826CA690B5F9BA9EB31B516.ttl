@@ -11,14 +11,8 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
@@ -37,26 +31,79 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "order" .
 
-<http://dx.doi.org/10.5281/zenodo.9896>
-        dc:creator  "Forel, A." ;
-        dc:title    "Histoire naturelle des Hymenopteres. Deuxieme partie: Les Formicides." .
-
-<http://taxon-name.plazi.org/id/Animalia/Formicidae>
+<http://taxon-name.plazi.org/id/Animalia/Formica>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Formicidae" ;
+        dwc:genus          "Formica" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" .
+        dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/D1B3308CB826CA690B5F9BA9EB31B516>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Prenolepis_Mayr_1861> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Formica_perminuta_Forel_1891> , <http://taxon-concept.plazi.org/id/Animalia/Tapinoma_vividula_Forel_1891> , <http://taxon-concept.plazi.org/id/Animalia/Formica_vividula_Forel_1891> ;
         trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.9896> ;
-        dc:creator                "Forel, A." ;
-        cito:cites                <http://taxon-concept.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis_Forel_1891> , <http://taxon-name.plazi.org/id/Animalia/Formica_perminuta> , <http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula> , <http://taxon-name.plazi.org/id/Animalia/Tapinoma_vividula> , <http://taxon-name.plazi.org/id/Animalia/Formica_vividula> .
+        dc:creator                "Forel, A." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_vividula_Forel_1891>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Formica_vividula> ;
+        dwc:LSID-HNS                  "urn:lsid:biosci.ohio-state.edu:osuc_concepts:142057" ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Formicidae" ;
+        dwc:genus                     "Formica" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  ", Nylander" ;
+        dwc:species                   "vividula" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Prenolepis_vividula_Forel_1891>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula> ;
+        dwc:LSID-HNS                  "urn:lsid:biosci.ohio-state.edu:osuc_concepts:192726" ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Formicidae" ;
+        dwc:genus                     "Prenolepis" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  ", Mayr" ;
+        dwc:species                   "vividula" .
+
+<http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Formicidae" ;
+        dwc:genus          "Prenolepis" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "subSpecies" ;
+        dwc:species        "vividula" ;
+        dwc:subSpecies     "madagascariensis" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis_Forel_1891>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis> ;
+        dwc:LSID-HNS                  "urn:lsid:biosci.ohio-state.edu:osuc_concepts:239302" ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Formicidae" ;
+        dwc:genus                     "Prenolepis" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "subSpecies" ;
+        dwc:scientificNameAuthorship  "Forel, 1891" ;
+        dwc:species                   "vividula" ;
+        dwc:subSpecies                "madagascariensis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Prenolepis>
         a                  dwcFP:TaxonName ;
@@ -68,6 +115,72 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tapinoma_vividula_Forel_1891>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tapinoma_vividula> ;
+        dwc:LSID-HNS                  "urn:lsid:biosci.ohio-state.edu:osuc_concepts:192725" ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Formicidae" ;
+        dwc:genus                     "Tapinoma" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  ", Roger" , ", Smith" ;
+        dwc:species                   "vividula" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Prenolepis_Mayr_1861>
+        a                  dwcFP:TaxonConcept ;
+        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Prenolepis> ;
+        dwc:LSID-HNS       "urn:lsid:biosci.ohio-state.edu:osuc_concepts:24775" ;
+        dwc:authority      "Forel, 1891" ;
+        dwc:authorityName  "Forel" ;
+        dwc:authorityYear  "1891" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Formicidae" ;
+        dwc:genus          "Prenolepis" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_perminuta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Formica" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Formicidae" ;
+        dwc:genus          "Formica" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "perminuta" .
+
+<http://dx.doi.org/10.5281/zenodo.9896>
+        dc:creator  "Forel, A." ;
+        dc:title    "Histoire naturelle des Hymenopteres. Deuxieme partie: Les Formicides." .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_perminuta_Forel_1891>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Formica_perminuta> ;
+        dwc:LSID-HNS                  "urn:lsid:biosci.ohio-state.edu:osuc_concepts:142125" ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Formicidae" ;
+        dwc:genus                     "Formica" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Hymenoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  ", Buckley" ;
+        dwc:species                   "perminuta" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -86,68 +199,12 @@
         dwc:rank           "species" ;
         dwc:species        "vividula" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis_Forel_1891>
-        a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis> ;
-        dwc:LSID-HNS                  "urn:lsid:biosci.ohio-state.edu:osuc_concepts:239302" ;
-        dwc:class                     "Insecta" ;
-        dwc:family                    "Formicidae" ;
-        dwc:genus                     "Prenolepis" ;
-        dwc:kingdom                   "Animalia" ;
-        dwc:order                     "Hymenoptera" ;
-        dwc:phylum                    "Arthropoda" ;
-        dwc:rank                      "subSpecies" ;
-        dwc:scientificNameAuthorship  "Forel, 1891" ;
-        dwc:species                   "vividula" ;
-        dwc:subSpecies                "madagascariensis" .
-
-<http://taxon-name.plazi.org/id/Animalia/Formica_perminuta>
+<http://taxon-name.plazi.org/id/Animalia/Formicidae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Formica" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Formicidae" ;
-        dwc:genus          "Formica" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "species" ;
-        dwc:species        "perminuta" .
-
-<http://taxon-name.plazi.org/id/Animalia/Formica>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Formicidae" ;
-        dwc:genus          "Formica" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Prenolepis_Mayr_1861>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Prenolepis> ;
-        dwc:LSID-HNS       "urn:lsid:biosci.ohio-state.edu:osuc_concepts:24775" ;
-        dwc:authority      "Forel, 1891" ;
-        dwc:authorityName  "Forel" ;
-        dwc:authorityYear  "1891" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Formicidae" ;
-        dwc:genus          "Prenolepis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula_madagascariensis>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Prenolepis_vividula" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Formicidae" ;
-        dwc:genus          "Prenolepis" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "subSpecies" ;
-        dwc:species        "vividula" ;
-        dwc:subSpecies     "madagascariensis" .
+        dwc:rank           "family" .

@@ -11,14 +11,14 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://treatment.plazi.org/id/A9161A9B6D52670381AF9C0CDBD066CA>
-        a                         trt:Treatment ;
-        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Erethistes_Thomson_2006> ;
-        trt:publishedIn           <http://publication.plazi.org/id/B9C560F494E5BA8F4131C5F7853E35BA> ;
-        dc:creator                "Lawrence M. Page" , "Alfred W. Thomson" ;
-        cito:cites                <http://taxon-name.plazi.org/id/Animalia/Laguvia> , <http://taxon-name.plazi.org/id/Animalia/Hara_buchanani> , <http://taxon-name.plazi.org/id/Animalia/Erethistes_pusillus> , <http://taxon-name.plazi.org/id/Animalia/Pimelodus_asperus> , <http://taxon-name.plazi.org/id/Animalia/Bagrus> , <http://taxon-name.plazi.org/id/Animalia/Hara> , <http://taxon-name.plazi.org/id/Animalia/Pimelodus_hara> .
+        a                    trt:Treatment ;
+        trt:publishedIn      <http://publication.plazi.org/id/B9C560F494E5BA8F4131C5F7853E35BA> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Erethistes> ;
+        dc:creator           "Lawrence M. Page" , "Alfred W. Thomson" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hara_buchanani>
         a                  dwcFP:TaxonName ;
@@ -81,20 +81,6 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://taxon-concept.plazi.org/id/Animalia/Erethistes_Thomson_2006>
-        a                  dwcFP:TaxonConcept ;
-        trt:hasTaxonName   <http://taxon-name.plazi.org/id/Animalia/Erethistes> ;
-        dwc:authority      "Thomson, 2006" ;
-        dwc:authorityName  "Thomson" ;
-        dwc:authorityYear  "2006" ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Curculionidae" ;
-        dwc:genus          "Erethistes" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Coleoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Erethistidae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
@@ -104,14 +90,6 @@
         dwc:order          "Siluriformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-        dwc:class          "Actinopterygii" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Chordata" ;
-        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pimelodus_hara>
         a                  dwcFP:TaxonName ;
@@ -124,6 +102,40 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "species" ;
         dwc:species        "hara" .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+        dwc:class          "Actinopterygii" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Chordata" ;
+        dwc:rank           "class" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hara_buchanani_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hara_buchanani> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:4CE5FE48-587C-45E0-A3D0-726929558D6B" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Erethistidae" ;
+        dwc:genus         "Hara" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "buchanani" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_hara_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pimelodus_hara> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:E8CC227D-4C22-41BF-A9EF-3FFC7F6D7BA4" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Pimelodidae" ;
+        dwc:genus         "Pimelodus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "hara" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chordata>
         a                  dwcFP:TaxonName ;
@@ -143,6 +155,27 @@
         dwc:phylum         "Chordata" ;
         dwc:rank           "genus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Laguvia_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Laguvia> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:F31BDA6F-D709-4E38-A463-312A7F1E76E1" ;
+        dwc:genus         "Laguvia" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "genus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Erethistes_pusillus_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Erethistes_pusillus> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:19E518DD-42E0-4F77-873D-E633D7ACB6AF" ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Curculionidae" ;
+        dwc:genus         "Erethistes" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Coleoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "species" ;
+        dwc:species       "pusillus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Bagridae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
@@ -152,6 +185,18 @@
         dwc:order          "Siluriformes" ;
         dwc:phylum         "Chordata" ;
         dwc:rank           "family" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bagrus_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Bagrus> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:67FCB6B8-977F-4973-A1B4-7B4DB5448D2F" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Bagridae" ;
+        dwc:genus         "Bagrus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Siluriformes>
         a                  dwcFP:TaxonName ;
@@ -180,6 +225,18 @@
         dwc:kingdom  "Animalia" ;
         dwc:rank     "genus" .
 
+<http://taxon-concept.plazi.org/id/Animalia/Hara_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Hara> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:3CBD9E8D-FD45-4D54-B3C2-9424F31A61D6" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Erethistidae" ;
+        dwc:genus         "Hara" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "genus" .
+
 <http://taxon-name.plazi.org/id/Animalia/Erethistes_pusillus>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Erethistes" ;
@@ -191,6 +248,19 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "pusillus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_asperus_Thomson_2006>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Pimelodus_asperus> ;
+        dwc:LSID-ZBK      "urn:lsid:zoobank.org:act:4EBB13A8-5709-4145-BB16-A75BFD01C382" ;
+        dwc:class         "Actinopterygii" ;
+        dwc:family        "Pimelodidae" ;
+        dwc:genus         "Pimelodus" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Siluriformes" ;
+        dwc:phylum        "Chordata" ;
+        dwc:rank          "species" ;
+        dwc:species       "asperus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hara>
         a                  dwcFP:TaxonName ;

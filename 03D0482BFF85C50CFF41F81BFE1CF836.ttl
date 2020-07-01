@@ -11,11 +11,13 @@
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
 @prefix bibo:  <http://purl.org/ontology/bibo/> .
 @prefix sdo:   <http://schema.org/> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://treatment.plazi.org/id/03D0482BFF85C50CFF41F81BFE1CF836>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Lixus_inquinatus_Boheman_1835> ;
+        trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Lixus_subtilis_Boheman_1835> , <http://taxon-concept.plazi.org/id/Animalia/__> ;
         trt:publishedIn           <http://dx.doi.org/10.5281/zenodo.293282> ;
         dc:creator                "Gültekin, Levent" .
 
@@ -27,10 +29,30 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "class" .
 
+<http://taxon-concept.plazi.org/id/Animalia/__>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/> .
+
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Lixus_subtilis>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Lixus" ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Curculionidae" ;
+        dwc:genus          "Lixus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Coleoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "species" ;
+        dwc:species        "subtilis" .
+
+<http://taxon-name.plazi.org/id/Animalia/>
+        a         dwcFP:TaxonName ;
+        dwc:rank  "" .
 
 <http://dx.doi.org/10.5281/zenodo.293282>
         a               fabio:JournalArticle ;
@@ -86,6 +108,19 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
         dwc:species        "inquinatus" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lixus_subtilis_Boheman_1835>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Lixus_subtilis> ;
+        dwc:class                     "Insecta" ;
+        dwc:family                    "Curculionidae" ;
+        dwc:genus                     "Lixus" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Coleoptera" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "species" ;
+        dwc:scientificNameAuthorship  "Boheman, 1835" ;
+        dwc:species                   "subtilis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Curculionidae>
         a                  dwcFP:TaxonName ;
