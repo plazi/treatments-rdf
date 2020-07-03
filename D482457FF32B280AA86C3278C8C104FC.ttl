@@ -14,16 +14,20 @@
 @prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://taxon-concept.plazi.org/id/Animalia/Crabro_Else_2016>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Crabro> ;
-        dwc:class         "Insecta" ;
-        dwc:family        "Crabronidae" ;
-        dwc:genus         "Crabro" ;
-        dwc:kingdom       "Animalia" ;
-        dwc:order         "Hymenoptera" ;
-        dwc:phylum        "Arthropoda" ;
-        dwc:rank          "genus" .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Insecta" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Crabro>
         a                  dwcFP:TaxonName ;
@@ -36,19 +40,41 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "genus" .
 
-<http://treatment.plazi.org/id/D482457FF32B280AA86C3278C8C104FC>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.3897/BDJ.4.e8050> ;
-        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Ectemnius_rubicola> ;
-        dc:creator           "Broad, Gavin R." , "Bolton, Barry" , "Else, George R." .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" .
+        dwc:rank           "order" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Crabro_Else_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Crabro> ;
+        dwc:class         "Insecta" ;
+        dwc:family        "Crabronidae" ;
+        dwc:genus         "Crabro" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:order         "Hymenoptera" ;
+        dwc:phylum        "Arthropoda" ;
+        dwc:rank          "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia/Ectemnius>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
+        dwc:class          "Insecta" ;
+        dwc:family         "Crabronidae" ;
+        dwc:genus          "Ectemnius" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Hymenoptera" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "genus" .
+
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ectemnius_rubicola>
         a                  dwcFP:TaxonName ;
@@ -62,14 +88,13 @@
         dwc:rank           "species" ;
         dwc:species        "rubicola" .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-        dwc:class          "Insecta" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" .
+<http://treatment.plazi.org/id/D482457FF32B280AA86C3278C8C104FC>
+        a                    trt:Treatment ;
+        trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Solenius_rubicola_Else_2016> ;
+        trt:publishedIn      <http://dx.doi.org/10.3897/BDJ.4.e8050> ;
+        trt:treatsTaxonName  <http://tb.plazi.org/GgServer/lodRdf/Ectemnius_rubicola> ;
+        dc:creator           "Broad, Gavin R." , "Bolton, Barry" , "Else, George R." ;
+        cito:cites           <http://taxon-concept.plazi.org/id/Animalia/Crabro_Else_2016> .
 
 <http://dx.doi.org/10.3897/BDJ.4.e8050>
         a               fabio:JournalArticle ;
@@ -81,77 +106,6 @@
         bibo:startPage  "8050" ;
         bibo:volume     "4" .
 
-<http://taxon-name.plazi.org/id/Animalia/Apoidea_microstictus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Apoidea" ;
-        dwc:genus          "Apoidea" ;
-        dwc:rank           "species" ;
-        dwc:species        "microstictus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Solenius_rubicola_Else_2016>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Solenius_rubicola> ;
-        dwc:genus         "Solenius" ;
-        dwc:kingdom       "Animalia" ;
-        dwc:rank          "species" ;
-        dwc:species       "rubicola" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Apoidea_larvatus_Else_2016>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Apoidea_larvatus> ;
-        dwc:genus         "Apoidea" ;
-        dwc:rank          "species" ;
-        dwc:species       "larvatus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Apoidea_microstictus_Else_2016>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Apoidea_microstictus> ;
-        dwc:genus         "Apoidea" ;
-        dwc:rank          "species" ;
-        dwc:species       "microstictus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
-        dwc:kingdom        "Animalia" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" .
-
-<http://taxon-name.plazi.org/id/Animalia/Ectemnius>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
-        dwc:class          "Insecta" ;
-        dwc:family         "Crabronidae" ;
-        dwc:genus          "Ectemnius" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Hymenoptera" ;
-        dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" .
-
-<http://taxon-name.plazi.org/id/Animalia/Apoidea>
-        a          dwcFP:TaxonName ;
-        dwc:genus  "Apoidea" ;
-        dwc:rank   "genus" .
-
-<http://taxon-concept.plazi.org/id/Animalia/Apoidea_pumilus_Else_2016>
-        a                 dwcFP:TaxonConcept ;
-        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Apoidea_pumilus> ;
-        dwc:genus         "Apoidea" ;
-        dwc:rank          "species" ;
-        dwc:species       "pumilus" .
-
-<http://taxon-name.plazi.org/id/Animalia>
-        a            dwcFP:TaxonName ;
-        dwc:kingdom  "Animalia" ;
-        dwc:rank     "kingdom" .
-
-<http://taxon-name.plazi.org/id/Animalia/Apoidea_pumilus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Apoidea" ;
-        dwc:genus          "Apoidea" ;
-        dwc:rank           "species" ;
-        dwc:species        "pumilus" .
-
 <http://taxon-name.plazi.org/id/Animalia/Crabronidae>
         a                  dwcFP:TaxonName ;
         trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
@@ -162,9 +116,10 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "family" .
 
-<http://taxon-name.plazi.org/id/Animalia/Apoidea_larvatus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Apoidea" ;
-        dwc:genus          "Apoidea" ;
-        dwc:rank           "species" ;
-        dwc:species        "larvatus" .
+<http://taxon-concept.plazi.org/id/Animalia/Solenius_rubicola_Else_2016>
+        a                 dwcFP:TaxonConcept ;
+        trt:hasTaxonName  <http://taxon-name.plazi.org/id/Animalia/Solenius_rubicola> ;
+        dwc:genus         "Solenius" ;
+        dwc:kingdom       "Animalia" ;
+        dwc:rank          "species" ;
+        dwc:species       "rubicola" .
