@@ -15,15 +15,45 @@
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
 <http://taxon-name.plazi.org/id/Animalia/Myriapoda>
-        a          dwcFP:TaxonName ;
-        dwc:order  "Chordeumatida" ;
-        dwc:rank   "order" .
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Diplopoda" ;
+        dwc:class          "Diplopoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Chordeumatida" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "order" .
 
-<http://treatment.plazi.org/id/E0E8F162FBDF40C71BCF9E3528039987>
-        a                    trt:Treatment ;
-        trt:publishedIn      <http://dx.doi.org/10.3897/BDJ.2.e1066> ;
-        trt:treatsTaxonName  <urn:Myriapoda> ;
-        dc:creator           "Voigtlaender, Karin" , "Reip, Hans Simon" , "Decker, Peter" .
+<http://taxon-name.plazi.org/id/Animalia>
+        a            dwcFP:TaxonName ;
+        dwc:kingdom  "Animalia" ;
+        dwc:rank     "kingdom" .
+
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+        dwc:class          "Diplopoda" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "class" .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+        a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
+        dwc:kingdom        "Animalia" ;
+        dwc:phylum         "Arthropoda" ;
+        dwc:rank           "phylum" .
+
+<http://taxon-concept.plazi.org/id/Animalia/Myriapoda__1894>
+        a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Myriapoda> ;
+        dwc:class                     "Diplopoda" ;
+        dwc:family                    "Julidae" ;
+        dwc:genus                     "Myriapoda" ;
+        dwc:kingdom                   "Animalia" ;
+        dwc:order                     "Chordeumatida" ;
+        dwc:phylum                    "Arthropoda" ;
+        dwc:rank                      "order" ;
+        dwc:scientificNameAuthorship  "Pocock 1894" .
 
 <http://dx.doi.org/10.3897/BDJ.2.e1066>
         a               fabio:JournalArticle ;
@@ -34,3 +64,9 @@
         bibo:journal    "Biodiversity Data Journal" ;
         bibo:startPage  "1066" ;
         bibo:volume     "2" .
+
+<http://treatment.plazi.org/id/E0E8F162FBDF40C71BCF9E3528039987>
+        a                         trt:Treatment ;
+        trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Myriapoda__1894> ;
+        trt:publishedIn           <http://dx.doi.org/10.3897/BDJ.2.e1066> ;
+        dc:creator                "Voigtlaender, Karin" , "Reip, Hans Simon" , "Decker, Peter" .
