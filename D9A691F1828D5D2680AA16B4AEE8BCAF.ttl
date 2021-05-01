@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -34,27 +34,27 @@
 <http://treatment.plazi.org/id/D9A691F1828D5D2680AA16B4AEE8BCAF>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Rhinocochlis_nasuta_Metcalfe_1851> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Helix_nasuta> ;
+        trt:citesTaxonName        <urn:Helix_nasuta> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.1035.60843> ;
         dc:creator                "Mohd-Azlan, Jayasilan" , "Liew, Thor-Seng" , "Marzuki, Mohammad Effendi bin" ;
         cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Stylommatophora>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -63,34 +63,35 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Rhinocochlis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Dyakiidae> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Dyakiidae" ;
         dwc:genus          "Rhinocochlis" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Dyakiidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Dyakiidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Dyakiidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhinocochlis_nasuta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Rhinocochlis" ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Dyakiidae" ;
         dwc:genus          "Rhinocochlis" ;
@@ -98,11 +99,11 @@
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
-        dwc:species        "nasuta" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Rhinocochlis" .
+        dwc:species        "nasuta" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Rhinocochlis_nasuta_Metcalfe_1851>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Rhinocochlis_nasuta> ;
         dwc:LSID                      "D9A691F1-828D-5D26-80AA-16B4AEE8BCAF" ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Dyakiidae" ;
@@ -112,5 +113,4 @@
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Metcalfe, 1851)" ;
-        dwc:species                   "nasuta" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Rhinocochlis_nasuta> .
+        dwc:species                   "nasuta" .
