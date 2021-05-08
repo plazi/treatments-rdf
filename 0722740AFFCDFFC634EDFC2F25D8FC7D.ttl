@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -14,30 +14,23 @@
 @prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
-<http://treatment.plazi.org/id/0722740AFFCDFFC034EDFC2F2348FED5>
-        a                        trt:Treatment ;
-        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Paracyatholaimus_huanghaiensis_Huang_2013> ;
-        trt:publishedIn          <http://dx.doi.org/10.1080/00222933.2012.752544> ;
-        dc:creator               "Xu, Kuidong" , "Huang, Yong" ;
-        cito:cites               <http://dx.doi.org/10.5281/zenodo.4631870> , <http://dx.doi.org/10.5281/zenodo.4631868> .
-
 <http://taxon-name.plazi.org/id/Animalia/Cyatholaimidae>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Desmodorida> ;
         dwc:class          "Adenophorea" ;
         dwc:family         "Cyatholaimidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Desmodorida" ;
         dwc:phylum         "Nematoda" ;
-        dwc:rank           "family" .
+        dwc:rank           "family" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Desmodorida> .
 
 <http://taxon-name.plazi.org/id/Animalia/Adenophorea>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nematoda> ;
         dwc:class          "Adenophorea" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Nematoda" ;
-        dwc:rank           "class" .
+        dwc:rank           "class" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nematoda> .
 
 <http://dx.doi.org/10.5281/zenodo.4631868>
         a                        fabio:Figure ;
@@ -51,7 +44,6 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus_huanghaiensis>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus" ;
         dwc:class          "Adenophorea" ;
         dwc:family         "Cyatholaimidae" ;
         dwc:genus          "Paracyatholaimus" ;
@@ -59,27 +51,34 @@
         dwc:order          "Desmodorida" ;
         dwc:phylum         "Nematoda" ;
         dwc:rank           "species" ;
-        dwc:species        "huanghaiensis" .
+        dwc:species        "huanghaiensis" ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Desmodorida>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Adenophorea> ;
         dwc:class          "Adenophorea" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Desmodorida" ;
         dwc:phylum         "Nematoda" ;
-        dwc:rank           "order" .
+        dwc:rank           "order" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Adenophorea> .
+
+<http://treatment.plazi.org/id/0722740AFFCDFFC634EDFC2F25D8FC7D>
+        a                        trt:Treatment ;
+        trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Paracyatholaimus_huanghaiensis_Huang_2013> ;
+        trt:publishedIn          <http://doi.org/10.5281/zenodo.4742798> ;
+        dc:creator               "Xu, Kuidong" , "Huang, Yong" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.4631870> , <http://dx.doi.org/10.5281/zenodo.4631868> .
 
 <http://taxon-name.plazi.org/id/Animalia/Nematoda>
         a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Nematoda" ;
-        dwc:rank           "phylum" .
+        dwc:rank           "phylum" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Paracyatholaimus_huanghaiensis_Huang_2013>
         a                             dwcFP:TaxonConcept ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus_huanghaiensis> ;
         dwc:class                     "Adenophorea" ;
         dwc:family                    "Cyatholaimidae" ;
         dwc:genus                     "Paracyatholaimus" ;
@@ -88,16 +87,28 @@
         dwc:phylum                    "Nematoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Huang & Xu, 2013" ;
-        dwc:species                   "huanghaiensis" .
+        dwc:species                   "huanghaiensis" ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus_huanghaiensis> .
 
 <http://dx.doi.org/10.5281/zenodo.4631870>
         a                        fabio:Figure ;
         dc:description           "Figure 4. Paracyatholaimus huanghaiensis sp. nov. (A) Lateral view of male head end, showing cephalic setae, amphideal fovea and cuticle punctuation; (B) lateral view of male head end, showing buccal cavity and dorsal tooth; (C) lateral view of male tail end, showing gubernaculum; (D) lateral view of male tail end, showing precloacal supplements." ;
         fabio:hasRepresentation  "https://zenodo.org/record/4631870/files/figure.png" .
 
-<http://dx.doi.org/10.1080/00222933.2012.752544>
+<http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus>
+        a                  dwcFP:TaxonName ;
+        dwc:class          "Adenophorea" ;
+        dwc:family         "Cyatholaimidae" ;
+        dwc:genus          "Paracyatholaimus" ;
+        dwc:kingdom        "Animalia" ;
+        dwc:order          "Desmodorida" ;
+        dwc:phylum         "Nematoda" ;
+        dwc:rank           "genus" ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cyatholaimidae> .
+
+<http://doi.org/10.5281/zenodo.4742798>
         a               fabio:JournalArticle ;
-        dc:creator      "Xu, Kuidong" , "Huang, Yong" ;
+        dc:creator      "Huang, Yong" , "Xu, Kuidong" ;
         dc:date         "2013" ;
         dc:title        "Two new species of the genus Paracyatholaimus Micoletzky (Nematoda: Cyatholaimidae) from the Yellow Sea" ;
         bibo:endPage    "1392" ;
@@ -106,15 +117,4 @@
         bibo:pubDate    "2013-03-22" ;
         bibo:startPage  "1381" ;
         bibo:volume     "47" ;
-        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.4631870> , <http://dx.doi.org/10.5281/zenodo.4631868> .
-
-<http://taxon-name.plazi.org/id/Animalia/Paracyatholaimus>
-        a                  dwcFP:TaxonName ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cyatholaimidae> ;
-        dwc:class          "Adenophorea" ;
-        dwc:family         "Cyatholaimidae" ;
-        dwc:genus          "Paracyatholaimus" ;
-        dwc:kingdom        "Animalia" ;
-        dwc:order          "Desmodorida" ;
-        dwc:phylum         "Nematoda" ;
-        dwc:rank           "genus" .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.4631868> , <http://dx.doi.org/10.5281/zenodo.4631870> .
