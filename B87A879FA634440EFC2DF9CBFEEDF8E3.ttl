@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,34 +16,34 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Plecoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/B87A879FA634440EFC2DF9CBFEEDF8E3>
         a                    trt:Treatment ;
-        trt:citesTaxonName   <http://tb.plazi.org/GgServer/lodRdf/Plecoptera> , <http://tb.plazi.org/GgServer/lodRdf/Nemouridae> ;
+        trt:citesTaxonName   <urn:Plecoptera> , <urn:Nemouridae> ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Protonemura_microstyla_Martynov_1928> , <http://taxon-concept.plazi.org/id/Animalia/Protonemura_bifida_Martynov_1928> ;
         trt:publishedIn      <http://doi.org/10.5281/zenodo.4758254> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Protonemura_microstyla> ;
+        trt:treatsTaxonName  <urn:Protonemura_microstyla> ;
         dc:creator           "Zhiltzova, L. A." , "Dzhioeva, I. E." , "Cherchesova, S. K." .
 
 <http://taxon-name.plazi.org/id/Animalia>
@@ -53,6 +53,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Protonemura_microstyla>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Protonemura" ;
         dwc:class          "Insecta" ;
         dwc:family         "Nemouridae" ;
         dwc:genus          "Protonemura" ;
@@ -60,11 +61,11 @@
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "microstyla" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Protonemura" .
+        dwc:species        "microstyla" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Protonemura_bifida_Martynov_1928>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protonemura_bifida> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Nemouridae" ;
         dwc:genus                     "Protonemura" ;
@@ -73,11 +74,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Martynov" ;
-        dwc:species                   "bifida" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protonemura_bifida> .
+        dwc:species                   "bifida" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Protonemura_microstyla_Martynov_1928>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protonemura_microstyla> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Nemouridae" ;
         dwc:genus                     "Protonemura" ;
@@ -86,18 +87,17 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Martynov 1928: 27 - 28" ;
-        dwc:species                   "microstyla" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protonemura_microstyla> .
+        dwc:species                   "microstyla" .
 
 <http://taxon-name.plazi.org/id/Animalia/Nemouridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Nemouridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Plecoptera> .
+        dwc:rank           "family" .
 
 <http://doi.org/10.5281/zenodo.4758254>
         a               fabio:JournalArticle ;
@@ -112,17 +112,18 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Protonemura>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nemouridae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Nemouridae" ;
         dwc:genus          "Protonemura" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nemouridae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Protonemura_bifida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Protonemura" ;
         dwc:class          "Insecta" ;
         dwc:family         "Nemouridae" ;
         dwc:genus          "Protonemura" ;
@@ -130,5 +131,4 @@
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "bifida" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Protonemura" .
+        dwc:species        "bifida" .

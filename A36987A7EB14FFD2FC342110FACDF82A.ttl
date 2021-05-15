@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoperla_theobromae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Neoperla" ;
         dwc:class          "Insecta" ;
         dwc:family         "Perlidae" ;
         dwc:genus          "Neoperla" ;
@@ -38,28 +39,39 @@
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "theobromae" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Neoperla" .
+        dwc:species        "theobromae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Plecoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoperla>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Perlidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Perlidae" ;
         dwc:genus          "Neoperla" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Perlidae> .
+        dwc:rank           "genus" .
+
+<http://doi.org/10.5281/zenodo.4762086>
+        a               fabio:JournalArticle ;
+        dc:creator      "Sivec, Ignac" , "Stark, Bill P." ;
+        dc:date         "2007" ;
+        dc:title        "Studies Of Indonesian Perlidae (Plecoptera), With Descriptions Of Three New Species" ;
+        bibo:endPage    "64" ;
+        bibo:issue      "7" ;
+        bibo:journal    "Illiesia" ;
+        bibo:pubDate    "2007-07-11" ;
+        bibo:startPage  "53" ;
+        bibo:volume     "3" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -68,6 +80,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Neoperla_theobromae_Zwick_1986>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoperla_theobromae> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Perlidae" ;
         dwc:genus                     "Neoperla" ;
@@ -76,33 +89,21 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Zwick, 1986 a: 9" ;
-        dwc:species                   "theobromae" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Neoperla_theobromae> .
+        dwc:species                   "theobromae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Perlidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Perlidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Plecoptera> .
-
-<http://publication.plazi.org/id/5F50FFDFEB17FFD1FF842702FFB1FFB1>
-        a               fabio:JournalArticle ;
-        dc:creator      "Stark, Bill P." , "Sivec, Ignac" ;
-        dc:date         "2007" ;
-        dc:title        "Studies Of Indonesian Perlidae (Plecoptera), With Descriptions Of Three New Species" ;
-        bibo:endPage    "64" ;
-        bibo:issue      "7" ;
-        bibo:journal    "Illiesia" ;
-        bibo:startPage  "53" ;
-        bibo:volume     "3" .
+        dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/A36987A7EB14FFD2FC342110FACDF82A>
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Neoperla_theobromae_Zwick_1986> ;
-        trt:publishedIn      <http://publication.plazi.org/id/5F50FFDFEB17FFD1FF842702FFB1FFB1> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Neoperla_theobromae> ;
+        trt:publishedIn      <http://doi.org/10.5281/zenodo.4762086> ;
+        trt:treatsTaxonName  <urn:Neoperla_theobromae> ;
         dc:creator           "Sivec, Ignac" , "Stark, Bill P." .

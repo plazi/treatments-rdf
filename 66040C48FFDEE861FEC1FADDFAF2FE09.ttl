@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Alloperla_exquisita_Frison_1935>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Alloperla_exquisita> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Chloroperlidae" ;
         dwc:genus                     "Alloperla" ;
@@ -39,17 +40,16 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Frison 1935: 337" ;
-        dwc:species                   "exquisita" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Alloperla_exquisita> .
+        dwc:species                   "exquisita" .
 
 <http://taxon-name.plazi.org/id/Animalia/Plecoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -60,19 +60,19 @@
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Alloperla_exquisita_Frison_1935> ;
         trt:publishedIn      <http://doi.org/10.5281/zenodo.4759034> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Sweltsa_exquisita> ;
+        trt:treatsTaxonName  <urn:Sweltsa_exquisita> ;
         dc:creator           "Baumann, Richard W." , "Kondratieff, Boris C." ;
         cito:cites           <http://dx.doi.org/10.5281/zenodo.4759049> , <http://dx.doi.org/10.5281/zenodo.4759038> .
 
 <http://taxon-name.plazi.org/id/Animalia/Chloroperlidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Chloroperlidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Plecoptera> .
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.5281/zenodo.4759049>
         a                        fabio:Figure ;
@@ -86,17 +86,18 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Sweltsa>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chloroperlidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Chloroperlidae" ;
         dwc:genus          "Sweltsa" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chloroperlidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Sweltsa_exquisita>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Sweltsa" ;
         dwc:class          "Insecta" ;
         dwc:family         "Chloroperlidae" ;
         dwc:genus          "Sweltsa" ;
@@ -104,8 +105,7 @@
         dwc:order          "Plecoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "exquisita" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Sweltsa" .
+        dwc:species        "exquisita" .
 
 <http://doi.org/10.5281/zenodo.4759034>
         a               fabio:JournalArticle ;
