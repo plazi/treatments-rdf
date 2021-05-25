@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,31 +16,32 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eucaerus_LeConte_1853>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eucaerus> ;
         dwc:LSID                      "E0A4B0D9-F8DA-5653-99C1-648796730FEE" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
@@ -50,11 +51,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "tribe" ;
         dwc:scientificNameAuthorship  "Bates, 1873" ;
-        dwc:tribe                     "Pentagonicini" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eucaerus> .
+        dwc:tribe                     "Pentagonicini" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pentagonica_Schmidt-Goebel_1846>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pentagonica> ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Pentagonica" ;
@@ -62,30 +63,29 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Schmidt-Goebel, 1846" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pentagonica> .
+        dwc:scientificNameAuthorship  "Schmidt-Goebel, 1846" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eucaerus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "tribe" ;
-        dwc:tribe          "Pentagonicini" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" .
+        dwc:tribe          "Pentagonicini" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pentagonica>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Pentagonica" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -106,16 +106,16 @@
 <http://treatment.plazi.org/id/E0A4B0D9F8DA565399C1648796730FEE>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Eucaerus_LeConte_1853> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Scopodes> ;
+        trt:citesTaxonName        <urn:Scopodes> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Pentagonica_Schmidt-Goebel_1846> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.245.3416> ;
         dc:creator                "Bousquet, Yves" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .

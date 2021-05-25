@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,17 +16,18 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Spondias>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Anacardiaceae> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Anacardiaceae" ;
         dwc:genus          "Spondias" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Sapindales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Anacardiaceae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Spondias_venulosa>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Spondias" ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Anacardiaceae" ;
         dwc:genus          "Spondias" ;
@@ -34,26 +35,25 @@
         dwc:order          "Sapindales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
-        dwc:species        "venulosa" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Spondias" .
+        dwc:species        "venulosa" .
 
 <http://taxon-name.plazi.org/id/Plantae/Anacardiaceae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Sapindales> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Anacardiaceae" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Sapindales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Sapindales> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> .
+        dwc:rank           "class" .
 
 <http://dx.doi.org/10.3897/phytokeys.55.8489>
         a               fabio:JournalArticle ;
@@ -68,13 +68,14 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> .
+        dwc:rank           "phylum" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Spondias_venulosa_DC._1883>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Spondias_venulosa> ;
         dwc:LSID                      "7E0E51CF-E9F3-5E17-8F68-E641A983A3EA" ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Anacardiaceae" ;
@@ -84,13 +85,12 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Mart. ex Engl.) Engl. in A. DC. & C. DC., Monogr. phan. 4: 245. 1883" ;
-        dwc:species                   "venulosa" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Spondias_venulosa> .
+        dwc:species                   "venulosa" .
 
 <http://treatment.plazi.org/id/7E0E51CFE9F35E178F68E641A983A3EA>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Spondias_venulosa_DC._1883> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Spondias_myrobalanus> , <http://tb.plazi.org/GgServer/lodRdf/Spondias_venulosa> , <http://tb.plazi.org/GgServer/lodRdf/Spondias_purpurea_venulosa> ;
+        trt:citesTaxonName        <urn:Spondias_myrobalanus> , <urn:Spondias_venulosa> , <urn:Spondias_purpurea_venulosa> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/phytokeys.55.8489> ;
         dc:creator                "Daly, Douglas C." , "Mitchell, John D." .
 
@@ -101,9 +101,9 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Sapindales>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Sapindales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> .
+        dwc:rank           "order" .

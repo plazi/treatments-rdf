@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -30,7 +30,7 @@
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Plantae/Leandra_limoides_Judd_1991> , <http://taxon-concept.plazi.org/id/Plantae/Ossaea_limoides_Urb_1927> ;
         trt:publishedIn      <http://dx.doi.org/10.3897/phytokeys.72.9355> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Miconia_limoides> ;
+        trt:treatsTaxonName  <urn:Miconia_limoides> ;
         dc:creator           "Judd, Walter S." , "Becquer, Eldis R." , "Majure, Lucas C." ;
         cito:cites           <http://dx.doi.org/10.5281/zenodo.> .
 
@@ -41,25 +41,26 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Miconia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Melastomataceae> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Melastomataceae" ;
         dwc:genus          "Miconia" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Myrtales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Melastomataceae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Plantae/Miconia_limoides>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Miconia" ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Melastomataceae" ;
         dwc:genus          "Miconia" ;
@@ -67,20 +68,20 @@
         dwc:order          "Myrtales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
-        dwc:species        "limoides" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Miconia" .
+        dwc:species        "limoides" .
 
 <http://taxon-name.plazi.org/id/Plantae/Myrtales>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Myrtales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> .
+        dwc:rank           "order" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Leandra_limoides_Judd_1991>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Leandra_limoides> ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Melastomataceae" ;
         dwc:genus                     "Leandra" ;
@@ -89,18 +90,18 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "W. S. Judd & J. D. Skean, 1991" ;
-        dwc:species                   "limoides" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Leandra_limoides> .
+        dwc:species                   "limoides" .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> .
+        dwc:rank           "phylum" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Ossaea_limoides_Urb_1927>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ossaea_limoides> ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Melastomataceae" ;
         dwc:genus                     "Ossaea" ;
@@ -109,18 +110,17 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Urb, 1927" ;
-        dwc:species                   "limoides" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Ossaea_limoides> .
+        dwc:species                   "limoides" .
 
 <http://taxon-name.plazi.org/id/Plantae/Melastomataceae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Melastomataceae" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Myrtales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Myrtales> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Plantae>
         a            dwcFP:TaxonName ;

@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -17,7 +17,7 @@
 <http://treatment.plazi.org/id/C87A08530C5A520EFC5CB04BFBBCF851>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Fromia_milleporella_Lamarck_1816> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Asterias> ;
+        trt:citesTaxonName        <urn:Asterias> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Fromia_milleporella_Lamarck_1816> , <http://taxon-concept.plazi.org/id/Animalia/Asterias_milleporella_Lamarck_1816> ;
         trt:publishedIn           <http://dx.doi.org/10.5252/zoosystema2021v43a13> ;
         dc:creator                "Jangoux, Michel" ;
@@ -30,6 +30,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Asterias_milleporella_Lamarck_1816>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Asterias_milleporella> ;
         dwc:class                     "Asteroidea" ;
         dwc:family                    "Asteriidae" ;
         dwc:genus                     "Asterias" ;
@@ -38,11 +39,11 @@
         dwc:phylum                    "Echinodermata" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Lamarck, 1816: 564" ;
-        dwc:species                   "milleporella" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Asterias_milleporella> .
+        dwc:species                   "milleporella" .
 
 <http://taxon-name.plazi.org/id/Animalia/Fromia_milleporella>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Fromia" ;
         dwc:class          "Asteroidea" ;
         dwc:family         "Goniasteridae" ;
         dwc:genus          "Fromia" ;
@@ -50,8 +51,7 @@
         dwc:order          "Valvatida" ;
         dwc:phylum         "Echinodermata" ;
         dwc:rank           "species" ;
-        dwc:species        "milleporella" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Fromia" .
+        dwc:species        "milleporella" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -73,40 +73,41 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Goniasteridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Valvatida> ;
         dwc:class          "Asteroidea" ;
         dwc:family         "Goniasteridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Valvatida" ;
         dwc:phylum         "Echinodermata" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Valvatida> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Echinodermata>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Echinodermata" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Valvatida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Asteroidea> ;
         dwc:class          "Asteroidea" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Valvatida" ;
         dwc:phylum         "Echinodermata" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Asteroidea> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Asteroidea>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
         dwc:class          "Asteroidea" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Echinodermata" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Echinodermata> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Fromia_milleporella_Lamarck_1816>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Fromia_milleporella> ;
         dwc:class                     "Asteroidea" ;
         dwc:family                    "Goniasteridae" ;
         dwc:genus                     "Fromia" ;
@@ -115,16 +116,15 @@
         dwc:phylum                    "Echinodermata" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Lamarck, 1816" , "(Lamarck, 1816)" ;
-        dwc:species                   "milleporella" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Fromia_milleporella> .
+        dwc:species                   "milleporella" .
 
 <http://taxon-name.plazi.org/id/Animalia/Fromia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Goniasteridae> ;
         dwc:class          "Asteroidea" ;
         dwc:family         "Goniasteridae" ;
         dwc:genus          "Fromia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Valvatida" ;
         dwc:phylum         "Echinodermata" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Goniasteridae> .
+        dwc:rank           "genus" .

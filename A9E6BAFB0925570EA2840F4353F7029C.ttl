@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,31 +16,32 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Histeridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Histeridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Saprinus_subnitescens>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Saprinus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Histeridae" ;
         dwc:genus          "Saprinus" ;
@@ -48,8 +49,7 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "subnitescens" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Saprinus" .
+        dwc:species        "subnitescens" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -75,6 +75,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Saprinus_subnitescens_Bickhardt_1909>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Saprinus_subnitescens> ;
         dwc:LSID                      "A9E6BAFB-0925-570E-A284-0F4353F7029C" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Histeridae" ;
@@ -85,11 +86,11 @@
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Bickhardt, 1909" ;
         dwc:species                   "subnitescens" ;
-        dwc:subGenus                  "Saprinus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Saprinus_subnitescens> .
+        dwc:subGenus                  "Saprinus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Saprinus_lecontei_Casey_1916>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Saprinus_lecontei> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Histeridae" ;
         dwc:genus                     "Saprinus" ;
@@ -98,13 +99,12 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Casey, 1916" ;
-        dwc:species                   "lecontei" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Saprinus_lecontei> .
+        dwc:species                   "lecontei" .
 
 <http://treatment.plazi.org/id/A9E6BAFB0925570EA2840F4353F7029C>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Saprinus_subnitescens_Bickhardt_1909> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Saprinus_simulans> , <http://tb.plazi.org/GgServer/lodRdf/Saprinus_fagniezi> ;
+        trt:citesTaxonName        <urn:Saprinus_fagniezi> , <urn:Saprinus_simulans> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Saprinus_meridionalis_Ihssen_1949> , <http://taxon-concept.plazi.org/id/Animalia/Saprinus_lecontei_Casey_1916> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.738.21382> ;
         dc:creator                "Degallier, Nicolas" , "Nel, Andre" , "Azar, Dany" , "Lackner, Tomas" , "Shayya, Salman" ;
@@ -112,6 +112,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Saprinus_lecontei>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Saprinus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Histeridae" ;
         dwc:genus          "Saprinus" ;
@@ -119,20 +120,20 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "lecontei" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Saprinus" .
+        dwc:species        "lecontei" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Saprinus_meridionalis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Saprinus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Histeridae" ;
         dwc:genus          "Saprinus" ;
@@ -140,22 +141,22 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "meridionalis" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Saprinus" .
+        dwc:species        "meridionalis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Saprinus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Histeridae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Histeridae" ;
         dwc:genus          "Saprinus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Histeridae> .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Saprinus_meridionalis_Ihssen_1949>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Saprinus_meridionalis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Histeridae" ;
         dwc:genus                     "Saprinus" ;
@@ -164,5 +165,4 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Ihssen, 1949" ;
-        dwc:species                   "meridionalis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Saprinus_meridionalis> .
+        dwc:species                   "meridionalis" .

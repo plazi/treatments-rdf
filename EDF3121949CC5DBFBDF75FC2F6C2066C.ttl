@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,34 +16,35 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Bembidion>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Bembidion" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Bembidion_Metallina_Motschulsky_1850>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Bembidion_Metallina> ;
         dwc:LSID                      "EDF31219-49CC-5DBF-BDF7-5FC2F6C2066C" ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
@@ -53,22 +54,22 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "subGenus" ;
         dwc:scientificNameAuthorship  "Motschulsky, 1850" ;
-        dwc:subGenus                  "Metallina" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Bembidion_Metallina> .
+        dwc:subGenus                  "Metallina" .
 
 <http://taxon-name.plazi.org/id/Animalia/Metallina>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Metallina" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Carabus_lampros_Hauser_1913>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Carabus_lampros> ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Carabus" ;
@@ -77,8 +78,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "G. Hauser, 1913" ;
-        dwc:species                   "lampros" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Carabus_lampros> .
+        dwc:species                   "lampros" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -99,7 +99,7 @@
 <http://treatment.plazi.org/id/EDF3121949CC5DBFBDF75FC2F6C2066C>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Bembidion_Metallina_Motschulsky_1850> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Carabus_celer> , <http://tb.plazi.org/GgServer/lodRdf/Leja> ;
+        trt:citesTaxonName        <urn:Carabus_celer> , <urn:Leja> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Metallina_Motschoulsky_1850> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.245.3416> ;
         dc:creator                "Bousquet, Yves" ;
@@ -107,15 +107,16 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
         dwc:class          "Hexapoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hexapoda> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Bembidion_Metallina>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Bembidion" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Bembidion" ;
@@ -123,11 +124,11 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "subGenus" ;
-        dwc:subGenus       "Metallina" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Bembidion" .
+        dwc:subGenus       "Metallina" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Metallina_Motschoulsky_1850>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Metallina> ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Metallina" ;
@@ -135,19 +136,19 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Motschoulsky, 1850" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Metallina> .
+        dwc:scientificNameAuthorship  "Motschoulsky, 1850" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hexapoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Hexapoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabus_lampros>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabus" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Carabus" ;
@@ -155,5 +156,4 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "lampros" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabus" .
+        dwc:species        "lampros" .

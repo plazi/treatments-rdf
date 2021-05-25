@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -17,7 +17,7 @@
 <http://treatment.plazi.org/id/A69C6E12E383783A1A36C2E490840EE2>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Tetraclita_kuroshioensis_Chan_2007> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Tetraclita_squamosa_squamosal> ;
+        trt:citesTaxonName        <urn:Tetraclita_squamosa_squamosal> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Tetraclita_squamosa_viridis_Hiro_1937> , <http://taxon-concept.plazi.org/id/Animalia/Tetraclita_pacifica_Chan_2007> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zse.93.10769> ;
         dc:creator                "Pochai, Ashitapol" , "Sukparangsi, Woranop" , "Kingtong, Sutin" , "Khachonpisitsak, Salinee" ;
@@ -25,6 +25,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Tetraclita_kuroshioensis_Chan_2007>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetraclita_kuroshioensis> ;
         dwc:class                     "Maxillopoda" ;
         dwc:family                    "Tetraclitidae" ;
         dwc:genus                     "Tetraclita" ;
@@ -33,11 +34,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Chan, Tsang & Chu, 2007" ;
-        dwc:species                   "kuroshioensis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetraclita_kuroshioensis> .
+        dwc:species                   "kuroshioensis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetraclita_squamosa_viridis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetraclita_squamosa" ;
         dwc:class          "Maxillopoda" ;
         dwc:family         "Tetraclitidae" ;
         dwc:genus          "Tetraclita" ;
@@ -46,36 +47,35 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "subSpecies" ;
         dwc:species        "squamosa" ;
-        dwc:subSpecies     "viridis" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetraclita_squamosa" .
+        dwc:subSpecies     "viridis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Sessilia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Maxillopoda> ;
         dwc:class          "Maxillopoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Sessilia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Maxillopoda> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetraclita>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tetraclitidae> ;
         dwc:class          "Maxillopoda" ;
         dwc:family         "Tetraclitidae" ;
         dwc:genus          "Tetraclita" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Sessilia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tetraclitidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Maxillopoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Maxillopoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -84,6 +84,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Tetraclita_squamosa_viridis_Hiro_1937>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetraclita_squamosa_viridis> ;
         dwc:class                     "Maxillopoda" ;
         dwc:family                    "Tetraclitidae" ;
         dwc:genus                     "Tetraclita" ;
@@ -93,11 +94,11 @@
         dwc:rank                      "subSpecies" ;
         dwc:scientificNameAuthorship  "Hiro, 1937" ;
         dwc:species                   "squamosa" ;
-        dwc:subSpecies                "viridis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetraclita_squamosa_viridis> .
+        dwc:subSpecies                "viridis" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tetraclita_pacifica_Chan_2007>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetraclita_pacifica> ;
         dwc:class                     "Maxillopoda" ;
         dwc:family                    "Tetraclitidae" ;
         dwc:genus                     "Tetraclita" ;
@@ -106,8 +107,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Chan, Tsang & Tsu, 2007" ;
-        dwc:species                   "pacifica" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tetraclita_pacifica> .
+        dwc:species                   "pacifica" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -116,6 +116,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Tetraclita_squamosa>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tetraclita> ;
         dwc:class          "Maxillopoda" ;
         dwc:family         "Tetraclitidae" ;
         dwc:genus          "Tetraclita" ;
@@ -123,11 +124,11 @@
         dwc:order          "Sessilia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "squamosa" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tetraclita> .
+        dwc:species        "squamosa" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetraclita_pacifica>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetraclita" ;
         dwc:class          "Maxillopoda" ;
         dwc:family         "Tetraclitidae" ;
         dwc:genus          "Tetraclita" ;
@@ -135,11 +136,11 @@
         dwc:order          "Sessilia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "pacifica" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetraclita" .
+        dwc:species        "pacifica" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetraclita_kuroshioensis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetraclita" ;
         dwc:class          "Maxillopoda" ;
         dwc:family         "Tetraclitidae" ;
         dwc:genus          "Tetraclita" ;
@@ -147,18 +148,17 @@
         dwc:order          "Sessilia" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "kuroshioensis" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tetraclita" .
+        dwc:species        "kuroshioensis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetraclitidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Sessilia> ;
         dwc:class          "Maxillopoda" ;
         dwc:family         "Tetraclitidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Sessilia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Sessilia> .
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.3897/zse.93.10769>
         a               fabio:JournalArticle ;
@@ -175,7 +175,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .

@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Enicospilus_sauteri>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Enicospilus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:genus          "Enicospilus" ;
@@ -38,27 +39,26 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "sauteri" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Enicospilus" .
+        dwc:species        "sauteri" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> .
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -72,6 +72,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Enicospilus_sauteri_Cushman_1937>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Enicospilus_sauteri> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Ichneumonidae" ;
         dwc:genus                     "Enicospilus" ;
@@ -80,13 +81,12 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Cushman, 1937" ;
-        dwc:species                   "sauteri" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Enicospilus_sauteri> .
+        dwc:species                   "sauteri" .
 
 <http://treatment.plazi.org/id/4C936044E6215375A989839F45B0CE5D>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Enicospilus_kanshirensis_Uchida_1928> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Enicospilus_cushmani> ;
+        trt:citesTaxonName        <urn:Enicospilus_cushmani> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Enicospilus_sauteri_Cushman_1937> , <http://taxon-concept.plazi.org/id/Animalia/Henicospilus_kanshirensis_Agassiz_1846> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/dez.67.51332> ;
         dc:creator                "Shimizu, So" ;
@@ -94,6 +94,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Enicospilus_kanshirensis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Enicospilus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:genus          "Enicospilus" ;
@@ -101,11 +102,11 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "kanshirensis" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Enicospilus" .
+        dwc:species        "kanshirensis" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Enicospilus_kanshirensis_Uchida_1928>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Enicospilus_kanshirensis> ;
         dwc:LSID                      "4C936044-E621-5375-A989-839F45B0CE5D" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Ichneumonidae" ;
@@ -115,11 +116,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Uchida, 1928)" ;
-        dwc:species                   "kanshirensis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Enicospilus_kanshirensis> .
+        dwc:species                   "kanshirensis" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Henicospilus_kanshirensis_Agassiz_1846>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Henicospilus_kanshirensis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Ichneumonidae" ;
         dwc:genus                     "Henicospilus" ;
@@ -128,19 +129,18 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Agassiz, 1846" ;
-        dwc:species                   "kanshirensis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Henicospilus_kanshirensis> .
+        dwc:species                   "kanshirensis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Enicospilus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:genus          "Enicospilus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.3897/dez.67.51332>
         a               fabio:JournalArticle ;

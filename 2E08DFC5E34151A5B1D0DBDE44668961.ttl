@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,31 +16,32 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterostichus_palmi_Schaeffer_1910>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pterostichus_palmi> ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Pterostichus" ;
@@ -49,30 +50,29 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Schaeffer, 1910" ;
-        dwc:species                   "palmi" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pterostichus_palmi> .
+        dwc:species                   "palmi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Omaseus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Omaseus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Pterostichus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Pterostichus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -82,7 +82,7 @@
 <http://treatment.plazi.org/id/2E08DFC5E34151A5B1D0DBDE44668961>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Omaseus_Feronina_Casey_1918> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Feronia> ;
+        trt:citesTaxonName        <urn:Feronia> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Feronina_Casey_1918> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.245.3416> ;
         dc:creator                "Bousquet, Yves" ;
@@ -90,6 +90,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Pterostichus_palmi>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pterostichus" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Pterostichus" ;
@@ -97,8 +98,7 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "palmi" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Pterostichus" .
+        dwc:species        "palmi" .
 
 <http://dx.doi.org/10.3897/zookeys.245.3416>
         a               fabio:JournalArticle ;
@@ -113,6 +113,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Feronina_Casey_1918>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Feronina> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Feronina" ;
@@ -120,31 +121,31 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Casey, 1918" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Feronina> .
+        dwc:scientificNameAuthorship  "Casey, 1918" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Feronina>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Feronina" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Omaseus_Feronina_Casey_1918>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Omaseus_Feronina> ;
         dwc:LSID                      "2E08DFC5-E341-51A5-B1D0-DBDE44668961" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
@@ -154,11 +155,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "subGenus" ;
         dwc:scientificNameAuthorship  "Casey, 1918" ;
-        dwc:subGenus                  "Feronina" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Omaseus_Feronina> .
+        dwc:subGenus                  "Feronina" .
 
 <http://taxon-name.plazi.org/id/Animalia/Omaseus_Feronina>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Omaseus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Omaseus" ;
@@ -166,5 +167,4 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "subGenus" ;
-        dwc:subGenus       "Feronina" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Omaseus" .
+        dwc:subGenus       "Feronina" .

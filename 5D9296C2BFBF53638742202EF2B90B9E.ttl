@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,18 +16,18 @@
 
 <http://taxon-concept.plazi.org/id/Plantae/Lamiana_Leandri_1948>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Lamiana> ;
         dwc:family                    "Euphorbiaceae" ;
         dwc:genus                     "Lamiana" ;
         dwc:kingdom                   "Plantae" ;
         dwc:order                     "Malpighiales" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Leandri, 1948" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Lamiana> .
+        dwc:scientificNameAuthorship  "Leandri, 1948" .
 
 <http://treatment.plazi.org/id/5D9296C2BFBF53638742202EF2B90B9E>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Plantae/Croton_glomeratus_DC._1901> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Croton_fianarantsoae_masoalae> ;
+        trt:citesTaxonName        <urn:Croton_fianarantsoae_masoalae> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Plantae/Croton_lamianus_Leandri_1948> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/phytokeys.90.20586> ;
         dc:creator                "Ee, Benjamin W. van" , "Kainulainen, Kent" , "Berry, Paul E." ;
@@ -35,6 +35,7 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Croton_glomeratus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Croton" ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Euphorbiaceae" ;
         dwc:genus          "Croton" ;
@@ -42,11 +43,11 @@
         dwc:order          "Malpighiales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
-        dwc:species        "glomeratus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Croton" .
+        dwc:species        "glomeratus" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Croton_glomeratus_DC._1901>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Croton_glomeratus> ;
         dwc:LSID                      "5D9296C2-BFBF-5363-8742-202EF2B90B9E" ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Euphorbiaceae" ;
@@ -56,36 +57,35 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Aug. DC., Bull. Herb. Boissier, ser. 2, 1: 566. 1901" ;
-        dwc:species                   "glomeratus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Croton_glomeratus> .
+        dwc:species                   "glomeratus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Lamiana>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae" ;
         dwc:family         "Euphorbiaceae" ;
         dwc:genus          "Lamiana" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Malpighiales" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae" .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Plantae/Croton>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Euphorbiaceae" ;
         dwc:genus          "Croton" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Malpighiales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.3897/phytokeys.90.20586>
         a               fabio:JournalArticle ;
@@ -100,32 +100,33 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Malpighiales>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Malpighiales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Euphorbiaceae" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Malpighiales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Malpighiales> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> .
+        dwc:rank           "phylum" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Croton_lamianus_Leandri_1948>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Croton_lamianus> ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Euphorbiaceae" ;
         dwc:genus                     "Croton" ;
@@ -134,8 +135,7 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Leandri, 1948" ;
-        dwc:species                   "lamianus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Croton_lamianus> .
+        dwc:species                   "lamianus" .
 
 <http://taxon-name.plazi.org/id/Plantae>
         a            dwcFP:TaxonName ;
@@ -144,6 +144,7 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Croton_lamianus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Croton" ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Euphorbiaceae" ;
         dwc:genus          "Croton" ;
@@ -151,5 +152,4 @@
         dwc:order          "Malpighiales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
-        dwc:species        "lamianus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Croton" .
+        dwc:species        "lamianus" .

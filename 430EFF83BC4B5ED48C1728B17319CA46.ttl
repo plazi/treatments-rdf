@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Scaphinotus_andrewsii_amplicollis_Casey_1920>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Scaphinotus_andrewsii_amplicollis> ;
         dwc:LSID                      "430EFF83-BC4B-5ED4-8C17-28B17319CA46" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
@@ -41,29 +42,28 @@
         dwc:rank                      "subSpecies" ;
         dwc:scientificNameAuthorship  "(Casey, 1920)" ;
         dwc:species                   "andrewsii" ;
-        dwc:subSpecies                "amplicollis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Scaphinotus_andrewsii_amplicollis> .
+        dwc:subSpecies                "amplicollis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Scaphinotus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Scaphinotus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -83,15 +83,16 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Scaphinotus_andrewsii_amplicollis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Scaphinotus_andrewsii" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Scaphinotus" ;
@@ -100,18 +101,18 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "subSpecies" ;
         dwc:species        "andrewsii" ;
-        dwc:subSpecies     "amplicollis" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Scaphinotus_andrewsii" .
+        dwc:subSpecies     "amplicollis" .
 
 <http://treatment.plazi.org/id/430EFF83BC4B5ED48C1728B17319CA46>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Scaphinotus_andrewsii_amplicollis_Casey_1920> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Steniridia_andrewsi_montana> , <http://tb.plazi.org/GgServer/lodRdf/Irichroa_andrewsi_reflexa> , <http://tb.plazi.org/GgServer/lodRdf/Irichroa_violacea_amplicollis> ;
+        trt:citesTaxonName        <urn:Steniridia_andrewsi_montana> , <urn:Irichroa_andrewsi_reflexa> , <urn:Irichroa_violacea_amplicollis> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.245.3416> ;
         dc:creator                "Bousquet, Yves" .
 
 <http://taxon-name.plazi.org/id/Animalia/Scaphinotus_andrewsii>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Scaphinotus> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Scaphinotus" ;
@@ -119,5 +120,4 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "andrewsii" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Scaphinotus> .
+        dwc:species        "andrewsii" .

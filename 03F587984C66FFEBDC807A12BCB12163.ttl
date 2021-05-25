@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Henosepilachna_circellaris>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Henosepilachna" ;
         dwc:class          "Insecta" ;
         dwc:family         "Coccinellidae" ;
         dwc:genus          "Henosepilachna" ;
@@ -38,37 +39,36 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "circellaris" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Henosepilachna" .
+        dwc:species        "circellaris" .
 
 <http://taxon-name.plazi.org/id/Animalia/Henosepilachna>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coccinellidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Coccinellidae" ;
         dwc:genus          "Henosepilachna" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coccinellidae> .
+        dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/03F587984C66FFEBDC807A12BCB12163>
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Henosepilachna_circellaris_Jadwiszczak_2003> , <http://taxon-concept.plazi.org/id/Animalia/Epilachna_circellaris_Weise_1908> ;
         trt:publishedIn      <https://doi.org/10.11646/zootaxa.4970.3.5> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Henosepilachna_circellaris> ;
+        trt:treatsTaxonName  <urn:Henosepilachna_circellaris> ;
         dc:creator           "Gracy, R. Gandhi" , "Thanigairaj, R." , "Poorani, J." , "Anuradha, C." , "Booth, R. G." , "Swathi, R. S." ;
         cito:cites           <http://taxon-concept.plazi.org/id/Animalia/Epilachninae_Mulsant_1846> .
 
 <http://taxon-name.plazi.org/id/Animalia/Coccinellidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Coccinellidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -77,6 +77,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Henosepilachna_circellaris_Jadwiszczak_2003>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Henosepilachna_circellaris> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Coccinellidae" ;
         dwc:genus                     "Henosepilachna" ;
@@ -84,18 +85,17 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  ": Jadwiszczak & Wegrzynowicz, 2003: 141" , ": Jadwiszczak & Wegrzynowicz, 2003" ;
-        dwc:species                   "circellaris" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Henosepilachna_circellaris> .
+        dwc:scientificNameAuthorship  ": Jadwiszczak & Wegrzynowicz, 2003" , ": Jadwiszczak & Wegrzynowicz, 2003: 141" ;
+        dwc:species                   "circellaris" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <https://doi.org/10.11646/zootaxa.4970.3.5>
         a               fabio:JournalArticle ;
@@ -111,6 +111,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Epilachna_circellaris_Weise_1908>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Epilachna_circellaris> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Coccinellidae" ;
         dwc:genus                     "Epilachna" ;
@@ -119,11 +120,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Weise, 1908: 216 (BMNH)" ;
-        dwc:species                   "circellaris" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Epilachna_circellaris> .
+        dwc:species                   "circellaris" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Epilachninae_Mulsant_1846>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Epilachninae> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Coccinellidae" ;
         dwc:kingdom                   "Animalia" ;
@@ -131,16 +132,15 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "subFamily" ;
         dwc:scientificNameAuthorship  "Mulsant, 1846" ;
-        dwc:subFamily                 "Epilachninae" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Epilachninae> .
+        dwc:subFamily                 "Epilachninae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Epilachninae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Coccinellidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Coccinellidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "subFamily" ;
-        dwc:subFamily      "Epilachninae" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Coccinellidae" .
+        dwc:subFamily      "Epilachninae" .

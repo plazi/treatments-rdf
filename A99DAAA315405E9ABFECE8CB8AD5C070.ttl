@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,6 +16,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Helix_lithoica_d'Orbigny_1835>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Helix_lithoica> ;
         dwc:LSID                      "A99DAAA3-1540-5E9A-BFEC-E8CB8AD5C070" ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Helicidae" ;
@@ -25,8 +26,7 @@
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "d'Orbigny, 1835" ;
-        dwc:species                   "lithoica" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Helix_lithoica> .
+        dwc:species                   "lithoica" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -36,21 +36,22 @@
 <http://treatment.plazi.org/id/A99DAAA315405E9ABFECE8CB8AD5C070>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Helix_lithoica_d'Orbigny_1835> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Scutalus_culmineus_lithoicus> , <http://tb.plazi.org/GgServer/lodRdf/Bulimulus_lithoicus> , <http://tb.plazi.org/GgServer/lodRdf/Bulimus_lithoicus> ;
+        trt:citesTaxonName        <urn:Scutalus_culmineus_lithoicus> , <urn:Bulimulus_lithoicus> , <urn:Bulimus_lithoicus> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.392.6328> ;
         dc:creator                "Ablett, Jonathan D." , "Breure, Abraham S. H." ;
         cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Helix_lithoica>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Helix" ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Helicidae" ;
         dwc:genus          "Helix" ;
@@ -58,8 +59,7 @@
         dwc:order          "Pulmonata" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
-        dwc:species        "lithoica" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Helix" .
+        dwc:species        "lithoica" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -68,31 +68,31 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Helix>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Helicidae> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Helicidae" ;
         dwc:genus          "Helix" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Pulmonata" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Helicidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Helicidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Pulmonata> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Helicidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Pulmonata" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Pulmonata> .
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.3897/zookeys.392.6328>
         a               fabio:JournalArticle ;
@@ -108,9 +108,9 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Pulmonata>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Pulmonata" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> .
+        dwc:rank           "order" .

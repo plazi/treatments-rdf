@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,16 +16,17 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Bulimulidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Bulimulidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> .
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Otostomus_emeus_Say_1829>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus> ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Bulimulidae" ;
         dwc:genus                     "Otostomus" ;
@@ -34,8 +35,7 @@
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Say, 1829" ;
-        dwc:species                   "emeus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus> .
+        dwc:species                   "emeus" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -44,31 +44,32 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Stylommatophora>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> .
+        dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/16C09AD2C9E855D49767AF5641E20A11>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Otostomus_emeus_hypozonus_Martens_1893> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Drymaeus_hypozonus> , <http://tb.plazi.org/GgServer/lodRdf/Bulimulus_palpaloensis> ;
+        trt:citesTaxonName        <urn:Drymaeus_hypozonus> , <urn:Bulimulus_palpaloensis> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.392.6328> ;
         dc:creator                "Ablett, Jonathan D." , "Breure, Abraham S. H." ;
         cito:cites                <http://dx.doi.org/10.5281/zenodo.> , <http://taxon-concept.plazi.org/id/Animalia/Otostomus_emeus_Say_1829> .
 
 <http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus_hypozonus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus" ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Bulimulidae" ;
         dwc:genus          "Otostomus" ;
@@ -77,8 +78,7 @@
         dwc:phylum         "Mollusca" ;
         dwc:rank           "subSpecies" ;
         dwc:species        "emeus" ;
-        dwc:subSpecies     "hypozonus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus" .
+        dwc:subSpecies     "hypozonus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -87,6 +87,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Otostomus_emeus_hypozonus_Martens_1893>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus_hypozonus> ;
         dwc:LSID                      "16C09AD2-C9E8-55D4-9767-AF5641E20A11" ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Bulimulidae" ;
@@ -97,18 +98,18 @@
         dwc:rank                      "subSpecies" ;
         dwc:scientificNameAuthorship  "Martens, 1893" ;
         dwc:species                   "emeus" ;
-        dwc:subSpecies                "hypozonus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus_hypozonus> .
+        dwc:subSpecies                "hypozonus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Otostomus_emeus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Otostomus> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Bulimulidae" ;
         dwc:genus          "Otostomus" ;
@@ -116,19 +117,18 @@
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
-        dwc:species        "emeus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Otostomus> .
+        dwc:species        "emeus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Otostomus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Bulimulidae> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Bulimulidae" ;
         dwc:genus          "Otostomus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Stylommatophora" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Bulimulidae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.3897/zookeys.392.6328>
         a               fabio:JournalArticle ;

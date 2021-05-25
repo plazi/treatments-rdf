@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cryptorhynchus_sticticus_Germar_1824>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cryptorhynchus_sticticus> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Curculionidae" ;
         dwc:genus                     "Cryptorhynchus" ;
@@ -39,13 +40,12 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Germar, 1824" ;
-        dwc:species                   "sticticus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cryptorhynchus_sticticus> .
+        dwc:species                   "sticticus" .
 
 <http://treatment.plazi.org/id/AE78CE6543ED5404BF3937BFC4914EAE>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Cratosomus_Schoenherr_1825> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Curculio_dubius> , <http://tb.plazi.org/GgServer/lodRdf/Gorgus> , <http://tb.plazi.org/GgServer/lodRdf/Atenismus_spinipennis> , <http://tb.plazi.org/GgServer/lodRdf/Curculio_Eucratosomus> , <http://tb.plazi.org/GgServer/lodRdf/Cryptorhynchus_lentiginosus> , <http://tb.plazi.org/GgServer/lodRdf/Curculio_bombina> ;
+        trt:citesTaxonName        <urn:Curculio_dubius> , <urn:Atenismus_spinipennis> , <urn:Curculio_Eucratosomus> , <urn:Curculio_bombina> , <urn:Gorgus> , <urn:Cryptorhynchus_lentiginosus> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Atenismus_Chevrolat_1880> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.683.12080> ;
         dc:creator                "Anzaldo, Salvatore S." ;
@@ -53,6 +53,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Cratosomus_Schoenherr_1825>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cratosomus> ;
         dwc:LSID                      "AE78CE65-43ED-5404-BF39-37BFC4914EAE" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Curculionidae" ;
@@ -61,8 +62,7 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Schoenherr, 1825: c. 585" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cratosomus> .
+        dwc:scientificNameAuthorship  "Schoenherr, 1825: c. 585" .
 
 <http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
@@ -76,6 +76,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Cryptorhynchus_sticticus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cryptorhynchus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:genus          "Cryptorhynchus" ;
@@ -83,8 +84,7 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "sticticus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Cryptorhynchus" .
+        dwc:species        "sticticus" .
 
 <http://dx.doi.org/10.3897/zookeys.683.12080>
         a               fabio:JournalArticle ;
@@ -100,37 +100,38 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Atenismus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Curculionidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:genus          "Atenismus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Curculionidae" .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Cratosomus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Curculionidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:genus          "Cratosomus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Curculionidae" .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Atenismus_Chevrolat_1880>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Atenismus> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Curculionidae" ;
         dwc:genus                     "Atenismus" ;
@@ -138,15 +139,14 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Chevrolat, 1880" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Atenismus> .
+        dwc:scientificNameAuthorship  "Chevrolat, 1880" .
 
 <http://taxon-name.plazi.org/id/Animalia/Curculionidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .

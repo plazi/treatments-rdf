@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,34 +16,35 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Anisodactylus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Anisodactylus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Anisodactylus_dulcicollis_LaFerte-Senectere_1841>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anisodactylus_dulcicollis> ;
         dwc:LSID                      "84B5C253-42A2-5A7F-9970-EE95B83B30A6" ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
@@ -53,19 +54,18 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(LaFerte-Senectere, 1841)" ;
-        dwc:species                   "dulcicollis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anisodactylus_dulcicollis> .
+        dwc:species                   "dulcicollis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Triplectrus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Triplectrus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -75,7 +75,7 @@
 <http://treatment.plazi.org/id/84B5C25342A25A7F9970EE95B83B30A6>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Anisodactylus_dulcicollis_LaFerte-Senectere_1841> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Anisodactylus_ellipticus> , <http://tb.plazi.org/GgServer/lodRdf/Harpalus_dulcicollis> ;
+        trt:citesTaxonName        <urn:Anisodactylus_ellipticus> , <urn:Harpalus_dulcicollis> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Triplectrus_modicus_Casey_1914> , <http://taxon-concept.plazi.org/id/Animalia/Anisodactylus_elongatus_Chaudoir_1868> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.245.3416> ;
         dc:creator                "Bousquet, Yves" .
@@ -93,6 +93,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Triplectrus_modicus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Triplectrus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Triplectrus" ;
@@ -100,11 +101,11 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "modicus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Triplectrus" .
+        dwc:species        "modicus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Anisodactylus_elongatus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anisodactylus" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Anisodactylus" ;
@@ -112,11 +113,11 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "elongatus" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anisodactylus" .
+        dwc:species        "elongatus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Anisodactylus_elongatus_Chaudoir_1868>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anisodactylus_elongatus> ;
         dwc:class                     "Hexapoda" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Anisodactylus" ;
@@ -125,20 +126,20 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Chaudoir, 1868" ;
-        dwc:species                   "elongatus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Anisodactylus_elongatus> .
+        dwc:species                   "elongatus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
         dwc:class          "Hexapoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hexapoda> .
+        dwc:rank           "order" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Triplectrus_modicus_Casey_1914>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Triplectrus_modicus> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
         dwc:genus                     "Triplectrus" ;
@@ -147,19 +148,19 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Casey, 1914" ;
-        dwc:species                   "modicus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Triplectrus_modicus> .
+        dwc:species                   "modicus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hexapoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Hexapoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Anisodactylus_dulcicollis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anisodactylus" ;
         dwc:class          "Hexapoda" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Anisodactylus" ;
@@ -167,5 +168,4 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "dulcicollis" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Anisodactylus" .
+        dwc:species        "dulcicollis" .
