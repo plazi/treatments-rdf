@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,6 +16,7 @@
 
 <http://taxon-concept.plazi.org/id/Chromista/Lithomelissa_heros_Campbell_1944>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Chromista/Lithomelissa_heros> ;
         dwc:class                     "Polycystina" ;
         dwc:family                    "Plagiacanthidae" ;
         dwc:genus                     "Lithomelissa" ;
@@ -23,10 +24,9 @@
         dwc:order                     "Nassellaria" ;
         dwc:phylum                    "Radiozoa" ;
         dwc:rank                      "species" ;
-        dwc:scientificNameAuthorship  "Campbell & Clark, 1944" , "Campbell & Clark, 1944: 25" ;
+        dwc:scientificNameAuthorship  "Campbell & Clark, 1944: 25" , "Campbell & Clark, 1944" ;
         dwc:species                   "heros" ;
-        dwc:subGenus                  "Micromelissa" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Chromista/Lithomelissa_heros> .
+        dwc:subGenus                  "Micromelissa" .
 
 <http://taxon-name.plazi.org/id/Chromista>
         a            dwcFP:TaxonName ;
@@ -35,6 +35,7 @@
 
 <http://taxon-name.plazi.org/id/Chromista/Botryometra_heros>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Chromista/Botryometra" ;
         dwc:class          "Polycystina" ;
         dwc:family         "Cannobotryidae" ;
         dwc:genus          "Botryometra" ;
@@ -42,35 +43,34 @@
         dwc:order          "Nassellaria" ;
         dwc:phylum         "Radiozoa" ;
         dwc:rank           "species" ;
-        dwc:species        "heros" ;
-        trt:hasParentName  "http://taxon-name.plazi.org/id/Chromista/Botryometra" .
+        dwc:species        "heros" .
 
 <http://taxon-name.plazi.org/id/Chromista/Nassellaria>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Polycystina> ;
         dwc:class          "Polycystina" ;
         dwc:kingdom        "Chromista" ;
         dwc:order          "Nassellaria" ;
         dwc:phylum         "Radiozoa" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Polycystina> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Chromista/Polycystina>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Radiozoa> ;
         dwc:class          "Polycystina" ;
         dwc:kingdom        "Chromista" ;
         dwc:phylum         "Radiozoa" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Radiozoa> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Chromista/Cannobotryidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Nassellaria> ;
         dwc:class          "Polycystina" ;
         dwc:family         "Cannobotryidae" ;
         dwc:kingdom        "Chromista" ;
         dwc:order          "Nassellaria" ;
         dwc:phylum         "Radiozoa" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Nassellaria> .
+        dwc:rank           "family" .
 
 <http://doi.org/10.5281/zenodo.4814880>
         a               fabio:JournalArticle ;
@@ -87,6 +87,7 @@
 
 <http://taxon-concept.plazi.org/id/Chromista/Botryometra_heros_Campbell_1944>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Chromista/Botryometra_heros> ;
         dwc:class                     "Polycystina" ;
         dwc:family                    "Cannobotryidae" ;
         dwc:genus                     "Botryometra" ;
@@ -95,15 +96,14 @@
         dwc:phylum                    "Radiozoa" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Campbell & Clark, 1944)" ;
-        dwc:species                   "heros" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Chromista/Botryometra_heros> .
+        dwc:species                   "heros" .
 
 <http://taxon-name.plazi.org/id/Chromista/Radiozoa>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista> ;
         dwc:kingdom        "Chromista" ;
         dwc:phylum         "Radiozoa" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista> .
+        dwc:rank           "phylum" .
 
 <http://treatment.plazi.org/id/03DA87A1FF8A9C47FF589278FC7DFC9C>
         a                         trt:Treatment ;
@@ -115,14 +115,14 @@
 
 <http://taxon-name.plazi.org/id/Chromista/Botryometra>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Cannobotryidae> ;
         dwc:class          "Polycystina" ;
         dwc:family         "Cannobotryidae" ;
         dwc:genus          "Botryometra" ;
         dwc:kingdom        "Chromista" ;
         dwc:order          "Nassellaria" ;
         dwc:phylum         "Radiozoa" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Chromista/Cannobotryidae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.5281/zenodo.4538026>
         a                        fabio:Figure ;
