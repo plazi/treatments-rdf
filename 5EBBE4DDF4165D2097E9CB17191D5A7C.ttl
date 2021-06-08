@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,14 +16,15 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Aloconota_pseudogregaria_Klimaszewski_2021>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Aloconota_pseudogregaria> ;
         dwc:LSID                      "http://zoobank.org/A72E1E63-3D1B-4CC8-882C-6921E5FC3D33" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Staphylinidae" ;
@@ -33,41 +34,40 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Klimaszewski, Brunke & Pentinsaari" ;
-        dwc:species                   "pseudogregaria" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Aloconota_pseudogregaria> .
-
-<http://dx.doi.org/10.3897/zookeys.1041.64460.figure28>
-        a                        fabio:Figure ;
-        dc:description           "Figure 28. Aloconota pseudogregaria Klimaszewski, Brunke & Pentinsaari, sp. nov. A habitus B median lobe of aedeagus in lateral view C spermatheca D male tergite VIII E male sternite VIII (structure accidentally over-cleared in balsam preparation) F female tergite VIII G female sternite VIII. Scale bars: 1 mm (A); 0.2 mm (B-G)." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550293" .
+        dwc:species                   "pseudogregaria" .
 
 <http://treatment.plazi.org/id/5EBBE4DDF4165D2097E9CB17191D5A7C>
         a                        trt:Treatment ;
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Aloconota_pseudogregaria_Klimaszewski_2021> ;
         trt:publishedIn          <http://dx.doi.org/10.3897/zookeys.1041.64460> ;
         dc:creator               "Klimaszewski, Jan" , "Pentinsaari, Mikko" , "Brunke, Adam J." ;
-        cito:cites               <http://dx.doi.org/10.3897/zookeys.1041.64460.figure28> .
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.> .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 28. Aloconota pseudogregaria Klimaszewski, Brunke & Pentinsaari, sp. nov. A habitus B median lobe of aedeagus in lateral view C spermatheca D male tergite VIII E male sternite VIII (structure accidentally over-cleared in balsam preparation) F female tergite VIII G female sternite VIII. Scale bars: 1 mm (A); 0.2 mm (B-G)." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550293" .
 
 <http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Staphylinidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Aloconota>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Staphylinidae" ;
         dwc:genus          "Aloconota" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.3897/zookeys.1041.64460>
         a               fabio:JournalArticle ;
@@ -79,7 +79,7 @@
         bibo:pubDate    "2021-05-31" ;
         bibo:startPage  "27" ;
         bibo:volume     "1041" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1041.64460.figure28> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -88,15 +88,16 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Aloconota_pseudogregaria>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Aloconota" ;
         dwc:class          "Insecta" ;
         dwc:family         "Staphylinidae" ;
         dwc:genus          "Aloconota" ;
@@ -104,12 +105,11 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "pseudogregaria" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Aloconota> .
+        dwc:species        "pseudogregaria" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .

@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -27,6 +27,7 @@
 
 <http://taxon-concept.plazi.org/id/Plantae/Didymocarpus_niveolanosus_Fang_1982>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Didymocarpus_niveolanosus> ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Gesneriaceae" ;
         dwc:genus                     "Didymocarpus" ;
@@ -35,60 +36,59 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "D. Fang & W. T. Wang" ;
-        dwc:species                   "niveolanosus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Didymocarpus_niveolanosus> .
+        dwc:species                   "niveolanosus" .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> .
+        dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/DB1CE13EE943FFF4FF0CFB78FB1089EB>
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Plantae/Didymocarpus_niveolanosus_Fang_1982> ;
         trt:publishedIn      <http://doi.org/10.5281/zenodo.4894304> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Petrocodons_niveolanosus> ;
+        trt:treatsTaxonName  <urn:Petrocodons_niveolanosus> ;
         dc:creator           "Mayer, Veronika" , "Wei, Yi-Gang" , "Puglisi, Carmen" , "Weber, Anton" , "Wen, Fang" , "Möller, Michael" .
 
 <http://taxon-name.plazi.org/id/Plantae/Lamiales>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
         dwc:class          "Magnoliopsida" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Lamiales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Plantae/Gesneriaceae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Lamiales> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Gesneriaceae" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Lamiales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Lamiales> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> ;
         dwc:kingdom        "Plantae" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Plantae/Petrocodons>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Gesneriaceae> ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Gesneriaceae" ;
         dwc:genus          "Petrocodons" ;
         dwc:kingdom        "Plantae" ;
         dwc:order          "Lamiales" ;
         dwc:phylum         "Tracheophyta" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Gesneriaceae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Plantae>
         a            dwcFP:TaxonName ;
@@ -97,6 +97,7 @@
 
 <http://taxon-name.plazi.org/id/Plantae/Petrocodons_niveolanosus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Plantae/Petrocodons" ;
         dwc:class          "Magnoliopsida" ;
         dwc:family         "Gesneriaceae" ;
         dwc:genus          "Petrocodons" ;
@@ -104,5 +105,4 @@
         dwc:order          "Lamiales" ;
         dwc:phylum         "Tracheophyta" ;
         dwc:rank           "species" ;
-        dwc:species        "niveolanosus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Plantae/Petrocodons> .
+        dwc:species        "niveolanosus" .

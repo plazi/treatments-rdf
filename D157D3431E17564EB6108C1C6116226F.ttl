@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,6 +16,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Polysphincta_cosnipata_Padua_2021>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Polysphincta_cosnipata> ;
         dwc:LSID                      "http://zoobank.org/1D4251B0-17C6-4220-AF11-9B2D2E7FB721" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Ichneumonidae" ;
@@ -25,35 +26,39 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Pádua & Sääksjärvi" ;
-        dwc:species                   "cosnipata" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Polysphincta_cosnipata> .
+        dwc:species                   "cosnipata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> .
+        dwc:rank           "family" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 11. Distribution of Polysphincta dizardi group in the Neotropical Region." , "Figure 2. Polysphincta cosnipata sp. nov., ♀, holotype A habitus, lateral view B head and pronotum, lateral view C habitus, dorsal view D face, anterior view E head, dorsal view F shelf-like projection, dorsal view." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550752" , "https://binary.pensoft.net/fig/550743" .
 
 <http://dx.doi.org/10.3897/zookeys.1041.65407>
         a               fabio:JournalArticle ;
@@ -65,32 +70,23 @@
         bibo:pubDate    "2021-06-01" ;
         bibo:startPage  "137" ;
         bibo:volume     "1041" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1041.65407.figure2> , <http://dx.doi.org/10.3897/zookeys.1041.65407.figure11> .
-
-<http://dx.doi.org/10.3897/zookeys.1041.65407.figure11>
-        a                        fabio:Figure ;
-        dc:description           "Figure 11. Distribution of Polysphincta dizardi group in the Neotropical Region." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550752" .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
-<http://dx.doi.org/10.3897/zookeys.1041.65407.figure2>
-        a                        fabio:Figure ;
-        dc:description           "Figure 2. Polysphincta cosnipata sp. nov., ♀, holotype A habitus, lateral view B head and pronotum, lateral view C habitus, dorsal view D face, anterior view E head, dorsal view F shelf-like projection, dorsal view." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550743" .
-
 <http://treatment.plazi.org/id/D157D3431E17564EB6108C1C6116226F>
         a                        trt:Treatment ;
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Polysphincta_cosnipata_Padua_2021> ;
         trt:publishedIn          <http://dx.doi.org/10.3897/zookeys.1041.65407> ;
         dc:creator               "Padua, Diego G." , "Monteiro, Ricardo F." , "Oliveira, Marcio L." , "Saeaeksjaervi, Ilari E." , "Spasojevic, Tamara" , "Kaunisto, Kari M." ;
-        cito:cites               <http://dx.doi.org/10.3897/zookeys.1041.65407.figure2> , <http://dx.doi.org/10.3897/zookeys.1041.65407.figure11> .
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Polysphincta_cosnipata>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Polysphincta" ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:genus          "Polysphincta" ;
@@ -98,23 +94,22 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "cosnipata" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Polysphincta> .
+        dwc:species        "cosnipata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Polysphincta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Ichneumonidae" ;
         dwc:genus          "Polysphincta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .

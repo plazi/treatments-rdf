@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -29,7 +29,7 @@
 <http://treatment.plazi.org/id/03A3110F407EFFE3FF5DDFDE50348E35>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Eplumula_phalangium_Haan_1839> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Eplumula_phalangia> , <http://tb.plazi.org/GgServer/lodRdf/Eplumura_phalangium> , <http://tb.plazi.org/GgServer/lodRdf/Eplumra_phalangium> ;
+        trt:citesTaxonName        <urn:Eplumra_phalangium> , <urn:Eplumula_phalangia> , <urn:Eplumura_phalangium> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Latreillia_phalangium_Haan_1839> ;
         trt:publishedIn           <http://doi.org/10.5281/zenodo.4689370> ;
         dc:creator                "Castro, Peter" , "Cooper, Lara L." , "Williams, Austin B." ;
@@ -37,15 +37,16 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Decapoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
         dwc:class          "Malacostraca" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Decapoda" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Malacostraca> .
+        dwc:rank           "order" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eplumula_phalangium_Haan_1839>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eplumula_phalangium> ;
         dwc:class                     "Malacostraca" ;
         dwc:family                    "Latreilliidae" ;
         dwc:genus                     "Eplumula" ;
@@ -54,8 +55,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(de Haan, 1839)" ;
-        dwc:species                   "phalangium" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eplumula_phalangium> .
+        dwc:species                   "phalangium" .
 
 <http://dx.doi.org/10.5281/zenodo.4890286>
         a                        fabio:Figure ;
@@ -69,14 +69,14 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Eplumula>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Latreilliidae> ;
         dwc:class          "Malacostraca" ;
         dwc:family         "Latreilliidae" ;
         dwc:genus          "Eplumula" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Decapoda" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Latreilliidae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.5281/zenodo.4890304>
         a                        fabio:Figure ;
@@ -85,24 +85,25 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Malacostraca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Malacostraca" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Latreilliidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
         dwc:class          "Malacostraca" ;
         dwc:family         "Latreilliidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Decapoda" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Decapoda> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eplumula_phalangium>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Eplumula" ;
         dwc:class          "Malacostraca" ;
         dwc:family         "Latreilliidae" ;
         dwc:genus          "Eplumula" ;
@@ -110,11 +111,11 @@
         dwc:order          "Decapoda" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "phalangium" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Eplumula> .
+        dwc:species        "phalangium" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Latreillia_phalangium_Haan_1839>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Latreillia_phalangium> ;
         dwc:class                     "Malacostraca" ;
         dwc:family                    "Latreilliidae" ;
         dwc:genus                     "Latreillia" ;
@@ -123,12 +124,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "de Haan, 1839" ;
-        dwc:species                   "phalangium" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Latreillia_phalangium> .
+        dwc:species                   "phalangium" .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .

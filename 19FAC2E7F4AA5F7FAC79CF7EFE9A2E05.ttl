@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tortopsis_andaki_Molineri_2021>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tortopsis_andaki> ;
         dwc:LSID                      "https://zoobank.org/DFE52BBC-7153-4EA3-89B5-403D069BF5EE" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Polymitarcyidae" ;
@@ -40,22 +41,21 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Molineri & Dias & Zúñiga, 2021" ;
-        dwc:species                   "andaki" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tortopsis_andaki> .
+        dwc:species                   "andaki" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ephemeroptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Ephemeroptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
-<http://dx.doi.org/10.3897/asp.79.e62735.figures1-6>
+<http://dx.doi.org/10.5281/zenodo.>
         a                        fabio:Figure ;
-        dc:description           "Figures 1 - 6. Tortopsis toro sp. nov. Male imago: 1, general view, dorsal; 2, abdominal segments VIII-X, lateral view; 3, genitalia, ventral view. Nymph: 4, mature female nymph; 5, mature male nymph; 6, detail of head and pronotal coloration of not fully-grown male nymph." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550217" .
+        dc:description           "Figures 1 - 6. Tortopsis toro sp. nov. Male imago: 1, general view, dorsal; 2, abdominal segments VIII-X, lateral view; 3, genitalia, ventral view. Nymph: 4, mature female nymph; 5, mature male nymph; 6, detail of head and pronotal coloration of not fully-grown male nymph." , "Figures 41 - 52. Tortopsis andaki sp. nov., female nymph. 41, labrum, dorsal view; 42, left mandible, ventral view; 43, right mandible, ventral view; 44, same, detail (arrows indicate first and last spine of the inner marginal row); 45, hypopharynx, ventral view; 46, labium, ventral view; 47, right maxilla, ventral view (arrow indicates membranous gill); 48, left maxilla, ventral view; 49, fore leg, dorsal view; 50, detail of fore tarsal claw, dorsal view; 51, middle leg, dorsal view; 53, hind leg, dorsal view." , "Figures 33 - 40. Tortopsis andaki sp. nov., imago. Male: 33, male genitalia, ventral view; 34, genitalia, lateral external view; 35, same, inner view; 36, penis detail, dorsal view; 37, penis, detail, ventral view; 38, details of penis apex, dorsal view above, ventral view below. Female: 39, abdominal sternum VIII, lateral view; 40, same, ventral view." , "Figures 27 - 32. Tortopsis andaki sp. nov., male imago. 27, general dorsal view; 28, genitalia, lateral view; 29, genitalia, ventral view. Nymph (female): 30, general view; 31, head and pronotum; 32, part of mesonotum and wingbuds." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550217" , "https://binary.pensoft.net/fig/550223" , "https://binary.pensoft.net/fig/550222" , "https://binary.pensoft.net/fig/550221" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -66,8 +66,8 @@
         a                        trt:Treatment ;
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Tortopsis_andaki_Molineri_2021> ;
         trt:publishedIn          <http://dx.doi.org/10.3897/asp.79.e62735> ;
-        dc:creator               "Zuniga, Maria del Carmen" , "Molineri, Carlos" , "Dias, Lucimar G." ;
-        cito:cites               <http://dx.doi.org/10.3897/asp.79.e62735.figures33-40> , <http://dx.doi.org/10.3897/asp.79.e62735.figures41-52> , <http://dx.doi.org/10.3897/asp.79.e62735.figures27-32> , <http://dx.doi.org/10.3897/asp.79.e62735.figures1-6> .
+        dc:creator               "Zuniga, Maria del Carmen" , "Dias, Lucimar G." , "Molineri, Carlos" ;
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://dx.doi.org/10.3897/asp.79.e62735>
         a               fabio:JournalArticle ;
@@ -79,15 +79,11 @@
         bibo:pubDate    "2021-05-31" ;
         bibo:startPage  "151" ;
         bibo:volume     "79" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/asp.79.e62735.figures1-6> , <http://dx.doi.org/10.3897/asp.79.e62735.figures27-32> , <http://dx.doi.org/10.3897/asp.79.e62735.figures41-52> , <http://dx.doi.org/10.3897/asp.79.e62735.figures33-40> .
-
-<http://dx.doi.org/10.3897/asp.79.e62735.figures41-52>
-        a                        fabio:Figure ;
-        dc:description           "Figures 41 - 52. Tortopsis andaki sp. nov., female nymph. 41, labrum, dorsal view; 42, left mandible, ventral view; 43, right mandible, ventral view; 44, same, detail (arrows indicate first and last spine of the inner marginal row); 45, hypopharynx, ventral view; 46, labium, ventral view; 47, right maxilla, ventral view (arrow indicates membranous gill); 48, left maxilla, ventral view; 49, fore leg, dorsal view; 50, detail of fore tarsal claw, dorsal view; 51, middle leg, dorsal view; 53, hind leg, dorsal view." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550223" .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Tortopsis_andaki>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Tortopsis" ;
         dwc:class          "Insecta" ;
         dwc:family         "Polymitarcyidae" ;
         dwc:genus          "Tortopsis" ;
@@ -95,36 +91,25 @@
         dwc:order          "Ephemeroptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "andaki" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Tortopsis> .
+        dwc:species        "andaki" .
 
 <http://taxon-name.plazi.org/id/Animalia/Polymitarcyidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ephemeroptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Polymitarcyidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Ephemeroptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ephemeroptera> .
-
-<http://dx.doi.org/10.3897/asp.79.e62735.figures33-40>
-        a                        fabio:Figure ;
-        dc:description           "Figures 33 - 40. Tortopsis andaki sp. nov., imago. Male: 33, male genitalia, ventral view; 34, genitalia, lateral external view; 35, same, inner view; 36, penis detail, dorsal view; 37, penis, detail, ventral view; 38, details of penis apex, dorsal view above, ventral view below. Female: 39, abdominal sternum VIII, lateral view; 40, same, ventral view." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550222" .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tortopsis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Polymitarcyidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Polymitarcyidae" ;
         dwc:genus          "Tortopsis" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Ephemeroptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Polymitarcyidae> .
-
-<http://dx.doi.org/10.3897/asp.79.e62735.figures27-32>
-        a                        fabio:Figure ;
-        dc:description           "Figures 27 - 32. Tortopsis andaki sp. nov., male imago. 27, general dorsal view; 28, genitalia, lateral view; 29, genitalia, ventral view. Nymph (female): 30, general view; 31, head and pronotum; 32, part of mesonotum and wingbuds." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/550221" .
+        dwc:rank           "genus" .

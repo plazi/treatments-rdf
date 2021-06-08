@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Oreocharis_acaulis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Oreocharis" ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:genus          "Oreocharis" ;
@@ -38,26 +39,25 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "acaulis" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Oreocharis> .
+        dwc:species        "acaulis" .
 
 <http://treatment.plazi.org/id/3011AB77FFD2357C15E4FD15FC43FCD4>
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Plantae/Chirita_acaulis_Merrill_1934> , <http://taxon-concept.plazi.org/id/Plantae/Opithandra_acaulis_Burtt_1958> ;
         trt:publishedIn      <http://dx.doi.org/10.11646/phytotaxa.23.1.1> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Oreocharis_acaulis> ;
+        trt:treatsTaxonName  <urn:Oreocharis_acaulis> ;
         dc:creator           "Nishii, Kanae" , "Wei, Yi-Gang" , "Weber, Anton" , "Möller, Michael" , "Middleton, David" , "Sontag, Susanne" .
 
 <http://taxon-name.plazi.org/id/Animalia/Oreocharis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:genus          "Oreocharis" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Curculionidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -66,24 +66,25 @@
 
 <http://taxon-concept.plazi.org/id/Plantae/Opithandra_acaulis_Burtt_1958>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Opithandra_acaulis> ;
         dwc:genus                     "Opithandra" ;
         dwc:kingdom                   "Plantae" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Merr.) B. L. Burtt (1958 a: 303)" ;
-        dwc:species                   "acaulis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Opithandra_acaulis> .
+        dwc:species                   "acaulis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-concept.plazi.org/id/Plantae/Chirita_acaulis_Merrill_1934>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Chirita_acaulis> ;
         dwc:class                     "Magnoliopsida" ;
         dwc:family                    "Gesneriaceae" ;
         dwc:genus                     "Chirita" ;
@@ -92,8 +93,7 @@
         dwc:phylum                    "Tracheophyta" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Merrill (1934: 47)" ;
-        dwc:species                   "acaulis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Plantae/Chirita_acaulis> .
+        dwc:species                   "acaulis" .
 
 <http://dx.doi.org/10.11646/phytotaxa.23.1.1>
         a               fabio:JournalArticle ;
@@ -108,10 +108,10 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Curculionidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Curculionidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .

@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -21,6 +21,7 @@
 
 <http://taxon-name.plazi.org/id/Fungi/Candolleomyces_subcacao>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Fungi/Candolleomyces" ;
         dwc:class          "Agaricomycetes" ;
         dwc:family         "Psathyrellaceae" ;
         dwc:genus          "Candolleomyces" ;
@@ -28,60 +29,64 @@
         dwc:order          "Agaricales" ;
         dwc:phylum         "Basidiomycota" ;
         dwc:rank           "species" ;
-        dwc:species        "subcacao" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Candolleomyces> .
+        dwc:species        "subcacao" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 2. Basidiomata and microscopic features of Candolleomyces subcacao a-c Basidiomata d spores e basidia f pileipellis g cheilocystidia. Scale bars: 10 mm (a-c); 10 μm (d-g)." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/551410" .
 
 <http://taxon-name.plazi.org/id/Fungi/Agaricomycetes>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Basidiomycota> ;
         dwc:class          "Agaricomycetes" ;
         dwc:kingdom        "Fungi" ;
         dwc:phylum         "Basidiomycota" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Basidiomycota> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Fungi/Agaricales>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Agaricomycetes> ;
         dwc:class          "Agaricomycetes" ;
         dwc:kingdom        "Fungi" ;
         dwc:order          "Agaricales" ;
         dwc:phylum         "Basidiomycota" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Agaricomycetes> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Fungi/Psathyrellaceae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Agaricales> ;
         dwc:class          "Agaricomycetes" ;
         dwc:family         "Psathyrellaceae" ;
         dwc:kingdom        "Fungi" ;
         dwc:order          "Agaricales" ;
         dwc:phylum         "Basidiomycota" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Agaricales> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Fungi/Candolleomyces>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Psathyrellaceae> ;
         dwc:class          "Agaricomycetes" ;
         dwc:family         "Psathyrellaceae" ;
         dwc:genus          "Candolleomyces" ;
         dwc:kingdom        "Fungi" ;
         dwc:order          "Agaricales" ;
         dwc:phylum         "Basidiomycota" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi/Psathyrellaceae> .
+        dwc:rank           "genus" .
 
 <http://treatment.plazi.org/id/308FE87EE2F65A0787643A615107335C>
         a                        trt:Treatment ;
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Fungi/Candolleomyces_subcacao_Bau_2021> ;
         trt:publishedIn          <http://dx.doi.org/10.3897/mycokeys.80.67166> ;
         dc:creator               "Yan, Jun-Qing" , "Bau, Tolgor" ;
-        cito:cites               <http://dx.doi.org/10.3897/mycokeys.80.67166.figure2> .
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Fungi/Basidiomycota>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi> ;
         dwc:kingdom        "Fungi" ;
         dwc:phylum         "Basidiomycota" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Fungi> .
+        dwc:rank           "phylum" .
 
 <http://dx.doi.org/10.3897/mycokeys.80.67166>
         a               fabio:JournalArticle ;
@@ -93,15 +98,11 @@
         bibo:pubDate    "2021-06-03" ;
         bibo:startPage  "149" ;
         bibo:volume     "80" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/mycokeys.80.67166.figure2> .
-
-<http://dx.doi.org/10.3897/mycokeys.80.67166.figure2>
-        a                        fabio:Figure ;
-        dc:description           "Figure 2. Basidiomata and microscopic features of Candolleomyces subcacao a-c Basidiomata d spores e basidia f pileipellis g cheilocystidia. Scale bars: 10 mm (a-c); 10 μm (d-g)." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/551410" .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-concept.plazi.org/id/Fungi/Candolleomyces_subcacao_Bau_2021>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Fungi/Candolleomyces_subcacao> ;
         dwc:LSID                      "308FE87E-E2F6-5A07-8764-3A615107335C" ;
         dwc:class                     "Agaricomycetes" ;
         dwc:family                    "Psathyrellaceae" ;
@@ -111,5 +112,4 @@
         dwc:phylum                    "Basidiomycota" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "T. Bau & J. Q. Yan" ;
-        dwc:species                   "subcacao" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Fungi/Candolleomyces_subcacao> .
+        dwc:species                   "subcacao" .
