@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,23 +16,24 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Aeolidiidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nudibranchia> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Aeolidiidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nudibranchia> .
+        dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/4ED30D864A6D5B88852CAEA832719819>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Limenandra_confusa_Carmona_2014> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.1042.64474> ;
         dc:creator                "Chavanich, Suchana" , "Viyakarn, Voranop" , "A. Caballer Gutierrez, Manuel" , "Arnold, Spencer" , "Monchanin, Coline" , "M. Scott, Chad" , "Mehrotra, Rahul" ;
-        cito:cites                <http://dx.doi.org/10.3897/zookeys.1042.64474.figure17> .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Limenandra_confusa>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Limenandra" ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Aeolidiidae" ;
         dwc:genus          "Limenandra" ;
@@ -40,16 +41,20 @@
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
-        dwc:species        "confusa" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Limenandra> .
+        dwc:species        "confusa" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 17. A, B Aeolidiopsis ransoni 23 mm (A) and 25 mm (B) C Baeolidia salaamica 10 mm D Cerberilla ambonensis 20 mm E Cerberilla asamusiensis 8 mm (photograph by Pau Urgell Plaza) F, G Cerberilla cf. incola variants 12 mm (F) and 7 mm (G) H Cerberilla sp. 22 mm I Limenandra confusa 12 mm J Caloria indica 26 mm K Favorinus sp. 1 5 mm L Favorinus sp. 2 5 mm" ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553111" .
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -58,13 +63,14 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Limenandra_confusa_Carmona_2014>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Limenandra_confusa> ;
         dwc:LSID                      "4ED30D86-4A6D-5B88-852C-AEA832719819" ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Aeolidiidae" ;
@@ -74,8 +80,7 @@
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Carmona, Pola, Gosliner & Cervera, 2014" ;
-        dwc:species                   "confusa" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Limenandra_confusa> .
+        dwc:species                   "confusa" .
 
 <http://dx.doi.org/10.3897/zookeys.1042.64474>
         a               fabio:JournalArticle ;
@@ -87,29 +92,24 @@
         bibo:pubDate    "2021-06-09" ;
         bibo:startPage  "73" ;
         bibo:volume     "1042" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1042.64474.figure17> .
-
-<http://dx.doi.org/10.3897/zookeys.1042.64474.figure17>
-        a                        fabio:Figure ;
-        dc:description           "Figure 17. A, B Aeolidiopsis ransoni 23 mm (A) and 25 mm (B) C Baeolidia salaamica 10 mm D Cerberilla ambonensis 20 mm E Cerberilla asamusiensis 8 mm (photograph by Pau Urgell Plaza) F, G Cerberilla cf. incola variants 12 mm (F) and 7 mm (G) H Cerberilla sp. 22 mm I Limenandra confusa 12 mm J Caloria indica 26 mm K Favorinus sp. 1 5 mm L Favorinus sp. 2 5 mm" ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553111" .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Nudibranchia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Limenandra>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Aeolidiidae> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Aeolidiidae" ;
         dwc:genus          "Limenandra" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Aeolidiidae> .
+        dwc:rank           "genus" .

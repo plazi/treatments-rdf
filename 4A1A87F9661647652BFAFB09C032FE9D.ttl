@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,25 +16,25 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/4A1A87F9661647652BFAFB09C032FE9D>
         a                    trt:Treatment ;
-        trt:citesTaxonName   <http://tb.plazi.org/GgServer/lodRdf/Veerabahuthrips> ;
+        trt:citesTaxonName   <urn:Veerabahuthrips> ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Mychiothrips_Haga_1979> , <http://taxon-concept.plazi.org/id/Animalia/Veerabahuthrips_Ramakrishna_1932> ;
         trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3807.1.1> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips> ;
+        trt:treatsTaxonName  <urn:Veerabahuthrips> ;
         dc:creator           "Mound, Laurence A." , "Qiao, Ge-Xia" , "Dang, Li-Hong" ;
         cito:cites           <http://dx.doi.org/10.5281/zenodo.4918170> , <http://taxon-concept.plazi.org/id/Animalia/Veerabahuthrips_exilis_Okajima_1993> .
 
@@ -53,12 +53,12 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Thysanoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://dx.doi.org/10.5281/zenodo.4918170>
         a                        fabio:Figure ;
@@ -67,6 +67,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Veerabahuthrips_exilis_Okajima_1993>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips_exilis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Phlaeothripidae" ;
         dwc:genus                     "Veerabahuthrips" ;
@@ -75,19 +76,18 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Okajima, 1993" ;
-        dwc:species                   "exilis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips_exilis> .
+        dwc:species                   "exilis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Mychiothrips>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Phlaeothripidae" ;
         dwc:genus          "Mychiothrips" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -96,6 +96,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips_exilis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips" ;
         dwc:class          "Insecta" ;
         dwc:family         "Phlaeothripidae" ;
         dwc:genus          "Veerabahuthrips" ;
@@ -103,11 +104,11 @@
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "exilis" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips> .
+        dwc:species        "exilis" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Mychiothrips_Haga_1979>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mychiothrips> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Phlaeothripidae" ;
         dwc:genus                     "Mychiothrips" ;
@@ -115,11 +116,11 @@
         dwc:order                     "Thysanoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Haga & Okajima, 1979" , "Haga & Okajima, 1979: 266" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Mychiothrips> .
+        dwc:scientificNameAuthorship  "Haga & Okajima, 1979: 266" , "Haga & Okajima, 1979" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Veerabahuthrips_Ramakrishna_1932>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Phlaeothripidae" ;
         dwc:genus                     "Veerabahuthrips" ;
@@ -127,26 +128,25 @@
         dwc:order                     "Thysanoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Ramakrishna, 1932: 277" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips> .
+        dwc:scientificNameAuthorship  "Ramakrishna, 1932: 277" .
 
 <http://taxon-name.plazi.org/id/Animalia/Veerabahuthrips>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Phlaeothripidae" ;
         dwc:genus          "Veerabahuthrips" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thysanoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Phlaeothripidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thysanoptera> .
+        dwc:rank           "family" .

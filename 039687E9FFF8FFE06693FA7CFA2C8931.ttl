@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,6 +16,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Eutrigaster_Graffiona>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Eutrigaster" ;
         dwc:class          "Clitellata" ;
         dwc:family         "Octochaetidae" ;
         dwc:genus          "Eutrigaster" ;
@@ -23,15 +24,14 @@
         dwc:order          "Haplotaxida" ;
         dwc:phylum         "Annelida" ;
         dwc:rank           "subGenus" ;
-        dwc:subGenus       "Graffiona" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Eutrigaster> .
+        dwc:subGenus       "Graffiona" .
 
 <http://taxon-name.plazi.org/id/Animalia/Annelida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Annelida" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -40,16 +40,17 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Octochaetidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Haplotaxida> ;
         dwc:class          "Clitellata" ;
         dwc:family         "Octochaetidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Haplotaxida" ;
         dwc:phylum         "Annelida" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Haplotaxida> .
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eutrigaster_Graffia_Csuzdi_1991>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eutrigaster_Graffia> ;
         dwc:class                     "Clitellata" ;
         dwc:family                    "Octochaetidae" ;
         dwc:genus                     "Eutrigaster" ;
@@ -57,36 +58,35 @@
         dwc:order                     "Haplotaxida" ;
         dwc:phylum                    "Annelida" ;
         dwc:rank                      "subGenus" ;
-        dwc:scientificNameAuthorship  "Csuzdi & Zicsi, 1991" , "Csuzdi & Zicsi, 1991: 182" ;
-        dwc:subGenus                  "Graffia" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Eutrigaster_Graffia> .
+        dwc:scientificNameAuthorship  "Csuzdi & Zicsi, 1991: 182" , "Csuzdi & Zicsi, 1991" ;
+        dwc:subGenus                  "Graffia" .
 
 <http://treatment.plazi.org/id/039687E9FFF8FFE06693FA7CFA2C8931>
         a                    trt:Treatment ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Eutrigaster_Graffia_Csuzdi_1991> ;
         trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3811.1.11> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Eutrigaster_Graffiona> ;
+        trt:treatsTaxonName  <urn:Eutrigaster_Graffiona> ;
         dc:creator           "Csuzdi, Csaba" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eutrigaster>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Octochaetidae> ;
         dwc:class          "Clitellata" ;
         dwc:family         "Octochaetidae" ;
         dwc:genus          "Eutrigaster" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Haplotaxida" ;
         dwc:phylum         "Annelida" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Octochaetidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Haplotaxida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
         dwc:class          "Clitellata" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Haplotaxida" ;
         dwc:phylum         "Annelida" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Clitellata> .
+        dwc:rank           "order" .
 
 <http://dx.doi.org/10.11646/zootaxa.3811.1.11>
         a               fabio:JournalArticle ;
@@ -102,14 +102,15 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Clitellata>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
         dwc:class          "Clitellata" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Annelida" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Annelida> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Eutrigaster_Graffia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Eutrigaster" ;
         dwc:class          "Clitellata" ;
         dwc:family         "Octochaetidae" ;
         dwc:genus          "Eutrigaster" ;
@@ -117,5 +118,4 @@
         dwc:order          "Haplotaxida" ;
         dwc:phylum         "Annelida" ;
         dwc:rank           "subGenus" ;
-        dwc:subGenus       "Graffia" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Eutrigaster> .
+        dwc:subGenus       "Graffia" .

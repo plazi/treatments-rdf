@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,18 +16,18 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://dx.doi.org/10.11646/zootaxa.3864.1.1>
         a               fabio:JournalArticle ;
@@ -43,26 +43,27 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Chrysididae" ;
         dwc:genus          "Chrysis" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chrysididae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii_ruddii>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii" ;
         dwc:class          "Insecta" ;
         dwc:family         "Chrysididae" ;
         dwc:genus          "Chrysis" ;
@@ -71,8 +72,7 @@
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "subSpecies" ;
         dwc:species        "ruddii" ;
-        dwc:subSpecies     "ruddii" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii> .
+        dwc:subSpecies     "ruddii" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -81,6 +81,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Chrysis_auripes_Wesmael_1839>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_auripes> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Chrysididae" ;
         dwc:genus                     "Chrysis" ;
@@ -89,13 +90,12 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Wesmael 1839: 175" ;
-        dwc:species                   "auripes" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_auripes> .
+        dwc:species                   "auripes" .
 
 <http://treatment.plazi.org/id/443187C9A864FFE5BAFAFB44FF7DEF70>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Chrysis_ruddii_Schuckard_1837> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Chrysis_ignita_ruddii> , <http://tb.plazi.org/GgServer/lodRdf/Tetrachrysis> ;
+        trt:citesTaxonName        <urn:Tetrachrysis> , <urn:Chrysis_ignita_ruddii> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Chrysis_ruddii_Hellen_1920> , <http://taxon-concept.plazi.org/id/Animalia/Chrysis_ruddii_ruddii_Rosa_2012> , <http://taxon-concept.plazi.org/id/Animalia/Chrysis_auripes_Wesmael_1839> ;
         trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3864.1.1> ;
         dc:creator                "Ødegaard, Frode" , "Paukkunen, Juho" , "Rosa, Paolo" , "Soon, Villu" , "Johansson, Niklas" ;
@@ -103,6 +103,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Chrysis_ruddii_Hellen_1920>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Chrysididae" ;
         dwc:genus                     "Chrysis" ;
@@ -111,11 +112,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  ": Hellen 1920: 213" ;
-        dwc:species                   "ruddii" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii> .
+        dwc:species                   "ruddii" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysis_auripes>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chrysis" ;
         dwc:class          "Insecta" ;
         dwc:family         "Chrysididae" ;
         dwc:genus          "Chrysis" ;
@@ -123,11 +124,11 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "auripes" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chrysis> .
+        dwc:species        "auripes" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Chrysis" ;
         dwc:class          "Insecta" ;
         dwc:family         "Chrysididae" ;
         dwc:genus          "Chrysis" ;
@@ -135,21 +136,21 @@
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "ruddii" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Chrysis> .
+        dwc:species        "ruddii" .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysididae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Chrysididae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Hymenoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> .
+        dwc:rank           "family" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chrysis_ruddii_Schuckard_1837>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Chrysididae" ;
         dwc:genus                     "Chrysis" ;
@@ -158,11 +159,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Schuckard, 1837" ;
-        dwc:species                   "ruddii" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii> .
+        dwc:species                   "ruddii" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chrysis_ruddii_ruddii_Rosa_2012>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii_ruddii> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Chrysididae" ;
         dwc:genus                     "Chrysis" ;
@@ -172,11 +173,11 @@
         dwc:rank                      "subSpecies" ;
         dwc:scientificNameAuthorship  "ruddii: Rosa & Soon 2012" ;
         dwc:species                   "ruddii" ;
-        dwc:subSpecies                "ruddii" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis_ruddii_ruddii> .
+        dwc:subSpecies                "ruddii" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chrysis_Shuckard_1837>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Chrysididae" ;
         dwc:genus                     "Chrysis" ;
@@ -184,5 +185,4 @@
         dwc:order                     "Hymenoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Ruddii Shuckard 1837: 163" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Chrysis> .
+        dwc:scientificNameAuthorship  "Ruddii Shuckard 1837: 163" .

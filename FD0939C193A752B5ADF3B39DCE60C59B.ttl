@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,15 +16,10 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
-
-<http://dx.doi.org/10.3897/asp.79.e62282.figure2>
-        a                        fabio:Figure ;
-        dc:description           "Figure 2. Scanning electron microscope images of valves of Keysercythere enricoi. A RV, external lateral view B LV, external lateral view C LV, internal lateral view D RV, internal lateral view. Scale bar: 200 μm." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553300" .
+        dwc:rank           "phylum" .
 
 <http://dx.doi.org/10.3897/asp.79.e62282>
         a               fabio:JournalArticle ;
@@ -36,14 +31,19 @@
         bibo:pubDate    "2021-06-09" ;
         bibo:startPage  "171" ;
         bibo:volume     "79" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/asp.79.e62282.figure2> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://treatment.plazi.org/id/FD0939C193A752B5ADF3B39DCE60C59B>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Keysercythere_enricoi_Brandao_2015> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/asp.79.e62282> ;
         dc:creator                "Karanovic, Ivana" , "Pham, Huyen Thi Minh" , "Yoo, Hyunsu" , "Tanaka, Hayato" ;
-        cito:cites                <http://dx.doi.org/10.3897/asp.79.e62282.figure2> .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 2. Scanning electron microscope images of valves of Keysercythere enricoi. A RV, external lateral view B LV, external lateral view C LV, internal lateral view D RV, internal lateral view. Scale bar: 200 μm." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553300" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -52,23 +52,24 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Podocopida>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
         dwc:class          "Ostracoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Podocopida" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ostracoda> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ostracoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Ostracoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Keysercythere_enricoi_Brandao_2015>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Keysercythere_enricoi> ;
         dwc:LSID                      "FD0939C1-93A7-52B5-ADF3-B39DCE60C59B" ;
         dwc:class                     "Ostracoda" ;
         dwc:family                    "Keysercytheridae" ;
@@ -78,11 +79,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Karanovic and Brandao, 2015" ;
-        dwc:species                   "enricoi" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Keysercythere_enricoi> .
+        dwc:species                   "enricoi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Keysercythere_enricoi>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Keysercythere" ;
         dwc:class          "Ostracoda" ;
         dwc:family         "Keysercytheridae" ;
         dwc:genus          "Keysercythere" ;
@@ -90,26 +91,25 @@
         dwc:order          "Podocopida" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "enricoi" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Keysercythere> .
+        dwc:species        "enricoi" .
 
 <http://taxon-name.plazi.org/id/Animalia/Keysercythere>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Keysercytheridae> ;
         dwc:class          "Ostracoda" ;
         dwc:family         "Keysercytheridae" ;
         dwc:genus          "Keysercythere" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Podocopida" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Keysercytheridae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Keysercytheridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Podocopida> ;
         dwc:class          "Ostracoda" ;
         dwc:family         "Keysercytheridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Podocopida" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Podocopida> .
+        dwc:rank           "family" .

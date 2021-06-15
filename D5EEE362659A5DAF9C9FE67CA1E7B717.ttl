@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,6 +16,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Dermatobranchus_fortunatus_Bergh_1888>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dermatobranchus_fortunatus> ;
         dwc:LSID                      "D5EEE362-659A-5DAF-9C9F-E67CA1E7B717" ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Arminidae" ;
@@ -25,11 +26,11 @@
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Bergh, 1888)" ;
-        dwc:species                   "fortunatus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Dermatobranchus_fortunatus> .
+        dwc:species                   "fortunatus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Dermatobranchus_fortunatus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Dermatobranchus" ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Arminidae" ;
         dwc:genus          "Dermatobranchus" ;
@@ -37,16 +38,20 @@
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
         dwc:rank           "species" ;
-        dwc:species        "fortunatus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Dermatobranchus> .
+        dwc:species        "fortunatus" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 19. A Armina scotti 41 mm B Dermatobranchus caeruleomaculatus 55 mm C Dermatobranchus dendronephthyphagus 40 mm D Dermatobranchus fortunatus 11 mm E Dermatobranchus semilunus 33 mm (photograph by Pau Urgell Plaza) F Dermatobranchus cf. striatus 14 mm G, H Dermatobranchus sp. 1 32 mm (G) and 28 mm (H) I, J Dermatobranchus sp. 2 27 mm K Bornella hermanni 12 mm L Bornella johnsonorum 35 mm." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553113" .
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -55,32 +60,27 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arminidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nudibranchia> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Arminidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nudibranchia> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://treatment.plazi.org/id/D5EEE362659A5DAF9C9FE67CA1E7B717>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Dermatobranchus_fortunatus_Bergh_1888> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.1042.64474> ;
         dc:creator                "M. Scott, Chad" , "Arnold, Spencer" , "Viyakarn, Voranop" , "A. Caballer Gutierrez, Manuel" , "Chavanich, Suchana" , "Mehrotra, Rahul" , "Monchanin, Coline" ;
-        cito:cites                <http://dx.doi.org/10.3897/zookeys.1042.64474.figure19> .
-
-<http://dx.doi.org/10.3897/zookeys.1042.64474.figure19>
-        a                        fabio:Figure ;
-        dc:description           "Figure 19. A Armina scotti 41 mm B Dermatobranchus caeruleomaculatus 55 mm C Dermatobranchus dendronephthyphagus 40 mm D Dermatobranchus fortunatus 11 mm E Dermatobranchus semilunus 33 mm (photograph by Pau Urgell Plaza) F Dermatobranchus cf. striatus 14 mm G, H Dermatobranchus sp. 1 32 mm (G) and 28 mm (H) I, J Dermatobranchus sp. 2 27 mm K Bornella hermanni 12 mm L Bornella johnsonorum 35 mm." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553113" .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://dx.doi.org/10.3897/zookeys.1042.64474>
         a               fabio:JournalArticle ;
@@ -92,24 +92,24 @@
         bibo:pubDate    "2021-06-09" ;
         bibo:startPage  "73" ;
         bibo:volume     "1042" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1042.64474.figure19> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Dermatobranchus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arminidae> ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Arminidae" ;
         dwc:genus          "Dermatobranchus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arminidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Nudibranchia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> .
+        dwc:rank           "order" .

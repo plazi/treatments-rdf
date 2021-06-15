@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Heterargus_pallens_Maddison_2010>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Heterargus_pallens> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Heterargus" ;
@@ -39,8 +40,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  ": Maddison 2010: 426" ;
-        dwc:species                   "pallens" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Heterargus_pallens> .
+        dwc:species                   "pallens" .
 
 <http://dx.doi.org/10.5281/zenodo.4918400>
         a                        fabio:Figure ;
@@ -49,13 +49,13 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Zopheridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://doi.org/10.5281/zenodo.4918608>
         a               fabio:JournalArticle ;
@@ -72,6 +72,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Heterargus_pallens>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Heterargus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Heterargus" ;
@@ -79,8 +80,7 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "pallens" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Heterargus> .
+        dwc:species        "pallens" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -90,7 +90,7 @@
 <http://treatment.plazi.org/id/0D16791C3E3FFFC2FF0BFCF1A377B35A>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Heterargus_pallens_Broun_1914> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Heterargus_pallens> ;
+        trt:citesTaxonName        <urn:Heterargus_pallens> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Protarphius_pallens_Broun_1914> , <http://taxon-concept.plazi.org/id/Animalia/Heterargus_pallens_Maddison_2010> , <http://taxon-concept.plazi.org/id/Animalia/Protarphius_palleus_Hudson_1923> ;
         trt:publishedIn           <http://doi.org/10.5281/zenodo.4918608> ;
         dc:creator                "Lord, Nathan P." , "Leschen, Richard A. B." ;
@@ -98,6 +98,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Protarphius_palleus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Protarphius" ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Protarphius" ;
@@ -105,20 +106,20 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "palleus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Protarphius> .
+        dwc:species        "palleus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Protarphius_palleus_Hudson_1923>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protarphius_palleus> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Protarphius" ;
@@ -127,22 +128,22 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  ": Hudson 1923: 369" ;
-        dwc:species                   "palleus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protarphius_palleus> .
+        dwc:species                   "palleus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Heterargus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Zopheridae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Heterargus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Zopheridae> .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Heterargus_pallens_Broun_1914>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Heterargus_pallens> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Heterargus" ;
@@ -151,11 +152,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Broun, 1914)" ;
-        dwc:species                   "pallens" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Heterargus_pallens> .
+        dwc:species                   "pallens" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Protarphius_pallens_Broun_1914>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protarphius_pallens> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Protarphius" ;
@@ -164,5 +165,4 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Broun, 1914 b: 179" ;
-        dwc:species                   "pallens" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Protarphius_pallens> .
+        dwc:species                   "pallens" .

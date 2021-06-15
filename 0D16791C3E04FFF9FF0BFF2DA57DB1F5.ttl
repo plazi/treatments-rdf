@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,18 +16,18 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://dx.doi.org/10.5281/zenodo.4918416>
         a                        fabio:Figure ;
@@ -36,6 +36,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Notocoxelus_instabilis_Lord_2014>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Notocoxelus_instabilis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Notocoxelus" ;
@@ -44,11 +45,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Broun, 1914)" ;
-        dwc:species                   "instabilis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Notocoxelus_instabilis> .
+        dwc:species                   "instabilis" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Coxelus_instabilis_Broun_1914>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Coxelus_instabilis> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Coxelus" ;
@@ -57,22 +58,21 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Broun, 1914 b: 177" ;
-        dwc:species                   "instabilis" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Coxelus_instabilis> .
+        dwc:species                   "instabilis" .
 
 <http://taxon-name.plazi.org/id/Animalia/Zopheridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/0D16791C3E04FFF9FF0BFF2DA57DB1F5>
         a                        trt:Treatment ;
-        trt:citesTaxonName       <http://tb.plazi.org/GgServer/lodRdf/Notocoxelus_instabilis> ;
+        trt:citesTaxonName       <urn:Notocoxelus_instabilis> ;
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Notocoxelus_instabilis_Lord_2014> ;
         trt:deprecates           <http://taxon-concept.plazi.org/id/Animalia/Coxelus_instabilis_Broun_1914> ;
         trt:publishedIn          <http://doi.org/10.5281/zenodo.4918655> ;
@@ -81,14 +81,14 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Notocoxelus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Zopheridae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Notocoxelus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Zopheridae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -97,15 +97,16 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Notocoxelus_instabilis>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Notocoxelus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Notocoxelus" ;
@@ -113,8 +114,7 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "instabilis" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Notocoxelus> .
+        dwc:species        "instabilis" .
 
 <http://doi.org/10.5281/zenodo.4918655>
         a               fabio:JournalArticle ;

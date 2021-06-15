@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,18 +16,18 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://dx.doi.org/10.11646/zootaxa.3807.1.1>
         a               fabio:JournalArticle ;
@@ -44,19 +44,19 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Thysanoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://treatment.plazi.org/id/4A1A87F9664447362BFAFF34C092FD5D>
         a                    trt:Treatment ;
-        trt:citesTaxonName   <http://tb.plazi.org/GgServer/lodRdf/Agavaceae> , <http://tb.plazi.org/GgServer/lodRdf/Yucca> , <http://tb.plazi.org/GgServer/lodRdf/Bagnalliella_undetermined> ;
+        trt:citesTaxonName   <urn:Yucca> , <urn:Agavaceae> , <urn:Bagnalliella_undetermined> ;
         trt:deprecates       <http://taxon-concept.plazi.org/id/Animalia/Bagnalliella_Karny_1920> ;
         trt:publishedIn      <http://dx.doi.org/10.11646/zootaxa.3807.1.1> ;
-        trt:treatsTaxonName  <http://taxon-name.plazi.org/id/Animalia/Bagnalliella> ;
+        trt:treatsTaxonName  <urn:Bagnalliella> ;
         dc:creator           "Mound, Laurence A." , "Qiao, Ge-Xia" , "Dang, Li-Hong" ;
         cito:cites           <http://dx.doi.org/10.5281/zenodo.4918130> , <http://taxon-concept.plazi.org/id/Animalia/Cephalothrips_yuccae_Hinds_1902> .
 
@@ -67,6 +67,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Bagnalliella_Karny_1920>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Bagnalliella> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Phlaeothripidae" ;
         dwc:genus                     "Bagnalliella" ;
@@ -74,11 +75,11 @@
         dwc:order                     "Thysanoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Karny, 1920: 41" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Bagnalliella> .
+        dwc:scientificNameAuthorship  "Karny, 1920: 41" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cephalothrips_yuccae_Hinds_1902>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cephalothrips_yuccae> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Phlaeothripidae" ;
         dwc:genus                     "Cephalothrips" ;
@@ -87,29 +88,28 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Hinds" ;
-        dwc:species                   "yuccae" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Cephalothrips_yuccae> .
+        dwc:species                   "yuccae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Bagnalliella>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Phlaeothripidae" ;
         dwc:genus          "Bagnalliella" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thysanoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Phlaeothripidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Thysanoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Thysanoptera> .
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.5281/zenodo.4918130>
         a                        fabio:Figure ;

@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -14,8 +14,14 @@
 @prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix dc:    <http://purl.org/dc/elements/1.1/> .
 
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figure 21. A Phestilla lugubris 30 mm B Phestilla melanobrachia 30 mm (photograph by Tom Jang) C Phestilla cf. minor 18 mm D Phestilla viei 20 mm E Phestilla subodiosa 2 mm F Phestilla sp. 1 8 mm G Phestilla sp. 2 4 mm H Phestilla sp. 3 3 mm I Trinchesia sp. 1 10 mm (photograph by Wanraya Kraikruan) J Trinchesia sp. 2 40 mm K Trinchesia sp. 3 45 mm (photograph by Pau Urgell Plaza) L Trinchesiidae sp. 6 mm." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553115" .
+
 <http://taxon-concept.plazi.org/id/Animalia/Tenellia_A.Costa_1866>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tenellia> ;
         dwc:LSID                      "AA1AC8DC-64D4-5BDB-87D6-D474372A1F72" ;
         dwc:class                     "Gastropoda" ;
         dwc:family                    "Trinchesiidae" ;
@@ -24,23 +30,22 @@
         dwc:order                     "Nudibranchia" ;
         dwc:phylum                    "Mollusca" ;
         dwc:rank                      "family" ;
-        dwc:scientificNameAuthorship  "sp." ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Tenellia> .
+        dwc:scientificNameAuthorship  "sp." .
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Mollusca> .
+        dwc:rank           "class" .
 
 <http://treatment.plazi.org/id/AA1AC8DC64D45BDB87D6D474372A1F72>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Tenellia_A.Costa_1866> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.1042.64474> ;
         dc:creator                "Monchanin, Coline" , "Viyakarn, Voranop" , "Mehrotra, Rahul" , "M. Scott, Chad" , "A. Caballer Gutierrez, Manuel" , "Arnold, Spencer" , "Chavanich, Suchana" ;
-        cito:cites                <http://dx.doi.org/10.3897/zookeys.1042.64474.figure21> .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -49,20 +54,20 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Tenellia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Nudibranchia" ;
         dwc:class          "Gastropoda" ;
         dwc:family         "Trinchesiidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Nudibranchia> .
+        dwc:rank           "family" .
 
 <http://dx.doi.org/10.3897/zookeys.1042.64474>
         a               fabio:JournalArticle ;
@@ -74,18 +79,13 @@
         bibo:pubDate    "2021-06-09" ;
         bibo:startPage  "73" ;
         bibo:volume     "1042" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1042.64474.figure21> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Nudibranchia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
         dwc:class          "Gastropoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Nudibranchia" ;
         dwc:phylum         "Mollusca" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Gastropoda> .
-
-<http://dx.doi.org/10.3897/zookeys.1042.64474.figure21>
-        a                        fabio:Figure ;
-        dc:description           "Figure 21. A Phestilla lugubris 30 mm B Phestilla melanobrachia 30 mm (photograph by Tom Jang) C Phestilla cf. minor 18 mm D Phestilla viei 20 mm E Phestilla subodiosa 2 mm F Phestilla sp. 1 8 mm G Phestilla sp. 2 4 mm H Phestilla sp. 3 3 mm I Trinchesia sp. 1 10 mm (photograph by Wanraya Kraikruan) J Trinchesia sp. 2 40 mm K Trinchesia sp. 3 45 mm (photograph by Pau Urgell Plaza) L Trinchesiidae sp. 6 mm." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553115" .
+        dwc:rank           "order" .

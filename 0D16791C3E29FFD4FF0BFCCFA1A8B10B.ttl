@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ablabus_lobiferus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ablabus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Ablabus" ;
@@ -38,23 +39,22 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "lobiferus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ablabus> .
+        dwc:species        "lobiferus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Zopheridae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/0D16791C3E29FFD4FF0BFCCFA1A8B10B>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Ablabus_lobifer_Broun_1909> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Ablabus_lobifer> ;
+        trt:citesTaxonName        <urn:Ablabus_lobifer> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Ablabus_lobiferus_Maddison_2010> , <http://taxon-concept.plazi.org/id/Animalia/Symphysius_lobifer_Broun_1909> ;
         trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3809.1.1> ;
         dc:creator                "Leschen, Richard A. B." , "Lord, Nathan P." ;
@@ -80,6 +80,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Ablabus_lobifer>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Ablabus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Ablabus" ;
@@ -87,11 +88,11 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "lobifer" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Ablabus> .
+        dwc:species        "lobifer" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ablabus_lobiferus_Maddison_2010>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ablabus_lobiferus> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Ablabus" ;
@@ -100,8 +101,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  ": Maddison 2010: 426" ;
-        dwc:species                   "lobiferus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ablabus_lobiferus> .
+        dwc:species                   "lobiferus" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -110,6 +110,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Symphysius_lobifer_Broun_1909>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Symphysius_lobifer> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Symphysius" ;
@@ -118,31 +119,31 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Broun, 1909 a: 392" ;
-        dwc:species                   "lobifer" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Symphysius_lobifer> .
+        dwc:species                   "lobifer" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Ablabus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Zopheridae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Zopheridae" ;
         dwc:genus          "Ablabus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Zopheridae> .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ablabus_lobifer_Broun_1909>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ablabus_lobifer> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Zopheridae" ;
         dwc:genus                     "Ablabus" ;
@@ -151,5 +152,4 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Broun, 1909)" ;
-        dwc:species                   "lobifer" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Ablabus_lobifer> .
+        dwc:species                   "lobifer" .
