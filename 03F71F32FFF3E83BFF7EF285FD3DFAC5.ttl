@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Asphondylia_punica_Marchal_1897>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Asphondylia_punica> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Cecidomyiidae" ;
         dwc:genus                     "Asphondylia" ;
@@ -39,13 +40,12 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Marchal" ;
-        dwc:species                   "punica" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Asphondylia_punica> .
+        dwc:species                   "punica" .
 
 <http://treatment.plazi.org/id/03F71F32FFF3E83BFF7EF285FD3DFAC5>
         a                         trt:Treatment ;
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Asphondylia_punica_Marchal_1897> ;
-        trt:citesTaxonName        <http://tb.plazi.org/GgServer/lodRdf/Asphondylia_undetermined> , <http://tb.plazi.org/GgServer/lodRdf/Atriplex_halimus> , <http://tb.plazi.org/GgServer/lodRdf/Atriplex> , <http://tb.plazi.org/GgServer/lodRdf/Hymenoptera> ;
+        trt:citesTaxonName        <urn:Asphondylia_undetermined> , <urn:Atriplex_halimus> , <urn:Atriplex> , <urn:Hymenoptera> ;
         trt:deprecates            <http://taxon-concept.plazi.org/id/Animalia/Asphondylia_conglomerata_Stefani_1900> ;
         trt:publishedIn           <http://dx.doi.org/10.11646/zootaxa.3869.4.3> ;
         dc:creator                "Dorchin, Netta" , "Mifsud, David" , "Askew, Richard" ;
@@ -53,6 +53,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Asphondylia_conglomerata_Stefani_1900>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Asphondylia_conglomerata> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Cecidomyiidae" ;
         dwc:genus                     "Asphondylia" ;
@@ -61,17 +62,16 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "De Stefani 1900: 16" ;
-        dwc:species                   "conglomerata" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Asphondylia_conglomerata> .
+        dwc:species                   "conglomerata" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -80,6 +80,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Asphondylia_conglomerata>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Asphondylia" ;
         dwc:class          "Insecta" ;
         dwc:family         "Cecidomyiidae" ;
         dwc:genus          "Asphondylia" ;
@@ -87,8 +88,7 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "conglomerata" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Asphondylia> .
+        dwc:species        "conglomerata" .
 
 <http://dx.doi.org/10.5281/zenodo.4947319>
         a                        fabio:Figure ;
@@ -97,14 +97,14 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Asphondylia>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cecidomyiidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Cecidomyiidae" ;
         dwc:genus          "Asphondylia" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Cecidomyiidae> .
+        dwc:rank           "genus" .
 
 <http://dx.doi.org/10.5281/zenodo.4947321>
         a                        fabio:Figure ;
@@ -118,6 +118,7 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Asphondylia_punica>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Asphondylia" ;
         dwc:class          "Insecta" ;
         dwc:family         "Cecidomyiidae" ;
         dwc:genus          "Asphondylia" ;
@@ -125,8 +126,7 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "punica" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Asphondylia> .
+        dwc:species        "punica" .
 
 <http://dx.doi.org/10.11646/zootaxa.3869.4.3>
         a               fabio:JournalArticle ;
@@ -143,10 +143,10 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Cecidomyiidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Cecidomyiidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> .
+        dwc:rank           "family" .

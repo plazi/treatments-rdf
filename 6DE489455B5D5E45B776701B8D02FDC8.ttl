@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,46 +16,51 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
 
 <http://treatment.plazi.org/id/6DE489455B5D5E45B776701B8D02FDC8>
         a                        trt:Treatment ;
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Austranillus_jinayrianus_Giachino_2021> ;
         trt:publishedIn          <http://dx.doi.org/10.3897/zookeys.1044.58844> ;
         dc:creator               "Perina, Giulia" , "Eberhard, Stefan" , "Giachino, Pier Mauro" ;
-        cito:cites               <http://dx.doi.org/10.3897/zookeys.1044.58844.figures36-37> .
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Austranillus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Austranillus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figures 36, 37. Austranillus jinayrianus sp. nov., HT ♂ 36 habitus 37 aedeagus in lateral view. Scale bars: 0.1 mm." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553771" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -64,6 +69,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Austranillus_jinayrianus_Giachino_2021>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Austranillus_jinayrianus> ;
         dwc:LSID                      "http://zoobank.org/52F0EC77-B63A-49DA-868C-9637C3B5E0AF" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
@@ -73,17 +79,16 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Giachino & Eberhard & Perina, 2021" ;
-        dwc:species                   "jinayrianus" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Austranillus_jinayrianus> .
+        dwc:species                   "jinayrianus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://dx.doi.org/10.3897/zookeys.1044.58844>
         a               fabio:JournalArticle ;
@@ -95,10 +100,11 @@
         bibo:pubDate    "2021-06-16" ;
         bibo:startPage  "269" ;
         bibo:volume     "1044" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1044.58844.figures36-37> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Austranillus_jinayrianus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Austranillus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Austranillus" ;
@@ -106,10 +112,4 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "jinayrianus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Austranillus> .
-
-<http://dx.doi.org/10.3897/zookeys.1044.58844.figures36-37>
-        a                        fabio:Figure ;
-        dc:description           "Figures 36, 37. Austranillus jinayrianus sp. nov., HT ♂ 36 habitus 37 aedeagus in lateral view. Scale bars: 0.1 mm." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553771" .
+        dwc:species        "jinayrianus" .

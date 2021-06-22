@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -19,10 +19,11 @@
         trt:definesTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Magnanillus_sabae_Giachino_2021> ;
         trt:publishedIn          <http://dx.doi.org/10.3897/zookeys.1044.58844> ;
         dc:creator               "Perina, Giulia" , "Eberhard, Stefan" , "Giachino, Pier Mauro" ;
-        cito:cites               <http://dx.doi.org/10.3897/zookeys.1044.58844.figures18-20> .
+        cito:cites               <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Magnanillus_sabae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Magnanillus" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Magnanillus" ;
@@ -30,21 +31,26 @@
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "sabae" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Magnanillus> .
+        dwc:species        "sabae" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figures 18 - 20. Magnanillus sabae sp. nov., HT ♂ 18 habitus 19 right metafemur and metatrochanter in ventral view 20 aedeagus in lateral view. Scale bars: 0.1 mm." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553765" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Magnanillus_sabae_Giachino_2021>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Magnanillus_sabae> ;
         dwc:LSID                      "http://zoobank.org/62280A8E-1510-4C97-9D71-BA0DE7F6B321" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
@@ -54,38 +60,32 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Giachino & Eberhard & Perina, 2021" ;
-        dwc:species                   "sabae" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Magnanillus_sabae> .
+        dwc:species                   "sabae" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
         dwc:kingdom  "Animalia" ;
         dwc:rank     "kingdom" .
 
-<http://dx.doi.org/10.3897/zookeys.1044.58844.figures18-20>
-        a                        fabio:Figure ;
-        dc:description           "Figures 18 - 20. Magnanillus sabae sp. nov., HT ♂ 18 habitus 19 right metafemur and metatrochanter in ventral view 20 aedeagus in lateral view. Scale bars: 0.1 mm." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/553765" .
-
 <http://taxon-name.plazi.org/id/Animalia/Magnanillus>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Magnanillus" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://dx.doi.org/10.3897/zookeys.1044.58844>
         a               fabio:JournalArticle ;
@@ -97,19 +97,19 @@
         bibo:pubDate    "2021-06-16" ;
         bibo:startPage  "269" ;
         bibo:volume     "1044" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1044.58844.figures18-20> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .

@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,21 +16,22 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Megistopoda_aranea>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Megistopoda" ;
         dwc:class          "Insecta" ;
         dwc:family         "Hippoboscidae" ;
         dwc:genus          "Megistopoda" ;
@@ -38,41 +39,41 @@
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
         dwc:rank           "species" ;
-        dwc:species        "aranea" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Megistopoda> .
+        dwc:species        "aranea" .
 
 <http://taxon-name.plazi.org/id/Animalia/Hippoboscidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Hippoboscidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Diptera> .
+        dwc:rank           "family" .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
+        dwc:rank           "order" .
 
 <http://taxon-name.plazi.org/id/Animalia/Megistopoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hippoboscidae> ;
         dwc:class          "Insecta" ;
         dwc:family         "Hippoboscidae" ;
         dwc:genus          "Megistopoda" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Diptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Hippoboscidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Megistopoda_aranea_Wenzel_1966>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megistopoda_aranea> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Hippoboscidae" ;
         dwc:genus                     "Megistopoda" ;
@@ -81,8 +82,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  ": Wenzel et al., 1966: 541 - 542" ;
-        dwc:species                   "aranea" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megistopoda_aranea> .
+        dwc:species                   "aranea" .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -91,6 +91,7 @@
 
 <http://taxon-concept.plazi.org/id/Animalia/Megistopoda_aranea_Coquillett_1899>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megistopoda_aranea> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Hippoboscidae" ;
         dwc:genus                     "Megistopoda" ;
@@ -99,11 +100,11 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "(Coquillett, 1899)" ;
-        dwc:species                   "aranea" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Megistopoda_aranea> .
+        dwc:species                   "aranea" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterellipsis_aranea_Coquillett_1899>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pterellipsis_aranea> ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Hippoboscidae" ;
         dwc:genus                     "Pterellipsis" ;
@@ -112,8 +113,7 @@
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "species" ;
         dwc:scientificNameAuthorship  "Coquillett, 1899: 334" ;
-        dwc:species                   "aranea" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Pterellipsis_aranea> .
+        dwc:species                   "aranea" .
 
 <http://doi.org/10.5281/zenodo.4985250>
         a               fabio:JournalArticle ;

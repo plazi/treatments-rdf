@@ -5,7 +5,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cito:  <http://purl.org/spar/cito/> .
-@prefix dwc:   <http://digir.net/schema/conceptual/darwin/2003/1.0> .
+@prefix dwc:   <http://rs.tdwg.org/dwc/terms/> .
 @prefix sdd:   <http://tdwg.org/sdd#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix trt:   <http://plazi.org/vocab/treatment#> .
@@ -16,28 +16,33 @@
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "phylum" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia> .
+        dwc:rank           "phylum" .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "class" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Arthropoda> .
+        dwc:rank           "class" .
 
 <http://taxon-name.plazi.org/id/Animalia/Carabidae>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "family" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Coleoptera> .
+        dwc:rank           "family" .
+
+<http://dx.doi.org/10.5281/zenodo.>
+        a                        fabio:Figure ;
+        dc:description           "Figures 41, 42. Dorsal habitus of 41 Adelopomorpha tuberculata 42 holotype of A. glabra Heller, with labels. Images of A. glabra by O. Jaeger, reproduced with permission from MTKD." ;
+        fabio:hasRepresentation  "https://binary.pensoft.net/fig/554056" .
 
 <http://dx.doi.org/10.3897/zookeys.1044.63775>
         a               fabio:JournalArticle ;
@@ -49,7 +54,7 @@
         bibo:pubDate    "2021-06-16" ;
         bibo:startPage  "375" ;
         bibo:volume     "1044" ;
-        fabio:hasPart   <http://dx.doi.org/10.3897/zookeys.1044.63775.figures41-42> .
+        fabio:hasPart   <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia>
         a            dwcFP:TaxonName ;
@@ -61,35 +66,31 @@
         trt:augmentsTaxonConcept  <http://taxon-concept.plazi.org/id/Animalia/Adelopomorpha_Heller_1916> ;
         trt:publishedIn           <http://dx.doi.org/10.3897/zookeys.1044.63775> ;
         dc:creator                "Gueorguiev, Borislav" , "Will, Kipling" ;
-        cito:cites                <http://dx.doi.org/10.3897/zookeys.1044.63775.figures41-42> .
+        cito:cites                <http://dx.doi.org/10.5281/zenodo.> .
 
 <http://taxon-name.plazi.org/id/Animalia/Adelopomorpha>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  "http://taxon-name.plazi.org/id/Animalia/Carabidae" ;
         dwc:class          "Insecta" ;
         dwc:family         "Carabidae" ;
         dwc:genus          "Adelopomorpha" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "genus" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Carabidae> .
+        dwc:rank           "genus" .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
         a                  dwcFP:TaxonName ;
+        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
         dwc:class          "Insecta" ;
         dwc:kingdom        "Animalia" ;
         dwc:order          "Coleoptera" ;
         dwc:phylum         "Arthropoda" ;
-        dwc:rank           "order" ;
-        trt:hasParentName  <http://taxon-name.plazi.org/id/Animalia/Insecta> .
-
-<http://dx.doi.org/10.3897/zookeys.1044.63775.figures41-42>
-        a                        fabio:Figure ;
-        dc:description           "Figures 41, 42. Dorsal habitus of 41 Adelopomorpha tuberculata 42 holotype of A. glabra Heller, with labels. Images of A. glabra by O. Jaeger, reproduced with permission from MTKD." ;
-        fabio:hasRepresentation  "https://binary.pensoft.net/fig/554056" .
+        dwc:rank           "order" .
 
 <http://taxon-concept.plazi.org/id/Animalia/Adelopomorpha_Heller_1916>
         a                             dwcFP:TaxonConcept ;
+        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Adelopomorpha> ;
         dwc:LSID                      "785255D1-C155-566C-BD99-B3A1C137AFAB" ;
         dwc:class                     "Insecta" ;
         dwc:family                    "Carabidae" ;
@@ -98,5 +99,4 @@
         dwc:order                     "Coleoptera" ;
         dwc:phylum                    "Arthropoda" ;
         dwc:rank                      "genus" ;
-        dwc:scientificNameAuthorship  "Heller, 1916" ;
-        trt:hasTaxonName              <http://taxon-name.plazi.org/id/Animalia/Adelopomorpha> .
+        dwc:scientificNameAuthorship  "Heller, 1916" .
