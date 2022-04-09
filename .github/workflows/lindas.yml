@@ -1,0 +1,34 @@
+name: lindas
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          DEBIAN_FRONTEND=noninteractive sudo apt install -y raptor2-utils
+
+      - name: Convert all TTL files to n3 and append the triples to a single file
+        run: |
+          cd $GITHUB_WORKSPACE
+          mkdir -p $GITHUB_WORKSPACE/n3
+          for file in $(find . -type f); do
+            echo "found $file, adding"
+            rapper -e -w -q $file --input turtle >> $GITHUB_WORKSPACE/n3/data.n3
+          done
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: $GITHUB_WORKSPACE/n3/data.n3
+          generate_release_notes: true
