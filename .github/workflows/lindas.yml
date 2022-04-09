@@ -23,8 +23,10 @@ jobs:
           cd $GITHUB_WORKSPACE
           mkdir -p $GITHUB_WORKSPACE/n3
           for file in $(find . -type f); do
-            echo "found $file, adding"
-            rapper -e -w -q $file --input turtle >> $GITHUB_WORKSPACE/n3/data.n3
+            if [[ $file == *.ttl ]]
+              echo "found $file, adding"
+              rapper -e -w -q $file --input turtle >> $GITHUB_WORKSPACE/n3/data.n3
+        
           done
 
       - name: Release
