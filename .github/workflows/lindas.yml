@@ -23,7 +23,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           mkdir -p $GITHUB_WORKSPACE/n3
           for file in $(find . -type f); do
-            if [[ $file == *.ttl ]]
+            if [[ $file == *.ttl ]]; then
               echo "found $file, adding"
               rapper -e -w -q $file --input turtle >> $GITHUB_WORKSPACE/n3/data.n3
             fi
