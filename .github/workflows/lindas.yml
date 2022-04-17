@@ -2,7 +2,8 @@ name: lindas
 
 on:
   push:
-    branches: [ main ]
+    tags:
+      - '*'
 
 jobs:
   build:
@@ -34,4 +35,4 @@ jobs:
         with:
           files: $GITHUB_WORKSPACE/n3/data.n3
           generate_release_notes: true
-          tag_name: ${{ github.sha }}
+          tag_name: ${{ github.ref_name }}
