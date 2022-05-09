@@ -1,13 +1,13 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink> .
 
 <http://doi.org/10.5281/zenodo.6097758>
     dc:creator "Fernandes, Jose Antonio Marin", "Santos, Bianca Tamires Silva Dos", "Silva, Valeria Juliete Da" ;
@@ -41,6 +41,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/240350/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Ascra_cordifer_Walker_1868>
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ascra_cordifer> ;
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Ascra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Walker, 1868: 452" ;
+    dwc:species "cordifer" ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Edessa_albicors_Stal_1872>
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Edessa_albicors> ;
     dwc:class "Insecta" ;
@@ -54,18 +67,52 @@
     dwc:species "albicors" ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Plantae/Ascra_cordifer_Walker_1868>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Ascra_cordifer> ;
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ascra>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Ascra" ;
-    dwc:kingdom "Plantae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ascra_cordifer>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ascra> ;
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Ascra" ;
+    dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Walker, 1868: 452" ;
     dwc:species "cordifer" ;
-    a dwcFP:TaxonConcept .
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ascra_cordifera>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ascra> ;
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Ascra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cordifera" ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Edessa>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
@@ -90,75 +137,28 @@
     dwc:species "albicors" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Ascra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pentatomidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
-    dwc:family "Pentatomidae" ;
-    dwc:genus "Ascra" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Ascra_cordifer>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ascra> ;
-    dwc:class "Insecta" ;
-    dwc:family "Pentatomidae" ;
-    dwc:genus "Ascra" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "cordifer" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Ascra_cordifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ascra> ;
-    dwc:class "Insecta" ;
-    dwc:family "Pentatomidae" ;
-    dwc:genus "Ascra" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "cordifera" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Plantae" ;
+    dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
-    dwc:kingdom "Plantae" ;
+    dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Pentatomidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Hemiptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Pentatomidae>
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
-    dwc:kingdom "Plantae" ;
+    dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
@@ -166,7 +166,7 @@
 
 <http://treatment.plazi.org/id/03A587DFD717FF938DDBFB7D86AFF80D>
     trt:citesTaxonName <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/03/A5/87/Edessa_cordifera> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Edessa_albicors_Stal_1872>, <http://taxon-concept.plazi.org/id/Plantae/Ascra_cordifer_Walker_1868> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ascra_cordifer_Walker_1868>, <http://taxon-concept.plazi.org/id/Animalia/Edessa_albicors_Stal_1872> ;
     trt:publishedIn <http://doi.org/10.5281/zenodo.6097758> ;
     trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Ascra_cordifera> ;
     dc:creator "Fernandes, Jose Antonio Marin", "Santos, Bianca Tamires Silva Dos", "Silva, Valeria Juliete Da" ;
