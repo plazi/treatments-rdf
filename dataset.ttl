@@ -1,0 +1,74 @@
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+
+<https://lindas.admin.ch/foen/plazi>
+    a <http://rdfs.org/ns/void#Dataset> ;
+    a <http://www.w3.org/ns/dcat#Dataset> ;
+    a <http://schema.org/Dataset> ;
+    # a <https://cube.link/Cube> ; # TODO: What is this and is it needed?
+
+    <http://purl.org/dc/terms/creator> <https://plazi.org> ;
+    <http://schema.org/creator> <https://plazi.org> ;
+    <http://schema.org/contributor> <https://plazi.org> ;
+    <http://schema.org/publisher> <https://plazi.org> ;
+    <http://purl.org/dc/terms/publisher> "Plazi" ;
+
+    <http://purl.org/dc/terms/identifier> "plazi-treatments-rdf" ;
+
+    <http://purl.org/dc/terms/title> "Plazi Taxonomische Treatments"@de ,
+        "Plazi Treatments Taxonomiques"@fr ,
+        "Plazi Treatments Tassonomici"@it ,
+        "Plazi Taxonomic Treatments"@en ;
+    <http://schema.org/name> "Plazi Taxonomische Treatments"@de ,
+        "Plazi Traitements Taxonomiques"@fr ,
+        "Plazi Treatments Tassonomici"@it ,
+        "Plazi Taxonomic Treatments"@en ;
+    
+    <http://purl.org/dc/terms/description> """The Plazi TreatmentBank deals with scientific, published, biosystematic literature. It is the literature documenting and describing all the world’s ca 1.9 Million known species in an estimated corpus of over 500 Million published pages. The cited publications in Plazi are all available at the Biodiversity Literature Repository at Zenodo/CERN.
+
+Treatments are well defined parts of articles that define the particular usage of a scientific name by an author at a given time (the publication). With other words, each scientific name has one to several treatments, depending on whether there exists only an original description of a species, or whether there are subsequent re-descriptions. Similar to bibliographic references, treatments can be cited, and subsequent usages of names cite earlier treatments.
+
+Treatments are a synthesis of the knowledge about a given species at a given time. This data as available on Lindas allows to access the most current scientific consensus on biological taxonomy, fully references the relevant taxonomic literature, and links many collected specimens and images which are stored on zenodo."""@en ;
+    <http://schema.org/description>  """The Plazi TreatmentBank deals with scientific, published, biosystematic literature. It is the literature documenting and describing all the world’s ca 1.9 Million known species in an estimated corpus of over 500 Million published pages. The cited publications in Plazi are all available at the Biodiversity Literature Repository at Zenodo/CERN.
+
+Treatments are well defined parts of articles that define the particular usage of a scientific name by an author at a given time (the publication). With other words, each scientific name has one to several treatments, depending on whether there exists only an original description of a species, or whether there are subsequent re-descriptions. Similar to bibliographic references, treatments can be cited, and subsequent usages of names cite earlier treatments.
+
+Treatments are a synthesis of the knowledge about a given species at a given time. This data as available on Lindas allows to access the most current scientific consensus on biological taxonomy, fully references the relevant taxonomic literature, and links many collected specimens and images which are stored on zenodo."""@en ;
+
+    <http://schema.org/dateCreated> "2023-07-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    <http://purl.org/dc/terms/issued> "2023-07-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    <http://schema.org/datePublished> "2023-07-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    # These are added by the ingest: <http://purl.org/dc/terms/modified> <http://schema.org/dateModified> ;
+
+    <http://rdfs.org/ns/void#sparqlEndpoint> <https://lindas.admin.ch/query> ;
+    <http://www.w3.org/ns/dcat#accessURL> <https://lindas.admin.ch/query> ;
+
+    <http://purl.org/dc/terms/license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    <http://purl.org/dc/terms/rights> <https://ld.admin.ch/vocabulary/TermsOfUse/Open-Use> ;
+
+    <http://www.w3.org/ns/dcat#contactPoint> [
+        a vcard:Organization ;
+        vcard:fn "Plazi" ;
+        vcard:hasEmail <mailto:info@plazi.org> ] ;
+    <http://schema.org/contactPoint> [
+        a <http://schema.org/ContactPoint> ;
+        <http://schema.org/name> "Plazi" ;
+        <http://schema.org/email> "info@plazi.org>" ] ;
+
+    <http://www.w3.org/ns/dcat#landingPage> <https://synospecies.plazi.org> ;
+
+    <http://schema.org/workExample> [
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/CreativeWork> ;
+        <http://schema.org/name> "Example SPARQL Query" ;
+        <http://schema.org/url> <https://lindas.admin.ch/sparql#?query=PREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX%20dwc%3A%20%3Chttp%3A%2F%2Frs.tdwg.org%2Fdwc%2Fterms%2F%3E%0APREFIX%20treat%3A%20%3Chttp%3A%2F%2Fplazi.org%2Fvocab%2Ftreatment%23%3E%0APREFIX%20dc%3A%20%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0ASELECT%20DISTINCT%20%3Fgenus%20%3Fspecies%20%3Fsubspecies%20%3Fdefining_Treatment%20(GROUP_CONCAT(%3Fc)%20as%20%3Fauthors)%20WHERE%20%7B%20%0A%20%20GRAPH%20%3Chttps%3A%2F%2Flindas.admin.ch%2Ffoen%2Fplazi%3E%20%7B%0A%20%20%20%20%3Ftc%20dwc%3Agenus%20%22Felis%22%20.%0A%20%20%20%20%3Ftc%20dwc%3Agenus%20%3Fgenus%20.%0A%20%20%20%20%3Ftc%20dwc%3Aspecies%20%3Fspecies%20.%0A%20%20%20%20OPTIONAL%20%7B%20%3Ftc%20dwc%3AsubSpecies%20%3Fsubspecies%20.%20%7D%0A%20%20%20%20%3Ftc%20a%20%3Chttp%3A%2F%2Ffilteredpush.org%2Fontologies%2Foa%2FdwcFP%23TaxonConcept%3E%20.%20%0A%20%20%20%20%3Fdefining_Treatment%20treat%3AdefinesTaxonConcept%20%3Ftc%20.%20%0A%20%20%20%20%3Fdefining_Treatment%20dc%3Acreator%20%3Fc%20.%0A%20%20%7D%0A%7D%0AGROUP%20BY%20%3Fgenus%20%3Fspecies%20%3Fsubspecies%20%3Fdefining_Treatment&endpoint=https%3A%2F%2Flindas.admin.ch%2Fquery> ;
+        <http://schema.org/encodingFormat> "application/sparql-query" ] ;
+
+    # TODO: What are these and are they needed?
+    # <http://schema.org/about> <https://register.ld.admin.ch/foen/theme/14> ;
+    # <http://www.w3.org/ns/dcat#theme> <https://register.ld.admin.ch/opendataswiss/category/agriculture> ;
+    # <http://www.w3.org/ns/dcat#theme> <https://register.ld.admin.ch/opendataswiss/category/territory> ;
+    # <https://cube.link/observationSet> <https://environment.ld.admin.ch/foen/gefahren-waldbrand-warnung/1/observation/> ;
+    # <https://cube.link/observationConstraint> <https://environment.ld.admin.ch/foen/gefahren-waldbrand-warnung/1/shape/> ;
+    # <http://schema.org/version> "1"^^<http://www.w3.org/2001/XMLSchema#integer> ;
+
+    <http://schema.org/creativeWorkStatus> <https://ld.admin.ch/vocabulary/CreativeWorkStatus/Published> .
+
