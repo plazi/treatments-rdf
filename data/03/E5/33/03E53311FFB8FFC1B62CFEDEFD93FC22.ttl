@@ -5,29 +5,31 @@
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.24823/EJB.2022.407>
-    dc:creator "Fuentes, Alfredo F.", "Moonlight, Peter" ;
-    dc:date "2022" ;
-    dc:title "AN UPDATED CHECKLIST AND KEY TO THE SPECIES OF BOLIVIAN BEGONIA, INCLUDING ONE NEW SPECIES" ;
+treatment:03E53311FFB8FFC1B62CFEDEFD93FC22
+    dc:creator "Moonlight, Peter; Fuentes, Alfredo F." ;
+    dc:title "Begonia geraniifolia Hook. f." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Begonia_heliantha> ;
+    trt:publishedIn <http://dx.doi.org/10.24823/ejb.2022.407> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Begonia_geraniifolia> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.24823/ejb.2022.407>
     bibo:endPage "66" ;
     bibo:issue "407" ;
     bibo:journal "Edinburgh Journal of Botany" ;
     bibo:pubDate "2022-08-18" ;
     bibo:startPage "1" ;
     bibo:volume "79" ;
+    dc:creator "Moonlight, Peter; Fuentes, Alfredo F." ;
+    dc:date "2022" ;
+    dc:title "AN UPDATED CHECKLIST AND KEY TO THE SPECIES OF BOLIVIAN BEGONIA, INCLUDING ONE NEW SPECIES" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Begonia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Begoniaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Begonia_Foster_1958>
     dwc:class "Magnoliopsida" ;
     dwc:family "Begoniaceae" ;
     dwc:genus "Begonia" ;
@@ -35,10 +37,12 @@
     dwc:order "Cucurbitales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Foster, 1958" ;
+    rdf:seeAlso <https://www.catalogueoflife.org/data/taxon/87YKB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Begonia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Begonia_geraniifolia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Begonia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Begoniaceae" ;
     dwc:genus "Begonia" ;
@@ -47,46 +51,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "geraniifolia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Begonia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Begonia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Begoniaceae" ;
+    dwc:genus "Begonia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Begoniaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Begoniaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Begoniaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Cucurbitales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Cucurbitales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Cucurbitales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E53311FFB8FFC1B62CFEDEFD93FC22>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/E5/33/Begonia_heliantha> ;
-    trt:publishedIn <http://dx.doi.org/10.24823/ejb.2022.407> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Begonia_geraniifolia> ;
-    dc:creator "Fuentes, Alfredo F.", "Moonlight, Peter" ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

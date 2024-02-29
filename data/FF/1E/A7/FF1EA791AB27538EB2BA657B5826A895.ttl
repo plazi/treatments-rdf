@@ -5,19 +5,27 @@
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FF1EA791AB27538EB2BA657B5826A895
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Opamyrma_Yamane_2008>, <http://dx.doi.org/10.3897/zookeys.1189.107506.figure20> ;
+    dc:creator "Griebenow, Zachary" ;
+    dc:title "Leptanilla Emery 1870" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Opamyrmini_Emery_1870> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1189.107506> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1189.107506>
-    dc:creator "Griebenow, Zachary" ;
-    dc:date "2024" ;
-    dc:title "Systematic revision of the ant subfamily Leptanillinae (Hymenoptera, Formicidae)" ;
     bibo:endPage "184" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2024-01-16" ;
     bibo:startPage "83" ;
     bibo:volume "1189" ;
+    dc:creator "Griebenow, Zachary" ;
+    dc:date "2024" ;
+    dc:title "Systematic revision of the ant subfamily Leptanillinae (Hymenoptera, Formicidae)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1189.107506.figure20> ;
     a fabio:JournalArticle .
 
@@ -26,8 +34,18 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/968320" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Opamyrmini_Emery_1870>
+    dwc:LSID "https://zoobank.org/B3CFA4FF-FECD-42E8-B7CB-814A16C23659" ;
+    dwc:family "Formicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Boudinot & Griebenow, tribe nov." ;
+    dwc:tribe "Opamyrmini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opamyrmini> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Opamyrma_Yamane_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opamyrma> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Opamyrma" ;
@@ -36,35 +54,50 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Yamane, Bui & Eguchi, 2008" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opamyrma> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Opamyrmini_Emery_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opamyrmini> ;
-    dwc:LSID "https://zoobank.org/B3CFA4FF-FECD-42E8-B7CB-814A16C23659" ;
+<http://taxon-concept.plazi.org/id/Animalia/Leptanillinae_Emery_1910>
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Emery, 1910" ;
+    dwc:subFamily "Leptanillinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptanillinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Opamyrmini>
     dwc:family "Formicidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:rank "tribe" ;
-    dwc:scientificNameAuthorship "Boudinot & Griebenow, tribe nov." ;
     dwc:tribe "Opamyrmini" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Formicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia>, <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Opamyrma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Opamyrma" ;
@@ -72,21 +105,26 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Opamyrmini>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
-    dwc:family "Formicidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:rank "tribe" ;
-    dwc:tribe "Opamyrmini" ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FF1EA791AB27538EB2BA657B5826A895>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Opamyrmini_Emery_1870> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1189.107506> ;
-    dc:creator "Griebenow, Zachary" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1189.107506.figure20>, <http://taxon-concept.plazi.org/id/Animalia/Opamyrma_Yamane_2008> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptanillinae>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Leptanillinae" ;
+    a dwcFP:TaxonName .
