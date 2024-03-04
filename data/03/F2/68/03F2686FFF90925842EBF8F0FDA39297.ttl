@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F2686FFF90925842EBF8F0FDA39297
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4894996> ;
+    dc:creator "Zidarova, Ralitsa; Kopalová, Kateŕina; Vijver, Bart Van De" ;
+    dc:title "Pinnularia subcarteri Zidarova & Kopalová & Vijver 2012, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F2686FFF90925842EBF8F0FDA39297.mc.3B33D324FF9092594357FED4FD11954A> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Chromista/Pinnularia_subcarteri_Zidarova_2012> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.44.1.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/phytotaxa.44.1.2>
-    dc:creator "Kopalová, Kateŕina", "Vijver, Bart Van De", "Zidarova, Ralitsa" ;
-    dc:date "2012" ;
-    dc:title "The genus Pinnularia (Bacillariophyta) excluding the section Distantes on Livingston Island (South Shetland Islands) with the description of twelve new taxa" ;
     bibo:endPage "37" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2012-02-06" ;
     bibo:startPage "11" ;
     bibo:volume "44" ;
+    dc:creator "Zidarova, Ralitsa; Kopalová, Kateŕina; Vijver, Bart Van De" ;
+    dc:date "2012" ;
+    dc:title "The genus Pinnularia (Bacillariophyta) excluding the section Distantes on Livingston Island (South Shetland Islands) with the description of twelve new taxa" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4894996> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4894996/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F2686FFF90925842EBF8F0FDA39297.mc.3B33D324FF9092594357FED4FD11954A>
+    dwc:collectionCode "BR, BRM" ;
+    dwc:eventDate "2009-01-18" ;
+    dwc:locality "Livingston Island" ;
+    dwc:recordedBy "Byers Peninsula & B. Van de Vijver" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3303561303" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F2686FFF90925842EBF8F0FDA39297#3B33D324FF9092594357FED4FD11954A> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Chromista/Pinnularia_subcarteri_Zidarova_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_subcarteri> ;
     dwc:class "Bacillariophyceae" ;
     dwc:family "Naviculaceae" ;
     dwc:genus "Pinnularia" ;
@@ -37,60 +56,76 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Zidarova & Kopalová & Vijver, 2012" ;
     dwc:species "subcarteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_subcarteri> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Chromista>
-    dwc:kingdom "Chromista" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyta> ;
-    dwc:class "Bacillariophyceae" ;
-    dwc:kingdom "Chromista" ;
-    dwc:phylum "Bacillariophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Bacillariophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
-    dwc:kingdom "Chromista" ;
-    dwc:phylum "Bacillariophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Naviculaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Naviculales> ;
-    dwc:class "Bacillariophyceae" ;
-    dwc:family "Naviculaceae" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Naviculales" ;
-    dwc:phylum "Bacillariophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Naviculales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae> ;
-    dwc:class "Bacillariophyceae" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Naviculales" ;
-    dwc:phylum "Bacillariophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Pinnularia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Naviculaceae> ;
+<http://taxon-concept.plazi.org/id/Chromista/Pinnularia_media_Krammer_2000>
     dwc:class "Bacillariophyceae" ;
     dwc:family "Naviculaceae" ;
     dwc:genus "Pinnularia" ;
     dwc:kingdom "Chromista" ;
     dwc:order "Naviculales" ;
     dwc:phylum "Bacillariophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Krammer, 2000" ;
+    dwc:species "media" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_media> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Chromista/Pinnularia_carteri_Krammer_2000>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Krammer (2000: 48)", "Krammer, 2000" ;
+    dwc:species "carteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_carteri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Chromista/Pinnularia_diversa_Ostrup_1901>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ostrup (1901: 273)", "Ostrup, 1901" ;
+    dwc:species "diversa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_diversa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Chromista/Pinnularia_diversa_subcapitata_Krammer_2000>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Krammer & Lange-Bertalot" ;
+    dwc:species "diversa" ;
+    dwc:variety "subcapitata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_diversa_subcapitata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Chromista/Pinnularia_martinii_The_1939>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Krasske (1939: 394)", "sensu Krasske. The, 1939", "sensu Krasske. The" ;
+    dwc:species "martinii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_martinii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Chromista/Pinnularia_subcarteri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia> ;
     dwc:class "Bacillariophyceae" ;
     dwc:family "Naviculaceae" ;
     dwc:genus "Pinnularia" ;
@@ -99,12 +134,116 @@
     dwc:phylum "Bacillariophyta" ;
     dwc:rank "species" ;
     dwc:species "subcarteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F2686FFF90925842EBF8F0FDA39297>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Chromista/Pinnularia_subcarteri_Zidarova_2012> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.44.1.2> ;
-    dc:creator "Kopalová, Kateŕina", "Vijver, Bart Van De", "Zidarova, Ralitsa" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4894996> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Chromista/Pinnularia>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Naviculaceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Chromista/Naviculaceae>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Naviculales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Naviculales>
+    dwc:class "Bacillariophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae>
+    dwc:class "Bacillariophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Bacillariophyta>
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista>
+    dwc:kingdom "Chromista" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Pinnularia_media>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:species "media" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Pinnularia_carteri>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:species "carteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Pinnularia_diversa>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:species "diversa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Pinnularia_diversa_subcapitata>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "variety" ;
+    dwc:species "diversa" ;
+    dwc:variety "subcapitata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia_diversa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Pinnularia_martinii>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Naviculaceae" ;
+    dwc:genus "Pinnularia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Naviculales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:species "martinii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pinnularia> ;
+    a dwcFP:TaxonName .
