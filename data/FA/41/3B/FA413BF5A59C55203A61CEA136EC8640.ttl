@@ -1,24 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FA413BF5A59C55203A61CEA136EC8640
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Cissus trifoliata Linnaeus 1759" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/FA413BF5A59C55203A61CEA136EC8640/87> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Cissus_trifoliata_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Sicyos_trifoliata_Linnaeus_1753> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4373735> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4373735>
+    bibo:endPage "877" ;
+    bibo:startPage "806" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part S)" ;
-    bibo:endPage "877" ;
-    bibo:startPage "806" ;
     a fabio:BookSection .
 
+<http://treatment.plazi.org/id/FA413BF5A59C55203A61CEA136EC8640/87>
+    dwc:catalogNumber "87" ;
+    dwc:collectionCode "BMSL" ;
+    dwc:typeStatus "typotype" ;
+    trt:gbifOccurrenceId "2612020381" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Cissus_trifoliata_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cissus_trifoliata> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Vitaceae" ;
     dwc:genus "Cissus" ;
@@ -26,12 +42,12 @@
     dwc:order "Vitales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(L.) L." ;
+    dwc:scientificNameAuthorship "(L.) L.", "(L.) L. (1759)" ;
     dwc:species "trifoliata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cissus_trifoliata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Sicyos_trifoliata_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Sicyos_trifoliata> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Cucurbitaceae" ;
     dwc:genus "Sicyos" ;
@@ -41,53 +57,83 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "trifoliata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Sicyos_trifoliata> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Vitaceae_Jussieu_1789>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Vitaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Vitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "de Jussieu, 1789" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Vitaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Plantae/Cissus_trifoliata>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Vitaceae" ;
+    dwc:genus "Cissus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Vitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "trifoliata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cissus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cissus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Vitaceae" ;
+    dwc:genus "Cissus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Vitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Vitaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Vitaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Vitaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Vitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Vitales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Vitales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Vitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae>
     dwc:kingdom "Plantae" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Cucurbitaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Cucurbitales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Sicyos>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Cucurbitaceae" ;
-    dwc:genus "Sicyos" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Sicyos_trifoliata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Sicyos> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Cucurbitaceae" ;
     dwc:genus "Sicyos" ;
@@ -96,26 +142,35 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "trifoliata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Sicyos> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Sicyos>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Cucurbitaceae" ;
+    dwc:genus "Sicyos" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FA413BF5A59C55203A61CEA136EC8640>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Cissus_trifoliata_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Sicyos_trifoliata_Linnaeus_1753> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4373735> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/FA413BF5A59C55203A61CEA136EC8640/87> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Cucurbitaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitales> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FA413BF5A59C55203A61CEA136EC8640/87>
-    dwc:catalogNumber "87" ;
-    dwc:collectionCode "BMSL" ;
-    dwc:typeStatus "typotype" ;
-    a dwc:MaterialCitation .
-
+<http://taxon-name.plazi.org/id/Plantae/Cucurbitales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
