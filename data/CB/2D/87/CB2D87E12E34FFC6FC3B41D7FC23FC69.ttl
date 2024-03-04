@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:CB2D87E12E34FFC6FC3B41D7FC23FC69
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4447650>, <http://dx.doi.org/10.5281/zenodo.4447652> ;
+    dc:creator "Lapparent, France de; Bailon, Salvador; Augé, Marc Louis; Rage, Jean-Claude" ;
+    dc:title "Anura Fischer von Waldheim 1813" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Anura_Waldheim_1813> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/geodiversitas2020v42a22> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/geodiversitas2020v42a22>
-    dc:creator "Augé, Marc Louis", "Bailon, Salvador", "Lapparent, France de", "Rage, Jean-Claude" ;
-    dc:date "2020" ;
-    dc:title "Amphibians and reptiles from the Neogene of Afghanistan" ;
     bibo:endPage "426" ;
     bibo:issue "22" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2020-09-17" ;
     bibo:startPage "409" ;
     bibo:volume "42" ;
+    dc:creator "Lapparent, France de; Bailon, Salvador; Augé, Marc Louis; Rage, Jean-Claude" ;
+    dc:date "2020" ;
+    dc:title "Amphibians and reptiles from the Neogene of Afghanistan" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4447650>, <http://dx.doi.org/10.5281/zenodo.4447652> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/4447652/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/ANURA_Waldheim_1813>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/ANURA> ;
+<http://taxon-concept.plazi.org/id/Animalia/Anura_Waldheim_1813>
     dwc:authority "Lapparent, 2020" ;
     dwc:authorityName "Lapparent" ;
     dwc:authorityYear "2020" ;
@@ -42,41 +51,92 @@
     dwc:order "Anura" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    dwc:scientificNameAuthorship "Fischer von Waldheim, 1813" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bufonidae_Gray_1825>
+    dwc:class "Amphibia" ;
+    dwc:family "Bufonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Gray, 1825" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bufonidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Alytidae_Fitzinger_1843>
+    dwc:class "Amphibia" ;
+    dwc:family "Alytidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Fitzinger, 1843" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alytidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Anura>
+    dwc:class "Magnoliopsida", "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Tracheophyta", "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Magnoliopsida>, <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tracheophyta>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/ANURA>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
+<http://taxon-name.plazi.org/id/Animalia/Bufonidae>
+    dwc:class "Amphibia" ;
+    dwc:family "Bufonidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
+<http://taxon-name.plazi.org/id/Animalia/Amphibia>
+    dwc:class "Amphibia" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Tracheophyta" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Tracheophyta" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CB2D87E12E34FFC6FC3B41D7FC23FC69>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/ANURA_Waldheim_1813> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/geodiversitas2020v42a22> ;
-    dc:creator "Augé, Marc Louis", "Bailon, Salvador", "Lapparent, France de", "Rage, Jean-Claude" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4447650>, <http://dx.doi.org/10.5281/zenodo.4447652> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Alytidae>
+    dwc:class "Amphibia" ;
+    dwc:family "Alytidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
+    a dwcFP:TaxonName .
