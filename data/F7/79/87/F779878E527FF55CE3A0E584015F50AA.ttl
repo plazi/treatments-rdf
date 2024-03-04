@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:F779878E527FF55CE3A0E584015F50AA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.215689> ;
+    dc:creator "Baehr, Barbara C.; Raven, Robert; Whyte, Robert" ;
+    dc:title "Cavisternum Baehr, Harvey & Smith 2010" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cavisternum_Baehr_2010> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3616.4.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3616.4.8>
-    dc:creator "Baehr, Barbara C.", "Raven, Robert", "Whyte, Robert" ;
-    dc:date "2013" ;
-    dc:title "Biodiversity discovery program Bush Blitz yields a new species of goblin spider, Cavisternum attenboroughi (Araneae: Oonopidae), from the Northern Territory" ;
     bibo:endPage "400" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "396" ;
     bibo:volume "3616" ;
+    dc:creator "Baehr, Barbara C.; Raven, Robert; Whyte, Robert" ;
+    dc:date "2013" ;
+    dc:title "Biodiversity discovery program Bush Blitz yields a new species of goblin spider, Cavisternum attenboroughi (Araneae: Oonopidae), from the Northern Territory" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.215689> ;
     a fabio:JournalArticle .
 
@@ -27,8 +36,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cavisternum_Baehr_2010>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cavisternum> ;
-    dwc:ID-CoL "3JT9" ;
     dwc:ID-ENA "1504902" ;
     dwc:class "Arachnida" ;
     dwc:family "Oonopidae" ;
@@ -38,39 +45,24 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Baehr, Harvey & Smith, 2010" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3JT9> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cavisternum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cavisternum_clavatum_Baehr_2010>
     dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
+    dwc:family "Oonopidae" ;
+    dwc:genus "Cavisternum" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baehr, Harvey & Smith, 2010" ;
+    dwc:species "clavatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cavisternum_clavatum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cavisternum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oonopidae> ;
     dwc:class "Arachnida" ;
     dwc:family "Oonopidae" ;
     dwc:genus "Cavisternum" ;
@@ -78,22 +70,56 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oonopidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oonopidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Oonopidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F779878E527FF55CE3A0E584015F50AA>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cavisternum_Baehr_2010> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3616.4.8> ;
-    dc:creator "Baehr, Barbara C.", "Raven, Robert", "Whyte, Robert" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.215689> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cavisternum_clavatum>
+    dwc:class "Arachnida" ;
+    dwc:family "Oonopidae" ;
+    dwc:genus "Cavisternum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "clavatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cavisternum> ;
+    a dwcFP:TaxonName .

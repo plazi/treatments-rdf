@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:F723B76CFFE6FFCEFA021FA3F9288D0F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6685608> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Lutreolina crassicaudata" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lutreolina_crassicaudata_Desmarest_1804> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Didelphys_Desmarest_1804> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6685333> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6685333>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2015" ;
-    dc:title "Didelphidae" ;
     bibo:endPage "186" ;
     bibo:startPage "129" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2015" ;
+    dc:title "Didelphidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6685608> ;
     a fabio:BookSection .
 
@@ -23,21 +34,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6685608/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Didelphys_crassicaudata_Desmarest_1804>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Didelphys_crassicaudata> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Didelphidae" ;
-    dwc:genus "Didelphys" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Didelphimorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Desmarest, 1804" ;
-    dwc:species "crassicaudata" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Lutreolina_crassicaudata_Desmarest_1804>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata> ;
     dwc:authority "Mittermeier, 2015" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2015" ;
@@ -48,42 +45,12 @@
     dwc:order "Didelphimorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Desmarest, 1804" ;
     dwc:species "crassicaudata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Didelphidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphimorphia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Didelphidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Didelphimorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Didelphimorphia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Didelphimorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Didelphys_crassicaudata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Didelphys_Desmarest_1804>
     dwc:class "Mammalia" ;
     dwc:family "Didelphidae" ;
     dwc:genus "Didelphys" ;
@@ -91,21 +58,63 @@
     dwc:order "Didelphimorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Desmarest, 1804" ;
+    dwc:species "crassicaudata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Didelphys> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Lutreolina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lutreolina_crassicaudata_crassicaudata_Desmarest_1804>
     dwc:class "Mammalia" ;
     dwc:family "Didelphidae" ;
     dwc:genus "Lutreolina" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Didelphimorphia" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Desmarest, 1804" ;
+    dwc:species "crassicaudata" ;
+    dwc:subSpecies "crassicaudata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata_crassicaudata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lutreolina_crassicaudata_turner_Gunther_1879>
+    dwc:class "Mammalia" ;
+    dwc:family "Didelphidae" ;
+    dwc:genus "Lutreolina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship ": Gunther, 1879" ;
+    dwc:species "crassicaudata" ;
+    dwc:subSpecies "turner" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata_turner> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_Gray_1867>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Gray, 1867" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leporidae_Fischer_1817>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Fischer, 1817" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lutreolina> ;
     dwc:class "Mammalia" ;
     dwc:family "Didelphidae" ;
     dwc:genus "Lutreolina" ;
@@ -114,21 +123,123 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "crassicaudata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lutreolina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lutreolina>
+    dwc:class "Mammalia" ;
+    dwc:family "Didelphidae" ;
+    dwc:genus "Lutreolina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Didelphidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Didelphidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphimorphia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Didelphimorphia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F723B76CFFE6FFCEFA021FA3F9288D0F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lutreolina_crassicaudata_Desmarest_1804> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Didelphys_crassicaudata_Desmarest_1804> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6685333> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6685608> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Didelphys>
+    dwc:class "Mammalia" ;
+    dwc:family "Didelphidae" ;
+    dwc:genus "Didelphys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species", "genus" ;
+    dwc:species "crassicaudata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata_crassicaudata>
+    dwc:class "Mammalia" ;
+    dwc:family "Didelphidae" ;
+    dwc:genus "Lutreolina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "crassicaudata" ;
+    dwc:subSpecies "crassicaudata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata_turner>
+    dwc:class "Mammalia" ;
+    dwc:family "Didelphidae" ;
+    dwc:genus "Lutreolina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Didelphimorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "crassicaudata" ;
+    dwc:subSpecies "turner" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lutreolina_crassicaudata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leporidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
