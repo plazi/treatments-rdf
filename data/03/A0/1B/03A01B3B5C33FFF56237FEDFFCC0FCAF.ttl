@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A01B3B5C33FFF56237FEDFFCC0FCAF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5143232> ;
+    dc:creator "Jackson, Stephen M.; Jansen, Justin J. F. J.; Baglione, Gabrielle; Callou, Cécile" ;
+    dc:title "Glis glis glis (Linnaeus 1766" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Glis_glis_Linnaeus_1766> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sciurus_glis_Linnaeus_1766> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/zoosystema2021v43a21> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/zoosystema2021v43a21>
-    dc:creator "Baglione, Gabrielle", "Callou, Cécile", "Jackson, Stephen M.", "Jansen, Justin J. F. J." ;
-    dc:date "2021" ;
-    dc:title "Mammals collected and illustrated by the Baudin Expedition to Australia and Timor (1800 - 1804): A review of the current taxonomy of specimens in the Muséum national d’Histoire naturelle de Paris and the illustrations in the Muséum d’Histoire naturelle du Havre" ;
     bibo:endPage "548" ;
     bibo:issue "21" ;
     bibo:journal "Zoosystema" ;
     bibo:pubDate "2021-07-22" ;
     bibo:startPage "387" ;
     bibo:volume "43" ;
+    dc:creator "Jackson, Stephen M.; Jansen, Justin J. F. J.; Baglione, Gabrielle; Callou, Cécile" ;
+    dc:date "2021" ;
+    dc:title "Mammals collected and illustrated by the Baudin Expedition to Australia and Timor (1800 - 1804): A review of the current taxonomy of specimens in the Muséum national d’Histoire naturelle de Paris and the illustrations in the Muséum d’Histoire naturelle du Havre" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5143232> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Glis_glis_Linnaeus_1766>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glis_glis> ;
-    dwc:ID-CoL "3G9QL" ;
     dwc:class "Mammalia" ;
     dwc:family "Gliridae" ;
     dwc:genus "Glis" ;
@@ -39,10 +47,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "glis (Linnaeus, 1766)" ;
     dwc:species "glis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3G9QL> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glis_glis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sciurus_glis_Linnaeus_1766>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sciurus_glis> ;
     dwc:class "Mammalia" ;
     dwc:family "Sciuridae" ;
     dwc:genus "Sciurus" ;
@@ -50,51 +59,86 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus, 1766: 87" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1766", "Linnaeus, 1766: 87" ;
     dwc:species "glis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sciurus_glis> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Glis_glis>
+    dwc:class "Mammalia" ;
+    dwc:family "Gliridae" ;
+    dwc:genus "Glis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "glis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Glis>
+    dwc:class "Mammalia" ;
+    dwc:family "Gliridae" ;
+    dwc:genus "Glis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gliridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gliridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Gliridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sciuridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+<http://taxon-name.plazi.org/id/Animalia/Sciurus_glis>
     dwc:class "Mammalia" ;
     dwc:family "Sciuridae" ;
+    dwc:genus "Sciurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "glis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sciurus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Sciurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sciuridae> ;
     dwc:class "Mammalia" ;
     dwc:family "Sciuridae" ;
     dwc:genus "Sciurus" ;
@@ -102,25 +146,15 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sciuridae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Sciurus_glis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sciurus> ;
+<http://taxon-name.plazi.org/id/Animalia/Sciuridae>
     dwc:class "Mammalia" ;
     dwc:family "Sciuridae" ;
-    dwc:genus "Sciurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "glis" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03A01B3B5C33FFF56237FEDFFCC0FCAF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Glis_glis_Linnaeus_1766> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sciurus_glis_Linnaeus_1766> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/zoosystema2021v43a21> ;
-    dc:creator "Baglione, Gabrielle", "Callou, Cécile", "Jackson, Stephen M.", "Jansen, Justin J. F. J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5143232> ;
-    a trt:Treatment .
-
