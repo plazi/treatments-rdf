@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0396C962A800CA33FF30FC3627E3CEAD
+    cito:cites <http://dx.doi.org/10.5281/zenodo.263833>, <http://dx.doi.org/10.5281/zenodo.263834> ;
+    dc:creator "Watanabe, Kyohei" ;
+    dc:title "Pion Schiodte 1839" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pion_Schiodte_1839> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Catoglyptus_Holmgren_1855> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4103.3.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4103.3.8>
-    dc:creator "Watanabe, Kyohei" ;
-    dc:date "2016" ;
-    dc:title "First record of the genus Pion Schiødte, 1839 (Hymenoptera: Ichneumonidae: Ctenopelmatinae), from Japan, with description of a new species" ;
     bibo:endPage "294" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "289" ;
     bibo:volume "4103" ;
+    dc:creator "Watanabe, Kyohei" ;
+    dc:date "2016" ;
+    dc:title "First record of the genus Pion Schiødte, 1839 (Hymenoptera: Ichneumonidae: Ctenopelmatinae), from Japan, with description of a new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.263833>, <http://dx.doi.org/10.5281/zenodo.263834> ;
     a fabio:JournalArticle .
 
@@ -31,21 +41,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/263834/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Catoglyptus_Holmgren_1855>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Catoglyptus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Ichneumonidae" ;
-    dwc:genus "Catoglyptus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Holmgren, 1855: 106" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Pion_Schiodte_1839>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pion> ;
-    dwc:ID-CoL "6QQB" ;
     dwc:ID-ENA "65268" ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
@@ -54,23 +50,25 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Schiodte, 1839" ;
+    dwc:scientificNameAuthorship "Schiodte, 1839", "Schiodte, 1839: 318" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6QQB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pion> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Mesoleptus_fortipes_Gravenhorst_1829>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Mesoleptus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gravenhorst, 1829" ;
+    dwc:species "fortipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mesoleptus_fortipes> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Catoglyptus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Catoglyptus_Holmgren_1855>
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Catoglyptus" ;
@@ -78,37 +76,11 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Ichneumonidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Holmgren, 1855: 106" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Catoglyptus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pion>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Pion" ;
@@ -116,13 +88,78 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0396C962A800CA33FF30FC3627E3CEAD>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pion_Schiodte_1839> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Catoglyptus_Holmgren_1855> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4103.3.8> ;
-    dc:creator "Watanabe, Kyohei" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.263833>, <http://dx.doi.org/10.5281/zenodo.263834> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mesoleptus_fortipes>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Mesoleptus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fortipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mesoleptus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mesoleptus>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Mesoleptus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Catoglyptus>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Catoglyptus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+    a dwcFP:TaxonName .
