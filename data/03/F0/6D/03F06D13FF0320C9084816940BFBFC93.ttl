@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03F06D13FF0320C9084816940BFBFC93
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6708535> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Oryzomys texensis" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oryzomys_texensis_Allen_1894> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oryzomys_palustris_texensis_Allen_1894> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6707142> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6707142>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Cricetidae" ;
     bibo:endPage "535" ;
     bibo:startPage "204" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Cricetidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6708535> ;
     a fabio:BookSection .
 
@@ -23,22 +34,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6708535/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_palustris_texensis_Allen_1894>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris_texensis> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cricetidae" ;
-    dwc:genus "Oryzomys" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "J. A. Allen, 1894" ;
-    dwc:species "palustris" ;
-    dwc:subSpecies "texensis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Oryzomys_texensis_Allen_1894>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_texensis> ;
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -49,52 +45,26 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1894" ;
     dwc:species "texensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_texensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cricetidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cricetidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Oryzomys>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_palustris_texensis_Allen_1894>
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Oryzomys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1894" ;
+    dwc:species "palustris" ;
+    dwc:subSpecies "texensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris_texensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_palustris_Harlan_1837>
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Oryzomys" ;
@@ -102,11 +72,485 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Harlan, 1837" ;
     dwc:species "palustris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_couesi_Alston_1877>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alston, 1877" ;
+    dwc:species "couesi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_couesi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinus_Perry_1811>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Perry, 1811" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_albiventer_Merriam_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Merriam, 1901" ;
+    dwc:species "albiventer" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_albiventer> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_dimidiatus_Thomas_1905>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1905" ;
+    dwc:species "dimidiatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_dimidiatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_gorgasi_Hershkovitz_1971>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1971" ;
+    dwc:species "gorgasi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_gorgasi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nesoryzomys_swarthi_Orr_1938>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Nesoryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Orr, 1938" ;
+    dwc:species "swarthi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nesoryzomys_swarthi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nesoryzomys_fernandinae_Hutterer_1979>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Nesoryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hutterer & Hirsch, 1979" ;
+    dwc:species "fernandinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nesoryzomys_fernandinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nesoryzomys_Heller_1904>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Nesoryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Heller, 1904" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nesoryzomys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_galapagoensis_Waterhouse_1839>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1839" ;
+    dwc:species "galapagoensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_galapagoensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aegialomys_xanthaeolus_Thomas_1894>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Aegialomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1894" ;
+    dwc:species "xanthaeolus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aegialomys_xanthaeolus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sigmodontomys_alfari_Allen_1897>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Sigmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1897" ;
+    dwc:species "alfari" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sigmodontomys_alfari> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tanyuromys_Pine_2012>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Tanyuromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Pine, Timm & Weksler, 2012" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tanyuromys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sigmodontomys_aphrastus_Harris_1932>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Sigmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Harris, 1932" ;
+    dwc:species "aphrastus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sigmodontomys_aphrastus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melanomys_chrysomelas_Goldman_1918>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Goldman, 1918" ;
+    dwc:species "chrysomelas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melanomys_chrysomelas> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melanomys_caliginosus_Tomes_1860>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tomes, 1860" ;
+    dwc:species "caliginosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melanomys_caliginosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melanomys_robustulus_Thomas_1914>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1914" ;
+    dwc:species "robustulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melanomys_robustulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melanomys_zunigae_Sanborn_1949>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sanborn, 1949" ;
+    dwc:species "zunigae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melanomys_zunigae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microakodontomys_transitorius_Hershkovitz_1993>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microakodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1993" ;
+    dwc:species "transitorius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microakodontomys_transitorius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bibimys_labiosus_Winge_1887>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Winge, 1887" ;
+    dwc:species "labiosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bibimys_labiosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bibimys_chacoensis_Shamel_1931>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Shamel, 1931" ;
+    dwc:species "chacoensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bibimys_chacoensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bibimys_torresi_Massoia_1979>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Massoia, 1979" ;
+    dwc:species "torresi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bibimys_torresi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scapteromys_aquaticus_Thomas_1920>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Scapteromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1920" ;
+    dwc:species "aquaticus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapteromys_aquaticus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scapteromys_tumidus_Waterhouse_1837>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Scapteromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1837" ;
+    dwc:species "tumidus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapteromys_tumidus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gyldenstolpia_planaltensis_Avila-Pires_1972>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Gyldenstolpia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Avila-Pires, 1972" ;
+    dwc:species "planaltensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gyldenstolpia_planaltensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gyldenstolpia_Pardi%C3%B1as_2008>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Gyldenstolpia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Pardiñas, D'Elía & Teta, 2008" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gyldenstolpia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Kunsia_tomentosus_Lichtenstein_1830>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Kunsia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lichtenstein, 1830" ;
+    dwc:species "tomentosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Kunsia_tomentosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lenoxus_apicalis_Allen_1900>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Lenoxus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1900" ;
+    dwc:species "apicalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lenoxus_apicalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Blarinomys_breviceps_Winge_1887>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Blarinomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Winge, 1887" ;
+    dwc:species "breviceps" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Blarinomys_breviceps> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brucepattersonius_griserufescens_Hershkovitz_1998>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1998" ;
+    dwc:species "griserufescens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius_griserufescens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brucepattersonius_Hershkovitz_1998>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1998" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brucepattersonius_soricinus_Hershkovitz_1998>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1998" ;
+    dwc:species "soricinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius_soricinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brucepattersonius_iheringi_Thomas_1896>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1896" ;
+    dwc:species "iheringi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius_iheringi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_texensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "texensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cricetidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris_texensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris> ;
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Oryzomys" ;
@@ -116,10 +560,10 @@
     dwc:rank "subSpecies" ;
     dwc:species "palustris" ;
     dwc:subSpecies "texensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Oryzomys_texensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_palustris>
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Oryzomys" ;
@@ -127,23 +571,544 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "texensis" ;
+    dwc:species "palustris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_couesi>
     dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "couesi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F06D13FF0320C9084816940BFBFC93>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oryzomys_texensis_Allen_1894> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oryzomys_palustris_texensis_Allen_1894> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6707142> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6708535> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Pinus>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Pinaceae>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinales>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinopsida>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_albiventer>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "albiventer" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_dimidiatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dimidiatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_gorgasi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "gorgasi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nesoryzomys_swarthi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Nesoryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "swarthi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nesoryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nesoryzomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Nesoryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nesoryzomys_fernandinae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Nesoryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "fernandinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nesoryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_galapagoensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "galapagoensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aegialomys_xanthaeolus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Aegialomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "xanthaeolus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aegialomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aegialomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Aegialomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sigmodontomys_alfari>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Sigmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "alfari" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sigmodontomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sigmodontomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Sigmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tanyuromys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Tanyuromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sigmodontomys_aphrastus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Sigmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "aphrastus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sigmodontomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melanomys_chrysomelas>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "chrysomelas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melanomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melanomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melanomys_caliginosus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "caliginosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melanomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melanomys_robustulus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "robustulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melanomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melanomys_zunigae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Melanomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "zunigae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melanomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microakodontomys_transitorius>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microakodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "transitorius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microakodontomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microakodontomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microakodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bibimys_labiosus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "labiosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bibimys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bibimys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bibimys_chacoensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "chacoensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bibimys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bibimys_torresi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Bibimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "torresi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bibimys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scapteromys_aquaticus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Scapteromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "aquaticus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scapteromys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scapteromys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Scapteromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scapteromys_tumidus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Scapteromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "tumidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scapteromys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gyldenstolpia_planaltensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Gyldenstolpia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "planaltensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gyldenstolpia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gyldenstolpia>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Gyldenstolpia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Kunsia_tomentosus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Kunsia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "tomentosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Kunsia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Kunsia>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Kunsia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lenoxus_apicalis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Lenoxus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "apicalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lenoxus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lenoxus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Lenoxus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Blarinomys_breviceps>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Blarinomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "breviceps" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blarinomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Blarinomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Blarinomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brucepattersonius_griserufescens>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "griserufescens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brucepattersonius>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brucepattersonius_soricinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "soricinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brucepattersonius_iheringi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Brucepattersonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "iheringi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brucepattersonius> ;
+    a dwcFP:TaxonName .

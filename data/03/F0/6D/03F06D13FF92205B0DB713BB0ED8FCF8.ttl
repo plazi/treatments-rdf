@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03F06D13FF92205B0DB713BB0ED8FCF8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6708411> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Microtus mexicanus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_Saussure_1861> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Arvicola_canus_Saussure_1861> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6707142> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6707142>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Cricetidae" ;
     bibo:endPage "535" ;
     bibo:startPage "204" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Cricetidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6708411> ;
     a fabio:BookSection .
 
@@ -23,22 +34,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6708411/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Arvicola_canus_Saussure_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arvicola_canus> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cricetidae" ;
-    dwc:genus "Arvicola" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "subGenus" ;
-    dwc:scientificNameAuthorship "Saussure, 1861" ;
-    dwc:species "canus" ;
-    dwc:subGenus "Hemiotomys" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_Saussure_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -49,27 +45,12 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Saussure, 1861" ;
     dwc:species "mexicanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arvicola>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cricetidae" ;
-    dwc:genus "Arvicola" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arvicola_canus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arvicola> ;
+<http://taxon-concept.plazi.org/id/Animalia/Arvicola_canus_Saussure_1861>
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Arvicola" ;
@@ -77,47 +58,152 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "subGenus" ;
+    dwc:scientificNameAuthorship "Saussure, 1861" ;
+    dwc:species "canus" ;
     dwc:subGenus "Hemiotomys" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arvicola_canus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cricetidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cricetidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Microtus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mogollonensis_Mearns_1890>
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Microtus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Mearns, 1890" ;
+    dwc:species "mogollonensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mogollonensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_mexicanus_Saussure_1861>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Saussure, 1861" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "mexicanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_mexicanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_fulviventer_Merriam_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1898" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "fulviventer" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_fulviventer> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_fundatus_Hall_1948>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hall, 1948" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "fundatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_fundatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_madrensis_Goldman_1938>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman, 1938" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "madrensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_madrensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_neveriae_Hooper_1955>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hooper, 1955" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "neveriae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_neveriae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_ocotensis_Alvarez_1993>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Alvarez & Hernandez-Chavez, 1993" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "ocotensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_ocotensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_phaeus_Merriam_1892>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1892" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "phaeus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_phaeus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_salvus_Hall_1948>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hall, 1948" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "salvus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_salvus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_subsimus_Goldman_1938>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman, 1938" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "subsimus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_subsimus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus> ;
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Microtus" ;
@@ -126,22 +212,220 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "mexicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cricetidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F06D13FF92205B0DB713BB0ED8FCF8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Microtus_mexicanus_Saussure_1861> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Arvicola_canus_Saussure_1861> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6707142> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6708411> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arvicola_canus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Arvicola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "canus" ;
+    dwc:subGenus "Hemiotomys" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arvicola_Hemiotomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arvicola_Hemiotomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Arvicola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Hemiotomys" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arvicola> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arvicola>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Arvicola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mogollonensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "mogollonensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_mexicanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "mexicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_fulviventer>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "fulviventer" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_fundatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "fundatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_madrensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "madrensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_neveriae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "neveriae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_ocotensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "ocotensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_phaeus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "phaeus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_salvus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "salvus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus_subsimus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "mexicanus" ;
+    dwc:subSpecies "subsimus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus_mexicanus> ;
+    a dwcFP:TaxonName .

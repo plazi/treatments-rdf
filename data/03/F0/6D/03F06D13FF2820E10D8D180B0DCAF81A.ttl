@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03F06D13FF2820E10D8D180B0DCAF81A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6708503> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Reithrodon typicus Waterhouse 1837" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Reithrodon_typicus_Waterhouse_1837> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6707142> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6707142>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Cricetidae" ;
     bibo:endPage "535" ;
     bibo:startPage "204" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Cricetidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6708503> ;
     a fabio:BookSection .
 
@@ -24,7 +34,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Reithrodon_typicus_Waterhouse_1837>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus> ;
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -35,52 +44,53 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1837" ;
     dwc:species "typicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cricetidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cricetidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reithrodon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Reithrodon_typicus_typicus_Waterhouse_1837>
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Reithrodon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1837" ;
+    dwc:species "typicus" ;
+    dwc:subSpecies "typicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus_typicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Reithrodon_typicus_currentium_Thomas_1920>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Reithrodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1920" ;
+    dwc:species "typicus" ;
+    dwc:subSpecies "currentium" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus_currentium> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Reithrodon_auritus_Fischer_1814>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Reithrodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fischer, 1814" ;
+    dwc:species "auritus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_auritus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reithrodon> ;
     dwc:class "Mammalia" ;
     dwc:family "Cricetidae" ;
     dwc:genus "Reithrodon" ;
@@ -89,21 +99,93 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "typicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reithrodon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reithrodon>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Reithrodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cricetidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cricetidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F06D13FF2820E10D8D180B0DCAF81A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Reithrodon_typicus_Waterhouse_1837> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6707142> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6708503> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus_typicus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Reithrodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "typicus" ;
+    dwc:subSpecies "typicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus_currentium>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Reithrodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "typicus" ;
+    dwc:subSpecies "currentium" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reithrodon_typicus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reithrodon_auritus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cricetidae" ;
+    dwc:genus "Reithrodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "auritus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reithrodon> ;
+    a dwcFP:TaxonName .
