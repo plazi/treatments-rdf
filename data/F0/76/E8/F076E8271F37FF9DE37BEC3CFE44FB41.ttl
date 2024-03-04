@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.5252/cryptogamie-bryologie2023v44a7>
-    dc:creator "Jia, Yu", "Yu, Ning-Ning" ;
-    dc:date "2023" ;
-    dc:title "A world revisionary study of the genus Groutiella Steere (Orthotrichaceae, Bryopsida)" ;
+treatment:F076E8271F37FF9DE37BEC3CFE44FB41
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8155701> ;
+    dc:creator "Yu, Ning-Ning; Jia, Yu" ;
+    dc:title "Groutiella chimborazensis Florsch." ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4878.3.2> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Groutiella_chimborazensis> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.11646/zootaxa.4878.3.2>
     bibo:endPage "182" ;
     bibo:issue "7" ;
     bibo:journal "Cryptogamie, Bryologie" ;
     bibo:pubDate "2023-07-12" ;
     bibo:startPage "161" ;
     bibo:volume "20" ;
+    dc:creator "Yu, Ning-Ning; Jia, Yu" ;
+    dc:date "2023" ;
+    dc:title "A world revisionary study of the genus Groutiella Steere (Orthotrichaceae, Bryopsida)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8155701> ;
     a fabio:JournalArticle .
 
@@ -27,39 +36,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/8155701/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Bryophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Bryophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Bryopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bryophyta> ;
-    dwc:class "Bryopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Bryophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Groutiella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Orthotrichaceae> ;
-    dwc:class "Bryopsida" ;
-    dwc:family "Orthotrichaceae" ;
-    dwc:genus "Groutiella" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Orthotrichales" ;
-    dwc:phylum "Bryophyta" ;
+<http://taxon-concept.plazi.org/id/Animalia/Fuentes_Peckham_1894>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Fuentes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Peckham & Peckham, 1894" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fuentes> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Groutiella_chimborazensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Groutiella> ;
     dwc:class "Bryopsida" ;
     dwc:family "Orthotrichaceae" ;
     dwc:genus "Groutiella" ;
@@ -68,31 +57,105 @@
     dwc:phylum "Bryophyta" ;
     dwc:rank "species" ;
     dwc:species "chimborazensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Groutiella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Groutiella>
+    dwc:class "Bryopsida" ;
+    dwc:family "Orthotrichaceae" ;
+    dwc:genus "Groutiella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Orthotrichales" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Orthotrichaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Orthotrichaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Orthotrichales> ;
     dwc:class "Bryopsida" ;
     dwc:family "Orthotrichaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Orthotrichales" ;
     dwc:phylum "Bryophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Orthotrichales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Orthotrichales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bryopsida> ;
     dwc:class "Bryopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Orthotrichales" ;
     dwc:phylum "Bryophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bryopsida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F076E8271F37FF9DE37BEC3CFE44FB41>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4878.3.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Groutiella_chimborazensis> ;
-    dc:creator "Jia, Yu", "Yu, Ning-Ning" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8155701> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Bryopsida>
+    dwc:class "Bryopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bryophyta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Bryophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fuentes>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Fuentes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Salticidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
