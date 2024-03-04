@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.12651/JSR.2014.3.1.001>
-    dc:creator "Jung, Daewui", "Kim, Chang-Bae", "Lee, Jongrak" ;
-    dc:date "2014" ;
-    dc:title "A report of four unrecorded species of opisthobranch molluscs from Korea" ;
+treatment:03D6506C8D779766FCFA0675239BFDF6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8120258> ;
+    dc:creator "Jung, Daewui; Lee, Jongrak; Kim, Chang-Bae" ;
+    dc:title "Aplysiopsis nigra" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03D6506C8D779766FCFA0675239BFDF6.mc.3B17EB278D779761FB9206B42621FCD7> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Baba_1949> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hermaeina_nigra_Baba_1949>, <http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Okutani_2000> ;
+    trt:publishedIn <http://dx.doi.org/10.12651/jsr.2014.3.1.001> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.12651/jsr.2014.3.1.001>
     bibo:endPage "6" ;
     bibo:issue "1" ;
     bibo:journal "Journal of Species Research" ;
     bibo:pubDate "2014-02-28" ;
     bibo:startPage "1" ;
     bibo:volume "3" ;
+    dc:creator "Jung, Daewui; Lee, Jongrak; Kim, Chang-Bae" ;
+    dc:date "2014" ;
+    dc:title "A report of four unrecorded species of opisthobranch molluscs from Korea" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8120258> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/8120258/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03D6506C8D779766FCFA0675239BFDF6.mc.3B17EB278D779761FB9206B42621FCD7>
+    dwc:eventDate "2013-04-29" ;
+    dwc:locality "Seongsan-ri" ;
+    dwc:recordedBy "D. Jung" ;
+    trt:httpUri <https://treatment.plazi.org/id/03D6506C8D779766FCFA0675239BFDF6#3B17EB278D779761FB9206B42621FCD7> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Baba_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aplysiopsis_nigra> ;
-    dwc:ID-CoL "5VNTT" ;
     dwc:class "Gastropoda" ;
     dwc:family "Hermaeidae" ;
     dwc:genus "Aplysiopsis" ;
@@ -39,25 +55,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Baba, 1949)" ;
     dwc:species "nigra" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Okutani_2000>
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5VNTT> ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aplysiopsis_nigra> ;
-    dwc:ID-CoL "5VNTT" ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Hermaeidae" ;
-    dwc:genus "Aplysiopsis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Sacoglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship ": Okutani, 2000: 763" ;
-    dwc:species "nigra" ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Hermaeina_nigra_Baba_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hermaeina_nigra> ;
-    dwc:ID-CoL "3KZ9X" ;
     dwc:class "Gastropoda" ;
     dwc:family "Hermaeidae" ;
     dwc:genus "Hermaeina" ;
@@ -67,26 +69,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Baba, 1949: 15" ;
     dwc:species "nigra" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5VNTT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hermaeina_nigra> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aplysiopsis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hermaeidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Okutani_2000>
     dwc:class "Gastropoda" ;
     dwc:family "Hermaeidae" ;
     dwc:genus "Aplysiopsis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sacoglossa" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ": Okutani, 2000: 763" ;
+    dwc:species "nigra" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5VNTT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aplysiopsis_nigra> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stiliger_aureomarginatus_Jensen_1993>
+    dwc:class "Gastropoda" ;
+    dwc:family "Limapontiidae" ;
+    dwc:genus "Stiliger" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jensen, 1993" ;
+    dwc:species "aureomarginatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stiliger_aureomarginatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aplysiopsis_nigra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aplysiopsis> ;
     dwc:class "Gastropoda" ;
     dwc:family "Hermaeidae" ;
     dwc:genus "Aplysiopsis" ;
@@ -95,47 +108,108 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "nigra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aplysiopsis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+<http://taxon-name.plazi.org/id/Animalia/Aplysiopsis>
     dwc:class "Gastropoda" ;
+    dwc:family "Hermaeidae" ;
+    dwc:genus "Aplysiopsis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Sacoglossa" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hermaeidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hermaeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sacoglossa> ;
     dwc:class "Gastropoda" ;
     dwc:family "Hermaeidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sacoglossa" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sacoglossa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Sacoglossa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sacoglossa" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D6506C8D779766FCFA0675239BFDF6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Baba_1949> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Aplysiopsis_nigra_Okutani_2000>, <http://taxon-concept.plazi.org/id/Animalia/Hermaeina_nigra_Baba_1949> ;
-    trt:publishedIn <http://dx.doi.org/10.12651/jsr.2014.3.1.001> ;
-    dc:creator "Jung, Daewui", "Kim, Chang-Bae", "Lee, Jongrak" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8120258> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hermaeina_nigra>
+    dwc:class "Gastropoda" ;
+    dwc:family "Hermaeidae" ;
+    dwc:genus "Hermaeina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sacoglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "nigra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hermaeina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hermaeina>
+    dwc:class "Gastropoda" ;
+    dwc:family "Hermaeidae" ;
+    dwc:genus "Hermaeina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sacoglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hermaeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stiliger_aureomarginatus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Limapontiidae" ;
+    dwc:genus "Stiliger" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "aureomarginatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stiliger> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stiliger>
+    dwc:class "Gastropoda" ;
+    dwc:family "Limapontiidae" ;
+    dwc:genus "Stiliger" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limapontiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Limapontiidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Limapontiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .

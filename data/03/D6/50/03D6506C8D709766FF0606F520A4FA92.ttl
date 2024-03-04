@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.12651/JSR.2014.3.1.001>
-    dc:creator "Jung, Daewui", "Kim, Chang-Bae", "Lee, Jongrak" ;
-    dc:date "2014" ;
-    dc:title "A report of four unrecorded species of opisthobranch molluscs from Korea" ;
+treatment:03D6506C8D709766FF0606F520A4FA92
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8120260> ;
+    dc:creator "Jung, Daewui; Lee, Jongrak; Kim, Chang-Bae" ;
+    dc:title "Stiliger aureomarginatus Jensen 1993" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03D6506C8D709766FF0606F520A4FA92.mc.3B17EB278D709766FE210774230AFC97> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stiliger_aureomarginatus_Jensen_1993> ;
+    trt:publishedIn <http://dx.doi.org/10.12651/jsr.2014.3.1.001> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.12651/jsr.2014.3.1.001>
     bibo:endPage "6" ;
     bibo:issue "1" ;
     bibo:journal "Journal of Species Research" ;
     bibo:pubDate "2014-02-28" ;
     bibo:startPage "1" ;
     bibo:volume "3" ;
+    dc:creator "Jung, Daewui; Lee, Jongrak; Kim, Chang-Bae" ;
+    dc:date "2014" ;
+    dc:title "A report of four unrecorded species of opisthobranch molluscs from Korea" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8120260> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/8120260/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03D6506C8D709766FF0606F520A4FA92.mc.3B17EB278D709766FE210774230AFC97>
+    dwc:eventDate "2013-04-01" ;
+    dwc:locality "Seogwi-dong" ;
+    dwc:recordedBy "D. Jung" ;
+    trt:httpUri <https://treatment.plazi.org/id/03D6506C8D709766FF0606F520A4FA92#3B17EB278D709766FE210774230AFC97> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Stiliger_aureomarginatus_Jensen_1993>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stiliger_aureomarginatus> ;
-    dwc:ID-CoL "52PS3" ;
     dwc:ID-ENA "1522353" ;
     dwc:class "Gastropoda" ;
     dwc:family "Limapontiidae" ;
@@ -38,62 +53,13 @@
     dwc:order "Pleurobranchida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Jensen, 1993" ;
+    dwc:scientificNameAuthorship "Jensen, 1993", "Jensen, 1993: 232-236" ;
     dwc:species "aureomarginatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/52PS3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stiliger_aureomarginatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Limapontiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pleurobranchida> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Limapontiidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pleurobranchida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pleurobranchida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pleurobranchida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stiliger>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limapontiidae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Limapontiidae" ;
-    dwc:genus "Stiliger" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pleurobranchida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Stiliger_aureomarginatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stiliger> ;
     dwc:class "Gastropoda" ;
     dwc:family "Limapontiidae" ;
     dwc:genus "Stiliger" ;
@@ -102,12 +68,55 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "aureomarginatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stiliger> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D6506C8D709766FF0606F520A4FA92>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stiliger_aureomarginatus_Jensen_1993> ;
-    trt:publishedIn <http://dx.doi.org/10.12651/jsr.2014.3.1.001> ;
-    dc:creator "Jung, Daewui", "Kim, Chang-Bae", "Lee, Jongrak" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8120260> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Stiliger>
+    dwc:class "Gastropoda" ;
+    dwc:family "Limapontiidae" ;
+    dwc:genus "Stiliger" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pleurobranchida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limapontiidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Limapontiidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Limapontiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pleurobranchida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pleurobranchida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pleurobranchida>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pleurobranchida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
