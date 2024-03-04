@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:482287C8ED4D7D68B124F4C0CF437929
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6591756> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Eremodipus lichtensteini" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/482287C8ED4D7D68B124F4C0CF437929.mc.70E33C83ED4D7D69BC1CF410C2547BDC> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eremodipus_lichtensteini_Vinogradov_1927> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Scirtopoda_lichtensteini_Vinogradov_1927> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6591722> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6591722>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Dipodidae" ;
     bibo:endPage "100" ;
     bibo:startPage "81" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Dipodidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6591756> ;
     a fabio:BookSection .
 
@@ -23,9 +34,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6591756/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/482287C8ED4D7D68B124F4C0CF437929.mc.70E33C83ED4D7D69BC1CF410C2547BDC>
+    dwc:locality "Mary" ;
+    trt:gbifOccurrenceId "3795085320" ;
+    trt:httpUri <https://treatment.plazi.org/id/482287C8ED4D7D68B124F4C0CF437929#70E33C83ED4D7D69BC1CF410C2547BDC> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Eremodipus_lichtensteini_Vinogradov_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini> ;
-    dwc:ID-CoL "6GGMV" ;
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -36,11 +51,13 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Vinogradov, 1927" ;
     dwc:species "lichtensteini" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6GGMV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Scirtopoda_lichtensteini_Vinogradov_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scirtopoda_lichtensteini> ;
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Scirtopoda" ;
@@ -50,43 +67,38 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Vinogradov, 1927" ;
     dwc:species "lichtensteini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scirtopoda_lichtensteini> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dipodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Dipodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eremodipus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eremodipus_lichtensteini_balkhashensis_Shenbrot_1990>
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Eremodipus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Shenbrot, 1990" ;
+    dwc:species "lichtensteini" ;
+    dwc:subSpecies "balkhashensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini_balkhashensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eremodipus_lichtensteini_jaxartensis_Shenbrot_1990>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Eremodipus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Shenbrot, 1990" ;
+    dwc:species "lichtensteini" ;
+    dwc:subSpecies "jaxartensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini_jaxartensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eremodipus> ;
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Eremodipus" ;
@@ -95,30 +107,104 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "lichtensteini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eremodipus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Eremodipus>
     dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Eremodipus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dipodidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/482287C8ED4D7D68B124F4C0CF437929>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eremodipus_lichtensteini_Vinogradov_1927> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Scirtopoda_lichtensteini_Vinogradov_1927> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6591722> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6591756> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scirtopoda_lichtensteini>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Scirtopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "lichtensteini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scirtopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scirtopoda>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Scirtopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini_balkhashensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Eremodipus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "lichtensteini" ;
+    dwc:subSpecies "balkhashensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini_jaxartensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Eremodipus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "lichtensteini" ;
+    dwc:subSpecies "jaxartensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eremodipus_lichtensteini> ;
+    a dwcFP:TaxonName .
