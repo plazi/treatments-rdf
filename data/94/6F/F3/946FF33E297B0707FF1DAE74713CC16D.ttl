@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:946FF33E297B0707FF1DAE74713CC16D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3699296> ;
+    dc:creator "Kment, Petr; Rédei, Dávid" ;
+    dc:title "Homoeocerus fuscicornis Horvath 1893" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_fuscicornis_Horvath_1893> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_pallens_Fabricius_1781>, <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_overlaeti_Schouteden_1938> ;
+    trt:publishedIn <http://dx.doi.org/10.2478/aemnp-2018-0025> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.2478/aemnp-2018-0025>
-    dc:creator "Kment, Petr", "Rédei, Dávid" ;
-    dc:date "2018" ;
-    dc:title "A revision of the types of Heteroptera species described by Géza Horváth based on specimens from collections of Ladislav Duda and Emil Holub" ;
     bibo:endPage "295" ;
     bibo:issue "1" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
     bibo:pubDate "2018-08-01" ;
     bibo:startPage "275" ;
     bibo:volume "58" ;
+    dc:creator "Kment, Petr; Rédei, Dávid" ;
+    dc:date "2018" ;
+    dc:title "A revision of the types of Heteroptera species described by Géza Horváth based on specimens from collections of Ladislav Duda and Emil Holub" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3699296> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_fuscicornis_Horvath_1893>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_fuscicornis> ;
-    dwc:ID-CoL "3MFSC" ;
     dwc:class "Insecta" ;
     dwc:family "Coreidae" ;
     dwc:genus "Homoeocerus" ;
@@ -37,27 +45,14 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Horvath, 1893" ;
+    dwc:scientificNameAuthorship "Horvath, 1893", "Horvath, 1893: 259 - 260", "Horv" ;
     dwc:species "fuscicornis" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_overlaeti_Schouteden_1938>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_overlaeti> ;
-    dwc:ID-CoL "3MFRR" ;
-    dwc:class "Insecta" ;
-    dwc:family "Coreidae" ;
-    dwc:genus "Homoeocerus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Schouteden, 1938" ;
-    dwc:species "overlaeti" ;
+    dwc:subGenus "Ornytoides" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3MFSC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_fuscicornis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_pallens_Fabricius_1781>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_pallens> ;
-    dwc:ID-CoL "3MFSD" ;
     dwc:class "Insecta" ;
     dwc:family "Coreidae" ;
     dwc:genus "Homoeocerus" ;
@@ -67,52 +62,25 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fabricius, 1781" ;
     dwc:species "pallens" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3MFSC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_pallens> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coreidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Coreidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Homoeocerus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coreidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_overlaeti_Schouteden_1938>
     dwc:class "Insecta" ;
     dwc:family "Coreidae" ;
     dwc:genus "Homoeocerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schouteden, 1938" ;
+    dwc:species "overlaeti" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3MFSC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_overlaeti> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_fuscicornis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus> ;
     dwc:class "Insecta" ;
     dwc:family "Coreidae" ;
     dwc:genus "Homoeocerus" ;
@@ -121,22 +89,61 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "fuscicornis" ;
+    dwc:subGenus "Ornytoides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus>, <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_Ornytoides> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Homoeocerus_overlaeti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus> ;
+<http://taxon-name.plazi.org/id/Animalia/Homoeocerus>
     dwc:class "Insecta" ;
     dwc:family "Coreidae" ;
     dwc:genus "Homoeocerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "overlaeti" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coreidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coreidae>
+    dwc:class "Insecta" ;
+    dwc:family "Coreidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Homoeocerus_pallens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus> ;
     dwc:class "Insecta" ;
     dwc:family "Coreidae" ;
     dwc:genus "Homoeocerus" ;
@@ -145,21 +152,29 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pallens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Homoeocerus_overlaeti>
     dwc:class "Insecta" ;
+    dwc:family "Coreidae" ;
+    dwc:genus "Homoeocerus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "overlaeti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/946FF33E297B0707FF1DAE74713CC16D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_fuscicornis_Horvath_1893> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_overlaeti_Schouteden_1938>, <http://taxon-concept.plazi.org/id/Animalia/Homoeocerus_pallens_Fabricius_1781> ;
-    trt:publishedIn <http://dx.doi.org/10.2478/aemnp-2018-0025> ;
-    dc:creator "Kment, Petr", "Rédei, Dávid" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3699296> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Homoeocerus_Ornytoides>
+    dwc:class "Insecta" ;
+    dwc:family "Coreidae" ;
+    dwc:genus "Homoeocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Ornytoides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homoeocerus> ;
+    a dwcFP:TaxonName .
