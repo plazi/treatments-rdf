@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C587E31E7EFF91FF53F7D79400F884
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6513920> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Tragulus napu F. Cuvier 1822" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C587E31E7EFF91FF53F7D79400F884.mc.3B043CA81E7EFF92FCCCF6AC9534F6B6> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_Cuvier_1822> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Moschus_napu_Cuvier_1822> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5721279> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5721279>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2011" ;
-    dc:title "Tragulidae" ;
     bibo:endPage "334" ;
     bibo:startPage "320" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2011" ;
+    dc:title "Tragulidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6513920> ;
     a fabio:BookSection .
 
@@ -23,22 +34,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6513920/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Moschus_napu_Cuvier_1822>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Moschus_napu> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Tragulidae" ;
-    dwc:genus "Moschus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "F. Cuvier, 1822" ;
-    dwc:species "napu" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03C587E31E7EFF91FF53F7D79400F884.mc.3B043CA81E7EFF92FCCCF6AC9534F6B6>
+    dwc:locality "Sumatra" ;
+    trt:gbifOccurrenceId "3783312302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C587E31E7EFF91FF53F7D79400F884#3B043CA81E7EFF92FCCCF6AC9534F6B6> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_Cuvier_1822>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
-    dwc:ID-CoL "57WS3" ;
     dwc:authority "Wilson, 2011" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2011" ;
@@ -49,61 +51,163 @@
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "F. Cuvier, 1822" ;
     dwc:species "napu" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/57WS3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tragulidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
+<http://taxon-concept.plazi.org/id/Animalia/Moschus_napu_Cuvier_1822>
     dwc:class "Mammalia" ;
     dwc:family "Tragulidae" ;
+    dwc:genus "Moschus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "F. Cuvier, 1822" ;
+    dwc:species "napu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Moschus_napu> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Tragulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_kanchil_Raffles_1822>
     dwc:class "Mammalia" ;
     dwc:family "Tragulidae" ;
     dwc:genus "Tragulus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Raffles, 1822" ;
+    dwc:species "kanchil" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_kanchil> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_napu_Cuvier_1822>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "F. Cuvier, 1822" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "napu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_napu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_bangue_Chasen_1931>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship ": Chasen & Kloss, 1931" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "bangue" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_bangue> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_bunguranensis_Miller_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Miller, 1901" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "bunguranensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_bunguranensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_neubronneri_Sody_1931>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Sody, 1931" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "neubronneri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_neubronneri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_nmiasis_Lyon_1916>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Lyon, 1916" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "nmiasis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_nmiasis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_rufulus_Miller_1900>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Miller, 1900" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "rufulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_rufulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_terutus_Thomas_1909>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas & Wroughton, 1909" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "terutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_terutus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_versicolor_Thomas_1910>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1910" ;
+    dwc:species "versicolor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_versicolor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragulus_javanicus_Osbeck_1765>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Osbeck, 1765" ;
+    dwc:species "javanicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragulus_javanicus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus> ;
     dwc:class "Mammalia" ;
     dwc:family "Tragulidae" ;
     dwc:genus "Tragulus" ;
@@ -112,13 +216,205 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "napu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C587E31E7EFF91FF53F7D79400F884>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tragulus_napu_Cuvier_1822> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Moschus_napu_Cuvier_1822> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5721279> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6513920> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tragulus>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Tragulidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Moschus_napu>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Moschus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "napu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Moschus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Moschus>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Moschus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_kanchil>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "kanchil" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_napu>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "napu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_bangue>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "bangue" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_bunguranensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "bunguranensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_neubronneri>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "neubronneri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_nmiasis>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "nmiasis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_rufulus>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "rufulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_napu_terutus>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "napu" ;
+    dwc:subSpecies "terutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus_napu> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_versicolor>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "versicolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragulus_javanicus>
+    dwc:class "Mammalia" ;
+    dwc:family "Tragulidae" ;
+    dwc:genus "Tragulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "javanicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragulus> ;
+    a dwcFP:TaxonName .
