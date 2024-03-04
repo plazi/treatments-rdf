@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C5388786FFEBFFB761B4FB41F95FF658
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6608381> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Trichechus inunguus Linnaeus 1758" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/C5388786FFEBFFB761B4FB41F95FF658.mc.FDF93CCDFFEBFFB762FBFAA8FACCFA0B> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trichechus_inunguus_Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trichechus_manatus_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6608369> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6608369>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2014" ;
-    dc:title "Trichechidae" ;
     bibo:endPage "562" ;
     bibo:startPage "548" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2014" ;
+    dc:title "Trichechidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6608381> ;
     a fabio:BookSection .
 
@@ -23,8 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6608381/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/C5388786FFEBFFB761B4FB41F95FF658.mc.FDF93CCDFFEBFFB762FBFAA8FACCFA0B>
+    trt:gbifOccurrenceId "3801069301" ;
+    trt:httpUri <https://treatment.plazi.org/id/C5388786FFEBFFB761B4FB41F95FF658#FDF93CCDFFEBFFB762FBFAA8FACCFA0B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Trichechus_inunguus_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichechus_inunguus> ;
     dwc:authority "Mittermeier, 2014" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2014" ;
@@ -35,12 +50,12 @@
     dwc:order "Sirenia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "inunguus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichechus_inunguus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trichechus_manatus_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichechus_manatus> ;
-    dwc:ID-CoL "58863" ;
     dwc:class "Mammalia" ;
     dwc:family "Trichechidae" ;
     dwc:genus "Trichechus" ;
@@ -48,51 +63,49 @@
     dwc:order "Sirenia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Natterer" ;
+    dwc:scientificNameAuthorship "Natterer", "Linnaeus, 1758" ;
     dwc:species "manatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichechus_manatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Trichechus_senegalensis_Link_1795>
     dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sirenia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
+    dwc:family "Trichechidae" ;
+    dwc:genus "Trichechus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sirenia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Link, 1795" ;
+    dwc:species "senegalensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichechus_senegalensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Trichechidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sirenia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Trichechidae_Gill_1872>
     dwc:class "Mammalia" ;
     dwc:family "Trichechidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sirenia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Gill, 1872" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichechidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichechus_inunguus>
+    dwc:class "Mammalia" ;
+    dwc:family "Trichechidae" ;
+    dwc:genus "Trichechus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sirenia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "inunguus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichechus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechidae> ;
     dwc:class "Mammalia" ;
     dwc:family "Trichechidae" ;
     dwc:genus "Trichechus" ;
@@ -100,22 +113,49 @@
     dwc:order "Sirenia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Trichechus_inunguus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechus> ;
+<http://taxon-name.plazi.org/id/Animalia/Trichechidae>
     dwc:class "Mammalia" ;
     dwc:family "Trichechidae" ;
-    dwc:genus "Trichechus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sirenia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "inunguus" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sirenia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sirenia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sirenia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichechus_manatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechus> ;
     dwc:class "Mammalia" ;
     dwc:family "Trichechidae" ;
     dwc:genus "Trichechus" ;
@@ -124,13 +164,17 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "manatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C5388786FFEBFFB761B4FB41F95FF658>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trichechus_inunguus_Linnaeus_1758> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trichechus_manatus_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6608369> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6608381> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Trichechus_senegalensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Trichechidae" ;
+    dwc:genus "Trichechus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sirenia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "senegalensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichechus> ;
+    a dwcFP:TaxonName .
