@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:A635D926FFBFFFA4FF03FDC094E1FAC3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5179359> ;
+    dc:creator "Galileo, Maria Helena M.; Martins, Ubirajara R.; Tirant, Stéphane Le; Santos-Silva, Antonio" ;
+    dc:title "Colobothea larriveei Galileo & Martins & Tirant & Santos-Silva 2014, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/A635D926FFBFFFA4FF03FDC094E1FAC3.mc.9EF4626DFFBEFFA4FE55FD8395D3FD63> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Colobothea_larriveei_Galileo_2014> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5179355> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5179355>
-    dc:creator "Galileo, Maria Helena M.", "Martins, Ubirajara R.", "Santos-Silva, Antonio", "Tirant, Stéphane Le" ;
-    dc:date "2014" ;
-    dc:title "Five new species of Cerambycidae (Coleoptera) from Peru and Bolivia, and two new records for Peru" ;
     bibo:endPage "13" ;
     bibo:issue "376" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2014-09-05" ;
     bibo:startPage "1" ;
     bibo:volume "2014" ;
+    dc:creator "Galileo, Maria Helena M.; Martins, Ubirajara R.; Tirant, Stéphane Le; Santos-Silva, Antonio" ;
+    dc:date "2014" ;
+    dc:title "Five new species of Cerambycidae (Coleoptera) from Peru and Bolivia, and two new records for Peru" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5179359> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/5179359/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/A635D926FFBFFFA4FF03FDC094E1FAC3.mc.9EF4626DFFBEFFA4FE55FD8395D3FD63>
+    dwc:collectionCode "MZSP, IMCQ" ;
+    dwc:eventDate "2007-12-01" ;
+    dwc:locality "BOLIVIA" ;
+    dwc:recordedBy "La Paz" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1300" ;
+    trt:httpUri <https://treatment.plazi.org/id/A635D926FFBFFFA4FF03FDC094E1FAC3#9EF4626DFFBEFFA4FE55FD8395D3FD63> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Colobothea_larriveei_Galileo_2014>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Colobothea_larriveei> ;
-    dwc:ID-CoL "X6HS" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Colobothea" ;
@@ -39,52 +57,63 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Galileo & Martins & Tirant & Santos-Silva, 2014" ;
     dwc:species "larriveei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/X6HS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Colobothea_larriveei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Colobothea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Colobothea_declivis_Aurivillius_1902>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Colobothea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aurivillius, 1902" ;
+    dwc:species "declivis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Colobothea_declivis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Colobothea_wappesi_Monne_2010>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Monne and Monne, 2010" ;
+    dwc:species "wappesi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Colobothea_wappesi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Colobothea_dostalbergeri_Schmid_2010>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schmid, 2010" ;
+    dwc:species "dostalbergeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Colobothea_dostalbergeri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Colobothea_boliviana_Galileo_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Galileo & Martins & Tirant & Santos-Silva, 2014" ;
+    dwc:species "boliviana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Colobothea_boliviana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Colobothea_larriveei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colobothea> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Colobothea" ;
@@ -93,20 +122,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "larriveei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colobothea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Colobothea>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/A635D926FFBFFFA4FF03FDC094E1FAC3>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Colobothea_larriveei_Galileo_2014> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5179355> ;
-    dc:creator "Galileo, Maria Helena M.", "Martins, Ubirajara R.", "Santos-Silva, Antonio", "Tirant, Stéphane Le" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5179359> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Colobothea_declivis>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "declivis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colobothea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Colobothea_wappesi>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wappesi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colobothea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Colobothea_dostalbergeri>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dostalbergeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colobothea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Colobothea_boliviana>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Colobothea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "boliviana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colobothea> ;
+    a dwcFP:TaxonName .
