@@ -1,22 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:F800878F1C081D7A00A92E6BFC19FF57
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/obsoletus>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.275321> ;
+    dc:creator "Tsai, Jing-Fu; Rédei, Dávid" ;
+    dc:title "Poecilocoris druraei Linnaeus 1771" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_druraei_Linnaeus_1771> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris>, <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_obsoletus>, <http://taxon-name.plazi.org/id/Animalia/Cimex_druraei>, <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_watanabei> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Cimex_druraei_Linnaeus_1771>, <http://taxon-concept.plazi.org/id/Animalia/Cimex_sanguineus_Goeze_1778>, <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_obsoletus_Dallas_1848>, <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_watanabei_Matsumura_1913> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.275320> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.275320>
-    dc:creator "Rédei, Dávid", "Tsai, Jing-Fu" ;
-    dc:date "2009" ;
-    dc:title "The identity of jewel bugs described by Shonen Matsumura from Taiwan (Hemiptera: Heteroptera: Scutelleridae)" ;
     bibo:endPage "52" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "44" ;
     bibo:volume "2299" ;
+    dc:creator "Tsai, Jing-Fu; Rédei, Dávid" ;
+    dc:date "2009" ;
+    dc:title "The identity of jewel bugs described by Shonen Matsumura from Taiwan (Hemiptera: Heteroptera: Scutelleridae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.275321> ;
     a fabio:JournalArticle .
 
@@ -25,34 +37,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/275321/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Cimex_druraei_Linnaeus_1771>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cimex_druraei> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cimicidae" ;
-    dwc:genus "Cimex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus, 1771: 534" ;
-    dwc:species "druraei" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Cimex_sanguineus_Goeze_1778>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cimex_sanguineus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cimicidae" ;
-    dwc:genus "Cimex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Goeze, 1778: 231" ;
-    dwc:species "sanguineus" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_druraei_Linnaeus_1771>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_druraei> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -62,10 +47,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus, 1771" ;
     dwc:species "druraei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_druraei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cimex_druraei_Linnaeus_1771>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:genus "Cimex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1771: 534", "Linnaeus, 1771" ;
+    dwc:species "druraei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cimex_druraei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cimex_sanguineus_Goeze_1778>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:genus "Cimex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Goeze, 1778: 231" ;
+    dwc:species "sanguineus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cimex_sanguineus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cimex_sanguineus_Schrank_1776>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:genus "Cimex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schrank, 1776" ;
+    dwc:species "sanguineus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cimex_sanguineus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_obsoletus_Dallas_1848>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_obsoletus> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -75,10 +99,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Dallas, 1848: 104" ;
     dwc:species "obsoletus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_obsoletus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_watanabei_Matsumura_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_watanabei> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -88,61 +112,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Matsumura, 1913: 106" ;
     dwc:species "watanabei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_watanabei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cimex_sanguineus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cimex> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cimicidae" ;
-    dwc:genus "Cimex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "sanguineus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pentatomidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Pentatomidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Poecilocoris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_Dallas_1848>
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -150,10 +123,11 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Dallas, 1848" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_druraei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -162,10 +136,105 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "druraei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Poecilocoris>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Poecilocoris" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pentatomidae>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cimex_druraei>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:genus "Cimex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "druraei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cimex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cimex>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:genus "Cimex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cimicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cimicidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cimex_sanguineus>
+    dwc:class "Insecta" ;
+    dwc:family "Cimicidae" ;
+    dwc:genus "Cimex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sanguineus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cimex> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_obsoletus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -174,10 +243,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "obsoletus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Poecilocoris_watanabei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:genus "Poecilocoris" ;
@@ -186,14 +255,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "watanabei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poecilocoris> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/F800878F1C081D7A00A92E6BFC19FF57>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_druraei_Linnaeus_1771> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/F8/00/87/Cimex_druraei>, <file:///workdir/tmprdf/data/F8/00/87/Poecilocoris>, <file:///workdir/tmprdf/data/F8/00/87/Poecilocoris_obsoletus>, <file:///workdir/tmprdf/data/F8/00/87/Poecilocoris_watanabei> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Cimex_druraei_Linnaeus_1771>, <http://taxon-concept.plazi.org/id/Animalia/Cimex_sanguineus_Goeze_1778>, <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_obsoletus_Dallas_1848>, <http://taxon-concept.plazi.org/id/Animalia/Poecilocoris_watanabei_Matsumura_1913> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.275320> ;
-    dc:creator "Rédei, Dávid", "Tsai, Jing-Fu" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.275321> ;
-    a trt:Treatment .
-
