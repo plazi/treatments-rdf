@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03A800107733FFC9FF14A6189389F8D7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.273013> ;
+    dc:creator "Van, Rob W. M." ;
+    dc:title "Characella poecillastroides Van Soest, Meesters & Becking 2014" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Characella_poecillastroides_Soest_2014> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Characella_poecillastroides_Soest_2014> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.272951> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.272951>
-    dc:creator "Van, Rob W. M." ;
-    dc:date "2017" ;
-    dc:title "Sponges of the Guyana Shelf" ;
     bibo:endPage "225" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
+    dc:creator "Van, Rob W. M." ;
+    dc:date "2017" ;
+    dc:title "Sponges of the Guyana Shelf" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.273013> ;
     a fabio:JournalArticle .
 
@@ -26,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Characella_poecillastroides_Soest_2014>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Characella_poecillastroides> ;
     dwc:class "Demospongiae" ;
     dwc:family "Pachastrellidae" ;
     dwc:genus "Characella" ;
@@ -34,26 +44,37 @@
     dwc:order "Astrophorida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Van Soest et al., 2014: 410", "Van Soest, Meesters & Becking, 2014" ;
+    dwc:scientificNameAuthorship "Van Soest, Meesters & Becking, 2014", "Van Soest et al., 2014: 410" ;
     dwc:species "poecillastroides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Characella_poecillastroides> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Astrophorida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Characella_enae_Laubenfels_1934>
     dwc:class "Demospongiae" ;
+    dwc:family "Pachastrellidae" ;
+    dwc:genus "Characella" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Astrophorida" ;
     dwc:phylum "Porifera" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "De Laubenfels, 1934" ;
+    dwc:species "enae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Characella_enae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Characella_poecillastroides>
+    dwc:class "Demospongiae" ;
+    dwc:family "Pachastrellidae" ;
+    dwc:genus "Characella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astrophorida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "poecillastroides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Characella> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Characella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachastrellidae> ;
     dwc:class "Demospongiae" ;
     dwc:family "Pachastrellidae" ;
     dwc:genus "Characella" ;
@@ -61,10 +82,49 @@
     dwc:order "Astrophorida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachastrellidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Characella_poecillastroides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Characella> ;
+<http://taxon-name.plazi.org/id/Animalia/Pachastrellidae>
+    dwc:class "Demospongiae" ;
+    dwc:family "Pachastrellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astrophorida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Astrophorida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Astrophorida>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astrophorida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Porifera>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Characella_enae>
     dwc:class "Demospongiae" ;
     dwc:family "Pachastrellidae" ;
     dwc:genus "Characella" ;
@@ -72,39 +132,6 @@
     dwc:order "Astrophorida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
-    dwc:species "poecillastroides" ;
+    dwc:species "enae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Characella> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pachastrellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Astrophorida> ;
-    dwc:class "Demospongiae" ;
-    dwc:family "Pachastrellidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Astrophorida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03A800107733FFC9FF14A6189389F8D7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Characella_poecillastroides_Soest_2014> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Characella_poecillastroides_Soest_2014> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.272951> ;
-    dc:creator "Van, Rob W. M." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.273013> ;
-    a trt:Treatment .
-
