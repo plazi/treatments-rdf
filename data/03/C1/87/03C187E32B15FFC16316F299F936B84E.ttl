@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C187E32B15FFC16316F299F936B84E
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6621626> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Bradypus torquatus Illiger 1811" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C187E32B15FFC16316F299F936B84E.mc.3B003CA82B14FFC16574FEC8FA86BC53> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bradypus_torquatus_Illiger_1811> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6621602> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6621602>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2018" ;
-    dc:title "Bradypodidae" ;
     bibo:endPage "132" ;
     bibo:startPage "118" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2018" ;
+    dc:title "Bradypodidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6621626> ;
     a fabio:BookSection .
 
@@ -23,9 +33,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6621626/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03C187E32B15FFC16316F299F936B84E.mc.3B003CA82B14FFC16574FEC8FA86BC53>
+    trt:gbifOccurrenceId "3863971301" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C187E32B15FFC16316F299F936B84E#3B003CA82B14FFC16574FEC8FA86BC53> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Bradypus_torquatus_Illiger_1811>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bradypus_torquatus> ;
-    dwc:ID-CoL "N5F2" ;
     dwc:authority "Mittermeier, 2018" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2018" ;
@@ -36,26 +49,13 @@
     dwc:order "Pilosa" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Illiger, 1811" ;
     dwc:species "torquatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/N5F2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bradypus_torquatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bradypodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pilosa> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Bradypodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pilosa" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bradypus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bradypodidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Bradypus_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Bradypodidae" ;
     dwc:genus "Bradypus" ;
@@ -63,10 +63,11 @@
     dwc:order "Pilosa" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bradypus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Bradypus_torquatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bradypus> ;
     dwc:class "Mammalia" ;
     dwc:family "Bradypodidae" ;
     dwc:genus "Bradypus" ;
@@ -75,36 +76,55 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "torquatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bradypus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Bradypus>
     dwc:class "Mammalia" ;
+    dwc:family "Bradypodidae" ;
+    dwc:genus "Bradypus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Pilosa" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bradypodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bradypodidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Bradypodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pilosa" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pilosa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pilosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pilosa" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C187E32B15FFC16316F299F936B84E>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bradypus_torquatus_Illiger_1811> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6621602> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6621626> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
