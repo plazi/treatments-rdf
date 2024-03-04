@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0393D425FF84FF97FF0684E92B0353FB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.345803> ;
+    dc:creator "Schmidt-Rhaesa, Andreas; Karraker, Nancy E." ;
+    dc:title "Chordodes moutoni Camerano 1895" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0393D425FF84FF97FF0684E92B0353FB.mc.3B526F6EFF84FF95FF06857C2C82534C>, <http://tb.plazi.org/GgServer/dwcaRecords/0393D425FF84FF97FF0684E92B0353FB.mc.3B526F6EFF84FF95FCF9853429A553F4> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chordodes_moutoni_Camerano_1895> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4238.3.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4238.3.6>
-    dc:creator "Karraker, Nancy E.", "Schmidt-Rhaesa, Andreas" ;
-    dc:date "2017" ;
-    dc:title "Nematomorpha from Hong Kong and description of a new species from Malaysia" ;
     bibo:endPage "405" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "395" ;
     bibo:volume "4238" ;
+    dc:creator "Schmidt-Rhaesa, Andreas; Karraker, Nancy E." ;
+    dc:date "2017" ;
+    dc:title "Nematomorpha from Hong Kong and description of a new species from Malaysia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.345803> ;
     a fabio:JournalArticle .
 
@@ -26,9 +36,22 @@
     fabio:hasRepresentation "https://zenodo.org/record/345803/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/0393D425FF84FF97FF0684E92B0353FB.mc.3B526F6EFF84FF95FF06857C2C82534C>
+    dwc:eventDate "2008-07-26" ;
+    dwc:locality "Peel Rise" ;
+    dwc:recordedBy "N. E. Karraker" ;
+    dwc:verbatimElevation "172" ;
+    trt:gbifOccurrenceId "1438340312" ;
+    trt:httpUri <https://treatment.plazi.org/id/0393D425FF84FF97FF0684E92B0353FB#3B526F6EFF84FF95FF06857C2C82534C> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/0393D425FF84FF97FF0684E92B0353FB.mc.3B526F6EFF84FF95FCF9853429A553F4>
+    dwc:locality "Hamburg" ;
+    trt:gbifOccurrenceId "1438340319" ;
+    trt:httpUri <https://treatment.plazi.org/id/0393D425FF84FF97FF0684E92B0353FB#3B526F6EFF84FF95FCF9853429A553F4> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Chordodes_moutoni_Camerano_1895>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chordodes_moutoni> ;
-    dwc:ID-CoL "5YCK6" ;
     dwc:class "Gordioida" ;
     dwc:family "Chordodidae" ;
     dwc:genus "Chordodes" ;
@@ -38,26 +61,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Camerano, 1895" ;
     dwc:species "moutoni" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5YCK6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chordodes_moutoni> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordodidae> ;
-    dwc:class "Gordioida" ;
-    dwc:family "Chordodidae" ;
-    dwc:genus "Chordodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gordioidea" ;
-    dwc:phylum "Nematomorpha" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Chordodes_moutoni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordodes> ;
     dwc:class "Gordioida" ;
     dwc:family "Chordodidae" ;
     dwc:genus "Chordodes" ;
@@ -66,46 +74,55 @@
     dwc:phylum "Nematomorpha" ;
     dwc:rank "species" ;
     dwc:species "moutoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordodes>
+    dwc:class "Gordioida" ;
+    dwc:family "Chordodidae" ;
+    dwc:genus "Chordodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gordioidea" ;
+    dwc:phylum "Nematomorpha" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordodidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Chordodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioidea> ;
     dwc:class "Gordioida" ;
     dwc:family "Chordodidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Gordioidea" ;
     dwc:phylum "Nematomorpha" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gordioida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematomorpha> ;
-    dwc:class "Gordioida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Nematomorpha" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioidea> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Gordioidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioida> ;
     dwc:class "Gordioida" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Gordioidea" ;
     dwc:phylum "Nematomorpha" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gordioida>
+    dwc:class "Gordioida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nematomorpha" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematomorpha> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Nematomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Nematomorpha" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0393D425FF84FF97FF0684E92B0353FB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chordodes_moutoni_Camerano_1895> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4238.3.6> ;
-    dc:creator "Karraker, Nancy E.", "Schmidt-Rhaesa, Andreas" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.345803> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

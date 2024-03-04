@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0393727E8C1A1104AB9070B5FA92FEF0
+    cito:cites <http://dx.doi.org/10.5281/zenodo.229000>, <http://dx.doi.org/10.5281/zenodo.229001>, <http://dx.doi.org/10.5281/zenodo.229002> ;
+    dc:creator "Košťál, Michael" ;
+    dc:title "Anthonomus (Persexarthrus) baudueri Desbrochers" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Anthonomus_baudueri>, <http://taxon-name.plazi.org/id/Animalia/Bradybatus_ornatoides>, <http://taxon-name.plazi.org/id/Animalia/Anthonomus_amygdali>, <http://taxon-name.plazi.org/id/Animalia/Anthonomus_ornatus>, <http://taxon-name.plazi.org/id/Animalia/Bradybatus> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Bradybatus_ornatoides_Reitter_1898> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3785.4.5> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Anthonomus_baudueri> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3785.4.5>
-    dc:creator "Košťál, Michael" ;
-    dc:date "2014" ;
-    dc:title "Revision of the subgenus Persexarthrus Voss of the genus Anthonomus Germar (Coleoptera: Curculionidae: Anthonomini)" ;
     bibo:endPage "574" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "561" ;
     bibo:volume "3785" ;
+    dc:creator "Košťál, Michael" ;
+    dc:date "2014" ;
+    dc:title "Revision of the subgenus Persexarthrus Voss of the genus Anthonomus Germar (Coleoptera: Curculionidae: Anthonomini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.229000>, <http://dx.doi.org/10.5281/zenodo.229001>, <http://dx.doi.org/10.5281/zenodo.229002> ;
     a fabio:JournalArticle .
 
@@ -36,9 +47,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/229002/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Anthonomus_cyprius_Marshall_1925>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Anthonomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Marshall, 1925: 75" ;
+    dwc:species "cyprius" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/67DDP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anthonomus_cyprius> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Bradybatus_ornatoides_Reitter_1898>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bradybatus_ornatoides> ;
-    dwc:ID-CoL "N4XQ" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Bradybatus" ;
@@ -48,26 +71,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Reitter, 1898: 354" ;
     dwc:species "ornatoides" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/67DDP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bradybatus_ornatoides> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anthonomus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:genus "Anthonomus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Anthonomus_baudueri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthonomus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Anthonomus" ;
@@ -76,28 +84,85 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "baudueri" ;
+    dwc:subGenus "Persexarthrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthonomus_Persexarthrus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bradybatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Anthonomus_Persexarthrus>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
-    dwc:genus "Bradybatus" ;
+    dwc:genus "Anthonomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Persexarthrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthonomus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anthonomus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Anthonomus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anthonomus_cyprius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Anthonomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cyprius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthonomus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Bradybatus_ornatoides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bradybatus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Bradybatus" ;
@@ -106,41 +171,16 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ornatoides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bradybatus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Bradybatus>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
+    dwc:genus "Bradybatus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/0393727E8C1A1104AB9070B5FA92FEF0>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/93/72/Anthonomus_amygdali>, <file:///workdir/tmprdf/data/03/93/72/Anthonomus_baudueri>, <file:///workdir/tmprdf/data/03/93/72/Anthonomus_ornatus>, <file:///workdir/tmprdf/data/03/93/72/Bradybatus>, <file:///workdir/tmprdf/data/03/93/72/Bradybatus_ornatoides> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Bradybatus_ornatoides_Reitter_1898> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3785.4.5> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Anthonomus_baudueri> ;
-    dc:creator "Košťál, Michael" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.229000>, <http://dx.doi.org/10.5281/zenodo.229001>, <http://dx.doi.org/10.5281/zenodo.229002> ;
-    a trt:Treatment .
-
