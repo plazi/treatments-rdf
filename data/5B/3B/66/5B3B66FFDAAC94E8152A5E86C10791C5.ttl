@@ -1,40 +1,44 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:5B3B66FFDAAC94E8152A5E86C10791C5
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Dirrhagini>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Dirrhagus>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Microrhaginae>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Arhipini>' due to issues with rank ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:title "Dirhagini Reitter 1911" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dirhagini_Reitter_1911> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Dirhagus>, <http://taxon-name.plazi.org/id/Animalia/Microrhagus>, <http://taxon-name.plazi.org/id/Animalia/Arrhipis>, <http://taxon-name.plazi.org/id/Animalia/Arhipis> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.88.807>
-    dc:creator "Alonso-Zarazaga, Miguel A.", "Bouchard, Patrice", "Bousquet, Yves", "Davies, Anthony E.", "Lawrence, John F.", "Lyal, Chris H. C.", "Newton, Alfred F.", "Reid, Chris A. M.", "Schmitt, Michael", "Smith, Andrew B. T.", "Ślipinski, S. Adam" ;
-    dc:date "2011" ;
-    dc:title "Family-group names in Coleoptera (Insecta)" ;
     bibo:endPage "972" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "88" ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:date "2011" ;
+    dc:title "Family-group names in Coleoptera (Insecta)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dirhagini_Reitter_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dirhagini> ;
     dwc:rank "tribe" ;
     dwc:scientificNameAuthorship "Reitter, 1911" ;
     dwc:tribe "Dirhagini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dirhagini> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dirhagini>
+    # Warning: Could not determine parent name ;
     dwc:rank "tribe" ;
     dwc:tribe "Dirhagini" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/5B3B66FFDAAC94E8152A5E86C10791C5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dirhagini_Reitter_1911> ;
-    trt:citesTaxonName <file:///workspace/rdf/data/5B/3B/66/Arhipis>, <file:///workspace/rdf/data/5B/3B/66/Arrhipis>, <file:///workspace/rdf/data/5B/3B/66/Dirhagus>, <file:///workspace/rdf/data/5B/3B/66/Microrhagus> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
-    dc:creator "Alonso-Zarazaga, Miguel A.", "Bouchard, Patrice", "Bousquet, Yves", "Davies, Anthony E.", "Lawrence, John F.", "Lyal, Chris H. C.", "Newton, Alfred F.", "Reid, Chris A. M.", "Schmitt, Michael", "Smith, Andrew B. T.", "Ślipinski, S. Adam" ;
-    a trt:Treatment .
-

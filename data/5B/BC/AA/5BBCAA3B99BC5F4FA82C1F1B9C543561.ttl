@@ -1,33 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///app/workdir/tmprdf/data/5B/BC/AA/5BBCAA3B99BC5F4FA82C1F1B9C543561.rdf>
-    dc:description "Map 9. Collection localities in New Brunswick, Canada of Planolinoides aenictus." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/16566" ;
-    a fabio:Figure .
+treatment:5BBCAA3B99BC5F4FA82C1F1B9C543561
+    cito:cites <https://binary.pensoft.net/fig/16566> ;
+    dc:creator "Webster, Reginald P.; Sweeney, Jon D.; DeMerchant, Ian" ;
+    dc:title "Planolinoides aenictus **" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Planolinoides_aenictus_Gordon_1987> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.179.2607> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.179.2607>
-    dc:creator "DeMerchant, Ian", "Sweeney, Jon D.", "Webster, Reginald P." ;
-    dc:date "2012" ;
-    dc:title "New Coleoptera records from New Brunswick, Canada: Geotrupidae and Scarabaeidae" ;
     bibo:endPage "40" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2012-04-04" ;
     bibo:startPage "27" ;
     bibo:volume "179" ;
-    fabio:hasPart <file:///app/workdir/tmprdf/data/5B/BC/AA/5BBCAA3B99BC5F4FA82C1F1B9C543561.rdf> ;
+    dc:creator "Webster, Reginald P.; Sweeney, Jon D.; DeMerchant, Ian" ;
+    dc:date "2012" ;
+    dc:title "New Coleoptera records from New Brunswick, Canada: Geotrupidae and Scarabaeidae" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/16566> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/16566>
+    dc:description "Map 9. Collection localities in New Brunswick, Canada of Planolinoides aenictus." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/16566" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Planolinoides_aenictus_Gordon_1987>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Planolinoides_aenictus> ;
     dwc:LSID "5BBCAA3B-99BC-5F4F-A82C-1F1B9C543561" ;
     dwc:class "Hexapoda" ;
     dwc:family "Scarabaeidae" ;
@@ -36,52 +44,25 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Cooper and Gordon, 1987) **" ;
+    dwc:scientificNameAuthorship "(Cooper and Gordon, 1987) **", "Cooper and Gordon, 1987" ;
     dwc:species "aenictus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Planolinoides_aenictus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Erethizon_dorsatum_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Erethizontidae" ;
+    dwc:genus "Erethizon" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
-    dwc:class "Hexapoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Hexapoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Planolinoides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
-    dwc:class "Hexapoda" ;
-    dwc:family "Scarabaeidae" ;
-    dwc:genus "Planolinoides" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "dorsatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Erethizon_dorsatum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Planolinoides_aenictus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Planolinoides> ;
     dwc:class "Hexapoda" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Planolinoides" ;
@@ -90,22 +71,112 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "aenictus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Planolinoides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Planolinoides>
+    dwc:class "Hexapoda" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Planolinoides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Hexapoda" ;
     dwc:family "Scarabaeidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5BBCAA3B99BC5F4FA82C1F1B9C543561>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Planolinoides_aenictus_Gordon_1987> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.179.2607> ;
-    dc:creator "DeMerchant, Ian", "Sweeney, Jon D.", "Webster, Reginald P." ;
-    cito:cites <file:///app/workdir/tmprdf/data/5B/BC/AA/5BBCAA3B99BC5F4FA82C1F1B9C543561.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Erethizon_dorsatum>
+    dwc:class "Mammalia" ;
+    dwc:family "Erethizontidae" ;
+    dwc:genus "Erethizon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dorsatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Erethizon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Erethizon>
+    dwc:class "Mammalia" ;
+    dwc:family "Erethizontidae" ;
+    dwc:genus "Erethizon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Erethizontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Erethizontidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Erethizontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
