@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DE87A4FFCBB44CFF47F915DCB1FC06
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1068860>, <http://dx.doi.org/10.5281/zenodo.1068864> ;
+    dc:creator "Sinclair, Bradley J.; Plant, Adrian R." ;
+    dc:title "Dolichocephala immaculata Sinclair & Plant 2017, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03DE87A4FFCBB44CFF47F915DCB1FC06.mc.3B1F3CEFFFCCB44DFF17FF7ADD81FF75> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_immaculata_Sinclair_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4358.3.9> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4358.3.9>
-    dc:creator "Plant, Adrian R.", "Sinclair, Bradley J." ;
-    dc:date "2017" ;
-    dc:title "Dolichocephala Macquart of Thailand (Diptera: Empididae: Clinocerinae)" ;
     bibo:endPage "568" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2017-11-30" ;
     bibo:startPage "551" ;
     bibo:volume "4358" ;
+    dc:creator "Sinclair, Bradley J.; Plant, Adrian R." ;
+    dc:date "2017" ;
+    dc:title "Dolichocephala Macquart of Thailand (Diptera: Empididae: Clinocerinae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1068860>, <http://dx.doi.org/10.5281/zenodo.1068864> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/1068864/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03DE87A4FFCBB44CFF47F915DCB1FC06.mc.3B1F3CEFFFCCB44DFF17FF7ADD81FF75>
+    dwc:collectionCode "QSBG" ;
+    dwc:eventDate "2006-10-26" ;
+    dwc:locality "Chiang Mai Province" ;
+    dwc:recordedBy "Doi Inthanon NP & Y. Areeluck" ;
+    dwc:verbatimElevation "2500" ;
+    dwc:verbatimLatitude "18.58935" ;
+    dwc:verbatimLongitude "98.48595" ;
+    trt:gbifOccurrenceId "1702891014" ;
+    trt:httpUri <https://treatment.plazi.org/id/03DE87A4FFCBB44CFF47F915DCB1FC06#3B1F3CEFFFCCB44DFF17FF7ADD81FF75> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_immaculata_Sinclair_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_immaculata> ;
-    dwc:ID-CoL "9HWKQ" ;
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:genus "Dolichocephala" ;
@@ -44,31 +64,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Sinclair & Plant, 2017" ;
     dwc:species "immaculata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/9HWKQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_immaculata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dolichocephala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empididae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_Macquart_1823>
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:genus "Dolichocephala" ;
@@ -76,10 +76,63 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Macquart, 1823" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_longicerca_Sinclair_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sinclair & Plant, 2017" ;
+    dwc:species "longicerca" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_longicerca> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_srisukai_Sinclair_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sinclair & Plant, 2017" ;
+    dwc:species "srisukai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_srisukai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_thailandensis_Sinclair_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sinclair & Plant, 2017" ;
+    dwc:species "thailandensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_thailandensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_orientalis_Yang_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Yang, Zhu & An" ;
+    dwc:species "orientalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_orientalis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dolichocephala_immaculata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:genus "Dolichocephala" ;
@@ -88,30 +141,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "immaculata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichocephala>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empididae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Empididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DE87A4FFCBB44CFF47F915DCB1FC06>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dolichocephala_immaculata_Sinclair_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4358.3.9> ;
-    dc:creator "Plant, Adrian R.", "Sinclair, Bradley J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1068860>, <http://dx.doi.org/10.5281/zenodo.1068864> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichocephala_longicerca>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longicerca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichocephala_srisukai>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "srisukai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichocephala_thailandensis>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "thailandensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichocephala_orientalis>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Dolichocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "orientalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichocephala> ;
+    a dwcFP:TaxonName .

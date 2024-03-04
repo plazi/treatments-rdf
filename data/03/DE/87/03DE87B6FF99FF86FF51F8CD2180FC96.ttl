@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DE87B6FF99FF86FF51F8CD2180FC96
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4301701> ;
+    dc:creator "Joshi, Rahul; Singh, Navneet; Kuni, Nikhil" ;
+    dc:title "Membranola Pellinen 2012" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03DE87B6FF99FF86FF51F8CD2180FC96.mc.3B1F3CFDFF98FF85FDDDFF522087FE88> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Membranola_Pellinen_2012> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Purenola_Qi_2013> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4890.1.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4890.1.8>
-    dc:creator "Joshi, Rahul", "Kuni, Nikhil", "Singh, Navneet" ;
-    dc:date "2020" ;
-    dc:title "Introduction of a new generic synonymy and three newly recorded species of Nolinae (Lepidoptera: Nolidae) from India" ;
     bibo:endPage "134" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-12-01" ;
     bibo:startPage "129" ;
     bibo:volume "4890" ;
+    dc:creator "Joshi, Rahul; Singh, Navneet; Kuni, Nikhil" ;
+    dc:date "2020" ;
+    dc:title "Introduction of a new generic synonymy and three newly recorded species of Nolinae (Lepidoptera: Nolidae) from India" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4301701> ;
     a fabio:JournalArticle .
 
@@ -27,8 +38,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/4301701/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03DE87B6FF99FF86FF51F8CD2180FC96.mc.3B1F3CFDFF98FF85FDDDFF522087FE88>
+    dwc:collectionCode "BMNH" ;
+    dwc:locality "Lampang" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2986025302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03DE87B6FF99FF86FF51F8CD2180FC96#3B1F3CFDFF98FF85FDDDFF522087FE88> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Membranola_Pellinen_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Membranola> ;
     dwc:class "Insecta" ;
     dwc:family "Nolidae" ;
     dwc:genus "Membranola" ;
@@ -36,11 +54,11 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Pellinen, 2012" ;
+    dwc:scientificNameAuthorship "Pellinen, 2012", "Pellinen, 2012: 61 - 63" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Membranola> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Purenola_Qi_2013>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Purenola> ;
     dwc:class "Insecta" ;
     dwc:family "Nolidae" ;
     dwc:genus "Purenola" ;
@@ -48,40 +66,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Qi, Laszlo, Ronkay, Bae & Han, 2013: 372" ;
+    dwc:scientificNameAuthorship "Qi, Laszlo, Ronkay, Bae & Han, 2013: 372", "Qi, Laszlo, Ronkay, Bae & Han, 2013" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Purenola> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Purenola_fibigeri_Qi_2013>
     dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
+    dwc:family "Nolidae" ;
+    dwc:genus "Purenola" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Qi, Laszlo, Ronkay, Bae & Han, 2013: 372-373", "Qi, Laszlo, Ronkay, Bae & Han, 2013" ;
+    dwc:species "fibigeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Purenola_fibigeri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Membranola_lampang_Pellinen_2012>
+    dwc:class "Insecta" ;
+    dwc:family "Nolidae" ;
+    dwc:genus "Membranola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pellinen, 2012", "Pellinen, 2012: 1" ;
+    dwc:species "lampang" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Membranola_lampang> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nolinae_Bruand_1846>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Bruand, 1846" ;
+    dwc:subFamily "Nolinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nolinae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Membranola>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nolidae> ;
     dwc:class "Insecta" ;
     dwc:family "Nolidae" ;
     dwc:genus "Membranola" ;
@@ -89,20 +116,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nolidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Nolidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Nolidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Purenola>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nolidae> ;
     dwc:class "Insecta" ;
     dwc:family "Nolidae" ;
     dwc:genus "Purenola" ;
@@ -110,13 +166,50 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nolidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DE87B6FF99FF86FF51F8CD2180FC96>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Membranola_Pellinen_2012> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Purenola_Qi_2013> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4890.1.8> ;
-    dc:creator "Joshi, Rahul", "Kuni, Nikhil", "Singh, Navneet" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4301701> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Purenola_fibigeri>
+    dwc:class "Insecta" ;
+    dwc:family "Nolidae" ;
+    dwc:genus "Purenola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fibigeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Purenola> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Membranola_lampang>
+    dwc:class "Insecta" ;
+    dwc:family "Nolidae" ;
+    dwc:genus "Membranola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lampang" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Membranola> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nolinae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Nolinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
