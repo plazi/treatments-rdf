@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F7466FFF989F43B794FF6E534620BB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4489077>, <http://dx.doi.org/10.5281/zenodo.4489079> ;
+    dc:creator "Mengual, Ximo; Barkalov, Anatolij V." ;
+    dc:title "Rohdendorfia bella Mengual 2019, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F7466FFF989F43B794FF6E534620BB.mc.3B36FD24FF989F45B645FEEF53C4230A> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_bella_Mengual_2019> ;
+    trt:publishedIn <http://dx.doi.org/10.2478/aemnp-2019-0025> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.2478/aemnp-2019-0025>
-    dc:creator "Barkalov, Anatolij V.", "Mengual, Ximo" ;
-    dc:date "2019" ;
-    dc:title "Two new species of Rohdendorfia (Diptera: Syrphidae) from Central Asia" ;
     bibo:endPage "336" ;
     bibo:issue "1" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
     bibo:pubDate "2019-07-18" ;
     bibo:startPage "325" ;
     bibo:volume "59" ;
+    dc:creator "Mengual, Ximo; Barkalov, Anatolij V." ;
+    dc:date "2019" ;
+    dc:title "Two new species of Rohdendorfia (Diptera: Syrphidae) from Central Asia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4489077>, <http://dx.doi.org/10.5281/zenodo.4489079> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/4489079/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F7466FFF989F43B794FF6E534620BB.mc.3B36FD24FF989F45B645FEEF53C4230A>
+    dwc:collectionCode "ZFMK" ;
+    dwc:eventDate "2010-08-25" ;
+    dwc:locality "Tso Moriri" ;
+    dwc:recordedBy "I. Abela-Hofbauerova" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "5333" ;
+    dwc:verbatimLatitude "32.9" ;
+    dwc:verbatimLongitude "78.3" ;
+    trt:gbifOccurrenceId "3038242301" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F7466FFF989F43B794FF6E534620BB#3B36FD24FF989F45B645FEEF53C4230A> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_bella_Mengual_2019>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_bella> ;
-    dwc:ID-CoL "9HK99" ;
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:genus "Rohdendorfia" ;
@@ -42,41 +63,13 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Mengual" ;
+    dwc:scientificNameAuthorship "Mengual", "Mengual, 2019" ;
     dwc:species "bella" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/9HK99> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_bella> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rohdendorfia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syrphidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_Smirnov_1924>
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:genus "Rohdendorfia" ;
@@ -84,10 +77,125 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Smirnov, 1924" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Potentilla_pamirica_Mengual_2019>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rosaceae" ;
+    dwc:genus "Potentilla" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "pamirica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Potentilla_pamirica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arenaria_bryophylla_Fernald_1919>
+    dwc:class "Aves" ;
+    dwc:family "Scolopacidae" ;
+    dwc:genus "Arenaria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fernald, 1919", "Fernald" ;
+    dwc:species "bryophylla" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arenaria_bryophylla> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Thylacospermum_Fenzl_1840>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Caryophyllaceae" ;
+    dwc:genus "Thylacospermum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fenzl, 1840" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Thylacospermum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Astragalus_confertus_Mengual_2019>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Astragalus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "confertus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Astragalus_confertus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_khakimovi_Barkalov_2019>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Barkalov" ;
+    dwc:species "khakimovi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_khakimovi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_montivaga_Violovitsh_1984>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Violovitsh, 1984" ;
+    dwc:species "montivaga" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_montivaga> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_dimorpha_BARKALOV_2010>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "BARKALOV & NIELSEN, 2010" ;
+    dwc:species "dimorpha" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_dimorpha> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Potentilla_pamirica_Wolf_2019>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rosaceae" ;
+    dwc:genus "Potentilla" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Th. Wolf" ;
+    dwc:species "pamirica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Potentilla_pamirica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Astragalus_confertus_Bunge._2019>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Astragalus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bunge." ;
+    dwc:species "confertus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Astragalus_confertus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_bella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia> ;
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:genus "Rohdendorfia" ;
@@ -96,22 +204,282 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "bella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rohdendorfia>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syrphidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Syrphidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F7466FFF989F43B794FF6E534620BB>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rohdendorfia_bella_Mengual_2019> ;
-    trt:publishedIn <http://dx.doi.org/10.2478/aemnp-2019-0025> ;
-    dc:creator "Barkalov, Anatolij V.", "Mengual, Ximo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4489077>, <http://dx.doi.org/10.5281/zenodo.4489079> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Potentilla_pamirica>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rosaceae" ;
+    dwc:genus "Potentilla" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "pamirica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Potentilla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Potentilla>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rosaceae" ;
+    dwc:genus "Potentilla" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Rosaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rosaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Rosales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arenaria_bryophylla>
+    dwc:class "Aves" ;
+    dwc:family "Scolopacidae" ;
+    dwc:genus "Arenaria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "bryophylla" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arenaria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arenaria>
+    dwc:class "Aves" ;
+    dwc:family "Scolopacidae" ;
+    dwc:genus "Arenaria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scolopacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scolopacidae>
+    dwc:class "Aves" ;
+    dwc:family "Scolopacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Charadriiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Charadriiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Thylacospermum>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Caryophyllaceae" ;
+    dwc:genus "Thylacospermum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Caryophyllaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Caryophyllaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Caryophyllales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Astragalus_confertus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Astragalus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "confertus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Astragalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Astragalus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Astragalus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_khakimovi>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "khakimovi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_montivaga>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "montivaga" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rohdendorfia_dimorpha>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Rohdendorfia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dimorpha" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rohdendorfia> ;
+    a dwcFP:TaxonName .
