@@ -1,66 +1,113 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B343FB75FFB3EB00FF7CFAF3FC24F998
+    dc:creator "Marley, Nigel J.; Mcinnes, Sandra J.; Sands, Chester J." ;
+    dc:title "Eohypsibiidae Bertolani and Kristensen" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.201757> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Eohypsibiidae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.201757>
-    dc:creator "Marley, Nigel J.", "Mcinnes, Sandra J.", "Sands, Chester J." ;
-    dc:date "2011" ;
-    dc:title "Phylum Tardigrada: A re-evaluation of the Parachela" ;
     bibo:endPage "64" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "51" ;
     bibo:volume "2819" ;
+    dc:creator "Marley, Nigel J.; Mcinnes, Sandra J.; Sands, Chester J." ;
+    dc:date "2011" ;
+    dc:title "Phylum Tardigrada: A re-evaluation of the Parachela" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Eohypsibius_Kristensen_1982>
+    dwc:class "Eutardigrada" ;
+    dwc:family "Eohypsibiidae" ;
+    dwc:genus "Eohypsibius" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Parachela" ;
+    dwc:phylum "Tardigrada" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kristensen, 1982" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eohypsibius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bertolanius_Ozdikmen_2008>
+    dwc:class "Eutardigrada" ;
+    dwc:family "Eohypsibiidae" ;
+    dwc:genus "Bertolanius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Parachela" ;
+    dwc:phylum "Tardigrada" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ozdikmen, 2008" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bertolanius> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Eohypsibiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parachela> ;
     dwc:class "Eutardigrada" ;
     dwc:family "Eohypsibiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Parachela" ;
     dwc:phylum "Tardigrada" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eutardigrada>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tardigrada> ;
-    dwc:class "Eutardigrada" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Tardigrada" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parachela> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Parachela>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eutardigrada> ;
     dwc:class "Eutardigrada" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Parachela" ;
     dwc:phylum "Tardigrada" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eutardigrada> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eutardigrada>
+    dwc:class "Eutardigrada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Tardigrada" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tardigrada> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tardigrada>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Tardigrada" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B343FB75FFB3EB00FF7CFAF3FC24F998>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.201757> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Eohypsibiidae> ;
-    dc:creator "Marley, Nigel J.", "Mcinnes, Sandra J.", "Sands, Chester J." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Eohypsibius>
+    dwc:class "Eutardigrada" ;
+    dwc:family "Eohypsibiidae" ;
+    dwc:genus "Eohypsibius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Parachela" ;
+    dwc:phylum "Tardigrada" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eohypsibiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bertolanius>
+    dwc:class "Eutardigrada" ;
+    dwc:family "Eohypsibiidae" ;
+    dwc:genus "Bertolanius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Parachela" ;
+    dwc:phylum "Tardigrada" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eohypsibiidae> ;
+    a dwcFP:TaxonName .
