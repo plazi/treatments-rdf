@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:B00A87C2FF94FFFD6338FC62F337F94A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5165515> ;
+    dc:creator "Dijkstra, Henk H.; Maestrati, Philippe" ;
+    dc:title "Micropecten excuratus Dijkstra & Maestrati 2012, n. sp." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024273>, <http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024274> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Micropecten_excuratus_Dijkstra_2012> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/z2012n2a12> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/z2012n2a12>
-    dc:creator "Dijkstra, Henk H.", "Maestrati, Philippe" ;
-    dc:date "2012" ;
-    dc:title "Pectinoidea (Mollusca, Bivalvia, Propeamussiidae, Cyclochlamydidae n. fam., Entoliidae and Pectinidae) from the Vanuatu Archipelago" ;
     bibo:endPage "408" ;
     bibo:issue "2" ;
     bibo:journal "Zoosystema" ;
     bibo:pubDate "2012-06-30" ;
     bibo:startPage "389" ;
     bibo:volume "34" ;
+    dc:creator "Dijkstra, Henk H.; Maestrati, Philippe" ;
+    dc:date "2012" ;
+    dc:title "Pectinoidea (Mollusca, Bivalvia, Propeamussiidae, Cyclochlamydidae n. fam., Entoliidae and Pectinidae) from the Vanuatu Archipelago" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5165515> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,29 @@
     fabio:hasRepresentation "https://zenodo.org/record/5165515/files/figure.png" ;
     a fabio:Figure .
 
+<http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024273>
+    dwc:catalogNumber "MNHN 24273" ;
+    dwc:collectionCode "MNHN" ;
+    dwc:locality "Vanuatu" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "18" ;
+    dwc:verbatimLatitude "-15.538333" ;
+    dwc:verbatimLongitude "167.28667" ;
+    trt:gbifOccurrenceId "3921119711" ;
+    a dwc:MaterialCitation .
+
+<http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024274>
+    dwc:catalogNumber "MNHN 24274" ;
+    dwc:collectionCode "ZMA" ;
+    dwc:locality "Vanuatu" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "18" ;
+    dwc:verbatimLatitude "-15.538333" ;
+    dwc:verbatimLongitude "167.28667" ;
+    trt:gbifOccurrenceId "3921119725" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Micropecten_excuratus_Dijkstra_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Micropecten_excuratus> ;
-    dwc:ID-CoL "432DT" ;
     dwc:class "Bivalvia" ;
     dwc:family "Cyclochlamydidae" ;
     dwc:genus "Micropecten" ;
@@ -39,33 +70,35 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Dijkstra & Maestrati, 2012" ;
     dwc:species "excuratus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/432DT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Micropecten_excuratus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Bivalvia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cyclochlamydidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pectinida> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cyclochlamys_Finlay_1926>
     dwc:class "Bivalvia" ;
     dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Cyclochlamys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pectinida" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Finlay, 1926" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyclochlamys> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Micropecten>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclochlamydidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Chlamydella_Iredale_1929>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Chlamydella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Iredale, 1929" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chlamydella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Micropecten_Dijkstra_2012>
     dwc:class "Bivalvia" ;
     dwc:family "Cyclochlamydidae" ;
     dwc:genus "Micropecten" ;
@@ -73,10 +106,24 @@
     dwc:order "Pectinida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Dijkstra & Maestrati, 2012" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Micropecten> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Micropecten_plectofilum_Oliver_2004>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Micropecten" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Oliver & Holmes, 2004)" ;
+    dwc:species "plectofilum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Micropecten_plectofilum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Micropecten_excuratus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Micropecten> ;
     dwc:class "Bivalvia" ;
     dwc:family "Cyclochlamydidae" ;
     dwc:genus "Micropecten" ;
@@ -85,51 +132,89 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "excuratus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Micropecten> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Micropecten>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Micropecten" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclochlamydidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyclochlamydidae>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pectinida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pectinida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
     dwc:class "Bivalvia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pectinida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Micropecten_excuratus_Dijkstra_2012> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/z2012n2a12> ;
-    dc:creator "Dijkstra, Henk H.", "Maestrati, Philippe" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5165515> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024273>, <http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024274> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024273>
-    trt:gbifOccurrenceId "3921119711" ;
-    dwc:catalogNumber "MNHN 24273" ;
-    dwc:collectionCode "MNHN" ;
-    dwc:locality "Vanuatu" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimElevation "18" ;
-    dwc:verbatimLatitude "-15.538333" ;
-    dwc:verbatimLongitude "167.28667" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B00A87C2FF94FFFD6338FC62F337F94A/MNHN%2024274>
-    trt:gbifOccurrenceId "3921119725" ;
-    dwc:catalogNumber "MNHN 24274" ;
-    dwc:collectionCode "ZMA" ;
-    dwc:locality "Vanuatu" ;
-    dwc:typeStatus "paratype" ;
-    dwc:verbatimElevation "18" ;
-    dwc:verbatimLatitude "-15.538333" ;
-    dwc:verbatimLongitude "167.28667" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cyclochlamys>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Cyclochlamys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclochlamydidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chlamydella>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Chlamydella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclochlamydidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Micropecten_plectofilum>
+    dwc:class "Bivalvia" ;
+    dwc:family "Cyclochlamydidae" ;
+    dwc:genus "Micropecten" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pectinida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "plectofilum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Micropecten> ;
+    a dwcFP:TaxonName .
