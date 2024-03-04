@@ -1,27 +1,44 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:541CA65C368FE392A1735D84144595CC
+    dc:creator "Nurettin Meriç; Lütfiye Eryilmaz; Müfit Özulug" ;
+    dc:title "Nerophis ophidion" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/541CA65C368FE392A1735D84144595CC.mc.491841716E9454B297DE3141B1D108C5> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nerophis_ophidion_Linnaeus_1758> ;
+    trt:publishedIn <http://publication.plazi.org/id/9367FE3CD0D4EAE58957930B017A95CE> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/9367FE3CD0D4EAE58957930B017A95CE>
-    dc:creator "Lütfiye Eryilmaz", "Müfit Özulug", "Nurettin Meriç" ;
-    dc:date "2007" ;
-    dc:title "A catalogue of the fishes held in the Istanbul University, Science Faculty, Hydrobiology Museum." ;
     bibo:endPage "54" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "29" ;
     bibo:volume "1472" ;
+    dc:creator "Nurettin Meriç; Lütfiye Eryilmaz; Müfit Özulug" ;
+    dc:date "2007" ;
+    dc:title "A catalogue of the fishes held in the Istanbul University, Science Faculty, Hydrobiology Museum." ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/541CA65C368FE392A1735D84144595CC.mc.491841716E9454B297DE3141B1D108C5>
+    dwc:catalogNumber "10000 - 190" ;
+    dwc:collectionCode "IUSHM" ;
+    dwc:eventDate "1973-05-20" ;
+    dwc:locality "Kuecuekcekmece Lagoon" ;
+    dwc:recordedBy "N. Meric" ;
+    trt:gbifOccurrenceId "923887867" ;
+    trt:httpUri <https://treatment.plazi.org/id/541CA65C368FE392A1735D84144595CC#491841716E9454B297DE3141B1D108C5> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Nerophis_ophidion_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nerophis_ophidion> ;
-    dwc:ID-CoL "476CQ" ;
     dwc:ID-ENA "159077" ;
     dwc:class "Actinopterygii" ;
     dwc:family "Syngnathidae" ;
@@ -32,41 +49,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Linnaeus, 1758)" ;
     dwc:species "ophidion" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/476CQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nerophis_ophidion> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nerophis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syngnathidae> ;
-    dwc:class "Actinopterygii" ;
-    dwc:family "Syngnathidae" ;
-    dwc:genus "Nerophis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Syngnathiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Nerophis_ophidion>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nerophis> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Syngnathidae" ;
     dwc:genus "Nerophis" ;
@@ -75,40 +62,55 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "ophidion" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nerophis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nerophis>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Syngnathidae" ;
+    dwc:genus "Nerophis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Syngnathiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syngnathidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Syngnathidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syngnathiformes> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Syngnathidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Syngnathiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syngnathiformes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Syngnathiformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
     dwc:class "Actinopterygii" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Syngnathiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/541CA65C368FE392A1735D84144595CC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nerophis_ophidion_Linnaeus_1758> ;
-    trt:publishedIn <http://publication.plazi.org/id/9367FE3CD0D4EAE58957930B017A95CE> ;
-    dc:creator "Lütfiye Eryilmaz", "Müfit Özulug", "Nurettin Meriç" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/541CA65C368FE392A1735D84144595CC/10000%20-%20190> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/541CA65C368FE392A1735D84144595CC/10000%20-%20190>
-    trt:gbifOccurrenceId "923887867" ;
-    dwc:catalogNumber "10000 - 190" ;
-    dwc:collectionCode "IUSHM" ;
-    dwc:eventDate "1973-05-20" ;
-    dwc:locality "Kuecuekcekmece Lagoon" ;
-    dwc:recordedBy "N. Meric" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
