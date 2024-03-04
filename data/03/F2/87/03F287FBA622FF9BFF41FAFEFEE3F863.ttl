@@ -1,27 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F287FBA622FF9BFF41FAFEFEE3F863
+    dc:creator "Swift, Ian P.; Ray, Ann M." ;
+    dc:title "Phymatodes blandus LeConte" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus>, <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_propinquus>, <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_picipes> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Callidium_blandum_LeConte_1859>, <http://taxon-concept.plazi.org/id/Animalia/Phymatodes_blandus_picipes_Linsley_1934> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.294195> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.294195>
-    dc:creator "Ray, Ann M.", "Swift, Ian P." ;
-    dc:date "2010" ;
-    dc:title "Nomenclatural changes in North American Phymatodes Mulsant (Coleoptera: Cerambycidae)" ;
     bibo:endPage "52" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "35" ;
     bibo:volume "2448" ;
+    dc:creator "Swift, Ian P.; Ray, Ann M." ;
+    dc:date "2010" ;
+    dc:title "Nomenclatural changes in North American Phymatodes Mulsant (Coleoptera: Cerambycidae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Callidium_blandum_LeConte_1859>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Callidium_blandum> ;
-    dwc:ID-CoL "68W5T" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Callidium" ;
@@ -31,11 +39,25 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "LeConte 1859:79" ;
     dwc:species "blandum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4HDZ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Callidium_blandum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phymatodes_blandus_Leng_1884>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Phymatodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Leng, 1884:99" ;
+    dwc:species "blandus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4HDZ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Phymatodes_blandus_picipes_Linsley_1934>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_picipes> ;
-    dwc:ID-CoL "7KMMC" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Phymatodes" ;
@@ -46,83 +68,26 @@
     dwc:scientificNameAuthorship "Linsley, 1934:165" ;
     dwc:species "blandus" ;
     dwc:subSpecies "picipes" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4HDZ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_picipes> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Callidium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Callidium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Callidium_blandum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Callidium> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Callidium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "blandum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phymatodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phymatodes_blandus_propinquus_Linsley_1934>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Phymatodes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linsley, 1934:181" ;
+    dwc:species "blandus" ;
+    dwc:subSpecies "propinquus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4HDZ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_propinquus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phymatodes> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Phymatodes" ;
@@ -131,10 +96,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "blandus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phymatodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phymatodes>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Phymatodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Callidium_blandum>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Callidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "blandum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Callidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Callidium>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Callidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_picipes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Phymatodes" ;
@@ -144,13 +182,18 @@
     dwc:rank "subSpecies" ;
     dwc:species "blandus" ;
     dwc:subSpecies "picipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F287FBA622FF9BFF41FAFEFEE3F863>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/F2/87/Phymatodes_blandus>, <file:///workdir/tmprdf/data/03/F2/87/Phymatodes_blandus_picipes>, <file:///workdir/tmprdf/data/03/F2/87/Phymatodes_blandus_propinquus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Callidium_blandum_LeConte_1859>, <http://taxon-concept.plazi.org/id/Animalia/Phymatodes_blandus_picipes_Linsley_1934> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.294195> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus> ;
-    dc:creator "Ray, Ann M.", "Swift, Ian P." ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus_propinquus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Phymatodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "blandus" ;
+    dwc:subSpecies "propinquus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phymatodes_blandus> ;
+    a dwcFP:TaxonName .
