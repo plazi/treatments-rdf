@@ -1,23 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.1206/0003-0082(2003)422%3C0001:aphaoc%3E2.0.co;2>
-    dc:creator "Flemming, Clare", "MacPhee, R. D. E." ;
-    dc:date "2003" ;
-    dc:title "A Possible Heptaxodontine and Other Caviidan Rodents from the Quaternary of Jamaica" ;
+treatment:C14087B0FFA4CF3BFD1E73A4FD37FD77
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5056758> ;
+    dc:creator "MacPhee, R. D. E.; Flemming, Clare" ;
+    dc:title "Xaymaca fulvopulvis R D E Macphee & Clare Flemming 2003, new species" ;
+    dwc:basisOfRecord <https://www.gbif.org/occurrence/859340793> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Xaymaca_fulvopulvis_Macphee_2003> ;
+    trt:publishedIn <http://dx.doi.org/10.1206/0003-0082(2003)419%3C0001:ansomf%3E2.0.co;2> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1206/0003-0082(2003)419%3C0001:ansomf%3E2.0.co;2>
     bibo:endPage "43" ;
     bibo:journal "American Museum Novitates" ;
     bibo:pubDate "2003-12-09" ;
     bibo:startPage "1" ;
     bibo:volume "3422" ;
+    dc:creator "MacPhee, R. D. E.; Flemming, Clare" ;
+    dc:date "2003" ;
+    dc:title "A Possible Heptaxodontine and Other Caviidan Rodents from the Quaternary of Jamaica" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5056758> ;
     a fabio:JournalArticle .
 
@@ -26,8 +39,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/5056758/files/figure.png" ;
     a fabio:Figure .
 
+<https://www.gbif.org/occurrence/859340793>
+    dwc:catalogNumber "AMNHM 268011" ;
+    dwc:collectionCode "AND, ONLY, REFERRED, SPECIMEN" ;
+    dwc:eventDate "1995-01" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3312995302" ;
+    trt:gbifSpecimenId "859340793" ;
+    trt:httpUri "https://www.gbif.org/occurrence/859340793" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Xaymaca_fulvopulvis_Macphee_2003>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xaymaca_fulvopulvis> ;
     dwc:class "Mammalia" ;
     dwc:family "Heptaxodontidae" ;
     dwc:genus "Xaymaca" ;
@@ -37,49 +59,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "R D E Macphee & Clare Flemming, 2003" ;
     dwc:species "fulvopulvis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xaymaca_fulvopulvis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Tyto_alba_Scopoli_1769>
+    dwc:class "Aves" ;
+    dwc:family "Tytonidae" ;
+    dwc:genus "Tyto" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Strigiformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Scopoli, 1769" ;
+    dwc:species "alba" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tyto_alba> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Heptaxodontidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Xaymaca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Xaymaca_Macphee_2003>
     dwc:class "Mammalia" ;
     dwc:family "Heptaxodontidae" ;
     dwc:genus "Xaymaca" ;
@@ -87,10 +83,72 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "R D E Macphee & Clare Flemming, 2003" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xaymaca> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amblyrhiza_Cope_1868>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:genus "Amblyrhiza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Cope, 1868" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amblyrhiza> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elasmodontomys_Anthony_1916>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:genus "Elasmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Anthony, 1916" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elasmodontomys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Heptaxodontinae_ANTHONY_1917>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "ANTHONY, 1917" ;
+    dwc:subFamily "Heptaxodontinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Heptaxodontinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oryzomys_antillarum_Thomas_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1898" ;
+    dwc:species "antillarum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryzomys_antillarum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Geocapromys_Chapman_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Capromyidae" ;
+    dwc:genus "Geocapromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Chapman, 1901" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geocapromys> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Xaymaca_fulvopulvis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xaymaca> ;
     dwc:class "Mammalia" ;
     dwc:family "Heptaxodontidae" ;
     dwc:genus "Xaymaca" ;
@@ -99,23 +157,192 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "fulvopulvis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xaymaca> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C14087B0FFA4CF3BFD1E73A4FD37FD77>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Xaymaca_fulvopulvis_Macphee_2003> ;
-    trt:publishedIn <http://dx.doi.org/10.1206/0003-0082(2003)419%3C0001:ansomf%3E2.0.co;2> ;
-    dc:creator "Flemming, Clare", "MacPhee, R. D. E." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5056758> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/C14087B0FFA4CF3BFD1E73A4FD37FD77/AMNHM%20268011> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Xaymaca>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:genus "Xaymaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C14087B0FFA4CF3BFD1E73A4FD37FD77/AMNHM%20268011>
-    trt:gbifOccurrenceId "3312995302" ;
-    trt:gbifSpecimenId "859340793" ;
-    trt:httpUri "https://www.gbif.org/occurrence/859340793" ;
-    dwc:catalogNumber "AMNHM 268011" ;
-    dwc:collectionCode "AND, ONLY, REFERRED, SPECIMEN" ;
-    dwc:eventDate "1995-01" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tyto_alba>
+    dwc:class "Aves" ;
+    dwc:family "Tytonidae" ;
+    dwc:genus "Tyto" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strigiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "alba" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tyto> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tyto>
+    dwc:class "Aves" ;
+    dwc:family "Tytonidae" ;
+    dwc:genus "Tyto" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strigiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tytonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tytonidae>
+    dwc:class "Aves" ;
+    dwc:family "Tytonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strigiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Strigiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Strigiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strigiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amblyrhiza>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:genus "Amblyrhiza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmodontomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:genus "Elasmodontomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Heptaxodontinae>
+    dwc:class "Mammalia" ;
+    dwc:family "Heptaxodontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Heptaxodontinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heptaxodontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys_antillarum>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "antillarum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryzomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oryzomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Oryzomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geocapromys>
+    dwc:class "Mammalia" ;
+    dwc:family "Capromyidae" ;
+    dwc:genus "Geocapromys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capromyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Capromyidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Capromyidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
