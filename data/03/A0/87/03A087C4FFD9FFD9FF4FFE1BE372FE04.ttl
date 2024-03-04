@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A087C4FFD9FFD9FF4FFE1BE372FE04
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6514571> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Odocoileus virginianus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A087C4FFD9FFD9FF4FFE1BE372FE04.mc.3B613C8FFFD9FFD8FC6BFDCBE241FD60> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_Zimmermann_1780> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dama_virginiana_Zimmermann_1780> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6514377> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6514377>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2011" ;
-    dc:title "Cervidae" ;
     bibo:endPage "443" ;
     bibo:startPage "350" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2011" ;
+    dc:title "Cervidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6514571> ;
     a fabio:BookSection .
 
@@ -23,23 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6514571/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dama_virginiana_Zimmermann_1780>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dama_virginiana> ;
-    dwc:ID-CoL "342NB" ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cervidae" ;
-    dwc:genus "Dama" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Zimmermann, 1780" ;
-    dwc:species "virginiana" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03A087C4FFD9FFD9FF4FFE1BE372FE04.mc.3B613C8FFFD9FFD8FC6BFDCBE241FD60>
+    trt:gbifOccurrenceId "3785196347" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A087C4FFD9FFD9FF4FFE1BE372FE04#3B613C8FFFD9FFD8FC6BFDCBE241FD60> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_Zimmermann_1780>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
-    dwc:ID-CoL "48NBQ" ;
     dwc:authority "Wilson, 2011" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2011" ;
@@ -50,53 +50,683 @@
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zimmermann, 1780" ;
     dwc:species "virginianus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/48NBQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cervidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cervidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dama>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dama_virginiana_Zimmermann_1780>
     dwc:class "Mammalia" ;
     dwc:family "Cervidae" ;
     dwc:genus "Dama" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zimmermann, 1780" ;
+    dwc:species "virginiana" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/48NBQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dama_virginiana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_Rafinesque_1832>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Rafinesque, 1832" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_virginianus_Zimmermann_1780>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Zimmermann, 1780" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "virginianus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_virginianus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_acapulcensis_Caton_1877>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Caton, 1877" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "acapulcensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_acapulcensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_borealis_Miller_1900>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Miller, 1900" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "borealis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_borealis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_cariamu_Boddaert_1784>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Boddaert. 1784" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "cariamu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_cariamu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_carrnimls_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8: Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "carrnimls" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_carrnimls> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_chiriquemis_Allen_1910>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1910" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "chiriquemis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_chiriquemis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_clamum_Barbour_1922>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Barbour & G. M. Allen, 1922" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "clamum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_clamum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_couesi_Coues_1875>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Coues 8: Yarrow, 1875" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "couesi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_couesi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_cumxsawhu_Hummelinck_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hummelinck, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "cumxsawhu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_cumxsawhu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_dacolensis_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8: Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "dacolensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_dacolensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_gnudolii_Gervais_1846>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gay 8 c Gervais, 1846" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "gnudolii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_gnudolii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_gymnotis_Wiegmann_1833>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Wiegmann, 1833" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "gymnotis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_gymnotis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_hillonmsis_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8: Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "hillonmsis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_hillonmsis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_ieucums_Douglas_1829>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Douglas, 1829" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "ieucums" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_ieucums> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_macmurus_Ra%EF%AC%81nesque_1817>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Raﬁnesque, 1817" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "macmurus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_macmurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_margarita_Osgood_1910>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship ": Osgood, 1910" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "margarita" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_margarita> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_mcilhennyi_Miller_1928>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "EW. Miller, 1928" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "mcilhennyi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_mcilhennyi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_mexicanus_Gmelin_1788>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gmelin, 1788" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "mexicanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_mexicanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_miquihuanensis_Goldman_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8 c Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "miquihuanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_miquihuanensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_nelsoni_Merriam_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1898" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "nelsoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_nelsoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_rugribarbis_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8: Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "rugribarbis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_rugribarbis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_oaxacensis_Goldman_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8 c Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "oaxacensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_oaxacensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_ochrourus_Bailey_1932>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Bailey, 1932" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "ochrourus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_ochrourus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_muela_Bangs_1896>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Bangs, 1896" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "muela" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_muela> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_pmivianus_Gray_1874>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gray, 1874" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "pmivianus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_pmivianus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_rothschildi_Thomas_1902>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1902" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "rothschildi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_rothschildi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_semmalus_Goldman_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman & Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "semmalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_semmalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_smaloae_Allen_1903>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "J. A Allen, 1903" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "smaloae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_smaloae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_launnsulae_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8 c Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "launnsulae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_launnsulae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_taranus_Meams_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Meams, 1898" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "taranus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_taranus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_thomasi_Merriam_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1898" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "thomasi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_thomasi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_loltecus_Saussure_1860>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Saussure, 1860" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "loltecus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_loltecus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_lmpualzs_Cabrera_1918>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Cabrera, 1918" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "lmpualzs" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_lmpualzs> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_truer_Merriam_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1898" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "truer" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_truer> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_ustus_Trouessart_1910>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Trouessart, 1910" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "ustus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_ustus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_venalorius_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8 c Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "venalorius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_venalorius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_vememias_Kellogg_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman 8: Kellogg, 1940" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "vememias" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_vememias> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_yuaitanensils_yuaitanensils_Hays._1872>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Hays. 1872" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "yuaitanensils" ;
+    dwc:variety "yuaitanensils" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_yuaitanensils_yuaitanensils> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Odocoileus_hemionus_Rafinesque_1817>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rafinesque, 1817" ;
+    dwc:species "hemionus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_hemionus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Blastocerus_Wagner_1844>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Blastocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Wagner, 1844" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Blastocerus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pudu_Gray_1852>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Pudu" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Gray, 1852" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pudu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hippocamelus_Leuckart_1816>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Hippocamelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Leuckart, 1816" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hippocamelus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "virginianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cervidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dama_virginiana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dama> ;
     dwc:class "Mammalia" ;
     dwc:family "Cervidae" ;
     dwc:genus "Dama" ;
@@ -105,29 +735,529 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "virginiana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dama> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Dama>
     dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Dama" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Odocoileus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_virginianus>
     dwc:class "Mammalia" ;
     dwc:family "Cervidae" ;
     dwc:genus "Odocoileus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "virginianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus> ;
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_acapulcensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "acapulcensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_borealis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "borealis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_cariamu>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "cariamu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_carrnimls>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "carrnimls" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_chiriquemis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "chiriquemis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_clamum>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "clamum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_couesi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "couesi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_cumxsawhu>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "cumxsawhu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_dacolensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "dacolensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_gnudolii>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "gnudolii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_gymnotis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "gymnotis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_hillonmsis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "hillonmsis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_ieucums>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "ieucums" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_macmurus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "macmurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_margarita>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "margarita" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_mcilhennyi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "mcilhennyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_mexicanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "mexicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_miquihuanensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "miquihuanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_nelsoni>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "nelsoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_rugribarbis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "rugribarbis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_oaxacensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "oaxacensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_ochrourus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "ochrourus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_muela>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "muela" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_pmivianus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "pmivianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_rothschildi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "rothschildi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_semmalus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "semmalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_smaloae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "smaloae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_launnsulae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "launnsulae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_taranus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "taranus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_thomasi>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "thomasi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_loltecus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "loltecus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_lmpualzs>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "lmpualzs" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_truer>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "truer" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_ustus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "ustus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_venalorius>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "venalorius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_vememias>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "vememias" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_yuaitanensils_yuaitanensils>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "variety" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "yuaitanensils" ;
+    dwc:variety "yuaitanensils" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_yuaitanensils> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus_yuaitanensils>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Odocoileus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "virginianus" ;
+    dwc:subSpecies "yuaitanensils" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus_virginianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odocoileus_hemionus>
     dwc:class "Mammalia" ;
     dwc:family "Cervidae" ;
     dwc:genus "Odocoileus" ;
@@ -135,14 +1265,39 @@
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "virginianus" ;
+    dwc:species "hemionus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odocoileus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A087C4FFD9FFD9FF4FFE1BE372FE04>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Odocoileus_virginianus_Zimmermann_1780> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dama_virginiana_Zimmermann_1780> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6514377> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6514571> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Blastocerus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Blastocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Pudu>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Pudu" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hippocamelus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cervidae" ;
+    dwc:genus "Hippocamelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cervidae> ;
+    a dwcFP:TaxonName .
