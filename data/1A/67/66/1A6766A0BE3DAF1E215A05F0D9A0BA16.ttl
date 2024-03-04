@@ -1,33 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///app/workdir/tmprdf/data/1A/67/66/1A6766A0BE3DAF1E215A05F0D9A0BA16.rdf>
-    dc:description "Map 14. Collection localities in New Brunswick, Canada of Enicmus aterrimus." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/16281" ;
-    a fabio:Figure .
+treatment:1A6766A0BE3DAF1E215A05F0D9A0BA16
+    cito:cites <https://binary.pensoft.net/fig/16281> ;
+    dc:creator "Webster, Reginald P.; Sweeney, Jon D.; DeMerchant, Ian" ;
+    dc:title "Enicmus aterrimus Motschulsky 1866" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enicmus_aterrimus_Motschulsky_1866> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.179.2581> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.179.2581>
-    dc:creator "DeMerchant, Ian", "Sweeney, Jon D.", "Webster, Reginald P." ;
-    dc:date "2012" ;
-    dc:title "New Coleoptera records for New Brunswick, Canada: Kateretidae, Nitidulidae, Cerylonidae, Endomychidae, Coccinellidae, and Latridiidae" ;
     bibo:endPage "214" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2012-04-04" ;
     bibo:startPage "193" ;
     bibo:volume "179" ;
-    fabio:hasPart <file:///app/workdir/tmprdf/data/1A/67/66/1A6766A0BE3DAF1E215A05F0D9A0BA16.rdf> ;
+    dc:creator "Webster, Reginald P.; Sweeney, Jon D.; DeMerchant, Ian" ;
+    dc:date "2012" ;
+    dc:title "New Coleoptera records for New Brunswick, Canada: Kateretidae, Nitidulidae, Cerylonidae, Endomychidae, Coccinellidae, and Latridiidae" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/16281> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/16281>
+    dc:description "Map 14. Collection localities in New Brunswick, Canada of Enicmus aterrimus." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/16281" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Enicmus_aterrimus_Motschulsky_1866>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enicmus_aterrimus> ;
     dwc:LSID "1A6766A0-BE3D-AF1E-215A-05F0D9A0BA16" ;
     dwc:class "Hexapoda" ;
     dwc:family "Latridiidae" ;
@@ -38,42 +46,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Motschulsky, 1866" ;
     dwc:species "aterrimus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enicmus_aterrimus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
-    dwc:class "Hexapoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enicmus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Latridiidae> ;
-    dwc:class "Hexapoda" ;
-    dwc:family "Latridiidae" ;
-    dwc:genus "Enicmus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Enicmus_aterrimus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enicmus> ;
     dwc:class "Hexapoda" ;
     dwc:family "Latridiidae" ;
     dwc:genus "Enicmus" ;
@@ -82,30 +58,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "aterrimus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enicmus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Enicmus>
     dwc:class "Hexapoda" ;
+    dwc:family "Latridiidae" ;
+    dwc:genus "Enicmus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Latridiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Latridiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Hexapoda" ;
     dwc:family "Latridiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/1A6766A0BE3DAF1E215A05F0D9A0BA16>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enicmus_aterrimus_Motschulsky_1866> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.179.2581> ;
-    dc:creator "DeMerchant, Ian", "Sweeney, Jon D.", "Webster, Reginald P." ;
-    cito:cites <file:///app/workdir/tmprdf/data/1A/67/66/1A6766A0BE3DAF1E215A05F0D9A0BA16.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
