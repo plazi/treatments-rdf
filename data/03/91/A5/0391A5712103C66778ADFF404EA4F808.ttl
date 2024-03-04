@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0391A5712103C66778ADFF404EA4F808
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4894694>, <http://dx.doi.org/10.5281/zenodo.4894704> ;
+    dc:creator "Novis, Phil M.; Visnovsky, Gabriel" ;
+    dc:title "Variochloris pyrenoglobularis Novis & Visnovsky 2012, gen. et sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0391A5712103C66778ADFF404EA4F808.mc.3B501E3A2103C66778ADF8724DEFFB5C> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Variochloris_pyrenoglobularis_Novis_2012> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.39.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/phytotaxa.39.1.1>
-    dc:creator "Novis, Phil M.", "Visnovsky, Gabriel" ;
-    dc:date "2012" ;
-    dc:title "Novel alpine algae from New Zealand: Chlorophyta" ;
     bibo:endPage "30" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2012-01-01" ;
     bibo:startPage "1" ;
     bibo:volume "39" ;
+    dc:creator "Novis, Phil M.; Visnovsky, Gabriel" ;
+    dc:date "2012" ;
+    dc:title "Novel alpine algae from New Zealand: Chlorophyta" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4894694>, <http://dx.doi.org/10.5281/zenodo.4894704> ;
     a fabio:JournalArticle .
 
@@ -31,8 +41,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/4894704/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/0391A5712103C66778ADFF404EA4F808.mc.3B501E3A2103C66778ADF8724DEFFB5C>
+    dwc:catalogNumber "CHR610489" ;
+    dwc:collectionCode "CHR" ;
+    dwc:eventDate "2007-11-30" ;
+    dwc:locality "Westland" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1400" ;
+    trt:gbifOccurrenceId "3128888301" ;
+    trt:httpUri <https://treatment.plazi.org/id/0391A5712103C66778ADFF404EA4F808#3B501E3A2103C66778ADF8724DEFFB5C> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Variochloris_pyrenoglobularis_Novis_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Variochloris_pyrenoglobularis> ;
     dwc:class "Chlorophyceae" ;
     dwc:family "Oocystaceae" ;
     dwc:genus "Variochloris" ;
@@ -42,49 +62,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Novis & Visnovsky" ;
     dwc:species "pyrenoglobularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Variochloris_pyrenoglobularis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Chlamydomonadales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorophyceae> ;
-    dwc:class "Chlorophyceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Chlamydomonadales" ;
-    dwc:phylum "Chlorophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Chlorophyceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorophyta> ;
-    dwc:class "Chlorophyceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Chlorophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Chlorophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Chlorophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Oocystaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlamydomonadales> ;
-    dwc:class "Chlorophyceae" ;
-    dwc:family "Oocystaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Chlamydomonadales" ;
-    dwc:phylum "Chlorophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Variochloris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Oocystaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Variochloris_P.M.Novis_2012>
     dwc:class "Chlorophyceae" ;
     dwc:family "Oocystaceae" ;
     dwc:genus "Variochloris" ;
@@ -92,10 +73,75 @@
     dwc:order "Chlamydomonadales" ;
     dwc:phylum "Chlorophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "P.M.Novis & G.Visnovsky, 2012" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Variochloris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Raphidonema_nivale_Lagerheim_1892>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Raphidonema" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lagerheim" ;
+    dwc:species "nivale" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Raphidonema_nivale> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Chlorella_vulgaris_Beijerinck_1890>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Beijerinck 1890" ;
+    dwc:species "vulgaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Chlorella_vulgaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Trebouxia_Tarhanen_2000>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Trebouxiaceae" ;
+    dwc:genus "Trebouxia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Trebouxiales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "(Tarhanen et al. 2000)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Trebouxia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Chlorella_ellipsoidea_Gerneck_1907>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gerneck 1907" ;
+    dwc:species "ellipsoidea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Chlorella_ellipsoidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Chlorella_saccharophila_Kruger_1907>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Kruger) Migula 1907" ;
+    dwc:species "saccharophila" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Chlorella_saccharophila> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Variochloris_pyrenoglobularis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Variochloris> ;
     dwc:class "Chlorophyceae" ;
     dwc:family "Oocystaceae" ;
     dwc:genus "Variochloris" ;
@@ -104,23 +150,182 @@
     dwc:phylum "Chlorophyta" ;
     dwc:rank "species" ;
     dwc:species "pyrenoglobularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Variochloris> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0391A5712103C66778ADFF404EA4F808>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Variochloris_pyrenoglobularis_Novis_2012> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.39.1.1> ;
-    dc:creator "Novis, Phil M.", "Visnovsky, Gabriel" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4894694>, <http://dx.doi.org/10.5281/zenodo.4894704> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/0391A5712103C66778ADFF404EA4F808/CHR610489> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Variochloris>
+    dwc:class "Chlorophyceae" ;
+    dwc:family "Oocystaceae" ;
+    dwc:genus "Variochloris" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlamydomonadales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Oocystaceae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0391A5712103C66778ADFF404EA4F808/CHR610489>
-    trt:gbifOccurrenceId "3128888301" ;
-    dwc:catalogNumber "CHR610489" ;
-    dwc:collectionCode "CHR" ;
-    dwc:eventDate "2007-11-30" ;
-    dwc:locality "Westland" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimElevation "1400" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Plantae/Oocystaceae>
+    dwc:class "Chlorophyceae" ;
+    dwc:family "Oocystaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlamydomonadales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlamydomonadales> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Chlamydomonadales>
+    dwc:class "Chlorophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlamydomonadales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorophyceae>
+    dwc:class "Chlorophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Raphidonema_nivale>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Raphidonema" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:species "nivale" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Raphidonema> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Raphidonema>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Raphidonema" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorellaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorellaceae>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorellales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorellales>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Trebouxiophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Trebouxiophyceae>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorella_vulgaris>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:species "vulgaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorella>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorellaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Trebouxia>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Trebouxiaceae" ;
+    dwc:genus "Trebouxia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Trebouxiales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Trebouxiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Trebouxiaceae>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Trebouxiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Trebouxiales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Trebouxiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Trebouxiales>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Trebouxiales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Trebouxiophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorella_ellipsoidea>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:species "ellipsoidea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Chlorella_saccharophila>
+    dwc:class "Trebouxiophyceae" ;
+    dwc:family "Chlorellaceae" ;
+    dwc:genus "Chlorella" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Chlorellales" ;
+    dwc:phylum "Chlorophyta" ;
+    dwc:rank "species" ;
+    dwc:species "saccharophila" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Chlorella> ;
+    a dwcFP:TaxonName .
