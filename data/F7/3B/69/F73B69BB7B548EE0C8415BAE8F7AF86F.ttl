@@ -1,33 +1,46 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///app/workdir/tmprdf/data/F7/3B/69/F73B69BB7B548EE0C8415BAE8F7AF86F.rdf>
-    dc:description "Figure 3. A Calitys scabra B Larinotus umblicatus C Acalanthis quadrisignata D Calanthosoma flavomaculata E Calanthosoma (syn. Marnia) sipolisi F Egolia variegata G Necrobiopsis tasmanicus.", "Map 3. A distribution of the tribe Egoliini." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/21071", "https://binary.pensoft.net/fig/21074" ;
-    a fabio:Figure .
+treatment:F73B69BB7B548EE0C8415BAE8F7AF86F
+    cito:cites <https://binary.pensoft.net/fig/21071>, <https://binary.pensoft.net/fig/21074> ;
+    dc:creator "Kolibac, Jiri" ;
+    dc:title "Calanthosoma Reitter 1876" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Calanthosoma_Reitter_1876> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.366.6172> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.366.6172>
-    dc:creator "Kolibac, Jiri" ;
-    dc:date "2013" ;
-    dc:title "Trogossitidae: A review of the beetle family, with a catalogue and keys" ;
     bibo:endPage "194" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2013-12-31" ;
     bibo:startPage "1" ;
     bibo:volume "366" ;
-    fabio:hasPart <file:///app/workdir/tmprdf/data/F7/3B/69/F73B69BB7B548EE0C8415BAE8F7AF86F.rdf> ;
+    dc:creator "Kolibac, Jiri" ;
+    dc:date "2013" ;
+    dc:title "Trogossitidae: A review of the beetle family, with a catalogue and keys" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/21071>, <https://binary.pensoft.net/fig/21074> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/21071>
+    dc:description "Figure 3. A Calitys scabra B Larinotus umblicatus C Acalanthis quadrisignata D Calanthosoma flavomaculata E Calanthosoma (syn. Marnia) sipolisi F Egolia variegata G Necrobiopsis tasmanicus." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/21071" ;
+    a fabio:Figure .
+
+<https://binary.pensoft.net/fig/21074>
+    dc:description "Map 3. A distribution of the tribe Egoliini." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/21074" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Calanthosoma_Reitter_1876>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Calanthosoma> ;
     dwc:LSID "F73B69BB-7B54-8EE0-C841-5BAE8F7AF86F" ;
     dwc:class "Insecta" ;
     dwc:family "Trogossitidae" ;
@@ -37,22 +50,48 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Reitter, 1876" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Calanthosoma> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Marnia_Leveille_1889>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Marnia" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Leveille, 1889" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marnia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Egoliini_Lacordaire_1854>
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Lacordaire, 1854" ;
+    dwc:tribe "Egoliini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Egoliini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Trogossitini_Latreille_1802>
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    dwc:tribe "Trogossitini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trogossitini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Airora_Reitter_1876>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Airora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Reitter, 1876" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Airora> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Calanthosoma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
     dwc:class "Insecta" ;
     dwc:family "Trogossitidae" ;
     dwc:genus "Calanthosoma" ;
@@ -60,39 +99,78 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trogossitidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Trogossitidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F73B69BB7B548EE0C8415BAE8F7AF86F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Calanthosoma_Reitter_1876> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.366.6172> ;
-    dc:creator "Kolibac, Jiri" ;
-    cito:cites <file:///app/workdir/tmprdf/data/F7/3B/69/F73B69BB7B548EE0C8415BAE8F7AF86F.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Marnia>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Marnia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Egoliini>
+    # Warning: Could not determine parent name ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Egoliini" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trogossitini>
+    # Warning: Could not determine parent name ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Trogossitini" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Airora>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Airora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
+    a dwcFP:TaxonName .
