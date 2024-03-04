@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:703D1714A8B55F2C88C1D22EB7470B32
+    cito:cites <http://dx.doi.org/10.3897/jhr.71.34871.figures13-25> ;
+    dc:creator "Wang, Hua-Chuan; Chen, Bin; Li, Ting-Jing" ;
+    dc:title "Zethus asperipunctatus Wang & Li 2019, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/asperipunctatus_Wang_2019> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.71.34871> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.71.34871>
-    dc:creator "Chen, Bin", "Li, Ting-Jing", "Wang, Hua-Chuan" ;
-    dc:date "2019" ;
-    dc:title "Three new species of the genus Zethus Fabricius, 1804 (Hymenoptera, Vespidae, Eumeninae) from China, with an updated key to the Oriental species" ;
     bibo:endPage "224" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2019-08-30" ;
     bibo:startPage "209" ;
     bibo:volume "71" ;
+    dc:creator "Wang, Hua-Chuan; Chen, Bin; Li, Ting-Jing" ;
+    dc:date "2019" ;
+    dc:title "Three new species of the genus Zethus Fabricius, 1804 (Hymenoptera, Vespidae, Eumeninae) from China, with an updated key to the Oriental species" ;
     fabio:hasPart <http://dx.doi.org/10.3897/jhr.71.34871.figures13-25> ;
     a fabio:JournalArticle .
 
@@ -26,30 +36,43 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/328712" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/_asperipunctatus_Wang_2019>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/_asperipunctatus> ;
-    dwc:ID-CoL "8GB9Y" ;
+<http://taxon-concept.plazi.org/id/Animalia/asperipunctatus_Wang_2019>
     dwc:LSID "http://zoobank.org/5CB359C4-C337-461C-8224-A42D274B3BD5" ;
     dwc:family "Zethus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Wang & Li" ;
+    dwc:scientificNameAuthorship "Wang & Li", "Wang & Li, 2019" ;
     dwc:species "asperipunctatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8GB9Y> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/asperipunctatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/_asperipunctatus>
+<http://taxon-name.plazi.org/id/Animalia/asperipunctatus>
     dwc:family "Zethus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:rank "species" ;
     dwc:species "asperipunctatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zethus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/703D1714A8B55F2C88C1D22EB7470B32>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/_asperipunctatus_Wang_2019> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.71.34871> ;
-    dc:creator "Chen, Bin", "Li, Ting-Jing", "Wang, Hua-Chuan" ;
-    cito:cites <http://dx.doi.org/10.3897/jhr.71.34871.figures13-25> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Zethus>
+    dwc:family "Zethus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
