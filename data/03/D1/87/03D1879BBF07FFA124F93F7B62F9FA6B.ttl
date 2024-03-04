@@ -1,29 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D1879BBF07FFA124F93F7B62F9FA6B
+    dc:creator "Straka, Jakub; Jůzová, Kateřina; Nakase, Yuta" ;
+    dc:title "Stylops circularis Kifune & Hirashima 1985" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stylops_circularis_Kifune_1985> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Stylops_orientis_Kifune_1990>, <http://taxon-concept.plazi.org/id/Animalia/Stylops_hirashinai_KIFUNE_1990> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5304381> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5304381>
-    dc:creator "Jůzová, Kateřina", "Nakase, Yuta", "Straka, Jakub" ;
-    dc:date "2015" ;
-    dc:title "Nomenclature and taxonomy of the genus Stylops (Strepsiptera): an annotated preliminary world checklist" ;
     bibo:endPage "332" ;
     bibo:issue "1" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
     bibo:pubDate "2015-06-01" ;
     bibo:startPage "305" ;
     bibo:volume "55" ;
+    dc:creator "Straka, Jakub; Jůzová, Kateřina; Nakase, Yuta" ;
+    dc:date "2015" ;
+    dc:title "Nomenclature and taxonomy of the genus Stylops (Strepsiptera): an annotated preliminary world checklist" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stylops_circularis_Kifune_1985>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_circularis> ;
-    dwc:ID-CoL "7B2J7" ;
     dwc:class "Insecta" ;
     dwc:family "Stylopidae" ;
     dwc:genus "Stylops" ;
@@ -31,26 +38,13 @@
     dwc:order "Strepsiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kifune & Hirashima, 1985" ;
+    dwc:scientificNameAuthorship "Kifune & Hirashima, 1985", "Kifune & Hirashima, 1985: 50" ;
     dwc:species "circularis" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Stylops_hirashinai_KIFUNE_1990>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_hirashinai> ;
-    dwc:class "Insecta" ;
-    dwc:family "Stylopidae" ;
-    dwc:genus "Stylops" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Strepsiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship ": KIFUNE & MAETA (1990: 102)" ;
-    dwc:species "hirashinai" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7B2J7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_circularis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stylops_orientis_Kifune_1990>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_orientis> ;
-    dwc:ID-CoL "7B2NG" ;
     dwc:class "Insecta" ;
     dwc:family "Stylopidae" ;
     dwc:genus "Stylops" ;
@@ -60,60 +54,79 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Kifune & Maeta, 1990: 101" ;
     dwc:species "orientis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7B2J7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_orientis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Strepsiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Strepsiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stylopidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Strepsiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Stylopidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Strepsiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stylops>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylopidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Stylops_hirashimai_Kifune_1990>
     dwc:class "Insecta" ;
     dwc:family "Stylopidae" ;
     dwc:genus "Stylops" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Strepsiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kifune & Maeta, 1990: 102", "Kifune & Maeta, 1990" ;
+    dwc:species "hirashimai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_hirashimai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stylops_hirashinai_KIFUNE_1990>
+    dwc:class "Insecta" ;
+    dwc:family "Stylopidae" ;
+    dwc:genus "Stylops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strepsiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ": KIFUNE & MAETA (1990: 102)", ": KIFUNE & MAETA, 1990" ;
+    dwc:species "hirashinai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stylops_hirashinai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Andrena_sasakii_Cockerell_1913>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cockerell, 1913" ;
+    dwc:species "sasakii" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena_sasakii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Andrena_watasei_Cockerell_1913>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cockerell, 1913" ;
+    dwc:species "watasei" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena_watasei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Andrena_parathoracica_Hirashima_1957>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hirashima, 1957" ;
+    dwc:species "parathoracica" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena_parathoracica> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Stylops_circularis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
     dwc:class "Insecta" ;
     dwc:family "Stylopidae" ;
     dwc:genus "Stylops" ;
@@ -122,22 +135,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "circularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Stylops_hirashinai>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
+<http://taxon-name.plazi.org/id/Animalia/Stylops>
     dwc:class "Insecta" ;
     dwc:family "Stylopidae" ;
     dwc:genus "Stylops" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Strepsiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "hirashinai" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylopidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stylopidae>
+    dwc:class "Insecta" ;
+    dwc:family "Stylopidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strepsiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Strepsiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Strepsiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strepsiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Stylops_orientis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
     dwc:class "Insecta" ;
     dwc:family "Stylopidae" ;
     dwc:genus "Stylops" ;
@@ -146,12 +197,110 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "orientis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D1879BBF07FFA124F93F7B62F9FA6B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stylops_circularis_Kifune_1985> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Stylops_hirashinai_KIFUNE_1990>, <http://taxon-concept.plazi.org/id/Animalia/Stylops_orientis_Kifune_1990> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5304381> ;
-    dc:creator "Jůzová, Kateřina", "Nakase, Yuta", "Straka, Jakub" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Stylops_hirashimai>
+    dwc:class "Insecta" ;
+    dwc:family "Stylopidae" ;
+    dwc:genus "Stylops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strepsiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hirashimai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Stylops_hirashinai>
+    dwc:class "Insecta" ;
+    dwc:family "Stylopidae" ;
+    dwc:genus "Stylops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Strepsiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hirashinai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena_sasakii>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sasakii" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena_Melandrena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena_Melandrena>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrenidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrenidae>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena_watasei>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "watasei" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena_Melandrena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena_parathoracica>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "parathoracica" ;
+    dwc:subGenus "Melandrena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena_Melandrena> ;
+    a dwcFP:TaxonName .

@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D12833B408FFC4FF28F8ACFC76FA58
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7727416>, <http://dx.doi.org/10.5281/zenodo.7727418> ;
+    dc:creator "Torii, Takaaki; Akagi, Tomohiro; Uchino, Toru; Kobayashi, Tohru" ;
+    dc:title "Enchytraeus ohtakai Torii & Akagi & Uchino & Kobayashi 2023, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03D12833B408FFC4FF28F8ACFC76FA58.mc.3B109378B408FFC6FEEDF833FA4FF832> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_ohtakai_Torii_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5254.2.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5254.2.5>
-    dc:creator "Akagi, Tomohiro", "Kobayashi, Tohru", "Torii, Takaaki", "Uchino, Toru" ;
-    dc:date "2023" ;
-    dc:title "A new species of Enchytraeus (Enchytraeidae, Clitellata) from sewage sludge of a plum processing plant in Japan" ;
     bibo:endPage "256" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-03-10" ;
     bibo:startPage "245" ;
     bibo:volume "5254" ;
+    dc:creator "Torii, Takaaki; Akagi, Tomohiro; Uchino, Toru; Kobayashi, Tohru" ;
+    dc:date "2023" ;
+    dc:title "A new species of Enchytraeus (Enchytraeidae, Clitellata) from sewage sludge of a plum processing plant in Japan" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7727416>, <http://dx.doi.org/10.5281/zenodo.7727418> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/7727418/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03D12833B408FFC4FF28F8ACFC76FA58.mc.3B109378B408FFC6FEEDF833FA4FF832>
+    dwc:collectionCode "T" ;
+    dwc:eventDate "2021-05-19" ;
+    dwc:locality "Whole-mounted" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimLatitude "33.77142" ;
+    dwc:verbatimLongitude "135.3125" ;
+    trt:gbifOccurrenceId "4055240301" ;
+    trt:httpUri <https://treatment.plazi.org/id/03D12833B408FFC4FF28F8ACFC76FA58#3B109378B408FFC6FEEDF833FA4FF832> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_ohtakai_Torii_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus_ohtakai> ;
-    dwc:ID-CoL "1c796e38-5b66-4d15-b880-ffc3acbbcf75" ;
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
     dwc:genus "Enchytraeus" ;
@@ -42,51 +61,78 @@
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Torii" ;
+    dwc:scientificNameAuthorship "Torii", "Torii & Akagi & Uchino & Kobayashi, 2023" ;
     dwc:species "ohtakai" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/1c796e38-5b66-4d15-b880-ffc3acbbcf75> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus_ohtakai> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Annelida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Clitellata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enchytraeida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Enchytraeida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enchytraeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeida> ;
+<http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_albidus_Henle_1837>
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Henle, 1837" ;
+    dwc:sensu "stricto" ;
+    dwc:species "albidus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus_albidus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_capitatus_Bulow_1957>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "von Bulow, 1957" ;
+    dwc:species "capitatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus_capitatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_irregularis_Nielsen_1961>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Nielsen & Christensen, 1961" ;
+    dwc:species "irregularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus_irregularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_polatdemiri_Arslan_2018>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Arslan & Timm (2018)", "Arslan & Timm, 2018" ;
+    dwc:species "polatdemiri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus_polatdemiri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeus_ohtakai>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "ohtakai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Enchytraeus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeidae> ;
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
     dwc:genus "Enchytraeus" ;
@@ -94,10 +140,49 @@
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Enchytraeus_ohtakai>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus> ;
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeidae>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeida>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeus_albidus>
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
     dwc:genus "Enchytraeus" ;
@@ -105,13 +190,42 @@
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
-    dwc:species "ohtakai" ;
+    dwc:species "albidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D12833B408FFC4FF28F8ACFC76FA58>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enchytraeus_ohtakai_Torii_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5254.2.5> ;
-    dc:creator "Akagi, Tomohiro", "Kobayashi, Tohru", "Torii, Takaaki", "Uchino, Toru" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7727416>, <http://dx.doi.org/10.5281/zenodo.7727418> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeus_capitatus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "capitatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeus_irregularis>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "irregularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeus_polatdemiri>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Enchytraeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "polatdemiri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeus> ;
+    a dwcFP:TaxonName .
