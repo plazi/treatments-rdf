@@ -1,42 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C54D4CFF98953952D085CE10B6FD7C
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Andrena_Fabricius_1775> ;
+    dc:creator "Madl, Michael" ;
+    dc:title "Andrena arsinoe Schmiedeknecht 1900" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Andrena_arsinoe_Schmiedeknecht_1900> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Andrena_arsinoe_Schmiedeknecht_1900> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4004346> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.4004346>
-    dc:creator "Madl, Michael" ;
-    dc:date "2018" ;
-    dc:title "A catalogue of the family Andrenidae (Hymenoptera: Apoidea) of Eritrea" ;
     bibo:endPage "659" ;
     bibo:issue "1" ;
     bibo:journal "Linzer biologische Beiträge" ;
     bibo:pubDate "2018-07-27" ;
     bibo:startPage "655" ;
     bibo:volume "50" ;
+    dc:creator "Madl, Michael" ;
+    dc:date "2018" ;
+    dc:title "A catalogue of the family Andrenidae (Hymenoptera: Apoidea) of Eritrea" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Andrena_Fabricius_1775>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena> ;
-    dwc:ID-CoL "62BS5" ;
-    dwc:class "Insecta" ;
-    dwc:family "Andrenidae" ;
-    dwc:genus "Andrena" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Fabricius, 1775" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Andrena_arsinoe_Schmiedeknecht_1900>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena_arsinoe> ;
-    dwc:ID-CoL "66MZ9" ;
     dwc:authority "Madl, 2018" ;
     dwc:authorityName "Madl" ;
     dwc:authorityYear "2018" ;
@@ -47,16 +42,14 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schmiedeknecht, 1900" ;
     dwc:species "arsinoe" ;
+    dwc:subGenus "Graecandrena" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/66MZ9> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena_arsinoe> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Andrena>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrenidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Andrena_Fabricius_1775>
     dwc:class "Insecta" ;
     dwc:family "Andrenidae" ;
     dwc:genus "Andrena" ;
@@ -64,10 +57,12 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Fabricius, 1775" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/66MZ9> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andrena> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Andrena_arsinoe>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena> ;
     dwc:class "Insecta" ;
     dwc:family "Andrenidae" ;
     dwc:genus "Andrena" ;
@@ -76,46 +71,68 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "arsinoe" ;
+    dwc:subGenus "Graecandrena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena>, <http://taxon-name.plazi.org/id/Animalia/Andrena_Graecandrena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrenidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Andrenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Andrenidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C54D4CFF98953952D085CE10B6FD7C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Andrena_arsinoe_Schmiedeknecht_1900> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4004346> ;
-    dc:creator "Madl, Michael" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Andrena_Fabricius_1775> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Andrena_Graecandrena>
+    dwc:class "Insecta" ;
+    dwc:family "Andrenidae" ;
+    dwc:genus "Andrena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Graecandrena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andrena> ;
+    a dwcFP:TaxonName .
