@@ -1,41 +1,45 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:0CB512F1292C60B03CC12B5EC1A303A7
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Trachyphloeidae>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllastolidae>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Cathormiocerini>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Trachyphloeini>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocneorrhinini>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Callirhopalini>' due to issues with rank ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:title "Trachyphloeina Gistel 1848" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trachyphloeina_Gistel_1848> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Trachyphloeus>, <http://taxon-name.plazi.org/id/Animalia/Phyllastolus>, <http://taxon-name.plazi.org/id/Animalia/Cathormiocerus>, <http://taxon-name.plazi.org/id/Animalia/Pseudocneorhinus>, <http://taxon-name.plazi.org/id/Animalia/Pseudocneorrhinus>, <http://taxon-name.plazi.org/id/Animalia/Callirhopalus> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.88.807>
-    dc:creator "Alonso-Zarazaga, Miguel A.", "Bouchard, Patrice", "Bousquet, Yves", "Davies, Anthony E.", "Lawrence, John F.", "Lyal, Chris H. C.", "Newton, Alfred F.", "Reid, Chris A. M.", "Schmitt, Michael", "Smith, Andrew B. T.", "Ślipinski, S. Adam" ;
-    dc:date "2011" ;
-    dc:title "Family-group names in Coleoptera (Insecta)" ;
     bibo:endPage "972" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "88" ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:date "2011" ;
+    dc:title "Family-group names in Coleoptera (Insecta)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trachyphloeina_Gistel_1848>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trachyphloeina> ;
-    dwc:ID-CoL "8K45K" ;
     dwc:rank "subTribe" ;
     dwc:scientificNameAuthorship "Gistel, 1848" ;
     dwc:subTribe "Trachyphloeina" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8K45K> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trachyphloeina> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Trachyphloeina>
+    # Warning: Could not determine parent name ;
     dwc:rank "subTribe" ;
     dwc:subTribe "Trachyphloeina" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/0CB512F1292C60B03CC12B5EC1A303A7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trachyphloeina_Gistel_1848> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/0C/B5/12/Callirhopalus>, <file:///workdir/tmprdf/data/0C/B5/12/Cathormiocerus>, <file:///workdir/tmprdf/data/0C/B5/12/Phyllastolus>, <file:///workdir/tmprdf/data/0C/B5/12/Pseudocneorhinus>, <file:///workdir/tmprdf/data/0C/B5/12/Pseudocneorrhinus>, <file:///workdir/tmprdf/data/0C/B5/12/Trachyphloeus> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
-    dc:creator "Alonso-Zarazaga, Miguel A.", "Bouchard, Patrice", "Bousquet, Yves", "Davies, Anthony E.", "Lawrence, John F.", "Lyal, Chris H. C.", "Newton, Alfred F.", "Reid, Chris A. M.", "Schmitt, Michael", "Smith, Andrew B. T.", "Ślipinski, S. Adam" ;
-    a trt:Treatment .
-
