@@ -1,25 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B70F87E546648733428CF91FF6ECFD82
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Physeter macrocephalus Linnaeus 1758" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/B70F87E546648733428CF91FF6ECFD82.mc.8FCE3CAE4664873041AFF84BFA86F80B> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Physeter_macrocephalus_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6607611> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6607611>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2014" ;
-    dc:title "Physeteridae" ;
     bibo:endPage "317" ;
     bibo:startPage "300" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2014" ;
+    dc:title "Physeteridae" ;
     a fabio:BookSection .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/B70F87E546648733428CF91FF6ECFD82.mc.8FCE3CAE4664873041AFF84BFA86F80B>
+    trt:gbifOccurrenceId "3801065301" ;
+    trt:httpUri <https://treatment.plazi.org/id/B70F87E546648733428CF91FF6ECFD82#8FCE3CAE4664873041AFF84BFA86F80B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Physeter_macrocephalus_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physeter_macrocephalus> ;
-    dwc:ID-CoL "4HH4H" ;
     dwc:authority "Mittermeier, 2014" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2014" ;
@@ -30,51 +42,13 @@
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "macrocephalus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4HH4H> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physeter_macrocephalus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cetacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Physeter>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Physeteridae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Physeteridae" ;
-    dwc:genus "Physeter" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Physeter_macrocephalus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Physeter> ;
     dwc:class "Mammalia" ;
     dwc:family "Physeteridae" ;
     dwc:genus "Physeter" ;
@@ -83,21 +57,55 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "macrocephalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Physeter> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Physeter>
+    dwc:class "Mammalia" ;
+    dwc:family "Physeteridae" ;
+    dwc:genus "Physeter" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Physeteridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Physeteridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
     dwc:class "Mammalia" ;
     dwc:family "Physeteridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B70F87E546648733428CF91FF6ECFD82>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Physeter_macrocephalus_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6607611> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Cetacea>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

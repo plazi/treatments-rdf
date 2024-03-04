@@ -1,56 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B711B23FFF0B86CCDA3FC681FDBD7C80
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_gracilis_Gilbert_1920> ;
+    dc:creator "Nakayama, Naohide" ;
+    dc:title "Hymenogadus Gilbert & Hubbs 1920" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hymenogadus_Gilbert_1920> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_Giglioli_1884> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/megataxa.3.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/megataxa.3.1.1>
-    dc:creator "Nakayama, Naohide" ;
-    dc:date "2020" ;
-    dc:title "Grenadiers (Teleostei: Gadiformes: Macrouridae) of Japan and adjacent waters, a taxonomic monograph" ;
     bibo:endPage "383" ;
     bibo:issue "1" ;
     bibo:journal "Megataxa" ;
     bibo:pubDate "2020-11-05" ;
     bibo:startPage "1" ;
     bibo:volume "3" ;
+    dc:creator "Nakayama, Naohide" ;
+    dc:date "2020" ;
+    dc:title "Grenadiers (Teleostei: Gadiformes: Macrouridae) of Japan and adjacent waters, a taxonomic monograph" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_Giglioli_1884>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus> ;
-    dwc:ID-CoL "526Y" ;
-    dwc:class "Actinopterygii" ;
-    dwc:family "Macrouridae" ;
-    dwc:genus "Hymenocephalus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gadiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Giglioli, 1884" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_gracilis_Gilbert_1920>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus_gracilis> ;
-    dwc:ID-CoL "3NJ8V" ;
-    dwc:class "Actinopterygii" ;
-    dwc:family "Macrouridae" ;
-    dwc:genus "Hymenocephalus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gadiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Gilbert & Hubbs, 1920" ;
-    dwc:species "gracilis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Hymenogadus_Gilbert_1920>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenogadus> ;
-    dwc:ID-CoL "527N" ;
     dwc:ID-ENA "1508084" ;
     dwc:class "Actinopterygii" ;
     dwc:family "Macrouridae" ;
@@ -59,40 +40,12 @@
     dwc:order "Gadiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Gilbert & Hubbs, 1920" ;
+    dwc:scientificNameAuthorship "Gilbert & Hubbs, 1920", "Gilbert & Hubbs, 1920: 521" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/527N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenogadus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gadiformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gadiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenocephalus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macrouridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_Giglioli_1884>
     dwc:class "Actinopterygii" ;
     dwc:family "Macrouridae" ;
     dwc:genus "Hymenocephalus" ;
@@ -100,10 +53,112 @@
     dwc:order "Gadiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Giglioli, 1884" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/527N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_gracilis_Gilbert_1920>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:genus "Hymenocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gilbert & Hubbs, 1920", "(Gilbert & Hubbs, 1920)" ;
+    dwc:species "gracilis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/527N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus_gracilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spicomacrurus_Okamura_1970>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:genus "Spicomacrurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Okamura, 1970" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spicomacrurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hymenogadus_tenuis_Gilbert_1917>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:genus "Hymenogadus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Gilbert & Hubbs, 1917)" ;
+    dwc:species "tenuis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymenogadus_tenuis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenogadus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:genus "Hymenogadus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macrouridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Macrouridae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gadiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gadiformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenocephalus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:genus "Hymenocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macrouridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus_gracilis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Macrouridae" ;
     dwc:genus "Hymenocephalus" ;
@@ -112,34 +167,28 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenocephalus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenogadus>
+<http://taxon-name.plazi.org/id/Animalia/Spicomacrurus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Macrouridae" ;
+    dwc:genus "Spicomacrurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gadiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macrouridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenogadus_tenuis>
     dwc:class "Actinopterygii" ;
     dwc:family "Macrouridae" ;
     dwc:genus "Hymenogadus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Gadiformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:species "tenuis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenogadus> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Macrouridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gadiformes> ;
-    dwc:class "Actinopterygii" ;
-    dwc:family "Macrouridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gadiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/B711B23FFF0B86CCDA3FC681FDBD7C80>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hymenogadus_Gilbert_1920> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_Giglioli_1884> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/megataxa.3.1.1> ;
-    dc:creator "Nakayama, Naohide" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Hymenocephalus_gracilis_Gilbert_1920> ;
-    a trt:Treatment .
-
