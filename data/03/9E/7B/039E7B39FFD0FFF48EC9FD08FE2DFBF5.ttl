@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X-73.2.259>
-    dc:creator "Shepard, William D.", "Sites, Robert W." ;
-    dc:date "2019" ;
-    dc:title "Larval Psephenidae (Coleoptera: Byrrhoidea) of Thailand: Annotated List and Illustrated Key to Genera" ;
+treatment:039E7B39FFD0FFF48EC9FD08FE2DFBF5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5454627>, <http://dx.doi.org/10.5281/zenodo.5454633> ;
+    dc:creator "Shepard, William D.; Sites, Robert W." ;
+    dc:title "Granuleubria Jach and Lee 1994" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Granuleubria_Lee_1994> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-73.2.259> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x-73.2.259>
     bibo:endPage "282" ;
     bibo:issue "2" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2019-06-21" ;
     bibo:startPage "259" ;
     bibo:volume "73" ;
+    dc:creator "Shepard, William D.; Sites, Robert W." ;
+    dc:date "2019" ;
+    dc:title "Larval Psephenidae (Coleoptera: Byrrhoidea) of Thailand: Annotated List and Illustrated Key to Genera" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5454627>, <http://dx.doi.org/10.5281/zenodo.5454633> ;
     a fabio:JournalArticle .
 
@@ -33,7 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Granuleubria_Lee_1994>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Granuleubria> ;
     dwc:class "Insecta" ;
     dwc:family "Psephenidae" ;
     dwc:genus "Granuleubria" ;
@@ -42,31 +50,23 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Jach and Lee, 1994" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Granuleubria> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Granuleubria_satoi_Yang_1999>
     dwc:class "Insecta" ;
+    dwc:family "Psephenidae" ;
+    dwc:genus "Granuleubria" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lee and Yang, 1999" ;
+    dwc:species "satoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Granuleubria_satoi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Granuleubria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psephenidae> ;
     dwc:class "Insecta" ;
     dwc:family "Psephenidae" ;
     dwc:genus "Granuleubria" ;
@@ -74,30 +74,56 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psephenidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Psephenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Psephenidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039E7B39FFD0FFF48EC9FD08FE2DFBF5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Granuleubria_Lee_1994> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-73.2.259> ;
-    dc:creator "Shepard, William D.", "Sites, Robert W." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5454627>, <http://dx.doi.org/10.5281/zenodo.5454633> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Granuleubria_satoi>
+    dwc:class "Insecta" ;
+    dwc:family "Psephenidae" ;
+    dwc:genus "Granuleubria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "satoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Granuleubria> ;
+    a dwcFP:TaxonName .
