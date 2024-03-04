@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039F87ADFF82FFE25BE4B56BFA1CF9EA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4617326>, <http://dx.doi.org/10.5281/zenodo.4617358>, <http://dx.doi.org/10.5281/zenodo.4617362> ;
+    dc:creator "Chen, Fu-Qiang; Wu, Chun-Sheng" ;
+    dc:title "Leechia South 1901" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Leechia> ;
+    trt:publishedIn <http://dx.doi.org/10.11865/zs20140201> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Leechia> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11865/zs20140201>
-    dc:creator "Chen, Fu-Qiang", "Wu, Chun-Sheng" ;
-    dc:date "2014" ;
-    dc:title "Taxonomic review of the subfamily Schoenobiinae (Lepidoptera: Pyraloidea: Crambidae) from China" ;
     bibo:endPage "208" ;
     bibo:issue "2" ;
     bibo:journal "Zoological Systematics" ;
     bibo:startPage "163" ;
     bibo:volume "39" ;
+    dc:creator "Chen, Fu-Qiang; Wu, Chun-Sheng" ;
+    dc:date "2014" ;
+    dc:title "Taxonomic review of the subfamily Schoenobiinae (Lepidoptera: Pyraloidea: Crambidae) from China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4617326>, <http://dx.doi.org/10.5281/zenodo.4617358>, <http://dx.doi.org/10.5281/zenodo.4617362> ;
     a fabio:JournalArticle .
 
@@ -36,38 +46,35 @@
     fabio:hasRepresentation "https://zenodo.org/record/4617362/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Crambidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Leechia_sinuosalis_South_1901>
     dwc:class "Insecta" ;
     dwc:family "Crambidae" ;
+    dwc:genus "Leechia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "South, 1901" ;
+    dwc:species "sinuosalis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/92CZZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leechia_sinuosalis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Leechia_bilinealis_South_1901>
     dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Leechia" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "South, 1901" ;
+    dwc:species "bilinealis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/92CZZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leechia_bilinealis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Leechia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crambidae> ;
     dwc:class "Insecta" ;
     dwc:family "Crambidae" ;
     dwc:genus "Leechia" ;
@@ -75,22 +82,68 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crambidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Crambidae>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039F87ADFF82FFE25BE4B56BFA1CF9EA>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/9F/87/Leechia> ;
-    trt:publishedIn <http://dx.doi.org/10.11865/zs20140201> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Leechia> ;
-    dc:creator "Chen, Fu-Qiang", "Wu, Chun-Sheng" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4617326>, <http://dx.doi.org/10.5281/zenodo.4617358>, <http://dx.doi.org/10.5281/zenodo.4617362> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leechia_sinuosalis>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Leechia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sinuosalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leechia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leechia_bilinealis>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Leechia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bilinealis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leechia> ;
+    a dwcFP:TaxonName .
