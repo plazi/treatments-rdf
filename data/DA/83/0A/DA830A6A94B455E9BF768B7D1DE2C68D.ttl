@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:DA830A6A94B455E9BF768B7D1DE2C68D
+    cito:cites <http://dx.doi.org/10.3897/mycokeys.82.66603.figure9> ;
+    dc:creator "Ostafinska, Agnieszka; Jankowiak, Robert; Bilanski, Piotr; Solheim, Halvor; Wingfield, Michael J." ;
+    dc:title "Sporothrix cryptarchum R. Jankowiak & A. Ostafinska 2021, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Sporothrix_cryptarchum_Jankowiak_2021> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/mycokeys.82.66603> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/mycokeys.82.66603>
-    dc:creator "Bilanski, Piotr", "Jankowiak, Robert", "Ostafinska, Agnieszka", "Solheim, Halvor", "Wingfield, Michael J." ;
-    dc:date "2021" ;
-    dc:title "Six new species of Sporothrix from hardwood trees in Poland" ;
     bibo:endPage "32" ;
     bibo:journal "MycoKeys" ;
     bibo:pubDate "2021-08-04" ;
     bibo:startPage "1" ;
     bibo:volume "82" ;
+    dc:creator "Ostafinska, Agnieszka; Jankowiak, Robert; Bilanski, Piotr; Solheim, Halvor; Wingfield, Michael J." ;
+    dc:date "2021" ;
+    dc:title "Six new species of Sporothrix from hardwood trees in Poland" ;
     fabio:hasPart <http://dx.doi.org/10.3897/mycokeys.82.66603.figure9> ;
     a fabio:JournalArticle .
 
@@ -27,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Fungi/Sporothrix_cryptarchum_Jankowiak_2021>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Sporothrix_cryptarchum> ;
     dwc:LSID "DA830A6A-94B4-55E9-BF76-8B7D1DE2C68D" ;
     dwc:class "Sordariomycetes" ;
     dwc:family "Ophiostomataceae" ;
@@ -36,62 +45,49 @@
     dwc:order "Ophiostomatales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "R. Jankowiak & A. Ostafińska" ;
+    dwc:scientificNameAuthorship "R. Jankowiak & A. Ostafińska", "R. Jankowiak & A. Ostafinska, 2021" ;
     dwc:species "cryptarchum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Sporothrix_cryptarchum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Fungi>
-    dwc:kingdom "Fungi" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Ophiostomataceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ophiostomatales> ;
-    dwc:class "Sordariomycetes" ;
-    dwc:family "Ophiostomataceae" ;
-    dwc:kingdom "Fungi" ;
-    dwc:order "Ophiostomatales" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Ophiostomatales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Sordariomycetes> ;
-    dwc:class "Sordariomycetes" ;
-    dwc:kingdom "Fungi" ;
-    dwc:order "Ophiostomatales" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Sordariomycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
-    dwc:class "Sordariomycetes" ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Sporothrix>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ophiostomataceae> ;
-    dwc:class "Sordariomycetes" ;
-    dwc:family "Ophiostomataceae" ;
-    dwc:genus "Sporothrix" ;
-    dwc:kingdom "Fungi" ;
-    dwc:order "Ophiostomatales" ;
-    dwc:phylum "Ascomycota" ;
+<http://taxon-concept.plazi.org/id/Plantae/Coleoptera_Linnaeus_1758>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Malvaceae" ;
+    dwc:genus "Coleoptera" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malvales" ;
+    dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Coleoptera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Nitidulidae_Latreille_1802>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Malvaceae" ;
+    dwc:genus "Nitidulidae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malvales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Nitidulidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cryptarcha_undata_Olivier_1790>
+    dwc:class "Insecta" ;
+    dwc:family "Nitidulidae" ;
+    dwc:genus "Cryptarcha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Olivier, 1790" ;
+    dwc:species "undata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cryptarcha_undata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Fungi/Sporothrix_cryptarchum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Sporothrix> ;
     dwc:class "Sordariomycetes" ;
     dwc:family "Ophiostomataceae" ;
     dwc:genus "Sporothrix" ;
@@ -100,12 +96,178 @@
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
     dwc:species "cryptarchum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Sporothrix> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DA830A6A94B455E9BF768B7D1DE2C68D>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Sporothrix_cryptarchum_Jankowiak_2021> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/mycokeys.82.66603> ;
-    dc:creator "Bilanski, Piotr", "Jankowiak, Robert", "Ostafinska, Agnieszka", "Solheim, Halvor", "Wingfield, Michael J." ;
-    cito:cites <http://dx.doi.org/10.3897/mycokeys.82.66603.figure9> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Fungi/Sporothrix>
+    dwc:class "Sordariomycetes" ;
+    dwc:family "Ophiostomataceae" ;
+    dwc:genus "Sporothrix" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Ophiostomatales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ophiostomataceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Fungi/Ophiostomataceae>
+    dwc:class "Sordariomycetes" ;
+    dwc:family "Ophiostomataceae" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Ophiostomatales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ophiostomatales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Ophiostomatales>
+    dwc:class "Sordariomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Ophiostomatales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Sordariomycetes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Sordariomycetes>
+    dwc:class "Sordariomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Coleoptera>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Malvaceae" ;
+    dwc:genus "Coleoptera" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malvales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malvaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Malvaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Malvaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malvales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malvales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Malvales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malvales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Nitidulidae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Malvaceae" ;
+    dwc:genus "Nitidulidae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malvales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malvaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cryptarcha_undata>
+    dwc:class "Insecta" ;
+    dwc:family "Nitidulidae" ;
+    dwc:genus "Cryptarcha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cryptarcha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cryptarcha>
+    dwc:class "Insecta" ;
+    dwc:family "Nitidulidae" ;
+    dwc:genus "Cryptarcha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nitidulidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nitidulidae>
+    dwc:class "Insecta" ;
+    dwc:family "Nitidulidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
