@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:EAA850EE6C0350B09D57498028E00331
+    cito:cites <http://dx.doi.org/10.3897/fr.26.e86784.figure1>, <http://dx.doi.org/10.3897/fr.26.e86784.figure2>, <http://dx.doi.org/10.3897/fr.26.e86784.figure3>, <http://dx.doi.org/10.3897/fr.26.e86784.figure4> ;
+    dc:creator "Yamada, Kazutaka; Yamamoto, Shuhei; Takahashi, Yui" ;
+    dc:title "Ecpaglocoris ditomeus Yamada & Yamamoto 2023, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ecpaglocoris_ditomeus_Yamada_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/fr.26.e86784> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/fr.26.e86784>
-    dc:creator "Takahashi, Yui", "Yamada, Kazutaka", "Yamamoto, Shuhei" ;
-    dc:date "2023" ;
-    dc:title "A new remarkable cimicoid genus and species (Hemiptera, Heteroptera, Cimicomorpha) from mid-Cretaceous Burmese amber, with implications for its aberrant male genitalia" ;
     bibo:endPage "38" ;
     bibo:issue "1" ;
     bibo:journal "Fossil Record" ;
     bibo:pubDate "2023-01-13" ;
     bibo:startPage "27" ;
     bibo:volume "26" ;
+    dc:creator "Yamada, Kazutaka; Yamamoto, Shuhei; Takahashi, Yui" ;
+    dc:date "2023" ;
+    dc:title "A new remarkable cimicoid genus and species (Hemiptera, Heteroptera, Cimicomorpha) from mid-Cretaceous Burmese amber, with implications for its aberrant male genitalia" ;
     fabio:hasPart <http://dx.doi.org/10.3897/fr.26.e86784.figure1>, <http://dx.doi.org/10.3897/fr.26.e86784.figure2>, <http://dx.doi.org/10.3897/fr.26.e86784.figure3>, <http://dx.doi.org/10.3897/fr.26.e86784.figure4> ;
     a fabio:JournalArticle .
 
@@ -43,7 +52,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ecpaglocoris_ditomeus_Yamada_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris_ditomeus> ;
     dwc:LSID "https://zoobank.org/77E88787-3A77-4B12-8D6E-2DFA4D6719D2" ;
     dwc:family "Vetanthocoridae" ;
     dwc:genus "Ecpaglocoris" ;
@@ -52,45 +60,44 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Yamada & Yamamoto" ;
     dwc:species "ditomeus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris_ditomeus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vetanthocoridae> ;
-    dwc:family "Vetanthocoridae" ;
-    dwc:genus "Ecpaglocoris" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris_ditomeus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris> ;
     dwc:family "Vetanthocoridae" ;
     dwc:genus "Ecpaglocoris" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:rank "species" ;
     dwc:species "ditomeus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ecpaglocoris>
+    dwc:family "Vetanthocoridae" ;
+    dwc:genus "Ecpaglocoris" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vetanthocoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vetanthocoridae>
+    dwc:family "Vetanthocoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Vetanthocoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:family "Vetanthocoridae" ;
+<http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:rank "family" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/EAA850EE6C0350B09D57498028E00331>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ecpaglocoris_ditomeus_Yamada_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/fr.26.e86784> ;
-    dc:creator "Takahashi, Yui", "Yamada, Kazutaka", "Yamamoto, Shuhei" ;
-    cito:cites <http://dx.doi.org/10.3897/fr.26.e86784.figure1>, <http://dx.doi.org/10.3897/fr.26.e86784.figure2>, <http://dx.doi.org/10.3897/fr.26.e86784.figure3>, <http://dx.doi.org/10.3897/fr.26.e86784.figure4> ;
-    a trt:Treatment .
-
