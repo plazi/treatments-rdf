@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03BB02496071FFC3FF54D7A6843FBC6A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.238831>, <http://dx.doi.org/10.5281/zenodo.238837> ;
+    dc:creator "Ugalde, Diana; Gómez, Patricia; Simões, Nuno" ;
+    dc:title "Agelas tubulata Lehnert" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3911.2.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Agelas_tubulata> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3911.2.1>
-    dc:creator "Gómez, Patricia", "Simões, Nuno", "Ugalde, Diana" ;
-    dc:date "2015" ;
-    dc:title "Marine sponges (Porifera: Demospongiae) from the Gulf of México, new records and redescription of Erylus trisphaerus (de Laubenfels, 1953)" ;
     bibo:endPage "183" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "151" ;
     bibo:volume "3911" ;
+    dc:creator "Ugalde, Diana; Gómez, Patricia; Simões, Nuno" ;
+    dc:date "2015" ;
+    dc:title "Marine sponges (Porifera: Demospongiae) from the Gulf of México, new records and redescription of Erylus trisphaerus (de Laubenfels, 1953)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.238831>, <http://dx.doi.org/10.5281/zenodo.238837> ;
     a fabio:JournalArticle .
 
@@ -31,24 +40,33 @@
     fabio:hasRepresentation "https://zenodo.org/record/238837/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Agelas>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelasidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Agelas_conifera_Schmidt_1870>
     dwc:class "Demospongiae" ;
     dwc:family "Agelasidae" ;
     dwc:genus "Agelas" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Agelasida" ;
     dwc:phylum "Porifera" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schmidt, 1870", "Schmidt 1870" ;
+    dwc:species "conifera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agelas_conifera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Agelas_conifera_Parra-Velandia_2014>
+    dwc:class "Demospongiae" ;
+    dwc:family "Agelasidae" ;
+    dwc:genus "Agelas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Agelasida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Parra-Velandia et al. 2014" ;
+    dwc:species "conifera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agelas_conifera> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Agelas_tubulata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelas> ;
     dwc:class "Demospongiae" ;
     dwc:family "Agelasidae" ;
     dwc:genus "Agelas" ;
@@ -57,46 +75,67 @@
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
     dwc:species "tubulata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelas> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Agelasida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+<http://taxon-name.plazi.org/id/Animalia/Agelas>
     dwc:class "Demospongiae" ;
+    dwc:family "Agelasidae" ;
+    dwc:genus "Agelas" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Agelasida" ;
     dwc:phylum "Porifera" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelasidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Agelasidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelasida> ;
     dwc:class "Demospongiae" ;
     dwc:family "Agelasidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Agelasida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelasida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Agelasida>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Agelasida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
     dwc:class "Demospongiae" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Porifera" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Porifera" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03BB02496071FFC3FF54D7A6843FBC6A>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3911.2.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Agelas_tubulata> ;
-    dc:creator "Gómez, Patricia", "Simões, Nuno", "Ugalde, Diana" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.238831>, <http://dx.doi.org/10.5281/zenodo.238837> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Agelas_conifera>
+    dwc:class "Demospongiae" ;
+    dwc:family "Agelasidae" ;
+    dwc:genus "Agelas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Agelasida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "conifera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agelas> ;
+    a dwcFP:TaxonName .
