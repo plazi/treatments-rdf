@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4430512FD7A01408EF7DA1A8DEE2EA08
+    cito:cites <http://dx.doi.org/10.3897/phytokeys.61.7904.figure1> ;
+    dc:creator "de Oliveira Buenger, Mariana; Mazine, Fiorella Fernanda; Lucas, Eve J.; Stehmann, Joao Renato" ;
+    dc:title "Eugenia longipetiolata Mattos, Dusenia 8: 162. 1968." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Eugenia_longipetiolata>, <http://taxon-name.plazi.org/id/Plantae/Tingua>, <http://taxon-name.plazi.org/id/Plantae/Eugenia_mutabilis> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Stenocalyx_mutabilis_Berg_1857>, <http://taxon-concept.plazi.org/id/Plantae/Eugenia_tinguana_Mattos_2006> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.61.7904> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Eugenia_longipetiolata> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.61.7904>
-    dc:creator "Lucas, Eve J.", "Mazine, Fiorella Fernanda", "Stehmann, Joao Renato", "de Oliveira Buenger, Mariana" ;
-    dc:date "2016" ;
-    dc:title "Circumscription and synopsis of Eugenia section Speciosae Buenger & Mazine (Myrtaceae)" ;
     bibo:endPage "80" ;
     bibo:journal "PhytoKeys" ;
     bibo:pubDate "2016-02-25" ;
     bibo:startPage "73" ;
     bibo:volume "61" ;
+    dc:creator "de Oliveira Buenger, Mariana; Mazine, Fiorella Fernanda; Lucas, Eve J.; Stehmann, Joao Renato" ;
+    dc:date "2016" ;
+    dc:title "Circumscription and synopsis of Eugenia section Speciosae Buenger & Mazine (Myrtaceae)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/phytokeys.61.7904.figure1> ;
     a fabio:JournalArticle .
 
@@ -26,21 +37,7 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/79805" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Plantae/Eugenia_tinguana_Mattos_2006>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Eugenia_tinguana> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Myrtaceae" ;
-    dwc:genus "Eugenia" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Myrtales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Mattos, 2006" ;
-    dwc:species "tinguana" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Plantae/Stenocalyx_mutabilis_Berg_1857>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Stenocalyx_mutabilis> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:genus "Stenocalyx" ;
@@ -50,26 +47,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Berg, 1857" ;
     dwc:species "mutabilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Stenocalyx_mutabilis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Eugenia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Eugenia_tinguana_Mattos_2006>
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:genus "Eugenia" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Mattos, 2006" ;
+    dwc:species "tinguana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Eugenia_tinguana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Eugenia_longipetiolata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Eugenia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:genus "Eugenia" ;
@@ -78,60 +72,60 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "longipetiolata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Eugenia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Eugenia_tinguana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Eugenia> ;
+<http://taxon-name.plazi.org/id/Plantae/Eugenia>
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:genus "Eugenia" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:species "tinguana" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Myrtaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Myrtales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Stenocalyx>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
     dwc:class "Magnoliopsida" ;
-    dwc:family "Myrtaceae" ;
-    dwc:genus "Stenocalyx" ;
     dwc:kingdom "Plantae" ;
-    dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Stenocalyx_mutabilis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Stenocalyx> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:genus "Stenocalyx" ;
@@ -140,21 +134,28 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "mutabilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Stenocalyx> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Stenocalyx>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Stenocalyx" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4430512FD7A01408EF7DA1A8DEE2EA08>
-    trt:citesTaxonName <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/44/30/51/Eugenia_longipetiolata>, <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/44/30/51/Eugenia_mutabilis>, <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/44/30/51/Tingua> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Eugenia_tinguana_Mattos_2006>, <http://taxon-concept.plazi.org/id/Plantae/Stenocalyx_mutabilis_Berg_1857> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.61.7904> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Eugenia_longipetiolata> ;
-    dc:creator "Lucas, Eve J.", "Mazine, Fiorella Fernanda", "Stehmann, Joao Renato", "de Oliveira Buenger, Mariana" ;
-    cito:cites <http://dx.doi.org/10.3897/phytokeys.61.7904.figure1> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae/Eugenia_tinguana>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eugenia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "tinguana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Eugenia> ;
+    a dwcFP:TaxonName .
