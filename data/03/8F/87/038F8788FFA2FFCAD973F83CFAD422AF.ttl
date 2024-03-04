@@ -1,28 +1,45 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:038F8788FFA2FFCAD973F83CFAD422AF
+    dc:creator "Iverson, John B." ;
+    dc:title "Homopus areolatus" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/038F8788FFA2FFCAD973F83CFAD422AF/UPSZTY%20298%2C%20UUZM%20298%2C%20ZIUS%20298> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Homopus_areolatus_Thunberg_1787> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Testudo_miniata_Lacepede_1788>, <http://taxon-concept.plazi.org/id/Animalia/Testudo_fasciata_Daudin_1801> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/megataxa.7.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/megataxa.7.1.1>
-    dc:creator "Iverson, John B." ;
-    dc:date "2022" ;
-    dc:title "A review of Chelonian type specimens (order Testudines)" ;
     bibo:endPage "85" ;
     bibo:issue "1" ;
     bibo:journal "Megataxa" ;
     bibo:pubDate "2022-01-25" ;
     bibo:startPage "1" ;
     bibo:volume "7" ;
+    dc:creator "Iverson, John B." ;
+    dc:date "2022" ;
+    dc:title "A review of Chelonian type specimens (order Testudines)" ;
     a fabio:JournalArticle .
 
+<http://treatment.plazi.org/id/038F8788FFA2FFCAD973F83CFAD422AF/UPSZTY%20298%2C%20UUZM%20298%2C%20ZIUS%20298>
+    dwc:catalogNumber "UPSZTY 298, UUZM 298, ZIUS 298" ;
+    dwc:collectionCode "UPSZTY, UUZM, ZIUS" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3695119515" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Homopus_areolatus_Thunberg_1787>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homopus_areolatus> ;
     dwc:class "Reptilia" ;
     dwc:family "Testudinidae" ;
     dwc:genus "Homopus" ;
@@ -32,23 +49,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Thunberg 1787: 180)" ;
     dwc:species "areolatus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Testudo_fasciata_Daudin_1801>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Testudo_fasciata> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Testudinidae" ;
-    dwc:genus "Testudo" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Testudines" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Daudin 1801: 294" ;
-    dwc:species "fasciata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homopus_areolatus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Testudo_miniata_Lacepede_1788>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Testudo_miniata> ;
     dwc:class "Reptilia" ;
     dwc:family "Testudinidae" ;
     dwc:genus "Testudo" ;
@@ -58,33 +62,63 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lacepede 1788: 166" ;
     dwc:species "miniata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Testudo_miniata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Homopus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudinidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Testudo_fasciata_Daudin_1801>
     dwc:class "Reptilia" ;
     dwc:family "Testudinidae" ;
-    dwc:genus "Homopus" ;
+    dwc:genus "Testudo" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Testudines" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Daudin 1801: 294" ;
+    dwc:species "fasciata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Testudo_fasciata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Testudo_africana_Hermann_1804>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hermann 1804: 218" ;
+    dwc:species "africana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Testudo_africana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chersine_tetradactyla_Merrem_1820>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Chersine" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Merrem 1820: 32" ;
+    dwc:species "tetradactyla" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chersine_tetradactyla> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Testudo_areolata_pallida_Gray_1831>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gray 1831: 13" ;
+    dwc:species "areolata" ;
+    dwc:subSpecies "pallida" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Testudo_areolata_pallida> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Homopus_areolatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homopus> ;
     dwc:class "Reptilia" ;
     dwc:family "Testudinidae" ;
     dwc:genus "Homopus" ;
@@ -93,60 +127,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "areolatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homopus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Homopus>
     dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Testudines>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
-    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Homopus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Testudines" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudinidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Testudinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudines> ;
     dwc:class "Reptilia" ;
     dwc:family "Testudinidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Testudines" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudines> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Testudo>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudinidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Testudines>
     dwc:class "Reptilia" ;
-    dwc:family "Testudinidae" ;
-    dwc:genus "Testudo" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Testudines" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Testudo_fasciata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo> ;
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
     dwc:class "Reptilia" ;
-    dwc:family "Testudinidae" ;
-    dwc:genus "Testudo" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Testudines" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "fasciata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Testudo_miniata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo> ;
     dwc:class "Reptilia" ;
     dwc:family "Testudinidae" ;
     dwc:genus "Testudo" ;
@@ -155,20 +189,88 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "miniata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038F8788FFA2FFCAD973F83CFAD422AF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Homopus_areolatus_Thunberg_1787> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Testudo_fasciata_Daudin_1801>, <http://taxon-concept.plazi.org/id/Animalia/Testudo_miniata_Lacepede_1788> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/megataxa.7.1.1> ;
-    dc:creator "Iverson, John B." ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/038F8788FFA2FFCAD973F83CFAD422AF/UPSZTY%20298%2C%20UUZM%20298%2C%20ZIUS%20298> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Testudo>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudinidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038F8788FFA2FFCAD973F83CFAD422AF/UPSZTY%20298%2C%20UUZM%20298%2C%20ZIUS%20298>
-    trt:gbifOccurrenceId "3695119515" ;
-    dwc:catalogNumber "UPSZTY 298, UUZM 298, ZIUS 298" ;
-    dwc:collectionCode "UPSZTY, UUZM, ZIUS" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Testudo_fasciata>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "fasciata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Testudo_africana>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "africana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chersine_tetradactyla>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Chersine" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "tetradactyla" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chersine> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chersine>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Chersine" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Testudo_areolata_pallida>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "areolata" ;
+    dwc:subSpecies "pallida" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo_areolata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Testudo_areolata>
+    dwc:class "Reptilia" ;
+    dwc:family "Testudinidae" ;
+    dwc:genus "Testudo" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Testudines" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "areolata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Testudo> ;
+    a dwcFP:TaxonName .

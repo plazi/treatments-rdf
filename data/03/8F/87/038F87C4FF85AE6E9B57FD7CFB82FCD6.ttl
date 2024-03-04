@@ -1,50 +1,61 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.17109/AZH.64.1.21.2018>
+treatment:038F87C4FF85AE6E9B57FD7CFB82FCD6
     dc:creator "Papp, Jenő" ;
-    dc:date "2018" ;
-    dc:title "Braconidae (Hymenoptera) From Korea, Xxiv. Species Of Thirteen Subfamilies" ;
+    dc:title "Exothecinae" ;
+    trt:publishedIn <http://dx.doi.org/10.17109/azh.64.1.21.2018> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Exothecinae> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.17109/azh.64.1.21.2018>
     bibo:endPage "50" ;
     bibo:issue "1" ;
     bibo:journal "Acta Zoologica Academiae Scientiarum Hungaricae" ;
     bibo:pubDate "2018-03-30" ;
     bibo:startPage "21" ;
     bibo:volume "64" ;
+    dc:creator "Papp, Jenő" ;
+    dc:date "2018" ;
+    dc:title "Braconidae (Hymenoptera) From Korea, Xxiv. Species Of Thirteen Subfamilies" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Acrisis_brevicornis_Hellen_1957>
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
+    dwc:genus "Acrisis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hellen, 1957" ;
+    dwc:species "brevicornis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acrisis_brevicornis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Acrisis_koponeni_Tobias_1983>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Acrisis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tobias, 1983" ;
+    dwc:species "koponeni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acrisis_koponeni> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Exothecinae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
@@ -52,28 +63,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Exothecinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Braconidae>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038F87C4FF85AE6E9B57FD7CFB82FCD6>
-    trt:publishedIn <http://dx.doi.org/10.17109/azh.64.1.21.2018> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Exothecinae> ;
-    dc:creator "Papp, Jenő" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Acrisis_brevicornis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Acrisis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brevicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acrisis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Acrisis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Acrisis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Acrisis_koponeni>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Acrisis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "koponeni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acrisis> ;
+    a dwcFP:TaxonName .
