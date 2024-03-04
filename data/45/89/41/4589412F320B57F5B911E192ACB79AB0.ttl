@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:4589412F320B57F5B911E192ACB79AB0
+    cito:cites <http://dx.doi.org/10.3897/BDJ.8.e54482.figure2> ;
+    dc:creator "Arnes-Urgelles, Camila; Buglass, Salome; Ahyong, Shane T.; Salinas-de-Leon, Pelayo; Wicksten, Mary K.; Marsh, Leigh" ;
+    dc:title "Penaeoidea Rafinesque 1815" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Penaeoidea_Rafinesque_1815> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/BDJ.8.e54482> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/BDJ.8.e54482>
-    dc:creator "Ahyong, Shane T.", "Arnes-Urgelles, Camila", "Buglass, Salome", "Marsh, Leigh", "Salinas-de-Leon, Pelayo", "Wicksten, Mary K." ;
-    dc:date "2020" ;
-    dc:title "Arthropoda; Crustacea; Decapoda of deep-sea volcanic habitats of the Galapagos Marine Reserve, Tropical Eastern Pacific" ;
     bibo:endPage "54482" ;
     bibo:journal "Biodiversity Data Journal" ;
     bibo:startPage "54482" ;
     bibo:volume "8" ;
+    dc:creator "Arnes-Urgelles, Camila; Buglass, Salome; Ahyong, Shane T.; Salinas-de-Leon, Pelayo; Wicksten, Mary K.; Marsh, Leigh" ;
+    dc:date "2020" ;
+    dc:title "Arthropoda; Crustacea; Decapoda of deep-sea volcanic habitats of the Galapagos Marine Reserve, Tropical Eastern Pacific" ;
     fabio:hasPart <http://dx.doi.org/10.3897/BDJ.8.e54482.figure2> ;
     a fabio:JournalArticle .
 
@@ -26,22 +37,80 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Penaeoidea_Rafinesque_1815>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Penaeoidea> ;
-    dwc:LSID "4589412F-320B-57F5-B911-E192ACB79AB0" ;
-    dwc:rank "superFamily" ;
-    dwc:scientificNameAuthorship "Rafinesque, 1815" ;
-    dwc:superFamily "Penaeoidea" ;
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Benthesicymus_Bate_1881>
+    # Error: Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Benthesicymidae_Wood-Mason_1891>
+    # Error: Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aristeidae_Wood-Mason_1891>
+    # Error: Invalid taxon relation ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Penaeoidea>
+    # Warning: Could not determine parent name ;
     dwc:rank "superFamily" ;
     dwc:superFamily "Penaeoidea" ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4589412F320B57F5B911E192ACB79AB0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Penaeoidea_Rafinesque_1815> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/BDJ.8.e54482> ;
-    dc:creator "Ahyong, Shane T.", "Arnes-Urgelles, Camila", "Buglass, Salome", "Marsh, Leigh", "Salinas-de-Leon, Pelayo", "Wicksten, Mary K." ;
-    cito:cites <http://dx.doi.org/10.3897/BDJ.8.e54482.figure2> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Benthesicymus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Benthesicymidae" ;
+    dwc:genus "Benthesicymus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Benthesicymidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Benthesicymidae>
+    # Warning: Could not determine parent name ;
+    dwc:class "Malacostraca" ;
+    dwc:family "Benthesicymidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aristeidae>
+    # Warning: Could not determine parent name ;
+    dwc:family "Aristeidae" ;
+    dwc:rank "family" ;
+    a dwcFP:TaxonName .
