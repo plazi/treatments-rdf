@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03AD87FAFF98F6778CB33D40FDCBF7DC
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6448901> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Pteropus anetianus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pteropus_anetianus_Gray_1870> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Spectrum_anetianum_Gray_1870> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6448815> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6448815>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2019" ;
-    dc:title "Pteropodidae" ;
     bibo:endPage "162" ;
     bibo:startPage "16" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2019" ;
+    dc:title "Pteropodidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6448901> ;
     a fabio:BookSection .
 
@@ -24,7 +35,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pteropus_anetianus_Gray_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pteropus_anetianus> ;
     dwc:authority "Wilson, 2019" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2019" ;
@@ -35,11 +45,12 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. E. Gray, 1870", "Gray, 1870" ;
     dwc:species "anetianus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pteropus_anetianus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Spectrum_anetianum_Gray_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spectrum_anetianum> ;
     dwc:class "Mammalia" ;
     dwc:family "Pteropodidae" ;
     dwc:genus "Spectrum" ;
@@ -49,60 +60,80 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "J. E. Gray, 1870" ;
     dwc:species "anetianum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spectrum_anetianum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Pleropus_anetianus_aorensis_Lawrence_1945>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Lawrence, 1945" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "aorensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_aorensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Pleropus_anetianus_banksianus_Sanborn_1930>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Sanborn, 1930" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "banksianus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_banksianus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Pleropus_anetianus_eotinus_Andersen_1913>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "K. Andersen, 1913" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "eotinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_eotinus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Pleropus_anetianus_motalavae_Felten_1972>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Felten & Kock, 1972" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "motalavae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_motalavae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Pteropodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Pteropodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pteropus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteropodidae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Pteropodidae" ;
-    dwc:genus "Pteropus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Pleropus_anetianus_pastoris_Felten_1972>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Felten & Kock, 1972" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "pastoris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_pastoris> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pteropus_anetianus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteropus> ;
     dwc:class "Mammalia" ;
     dwc:family "Pteropodidae" ;
     dwc:genus "Pteropus" ;
@@ -111,21 +142,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "anetianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteropus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Spectrum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteropodidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Pteropus>
     dwc:class "Mammalia" ;
     dwc:family "Pteropodidae" ;
-    dwc:genus "Spectrum" ;
+    dwc:genus "Pteropus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteropodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pteropodidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Pteropodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Spectrum_anetianum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spectrum> ;
     dwc:class "Mammalia" ;
     dwc:family "Pteropodidae" ;
     dwc:genus "Spectrum" ;
@@ -134,13 +204,143 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "anetianum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spectrum> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AD87FAFF98F6778CB33D40FDCBF7DC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pteropus_anetianus_Gray_1870> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Spectrum_anetianum_Gray_1870> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6448815> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6448901> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Spectrum>
+    dwc:class "Mammalia" ;
+    dwc:family "Pteropodidae" ;
+    dwc:genus "Spectrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteropodidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_aorensis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "aorensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "anetianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pleropus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pleropus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Moraceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Moraceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Rosales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_banksianus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "banksianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_eotinus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "eotinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_motalavae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "motalavae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus_pastoris>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:genus "Pleropus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "anetianus" ;
+    dwc:subSpecies "pastoris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pleropus_anetianus> ;
+    a dwcFP:TaxonName .
