@@ -1,26 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B1CA7B52078B53C185DE09F64425515A
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/quadrilocularis>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/decurrens>' due to issues with rank ;
+    dc:creator "Shepherd, Kelly A.; Lepschi, Brendan J.; Johnson, Eden A.; Gardner, Andrew G.; Sessa, Emily B.; Jabaily, Rachel S." ;
+    dc:title "Goodenia (Monochila) (sect. Tetrathylax) trichophylla subsp. sect. G. Don, Gen. hist. 3: 725. 1834" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Tetrathylax_Don_1834> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Goodenia_quadrilocularis>, <http://taxon-name.plazi.org/id/Plantae/Racemosae> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Tetrathylax_G.Don_1834>, <http://taxon-concept.plazi.org/id/Plantae/Tetraphylax_G.Don_1854> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.152.49604> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.152.49604>
-    dc:creator "Gardner, Andrew G.", "Jabaily, Rachel S.", "Johnson, Eden A.", "Lepschi, Brendan J.", "Sessa, Emily B.", "Shepherd, Kelly A." ;
-    dc:date "2020" ;
-    dc:title "The concluding chapter: recircumscription of Goodenia (Goodeniaceae) to include four allied genera with an updated infrageneric classification" ;
     bibo:endPage "104" ;
     bibo:journal "PhytoKeys" ;
     bibo:startPage "27" ;
     bibo:volume "152" ;
+    dc:creator "Shepherd, Kelly A.; Lepschi, Brendan J.; Johnson, Eden A.; Gardner, Andrew G.; Sessa, Emily B.; Jabaily, Rachel S." ;
+    dc:date "2020" ;
+    dc:title "The concluding chapter: recircumscription of Goodenia (Goodeniaceae) to include four allied genera with an updated infrageneric classification" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Plantae/Goodenia_Monochila_Don_1834>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Goodenia_Monochila> ;
+<http://taxon-concept.plazi.org/id/Plantae/Tetrathylax_Don_1834>
     dwc:LSID "B1CA7B52-078B-53C1-85DE-09F64425515A" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Goodeniaceae" ;
@@ -32,22 +42,10 @@
     dwc:scientificNameAuthorship "G. Don, Gen. hist. 3: 725. 1834" ;
     dwc:section "Tetrathylax" ;
     dwc:subGenus "Monochila" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Plantae/Tetraphylax_Vriese_1854>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetraphylax> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Goodeniaceae" ;
-    dwc:genus "Tetraphylax" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Asterales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "de Vriese, 1854" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetrathylax> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Tetrathylax_G.Don_1834>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetrathylax> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Goodeniaceae" ;
     dwc:genus "Tetrathylax" ;
@@ -56,15 +54,10 @@
     dwc:phylum "Streptophyta" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "G.Don, 1834" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetrathylax> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Goodenia_Monochila>
-    dwc:rank "section" ;
-    dwc:section "Tetrathylax" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tetraphylax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Goodeniaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Tetraphylax_G.Don_1854>
     dwc:class "Magnoliopsida" ;
     dwc:family "Goodeniaceae" ;
     dwc:genus "Tetraphylax" ;
@@ -72,24 +65,77 @@
     dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "de Vriese, 1854" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetraphylax> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Tetrathylax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Goodeniaceae> ;
+    # Warning: Could not determine parent name ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Goodeniaceae" ;
-    dwc:genus "Tetrathylax" ;
+    dwc:genus "Goodenia", "Tetrathylax" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Asterales" ;
-    dwc:phylum "Streptophyta" ;
-    dwc:rank "genus" ;
+    dwc:phylum "Tracheophyta", "Streptophyta" ;
+    dwc:rank "section", "genus" ;
+    dwc:section "Tetrathylax" ;
+    dwc:subGenus "Monochila" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Goodeniaceae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B1CA7B52078B53C185DE09F64425515A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Goodenia_Monochila_Don_1834> ;
-    trt:citesTaxonName <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/B1/CA/7B/Goodenia>, <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/B1/CA/7B/Goodenia_quadrilocularis> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Tetraphylax_Vriese_1854>, <http://taxon-concept.plazi.org/id/Plantae/Tetrathylax_G.Don_1834> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.152.49604> ;
-    dc:creator "Gardner, Andrew G.", "Jabaily, Rachel S.", "Johnson, Eden A.", "Lepschi, Brendan J.", "Sessa, Emily B.", "Shepherd, Kelly A." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Goodeniaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Goodeniaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Streptophyta", "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asterales> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Asterales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Streptophyta", "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Streptophyta", "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Streptophyta>, <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Streptophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tetraphylax>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Goodeniaceae" ;
+    dwc:genus "Tetraphylax" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Goodeniaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
