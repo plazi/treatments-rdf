@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A72001FF82CD40C6A15A5EFA8CE1DE
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6480114> ;
+    dc:creator "Tian, He; Ren, Dong; Gu, Jun-Jie" ;
+    dc:title "Panorpidium acusicaudum Tian & Ren & Gu 2022, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A72001FF82CD40C6A15A5EFA8CE1DE.mc.3B669B4AFF82CD41C70B5B65FCBDE16D> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Panorpidium_acusicaudum_Tian_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5128.4.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5128.4.8>
-    dc:creator "Gu, Jun-Jie", "Ren, Dong", "Tian, He" ;
-    dc:date "2022" ;
-    dc:title "Two new species of Elcaninae (Orthoptera, Elcanidae) recorded from the Early Cretaceous China" ;
     bibo:endPage "596" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-04-22" ;
     bibo:startPage "589" ;
     bibo:volume "5128" ;
+    dc:creator "Tian, He; Ren, Dong; Gu, Jun-Jie" ;
+    dc:date "2022" ;
+    dc:title "Two new species of Elcaninae (Orthoptera, Elcanidae) recorded from the Early Cretaceous China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6480114> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/6480114/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03A72001FF82CD40C6A15A5EFA8CE1DE.mc.3B669B4AFF82CD41C70B5B65FCBDE16D>
+    dwc:catalogNumber "CNU-ORT-LB2011041P/C" ;
+    dwc:collectionCode "CNU-ORT-LB" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3757468301" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A72001FF82CD40C6A15A5EFA8CE1DE#3B669B4AFF82CD41C70B5B65FCBDE16D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Panorpidium_acusicaudum_Tian_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_acusicaudum> ;
-    dwc:ID-CoL "9H22Z" ;
     dwc:class "Insecta" ;
     dwc:family "Elcanidae" ;
     dwc:genus "Panorpidium" ;
@@ -39,49 +55,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Tian & Ren & Gu, 2022" ;
     dwc:species "acusicaudum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/9H22Z> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_acusicaudum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Elcanidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Elcaninae_Handlirsch_1906>
     dwc:class "Insecta" ;
     dwc:family "Elcanidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Handlirsch, 1906" ;
+    dwc:subFamily "Elcaninae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elcaninae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Orthoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Panorpidium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elcanidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_Westwood_1854>
     dwc:class "Insecta" ;
     dwc:family "Elcanidae" ;
     dwc:genus "Panorpidium" ;
@@ -89,10 +79,102 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Westwood, 1854" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_parvum_Gorochov_2006>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gorochov, Jarzembowski and Coram, 2006" ;
+    dwc:species "parvum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_parvum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_bimaculatum_Gorochov_2006>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gorochov, Jarzembowski and Coram, 2006" ;
+    dwc:species "bimaculatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_bimaculatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_spica_Kim_2021>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim, Lee, Nam and Park, 2021" ;
+    dwc:species "spica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_spica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_tessellatum_Westwood_1854>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Westwood, 1854" ;
+    dwc:species "tessellatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_tessellatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_proximum_Gorochov_2006>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gorochov, Jarzembowski and Coram, 2006" ;
+    dwc:species "proximum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_proximum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_sibiricum_Sharov_1968>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sharov, 1968" ;
+    dwc:species "sibiricum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_sibiricum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Panorpidium_yixianensis_Fang_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fang, Wang, Zhang, Wang, Jarzembowski, Zheng, Zhang, Lia and Liu, 2015" ;
+    dwc:species "yixianensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panorpidium_yixianensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Panorpidium_acusicaudum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
     dwc:class "Insecta" ;
     dwc:family "Elcanidae" ;
     dwc:genus "Panorpidium" ;
@@ -101,20 +183,150 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "acusicaudum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A72001FF82CD40C6A15A5EFA8CE1DE>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Panorpidium_acusicaudum_Tian_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5128.4.8> ;
-    dc:creator "Gu, Jun-Jie", "Ren, Dong", "Tian, He" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6480114> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03A72001FF82CD40C6A15A5EFA8CE1DE/CNU-ORT-LB2011041P%2FC> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elcanidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A72001FF82CD40C6A15A5EFA8CE1DE/CNU-ORT-LB2011041P%2FC>
-    trt:gbifOccurrenceId "3757468301" ;
-    dwc:catalogNumber "CNU-ORT-LB2011041P/C" ;
-    dwc:collectionCode "CNU-ORT-LB" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Elcanidae>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elcaninae>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Elcaninae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elcanidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_parvum>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "parvum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_bimaculatum>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bimaculatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_spica>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "spica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_tessellatum>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tessellatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_proximum>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "proximum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_sibiricum>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sibiricum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Panorpidium_yixianensis>
+    dwc:class "Insecta" ;
+    dwc:family "Elcanidae" ;
+    dwc:genus "Panorpidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "yixianensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panorpidium> ;
+    a dwcFP:TaxonName .

@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A787F5FFB1FFCCFF16FF44FCE6FD85
+    cito:cites <http://dx.doi.org/10.5281/zenodo.2627181>, <http://dx.doi.org/10.5281/zenodo.2627220>, <http://dx.doi.org/10.5281/zenodo.2627222>, <http://dx.doi.org/10.5281/zenodo.2627224> ;
+    dc:creator "Barragán, Yamaly; Sánchez, Carlos; Rodríguez, Estefanía" ;
+    dc:title "Alicia beebei Carlgren 1940" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Alicia_beebei_Carlgren_1940> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4559.3.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4559.3.4>
-    dc:creator "Barragán, Yamaly", "Rodríguez, Estefanía", "Sánchez, Carlos" ;
-    dc:date "2019" ;
-    dc:title "First inventory of sea anemones (Cnidaria: Actiniaria) from La Paz Bay, southern Gulf of California (Mexico)" ;
     bibo:endPage "549" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-02-21" ;
     bibo:startPage "501" ;
     bibo:volume "4559" ;
+    dc:creator "Barragán, Yamaly; Sánchez, Carlos; Rodríguez, Estefanía" ;
+    dc:date "2019" ;
+    dc:title "First inventory of sea anemones (Cnidaria: Actiniaria) from La Paz Bay, southern Gulf of California (Mexico)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.2627181>, <http://dx.doi.org/10.5281/zenodo.2627220>, <http://dx.doi.org/10.5281/zenodo.2627222>, <http://dx.doi.org/10.5281/zenodo.2627224> ;
     a fabio:JournalArticle .
 
@@ -43,8 +52,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Alicia_beebei_Carlgren_1940>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alicia_beebei> ;
-    dwc:ID-CoL "BS3P" ;
     dwc:class "Anthozoa" ;
     dwc:family "Aliciidae" ;
     dwc:genus "Alicia" ;
@@ -54,24 +61,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Carlgren, 1940" ;
     dwc:species "beebei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BS3P> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alicia_beebei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actiniaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthozoa> ;
-    dwc:class "Anthozoa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Actiniaria" ;
-    dwc:phylum "Cnidaria" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Alicia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aliciidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Alicia_Johnson_1861>
     dwc:class "Anthozoa" ;
     dwc:family "Aliciidae" ;
     dwc:genus "Alicia" ;
@@ -79,10 +73,11 @@
     dwc:order "Actiniaria" ;
     dwc:phylum "Cnidaria" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Johnson, 1861" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alicia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Alicia_beebei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Alicia> ;
     dwc:class "Anthozoa" ;
     dwc:family "Aliciidae" ;
     dwc:genus "Alicia" ;
@@ -91,37 +86,55 @@
     dwc:phylum "Cnidaria" ;
     dwc:rank "species" ;
     dwc:species "beebei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Alicia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Alicia>
+    dwc:class "Anthozoa" ;
+    dwc:family "Aliciidae" ;
+    dwc:genus "Alicia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Actiniaria" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aliciidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Aliciidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actiniaria> ;
     dwc:class "Anthozoa" ;
     dwc:family "Aliciidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Actiniaria" ;
     dwc:phylum "Cnidaria" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actiniaria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actiniaria>
+    dwc:class "Anthozoa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Actiniaria" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthozoa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Anthozoa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cnidaria> ;
     dwc:class "Anthozoa" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Cnidaria" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cnidaria> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cnidaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Cnidaria" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A787F5FFB1FFCCFF16FF44FCE6FD85>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Alicia_beebei_Carlgren_1940> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4559.3.4> ;
-    dc:creator "Barragán, Yamaly", "Rodríguez, Estefanía", "Sánchez, Carlos" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.2627181>, <http://dx.doi.org/10.5281/zenodo.2627220>, <http://dx.doi.org/10.5281/zenodo.2627222>, <http://dx.doi.org/10.5281/zenodo.2627224> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
