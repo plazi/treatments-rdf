@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7047555E6A49FFE4FF62FF1909E92D9B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4611507> ;
+    dc:creator "Guernet, Claude; Huyghe, Damien; Lartaud, Franck; Merle, Didier; Emmanuel, Laurent; Gély, Jean-Pierre; Michel, Florent; Pilet, Ophélie" ;
+    dc:title "Cytherella pustulosa Keij 1957" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cytherella_pustulosa_Keij_1957> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/g2012n4a12> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/g2012n4a12>
-    dc:creator "Emmanuel, Laurent", "Guernet, Claude", "Gély, Jean-Pierre", "Huyghe, Damien", "Lartaud, Franck", "Merle, Didier", "Michel, Florent", "Pilet, Ophélie" ;
-    dc:date "2012" ;
-    dc:title "Les Ostracodes de la falunière de Grignon (Lutétien du Bassin de Paris): implications stratigraphiques" ;
     bibo:endPage "959" ;
     bibo:issue "4" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2012-12-31" ;
     bibo:startPage "909" ;
     bibo:volume "34" ;
+    dc:creator "Guernet, Claude; Huyghe, Damien; Lartaud, Franck; Merle, Didier; Emmanuel, Laurent; Gély, Jean-Pierre; Michel, Florent; Pilet, Ophélie" ;
+    dc:date "2012" ;
+    dc:title "Les Ostracodes de la falunière de Grignon (Lutétien du Bassin de Paris): implications stratigraphiques" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4611507> ;
     a fabio:JournalArticle .
 
@@ -28,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cytherella_pustulosa_Keij_1957>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cytherella_pustulosa> ;
-    dwc:ID-CoL "eaae55b0-880e-4f7d-b792-0207f0a28d03" ;
     dwc:class "Ostracoda" ;
     dwc:family "Cytherellidae" ;
     dwc:genus "Cytherella" ;
@@ -37,24 +44,25 @@
     dwc:order "Platycopida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Keij, 1957" ;
+    dwc:scientificNameAuthorship "Keij, 1957", "Keij, 1957: 46" ;
     dwc:species "pustulosa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/eaae55b0-880e-4f7d-b792-0207f0a28d03> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cytherella_pustulosa> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-name.plazi.org/id/Animalia/Cytherella_pustulosa>
+    dwc:class "Ostracoda" ;
+    dwc:family "Cytherellidae" ;
+    dwc:genus "Cytherella" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Platycopida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "species" ;
+    dwc:species "pustulosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cytherella> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cytherella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cytherellidae> ;
     dwc:class "Ostracoda" ;
     dwc:family "Cytherellidae" ;
     dwc:genus "Cytherella" ;
@@ -62,51 +70,44 @@
     dwc:order "Platycopida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cytherella_pustulosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cytherella> ;
-    dwc:class "Ostracoda" ;
-    dwc:family "Cytherellidae" ;
-    dwc:genus "Cytherella" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Platycopida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "pustulosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cytherellidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cytherellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platycopida> ;
     dwc:class "Ostracoda" ;
     dwc:family "Cytherellidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Platycopida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ostracoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Ostracoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platycopida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Platycopida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
     dwc:class "Ostracoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Platycopida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7047555E6A49FFE4FF62FF1909E92D9B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cytherella_pustulosa_Keij_1957> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/g2012n4a12> ;
-    dc:creator "Emmanuel, Laurent", "Guernet, Claude", "Gély, Jean-Pierre", "Huyghe, Damien", "Lartaud, Franck", "Merle, Didier", "Michel, Florent", "Pilet, Ophélie" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4611507> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Ostracoda>
+    dwc:class "Ostracoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
