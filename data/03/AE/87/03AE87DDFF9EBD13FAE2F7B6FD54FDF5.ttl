@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03AE87DDFF9EBD13FAE2F7B6FD54FDF5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6609169> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Myospalax armandii" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03AE87DDFF9EBD13FAE2F7B6FD54FDF5.mc.3B6F3C96FF9EBD12F747F706F7A7F756> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Myospalax_armandii_Milne-Edwards_1867> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Siphneus_armandii_Milne-Edwards_1867> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6609100> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6609100>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Spalacidae" ;
     bibo:endPage "142" ;
     bibo:startPage "108" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Spalacidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6609169> ;
     a fabio:BookSection .
 
@@ -23,9 +34,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6609169/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03AE87DDFF9EBD13FAE2F7B6FD54FDF5.mc.3B6F3C96FF9EBD12F747F706F7A7F756>
+    dwc:locality "N Shanxi" ;
+    trt:gbifOccurrenceId "3802165301" ;
+    trt:httpUri <https://treatment.plazi.org/id/03AE87DDFF9EBD13FAE2F7B6FD54FDF5#3B6F3C96FF9EBD12F747F706F7A7F756> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Myospalax_armandii_Milne-Edwards_1867>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myospalax_armandii> ;
-    dwc:ID-CoL "4XNJ5" ;
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -36,12 +51,13 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Milne-Edwards, 1867" ;
     dwc:species "armandii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4XNJ5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myospalax_armandii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Siphneus_armandii_Milne-Edwards_1867>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Siphneus_armandii> ;
-    dwc:ID-CoL "4XNJ5" ;
     dwc:class "Mammalia" ;
     dwc:family "Spalacidae" ;
     dwc:genus "Siphneus" ;
@@ -51,41 +67,283 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Milne-Edwards, 1867" ;
     dwc:species "armandii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4XNJ5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Siphneus_armandii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Myospalax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Myospalax_aspalax_Pallas_1776>
     dwc:class "Mammalia" ;
     dwc:family "Spalacidae" ;
     dwc:genus "Myospalax" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pallas, 1776" ;
+    dwc:species "aspalax" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myospalax_aspalax> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Myospalax_psilurus_Milne-Edwards_1874>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Myospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Milne-Edwards, 1874" ;
+    dwc:species "psilurus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myospalax_psilurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Myospalax_epsilanus_Thomas_1912>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Myospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1912" ;
+    dwc:species "epsilanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myospalax_epsilanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eospalax_baileyi_Thomas_1911>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1911" ;
+    dwc:species "baileyi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eospalax_baileyi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eospalax_rothschildi_Thomas_1911>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1911" ;
+    dwc:species "rothschildi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eospalax_rothschildi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eospalax_Allen_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "G. M. Allen, 1940" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eospalax> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhizomys_sumatrensis_Raffles_1821>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Raffles, 1821" ;
+    dwc:species "sumatrensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhizomys_sumatrensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cannomys_badius_Hodgson_1841>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Cannomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hodgson, 1841" ;
+    dwc:species "badius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cannomys_badius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tachyoryctes_splendens_Ruppell_1835>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Tachyoryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ruppell, 1835" ;
+    dwc:species "splendens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tachyoryctes_splendens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spalax_graecus_Nehring_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Nehring, 1898" ;
+    dwc:species "graecus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spalax_graecus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spalax_zemni_Erxleben_1777>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Erxleben, 1777" ;
+    dwc:species "zemni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spalax_zemni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spalax_uralensis_Tiflov_1939>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tiflov & Usov, 1939" ;
+    dwc:species "uralensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spalax_uralensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nannospalax_leucodon_Nordmann_1840>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Nannospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Nordmann, 1840" ;
+    dwc:species "leucodon" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nannospalax_leucodon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eospalax_cansus_Lyon_1907>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lyon, 1907" ;
+    dwc:species "cansus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eospalax_cansus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhizomys_sinensis_Gray_1831>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gray, 1831" ;
+    dwc:species "sinensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhizomys_sinensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhizomys_pruinosus_Blyth_1851>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Blyth, 1851" ;
+    dwc:species "pruinosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhizomys_pruinosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tachyoryctes_macrocephalus_Ruppell_1842>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Tachyoryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ruppell, 1842" ;
+    dwc:species "macrocephalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tachyoryctes_macrocephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spalax_istricus_Mehely_1909>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Mehely, 1909" ;
+    dwc:species "istricus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spalax_istricus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spalax_arenarius_Reshetnik_1939>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Reshetnik, 1939" ;
+    dwc:species "arenarius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spalax_arenarius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spalax_microphthalmus_Guldenstadt_1770>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Guldenstadt, 1770" ;
+    dwc:species "microphthalmus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spalax_microphthalmus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nannospalax_ehrenbergi_Nehring_1898>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Nannospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Nehring, 1898" ;
+    dwc:species "ehrenbergi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nannospalax_ehrenbergi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Myospalax_armandii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myospalax> ;
     dwc:class "Mammalia" ;
     dwc:family "Spalacidae" ;
     dwc:genus "Myospalax" ;
@@ -94,32 +352,384 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "armandii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myospalax> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Myospalax>
     dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Myospalax" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Spalacidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     dwc:class "Mammalia" ;
     dwc:family "Spalacidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AE87DDFF9EBD13FAE2F7B6FD54FDF5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Myospalax_armandii_Milne-Edwards_1867> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Siphneus_armandii_Milne-Edwards_1867> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6609100> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6609169> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Siphneus_armandii>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Siphneus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "armandii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siphneus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Siphneus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Siphneus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myospalax_aspalax>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Myospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "aspalax" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myospalax_psilurus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Myospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "psilurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myospalax_epsilanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Myospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "epsilanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eospalax_baileyi>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "baileyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eospalax>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eospalax_rothschildi>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "rothschildi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhizomys_sumatrensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sumatrensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhizomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhizomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cannomys_badius>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Cannomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "badius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cannomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cannomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Cannomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tachyoryctes_splendens>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Tachyoryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "splendens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tachyoryctes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tachyoryctes>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Tachyoryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax_graecus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "graecus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax_zemni>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "zemni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax_uralensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "uralensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nannospalax_leucodon>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Nannospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "leucodon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nannospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nannospalax>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Nannospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eospalax_cansus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Eospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "cansus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eospalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhizomys_sinensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sinensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhizomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhizomys_pruinosus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Rhizomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pruinosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhizomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tachyoryctes_macrocephalus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Tachyoryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "macrocephalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tachyoryctes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax_istricus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "istricus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax_arenarius>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "arenarius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spalax_microphthalmus>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Spalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "microphthalmus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spalax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nannospalax_ehrenbergi>
+    dwc:class "Mammalia" ;
+    dwc:family "Spalacidae" ;
+    dwc:genus "Nannospalax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ehrenbergi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nannospalax> ;
+    a dwcFP:TaxonName .
