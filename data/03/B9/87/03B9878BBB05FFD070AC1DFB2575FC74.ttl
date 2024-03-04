@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B9878BBB05FFD070AC1DFB2575FC74
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4425633>, <http://dx.doi.org/10.5281/zenodo.4425635> ;
+    dc:creator "Wiśniowski, Bogdan; Lien, Nguyen Thi Phuong; Cuong, Nguyen Quang" ;
+    dc:title "Trichrysis aliciae Wisniowski 2020, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B9878BBB05FFD070AC1DFB2575FC74.mc.3B783CC0BB05FFD571BC1E272568F9B4> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trichrysis_aliciae_Wisniowski_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4881.1.10> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4881.1.10>
-    dc:creator "Cuong, Nguyen Quang", "Lien, Nguyen Thi Phuong", "Wiśniowski, Bogdan" ;
-    dc:date "2020" ;
-    dc:title "Discovery of four new species of Trichrysis Lichtenstein, cyanea species group (Hymenoptera, Chrysididae) from Vietnam" ;
     bibo:endPage "178" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-11-18" ;
     bibo:startPage "165" ;
     bibo:volume "4881" ;
+    dc:creator "Wiśniowski, Bogdan; Lien, Nguyen Thi Phuong; Cuong, Nguyen Quang" ;
+    dc:date "2020" ;
+    dc:title "Discovery of four new species of Trichrysis Lichtenstein, cyanea species group (Hymenoptera, Chrysididae) from Vietnam" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4425633>, <http://dx.doi.org/10.5281/zenodo.4425635> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4425635/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B9878BBB05FFD070AC1DFB2575FC74.mc.3B783CC0BB05FFD571BC1E272568F9B4>
+    dwc:collectionCode "MT" ;
+    dwc:eventDate "2017-06-10" ;
+    dwc:locality "Tuyen Quang" ;
+    dwc:recordedBy "Hang NR" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3043292302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B9878BBB05FFD070AC1DFB2575FC74#3B783CC0BB05FFD571BC1E272568F9B4> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Trichrysis_aliciae_Wisniowski_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichrysis_aliciae> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
     dwc:genus "Trichrysis" ;
@@ -43,60 +62,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Wisniowski" ;
     dwc:species "aliciae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichrysis_aliciae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chrysididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysididae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trichrysis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Trichrysis_aliciae_Wi%C5%9Bniowski_2020>
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
     dwc:genus "Trichrysis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wiśniowski & Lien & Cuong, 2020" ;
+    dwc:species "aliciae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichrysis_aliciae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Trichrysis_coeruleamaculata_Rosa_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Trichrysis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rosa, Wei & Xu, 2016" ;
+    dwc:species "coeruleamaculata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichrysis_coeruleamaculata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Trichrysis_kylan_Wi%C5%9Bniowski_2020>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Trichrysis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wiśniowski & Lien & Cuong, 2020" ;
+    dwc:species "kylan" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichrysis_kylan> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichrysis_aliciae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichrysis> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
     dwc:genus "Trichrysis" ;
@@ -105,12 +113,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "aliciae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichrysis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B9878BBB05FFD070AC1DFB2575FC74>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trichrysis_aliciae_Wisniowski_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4881.1.10> ;
-    dc:creator "Cuong, Nguyen Quang", "Lien, Nguyen Thi Phuong", "Wiśniowski, Bogdan" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4425633>, <http://dx.doi.org/10.5281/zenodo.4425635> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trichrysis>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Trichrysis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chrysididae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichrysis_coeruleamaculata>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Trichrysis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "coeruleamaculata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichrysis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichrysis_kylan>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Trichrysis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "kylan" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichrysis> ;
+    a dwcFP:TaxonName .
