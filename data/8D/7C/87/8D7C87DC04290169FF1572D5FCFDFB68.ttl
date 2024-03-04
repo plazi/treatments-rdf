@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:8D7C87DC04290169FF1572D5FCFDFB68
+    dc:creator "Calvanese, Victor C.; Brescovit, Antonio D." ;
+    dc:title "Aphilodon Silvestri 1898" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aphilodon_Silvestri_1898> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5105.4.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5105.4.4>
-    dc:creator "Brescovit, Antonio D.", "Calvanese, Victor C." ;
-    dc:date "2022" ;
-    dc:title "Six new species of Aphilodon centipedes (Geophilidae: Aphilodontinae) from Brazil" ;
     bibo:endPage "558" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-03-07" ;
     bibo:startPage "539" ;
     bibo:volume "5105" ;
+    dc:creator "Calvanese, Victor C.; Brescovit, Antonio D." ;
+    dc:date "2022" ;
+    dc:title "Six new species of Aphilodon centipedes (Geophilidae: Aphilodontinae) from Brazil" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Aphilodon_Silvestri_1898>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphilodon> ;
-    dwc:ID-CoL "62CX6" ;
     dwc:ID-ENA "126924" ;
     dwc:class "Chilopoda" ;
     dwc:family "Aphilodontidae" ;
@@ -33,15 +39,25 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Silvestri, 1898" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62CX6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphilodon> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Aphilodon_spegazzinii_Silvestri_1898>
+    dwc:class "Chilopoda" ;
+    dwc:family "Aphilodontidae" ;
+    dwc:genus "Aphilodon" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Geophilomorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Silvestri, 1898" ;
+    dwc:species "spegazzinii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62CX6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphilodon_spegazzinii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aphilodon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphilodontidae> ;
     dwc:class "Chilopoda" ;
     dwc:family "Aphilodontidae" ;
     dwc:genus "Aphilodon" ;
@@ -49,45 +65,56 @@
     dwc:order "Geophilomorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphilodontidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Aphilodontidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geophilomorpha> ;
     dwc:class "Chilopoda" ;
     dwc:family "Aphilodontidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Geophilomorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chilopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Chilopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geophilomorpha> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Geophilomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chilopoda> ;
     dwc:class "Chilopoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Geophilomorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chilopoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/8D7C87DC04290169FF1572D5FCFDFB68>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aphilodon_Silvestri_1898> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5105.4.4> ;
-    dc:creator "Brescovit, Antonio D.", "Calvanese, Victor C." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chilopoda>
+    dwc:class "Chilopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphilodon_spegazzinii>
+    dwc:class "Chilopoda" ;
+    dwc:family "Aphilodontidae" ;
+    dwc:genus "Aphilodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Geophilomorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "spegazzinii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphilodon> ;
+    a dwcFP:TaxonName .
