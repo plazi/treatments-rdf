@@ -1,28 +1,54 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B33214FFF2FFC8FF42A982FCDC4ED9
+    dc:creator "Yunakov, Nikolai" ;
+    dc:title "Sphrigodellus gusarovi Yunakov 2012, sp. n." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B33214FFF2FFC8FF42A982FCDC4ED9.mc.3B72895FFFF5FFC9FE15ACB0FB0A49B8>, <http://tb.plazi.org/GgServer/dwcaRecords/03B33214FFF2FFC8FF42A982FCDC4ED9.mc.3B72895FFFF5FFC8FB61ACB0FAE04E61> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphrigodellus_gusarovi_Yunakov_2012> ;
+    trt:publishedIn <http://publication.plazi.org/id/FF8A4A6CFFE9FFD5FFD5AA7EFFAC4F5E> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/FF8A4A6CFFE9FFD5FFD5AA7EFFAC4F5E>
-    dc:creator "Yunakov, Nikolai" ;
-    dc:date "2012" ;
-    dc:title "3535" ;
     bibo:endPage "104" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2012-11-01" ;
     bibo:startPage "1" ;
     bibo:volume "3535" ;
+    dc:creator "Yunakov, Nikolai" ;
+    dc:date "2012" ;
+    dc:title "3535" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B33214FFF2FFC8FF42A982FCDC4ED9.mc.3B72895FFFF5FFC9FE15ACB0FB0A49B8>
+    dwc:collectionCode "ZMUN" ;
+    dwc:locality "Tanzania" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B33214FFF2FFC8FF42A982FCDC4ED9#3B72895FFFF5FFC9FE15ACB0FB0A49B8> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03B33214FFF2FFC8FF42A982FCDC4ED9.mc.3B72895FFFF5FFC8FB61ACB0FAE04E61>
+    dwc:collectionCode "ZMUN" ;
+    dwc:eventDate "2010-03-12" ;
+    dwc:locality "South Pare Mts." ;
+    dwc:recordedBy "N. N. Yunakov & V. I. Gusarov & Shengena Mt. R." ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1965" ;
+    dwc:verbatimLatitude "-4.295833" ;
+    dwc:verbatimLongitude "37.937466" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B33214FFF2FFC8FF42A982FCDC4ED9#3B72895FFFF5FFC8FB61ACB0FAE04E61> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Sphrigodellus_gusarovi_Yunakov_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus_gusarovi> ;
-    dwc:ID-CoL "4Z2JJ" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Sphrigodellus" ;
@@ -32,60 +58,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Yunakov" ;
     dwc:species "gusarovi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4Z2JJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus_gusarovi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphrigodellus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sphrigodellus_nasutus_Yunakov_2012>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Sphrigodellus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Yunakov, 2012" ;
+    dwc:species "nasutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus_nasutus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Psychotria_undetermined_Yunakov_2012>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rubiaceae" ;
+    dwc:genus "Psychotria" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Gentianales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Psychotria_undetermined> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus_gusarovi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Sphrigodellus" ;
@@ -94,11 +96,129 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "gusarovi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B33214FFF2FFC8FF42A982FCDC4ED9>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphrigodellus_gusarovi_Yunakov_2012> ;
-    trt:publishedIn <http://publication.plazi.org/id/FF8A4A6CFFE9FFD5FFD5AA7EFFAC4F5E> ;
-    dc:creator "Yunakov, Nikolai" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sphrigodellus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Sphrigodellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphrigodellus_nasutus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Sphrigodellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nasutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphrigodellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Psychotria_undetermined>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rubiaceae" ;
+    dwc:genus "Psychotria" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Gentianales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Psychotria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Psychotria>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rubiaceae" ;
+    dwc:genus "Psychotria" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Gentianales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rubiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Rubiaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rubiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Gentianales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Gentianales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Gentianales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Gentianales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
