@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:3D174E69E72BFFAA3C8BE49E6D27FE8F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.279986> ;
+    dc:creator "Meregalli, Massimo; Perrin, Hélène" ;
+    dc:title "Dichotrachelus maculosus Fairmaire 1869" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_maculosus_Fairmaire_1869> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_alpestris> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_alpestris_Stierlin_1878> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.279985> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.279985>
-    dc:creator "Meregalli, Massimo", "Perrin, Hélène" ;
-    dc:date "2012" ;
-    dc:title "On the identity of Dichotrachelus maculosus Fairmaire and D. sabaudus Fairmaire (Coleoptera: Curculionidae: Cyclominae)" ;
     bibo:endPage "68" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "65" ;
     bibo:volume "3183" ;
+    dc:creator "Meregalli, Massimo; Perrin, Hélène" ;
+    dc:date "2012" ;
+    dc:title "On the identity of Dichotrachelus maculosus Fairmaire and D. sabaudus Fairmaire (Coleoptera: Curculionidae: Cyclominae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.279986> ;
     a fabio:JournalArticle .
 
@@ -25,23 +36,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/279986/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_alpestris_Stierlin_1878>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_alpestris> ;
-    dwc:ID-CoL "35NGW" ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:genus "Dichotrachelus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Stierlin, 1878" ;
-    dwc:species "alpestris" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_maculosus_Fairmaire_1869>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_maculosus> ;
-    dwc:ID-CoL "35NJB" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Dichotrachelus" ;
@@ -51,52 +46,103 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fairmaire, 1869" ;
     dwc:species "maculosus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35NJB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_maculosus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_imhoffi_Stierlin_1857>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Dichotrachelus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stierlin, 1857" ;
+    dwc:species "imhoffi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_imhoffi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_rudeni_Stierlin_1853>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stierlin, 1853" ;
+    dwc:species "rudeni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_rudeni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_angusticollis_Chevrolat_1863>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chevrolat, 1863" ;
+    dwc:species "angusticollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_angusticollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_stierlini_Gredler_1856>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gredler, 1856" ;
+    dwc:species "stierlini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_stierlini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_knechti_Stierlin_1875>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stierlin, 1875" ;
+    dwc:species "knechti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_knechti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_alpestris_Stierlin_1878>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stierlin, 1878" ;
+    dwc:species "alpestris" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35NJB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_alpestris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_meregallii_Osella_1971>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Osella, 1971" ;
+    dwc:species "meregallii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_meregallii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_maculosus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Dichotrachelus" ;
@@ -105,22 +151,139 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "maculosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3D174E69E72BFFAA3C8BE49E6D27FE8F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_maculosus_Fairmaire_1869> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/3D/17/4E/Dichotrachelus_alpestris> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dichotrachelus_alpestris_Stierlin_1878> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.279985> ;
-    dc:creator "Meregalli, Massimo", "Perrin, Hélène" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.279986> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_imhoffi>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "imhoffi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_rudeni>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rudeni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_angusticollis>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "angusticollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_stierlini>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stierlini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_knechti>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "knechti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_alpestris>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "alpestris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotrachelus_meregallii>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Dichotrachelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "meregallii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotrachelus> ;
+    a dwcFP:TaxonName .
