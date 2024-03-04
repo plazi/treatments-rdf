@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0638878CFFDDFFF219ECF9DDFED4AF59
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5123632>, <http://dx.doi.org/10.5281/zenodo.5123658> ;
+    dc:creator "Ingrisch, Sigfrid" ;
+    dc:title "Paramacroxiphus tessellatus Ingrisch 2008, comb. n." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0638878CFFDDFFF219ECF9DDFED4AF59.mc.3EF93CC7FFDDFFF319ECF918FA23AAE7>, <http://tb.plazi.org/GgServer/dwcaRecords/0638878CFFDDFFF219ECF9DDFED4AF59.mc.3EF93CC7FFDDFFF319ECF920FC1FAB0F> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paramacroxiphus_tessellatus_Karny_1912> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.1755.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.1755.1.1>
-    dc:creator "Ingrisch, Sigfrid" ;
-    dc:date "2008" ;
-    dc:title "Revision of the genera Paramacroxiphus C. Willemse 1961 and Pseudomacroxiphus C. Willemse 1961 (Orthoptera: Tettigoniidae: Conocephalinae: Agraeciini)" ;
     bibo:endPage "34" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2008-04-24" ;
     bibo:startPage "1" ;
     bibo:volume "1755" ;
+    dc:creator "Ingrisch, Sigfrid" ;
+    dc:date "2008" ;
+    dc:title "Revision of the genera Paramacroxiphus C. Willemse 1961 and Pseudomacroxiphus C. Willemse 1961 (Orthoptera: Tettigoniidae: Conocephalinae: Agraeciini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5123632>, <http://dx.doi.org/10.5281/zenodo.5123658> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,22 @@
     fabio:hasRepresentation "https://zenodo.org/record/5123658/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/0638878CFFDDFFF219ECF9DDFED4AF59.mc.3EF93CC7FFDDFFF319ECF918FA23AAE7>
+    dwc:eventDate "1910-01" ;
+    dwc:locality "Toricelli mountains" ;
+    dwc:recordedBy "Dr. Schlaginhaufen" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "720" ;
+    trt:httpUri <https://treatment.plazi.org/id/0638878CFFDDFFF219ECF9DDFED4AF59#3EF93CC7FFDDFFF319ECF918FA23AAE7> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/0638878CFFDDFFF219ECF9DDFED4AF59.mc.3EF93CC7FFDDFFF319ECF920FC1FAB0F>
+    dwc:locality "Staatliches Museum" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/0638878CFFDDFFF219ECF9DDFED4AF59#3EF93CC7FFDDFFF319ECF920FC1FAB0F> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Paramacroxiphus_tessellatus_Karny_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus_tessellatus> ;
-    dwc:ID-CoL "4D26M" ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Paramacroxiphus" ;
@@ -44,39 +67,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Karny, 1912)" ;
     dwc:species "tessellatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4D26M> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus_tessellatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Nicsara_tessellata_Karny_1912>
     dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Nicsara" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Karny 1912" ;
+    dwc:species "tessellata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nicsara_tessellata> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Paramacroxiphus_bifasciatus_Ingrisch_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Paramacroxiphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ingrisch, 2008" ;
+    dwc:species "bifasciatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus_bifasciatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nicsara_Walker_1869>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Nicsara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Walker, 1869" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nicsara> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paramacroxiphus_Willemse_1961>
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Paramacroxiphus" ;
@@ -84,10 +117,11 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "C. Willemse, 1961" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus_tessellatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Paramacroxiphus" ;
@@ -96,22 +130,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "tessellatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Paramacroxiphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0638878CFFDDFFF219ECF9DDFED4AF59>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paramacroxiphus_tessellatus_Karny_1912> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.1755.1.1> ;
-    dc:creator "Ingrisch, Sigfrid" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5123632>, <http://dx.doi.org/10.5281/zenodo.5123658> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nicsara_tessellata>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Nicsara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tessellata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nicsara> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nicsara>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Nicsara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus_bifasciatus>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Paramacroxiphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bifasciatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paramacroxiphus> ;
+    a dwcFP:TaxonName .
