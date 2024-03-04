@@ -1,20 +1,29 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:656987ABFFE59A6309B4FD51FDE7441C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3903621> ;
+    dc:creator "Grazia, Jocelia; Schwertner, Cristiano Feldens" ;
+    dc:title "Edessinae Amyot & Audinet-Serville 1843" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Edessinae_Amyot_1843> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.3903611> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.3903611>
-    dc:creator "Grazia, Jocelia", "Schwertner, Cristiano Feldens" ;
-    dc:date "2008" ;
-    dc:title "Pentatomidae Cyrtocoridae" ;
     bibo:endPage "234" ;
     bibo:startPage "223" ;
+    dc:creator "Grazia, Jocelia; Schwertner, Cristiano Feldens" ;
+    dc:date "2008" ;
+    dc:title "Pentatomidae Cyrtocoridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3903621> ;
     a fabio:BookSection .
 
@@ -24,7 +33,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Edessinae_Amyot_1843>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Edessinae> ;
     dwc:authority "Grazia, 2008" ;
     dwc:authorityName "Grazia" ;
     dwc:authorityYear "2008" ;
@@ -34,23 +42,48 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Amyot & Audinet-Serville, 1843" ;
     dwc:subFamily "Edessinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Edessinae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Pantochlora_Stal_1870>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Pantochlora" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Stal" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pantochlora> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Edessa_Fabricius_1803>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Edessa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fabricius", "Fabricius, 1803" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Edessa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pentatomini_Leach_1815>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Leach, 1815" ;
+    dwc:tribe "Pentatomini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pentatomini> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Edessinae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:kingdom "Animalia" ;
@@ -58,39 +91,77 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Edessinae" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pentatomidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Pentatomidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/656987ABFFE59A6309B4FD51FDE7441C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Edessinae_Amyot_1843> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.3903611> ;
-    dc:creator "Grazia, Jocelia", "Schwertner, Cristiano Feldens" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3903621> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pantochlora>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Pantochlora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Edessa>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:genus "Edessa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pentatomini>
+    dwc:class "Insecta" ;
+    dwc:family "Pentatomidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Pentatomini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pentatomidae> ;
+    a dwcFP:TaxonName .
