@@ -1,24 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C97E37DF849B8F6C9DB81B35296C4376
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Calea jamaicensis Linnaeus 1763" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/C97E37DF849B8F6C9DB81B35296C4376/984.1> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Calea_jamaicensis_Linnaeus_1759> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Santolina_jamaicensis_Linnaeus_1759> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4372854> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4372854>
+    bibo:endPage "877" ;
+    bibo:startPage "806" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part S)" ;
-    bibo:endPage "877" ;
-    bibo:startPage "806" ;
     a fabio:BookSection .
 
+<http://treatment.plazi.org/id/C97E37DF849B8F6C9DB81B35296C4376/984.1>
+    dwc:catalogNumber "984.1" ;
+    dwc:collectionCode "LINN" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2612020438" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Calea_jamaicensis_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Calea_jamaicensis> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Calea" ;
@@ -26,12 +42,12 @@
     dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(L.) L." ;
+    dwc:scientificNameAuthorship "(L.) L.", "(L.) L. (1763)" ;
     dwc:species "jamaicensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Calea_jamaicensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Santolina_jamaicensis_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Santolina_jamaicensis> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Santolina" ;
@@ -41,53 +57,72 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus, Systema Naturae" ;
     dwc:species "jamaicensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Santolina_jamaicensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
+<http://taxon-name.plazi.org/id/Plantae/Calea_jamaicensis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Calea" ;
     dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "jamaicensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Calea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Calea>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Calea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asteraceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Asteraceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asterales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asterales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Asterales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Santolina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asteraceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Asteraceae" ;
-    dwc:genus "Santolina" ;
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
     dwc:kingdom "Plantae" ;
-    dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Santolina_jamaicensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Santolina> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Santolina" ;
@@ -96,26 +131,16 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "jamaicensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Santolina> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Santolina>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Santolina" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asteraceae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/C97E37DF849B8F6C9DB81B35296C4376>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Calea_jamaicensis_Linnaeus_1759> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Santolina_jamaicensis_Linnaeus_1759> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4372854> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/C97E37DF849B8F6C9DB81B35296C4376/984.1> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/C97E37DF849B8F6C9DB81B35296C4376/984.1>
-    dwc:catalogNumber "984.1" ;
-    dwc:collectionCode "LINN" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
-
