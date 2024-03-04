@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:EF6AD377895B8B38FF39FD18FEBEF8B1
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3586556>, <http://dx.doi.org/10.5281/zenodo.3586582> ;
+    dc:creator "Hechinger, Ryan F." ;
+    dc:title "Acanthotrema hancocki Lafuente, Roca & Carbonell 2000" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acanthotrema_hancocki_Martin_1950> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4711.3.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4711.3.3>
-    dc:creator "Hechinger, Ryan F." ;
-    dc:date "2019" ;
-    dc:title "Guide to the trematodes (Platyhelminthes) that infect the California horn snail (Cerithideopsis californica: Potamididae: Gastropoda) as first intermediate host" ;
     bibo:endPage "494" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-12-17" ;
     bibo:startPage "459" ;
     bibo:volume "4711" ;
+    dc:creator "Hechinger, Ryan F." ;
+    dc:date "2019" ;
+    dc:title "Guide to the trematodes (Platyhelminthes) that infect the California horn snail (Cerithideopsis californica: Potamididae: Gastropoda) as first intermediate host" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3586556>, <http://dx.doi.org/10.5281/zenodo.3586582> ;
     a fabio:JournalArticle .
 
@@ -33,7 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Acanthotrema_hancocki_Martin_1950>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acanthotrema_hancocki> ;
     dwc:class "Lecanoromycetes" ;
     dwc:family "Graphidaceae" ;
     dwc:genus "Acanthotrema" ;
@@ -41,17 +49,49 @@
     dwc:order "Ostropales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Martin)" ;
+    dwc:scientificNameAuthorship "(Martin)", "Martin, 1950" ;
     dwc:species "hancocki" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acanthotrema_hancocki> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Cercaria_O.F.Muller_1773>
+    dwc:class "Trematoda" ;
+    dwc:family "Colepidae" ;
+    dwc:genus "Cercaria" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Prostomatida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "O.F.Muller, 1773" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercaria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parastictodora_hancocki_Martin_1950>
+    dwc:class "Trematoda" ;
+    dwc:family "Heterophyidae" ;
+    dwc:genus "Parastictodora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plagiorchiida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Martin, 1950" ;
+    dwc:species "hancocki" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parastictodora_hancocki> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Acanthotrema_hancocki>
+    dwc:class "Lecanoromycetes" ;
+    dwc:family "Graphidaceae" ;
+    dwc:genus "Acanthotrema" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ostropales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:species "hancocki" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acanthotrema> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Acanthotrema>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Graphidaceae> ;
     dwc:class "Lecanoromycetes" ;
     dwc:family "Graphidaceae" ;
     dwc:genus "Acanthotrema" ;
@@ -59,58 +99,131 @@
     dwc:order "Ostropales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Acanthotrema_hancocki>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acanthotrema> ;
-    dwc:class "Lecanoromycetes" ;
-    dwc:family "Graphidaceae" ;
-    dwc:genus "Acanthotrema" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Ostropales" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "species" ;
-    dwc:species "hancocki" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ascomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Graphidaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Graphidaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostropales> ;
     dwc:class "Lecanoromycetes" ;
     dwc:family "Graphidaceae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Ostropales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lecanoromycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ascomycota> ;
-    dwc:class "Lecanoromycetes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostropales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Ostropales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lecanoromycetes> ;
     dwc:class "Lecanoromycetes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Ostropales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lecanoromycetes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/EF6AD377895B8B38FF39FD18FEBEF8B1>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acanthotrema_hancocki_Martin_1950> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4711.3.3> ;
-    dc:creator "Hechinger, Ryan F." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3586556>, <http://dx.doi.org/10.5281/zenodo.3586582> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lecanoromycetes>
+    dwc:class "Lecanoromycetes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ascomycota> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Ascomycota>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercaria>
+    dwc:class "Trematoda" ;
+    dwc:family "Colepidae" ;
+    dwc:genus "Cercaria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostomatida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colepidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Colepidae>
+    dwc:class "Trematoda" ;
+    dwc:family "Colepidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostomatida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostomatida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Prostomatida>
+    dwc:class "Trematoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostomatida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trematoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trematoda>
+    dwc:class "Trematoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Parastictodora_hancocki>
+    dwc:class "Trematoda" ;
+    dwc:family "Heterophyidae" ;
+    dwc:genus "Parastictodora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plagiorchiida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "hancocki" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastictodora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Parastictodora>
+    dwc:class "Trematoda" ;
+    dwc:family "Heterophyidae" ;
+    dwc:genus "Parastictodora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plagiorchiida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heterophyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Heterophyidae>
+    dwc:class "Trematoda" ;
+    dwc:family "Heterophyidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plagiorchiida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plagiorchiida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Plagiorchiida>
+    dwc:class "Trematoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plagiorchiida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trematoda> ;
+    a dwcFP:TaxonName .
