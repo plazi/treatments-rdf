@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FC03440BFFE8FF89EF834A3BF643F2F7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6375759> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Genetta genetta" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/FC03440BFFE8FF89EF834A3BF643F2F7.mc.C4C2FF40FFE8FF88EDE04952FB48F585> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Viverra_genetta_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714564> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5714564>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2009" ;
-    dc:title "Viverridae" ;
     bibo:endPage "232" ;
     bibo:startPage "174" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2009" ;
+    dc:title "Viverridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6375759> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6375759/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/FC03440BFFE8FF89EF834A3BF643F2F7.mc.C4C2FF40FFE8FF88EDE04952FB48F585>
+    trt:gbifOccurrenceId "3712312319" ;
+    trt:httpUri <https://treatment.plazi.org/id/FC03440BFFE8FF89EF834A3BF643F2F7#C4C2FF40FFE8FF88EDE04952FB48F585> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
-    dwc:ID-CoL "3FKP4" ;
     dwc:authority "Wilson, 2009" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2009" ;
@@ -36,12 +50,13 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "genetta" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3FKP4> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Viverra_genetta_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Viverra_genetta> ;
-    dwc:ID-CoL "4MS8" ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Viverra" ;
@@ -51,42 +66,183 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "genetta" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3FKP4> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Viverra_genetta> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Genetta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_genetta_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Genetta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "genetta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_genetta> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_dongolana_Hemprich_1833>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hemprich & Ehrenberg, 1833" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "dongolana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_dongolana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_grantii_Thomas_1902>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1902" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "grantii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_grantii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_pulchra_Matschie_1902>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Matschie, 1902" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "pulchra" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_pulchra> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_senegalensis_Fischer_1829>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Fischer, 1829" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "senegalensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_senegalensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apodemus_Kaup_1829>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Kaup, 1829" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apodemus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Crocidura_Wagler_1832>
+    dwc:class "Mammalia" ;
+    dwc:family "Soricidae" ;
+    dwc:genus "Crocidura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Wagler, 1832" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Crocidura> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neomys_Kaup_1829>
+    dwc:class "Mammalia" ;
+    dwc:family "Soricidae" ;
+    dwc:genus "Neomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kaup, 1829" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neomys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rattus_Fischer_1803>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Rattus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fischer, 1803" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rattus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Soricidae_Fischer_1814>
+    dwc:class "Mammalia" ;
+    dwc:family "Soricidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "G. Fischer, 1814" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Soricidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gerbillurus_Shortridge_1942>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Gerbillurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Shortridge, 1942" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gerbillurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thallomys_Thomas_1920>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Thallomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Thomas, 1920" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thallomys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Otomys_Cuvier_1824>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Otomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "F. Cuvier, 1824" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otomys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Muscardinidae_Palmer_1899>
+    dwc:family "Muscardinidae" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Palmer, 1899" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Muscardinidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Genetta" ;
@@ -95,31 +251,264 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "genetta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Genetta>
     dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Viverridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FC03440BFFE8FF89EF834A3BF643F2F7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Genetta_genetta_Linnaeus_1758> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Viverra_genetta_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714564> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6375759> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Viverra_genetta>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Viverra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "genetta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverra> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Viverra>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Viverra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_genetta>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "genetta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_dongolana>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "dongolana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_grantii>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "grantii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_pulchra>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "pulchra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Genetta_genetta_senegalensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "genetta" ;
+    dwc:subSpecies "senegalensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta_genetta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apodemus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Crocidura>
+    dwc:class "Mammalia" ;
+    dwc:family "Soricidae" ;
+    dwc:genus "Crocidura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Soricidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Soricidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricomorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Soricomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Soricidae" ;
+    dwc:genus "Neomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rattus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Rattus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gerbillurus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Gerbillurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thallomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Thallomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Otomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muscardinidae>
+    # Warning: Could not determine parent name ;
+    dwc:family "Muscardinidae" ;
+    dwc:rank "family" ;
+    a dwcFP:TaxonName .

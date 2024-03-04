@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FC03440BFFECFF8CEF8C4276FC5FF5EC
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Genettajohnston_Pocock_1908>, <http://dx.doi.org/10.5281/zenodo.6375761> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Genetta johnstoni Pocock 1908" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/FC03440BFFECFF8CEF8C4276FC5FF5EC.mc.C4C2FF40FFECFF8CEDE042A7FBDFFE16> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Genetta_johnstoni_Pocock_1908> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714564> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5714564>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2009" ;
-    dc:title "Viverridae" ;
     bibo:endPage "232" ;
     bibo:startPage "174" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2009" ;
+    dc:title "Viverridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6375761> ;
     a fabio:BookSection .
 
@@ -23,9 +33,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6375761/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/FC03440BFFECFF8CEF8C4276FC5FF5EC.mc.C4C2FF40FFECFF8CEDE042A7FBDFFE16>
+    trt:gbifOccurrenceId "3712312302" ;
+    trt:httpUri <https://treatment.plazi.org/id/FC03440BFFECFF8CEF8C4276FC5FF5EC#C4C2FF40FFECFF8CEDE042A7FBDFFE16> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Genetta_johnstoni_Pocock_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_johnstoni> ;
-    dwc:ID-CoL "3FKP5" ;
     dwc:authority "Wilson, 2009" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2009" ;
@@ -36,11 +49,13 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pocock, 1908" ;
     dwc:species "johnstoni" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3FKP5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genetta_johnstoni> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Genettajohnston_Pocock_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genettajohnston> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Genettajohnston" ;
@@ -49,42 +64,10 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Pocock, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Genettajohnston> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Genetta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Viverridae" ;
-    dwc:genus "Genetta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Genetta_johnstoni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Genetta" ;
@@ -93,10 +76,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "johnstoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Genetta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Genetta>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:genus "Genetta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Viverridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Genettajohnston>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Genettajohnston" ;
@@ -104,30 +137,5 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Viverridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Viverridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/FC03440BFFECFF8CEF8C4276FC5FF5EC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Genetta_johnstoni_Pocock_1908> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714564> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6375761>, <http://taxon-concept.plazi.org/id/Animalia/Genettajohnston_Pocock_1908> ;
-    a trt:Treatment .
-

@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FC03440BFFF4FF95EA9242A6FBAEF857
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6375763> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Paradoxurus hermaphroditus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/FC03440BFFF4FF95EA9242A6FBAEF857.mc.C4C2FF40FFF4FF94E758410DF6A8FD40> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paradoxurus_hermaphroditus_Pallas_1777> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Viverra_hermaphrodita_Pallas_1777> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714564> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5714564>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2009" ;
-    dc:title "Viverridae" ;
     bibo:endPage "232" ;
     bibo:startPage "174" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2009" ;
+    dc:title "Viverridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6375763> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6375763/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/FC03440BFFF4FF95EA9242A6FBAEF857.mc.C4C2FF40FFF4FF94E758410DF6A8FD40>
+    trt:gbifOccurrenceId "3712312320" ;
+    trt:httpUri <https://treatment.plazi.org/id/FC03440BFFF4FF95EA9242A6FBAEF857#C4C2FF40FFF4FF94E758410DF6A8FD40> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Paradoxurus_hermaphroditus_Pallas_1777>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paradoxurus_hermaphroditus> ;
-    dwc:ID-CoL "75P5H" ;
     dwc:authority "Wilson, 2009" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2009" ;
@@ -36,11 +50,13 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pallas, 1777" ;
     dwc:species "hermaphroditus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/75P5H> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paradoxurus_hermaphroditus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Viverra_hermaphrodita_Pallas_1777>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Viverra_hermaphrodita> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Viverra" ;
@@ -50,50 +66,47 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Pallas, 1777" ;
     dwc:species "hermaphrodita" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Viverra_hermaphrodita> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rattus_Fischer_1803>
     dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Rattus" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Paradoxurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Viverridae" ;
-    dwc:genus "Paradoxurus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
+    dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Fischer, 1803" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rattus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tatera_indica_Hardwicke_1807>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Tatera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hardwicke, 1807" ;
+    dwc:species "indica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tatera_indica> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Paradoxurus_hermaphroditus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paradoxurus> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Paradoxurus" ;
@@ -102,21 +115,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "hermaphroditus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paradoxurus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Viverra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
+<http://taxon-name.plazi.org/id/Animalia/Paradoxurus>
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
-    dwc:genus "Viverra" ;
+    dwc:genus "Paradoxurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Viverridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Viverridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Viverra_hermaphrodita>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverra> ;
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
     dwc:genus "Viverra" ;
@@ -125,23 +177,80 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "hermaphrodita" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverra> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Viverridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+<http://taxon-name.plazi.org/id/Animalia/Viverra>
     dwc:class "Mammalia" ;
     dwc:family "Viverridae" ;
+    dwc:genus "Viverra" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Viverridae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FC03440BFFF4FF95EA9242A6FBAEF857>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paradoxurus_hermaphroditus_Pallas_1777> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Viverra_hermaphrodita_Pallas_1777> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714564> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6375763> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rattus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Rattus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Muridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tatera_indica>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Tatera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "indica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tatera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tatera>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Tatera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
