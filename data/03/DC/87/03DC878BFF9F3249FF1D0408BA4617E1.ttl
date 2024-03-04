@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DC878BFF9F3249FF1D0408BA4617E1
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4397333>, <http://dx.doi.org/10.5281/zenodo.4397347> ;
+    dc:creator "Tshililo, Precious" ;
+    dc:title "Acrophymus rossi Uvarov 1922" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03DC878BFF9F3249FF1D0408BA4617E1.mc.3B1D3CC0FF9F3246FE870491BB591394> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acrophymus_Uvarov_1922> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4820.1.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4820.1.4>
-    dc:creator "Tshililo, Precious" ;
-    dc:date "2020" ;
-    dc:title "Review of South African Euryphyminae" ;
     bibo:endPage "104" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-07-27" ;
     bibo:startPage "70" ;
     bibo:volume "4820" ;
+    dc:creator "Tshililo, Precious" ;
+    dc:date "2020" ;
+    dc:title "Review of South African Euryphyminae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4397333>, <http://dx.doi.org/10.5281/zenodo.4397347> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4397347/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03DC878BFF9F3249FF1D0408BA4617E1.mc.3B1D3CC0FF9F3246FE870491BB591394>
+    dwc:collectionCode "SANC" ;
+    dwc:eventDate "1958-03" ;
+    dwc:locality "Hoedspruit" ;
+    dwc:verbatimLatitude "-24.366667" ;
+    dwc:verbatimLongitude "30.95" ;
+    trt:gbifOccurrenceId "3015409397" ;
+    trt:httpUri <https://treatment.plazi.org/id/03DC878BFF9F3249FF1D0408BA4617E1#3B1D3CC0FF9F3246FE870491BB591394> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Acrophymus_Uvarov_1922>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acrophymus> ;
     dwc:authority "Tshililo, 2020" ;
     dwc:authorityName "Tshililo" ;
     dwc:authorityYear "2020" ;
@@ -44,15 +63,36 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Uvarov, 1922" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acrophymus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Acrophymus_rossi_Dirsh_1963>
+    dwc:class "Insecta" ;
+    dwc:family "Baissogryllidae" ;
+    dwc:genus "Acrophymus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Dirsh, 1963" ;
+    dwc:species "rossi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acrophymus_rossi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amblyphymus_Uvarov_1922>
+    dwc:class "Insecta" ;
+    dwc:family "Baissogryllidae" ;
+    dwc:genus "Amblyphymus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "(Uvarov 1922)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amblyphymus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Acrophymus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Baissogryllidae> ;
     dwc:class "Insecta" ;
     dwc:family "Baissogryllidae" ;
     dwc:genus "Acrophymus" ;
@@ -60,46 +100,67 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Baissogryllidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Baissogryllidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Baissogryllidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DC878BFF9F3249FF1D0408BA4617E1>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acrophymus_Uvarov_1922> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4820.1.4> ;
-    dc:creator "Tshililo, Precious" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4397333>, <http://dx.doi.org/10.5281/zenodo.4397347> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Acrophymus_rossi>
+    dwc:class "Insecta" ;
+    dwc:family "Baissogryllidae" ;
+    dwc:genus "Acrophymus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rossi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acrophymus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amblyphymus>
+    dwc:class "Insecta" ;
+    dwc:family "Baissogryllidae" ;
+    dwc:genus "Amblyphymus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Baissogryllidae> ;
+    a dwcFP:TaxonName .
