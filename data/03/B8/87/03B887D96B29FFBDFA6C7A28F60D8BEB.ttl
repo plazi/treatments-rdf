@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B887D96B29FFBDFA6C7A28F60D8BEB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6607345> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Phocoenoides dalli True 1885" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B887D96B29FFBDFA6C7A28F60D8BEB.mc.3B793C926B29FFBEF5F67ACFF5D08D4F> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phocoenoides_dalli_True_1885> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Phocaena_dalli_True_1885> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6607321> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6607321>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2014" ;
-    dc:title "Phocoenidae" ;
     bibo:endPage "545" ;
     bibo:startPage "528" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2014" ;
+    dc:title "Phocoenidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6607345> ;
     a fabio:BookSection .
 
@@ -23,23 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6607345/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Phocaena_dalli_True_1885>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocaena_dalli> ;
-    dwc:ID-CoL "4GK6C" ;
-    dwc:class "Mammalia" ;
-    dwc:family "Phocoenidae" ;
-    dwc:genus "Phocaena" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "True, 1885" ;
-    dwc:species "dalli" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03B887D96B29FFBDFA6C7A28F60D8BEB.mc.3B793C926B29FFBEF5F67ACFF5D08D4F>
+    trt:gbifOccurrenceId "3800834303" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B887D96B29FFBDFA6C7A28F60D8BEB#3B793C926B29FFBEF5F67ACFF5D08D4F> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Phocoenoides_dalli_True_1885>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocoenoides_dalli> ;
-    dwc:ID-CoL "4GK8K" ;
     dwc:authority "Mittermeier, 2014" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2014" ;
@@ -50,61 +50,85 @@
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "True, 1885" ;
     dwc:species "dalli" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4GK8K> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocoenoides_dalli> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cetacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phocoenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phocaena_dalli_True_1885>
     dwc:class "Mammalia" ;
     dwc:family "Phocoenidae" ;
+    dwc:genus "Phocaena" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "True, 1885" ;
+    dwc:species "dalli" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4GK8K> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocaena_dalli> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Phocoenoides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenidae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Phocoenidae" ;
-    dwc:genus "Phocoenoides" ;
+<http://taxon-concept.plazi.org/id/Animalia/Clupea_C.Linnaeus_1758>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Clupeidae" ;
+    dwc:genus "Clupea" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
+    dwc:order "Clupeiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "C.Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clupea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sardinops_Hubbs_1929>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Clupeidae" ;
+    dwc:genus "Sardinops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Clupeiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Hubbs, 1929" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sardinops> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cololabis_T.N.Gill_1896>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Scomberesocidae" ;
+    dwc:genus "Cololabis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Beloniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "T.N.Gill, 1896" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cololabis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Myctophidae_T.N.Gill_1893>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Myctophidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myctophiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "T.N.Gill, 1893" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myctophidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gonatidae_Hoyle_1886>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Gonatidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Hoyle, 1886" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gonatidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Phocoenoides_dalli>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenoides> ;
     dwc:class "Mammalia" ;
     dwc:family "Phocoenidae" ;
     dwc:genus "Phocoenoides" ;
@@ -113,13 +137,210 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "dalli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenoides> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B887D96B29FFBDFA6C7A28F60D8BEB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phocoenoides_dalli_True_1885> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Phocaena_dalli_True_1885> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6607321> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6607345> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Phocoenoides>
+    dwc:class "Mammalia" ;
+    dwc:family "Phocoenidae" ;
+    dwc:genus "Phocoenoides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Phocoenidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Phocoenidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cetacea>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phocaena_dalli>
+    dwc:class "Mammalia" ;
+    dwc:family "Phocoenidae" ;
+    dwc:genus "Phocaena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dalli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocaena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phocaena>
+    dwc:class "Mammalia" ;
+    dwc:family "Phocoenidae" ;
+    dwc:genus "Phocaena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clupea>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Clupeidae" ;
+    dwc:genus "Clupea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Clupeiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clupeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clupeidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Clupeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Clupeiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clupeiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clupeiformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Clupeiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sardinops>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Clupeidae" ;
+    dwc:genus "Sardinops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Clupeiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clupeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cololabis>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Scomberesocidae" ;
+    dwc:genus "Cololabis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Beloniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scomberesocidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scomberesocidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Scomberesocidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Beloniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Beloniformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Beloniformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Beloniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myctophidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Myctophidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myctophiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myctophiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myctophiformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myctophiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gonatidae>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Gonatidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oegopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oegopsida>
+    dwc:class "Cephalopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cephalopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cephalopoda>
+    dwc:class "Cephalopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
