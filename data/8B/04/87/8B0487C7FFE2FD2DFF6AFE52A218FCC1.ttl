@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:8B0487C7FFE2FD2DFF6AFE52A218FCC1
+    cito:cites <http://dx.doi.org/10.5281/zenodo.217509>, <http://dx.doi.org/10.5281/zenodo.217510>, <http://dx.doi.org/10.5281/zenodo.217511> ;
+    dc:creator "Iori, Fabiano Vidoi; Marinho, Thiago Da Silva; Carvalho, Ismar De Souza; Campos, Antonio Celso De Arruda" ;
+    dc:title "paulistanus Iori & Carvalho 2011" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/paulistanus_Iori_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3686.2.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3686.2.4>
-    dc:creator "Campos, Antonio Celso De Arruda", "Carvalho, Ismar De Souza", "Iori, Fabiano Vidoi", "Marinho, Thiago Da Silva" ;
-    dc:date "2013" ;
-    dc:title "Taxonomic reappraisal of the sphagesaurid crocodyliform Sphagesaurus montealtensis from the Late Cretaceous Adamantina Formation of São Paulo State, Brazil" ;
     bibo:endPage "200" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "183" ;
     bibo:volume "3686" ;
+    dc:creator "Iori, Fabiano Vidoi; Marinho, Thiago Da Silva; Carvalho, Ismar De Souza; Campos, Antonio Celso De Arruda" ;
+    dc:date "2013" ;
+    dc:title "Taxonomic reappraisal of the sphagesaurid crocodyliform Sphagesaurus montealtensis from the Late Cretaceous Adamantina Formation of São Paulo State, Brazil" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.217509>, <http://dx.doi.org/10.5281/zenodo.217510>, <http://dx.doi.org/10.5281/zenodo.217511> ;
     a fabio:JournalArticle .
 
@@ -36,22 +46,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/217511/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/_paulistanus_Iori_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/_paulistanus> ;
+<http://taxon-concept.plazi.org/id/Animalia/paulistanus_Iori_2011>
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Iori & Carvalho, 2011" ;
     dwc:species "paulistanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/paulistanus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/_paulistanus>
+<http://taxon-name.plazi.org/id/Animalia/paulistanus>
+    # Warning: Could not determine parent name ;
     dwc:rank "species" ;
     dwc:species "paulistanus" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/8B0487C7FFE2FD2DFF6AFE52A218FCC1>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/_paulistanus_Iori_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3686.2.4> ;
-    dc:creator "Campos, Antonio Celso De Arruda", "Carvalho, Ismar De Souza", "Iori, Fabiano Vidoi", "Marinho, Thiago Da Silva" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.217509>, <http://dx.doi.org/10.5281/zenodo.217510>, <http://dx.doi.org/10.5281/zenodo.217511> ;
-    a trt:Treatment .
-
