@@ -1,24 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:D55C61533A53A670FA73F7C4F9F82D2C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4654671>, <http://dx.doi.org/10.5281/zenodo.4654675> ;
+    dc:creator "Anderson, M. Eric" ;
+    dc:title "Dieidolycus adocetus Anderson 1994, n.sp." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/D55C61533A53A670FA73F7C4F9F82D2C/OSUO%202072> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_adocetus_Anderson_1994> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_leptodermatus_Anderson_1988> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4662846> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4662846>
-    dc:creator "Anderson, M. Eric" ;
-    dc:date "1994" ;
-    dc:title "Studies on the Zoarcidae (Teleostei: Perciformes) of the southern hemisphere. VII. A new species of Dieidolycus Anderson, 1988 from the Bismarck Sea" ;
     bibo:endPage "124" ;
     bibo:issue "2" ;
     bibo:journal "Records of the Australian Museum" ;
     bibo:pubDate "1994-07-28" ;
     bibo:startPage "121" ;
     bibo:volume "46" ;
+    dc:creator "Anderson, M. Eric" ;
+    dc:date "1994" ;
+    dc:title "Studies on the Zoarcidae (Teleostei: Perciformes) of the southern hemisphere. VII. A new species of Dieidolycus Anderson, 1988 from the Bismarck Sea" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4654671>, <http://dx.doi.org/10.5281/zenodo.4654675> ;
     a fabio:JournalArticle .
 
@@ -32,8 +45,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4654675/files/figure.png" ;
     a fabio:Figure .
 
+<http://treatment.plazi.org/id/D55C61533A53A670FA73F7C4F9F82D2C/OSUO%202072>
+    dwc:catalogNumber "OSUO 2072" ;
+    dwc:collectionCode "OSUO" ;
+    dwc:locality "Oregon" ;
+    dwc:verbatimElevation "2816" ;
+    dwc:verbatimLatitude "44.58" ;
+    dwc:verbatimLongitude "-125.56" ;
+    trt:gbifOccurrenceId "3068284302" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_adocetus_Anderson_1994>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus_adocetus> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Zoarcidae" ;
     dwc:genus "Dieidolycus" ;
@@ -43,10 +65,34 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Anderson, 1994" ;
     dwc:species "adocetus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus_adocetus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_Anderson_1988>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Dieidolycus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Anderson, 1988" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Taranetzella_Andriashev_1952>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Taranetzella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Andriashev, 1952" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Taranetzella> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_leptodermatus_Anderson_1988>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus_leptodermatus> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Zoarcidae" ;
     dwc:genus "Dieidolycus" ;
@@ -56,41 +102,144 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Anderson, 1988" ;
     dwc:species "leptodermatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus_leptodermatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dieidolycus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Zoarcidae_Swainson_1839>
     dwc:class "Actinopterygii" ;
     dwc:family "Zoarcidae" ;
-    dwc:genus "Dieidolycus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Swainson, 1839" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lycodapus_Gilbert_1890>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Lycodapus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Perciformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Gilbert, 1890" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lycodapus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melanostigma_Giinther_1881>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Melanostigma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Giinther, 1881" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melanostigma> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pachycara_Zugmayer_1911>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Pachycara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Zugmayer, 1911" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachycara> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pachycara_crassiceps_Roule_1916>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Pachycara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Roule, 1916" ;
+    dwc:species "crassiceps" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachycara_crassiceps> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Talisman_Folin_1887>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bursidae" ;
+    dwc:genus "Talisman" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "de Folin, 1887" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talisman> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pachycara_shcherbachevi_Anderson_1989>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Pachycara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Anderson, 1989" ;
+    dwc:species "shcherbachevi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachycara_shcherbachevi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lycodinae_Gill_1861>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Gill, 1861" ;
+    dwc:subFamily "Lycodinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lycodinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lycenchelys_Gill_1884>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Lycenchelys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Gill, 1884" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lycenchelys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gymnelinae_Gill_1863>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Gill, 1863" ;
+    dwc:subFamily "Gymnelinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gymnelinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Taranetzella_lyoderma_Andriashev_1952>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Taranetzella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Andriashev, 1952" ;
+    dwc:species "lyoderma" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Taranetzella_lyoderma> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dieidolycus_adocetus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Zoarcidae" ;
     dwc:genus "Dieidolycus" ;
@@ -99,10 +248,71 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "adocetus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dieidolycus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Dieidolycus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zoarcidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perciformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Perciformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Taranetzella>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Taranetzella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dieidolycus_leptodermatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Zoarcidae" ;
     dwc:genus "Dieidolycus" ;
@@ -111,42 +321,152 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "leptodermatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dieidolycus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Perciformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+<http://taxon-name.plazi.org/id/Animalia/Lycodapus>
     dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Lycodapus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Perciformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Zoarcidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perciformes> ;
+<http://taxon-name.plazi.org/id/Animalia/Melanostigma>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Melanostigma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachycara>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Pachycara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachycara_crassiceps>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Pachycara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "crassiceps" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachycara> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Talisman>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bursidae" ;
+    dwc:genus "Talisman" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bursidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bursidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bursidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Littorinimorpha>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachycara_shcherbachevi>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Pachycara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "shcherbachevi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachycara> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lycodinae>
     dwc:class "Actinopterygii" ;
     dwc:family "Zoarcidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Perciformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Lycodinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D55C61533A53A670FA73F7C4F9F82D2C>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_adocetus_Anderson_1994> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dieidolycus_leptodermatus_Anderson_1988> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4662846> ;
-    dc:creator "Anderson, M. Eric" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4654671>, <http://dx.doi.org/10.5281/zenodo.4654675> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/D55C61533A53A670FA73F7C4F9F82D2C/OSUO%202072> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lycenchelys>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Lycenchelys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D55C61533A53A670FA73F7C4F9F82D2C/OSUO%202072>
-    dwc:catalogNumber "OSUO 2072" ;
-    dwc:collectionCode "OSUO" ;
-    dwc:locality "Oregon" ;
-    dwc:verbatimElevation "2816" ;
-    dwc:verbatimLatitude "44.58" ;
-    dwc:verbatimLongitude "-125.56" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Gymnelinae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Gymnelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoarcidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Taranetzella_lyoderma>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Zoarcidae" ;
+    dwc:genus "Taranetzella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "lyoderma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Taranetzella> ;
+    a dwcFP:TaxonName .
