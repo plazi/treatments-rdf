@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6561A655FFBBFF88FF00F421FC10BA38
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6603595> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Sicista concolor" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/6561A655FFBBFF88FF00F421FC10BA38.mc.5DA01D1EFFBBFF89FC8AF39EFE07B075> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sicista_concolor_B%C3%BCchner_1892> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sminthus_concolor_Buchner_1892> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6603557> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6603557>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Sminthidae" ;
     bibo:endPage "48" ;
     bibo:startPage "9" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Sminthidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6603595> ;
     a fabio:BookSection .
 
@@ -23,9 +34,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6603595/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Sicista_concolor_B%25C3%25BCchner_1892>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor> ;
-    dwc:ID-CoL "4X723" ;
+<http://tb.plazi.org/GgServer/dwcaRecords/6561A655FFBBFF88FF00F421FC10BA38.mc.5DA01D1EFFBBFF89FC8AF39EFE07B075>
+    dwc:locality "Guiduisha" ;
+    trt:gbifOccurrenceId "3799836313" ;
+    trt:httpUri <https://treatment.plazi.org/id/6561A655FFBBFF88FF00F421FC10BA38#5DA01D1EFFBBFF89FC8AF39EFE07B075> ;
+    a dwc:MaterialCitation .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_concolor_B%C3%BCchner_1892>
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -36,11 +51,13 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Büchner, 1892" ;
     dwc:species "concolor" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4X723> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sminthus_concolor_Buchner_1892>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sminthus_concolor> ;
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Sminthus" ;
@@ -50,60 +67,153 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Buchner, 1892" ;
     dwc:species "concolor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sminthus_concolor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dipodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Dipodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sicista>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_tianshanica_Salensky_1903>
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Sicista" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Salensky, 1903" ;
+    dwc:species "tianshanica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_tianshanica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_pseudonapaea_Strautman_1949>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Strautman, 1949" ;
+    dwc:species "pseudonapaea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_pseudonapaea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_concolor_concolor_Buchner_1892>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Buchner, 1892" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "concolor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor_concolor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_concolor_leathemi_Thomas_1893>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1893" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "leathemi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor_leathemi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Betulaceae_S.F.Gray_1822>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "S.F.Gray, 1822" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Betulaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_caucasica_Vinogradov_1925>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Vinogradov, 1925" ;
+    dwc:species "caucasica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_caucasica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_napaea_Hollister_1912>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hollister, 1912" ;
+    dwc:species "napaea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_napaea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_subtilis_Pallas_1773>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pallas, 1773" ;
+    dwc:species "subtilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_subtilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_kluchorica_Sokolov_1980>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sokolov, Kovalskaya & Baskevich, 1980" ;
+    dwc:species "kluchorica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_kluchorica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_betulina_Pallas_1779>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pallas, 1779" ;
+    dwc:species "betulina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_betulina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sicista_strandi_Formozov_1931>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Formozov, 1931" ;
+    dwc:species "strandi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sicista_strandi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Sicista" ;
@@ -112,13 +222,239 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6561A655FFBBFF88FF00F421FC10BA38>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sicista_concolor_B%25C3%25BCchner_1892> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sminthus_concolor_Buchner_1892> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6603557> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6603595> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sicista>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Dipodidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sminthus_concolor>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sminthus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sminthus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sminthus>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sminthus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_tianshanica>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "tianshanica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_pseudonapaea>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pseudonapaea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_concolor_concolor>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_concolor_leathemi>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "leathemi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista_concolor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Betulaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_caucasica>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "caucasica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_napaea>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "napaea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_subtilis>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "subtilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_kluchorica>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "kluchorica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_betulina>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "betulina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sicista_strandi>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Sicista" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "strandi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sicista> ;
+    a dwcFP:TaxonName .
