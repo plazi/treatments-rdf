@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B7423B8A044F3BFF06FF14B94D1EB4
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7524080>, <http://dx.doi.org/10.5281/zenodo.7524084> ;
+    dc:creator "Vörös, Judit; Wassens, Skye; Price, Luke; Hunter, David; Myers, Steven; Armstrong, Kyle; Mahony, Michael J.; Donnellan, Stephen" ;
+    dc:title "Litoria raniformis subsp. raniformis AMS R" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B7423B8A044F3BFF06FF14B94D1EB4.mc.3B76F9708A044F39FF06FE80B8881B54> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Litoria_raniformis_raniformis_Keferstein_1867> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5228.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5228.1.1>
-    dc:creator "Armstrong, Kyle", "Donnellan, Stephen", "Hunter, David", "Mahony, Michael J.", "Myers, Steven", "Price, Luke", "Vörös, Judit", "Wassens, Skye" ;
-    dc:date "2023" ;
-    dc:title "Molecular systematic analysis demonstrates that the threatened southern bell frog, Litoria raniformis (Anura: Pelodryadidae) of eastern Australia comprises two sub-species" ;
     bibo:endPage "43" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-01-11" ;
     bibo:startPage "1" ;
     bibo:volume "5228" ;
+    dc:creator "Vörös, Judit; Wassens, Skye; Price, Luke; Hunter, David; Myers, Steven; Armstrong, Kyle; Mahony, Michael J.; Donnellan, Stephen" ;
+    dc:date "2023" ;
+    dc:title "Molecular systematic analysis demonstrates that the threatened southern bell frog, Litoria raniformis (Anura: Pelodryadidae) of eastern Australia comprises two sub-species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7524080>, <http://dx.doi.org/10.5281/zenodo.7524084> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/7524084/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B7423B8A044F3BFF06FF14B94D1EB4.mc.3B76F9708A044F39FF06FE80B8881B54>
+    dwc:eventDate "1973-09-09" ;
+    dwc:locality "Hay" ;
+    dwc:typeStatus "neotype" ;
+    dwc:verbatimLatitude "-34.683" ;
+    dwc:verbatimLongitude "144.05" ;
+    trt:gbifOccurrenceId "4012808302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B7423B8A044F3BFF06FF14B94D1EB4#3B76F9708A044F39FF06FE80B8881B54> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Litoria_raniformis_raniformis_Keferstein_1867>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis_raniformis> ;
-    dwc:ID-CoL "3VMNV" ;
     dwc:class "Amphibia" ;
     dwc:family "Pelodryadidae" ;
     dwc:genus "Litoria" ;
@@ -42,53 +60,66 @@
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "(Keferstein, 1867)" ;
+    dwc:scientificNameAuthorship "(Keferstein, 1867)", "(Keferstein, 1867) AMS R", "Keferstein, 1867" ;
     dwc:species "raniformis" ;
     dwc:subSpecies "raniformis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3VMNV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis_raniformis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amphibia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Amphibia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anura>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
-    dwc:class "Amphibia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Anura" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Litoria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pelodryadidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Litoria_raniformis_Keferstein_1867>
     dwc:class "Amphibia" ;
     dwc:family "Pelodryadidae" ;
     dwc:genus "Litoria" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Keferstein, 1867" ;
+    dwc:species "raniformis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Litoria_aurea_Lesson_1829>
+    dwc:class "Amphibia" ;
+    dwc:family "Pelodryadidae" ;
+    dwc:genus "Litoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lesson, 1829" ;
+    dwc:species "aurea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Litoria_aurea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Litoria_castanea_Steindachner_1867>
+    dwc:class "Amphibia" ;
+    dwc:family "Pelodryadidae" ;
+    dwc:genus "Litoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Steindachner, 1867" ;
+    dwc:species "castanea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Litoria_castanea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis_raniformis>
+    dwc:class "Amphibia" ;
+    dwc:family "Pelodryadidae" ;
+    dwc:genus "Litoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "raniformis" ;
+    dwc:subSpecies "raniformis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Litoria> ;
     dwc:class "Amphibia" ;
     dwc:family "Pelodryadidae" ;
     dwc:genus "Litoria" ;
@@ -97,35 +128,79 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "raniformis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Litoria> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis_raniformis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Litoria_raniformis> ;
+<http://taxon-name.plazi.org/id/Animalia/Litoria>
     dwc:class "Amphibia" ;
     dwc:family "Pelodryadidae" ;
     dwc:genus "Litoria" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "subSpecies" ;
-    dwc:species "raniformis" ;
-    dwc:subSpecies "raniformis" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pelodryadidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pelodryadidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     dwc:class "Amphibia" ;
     dwc:family "Pelodryadidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B7423B8A044F3BFF06FF14B94D1EB4>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Litoria_raniformis_raniformis_Keferstein_1867> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5228.1.1> ;
-    dc:creator "Armstrong, Kyle", "Donnellan, Stephen", "Hunter, David", "Mahony, Michael J.", "Myers, Steven", "Price, Luke", "Vörös, Judit", "Wassens, Skye" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7524080>, <http://dx.doi.org/10.5281/zenodo.7524084> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Anura>
+    dwc:class "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Amphibia>
+    dwc:class "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Litoria_aurea>
+    dwc:class "Amphibia" ;
+    dwc:family "Pelodryadidae" ;
+    dwc:genus "Litoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "aurea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Litoria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Litoria_castanea>
+    dwc:class "Amphibia" ;
+    dwc:family "Pelodryadidae" ;
+    dwc:genus "Litoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "castanea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Litoria> ;
+    a dwcFP:TaxonName .
