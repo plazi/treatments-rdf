@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:1B32387A8318B269F6AFA4F6FE79A76C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4764058>, <http://dx.doi.org/10.5281/zenodo.4764597> ;
+    dc:creator "Sandberg, John B.; Kondratieff, Boris C." ;
+    dc:title "Isoperla miwok Bottorff & Szczytko 1990" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Isoperla_miwok_Bottorff_1990> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4764603> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4764603>
-    dc:creator "Kondratieff, Boris C.", "Sandberg, John B." ;
-    dc:date "2013" ;
-    dc:title "The Isoperla Of California (Plecoptera: Perlodidae); Updated Male Descriptions And Adult Keys For 18 Western Nearctic Species" ;
     bibo:endPage "64" ;
     bibo:issue "5" ;
     bibo:journal "Illiesia" ;
     bibo:startPage "34" ;
     bibo:volume "9" ;
+    dc:creator "Sandberg, John B.; Kondratieff, Boris C." ;
+    dc:date "2013" ;
+    dc:title "The Isoperla Of California (Plecoptera: Perlodidae); Updated Male Descriptions And Adult Keys For 18 Western Nearctic Species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4764058>, <http://dx.doi.org/10.5281/zenodo.4764597> ;
     a fabio:JournalArticle .
 
@@ -32,7 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Isoperla_miwok_Bottorff_1990>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Isoperla_miwok> ;
     dwc:class "Insecta" ;
     dwc:family "Perlodidae" ;
     dwc:genus "Isoperla" ;
@@ -40,32 +49,37 @@
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Bottorff & Szczytko" ;
+    dwc:scientificNameAuthorship "Bottorff & Szczytko", "Bottorff & Szczytko 1990", "Bottorff & Szczytko, 1990" ;
     dwc:species "miwok" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Isoperla_miwok> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Isoperla_sobria_Hagen_1874>
     dwc:class "Insecta" ;
+    dwc:family "Perlodidae" ;
+    dwc:genus "Isoperla" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hagen, 1874" ;
+    dwc:species "sobria" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Isoperla_sobria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Isoperla_miwok>
+    dwc:class "Insecta" ;
+    dwc:family "Perlodidae" ;
+    dwc:genus "Isoperla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "miwok" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isoperla> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Isoperla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlodidae> ;
     dwc:class "Insecta" ;
     dwc:family "Perlodidae" ;
     dwc:genus "Isoperla" ;
@@ -73,10 +87,49 @@
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlodidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Isoperla_miwok>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isoperla> ;
+<http://taxon-name.plazi.org/id/Animalia/Perlodidae>
+    dwc:class "Insecta" ;
+    dwc:family "Perlodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Plecoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Isoperla_sobria>
     dwc:class "Insecta" ;
     dwc:family "Perlodidae" ;
     dwc:genus "Isoperla" ;
@@ -84,32 +137,6 @@
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "miwok" ;
+    dwc:species "sobria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isoperla> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Perlodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Perlodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Plecoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Plecoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Plecoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/1B32387A8318B269F6AFA4F6FE79A76C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Isoperla_miwok_Bottorff_1990> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4764603> ;
-    dc:creator "Kondratieff, Boris C.", "Sandberg, John B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4764058>, <http://dx.doi.org/10.5281/zenodo.4764597> ;
-    a trt:Treatment .
-

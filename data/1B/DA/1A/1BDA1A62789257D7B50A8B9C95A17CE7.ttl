@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:1BDA1A62789257D7B50A8B9C95A17CE7
+    cito:cites <http://dx.doi.org/10.3897/phytokeys.218.91199.figure3>, <http://dx.doi.org/10.3897/phytokeys.218.91199.figure4> ;
+    dc:creator "Wang, Long-Yuan; Zhao, Wan-Yi; Chen, Zai-Xiong; Huang, Wei-Cheng; Ding, Ming-Yan; Luo, Jin-Chu; Liao, Wen-Bo; Guo, Wei; Fan, Qiang" ;
+    dc:title "Commelina danxiaensis Q. Fan, Long Y. Wang & W. Guo 2023, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Commelina_danxiaensis_Fan_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.218.91199> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.218.91199>
-    dc:creator "Chen, Zai-Xiong", "Ding, Ming-Yan", "Fan, Qiang", "Guo, Wei", "Huang, Wei-Cheng", "Liao, Wen-Bo", "Luo, Jin-Chu", "Wang, Long-Yuan", "Zhao, Wan-Yi" ;
-    dc:date "2023" ;
-    dc:title "Commelina danxiaensis (Commelinaceae), a new species from Guangdong, China" ;
     bibo:endPage "126" ;
     bibo:journal "PhytoKeys" ;
     bibo:pubDate "2023-01-13" ;
     bibo:startPage "117" ;
     bibo:volume "218" ;
+    dc:creator "Wang, Long-Yuan; Zhao, Wan-Yi; Chen, Zai-Xiong; Huang, Wei-Cheng; Ding, Ming-Yan; Luo, Jin-Chu; Liao, Wen-Bo; Guo, Wei; Fan, Qiang" ;
+    dc:date "2023" ;
+    dc:title "Commelina danxiaensis (Commelinaceae), a new species from Guangdong, China" ;
     fabio:hasPart <http://dx.doi.org/10.3897/phytokeys.218.91199.figure3>, <http://dx.doi.org/10.3897/phytokeys.218.91199.figure4> ;
     a fabio:JournalArticle .
 
@@ -32,7 +43,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Plantae/Commelina_danxiaensis_Fan_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Commelina_danxiaensis> ;
     dwc:LSID "1BDA1A62-7892-57D7-B50A-8B9C95A17CE7" ;
     dwc:class "Liliopsida" ;
     dwc:family "Commelinaceae" ;
@@ -41,28 +51,12 @@
     dwc:order "Commelinales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Q. Fan, Long Y. Wang & W. Guo" ;
+    dwc:scientificNameAuthorship "Q. Fan, Long Y. Wang & W. Guo", "Q. Fan, Long Y. Wang & W. Guo, 2023" ;
     dwc:species "danxiaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Commelina_danxiaensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Commelina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinaceae> ;
-    dwc:class "Liliopsida" ;
-    dwc:family "Commelinaceae" ;
-    dwc:genus "Commelina" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Commelinales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Commelina_danxiaensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelina> ;
     dwc:class "Liliopsida" ;
     dwc:family "Commelinaceae" ;
     dwc:genus "Commelina" ;
@@ -71,46 +65,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "danxiaensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Commelina>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Commelina" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Commelinaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinales> ;
     dwc:class "Liliopsida" ;
     dwc:family "Commelinaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Commelinales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Commelinales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     dwc:class "Liliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Commelinales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Liliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Liliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/1BDA1A62789257D7B50A8B9C95A17CE7>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Commelina_danxiaensis_Fan_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.218.91199> ;
-    dc:creator "Chen, Zai-Xiong", "Ding, Ming-Yan", "Fan, Qiang", "Guo, Wei", "Huang, Wei-Cheng", "Liao, Wen-Bo", "Luo, Jin-Chu", "Wang, Long-Yuan", "Zhao, Wan-Yi" ;
-    cito:cites <http://dx.doi.org/10.3897/phytokeys.218.91199.figure3>, <http://dx.doi.org/10.3897/phytokeys.218.91199.figure4> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
