@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03AA87D8AF14256C05BD12B5FCCC28FF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7929477>, <http://dx.doi.org/10.5281/zenodo.7929483> ;
+    dc:creator "Prada-Lara, Liliana; Jiménez-Bolívar, Andrea C.; St Laurent, Ryan A." ;
+    dc:title "Hemiceratinae" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5284.3.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemiceratinae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5284.3.1>
-    dc:creator "Jiménez-Bolívar, Andrea C.", "Prada-Lara, Liliana", "St Laurent, Ryan A." ;
-    dc:date "2023" ;
-    dc:title "Prominent moths (Lepidoptera: Notodontidae) of Colombia" ;
     bibo:endPage "444" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-05-12" ;
     bibo:startPage "401" ;
     bibo:volume "5284" ;
+    dc:creator "Prada-Lara, Liliana; Jiménez-Bolívar, Andrea C.; St Laurent, Ryan A." ;
+    dc:date "2023" ;
+    dc:title "Prominent moths (Lepidoptera: Notodontidae) of Colombia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7929477>, <http://dx.doi.org/10.5281/zenodo.7929483> ;
     a fabio:JournalArticle .
 
@@ -32,20 +41,45 @@
     fabio:hasRepresentation "https://zenodo.org/record/7929483/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Hemiceras_Guenee_1852>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Hemiceras" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Guenee, 1852" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemiceras> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ianassa_colombia__2001>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Ianassa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ", Cardenas & Posada (2001)" ;
+    dwc:species "colombia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ianassa_colombia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hemiceras_cadmia_Guenee_1852>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Hemiceras" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "\" Guenee, 1852" ;
+    dwc:species "cadmia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemiceras_cadmia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiceratinae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notodontidae> ;
     dwc:class "Insecta" ;
     dwc:family "Notodontidae" ;
     dwc:kingdom "Animalia" ;
@@ -53,39 +87,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Hemiceratinae" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notodontidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Notodontidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Notodontidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AA87D8AF14256C05BD12B5FCCC28FF>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5284.3.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemiceratinae> ;
-    dc:creator "Jiménez-Bolívar, Andrea C.", "Prada-Lara, Liliana", "St Laurent, Ryan A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7929477>, <http://dx.doi.org/10.5281/zenodo.7929483> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiceras>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Hemiceras" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notodontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ianassa_colombia>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Ianassa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "colombia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ianassa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ianassa>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Ianassa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notodontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiceras_cadmia>
+    dwc:class "Insecta" ;
+    dwc:family "Notodontidae" ;
+    dwc:genus "Hemiceras" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cadmia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiceras> ;
+    a dwcFP:TaxonName .

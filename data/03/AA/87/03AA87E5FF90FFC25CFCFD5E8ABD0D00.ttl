@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03AA87E5FF90FFC25CFCFD5E8ABD0D00
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Geomyza_Fallen_1810>, <http://taxon-concept.plazi.org/id/Animalia/Piophila_Fallen_1810>, <http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_Loew_1845>, <http://dx.doi.org/10.5281/zenodo.6412917>, <http://dx.doi.org/10.5281/zenodo.6412923> ;
+    dc:creator "Misiachna, A. V.; Korneyev, V. A." ;
+    dc:title "Mycetaulus bipunctatus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_bipunctatus_Fallen_1823> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6412908> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6412908>
-    dc:creator "Korneyev, V. A.", "Misiachna, A. V." ;
-    dc:date "2015" ;
-    dc:title "The First Records Of The Skipper Flies (Diptera, Piophilidae) From Ukraine" ;
     bibo:endPage "118" ;
     bibo:issue "2" ;
     bibo:journal "Vestnik Zoologii" ;
     bibo:pubDate "2015-04-01" ;
     bibo:startPage "113" ;
     bibo:volume "49" ;
+    dc:creator "Misiachna, A. V.; Korneyev, V. A." ;
+    dc:date "2015" ;
+    dc:title "The First Records Of The Skipper Flies (Diptera, Piophilidae) From Ukraine" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6412917>, <http://dx.doi.org/10.5281/zenodo.6412923> ;
     a fabio:JournalArticle .
 
@@ -32,32 +42,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6412923/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Geomyza_Fallen_1810>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geomyza> ;
-    dwc:class "Insecta" ;
-    dwc:family "Opomyzidae" ;
-    dwc:genus "Geomyza" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Fallen, 1810" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_Loew_1845>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mycetaulus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Piophilidae" ;
-    dwc:genus "Mycetaulus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Loew, 1845" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_bipunctatus_Fallen_1823>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mycetaulus_bipunctatus> ;
     dwc:class "Insecta" ;
     dwc:family "Piophilidae" ;
     dwc:genus "Mycetaulus" ;
@@ -66,12 +51,24 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Fallen, 1823)" ;
+    dwc:scientificNameAuthorship "(Fallen, 1823)", "Fallen, 1823" ;
     dwc:species "bipunctatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mycetaulus_bipunctatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Geomyza_Fallen_1810>
+    dwc:class "Insecta" ;
+    dwc:family "Opomyzidae" ;
+    dwc:genus "Geomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fallen, 1810" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geomyza> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Piophila_Fallen_1810>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Piophila> ;
     dwc:class "Insecta" ;
     dwc:family "Piophilidae" ;
     dwc:genus "Piophila" ;
@@ -80,50 +77,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Fallen, 1810" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Piophila> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Geomyza>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opomyzidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Opomyzidae" ;
-    dwc:genus "Geomyza" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mycetaulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piophilidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_Loew_1845>
     dwc:class "Insecta" ;
     dwc:family "Piophilidae" ;
     dwc:genus "Mycetaulus" ;
@@ -131,10 +88,24 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Loew, 1845" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mycetaulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Allopiophila_luteata_Haliday_1833>
+    dwc:class "Insecta" ;
+    dwc:family "Piophilidae" ;
+    dwc:genus "Allopiophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Haliday, 1833" ;
+    dwc:species "luteata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Allopiophila_luteata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Mycetaulus_bipunctatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycetaulus> ;
     dwc:class "Insecta" ;
     dwc:family "Piophilidae" ;
     dwc:genus "Mycetaulus" ;
@@ -143,20 +114,81 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "bipunctatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycetaulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mycetaulus>
+    dwc:class "Insecta" ;
+    dwc:family "Piophilidae" ;
+    dwc:genus "Mycetaulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piophilidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Piophilidae>
+    dwc:class "Insecta" ;
+    dwc:family "Piophilidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geomyza>
+    dwc:class "Insecta" ;
+    dwc:family "Opomyzidae" ;
+    dwc:genus "Geomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opomyzidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Opomyzidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Opomyzidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Piophila>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piophilidae> ;
     dwc:class "Insecta" ;
     dwc:family "Piophilidae" ;
     dwc:genus "Piophila" ;
@@ -164,22 +196,28 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piophilidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Piophilidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Allopiophila_luteata>
     dwc:class "Insecta" ;
     dwc:family "Piophilidae" ;
+    dwc:genus "Allopiophila" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "luteata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Allopiophila> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AA87E5FF90FFC25CFCFD5E8ABD0D00>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_bipunctatus_Fallen_1823> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6412908> ;
-    dc:creator "Korneyev, V. A.", "Misiachna, A. V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6412917>, <http://dx.doi.org/10.5281/zenodo.6412923>, <http://taxon-concept.plazi.org/id/Animalia/Geomyza_Fallen_1810>, <http://taxon-concept.plazi.org/id/Animalia/Mycetaulus_Loew_1845>, <http://taxon-concept.plazi.org/id/Animalia/Piophila_Fallen_1810> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Allopiophila>
+    dwc:class "Insecta" ;
+    dwc:family "Piophilidae" ;
+    dwc:genus "Allopiophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piophilidae> ;
+    a dwcFP:TaxonName .

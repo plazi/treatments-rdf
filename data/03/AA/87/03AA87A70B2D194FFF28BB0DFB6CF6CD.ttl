@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/zootaxa.5313.1.1>
-    dc:creator "Bastin, Saskia", "Burckhardt, Daniel", "Hernández-Suárez, Estrella", "Ouvrard, David", "Reyes-Betancort, Alfredo" ;
-    dc:date "2023" ;
-    dc:title "A review of the jumping plant-lice (Hemiptera: Psylloidea) of the Canary Islands, with descriptions of two new genera and sixteen new species" ;
+treatment:03AA87A70B2D194FFF28BB0DFB6CF6CD
+    dc:creator "Bastin, Saskia; Burckhardt, Daniel; Reyes-Betancort, Alfredo; Hernández-Suárez, Estrella; Ouvrard, David" ;
+    dc:title "Arytinnis gomerae Percy 2003" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Arytinnis_gomerae_Percy_2003> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "98" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-07-04" ;
     bibo:startPage "1" ;
     bibo:volume "5313" ;
+    dc:creator "Bastin, Saskia; Burckhardt, Daniel; Reyes-Betancort, Alfredo; Hernández-Suárez, Estrella; Ouvrard, David" ;
+    dc:date "2023" ;
+    dc:title "A review of the jumping plant-lice (Hemiptera: Psylloidea) of the Canary Islands, with descriptions of two new genera and sixteen new species" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Arytinnis_gomerae_Percy_2003>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arytinnis_gomerae> ;
-    dwc:ID-CoL "H44L" ;
     dwc:ID-ENA "178959" ;
     dwc:class "Insecta" ;
     dwc:family "Psyllidae" ;
@@ -34,33 +40,25 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Percy, 2003" ;
     dwc:species "gomerae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/H44L> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arytinnis_gomerae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arytinnis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Psyllidae" ;
-    dwc:genus "Arytinnis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Teline_stenopetala_microphylla_Arco_1993>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Teline" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "del Arco, 1993" ;
+    dwc:species "stenopetala" ;
+    dwc:subSpecies "microphylla" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Teline_stenopetala_microphylla> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Arytinnis_gomerae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arytinnis> ;
     dwc:class "Insecta" ;
     dwc:family "Psyllidae" ;
     dwc:genus "Arytinnis" ;
@@ -69,38 +67,130 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "gomerae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arytinnis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Arytinnis>
     dwc:class "Insecta" ;
+    dwc:family "Psyllidae" ;
+    dwc:genus "Arytinnis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Psyllidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Psyllidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AA87A70B2D194FFF28BB0DFB6CF6CD>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Arytinnis_gomerae_Percy_2003> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Bastin, Saskia", "Burckhardt, Daniel", "Hernández-Suárez, Estrella", "Ouvrard, David", "Reyes-Betancort, Alfredo" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Teline_stenopetala_microphylla>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Teline" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "stenopetala" ;
+    dwc:subSpecies "microphylla" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Teline_stenopetala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Teline_stenopetala>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Teline" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "stenopetala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Teline> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Teline>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Teline" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
