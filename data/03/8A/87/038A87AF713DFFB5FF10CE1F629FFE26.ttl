@@ -1,39 +1,47 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038A87AF713DFFB5FF10CE1F629FFE26
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3713998>, <http://dx.doi.org/10.5281/zenodo.3713996> ;
+    dc:creator "Russell, Peter J. C.; Lukhtanov, Vladimir A." ;
+    dc:title "Melitaea arduinna subsp. heynei Ruhl 1893" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Melitaea_arduinna_heynei_Ruhl_1893> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4531.1.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4531.1.3>
-    dc:creator "Lukhtanov, Vladimir A.", "Russell, Peter J. C." ;
-    dc:date "2018" ;
-    dc:title "To which species should the name heynei Rühl, [1893] (Lepidoptera: Nymphalidae) be referred?" ;
     bibo:endPage "94" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-12-11" ;
     bibo:startPage "81" ;
     bibo:volume "4531" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3713996>, <http://dx.doi.org/10.5281/zenodo.3713998> ;
+    dc:creator "Russell, Peter J. C.; Lukhtanov, Vladimir A." ;
+    dc:date "2018" ;
+    dc:title "To which species should the name heynei Rühl, [1893] (Lepidoptera: Nymphalidae) be referred?" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3713998>, <http://dx.doi.org/10.5281/zenodo.3713996> ;
     a fabio:JournalArticle .
-
-<http://dx.doi.org/10.5281/zenodo.3713996>
-    dc:description "FIGURE 2. Melitaea cinxia, the varieties obscurior, clarissa & heynei and M. arduinna, the varieties rhodopensis & evanescens, figured by Seitz, 1908-1910: Plate 65, rows e (part), f and g (part)." ;
-    fabio:hasRepresentation "https://zenodo.org/record/3713996/files/figure.png" ;
-    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.3713998>
     dc:description "FIGURES 3–5. The neotype of Melitaea arduinna heynei Rühl, [1893], 3: upperside; 4: underside; 5: labels. (Scale bar = 10 mm)." ;
     fabio:hasRepresentation "https://zenodo.org/record/3713998/files/figure.png" ;
     a fabio:Figure .
 
+<http://dx.doi.org/10.5281/zenodo.3713996>
+    dc:description "FIGURE 2. Melitaea cinxia, the varieties obscurior, clarissa & heynei and M. arduinna, the varieties rhodopensis & evanescens, figured by Seitz, 1908-1910: Plate 65, rows e (part), f and g (part)." ;
+    fabio:hasRepresentation "https://zenodo.org/record/3713996/files/figure.png" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Melitaea_arduinna_heynei_Ruhl_1893>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_heynei> ;
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Melitaea" ;
@@ -41,53 +49,93 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "Ruhl" ;
+    dwc:scientificNameAuthorship "Ruhl", "Ruhl, 1893" ;
     dwc:species "arduinna" ;
     dwc:subSpecies "heynei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_heynei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Melitaea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nymphalidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Melitaea_cinxia_Russell_2018>
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Melitaea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Russell & Lukhtanov, 2018" ;
+    dwc:species "cinxia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_cinxia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melitaea_arduinna_evanescens_Staudinger_1886>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Staudinger, 1886" ;
+    dwc:species "arduinna" ;
+    dwc:subSpecies "evanescens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_evanescens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melitaea_arduinna_Russell_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Russell & Lukhtanov, 2018" ;
+    dwc:species "arduinna" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melitaea_arduinna_rhodopensis_Freyer_1836>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Freyer, 1836" ;
+    dwc:species "arduinna" ;
+    dwc:subSpecies "rhodopensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_rhodopensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melitaea_avinovi_Sheljuzhko_1914>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sheljuzhko, 1914" ;
+    dwc:species "avinovi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melitaea_avinovi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_heynei>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arduinna" ;
+    dwc:subSpecies "heynei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea> ;
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Melitaea" ;
@@ -96,10 +144,72 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "arduinna" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_heynei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna> ;
+<http://taxon-name.plazi.org/id/Animalia/Melitaea>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nymphalidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nymphalidae>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melitaea_cinxia>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cinxia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_evanescens>
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Melitaea" ;
@@ -108,23 +218,31 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
     dwc:species "arduinna" ;
-    dwc:subSpecies "heynei" ;
+    dwc:subSpecies "evanescens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Nymphalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna_rhodopensis>
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arduinna" ;
+    dwc:subSpecies "rhodopensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea_arduinna> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038A87AF713DFFB5FF10CE1F629FFE26>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Melitaea_arduinna_heynei_Ruhl_1893> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4531.1.3> ;
-    dc:creator "Lukhtanov, Vladimir A.", "Russell, Peter J. C." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3713996>, <http://dx.doi.org/10.5281/zenodo.3713998> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Melitaea_avinovi>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Melitaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "avinovi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melitaea> ;
+    a dwcFP:TaxonName .
