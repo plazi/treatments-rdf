@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CE3D87F2FF8EFFB3FF4BFAA7FE6DAF7E
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1251059>, <http://dx.doi.org/10.5281/zenodo.1251061> ;
+    dc:creator "Jia, Yanyan; Wang, Shuxia; Bae, Yang-Seop" ;
+    dc:title "Promalactis curvicornuta Jia & Wang & Bae 2018, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/CE3D87F2FF8EFFB3FF4BFAA7FE6DAF7E.mc.F6FC3CB9FF8EFFB7FF4BFA32FBE4AB26> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Promalactis_curvicornuta_Jia_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4422.1.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4422.1.6>
-    dc:creator "Bae, Yang-Seop", "Jia, Yanyan", "Wang, Shuxia" ;
-    dc:date "2018" ;
-    dc:title "The genus Promalactis Meyrick (Lepidoptera: Oecophoridae) in Cambodia, with description of eight new species" ;
     bibo:endPage "114" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "104" ;
     bibo:volume "4422" ;
+    dc:creator "Jia, Yanyan; Wang, Shuxia; Bae, Yang-Seop" ;
+    dc:date "2018" ;
+    dc:title "The genus Promalactis Meyrick (Lepidoptera: Oecophoridae) in Cambodia, with description of eight new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1251059>, <http://dx.doi.org/10.5281/zenodo.1251061> ;
     a fabio:JournalArticle .
 
@@ -31,8 +41,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/1251061/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/CE3D87F2FF8EFFB3FF4BFAA7FE6DAF7E.mc.F6FC3CB9FF8EFFB7FF4BFA32FBE4AB26>
+    dwc:eventDate "2014-12-25" ;
+    dwc:locality "Kohkong" ;
+    dwc:recordedBy "Bae Y. S. & No." ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimLatitude "11.695806" ;
+    dwc:verbatimLongitude "103.11439" ;
+    trt:gbifOccurrenceId "1844994702" ;
+    trt:httpUri <https://treatment.plazi.org/id/CE3D87F2FF8EFFB3FF4BFAA7FE6DAF7E#F6FC3CB9FF8EFFB7FF4BFA32FBE4AB26> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Promalactis_curvicornuta_Jia_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_curvicornuta> ;
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Promalactis" ;
@@ -40,51 +60,128 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Wang" ;
+    dwc:scientificNameAuthorship "Wang", "Jia & Wang & Bae, 2018" ;
     dwc:species "curvicornuta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_curvicornuta> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Oecophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_longivalvaris_Wang_2016>
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wang, 2016" ;
+    dwc:species "longivalvaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_longivalvaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_latiuscula_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "latiuscula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_latiuscula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_ostacantha_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "ostacantha" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_ostacantha> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_apicuncata_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "apicuncata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_apicuncata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_granulosa_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "granulosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_granulosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_argentifasciaria_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "argentifasciaria" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_argentifasciaria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_quadrilobata_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "quadrilobata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_quadrilobata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_trifasciata_Jia_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jia & Wang & Bae, 2018" ;
+    dwc:species "trifasciata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_trifasciata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_curvicornuta>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "curvicornuta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Promalactis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oecophoridae> ;
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Promalactis" ;
@@ -92,10 +189,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oecophoridae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Promalactis_curvicornuta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+<http://taxon-name.plazi.org/id/Animalia/Oecophoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_longivalvaris>
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Promalactis" ;
@@ -103,13 +239,90 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "curvicornuta" ;
+    dwc:species "longivalvaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CE3D87F2FF8EFFB3FF4BFAA7FE6DAF7E>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Promalactis_curvicornuta_Jia_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4422.1.6> ;
-    dc:creator "Bae, Yang-Seop", "Jia, Yanyan", "Wang, Shuxia" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1251059>, <http://dx.doi.org/10.5281/zenodo.1251061> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_latiuscula>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latiuscula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_ostacantha>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ostacantha" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_apicuncata>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "apicuncata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_granulosa>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "granulosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_argentifasciaria>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "argentifasciaria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_quadrilobata>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "quadrilobata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_trifasciata>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "trifasciata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .

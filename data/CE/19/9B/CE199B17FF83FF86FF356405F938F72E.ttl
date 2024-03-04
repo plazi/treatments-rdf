@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CE199B17FF83FF86FF356405F938F72E
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6867453> ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:title "Cercopithecus nictitans" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FF83FF86FF356405F938F72E.mc.F6D8205CFF83FF86FD8C6729FB77FD7E> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_Linnaeus_1766> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Simia_nictitans_Linnaeus_1766> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6867065>
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2013" ;
-    dc:title "Cercopithecidae" ;
     bibo:endPage "755" ;
     bibo:startPage "550" ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:date "2013" ;
+    dc:title "Cercopithecidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6867453> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6867453/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FF83FF86FF356405F938F72E.mc.F6D8205CFF83FF86FD8C6729FB77FD7E>
+    trt:gbifOccurrenceId "3864421314" ;
+    trt:httpUri <https://treatment.plazi.org/id/CE199B17FF83FF86FF356405F938F72E#F6D8205CFF83FF86FD8C6729FB77FD7E> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_Linnaeus_1766>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans> ;
-    dwc:ID-CoL "STFM" ;
     dwc:authority "Mittermeier, 2013" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2013" ;
@@ -36,11 +50,13 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1766" ;
     dwc:species "nictitans" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/STFM> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Simia_nictitans_Linnaeus_1766>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simia_nictitans> ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Simia" ;
@@ -50,36 +66,141 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus, 1766" ;
     dwc:species "nictitans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simia_nictitans> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cercopithecidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cercopithecus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_mitis_Wolf_1822>
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Cercopithecus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wolf, 1822" ;
+    dwc:species "mitis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_mitis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_albogularis_Sykes_1831>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sykes, 1831" ;
+    dwc:species "albogularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_albogularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_doggetti_Pocock_1907>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pocock, 1907" ;
+    dwc:species "doggetti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_doggetti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_kandti_Matschie_1905>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Matschie, 1905" ;
+    dwc:species "kandti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_kandti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Primates_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_nictitans_Linnaeus_1766>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1766" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "nictitans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_nictitans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_insolitus_Elliot_1909>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Elliot, 1909" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "insolitus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_insolitus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_ludio_Gray_1849>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gray, 1849" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "ludio" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_ludio> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_martini_Waterhouse_1838>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1838" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "martini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_martini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_diana_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "diana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_diana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Cercopithecus" ;
@@ -88,37 +209,190 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "nictitans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus>
     dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Primates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CE199B17FF83FF86FF356405F938F72E>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cercopithecus_nictitans_Linnaeus_1766> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Simia_nictitans_Linnaeus_1766> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6867453> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Simia_nictitans>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Simia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "nictitans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Simia>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Simia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_mitis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "mitis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_albogularis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "albogularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_doggetti>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "doggetti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_kandti>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "kandti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_nictitans>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "nictitans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_insolitus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "insolitus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_ludio>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "ludio" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans_martini>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "nictitans" ;
+    dwc:subSpecies "martini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus_nictitans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecus_diana>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Cercopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "diana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecus> ;
+    a dwcFP:TaxonName .

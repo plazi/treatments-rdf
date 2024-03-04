@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CE199B17FF99FF9DFAE4696CFB8DF26D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6867463> ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:title "Presbytis hosei" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FF99FF9DFAE4696CFB8DF26D.mc.F6D8205CFF99FF9CF7656839F627F2BA> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Presbytis_hosei_Thomas_1889> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_hosei_Thomas_1889> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6867065>
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2013" ;
-    dc:title "Cercopithecidae" ;
     bibo:endPage "755" ;
     bibo:startPage "550" ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:date "2013" ;
+    dc:title "Cercopithecidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6867463> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6867463/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FF99FF9DFAE4696CFB8DF26D.mc.F6D8205CFF99FF9CF7656839F627F2BA>
+    trt:gbifOccurrenceId "3864421354" ;
+    trt:httpUri <https://treatment.plazi.org/id/CE199B17FF99FF9DFAE4696CFB8DF26D#F6D8205CFF99FF9CF7656839F627F2BA> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Presbytis_hosei_Thomas_1889>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_hosei> ;
-    dwc:ID-CoL "4MBB6" ;
     dwc:authority "Mittermeier, 2013" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2013" ;
@@ -36,11 +50,13 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1889" ;
     dwc:species "hosei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4MBB6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_hosei> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_hosei_Thomas_1889>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus_hosei> ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Semnopithecus" ;
@@ -50,51 +66,101 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Thomas, 1889" ;
     dwc:species "hosei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus_hosei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cercopithecidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Presbytis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_sabana_Thomas_1893>
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Presbytis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1893" ;
+    dwc:species "sabana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_sabana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_rubicunda_Muller_1838>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Muller, 1838" ;
+    dwc:species "rubicunda" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_rubicunda> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_chrysomelas_Muller_1838>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Muller, 1838" ;
+    dwc:species "chrysomelas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_chrysomelas> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_frontata_Muller_1838>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Muller, 1838" ;
+    dwc:species "frontata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_frontata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_hose_Thomas_1889>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Semnopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ": Thomas, 1889" ;
+    dwc:species "hose" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus_hose> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_aygula_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "aygula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_aygula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_comata_Desmarest_1822>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Desmarest, 1822" ;
+    dwc:species "comata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_comata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Presbytis_hosei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Presbytis" ;
@@ -103,22 +169,162 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "hosei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Primates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CE199B17FF99FF9DFAE4696CFB8DF26D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Presbytis_hosei_Thomas_1889> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_hosei_Thomas_1889> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6867463> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Semnopithecus_hosei>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Semnopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "hosei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Semnopithecus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Semnopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_sabana>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sabana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_rubicunda>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "rubicunda" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_chrysomelas>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "chrysomelas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_frontata>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "frontata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Semnopithecus_hose>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Semnopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "hose" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_aygula>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "aygula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_comata>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "comata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .

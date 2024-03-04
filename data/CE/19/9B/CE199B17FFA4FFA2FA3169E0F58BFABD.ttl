@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CE199B17FFA4FFA2FA3169E0F58BFABD
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6867467> ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:title "Simias concolor G. S. Miller 1903" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FFA4FFA2FA3169E0F58BFABD.mc.F6D8205CFFA7FFA2FC2A645CFC1DFE6D> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Simias_concolor_Miller_1903> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6867065>
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2013" ;
-    dc:title "Cercopithecidae" ;
     bibo:endPage "755" ;
     bibo:startPage "550" ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:date "2013" ;
+    dc:title "Cercopithecidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6867467> ;
     a fabio:BookSection .
 
@@ -23,9 +33,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6867467/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FFA4FFA2FA3169E0F58BFABD.mc.F6D8205CFFA7FFA2FC2A645CFC1DFE6D>
+    trt:gbifOccurrenceId "3864421436" ;
+    trt:httpUri <https://treatment.plazi.org/id/CE199B17FFA4FFA2FA3169E0F58BFABD#F6D8205CFFA7FFA2FC2A645CFC1DFE6D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Simias_concolor_Miller_1903>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simias_concolor> ;
-    dwc:ID-CoL "4XF7W" ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Simias" ;
@@ -35,49 +48,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "G. S. Miller, 1903" ;
     dwc:species "concolor" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4XF7W> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simias_concolor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
+<http://taxon-concept.plazi.org/id/Animalia/Nasalis_Saint-Hilaire_1812>
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
+    dwc:genus "Nasalis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "E. Geoffroy Saint-Hilaire, 1812" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nasalis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Primates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Simias>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Simias_Miller_1903>
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Simias" ;
@@ -85,10 +72,90 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Miller, 1903" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simias> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nasalis_larvatus_Wurmb_1787>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Nasalis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "van Wurmb, 1787" ;
+    dwc:species "larvatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nasalis_larvatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Simaas_concolor_concolor_Miller_1903>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Simaas" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "G. S. Miller, 1903" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "concolor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Simaas_concolor_concolor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Simaas_concolor_stberu_Chasen_1928>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Simaas" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Chasen & Kloss, 1928" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "stberu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Simaas_concolor_stberu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_Eschscholtz_1821>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Eschscholtz, 1821" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_siberu_Chasen_1928>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chasen & Kloss, 1928" ;
+    dwc:species "siberu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_siberu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Presbytis_potenziani_Bonaparte_1856>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bonaparte, 1856" ;
+    dwc:species "potenziani" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Presbytis_potenziani> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Simias_concolor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simias> ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Simias" ;
@@ -97,12 +164,201 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simias> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CE199B17FFA4FFA2FA3169E0F58BFABD>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Simias_concolor_Miller_1903> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6867467> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Simias>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Simias" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Primates>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nasalis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Nasalis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nasalis_larvatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Nasalis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "larvatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nasalis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Simaas_concolor_concolor>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Simaas" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Simaas_concolor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Simaas_concolor>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Simaas" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Simaas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Simaas>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Simaas" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Malpighiales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Simaas_concolor_stberu>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Simaas" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "concolor" ;
+    dwc:subSpecies "stberu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Simaas_concolor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_siberu>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "siberu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Presbytis_potenziani>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Presbytis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "potenziani" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Presbytis> ;
+    a dwcFP:TaxonName .

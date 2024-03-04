@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CE199B17FFA5FFA1FAFF62BFF64BFCE0
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6867467> ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:title "Rhinopithecus roxellana" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FFA5FFA1FAFF62BFF64BFCE0.mc.F6D8205CFFA5FFA0F6526DBEF7E9F6E4> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhinopithecus_roxellana_Milne-Edwards_1870> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_roxellana_Milne-Edwards_1870> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6867065>
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2013" ;
-    dc:title "Cercopithecidae" ;
     bibo:endPage "755" ;
     bibo:startPage "550" ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:date "2013" ;
+    dc:title "Cercopithecidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6867467> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6867467/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/CE199B17FFA5FFA1FAFF62BFF64BFCE0.mc.F6D8205CFFA5FFA0F6526DBEF7E9F6E4>
+    trt:gbifOccurrenceId "3864421415" ;
+    trt:httpUri <https://treatment.plazi.org/id/CE199B17FFA5FFA1FAFF62BFF64BFCE0#F6D8205CFFA5FFA0F6526DBEF7E9F6E4> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Rhinopithecus_roxellana_Milne-Edwards_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana> ;
-    dwc:ID-CoL "4S9MN" ;
     dwc:authority "Mittermeier, 2013" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2013" ;
@@ -36,12 +50,13 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "A. Milne-Edwards, 1870" ;
     dwc:species "roxellana" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4S9MN> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_roxellana_Milne-Edwards_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus_roxellana> ;
-    dwc:ID-CoL "c0f918cf-2ba1-4801-8fa1-2623126e0167" ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Semnopithecus" ;
@@ -51,60 +66,53 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "A. Milne-Edwards, 1870" ;
     dwc:species "roxellana" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4S9MN> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus_roxellana> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cercopithecidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Primates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhinopithecus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rhinopithecus_roxellana_roxellana_Milne-Edwards_1870>
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Rhinopithecus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Milne-Edwards, 1870" ;
+    dwc:species "roxellana" ;
+    dwc:subSpecies "roxellana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana_roxellana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhinopithecus_roxellana_hubeiensis_Wang_1994>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Rhinopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Wang, Jiang & Li, 1998" ;
+    dwc:species "roxellana" ;
+    dwc:subSpecies "hubeiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana_hubeiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhinopithecus_roxellana_nlingensis_Wang_1998>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Rhinopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Wang, Jiang & Li, 1998" ;
+    dwc:species "roxellana" ;
+    dwc:subSpecies "nlingensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana_nlingensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus> ;
     dwc:class "Mammalia" ;
     dwc:family "Cercopithecidae" ;
     dwc:genus "Rhinopithecus" ;
@@ -113,13 +121,117 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "roxellana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CE199B17FFA5FFA1FAFF62BFF64BFCE0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhinopithecus_roxellana_Milne-Edwards_1870> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Semnopithecus_roxellana_Milne-Edwards_1870> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6867065> ;
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6867467> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rhinopithecus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Rhinopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cercopithecidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Primates>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Semnopithecus_roxellana>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Semnopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "roxellana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semnopithecus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Semnopithecus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Semnopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cercopithecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana_roxellana>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Rhinopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "roxellana" ;
+    dwc:subSpecies "roxellana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana_hubeiensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Rhinopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "roxellana" ;
+    dwc:subSpecies "hubeiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana_nlingensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cercopithecidae" ;
+    dwc:genus "Rhinopithecus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "roxellana" ;
+    dwc:subSpecies "nlingensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinopithecus_roxellana> ;
+    a dwcFP:TaxonName .
