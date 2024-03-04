@@ -1,40 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:D499F9D7122A29AE6C4E8B40A0E82AD0
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Habroscelidomorpha>' due to issues with rank ;
+    dc:creator "Bousquet, Yves" ;
+    dc:title "Habroscelimorpha Dokhtouroff 1883" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Habroscelimorpha_Dokhtouroff_1883> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Cicindela_dorsalis> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Habroscelis_Agassiz_1846>, <http://taxon-concept.plazi.org/id/Animalia/Abroscelis_Hope_1838> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.245.3416> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.245.3416>
-    dc:creator "Bousquet, Yves" ;
-    dc:date "2012" ;
-    dc:title "Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico" ;
     bibo:endPage "1722" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2012-11-28" ;
     bibo:startPage "1" ;
     bibo:volume "245" ;
+    dc:creator "Bousquet, Yves" ;
+    dc:date "2012" ;
+    dc:title "Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Abroscelis_Hope_1838>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Abroscelis> ;
-    dwc:class "Insecta" ;
-    dwc:family "Carabidae" ;
-    dwc:genus "Abroscelis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Hope, 1838" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Habroscelimorpha_Dokhtouroff_1883>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Habroscelimorpha> ;
-    dwc:ID-CoL "8KWBP" ;
     dwc:ID-ENA "93203" ;
     dwc:LSID "D499F9D7-122A-29AE-6C4E-8B40A0E82AD0" ;
     dwc:class "Insecta" ;
@@ -45,10 +42,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Dokhtouroff, 1883" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8KWBP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Habroscelimorpha> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Habroscelis_Agassiz_1846>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Habroscelis> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Habroscelis" ;
@@ -57,15 +55,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Agassiz, 1846" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Habroscelis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Abroscelis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Abroscelis_Hope_1838>
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Abroscelis" ;
@@ -73,36 +66,11 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carabidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Carabidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Hope, 1838" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Abroscelis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Habroscelimorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Habroscelimorpha" ;
@@ -110,10 +78,49 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carabidae>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Habroscelis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Habroscelis" ;
@@ -121,21 +128,16 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Abroscelis>
     dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Abroscelis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/D499F9D7122A29AE6C4E8B40A0E82AD0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Habroscelimorpha_Dokhtouroff_1883> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/D4/99/F9/Cicindela_dorsalis> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Abroscelis_Hope_1838>, <http://taxon-concept.plazi.org/id/Animalia/Habroscelis_Agassiz_1846> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.245.3416> ;
-    dc:creator "Bousquet, Yves" ;
-    a trt:Treatment .
-
