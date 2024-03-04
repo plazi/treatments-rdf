@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D18A23C85B18445B9A2AF395C9F8BE
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4900703>, <http://dx.doi.org/10.5281/zenodo.4900767> ;
+    dc:creator "Alvarenga, Herculano M. F.; Höfling, Elizabeth" ;
+    dc:title "Psilopterus bachmanni" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03D18A23C85B18445B9A2AF395C9F8BE.mc.3B103168C8581844580729719503FAFE> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Psilopterus_bachmanni_Moreno_1891> ;
+    trt:publishedIn <http://dx.doi.org/10.1590/S0031-10492003000400001> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1590/S0031-10492003000400001>
-    dc:creator "Alvarenga, Herculano M. F.", "Höfling, Elizabeth" ;
-    dc:date "2003" ;
-    dc:title "Systematic Revision Of The Phorusrhacidae (Aves: Ralliformes)" ;
     bibo:endPage "91" ;
     bibo:issue "4" ;
     bibo:journal "Papéis Avulsos de Zoologia" ;
     bibo:pubDate "2003-12-31" ;
     bibo:startPage "55" ;
     bibo:volume "43" ;
+    dc:creator "Alvarenga, Herculano M. F.; Höfling, Elizabeth" ;
+    dc:date "2003" ;
+    dc:title "Systematic Revision Of The Phorusrhacidae (Aves: Ralliformes)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4900703>, <http://dx.doi.org/10.5281/zenodo.4900767> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/4900767/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03D18A23C85B18445B9A2AF395C9F8BE.mc.3B103168C8581844580729719503FAFE>
+    dwc:locality "Lake Pueyrredon" ;
+    dwc:recordedBy "La Cueva" ;
+    trt:httpUri <https://treatment.plazi.org/id/03D18A23C85B18445B9A2AF395C9F8BE#3B103168C8581844580729719503FAFE> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Psilopterus_bachmanni_Moreno_1891>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_bachmanni> ;
     dwc:class "Aves" ;
     dwc:family "Phorusrhacidae" ;
     dwc:genus "Psilopterus" ;
@@ -43,60 +58,151 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Moreno &" ;
     dwc:species "bachmanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_bachmanni> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aves>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Patagornis_bachmanni_Moreno_1891>
     dwc:class "Aves" ;
+    dwc:family "Stereornithidae" ;
+    dwc:genus "Patagornis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Cariamiformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Moreno & Mercerat, 1891" ;
+    dwc:species "bachmanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Patagornis_bachmanni> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gruiformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
-    dwc:class "Aves" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gruiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phorusrhacidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gruiformes> ;
-    dwc:class "Aves" ;
-    dwc:family "Phorusrhacidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gruiformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Psilopterus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phorusrhacidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Psilopterus_communis_Moreno_1891>
     dwc:class "Aves" ;
     dwc:family "Phorusrhacidae" ;
     dwc:genus "Psilopterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Gruiformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Moreno & Mercerat, 1891" ;
+    dwc:species "communis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_communis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psilopterus_minutus_Ameghino_1981>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ameghino, 1981" ;
+    dwc:species "minutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_minutus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psilopterinae_Patterson_1960>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Patterson & Kraglievich, 1960" ;
+    dwc:subFamily "Psilopterinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Procariama_simplex_Rovereto_1914>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Procariama" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rovereto, 1914" ;
+    dwc:species "simplex" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Procariama_simplex> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psilopterus_lemoinei_Moreno_1891>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Moreno & Mercerat, 1891" ;
+    dwc:species "lemoinei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_lemoinei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paleopsilopterus_itaboraiensis_Alvarenga_1985>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Paleopsilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alvarenga, 1985" ;
+    dwc:species "itaboraiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paleopsilopterus_itaboraiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psilopterus_intermedius_Moreno_1891>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Moreno & Mercerat, 1891" ;
+    dwc:species "intermedius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_intermedius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pelecyornis_pueyrredonensis_Sinclair_1932>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Pelecyornis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sinclair & Farr, 1932" ;
+    dwc:species "pueyrredonensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pelecyornis_pueyrredonensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psilopterus_affinis_Ameghino_1899>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ameghino, 1899" ;
+    dwc:species "affinis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilopterus_affinis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mesembriornithinae_Kraglievich_1932>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Kraglievich, 1932" ;
+    dwc:subFamily "Mesembriornithinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mesembriornithinae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Psilopterus_bachmanni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
     dwc:class "Aves" ;
     dwc:family "Phorusrhacidae" ;
     dwc:genus "Psilopterus" ;
@@ -105,12 +211,258 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "bachmanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D18A23C85B18445B9A2AF395C9F8BE>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Psilopterus_bachmanni_Moreno_1891> ;
-    trt:publishedIn <http://dx.doi.org/10.1590/S0031-10492003000400001> ;
-    dc:creator "Alvarenga, Herculano M. F.", "Höfling, Elizabeth" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4900703>, <http://dx.doi.org/10.5281/zenodo.4900767> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Psilopterus>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phorusrhacidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Phorusrhacidae>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gruiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gruiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Patagornis_bachmanni>
+    dwc:class "Aves" ;
+    dwc:family "Stereornithidae" ;
+    dwc:genus "Patagornis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cariamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "bachmanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Patagornis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Patagornis>
+    dwc:class "Aves" ;
+    dwc:family "Stereornithidae" ;
+    dwc:genus "Patagornis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cariamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stereornithidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stereornithidae>
+    dwc:class "Aves" ;
+    dwc:family "Stereornithidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cariamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cariamiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cariamiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cariamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopterus_communis>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "communis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopterus_minutus>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "minutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopterinae>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Psilopterinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phorusrhacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Procariama_simplex>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Procariama" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "simplex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Procariama> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Procariama>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Procariama" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopteridae>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gruiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopterus_lemoinei>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "lemoinei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paleopsilopterus_itaboraiensis>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Paleopsilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "itaboraiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paleopsilopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paleopsilopterus>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Paleopsilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopterus_intermedius>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "intermedius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pelecyornis_pueyrredonensis>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Pelecyornis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pueyrredonensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pelecyornis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pelecyornis>
+    dwc:class "Aves" ;
+    dwc:family "Psilopteridae" ;
+    dwc:genus "Pelecyornis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilopterus_affinis>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:genus "Psilopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "affinis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mesembriornithinae>
+    dwc:class "Aves" ;
+    dwc:family "Phorusrhacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gruiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Mesembriornithinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phorusrhacidae> ;
+    a dwcFP:TaxonName .

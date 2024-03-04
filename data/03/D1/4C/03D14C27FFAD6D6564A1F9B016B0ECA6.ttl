@@ -1,22 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D14C27FFAD6D6564A1F9B016B0ECA6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.177033> ;
+    dc:creator "Mound, Laurence A.; Morris, David C." ;
+    dc:title "Klambothrips" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.177031> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Klambothrips> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.177031>
-    dc:creator "Morris, David C.", "Mound, Laurence A." ;
-    dc:date "2007" ;
-    dc:title "A new thrips pest of Myoporum cultivars in California, in a new genus of leaf-galling Australian Phlaeothripidae (Thysanoptera)" ;
     bibo:endPage "45" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "35" ;
     bibo:volume "1495" ;
+    dc:creator "Mound, Laurence A.; Morris, David C." ;
+    dc:date "2007" ;
+    dc:title "A new thrips pest of Myoporum cultivars in California, in a new genus of leaf-galling Australian Phlaeothripidae (Thysanoptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.177033> ;
     a fabio:JournalArticle .
 
@@ -25,28 +34,33 @@
     fabio:hasRepresentation "https://zenodo.org/record/177033/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Klambothrips_myopori_Mound_2007>
     dwc:class "Insecta" ;
+    dwc:family "Phlaeothripidae" ;
+    dwc:genus "Klambothrips" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Thysanoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "myopori" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/58GD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Klambothrips_myopori> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Klambothrips_oleariae_Mound_2007>
+    dwc:class "Insecta" ;
+    dwc:family "Phlaeothripidae" ;
+    dwc:genus "Klambothrips" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Thysanoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "oleariae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/58GD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Klambothrips_oleariae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Klambothrips>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae> ;
     dwc:class "Insecta" ;
     dwc:family "Phlaeothripidae" ;
     dwc:genus "Klambothrips" ;
@@ -54,31 +68,68 @@
     dwc:order "Thysanoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Phlaeothripidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thysanoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Phlaeothripidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Thysanoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thysanoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Thysanoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Thysanoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D14C27FFAD6D6564A1F9B016B0ECA6>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.177031> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Klambothrips> ;
-    dc:creator "Morris, David C.", "Mound, Laurence A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.177033> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Klambothrips_myopori>
+    dwc:class "Insecta" ;
+    dwc:family "Phlaeothripidae" ;
+    dwc:genus "Klambothrips" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Thysanoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "myopori" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Klambothrips> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Klambothrips_oleariae>
+    dwc:class "Insecta" ;
+    dwc:family "Phlaeothripidae" ;
+    dwc:genus "Klambothrips" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Thysanoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "oleariae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Klambothrips> ;
+    a dwcFP:TaxonName .
