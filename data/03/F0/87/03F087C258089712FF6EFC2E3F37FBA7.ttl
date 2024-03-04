@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F087C258089712FF6EFC2E3F37FBA7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5494701> ;
+    dc:creator "Ahrens, Dirk; Pham, Phu Van" ;
+    dc:title "Neoserica tramton Ahrens & Pham 2021, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F087C258089712FF6EFC2E3F37FBA7.mc.3B313C8958089714FE2AFB9A38ABFBEC>, <http://tb.plazi.org/GgServer/dwcaRecords/03F087C258089712FF6EFC2E3F37FBA7.mc.3B313C8958089714FC5EFBBE3E74FBC8> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neoserica_tramton_Ahrens_2021> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5032.3.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5032.3.3>
-    dc:creator "Ahrens, Dirk", "Pham, Phu Van" ;
-    dc:date "2021" ;
-    dc:title "Additions to the Neoserica calva group from continental South East Asia (Coleoptera: Scarabaeidae: Melolonthinae: Sericini)" ;
     bibo:endPage "378" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-09-08" ;
     bibo:startPage "357" ;
     bibo:volume "5032" ;
+    dc:creator "Ahrens, Dirk; Pham, Phu Van" ;
+    dc:date "2021" ;
+    dc:title "Additions to the Neoserica calva group from continental South East Asia (Coleoptera: Scarabaeidae: Melolonthinae: Sericini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5494701> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,29 @@
     fabio:hasRepresentation "https://zenodo.org/record/5494701/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F087C258089712FF6EFC2E3F37FBA7.mc.3B313C8958089714FE2AFB9A38ABFBEC>
+    dwc:collectionCode "ZFMK" ;
+    dwc:eventDate "2015-05-16" ;
+    dwc:locality "Lao Cai Prov." ;
+    dwc:recordedBy "A. Skale" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1925" ;
+    dwc:verbatimLongitude "22.353283" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F087C258089712FF6EFC2E3F37FBA7#3B313C8958089714FE2AFB9A38ABFBEC> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03F087C258089712FF6EFC2E3F37FBA7.mc.3B313C8958089714FC5EFBBE3E74FBC8>
+    dwc:collectionCode "NME" ;
+    dwc:eventDate "2015-05-16" ;
+    dwc:locality "Lao Cai Prov." ;
+    dwc:recordedBy "A. Skale" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "1925" ;
+    dwc:verbatimLongitude "22.353283" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F087C258089712FF6EFC2E3F37FBA7#3B313C8958089714FC5EFBBE3E74FBC8> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Neoserica_tramton_Ahrens_2021>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoserica_tramton> ;
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Neoserica" ;
@@ -38,60 +69,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Ahrens & Pham" ;
     dwc:species "tramton" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoserica_tramton> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Melolonthidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Melolonthidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neoserica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neoserica_allosigillata_Ahrens_2021>
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Neoserica" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens & Pham" ;
+    dwc:species "allosigillata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoserica_allosigillata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neoserica_diplospinosa_Ahrens_2021>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Neoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens & Pham" ;
+    dwc:species "diplospinosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoserica_diplospinosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neoserica_koelkebecki_Liu_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Neoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Liu, Fabrizi, Bai, Yang & Ahrens, 2014" ;
+    dwc:species "koelkebecki" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoserica_koelkebecki> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoserica_tramton>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neoserica> ;
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Neoserica" ;
@@ -100,12 +120,91 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "tramton" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neoserica> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F087C258089712FF6EFC2E3F37FBA7>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neoserica_tramton_Ahrens_2021> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5032.3.3> ;
-    dc:creator "Ahrens, Dirk", "Pham, Phu Van" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5494701> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Neoserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Neoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Melolonthidae>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoserica_allosigillata>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Neoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "allosigillata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neoserica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoserica_diplospinosa>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Neoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "diplospinosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neoserica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoserica_koelkebecki>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Neoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "koelkebecki" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neoserica> ;
+    a dwcFP:TaxonName .
