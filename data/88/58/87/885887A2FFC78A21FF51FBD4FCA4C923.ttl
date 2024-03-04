@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:885887A2FFC78A21FF51FBD4FCA4C923
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3748527> ;
+    dc:creator "Burgin, Connor" ;
+    dc:title "Rhinolophus alticolus Sanborn 1936" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alticolus_Sanborn_1936> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alcyone_alticolus_Sanborn_1936> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.3748525> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.3748525>
+    bibo:endPage "332" ;
+    bibo:startPage "280" ;
     dc:creator "Burgin, Connor" ;
     dc:date "2019" ;
     dc:title "Rhinolophidae" ;
-    bibo:endPage "332" ;
-    bibo:startPage "280" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3748527> ;
     a fabio:BookSection .
 
@@ -23,8 +34,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/3748527/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alticolus_Sanborn_1936>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinolophidae" ;
+    dwc:genus "Rhinolophus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sanborn, 1936" ;
+    dwc:species "alticolus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alticolus> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alcyone_alticolus_Sanborn_1936>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone_alticolus> ;
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
     dwc:genus "Rhinolophus" ;
@@ -35,10 +58,10 @@
     dwc:scientificNameAuthorship "Sanborn, 1936" ;
     dwc:species "alcyone" ;
     dwc:subSpecies "alticolus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone_alticolus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alticolus_Sanborn_1936>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alticolus> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_simulator_Andersen_1904>
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
     dwc:genus "Rhinolophus" ;
@@ -46,51 +69,50 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Sanborn, 1936" ;
-    dwc:species "alticolus" ;
+    dwc:scientificNameAuthorship "K Andersen, 1904" ;
+    dwc:species "simulator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_simulator> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhinolophidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_capensis_Lichtenstein_1823>
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
+    dwc:genus "Rhinolophus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lichtenstein, 1823" ;
+    dwc:species "capensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_capensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alcyone_Temminck_1852>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinolophidae" ;
+    dwc:genus "Rhinolophus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Temminck, 1852" ;
+    dwc:species "alcyone" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alticolus>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinolophidae" ;
+    dwc:genus "Rhinolophus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "alticolus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhinolophus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophidae> ;
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
     dwc:genus "Rhinolophus" ;
@@ -98,22 +120,49 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus> ;
+<http://taxon-name.plazi.org/id/Animalia/Rhinolophidae>
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
-    dwc:genus "Rhinolophus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "alcyone" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone_alticolus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone> ;
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
     dwc:genus "Rhinolophus" ;
@@ -123,10 +172,10 @@
     dwc:rank "subSpecies" ;
     dwc:species "alcyone" ;
     dwc:subSpecies "alticolus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alticolus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus> ;
+<http://taxon-name.plazi.org/id/Animalia/Rhinolophus_alcyone>
     dwc:class "Mammalia" ;
     dwc:family "Rhinolophidae" ;
     dwc:genus "Rhinolophus" ;
@@ -134,14 +183,30 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "alticolus" ;
+    dwc:species "alcyone" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/885887A2FFC78A21FF51FBD4FCA4C923>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alticolus_Sanborn_1936> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhinolophus_alcyone_alticolus_Sanborn_1936> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.3748525> ;
-    dc:creator "Burgin, Connor" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3748527> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rhinolophus_simulator>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinolophidae" ;
+    dwc:genus "Rhinolophus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "simulator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Rhinolophus_capensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinolophidae" ;
+    dwc:genus "Rhinolophus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "capensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinolophus> ;
+    a dwcFP:TaxonName .
