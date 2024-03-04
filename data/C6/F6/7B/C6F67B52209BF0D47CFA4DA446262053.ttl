@@ -1,33 +1,44 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///workspace/rdf/data/C6/F6/7B/C6F67B52209BF0D47CFA4DA446262053.rdf>
-    dc:description "Figures 1 - 7. Quartinia capensis 1 ♀, lateral view (x 13) 2 ♂, lateral view (x 15) 3 ♀, dorsal view (x 13) 4 ♂, dorsal view (x 15) 5 ♀, head, front view (x 16) 6 ♂, head, front view (x 20) 7 ♂, tergum VII, dorsal view (x 22)." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/11284" ;
-    a fabio:Figure .
+treatment:C6F67B52209BF0D47CFA4DA446262053
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Quartinioides_capensis>' due to issues with rank ;
+    cito:cites <https://binary.pensoft.net/fig/11284> ;
+    dc:creator "Gess, Friedrich W." ;
+    dc:title "Quartinia capensis Kohl" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Quartinia_capensis>, <http://taxon-name.plazi.org/id/Animalia/Quartinia_capensis_scutellimacula> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Quartinia_scutellimacula_Schulthess_1929> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.22.871> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Quartinia_capensis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.22.871>
-    dc:creator "Gess, Friedrich W." ;
-    dc:date "2011" ;
-    dc:title "The genus Quartinia Ed. Andre, 1884 (Hymenoptera, Vespidae, Masarinae) in Southern Africa. Part V. New and little known species with incomplete venation" ;
     bibo:endPage "43" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2011-09-28" ;
     bibo:startPage "29" ;
     bibo:volume "22" ;
-    fabio:hasPart <file:///workspace/rdf/data/C6/F6/7B/C6F67B52209BF0D47CFA4DA446262053.rdf> ;
+    dc:creator "Gess, Friedrich W." ;
+    dc:date "2011" ;
+    dc:title "The genus Quartinia Ed. Andre, 1884 (Hymenoptera, Vespidae, Masarinae) in Southern Africa. Part V. New and little known species with incomplete venation" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/11284> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/11284>
+    dc:description "Figures 1 - 7. Quartinia capensis 1 ♀, lateral view (x 13) 2 ♂, lateral view (x 15) 3 ♀, dorsal view (x 13) 4 ♂, dorsal view (x 15) 5 ♀, head, front view (x 16) 6 ♂, head, front view (x 20) 7 ♂, tergum VII, dorsal view (x 22)." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/11284" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Quartinia_scutellimacula_Schulthess_1929>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Quartinia_scutellimacula> ;
     dwc:class "Insecta" ;
     dwc:family "Masaridae" ;
     dwc:genus "Quartinia" ;
@@ -37,60 +48,35 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Schulthess, 1929" ;
     dwc:species "scutellimacula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Quartinia_scutellimacula> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Limonium_scabrum_Thunb._1891>
+    dwc:class "Dicotyledoneae" ;
+    dwc:family "Plumbaginaceae" ;
+    dwc:genus "Limonium" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Plumbaginales" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuntze, 1891" ;
+    dwc:species "scabrum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Limonium_scabrum> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Masaridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Masaridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Quartinia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Masaridae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Masaridae" ;
-    dwc:genus "Quartinia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
+<http://taxon-concept.plazi.org/id/Plantae/Drosanthemum_Schwantes_1927>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Aizoaceae" ;
+    dwc:genus "Drosanthemum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Schwantes, 1927" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Drosanthemum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Quartinia_capensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Quartinia> ;
     dwc:class "Insecta" ;
     dwc:family "Masaridae" ;
     dwc:genus "Quartinia" ;
@@ -99,10 +85,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "capensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Quartinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Quartinia>
+    dwc:class "Insecta" ;
+    dwc:family "Masaridae" ;
+    dwc:genus "Quartinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Masaridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Masaridae>
+    dwc:class "Insecta" ;
+    dwc:family "Masaridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Quartinia_scutellimacula>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Quartinia> ;
     dwc:class "Insecta" ;
     dwc:family "Masaridae" ;
     dwc:genus "Quartinia" ;
@@ -111,14 +147,112 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "scutellimacula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Quartinia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C6F67B52209BF0D47CFA4DA446262053>
-    trt:citesTaxonName <file:///workspace/rdf/data/C6/F6/7B/Quartinia_capensis>, <file:///workspace/rdf/data/C6/F6/7B/Quartinia_capensis_scutellimacula> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Quartinia_scutellimacula_Schulthess_1929> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.22.871> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Quartinia_capensis> ;
-    dc:creator "Gess, Friedrich W." ;
-    cito:cites <file:///workspace/rdf/data/C6/F6/7B/C6F67B52209BF0D47CFA4DA446262053.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Limonium_scabrum>
+    dwc:class "Dicotyledoneae" ;
+    dwc:family "Plumbaginaceae" ;
+    dwc:genus "Limonium" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Plumbaginales" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:species "scabrum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Limonium> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Limonium>
+    dwc:class "Dicotyledoneae" ;
+    dwc:family "Plumbaginaceae" ;
+    dwc:genus "Limonium" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Plumbaginales" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Plumbaginaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Plumbaginaceae>
+    dwc:class "Dicotyledoneae" ;
+    dwc:family "Plumbaginaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Plumbaginales" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Plumbaginales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Plumbaginales>
+    dwc:class "Dicotyledoneae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Plumbaginales" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dicotyledoneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Dicotyledoneae>
+    dwc:class "Dicotyledoneae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Angiospermae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Angiospermae>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Drosanthemum>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Aizoaceae" ;
+    dwc:genus "Drosanthemum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Aizoaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Aizoaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Aizoaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Caryophyllales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
