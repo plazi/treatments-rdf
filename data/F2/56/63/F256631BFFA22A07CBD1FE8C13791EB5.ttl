@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:F256631BFFA22A07CBD1FE8C13791EB5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.189418>, <http://dx.doi.org/10.5281/zenodo.189419>, <http://dx.doi.org/10.5281/zenodo.189430> ;
+    dc:creator "Aguiar, Antonio J. C." ;
+    dc:title "Lophopedia nigriceps Friese 1899" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lophopedia_nigriceps_Friese_1899> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Paratetrapedia_nigriceps>, <http://taxon-name.plazi.org/id/Animalia/Lophopedia_nigriceps> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_testacea_nigriceps_Friese_1899> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.189415> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.189415>
-    dc:creator "Aguiar, Antonio J. C." ;
-    dc:date "2009" ;
-    dc:title "Taxonomic revision of the bee genus Lophopedia Michener and Moure (Hymenoptera, Apidae, Tapinotaspidini)" ;
     bibo:endPage "52" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "2193" ;
+    dc:creator "Aguiar, Antonio J. C." ;
+    dc:date "2009" ;
+    dc:title "Taxonomic revision of the bee genus Lophopedia Michener and Moure (Hymenoptera, Apidae, Tapinotaspidini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.189418>, <http://dx.doi.org/10.5281/zenodo.189419>, <http://dx.doi.org/10.5281/zenodo.189430> ;
     a fabio:JournalArticle .
 
@@ -36,8 +47,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Lophopedia_nigriceps_Friese_1899>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lophopedia_nigriceps> ;
-    dwc:ID-CoL "72N6Q" ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Lophopedia" ;
@@ -47,11 +56,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Friese, 1899" ;
     dwc:species "nigriceps" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/72N6Q> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lophopedia_nigriceps> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_testacea_nigriceps_Friese_1899>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea_nigriceps> ;
-    dwc:ID-CoL "5LGK7" ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Tetrapedia" ;
@@ -62,60 +71,23 @@
     dwc:scientificNameAuthorship "Friese, 1899: 298" ;
     dwc:species "testacea" ;
     dwc:variety "nigriceps" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/72N6Q> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea_nigriceps> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Apidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Apidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lophopedia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lophopedia_savanicola_Aguiar_2009>
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Lophopedia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "savanicola" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lophopedia_savanicola> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lophopedia_nigriceps>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lophopedia> ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Lophopedia" ;
@@ -124,33 +96,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "nigriceps" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lophopedia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Tetrapedia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Lophopedia>
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
-    dwc:genus "Tetrapedia" ;
+    dwc:genus "Lophopedia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrapedia> ;
+<http://taxon-name.plazi.org/id/Animalia/Apidae>
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
-    dwc:genus "Tetrapedia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "testacea" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea_nigriceps>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea> ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Tetrapedia" ;
@@ -160,14 +159,40 @@
     dwc:rank "variety" ;
     dwc:species "testacea" ;
     dwc:variety "nigriceps" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F256631BFFA22A07CBD1FE8C13791EB5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lophopedia_nigriceps_Friese_1899> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/F2/56/63/Lophopedia_nigriceps>, <file:///workdir/tmprdf/data/F2/56/63/Paratetrapedia_nigriceps> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tetrapedia_testacea_nigriceps_Friese_1899> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.189415> ;
-    dc:creator "Aguiar, Antonio J. C." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.189418>, <http://dx.doi.org/10.5281/zenodo.189419>, <http://dx.doi.org/10.5281/zenodo.189430> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tetrapedia_testacea>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Tetrapedia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "testacea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrapedia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Tetrapedia>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Tetrapedia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lophopedia_savanicola>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Lophopedia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "savanicola" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lophopedia> ;
+    a dwcFP:TaxonName .
