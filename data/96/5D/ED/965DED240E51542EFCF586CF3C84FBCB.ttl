@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:965DED240E51542EFCF586CF3C84FBCB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5375618> ;
+    dc:creator "Popova, Irina M.; Baumgartner, Peter O.; Guex, Jean; Tochilina, Svetlana V.; Glezer, Zoya I." ;
+    dc:title "Podocyrtis papalis Ehrenberg 1875" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Chromista/Podocyrtis_papalis_Ehrenberg_1875> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Chromista/Podocyrtis_papalis> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5375608> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5375608>
-    dc:creator "Baumgartner, Peter O.", "Glezer, Zoya I.", "Guex, Jean", "Popova, Irina M.", "Tochilina, Svetlana V." ;
-    dc:date "2002" ;
-    dc:title "Radiolarian biostratigraphy of Paleogene deposits of the Russian Platform (Voronesh Anticline)" ;
     bibo:endPage "59" ;
     bibo:issue "1" ;
     bibo:journal "Geodiversitas" ;
     bibo:startPage "7" ;
     bibo:volume "24" ;
+    dc:creator "Popova, Irina M.; Baumgartner, Peter O.; Guex, Jean; Tochilina, Svetlana V.; Glezer, Zoya I." ;
+    dc:date "2002" ;
+    dc:title "Radiolarian biostratigraphy of Paleogene deposits of the Russian Platform (Voronesh Anticline)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5375618> ;
     a fabio:JournalArticle .
 
@@ -27,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Chromista/Podocyrtis_papalis_Ehrenberg_1875>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Podocyrtis_papalis> ;
     dwc:class "Polycystina" ;
     dwc:family "Pterocorythidae" ;
     dwc:genus "Podocyrtis" ;
@@ -35,26 +44,24 @@
     dwc:order "Nassellaria" ;
     dwc:phylum "Radiozoa" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Ehrenberg, 1875" ;
+    dwc:scientificNameAuthorship "Ehrenberg, 1875", "Ehrenberg, 1875: 62" ;
     dwc:species "papalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Podocyrtis_papalis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Chromista>
-    dwc:kingdom "Chromista" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Nassellaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Polycystina> ;
+<http://taxon-name.plazi.org/id/Chromista/Podocyrtis_papalis>
     dwc:class "Polycystina" ;
+    dwc:family "Pterocorythidae" ;
+    dwc:genus "Podocyrtis" ;
     dwc:kingdom "Chromista" ;
     dwc:order "Nassellaria" ;
     dwc:phylum "Radiozoa" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "papalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Podocyrtis> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Podocyrtis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pterocorythidae> ;
     dwc:class "Polycystina" ;
     dwc:family "Pterocorythidae" ;
     dwc:genus "Podocyrtis" ;
@@ -62,50 +69,44 @@
     dwc:order "Nassellaria" ;
     dwc:phylum "Radiozoa" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Podocyrtis_papalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Podocyrtis> ;
-    dwc:class "Polycystina" ;
-    dwc:family "Pterocorythidae" ;
-    dwc:genus "Podocyrtis" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Nassellaria" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "species" ;
-    dwc:species "papalis" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Polycystina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Radiozoa> ;
-    dwc:class "Polycystina" ;
-    dwc:kingdom "Chromista" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pterocorythidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Pterocorythidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Nassellaria> ;
     dwc:class "Polycystina" ;
     dwc:family "Pterocorythidae" ;
     dwc:kingdom "Chromista" ;
     dwc:order "Nassellaria" ;
     dwc:phylum "Radiozoa" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Nassellaria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Nassellaria>
+    dwc:class "Polycystina" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Nassellaria" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Polycystina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Polycystina>
+    dwc:class "Polycystina" ;
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Radiozoa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Radiozoa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
     dwc:kingdom "Chromista" ;
     dwc:phylum "Radiozoa" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/965DED240E51542EFCF586CF3C84FBCB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Chromista/Podocyrtis_papalis_Ehrenberg_1875> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/96/5D/ED/Podocyrtis_papalis> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5375608> ;
-    dc:creator "Baumgartner, Peter O.", "Glezer, Zoya I.", "Guex, Jean", "Popova, Irina M.", "Tochilina, Svetlana V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5375618> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Chromista>
+    dwc:kingdom "Chromista" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
