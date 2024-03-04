@@ -1,27 +1,47 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03EF87E1FF917A356FB37F30FBA0F461
+    dc:creator "Kovařík, František" ;
+    dc:title "Chaerilus seiteri Kovarik 2012, sp. n." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03EF87E1FF917A356FB37F30FBA0F461.mc.3B2E3CAAFF917A3B68327F91FC36F7FB>, <http://tb.plazi.org/GgServer/dwcaRecords/03EF87E1FF917A356FB37F30FBA0F461.mc.3B2E3CAAFF917A3B6F4C7FC9FB74F461> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chaerilus_seiteri_Kovarik_2012> ;
+    trt:publishedIn <http://publication.plazi.org/id/FFD6FF99FF977A3D6C727E12FFE1F64E> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/FFD6FF99FF977A3D6C727E12FFE1F64E>
-    dc:creator "Kovařík, František" ;
-    dc:date "2012" ;
-    dc:title "Five new species of Chaerilus Simon, 1877 from China, Indonesia, Malaysia, Philippines, Thailand, and Vietnam (Scorpiones: Chaerilidae)" ;
     bibo:endPage "14" ;
     bibo:journal "Euscorpius" ;
     bibo:startPage "1" ;
     bibo:volume "149" ;
+    dc:creator "Kovařík, František" ;
+    dc:date "2012" ;
+    dc:title "Five new species of Chaerilus Simon, 1877 from China, Indonesia, Malaysia, Philippines, Thailand, and Vietnam (Scorpiones: Chaerilidae)" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03EF87E1FF917A356FB37F30FBA0F461.mc.3B2E3CAAFF917A3B68327F91FC36F7FB>
+    dwc:locality "Negros Island" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03EF87E1FF917A356FB37F30FBA0F461#3B2E3CAAFF917A3B68327F91FC36F7FB> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03EF87E1FF917A356FB37F30FBA0F461.mc.3B2E3CAAFF917A3B6F4C7FC9FB74F461>
+    dwc:collectionCode "NMWA, FKCP" ;
+    dwc:locality "Negros Island" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03EF87E1FF917A356FB37F30FBA0F461#3B2E3CAAFF917A3B6F4C7FC9FB74F461> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Chaerilus_seiteri_Kovarik_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_seiteri> ;
-    dwc:ID-CoL "T9ZV" ;
     dwc:class "Arachnida" ;
     dwc:family "Chaerilidae" ;
     dwc:genus "Chaerilus" ;
@@ -31,51 +51,76 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Kovarik" ;
     dwc:species "seiteri" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/T9ZV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_seiteri> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chaerilidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scorpiones> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Chaerilidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chaerilus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Chaerilus_seiteri_Kova%C5%99%C3%ADk_2012>
     dwc:class "Arachnida" ;
     dwc:family "Chaerilidae" ;
     dwc:genus "Chaerilus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kovařík, 2012" ;
+    dwc:species "seiteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_seiteri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chaerilus_rectimanus_Pocock_1899>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pocock, 1899" ;
+    dwc:species "rectimanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_rectimanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chaerilus_sejnai_Kovarik_2005>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kovarik, 2005" ;
+    dwc:species "sejnai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_sejnai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chaerilus_phami_Lourenco_2011>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lourenco, 2011" ;
+    dwc:species "phami" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_phami> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chaerilus_petrzelkai_Kovarik_2000>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kovarik, 2000" ;
+    dwc:species "petrzelkai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaerilus_petrzelkai> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Chaerilus_seiteri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilus> ;
     dwc:class "Arachnida" ;
     dwc:family "Chaerilidae" ;
     dwc:genus "Chaerilus" ;
@@ -84,20 +129,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "seiteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaerilus>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaerilidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scorpiones> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Scorpiones>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
     dwc:class "Arachnida" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03EF87E1FF917A356FB37F30FBA0F461>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chaerilus_seiteri_Kovarik_2012> ;
-    trt:publishedIn <http://publication.plazi.org/id/FFD6FF99FF977A3D6C727E12FFE1F64E> ;
-    dc:creator "Kovařík, František" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaerilus_rectimanus>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rectimanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaerilus_sejnai>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sejnai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaerilus_phami>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "phami" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaerilus_petrzelkai>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaerilidae" ;
+    dwc:genus "Chaerilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "petrzelkai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaerilus> ;
+    a dwcFP:TaxonName .

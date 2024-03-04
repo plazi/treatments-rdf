@@ -1,28 +1,45 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.11646/phytotaxa.576.1.6>
-    dc:creator "Gowen, David", "Johnson, Leigh A." ;
-    dc:date "2022" ;
-    dc:title "Restoring the original taxonomic concept for Navarretia minima (Polemoniaceae): a revised synonymy and new combination" ;
+treatment:03EF878CEC7AFFDCFF464F9EFAF3F81E
+    dc:creator "Johnson, Leigh A.; Gowen, David" ;
+    dc:title "Navarretia leucocephala subsp. suksdorfii L. A. Johnson & D. Gowen 2022, comb. et stat. nov." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/03EF878CEC7AFFDCFF464F9EFAF3F81E/WS%2043975%2C%20WS001522> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_suksdorfii>, <http://taxon-name.plazi.org/id/Plantae/Navarretia_minima_suksdorfii>, <http://taxon-name.plazi.org/id/Plantae/Navarretia_pilosifaucis> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii_Johnson_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "112" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2022-12-15" ;
     bibo:startPage "101" ;
     bibo:volume "576" ;
+    dc:creator "Johnson, Leigh A.; Gowen, David" ;
+    dc:date "2022" ;
+    dc:title "Restoring the original taxonomic concept for Navarretia minima (Polemoniaceae): a revised synonymy and new combination" ;
     a fabio:JournalArticle .
 
+<http://treatment.plazi.org/id/03EF878CEC7AFFDCFF464F9EFAF3F81E/WS%2043975%2C%20WS001522>
+    dwc:catalogNumber "WS 43975, WS001522" ;
+    dwc:collectionCode "WS" ;
+    dwc:typeStatus "holotype" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii_Johnson_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Polemoniaceae" ;
     dwc:genus "Navarretia" ;
@@ -30,46 +47,79 @@
     dwc:order "Ericales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "(Howell) L. A. Johnson & D. Gowen" ;
+    dwc:scientificNameAuthorship "(Howell) L. A. Johnson & D. Gowen", "L. A. Johnson & D. Gowen, 2022" ;
     dwc:species "leucocephala" ;
     dwc:subSpecies "suksdorfii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Ericales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Ericales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Navarretia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polemoniaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Navarretia_minima_Jepson_1943>
     dwc:class "Magnoliopsida" ;
     dwc:family "Polemoniaceae" ;
     dwc:genus "Navarretia" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Ericales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "sensu Jepson (1943)", "sensu Jepson, 1943" ;
+    dwc:species "minima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_minima> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Navarretia_leucocephala_minima_Day_1993>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "sensu Day (1993 a" ;
+    dwc:species "leucocephala" ;
+    dwc:subSpecies "minima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala_minima> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Navarretia_intertexta_1833%3A_1622>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bentham 1833:, 1622" ;
+    dwc:species "intertexta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_intertexta> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Navarretia_propinqua_Suksdorf_1906>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Suksdorf, 1906" ;
+    dwc:species "propinqua" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Navarretia_propinqua> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "leucocephala" ;
+    dwc:subSpecies "suksdorfii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Polemoniaceae" ;
     dwc:genus "Navarretia" ;
@@ -78,10 +128,72 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "leucocephala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala> ;
+<http://taxon-name.plazi.org/id/Plantae/Navarretia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polemoniaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Polemoniaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ericales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ericales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Navarretia_minima>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "minima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala_minima>
     dwc:class "Magnoliopsida" ;
     dwc:family "Polemoniaceae" ;
     dwc:genus "Navarretia" ;
@@ -90,37 +202,30 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "subSpecies" ;
     dwc:species "leucocephala" ;
-    dwc:subSpecies "suksdorfii" ;
+    dwc:subSpecies "minima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia_leucocephala> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Polemoniaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ericales> ;
+<http://taxon-name.plazi.org/id/Plantae/Navarretia_intertexta>
     dwc:class "Magnoliopsida" ;
     dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Ericales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "intertexta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Navarretia_propinqua>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polemoniaceae" ;
+    dwc:genus "Navarretia" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "species" ;
+    dwc:species "propinqua" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Navarretia> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03EF878CEC7AFFDCFF464F9EFAF3F81E>
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/03/EF/87/Navarretia_minima_suksdorfii>, <file:///app/workdir/tmprdf/data/03/EF/87/Navarretia_pilosifaucis>, <file:///app/workdir/tmprdf/data/03/EF/87/Navarretia_suksdorfii> ;
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Navarretia_leucocephala_suksdorfii_Johnson_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Gowen, David", "Johnson, Leigh A." ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03EF878CEC7AFFDCFF464F9EFAF3F81E/WS%2043975%2C%20WS001522> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/03EF878CEC7AFFDCFF464F9EFAF3F81E/WS%2043975%2C%20WS001522>
-    dwc:catalogNumber "WS 43975, WS001522" ;
-    dwc:collectionCode "WS" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
-
