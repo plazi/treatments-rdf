@@ -1,25 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039187BEFFD6FFC2A6EF53B63837F90B
+    dc:creator "Mary Ellen Holden" ;
+    dc:title "Eozapus Preble 1899" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eozapus_Preble_1899> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.7353072> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.7353072>
+    bibo:endPage "499" ;
+    bibo:startPage "487" ;
     dc:creator "Mary Ellen Holden" ;
     dc:date "1993" ;
     dc:title "Order Rodentia - Family Dipodidae" ;
-    bibo:endPage "499" ;
-    bibo:startPage "487" ;
     a fabio:BookSection .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eozapus_Preble_1899>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eozapus> ;
-    dwc:ID-CoL "4CNS" ;
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Eozapus" ;
@@ -28,32 +34,25 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Preble, 1899" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4CNS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eozapus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dipodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Zapus_setchuanus_Pousargues_1896>
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
+    dwc:genus "Zapus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pousargues, 1896" ;
+    dwc:species "setchuanus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4CNS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zapus_setchuanus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Eozapus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
     dwc:class "Mammalia" ;
     dwc:family "Dipodidae" ;
     dwc:genus "Eozapus" ;
@@ -61,28 +60,67 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Dipodidae>
     dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039187BEFFD6FFC2A6EF53B63837F90B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eozapus_Preble_1899> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.7353072> ;
-    dc:creator "Mary Ellen Holden" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zapus_setchuanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Zapus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "setchuanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zapus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zapus>
+    dwc:class "Mammalia" ;
+    dwc:family "Dipodidae" ;
+    dwc:genus "Zapus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dipodidae> ;
+    a dwcFP:TaxonName .
