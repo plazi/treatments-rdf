@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:5849C365FFCCFFA95A53F96CAC6FA6DF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5780150> ;
+    dc:creator "Makarkin, Vladimir N.; Ansorge, Jörg; Khramov, Alexander V." ;
+    dc:title "Epigambria longipennis Handlirsch 1939" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Epigambria_longipennis_Handlirsch_1939> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/palaeoentomology.4.6.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/palaeoentomology.4.6.1>
-    dc:creator "Ansorge, Jörg", "Khramov, Alexander V.", "Makarkin, Vladimir N." ;
-    dc:date "2021" ;
-    dc:title "Revision of Epigambriinae Handlirsch, stat. nov., a subfamily of Early Jurassic Ithonidae s. l. (Neuroptera)" ;
     bibo:endPage "531" ;
     bibo:issue "6" ;
     bibo:journal "Palaeoentomology" ;
     bibo:pubDate "2021-12-14" ;
     bibo:startPage "516" ;
     bibo:volume "4" ;
+    dc:creator "Makarkin, Vladimir N.; Ansorge, Jörg; Khramov, Alexander V." ;
+    dc:date "2021" ;
+    dc:title "Revision of Epigambriinae Handlirsch, stat. nov., a subfamily of Early Jurassic Ithonidae s. l. (Neuroptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5780150> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Epigambria_longipennis_Handlirsch_1939>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epigambria_longipennis> ;
-    dwc:ID-CoL "6G5GV" ;
     dwc:class "Insecta" ;
     dwc:family "Epigambriidae" ;
     dwc:genus "Epigambria" ;
@@ -37,24 +45,38 @@
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Handlirsch, 1939" ;
+    dwc:scientificNameAuthorship "Handlirsch, 1939", "Handlirsch, 1939: 76" ;
     dwc:species "longipennis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6G5GV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epigambria_longipennis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Harpoceras_falciferum_Sowerby_1820>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Hildoceratidae" ;
+    dwc:genus "Harpoceras" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Ammonoidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sowerby, 1820" ;
+    dwc:species "falciferum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Harpoceras_falciferum> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Epigambria_longipennis>
+    dwc:class "Insecta" ;
+    dwc:family "Epigambriidae" ;
+    dwc:genus "Epigambria" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "species" ;
+    dwc:species "longipennis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epigambria> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Epigambria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epigambriidae> ;
     dwc:class "Insecta" ;
     dwc:family "Epigambriidae" ;
     dwc:genus "Epigambria" ;
@@ -62,51 +84,101 @@
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Epigambria_longipennis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epigambria> ;
-    dwc:class "Insecta" ;
-    dwc:family "Epigambriidae" ;
-    dwc:genus "Epigambria" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "longipennis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epigambriidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Epigambriidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
     dwc:class "Insecta" ;
     dwc:family "Epigambriidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Neuroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5849C365FFCCFFA95A53F96CAC6FA6DF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Epigambria_longipennis_Handlirsch_1939> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/palaeoentomology.4.6.1> ;
-    dc:creator "Ansorge, Jörg", "Khramov, Alexander V.", "Makarkin, Vladimir N." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5780150> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Harpoceras_falciferum>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Hildoceratidae" ;
+    dwc:genus "Harpoceras" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ammonoidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "falciferum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Harpoceras> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Harpoceras>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Hildoceratidae" ;
+    dwc:genus "Harpoceras" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ammonoidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hildoceratidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hildoceratidae>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Hildoceratidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ammonoidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ammonoidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ammonoidea>
+    dwc:class "Cephalopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ammonoidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cephalopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cephalopoda>
+    dwc:class "Cephalopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
