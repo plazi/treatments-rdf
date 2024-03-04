@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F7DB5D2906FFE08D19FA206240FD7E
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5381424> ;
+    dc:creator "Rook, Lorenzo" ;
+    dc:title "Eucyon minor" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eucyon_minor_Chardin_1930> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Canis_chihliensis_minor_Chardin_1939> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5381420> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5381420>
-    dc:creator "Rook, Lorenzo" ;
-    dc:date "2009" ;
-    dc:title "The wide ranging genus Eucyon Tedford & Qiu, 1996 (Mammalia, Carnivora, Canidae, Canini) in the Mio-Pliocene of the Old World" ;
     bibo:endPage "741" ;
     bibo:issue "4" ;
     bibo:journal "Geodiversitas" ;
     bibo:startPage "723" ;
     bibo:volume "31" ;
+    dc:creator "Rook, Lorenzo" ;
+    dc:date "2009" ;
+    dc:title "The wide ranging genus Eucyon Tedford & Qiu, 1996 (Mammalia, Carnivora, Canidae, Canini) in the Mio-Pliocene of the Old World" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5381424> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/5381424/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Eucyon_minor_Chardin_1930>
+    dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:genus "Eucyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Teilhard de Chardin & Piveteau, 1930)", "Teilhard de Chardin & Piveteau, 1930" ;
+    dwc:species "minor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eucyon_minor> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Canis_chihliensis_minor_Chardin_1939>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis_minor> ;
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:genus "Canis" ;
@@ -38,10 +60,22 @@
     dwc:scientificNameAuthorship "Teilhard de Chardin & Piveteau, 1939" ;
     dwc:species "chihliensis" ;
     dwc:variety "minor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis_minor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Eucyon_minor_Chardin_1930>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eucyon_minor> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eucyon__1996>
+    dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:genus "Eucyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship ", Tedford & Qiu, 1996" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eucyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Eucyon_minor>
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:genus "Eucyon" ;
@@ -49,50 +83,61 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Teilhard de Chardin & Piveteau, 1930)" ;
     dwc:species "minor" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eucyon> ;
+    a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-name.plazi.org/id/Animalia/Eucyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:genus "Eucyon" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Canidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Canis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
     dwc:class "Mammalia" ;
-    dwc:family "Canidae" ;
-    dwc:genus "Canis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canis> ;
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
     dwc:class "Mammalia" ;
-    dwc:family "Canidae" ;
-    dwc:genus "Canis" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "chihliensis" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis_minor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis> ;
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:genus "Canis" ;
@@ -102,60 +147,28 @@
     dwc:rank "variety" ;
     dwc:species "chihliensis" ;
     dwc:variety "minor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eucyon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Canis_chihliensis>
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
-    dwc:genus "Eucyon" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eucyon_minor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eucyon> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Canidae" ;
-    dwc:genus "Eucyon" ;
+    dwc:genus "Canis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "minor" ;
+    dwc:species "chihliensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Canis>
     dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:genus "Canis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03F7DB5D2906FFE08D19FA206240FD7E>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eucyon_minor_Chardin_1930> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Canis_chihliensis_minor_Chardin_1939> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5381420> ;
-    dc:creator "Rook, Lorenzo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5381424> ;
-    a trt:Treatment .
-
