@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6F59CD1CFFC45335FF506C7EFF552904
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5775823> ;
+    dc:creator "Liu, Lan-Yu" ;
+    dc:title "Lyctoxylon dentatum" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lyctoxylon_dentatum_Pascoe_1866> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Minthea_dentata_Pascoe_1866> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5081.3.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5081.3.5>
-    dc:creator "Liu, Lan-Yu" ;
-    dc:date "2021" ;
-    dc:title "An annotated synopsis of the powder post beetles (Coleoptera: Bostrichidae) of Mainland China" ;
     bibo:endPage "419" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-12-13" ;
     bibo:startPage "389" ;
     bibo:volume "5081" ;
+    dc:creator "Liu, Lan-Yu" ;
+    dc:date "2021" ;
+    dc:title "An annotated synopsis of the powder post beetles (Coleoptera: Bostrichidae) of Mainland China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5775823> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Lyctoxylon_dentatum_Pascoe_1866>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lyctoxylon_dentatum> ;
-    dwc:ID-CoL "3WNP5" ;
     dwc:class "Insecta" ;
     dwc:family "Bostrichidae" ;
     dwc:genus "Lyctoxylon" ;
@@ -39,10 +47,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Pascoe)" ;
     dwc:species "dentatum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3WNP5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lyctoxylon_dentatum> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Minthea_dentata_Pascoe_1866>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Minthea_dentata> ;
     dwc:class "Insecta" ;
     dwc:family "Bostrichidae" ;
     dwc:genus "Minthea" ;
@@ -52,60 +61,48 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Pascoe, 1866: 141" ;
     dwc:species "dentata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Minthea_dentata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bostrichidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Bostrichidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lyctoxylon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bostrichidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Bostrichidae" ;
-    dwc:genus "Lyctoxylon" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
+<http://taxon-concept.plazi.org/id/Plantae/Arundinaria_A.Michaux_1803>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Arundinaria" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "A.Michaux, 1803" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Arundinaria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dinoderus_brevis_Horn_1878>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Dinoderus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Horn" ;
+    dwc:species "brevis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dinoderus_brevis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apate_minutus_Fabricius_1774>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Apate" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fabricius, 1774" ;
+    dwc:species "minutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apate_minutus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lyctoxylon_dentatum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lyctoxylon> ;
     dwc:class "Insecta" ;
     dwc:family "Bostrichidae" ;
     dwc:genus "Lyctoxylon" ;
@@ -114,21 +111,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "dentatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lyctoxylon> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Minthea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bostrichidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Lyctoxylon>
     dwc:class "Insecta" ;
     dwc:family "Bostrichidae" ;
-    dwc:genus "Minthea" ;
+    dwc:genus "Lyctoxylon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bostrichidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bostrichidae>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Minthea_dentata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Minthea> ;
     dwc:class "Insecta" ;
     dwc:family "Bostrichidae" ;
     dwc:genus "Minthea" ;
@@ -137,13 +173,112 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "dentata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Minthea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6F59CD1CFFC45335FF506C7EFF552904>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lyctoxylon_dentatum_Pascoe_1866> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Minthea_dentata_Pascoe_1866> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5081.3.5> ;
-    dc:creator "Liu, Lan-Yu" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5775823> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Minthea>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Minthea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bostrichidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Arundinaria>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Arundinaria" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dinoderus_brevis>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Dinoderus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brevis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dinoderus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dinoderus>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Dinoderus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bostrichidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apate_minutus>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Apate" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "minutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apate> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apate>
+    dwc:class "Insecta" ;
+    dwc:family "Bostrichidae" ;
+    dwc:genus "Apate" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bostrichidae> ;
+    a dwcFP:TaxonName .
