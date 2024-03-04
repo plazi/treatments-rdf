@@ -1,18 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03FC87AB904F6A1354F1CB9FD5B2823D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.222235>, <http://dx.doi.org/10.5281/zenodo.222232>, <http://dx.doi.org/10.5281/zenodo.222233> ;
+    dc:creator "Huerta, Heron; Dzul, Felipe" ;
+    dc:title "Swammerdamella mojingae Cook 1956" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_mojingae_Cook_1956> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3693.1.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3693.1.4>
-    dc:creator "Dzul, Felipe", "Huerta, Heron" ;
+    dc:creator "Huerta, Heron; Dzul, Felipe" ;
+    dc:date "2013" ;
     dc:title "First record of the genus Abrhexosa Freeman from Mexico, with the description a new species, and two new species and new records of the genus Swammerdamella Enderlein (Diptera: Scatopsidae)" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.222232>, <http://dx.doi.org/10.5281/zenodo.222233>, <http://dx.doi.org/10.5281/zenodo.222235> .
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.222235>, <http://dx.doi.org/10.5281/zenodo.222232>, <http://dx.doi.org/10.5281/zenodo.222233> .
+
+<http://dx.doi.org/10.5281/zenodo.222235>
+    dc:description "FIGURE 7. Swammerdamella marginata Cook. Male, A – D; Swammerdamella mojingae Cook. Male, E – F. A, E. Segment 7, ventral view; B, F. Genitalia, ventral view; C. Tergite 6, dorsal view; D. Sternite 6, dorsal view." ;
+    fabio:hasRepresentation "https://zenodo.org/record/222235/files/figure.png" ;
+    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.222232>
     dc:description "FIGURE 4. Swammerdamella amacuzacae sp. nov. Male, A – B; Swammerdamella amorimi sp. nov. Male, C – F. A, C. Segment 7, ventral view; B, D. Genitalia, ventral view; E. Tergite 6, dorsal view; F. Sternite 6, dorsal view." ;
@@ -24,14 +39,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/222233/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5281/zenodo.222235>
-    dc:description "FIGURE 7. Swammerdamella marginata Cook. Male, A – D; Swammerdamella mojingae Cook. Male, E – F. A, E. Segment 7, ventral view; B, F. Genitalia, ventral view; C. Tergite 6, dorsal view; D. Sternite 6, dorsal view." ;
-    fabio:hasRepresentation "https://zenodo.org/record/222235/files/figure.png" ;
-    a fabio:Figure .
-
 <http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_mojingae_Cook_1956>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella_mojingae> ;
-    dwc:ID-CoL "53J96" ;
     dwc:class "Insecta" ;
     dwc:family "Scatopsidae" ;
     dwc:genus "Swammerdamella" ;
@@ -39,51 +47,75 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Cook, 1956" ;
+    dwc:scientificNameAuthorship "Cook, 1956", "Cook, 1956:29" ;
     dwc:species "mojingae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/53J96> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella_mojingae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Scatopsidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_marginata_Cook_1956>
     dwc:class "Insecta" ;
     dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cook, 1956:24" ;
+    dwc:species "marginata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella_marginata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_prima_Cook_1971>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cook, 1971a:58" ;
+    dwc:species "prima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella_prima> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_amorimi_Huerta_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "amorimi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella_amorimi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_amacuzacae_Huerta_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "amacuzacae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella_amacuzacae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Swammerdamella_mojingae>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mojingae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Swammerdamella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scatopsidae> ;
     dwc:class "Insecta" ;
     dwc:family "Scatopsidae" ;
     dwc:genus "Swammerdamella" ;
@@ -91,10 +123,49 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scatopsidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Swammerdamella_mojingae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella> ;
+<http://taxon-name.plazi.org/id/Animalia/Scatopsidae>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Swammerdamella_marginata>
     dwc:class "Insecta" ;
     dwc:family "Scatopsidae" ;
     dwc:genus "Swammerdamella" ;
@@ -102,13 +173,42 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "mojingae" ;
+    dwc:species "marginata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03FC87AB904F6A1354F1CB9FD5B2823D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Swammerdamella_mojingae_Cook_1956> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3693.1.4> ;
-    dc:creator "Dzul, Felipe", "Huerta, Heron" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.222232>, <http://dx.doi.org/10.5281/zenodo.222233>, <http://dx.doi.org/10.5281/zenodo.222235> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Swammerdamella_prima>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "prima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Swammerdamella_amorimi>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "amorimi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Swammerdamella_amacuzacae>
+    dwc:class "Insecta" ;
+    dwc:family "Scatopsidae" ;
+    dwc:genus "Swammerdamella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "amacuzacae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamella> ;
+    a dwcFP:TaxonName .
