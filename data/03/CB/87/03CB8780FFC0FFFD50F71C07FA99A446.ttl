@@ -1,23 +1,28 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CB8780FFC0FFFD50F71C07FA99A446
+    cito:cites <http://dx.doi.org/10.5281/zenodo.223871>, <http://dx.doi.org/10.5281/zenodo.223872>, <http://dx.doi.org/10.5281/zenodo.223870> ;
+    dc:creator "Mccranie, James R.; Hedges, S. Blair" ;
+    dc:title "Sphaerodactylus poindexteri Mccranie & Hedges, 2013, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_poindexteri_Mccranie_2013> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3694.1.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3694.1.2>
-    dc:creator "Hedges, S. Blair", "Mccranie, James R." ;
+    dc:creator "Mccranie, James R.; Hedges, S. Blair" ;
+    dc:date "2013" ;
     dc:title "Two additional new species of Sphaerodactylus (Reptilia, Squamata, Gekkonoidea, Sphaerodactylidae) from the Honduran Bay Islands" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.223870>, <http://dx.doi.org/10.5281/zenodo.223871>, <http://dx.doi.org/10.5281/zenodo.223872> .
-
-<http://dx.doi.org/10.5281/zenodo.223870>
-    dc:description "FIGURE 1. Phylogenetic tree of 11 species of Sphaerodactylus from a maximum-likelihood analysis of DNA sequences of two mitochondrial genes (12 S rRNA and cytochrome b). A scale bar is indicated. The numbers at nodes are bootstrap (left) and Bayesian (right) support values." ;
-    fabio:hasRepresentation "https://zenodo.org/record/223870/files/figure.png" ;
-    a fabio:Figure .
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.223871>, <http://dx.doi.org/10.5281/zenodo.223872>, <http://dx.doi.org/10.5281/zenodo.223870> .
 
 <http://dx.doi.org/10.5281/zenodo.223871>
     dc:description "FIGURE 2. Adult female holotype (FMNH 283685) of Sphaerodactylus poindexteri sp. nov. from east end of Utila Island near Trade Winds, (SVL 23.9 mm). Photograph by J. R. McCranie." ;
@@ -29,8 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/223872/files/figure.png" ;
     a fabio:Figure .
 
+<http://dx.doi.org/10.5281/zenodo.223870>
+    dc:description "FIGURE 1. Phylogenetic tree of 11 species of Sphaerodactylus from a maximum-likelihood analysis of DNA sequences of two mitochondrial genes (12 S rRNA and cytochrome b). A scale bar is indicated. The numbers at nodes are bootstrap (left) and Bayesian (right) support values." ;
+    fabio:hasRepresentation "https://zenodo.org/record/223870/files/figure.png" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_poindexteri_Mccranie_2013>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_poindexteri> ;
     dwc:authority "Mccranie, 2013" ;
     dwc:authorityName "Mccranie" ;
     dwc:authorityYear "2013" ;
@@ -41,52 +50,97 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Mccranie, James R. & Hedges, S. Blair, 2013" ;
     dwc:species "poindexteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_poindexteri> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Sphaerodactylidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_millepunctatus_Mccranie_2013>
     dwc:class "Reptilia" ;
     dwc:family "Sphaerodactylidae" ;
     dwc:genus "Sphaerodactylus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "millepunctatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_millepunctatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_continentalis_Mccranie_2013>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "continentalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_continentalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_guanajae_Mccranie_2013>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "guanajae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_guanajae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_leonardovaldesi_Mccranie_2013>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "leonardovaldesi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_leonardovaldesi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_rosaurae_Parker_2013>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Parker" ;
+    dwc:species "rosaurae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_rosaurae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_rosaurae_Mccranie_2013>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "rosaurae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_rosaurae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Cocoloba_uvifera_Mccranie_2013>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polygonaceae" ;
+    dwc:genus "Cocoloba" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "species" ;
+    dwc:species "uvifera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cocoloba_uvifera> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_poindexteri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
     dwc:class "Reptilia" ;
     dwc:family "Sphaerodactylidae" ;
     dwc:genus "Sphaerodactylus" ;
@@ -95,21 +149,177 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "poindexteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylidae>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03CB8780FFC0FFFD50F71C07FA99A446>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphaerodactylus_poindexteri_Mccranie_2013> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3694.1.2> ;
-    dc:creator "Hedges, S. Blair", "Mccranie, James R." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.223870>, <http://dx.doi.org/10.5281/zenodo.223871>, <http://dx.doi.org/10.5281/zenodo.223872> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_millepunctatus>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "millepunctatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_continentalis>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "continentalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_guanajae>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "guanajae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_leonardovaldesi>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "leonardovaldesi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus_rosaurae>
+    dwc:class "Reptilia" ;
+    dwc:family "Sphaerodactylidae" ;
+    dwc:genus "Sphaerodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "rosaurae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cocoloba_uvifera>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polygonaceae" ;
+    dwc:genus "Cocoloba" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "species" ;
+    dwc:species "uvifera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cocoloba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cocoloba>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polygonaceae" ;
+    dwc:genus "Cocoloba" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polygonaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Polygonaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Polygonaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Caryophyllales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
