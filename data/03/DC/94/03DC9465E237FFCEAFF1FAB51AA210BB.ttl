@@ -1,29 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DC9465E237FFCEAFF1FAB51AA210BB
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Picus_mombassicus_Fischer_1884>, <http://taxon-concept.plazi.org/id/Animalia/Picus_abingoni__2013> ;
+    dc:creator "Frahnert, Sylke; Turner, Donald A.; Bracker, Cordula" ;
+    dc:title "Picus mombassicus Linnaeus 1758" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Picus_Linnaeus_1758> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus_abingoni> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5334.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5334.1.1>
-    dc:creator "Bracker, Cordula", "Frahnert, Sylke", "Turner, Donald A." ;
-    dc:date "2023" ;
-    dc:title "Type specimens and type localities of birds (Aves) collected by Gustav Adolf Fischer (1848 - 1886) in East Africa" ;
     bibo:endPage "84" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-08-18" ;
     bibo:startPage "1" ;
     bibo:volume "5334" ;
+    dc:creator "Frahnert, Sylke; Turner, Donald A.; Bracker, Cordula" ;
+    dc:date "2023" ;
+    dc:title "Type specimens and type localities of birds (Aves) collected by Gustav Adolf Fischer (1848 - 1886) in East Africa" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Picus_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus> ;
-    dwc:ID-CoL "63MCB" ;
     dwc:ID-ENA "100824" ;
     dwc:class "Aves" ;
     dwc:family "Picidae" ;
@@ -33,23 +41,24 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "G. A. Fischer & Reichenow, 1884 c: 262" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/63MCB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Picus_abingoni__2013>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus_abingoni> ;
+<http://taxon-concept.plazi.org/id/Animalia/Campethera_mombassica_Fischer_1884>
     dwc:class "Aves" ;
     dwc:family "Picidae" ;
-    dwc:genus "Picus" ;
+    dwc:genus "Campethera" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Piciformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship ", Dickinson & Remsen (2013)", ", Dickinson & Remsen, 2013" ;
-    dwc:species "abingoni" ;
+    dwc:scientificNameAuthorship "G. A. Fischer & Reichenow, 1884 c" ;
+    dwc:species "mombassica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Campethera_mombassica> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Picus_mombassicus_Fischer_1884>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus_mombassicus> ;
     dwc:class "Aves" ;
     dwc:family "Picidae" ;
     dwc:genus "Picus" ;
@@ -60,49 +69,23 @@
     dwc:scientificNameAuthorship "G. A. Fischer & Reichenow, 1884" ;
     dwc:species "mombassicus" ;
     dwc:subGenus "Campothera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus_mombassicus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aves>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Aves" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Picidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piciformes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Picus_abingoni__2013>
     dwc:class "Aves" ;
     dwc:family "Picidae" ;
+    dwc:genus "Picus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Piciformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Piciformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
-    dwc:class "Aves" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Piciformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ", Dickinson & Remsen (2013)", ", Dickinson & Remsen, 2013" ;
+    dwc:species "abingoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Picus_abingoni> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Picus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picidae> ;
     dwc:class "Aves" ;
     dwc:family "Picidae" ;
     dwc:genus "Picus" ;
@@ -110,10 +93,72 @@
     dwc:order "Piciformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Picidae>
+    dwc:class "Aves" ;
+    dwc:family "Picidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Piciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Piciformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Piciformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Piciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Campethera_mombassica>
+    dwc:class "Aves" ;
+    dwc:family "Picidae" ;
+    dwc:genus "Campethera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Piciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "mombassica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Campethera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Campethera>
+    dwc:class "Aves" ;
+    dwc:family "Picidae" ;
+    dwc:genus "Campethera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Piciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Picus_mombassicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picus> ;
     dwc:class "Aves" ;
     dwc:family "Picidae" ;
     dwc:genus "Picus" ;
@@ -122,13 +167,30 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "mombassicus" ;
+    dwc:subGenus "Campothera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picus_Campothera>, <http://taxon-name.plazi.org/id/Animalia/Picus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DC9465E237FFCEAFF1FAB51AA210BB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Picus_Linnaeus_1758> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/DC/94/Picus_abingoni> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5334.1.1> ;
-    dc:creator "Bracker, Cordula", "Frahnert, Sylke", "Turner, Donald A." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Picus_abingoni__2013>, <http://taxon-concept.plazi.org/id/Animalia/Picus_mombassicus_Fischer_1884> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Picus_Campothera>
+    dwc:class "Aves" ;
+    dwc:family "Picidae" ;
+    dwc:genus "Picus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Piciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Campothera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Picus_abingoni>
+    dwc:class "Aves" ;
+    dwc:family "Picidae" ;
+    dwc:genus "Picus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Piciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "abingoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Picus> ;
+    a dwcFP:TaxonName .

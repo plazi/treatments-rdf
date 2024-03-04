@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DCC66BFFC1D001FF5193EDFD53FD9A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.278006> ;
+    dc:creator "Monné, Miguel A.; R, Juan Pablo Botero" ;
+    dc:title "Amphelictus aibussu Martins & Monne 2005" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Amphelictus_aibussu_Martins_2005> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphelictus_aibussu>, <http://taxon-name.plazi.org/id/Animalia/Amphelictus_abaiba> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Amphelictus_abaiba_Martins_2005> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.278005> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.278005>
-    dc:creator "Monné, Miguel A.", "R, Juan Pablo Botero" ;
-    dc:date "2011" ;
-    dc:title "Synonymical notes on Neotropical Cerambycidae (Insecta, Coleoptera)" ;
     bibo:endPage "68" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "64" ;
     bibo:volume "2928" ;
+    dc:creator "Monné, Miguel A.; R, Juan Pablo Botero" ;
+    dc:date "2011" ;
+    dc:title "Synonymical notes on Neotropical Cerambycidae (Insecta, Coleoptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.278006> ;
     a fabio:JournalArticle .
 
@@ -25,9 +36,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/278006/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Amphelictus_aibussu_Martins_2005>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Amphelictus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Martins & Monne, 2005", "Martins & Monne, 2005: 57" ;
+    dwc:species "aibussu" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CYT4> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphelictus_aibussu> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Amphelictus_abaiba_Martins_2005>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphelictus_abaiba> ;
-    dwc:ID-CoL "CYT2" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Amphelictus" ;
@@ -37,11 +60,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Martins & Monne, 2005: 58" ;
     dwc:species "abaiba" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CYT4> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphelictus_abaiba> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Amphelictus_aibussu_Martins_2005>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphelictus_aibussu> ;
-    dwc:ID-CoL "CYT4" ;
+<http://taxon-name.plazi.org/id/Animalia/Amphelictus_aibussu>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Amphelictus" ;
@@ -49,17 +72,11 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Martins & Monne, 2005" ;
     dwc:species "aibussu" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphelictus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Amphelictus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Amphelictus" ;
@@ -67,10 +84,49 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Amphelictus_abaiba>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphelictus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Amphelictus" ;
@@ -79,60 +135,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "abaiba" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amphelictus_aibussu>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphelictus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Amphelictus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "aibussu" ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03DCC66BFFC1D001FF5193EDFD53FD9A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Amphelictus_aibussu_Martins_2005> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/DC/C6/Amphelictus_abaiba>, <file:///workdir/tmprdf/data/03/DC/C6/Amphelictus_aibussu> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Amphelictus_abaiba_Martins_2005> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.278005> ;
-    dc:creator "Monné, Miguel A.", "R, Juan Pablo Botero" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.278006> ;
-    a trt:Treatment .
-
