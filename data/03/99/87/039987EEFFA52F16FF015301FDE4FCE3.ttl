@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039987EEFFA52F16FF015301FDE4FCE3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5062016>, <http://dx.doi.org/10.5281/zenodo.5062040> ;
+    dc:creator "Novis, Phil M.; Braidwood, Jasmine; Kilroy, Cathy" ;
+    dc:title "Nitzschia palea Smith 1856" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nitzschia_palea_Kutz._1856> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.64.1.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/phytotaxa.64.1.3>
-    dc:creator "Braidwood, Jasmine", "Kilroy, Cathy", "Novis, Phil M." ;
-    dc:date "2012" ;
-    dc:title "Small diatoms (Bacillariophyta) in cultures from the Styx River, New Zealand, including descriptions of three new species" ;
     bibo:endPage "45" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2012-08-24" ;
     bibo:startPage "11" ;
     bibo:volume "64" ;
+    dc:creator "Novis, Phil M.; Braidwood, Jasmine; Kilroy, Cathy" ;
+    dc:date "2012" ;
+    dc:title "Small diatoms (Bacillariophyta) in cultures from the Styx River, New Zealand, including descriptions of three new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5062016>, <http://dx.doi.org/10.5281/zenodo.5062040> ;
     a fabio:JournalArticle .
 
@@ -32,8 +41,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/5062040/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Nitzschia_palea_Smith_1856>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nitzschia_palea> ;
+<http://taxon-concept.plazi.org/id/Animalia/Nitzschia_palea_Kutz._1856>
     dwc:class "Monogenea" ;
     dwc:family "Capsalidae" ;
     dwc:genus "Nitzschia" ;
@@ -41,44 +49,47 @@
     dwc:order "Capsalidea" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Kutz.) Smith 1856" ;
+    dwc:scientificNameAuthorship "(Kutz.) Smith 1856", "Smith, 1856" ;
     dwc:species "palea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nitzschia_palea> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Chromista/Durinskia_Novis_2012>
+    dwc:class "Dinophyceae" ;
+    dwc:family "Kryptoperidiniaceae" ;
+    dwc:genus "Durinskia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Peridiniales" ;
+    dwc:phylum "Myzozoa" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Novis & Braidwood & Kilroy, 2012" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Durinskia> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Capsalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capsalidea> ;
+<http://taxon-concept.plazi.org/id/Chromista/Gomphonemataceae_F.T.Kutzing_1844>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Gomphonemataceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Cymbellales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "F.T.Kutzing, 1844" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Gomphonemataceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Nitzschia_palea>
     dwc:class "Monogenea" ;
     dwc:family "Capsalidae" ;
+    dwc:genus "Nitzschia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Capsalidea" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Capsalidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monogenea> ;
-    dwc:class "Monogenea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Capsalidea" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Monogenea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
-    dwc:class "Monogenea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "palea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nitzschia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Nitzschia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capsalidae> ;
     dwc:class "Monogenea" ;
     dwc:family "Capsalidae" ;
     dwc:genus "Nitzschia" ;
@@ -86,31 +97,128 @@
     dwc:order "Capsalidea" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capsalidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Nitzschia_palea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nitzschia> ;
+<http://taxon-name.plazi.org/id/Animalia/Capsalidae>
     dwc:class "Monogenea" ;
     dwc:family "Capsalidae" ;
-    dwc:genus "Nitzschia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Capsalidea" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "species" ;
-    dwc:species "palea" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capsalidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Capsalidea>
+    dwc:class "Monogenea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Capsalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monogenea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Monogenea>
+    dwc:class "Monogenea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039987EEFFA52F16FF015301FDE4FCE3>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nitzschia_palea_Smith_1856> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.64.1.3> ;
-    dc:creator "Braidwood, Jasmine", "Kilroy, Cathy", "Novis, Phil M." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5062016>, <http://dx.doi.org/10.5281/zenodo.5062040> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Chromista/Durinskia>
+    dwc:class "Dinophyceae" ;
+    dwc:family "Kryptoperidiniaceae" ;
+    dwc:genus "Durinskia" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Peridiniales" ;
+    dwc:phylum "Myzozoa" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Kryptoperidiniaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Kryptoperidiniaceae>
+    dwc:class "Dinophyceae" ;
+    dwc:family "Kryptoperidiniaceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Peridiniales" ;
+    dwc:phylum "Myzozoa" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Peridiniales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Peridiniales>
+    dwc:class "Dinophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Peridiniales" ;
+    dwc:phylum "Myzozoa" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Dinophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Dinophyceae>
+    dwc:class "Dinophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Myzozoa" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Myzozoa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Myzozoa>
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Myzozoa" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista>
+    dwc:kingdom "Chromista" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Gomphonemataceae>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Gomphonemataceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Cymbellales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Cymbellales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Cymbellales>
+    dwc:class "Bacillariophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Cymbellales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae>
+    dwc:class "Bacillariophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Bacillariophyta>
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+    a dwcFP:TaxonName .
