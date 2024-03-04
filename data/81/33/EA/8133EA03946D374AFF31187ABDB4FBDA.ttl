@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:8133EA03946D374AFF31187ABDB4FBDA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.258098> ;
+    dc:creator "Pannure, Arati; Carpenter, James M." ;
+    dc:title "Alastor Lepeletier de Saint Fargeau 1841" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Alastor_Fargeau_1841> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Eualastor_Torre_1904>, <http://taxon-concept.plazi.org/id/Animalia/Belalastor_Atanassov_1967> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4171.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4171.1.1>
-    dc:creator "Carpenter, James M.", "Pannure, Arati" ;
-    dc:date "2016" ;
-    dc:title "Taxonomic studies on potter wasps (Hymenoptera: Vespidae: Eumeninae) of south India" ;
     bibo:endPage "50" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2016-09-27" ;
     bibo:startPage "1" ;
     bibo:volume "4171" ;
+    dc:creator "Pannure, Arati; Carpenter, James M." ;
+    dc:date "2016" ;
+    dc:title "Taxonomic studies on potter wasps (Hymenoptera: Vespidae: Eumeninae) of south India" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.258098> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Alastor_Fargeau_1841>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alastor> ;
-    dwc:ID-CoL "628YT" ;
     dwc:ID-ENA "1507332" ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
@@ -38,23 +46,26 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Lepeletier de Saint Fargeau, 1841" ;
+    dwc:scientificNameAuthorship "Lepeletier de Saint Fargeau, 1841", "Lepeletier de Saint Fargeau 1841: 668" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/628YT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alastor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Belalastor_Atanassov_1967>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Belalastor> ;
+<http://taxon-concept.plazi.org/id/Animalia/Alastor_atropos_Fargeau_1841>
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
-    dwc:genus "Belalastor" ;
+    dwc:genus "Alastor" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Atanassov, 1967" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lepeletier de Saint Fargeau, 1841" ;
+    dwc:species "atropos" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/628YT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alastor_atropos> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eualastor_Torre_1904>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eualastor> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Eualastor" ;
@@ -63,33 +74,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Dalla Torre, 1904" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eualastor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Alastor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Eumenidae" ;
-    dwc:genus "Alastor" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Belalastor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Belalastor_Atanassov_1967>
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Belalastor" ;
@@ -97,10 +85,73 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Atanassov, 1967" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Belalastor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Alastor>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Alastor" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eumenidae>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Alastor_atropos>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Alastor" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "atropos" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Alastor> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Eualastor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Eualastor" ;
@@ -108,50 +159,26 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eumenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Eumenidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Vespidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/8133EA03946D374AFF31187ABDB4FBDA>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Alastor_Fargeau_1841> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Belalastor_Atanassov_1967>, <http://taxon-concept.plazi.org/id/Animalia/Eualastor_Torre_1904> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4171.1.1> ;
-    dc:creator "Carpenter, James M.", "Pannure, Arati" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.258098> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Belalastor>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Belalastor" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
+    a dwcFP:TaxonName .
