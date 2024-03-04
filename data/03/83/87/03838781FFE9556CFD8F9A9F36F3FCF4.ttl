@@ -1,13 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03838781FFE9556CFD8F9A9F36F3FCF4
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6791697>, <http://dx.doi.org/10.5281/zenodo.6791699> ;
+    dc:creator "Solé, Floréal; Lesport, Jean-François; Heitz, Antoine; Mennecart, Bastien" ;
+    dc:title "Tartarocyon cazanavei Solé & Lesport & Heitz & Mennecart 2022, nov. gen. & sp." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/03838781FFE9556CFD8F9A9F36F3FCF4/MHNBx%202020.20.1> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tartarocyon_cazanavei_Sol%C3%A9_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.7717/peerj.13457> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.7717/peerj.13457>
+    bibo:endPage "29" ;
+    bibo:journal "PeerJ" ;
+    bibo:pubDate "2022-06-15" ;
+    bibo:startPage "1" ;
+    bibo:volume "10" ;
+    dc:creator "Solé, Floréal; Lesport, Jean-François; Heitz, Antoine; Mennecart, Bastien" ;
+    dc:date "2022" ;
+    dc:title "A new gigantic carnivore (Carnivora, Amphicyonidae) from the late middle Miocene of France" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6791697>, <http://dx.doi.org/10.5281/zenodo.6791699> ;
+    a fabio:JournalArticle .
 
 <http://dx.doi.org/10.5281/zenodo.6791697>
     dc:description "Figure 3 Holotype (MHNBx 2020.20.1) of Tartarocyon cazanavei nov. gen. & sp. from Sallespisse (MN7/8, Southwest France), in occlusal, lingual, and labial views. Scale bar is 5 cm. Full-size DOI: 10.7717/peerj.13457/fig-3" ;
@@ -19,20 +42,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6791699/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.7717/peerj.13457>
-    dc:creator "Heitz, Antoine", "Lesport, Jean-François", "Mennecart, Bastien", "Solé, Floréal" ;
-    dc:date "2022" ;
-    dc:title "A new gigantic carnivore (Carnivora, Amphicyonidae) from the late middle Miocene of France" ;
-    bibo:endPage "29" ;
-    bibo:journal "PeerJ" ;
-    bibo:pubDate "2022-06-15" ;
-    bibo:startPage "1" ;
-    bibo:volume "10" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6791697>, <http://dx.doi.org/10.5281/zenodo.6791699> ;
-    a fabio:JournalArticle .
+<http://treatment.plazi.org/id/03838781FFE9556CFD8F9A9F36F3FCF4/MHNBx%202020.20.1>
+    dwc:catalogNumber "MHNBx 2020.20.1" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3828170301" ;
+    a dwc:MaterialCitation .
 
-<http://taxon-concept.plazi.org/id/Animalia/Tartarocyon_cazanavei_Sol%25C3%25A9_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tartarocyon_cazanavei> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tartarocyon_cazanavei_Sol%C3%A9_2022>
     dwc:family "Amphicyonidae" ;
     dwc:genus "Tartarocyon" ;
     dwc:kingdom "Animalia" ;
@@ -42,51 +58,492 @@
     dwc:species "cazanavei" ;
     dwc:subOrder "Caniformia" ;
     dwc:tribe "Amphicyonini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tartarocyon_cazanavei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Amphicyonidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
-    dwc:family "Amphicyonidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tartarocyon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
-    dwc:family "Amphicyonidae" ;
+<http://taxon-concept.plazi.org/id/Animalia/Tartarocyon_Sol%C3%A9_2022>
     dwc:genus "Tartarocyon" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Solé & Lesport & Heitz & Mennecart, 2022" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tartarocyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Haplocyon_Schlosser_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Haplocyon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Schlosser, 1901" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Haplocyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Haplocyonoides_H%C3%BCrzeler_1940>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Haplocyonoides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Hürzeler, 1940" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Haplocyonoides> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Haplocyonopsis_Bonis_1973>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Haplocyonopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "de Bonis, 1973" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Haplocyonopsis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gobicyon_Colbert_1939>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Gobicyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Colbert, 1939" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gobicyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ysengrinia_Ginsburg_1966>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Ysengrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ginsburg, 1966" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ysengrinia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Crassidia_Heizmann_2000>
+    dwc:class "Mammalia" ;
+    dwc:genus "Crassidia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Heizmann & Kordikova, 2000" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Crassidia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thaumastocyon_Stehlin_1925>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Thaumastocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Stehlin & Helbing, 1925" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thaumastocyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudarctos_Schlosser_1899>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Pseudarctos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Schlosser, 1899" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudarctos> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Magericyon_Peigne_2008>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Magericyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "(Peigne et al., 2008)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Magericyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Magericyonini_Morales_2021>
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "(Morales et al., 2021 b)" ;
+    dwc:tribe "Magericyonini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Magericyonini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amphicyonini_Trouessart_1885>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Trouessart, 1885" ;
+    dwc:tribe "Amphicyonini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphicyonini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cynelos_Jourdan_1862>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Cynelos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Jourdan, 1862" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cynelos> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Megamphicyon_giganteus_Schinz_1825>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Megamphicyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schinz, 1825" ;
+    dwc:species "giganteus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Megamphicyon_giganteus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cynelos_lemanensis_Pomel_1846>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Cynelos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pomel, 1846" ;
+    dwc:species "lemanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cynelos_lemanensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ictiocyon_socialis_Ginsburg_1992>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Ictiocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ginsburg (1992, p. 311) MN" ;
+    dwc:species "socialis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ictiocyon_socialis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudarctos_bavaricus_Ginsburg_1992>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Pseudarctos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ginsburg (1992, p. 309) MN" ;
+    dwc:species "bavaricus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudarctos_bavaricus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amphicyonidae_Trouessart_1885>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Trouessart, 1885" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tartarocyon_cazanavei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tartarocyon> ;
     dwc:family "Amphicyonidae" ;
     dwc:genus "Tartarocyon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:rank "species" ;
     dwc:species "cazanavei" ;
+    dwc:subOrder "Caniformia" ;
+    dwc:tribe "Amphicyonini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tartarocyon> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03838781FFE9556CFD8F9A9F36F3FCF4>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tartarocyon_cazanavei_Sol%25C3%25A9_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.7717/peerj.13457> ;
-    dc:creator "Heitz, Antoine", "Lesport, Jean-François", "Mennecart, Bastien", "Solé, Floréal" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6791697>, <http://dx.doi.org/10.5281/zenodo.6791699> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03838781FFE9556CFD8F9A9F36F3FCF4/MHNBx%202020.20.1> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tartarocyon>
+    # Warning: Could not determine parent name ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Tartarocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:rank "genus" ;
+    dwc:subOrder "Caniformia" ;
+    dwc:tribe "Amphicyonini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonini> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03838781FFE9556CFD8F9A9F36F3FCF4/MHNBx%202020.20.1>
-    dwc:catalogNumber "MHNBx 2020.20.1" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Amphicyonini>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "tribe" ;
+    dwc:subOrder "Caniformia" ;
+    dwc:tribe "Amphicyonini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Amphicyonidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:subOrder "Caniformia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Caniformia>, <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Caniformia>
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:rank "subOrder" ;
+    dwc:subOrder "Caniformia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia>, <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haplocyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Haplocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haplocyonoides>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Haplocyonoides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haplocyonopsis>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Haplocyonopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gobicyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Gobicyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ysengrinia>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Ysengrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Crassidia>
+    dwc:class "Mammalia" ;
+    dwc:genus "Crassidia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thaumastocyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Thaumastocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudarctos>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Pseudarctos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Magericyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Magericyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Magericyonini>
+    # Warning: Could not determine parent name ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Magericyonini" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cynelos>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Cynelos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Megamphicyon_giganteus>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Megamphicyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "giganteus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megamphicyon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Megamphicyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Megamphicyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cynelos_lemanensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Cynelos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "lemanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cynelos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ictiocyon_socialis>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Ictiocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "socialis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ictiocyon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ictiocyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Ictiocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphicyonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudarctos_bavaricus>
+    dwc:class "Mammalia" ;
+    dwc:family "Amphicyonidae" ;
+    dwc:genus "Pseudarctos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "bavaricus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudarctos> ;
+    a dwcFP:TaxonName .
