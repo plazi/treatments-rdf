@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039587C7FF9BFF8466C3FB03641A7379
+    dc:creator "Vohland, Katrin; Hamer, Michelle" ;
+    dc:title "Oxidus : Cook 1911" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oxidus_Cook_1911> ;
+    trt:publishedIn <http://publication.plazi.org/id/FFACFFBFFF93FF8C671FFF836053766B> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/FFACFFBFFF93FF8C671FFF836053766B>
-    dc:creator "Hamer, Michelle", "Vohland, Katrin" ;
-    dc:date "2013" ;
-    dc:title "A review of the millipedes (Diplopoda) of Namibia, with identification keys and descriptions of two new genera and five new species" ;
     bibo:endPage "251" ;
     bibo:issue "1" ;
     bibo:journal "African Invertebrates" ;
     bibo:pubDate "2013-06-30" ;
     bibo:startPage "251" ;
     bibo:volume "54" ;
+    dc:creator "Vohland, Katrin; Hamer, Michelle" ;
+    dc:date "2013" ;
+    dc:title "A review of the millipedes (Diplopoda) of Namibia, with identification keys and descriptions of two new genera and five new species" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oxidus_Cook_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oxidus> ;
-    dwc:ID-CoL "7PNXB" ;
     dwc:ID-ENA "118475" ;
     dwc:class "Diplopoda" ;
     dwc:family "Paradoxosomatidae" ;
@@ -32,31 +38,25 @@
     dwc:order "Polydesmida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Cook, 1911" ;
+    dwc:scientificNameAuthorship "Cook, 1911", ": Cook 1911: 628 - 631", ": Cook, 1911" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7PNXB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oxidus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Oxidus_gracilis_Koch_1847>
     dwc:class "Diplopoda" ;
+    dwc:family "Paradoxosomatidae" ;
+    dwc:genus "Oxidus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Polydesmida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "C. L. Koch, 1847" ;
+    dwc:species "gracilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oxidus_gracilis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Oxidus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paradoxosomatidae> ;
     dwc:class "Diplopoda" ;
     dwc:family "Paradoxosomatidae" ;
     dwc:genus "Oxidus" ;
@@ -64,30 +64,56 @@
     dwc:order "Polydesmida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paradoxosomatidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Paradoxosomatidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polydesmida> ;
     dwc:class "Diplopoda" ;
     dwc:family "Paradoxosomatidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Polydesmida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polydesmida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Polydesmida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
     dwc:class "Diplopoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Polydesmida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039587C7FF9BFF8466C3FB03641A7379>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oxidus_Cook_1911> ;
-    trt:publishedIn <http://publication.plazi.org/id/FFACFFBFFF93FF8C671FFF836053766B> ;
-    dc:creator "Hamer, Michelle", "Vohland, Katrin" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oxidus_gracilis>
+    dwc:class "Diplopoda" ;
+    dwc:family "Paradoxosomatidae" ;
+    dwc:genus "Oxidus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Polydesmida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oxidus> ;
+    a dwcFP:TaxonName .
