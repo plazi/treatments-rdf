@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E84887F9FFD4D65B0F3CF88F147A35AA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6419162> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Miniopterus magnater Sanborn 1931" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/E84887F9FFD4D65B0F3CF88F147A35AA.mc.D0893CB2FFD4D65A028FF7D9180A3EBC> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Miniopterus_magnater_Sanborn_1931> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Miniopterus_schreibersii_magnater_Sanborn_1931> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5735202> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5735202>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2019" ;
-    dc:title "Miniopteridae" ;
     bibo:endPage "709" ;
     bibo:startPage "674" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2019" ;
+    dc:title "Miniopteridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6419162> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6419162/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/E84887F9FFD4D65B0F3CF88F147A35AA.mc.D0893CB2FFD4D65A028FF7D9180A3EBC>
+    trt:gbifOccurrenceId "3747914327" ;
+    trt:httpUri <https://treatment.plazi.org/id/E84887F9FFD4D65B0F3CF88F147A35AA#D0893CB2FFD4D65A028FF7D9180A3EBC> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Miniopterus_magnater_Sanborn_1931>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_magnater> ;
-    dwc:ID-CoL "43JSF" ;
     dwc:authority "Wilson, 2019" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2019" ;
@@ -36,12 +50,13 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sanborn, 1931" ;
     dwc:species "magnater" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/43JSF> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_magnater> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Miniopterus_schreibersii_magnater_Sanborn_1931>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii_magnater> ;
-    dwc:ID-CoL "43JSF" ;
     dwc:class "Mammalia" ;
     dwc:family "Miniopteridae" ;
     dwc:genus "Miniopterus" ;
@@ -52,49 +67,63 @@
     dwc:scientificNameAuthorship "Sanborn, 1931" ;
     dwc:species "schreibersii" ;
     dwc:subSpecies "magnater" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/43JSF> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii_magnater> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Miniopteridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_schreibersii_Kuhl_1817>
     dwc:class "Mammalia" ;
     dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuhl, 1817" ;
+    dwc:species "schreibersii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Miniopterus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopteridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_pusillus_Dobson_1876>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Dobson, 1876" ;
+    dwc:species "pusillus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_pusillus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_medius_Thomas_1909>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas & Wroughton, 1909" ;
+    dwc:species "medius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_medius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_fuscus_Bonhote_1902>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bonhote, 1902" ;
+    dwc:species "fuscus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_fuscus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_Bonaparte_1837>
     dwc:class "Mammalia" ;
     dwc:family "Miniopteridae" ;
     dwc:genus "Miniopterus" ;
@@ -102,10 +131,115 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Bonaparte, 1837" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_paululus_Hollister_1913>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hollister, 1913" ;
+    dwc:species "paululus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_paululus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_tristis_Waterhouse_1845>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1845" ;
+    dwc:species "tristis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_tristis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_blepotis_Temminck_1840>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Temminck, 1840" ;
+    dwc:species "blepotis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_blepotis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_australis_Tomes_1858>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tomes, 1858" ;
+    dwc:species "australis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_australis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_macrocneme_Revilliod_1914>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Revilliod, 1914" ;
+    dwc:species "macrocneme" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_macrocneme> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_robustior_Revilliod_1914>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Revilliod, 1914" ;
+    dwc:species "robustior" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_robustior> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_orianae_Thomas_1922>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1922" ;
+    dwc:species "orianae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_orianae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Miniopterus_pallidus_Thomas_1907>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1907" ;
+    dwc:species "pallidus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_pallidus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Miniopterus_magnater>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
     dwc:class "Mammalia" ;
     dwc:family "Miniopteridae" ;
     dwc:genus "Miniopterus" ;
@@ -114,22 +248,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "magnater" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus>
     dwc:class "Mammalia" ;
     dwc:family "Miniopteridae" ;
     dwc:genus "Miniopterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "schreibersii" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopteridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii_magnater>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii> ;
     dwc:class "Mammalia" ;
     dwc:family "Miniopteridae" ;
     dwc:genus "Miniopterus" ;
@@ -139,13 +311,149 @@
     dwc:rank "subSpecies" ;
     dwc:species "schreibersii" ;
     dwc:subSpecies "magnater" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E84887F9FFD4D65B0F3CF88F147A35AA>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Miniopterus_magnater_Sanborn_1931> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Miniopterus_schreibersii_magnater_Sanborn_1931> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5735202> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6419162> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_schreibersii>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "schreibersii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_pusillus>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pusillus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_medius>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "medius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_fuscus>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "fuscus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_paululus>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "paululus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_tristis>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "tristis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_blepotis>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "blepotis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_australis>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "australis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_macrocneme>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "macrocneme" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_robustior>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "robustior" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_orianae>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "orianae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miniopterus_pallidus>
+    dwc:class "Mammalia" ;
+    dwc:family "Miniopteridae" ;
+    dwc:genus "Miniopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pallidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miniopterus> ;
+    a dwcFP:TaxonName .

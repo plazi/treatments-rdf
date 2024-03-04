@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E8CE53FD74F65258A7BAAE5121B12F1C
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/biroi>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.3897/zookeys.937.51708.figures2-7> ;
+    dc:creator "Astafurova, Yulia V.; Proshchalykin, Maxim Yu.; Schwarz, Maximilian" ;
+    dc:title "Sphecodes duplex Bluethgen 1927" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphecodes_duplex_Bluethgen_1927> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sphecodes_biroi_Friese_1909> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.937.51708> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.937.51708>
-    dc:creator "Astafurova, Yulia V.", "Proshchalykin, Maxim Yu.", "Schwarz, Maximilian" ;
-    dc:date "2020" ;
-    dc:title "New and little-known species of the genus Sphecodes Latreille (Hymenoptera, Halictidae) from Southeast Asia" ;
     bibo:endPage "88" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "31" ;
     bibo:volume "937" ;
+    dc:creator "Astafurova, Yulia V.; Proshchalykin, Maxim Yu.; Schwarz, Maximilian" ;
+    dc:date "2020" ;
+    dc:title "New and little-known species of the genus Sphecodes Latreille (Hymenoptera, Halictidae) from Southeast Asia" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.937.51708.figures2-7> ;
     a fabio:JournalArticle .
 
@@ -25,21 +36,7 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/416774" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Sphecodes_biroi_Friese_1909>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphecodes_biroi> ;
-    dwc:class "Insecta" ;
-    dwc:family "Halictidae" ;
-    dwc:genus "Sphecodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Friese, 1909" ;
-    dwc:species "biroi" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Sphecodes_duplex_Bluethgen_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphecodes_duplex> ;
     dwc:LSID "E8CE53FD-74F6-5258-A7BA-AE5121B12F1C" ;
     dwc:class "Insecta" ;
     dwc:family "Halictidae" ;
@@ -50,60 +47,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bluethgen, 1927" ;
     dwc:species "duplex" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphecodes_duplex> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Halictidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Halictidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphecodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halictidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Halictidae" ;
-    dwc:genus "Sphecodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphecodes_biroi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphecodes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sphecodes_biroi_Friese_1909>
     dwc:class "Insecta" ;
     dwc:family "Halictidae" ;
     dwc:genus "Sphecodes" ;
@@ -111,11 +58,25 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Friese, 1909" ;
     dwc:species "biroi" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphecodes_biroi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sphecodes_bakeri_Cockerell_1915>
+    dwc:class "Insecta" ;
+    dwc:family "Halictidae" ;
+    dwc:genus "Sphecodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cockerell, 1915" ;
+    dwc:species "bakeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphecodes_bakeri> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sphecodes_duplex>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphecodes> ;
     dwc:class "Insecta" ;
     dwc:family "Halictidae" ;
     dwc:genus "Sphecodes" ;
@@ -124,13 +85,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "duplex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphecodes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E8CE53FD74F65258A7BAAE5121B12F1C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphecodes_duplex_Bluethgen_1927> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sphecodes_biroi_Friese_1909> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.937.51708> ;
-    dc:creator "Astafurova, Yulia V.", "Proshchalykin, Maxim Yu.", "Schwarz, Maximilian" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.937.51708.figures2-7> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sphecodes>
+    dwc:class "Insecta" ;
+    dwc:family "Halictidae" ;
+    dwc:genus "Sphecodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halictidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Halictidae>
+    dwc:class "Insecta" ;
+    dwc:family "Halictidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphecodes_biroi>
+    dwc:class "Insecta" ;
+    dwc:family "Halictidae" ;
+    dwc:genus "Sphecodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "biroi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphecodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphecodes_bakeri>
+    dwc:class "Insecta" ;
+    dwc:family "Halictidae" ;
+    dwc:genus "Sphecodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bakeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphecodes> ;
+    a dwcFP:TaxonName .
