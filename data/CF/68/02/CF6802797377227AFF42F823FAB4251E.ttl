@@ -1,27 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CF6802797377227AFF42F823FAB4251E
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Microporus_shiromai_Froeschner_1976> ;
+    dc:creator "A, Magnanelli Marco; Coscarón, Maria Del Carmen" ;
+    dc:title "Microporus Uhler" ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Microporus_Uhler_1872> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.201379> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Microporus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.201379>
-    dc:creator "A, Magnanelli Marco", "Coscarón, Maria Del Carmen" ;
-    dc:date "2011" ;
-    dc:title "Burrower bugs described after the Cydnidae of the Western – Hemisphere catalogue 1960 (Hemiptera: Heteroptera: Cydnidae)" ;
     bibo:endPage "63" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "57" ;
     bibo:volume "2766" ;
+    dc:creator "A, Magnanelli Marco; Coscarón, Maria Del Carmen" ;
+    dc:date "2011" ;
+    dc:title "Burrower bugs described after the Cydnidae of the Western – Hemisphere catalogue 1960 (Hemiptera: Heteroptera: Cydnidae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Microporus_Uhler_1872>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microporus> ;
-    dwc:ID-CoL "5cd9ffda-5248-43f4-a070-ba4d07169bc3" ;
     dwc:class "Diplopoda" ;
     dwc:family "Dalodesmidae" ;
     dwc:genus "Microporus" ;
@@ -30,10 +38,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Uhler, 1872 :394" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5cd9ffda-5248-43f4-a070-ba4d07169bc3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microporus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Microporus_shiromai_Froeschner_1976>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microporus_shiromai> ;
     dwc:class "Diplopoda" ;
     dwc:family "Dalodesmidae" ;
     dwc:genus "Microporus" ;
@@ -43,40 +52,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Froeschner, 1976" ;
     dwc:species "shiromai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microporus_shiromai> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dalodesmidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polydesmida> ;
-    dwc:class "Diplopoda" ;
-    dwc:family "Dalodesmidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Polydesmida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Diplopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Microporus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dalodesmidae> ;
     dwc:class "Diplopoda" ;
     dwc:family "Dalodesmidae" ;
     dwc:genus "Microporus" ;
@@ -84,10 +63,49 @@
     dwc:order "Polydesmida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dalodesmidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dalodesmidae>
+    dwc:class "Diplopoda" ;
+    dwc:family "Dalodesmidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Polydesmida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polydesmida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polydesmida>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Polydesmida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Microporus_shiromai>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microporus> ;
     dwc:class "Diplopoda" ;
     dwc:family "Dalodesmidae" ;
     dwc:genus "Microporus" ;
@@ -96,22 +114,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "shiromai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microporus> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Polydesmida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
-    dwc:class "Diplopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Polydesmida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/CF6802797377227AFF42F823FAB4251E>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Microporus_Uhler_1872> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.201379> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Microporus> ;
-    dc:creator "A, Magnanelli Marco", "Coscarón, Maria Del Carmen" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Microporus_shiromai_Froeschner_1976> ;
-    a trt:Treatment .
-
