@@ -1,28 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.17109/AZH.68.1.73.2022>
-    dc:creator "Döker, Ismail", "Ermilov, Sergey G.", "Joharchi, Omid", "Khaustov, Alexander A.", "Khaustov, Vladimir A." ;
-    dc:date "2022" ;
-    dc:title "A New Sexually Dimorphic Species Of The Genus Oribatella (Acari, Oribatida, Oribatellidae) From Russia" ;
+treatment:03DC7C02FFC7FFB08DB3D6B9FBEDD625
+    dc:creator "Ermilov, Sergey G.; Khaustov, Alexander A.; Joharchi, Omid; Döker, Ismail; Khaustov, Vladimir A." ;
+    dc:title "Oribatella altaica Ermilov 2022, sp. n." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oribatella_altaica_Ermilov_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.17109/azh.68.1.73.2022> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.17109/azh.68.1.73.2022>
     bibo:endPage "84" ;
     bibo:issue "1" ;
     bibo:journal "Acta Zoologica Academiae Scientiarum Hungaricae" ;
     bibo:pubDate "2022-02-14" ;
     bibo:startPage "73" ;
     bibo:volume "68" ;
+    dc:creator "Ermilov, Sergey G.; Khaustov, Alexander A.; Joharchi, Omid; Döker, Ismail; Khaustov, Vladimir A." ;
+    dc:date "2022" ;
+    dc:title "A New Sexually Dimorphic Species Of The Genus Oribatella (Acari, Oribatida, Oribatellidae) From Russia" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oribatella_altaica_Ermilov_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oribatella_altaica> ;
     dwc:class "Arachnida" ;
     dwc:family "Oribatellidae" ;
     dwc:genus "Oribatella" ;
@@ -30,32 +39,37 @@
     dwc:order "Sarcoptiformes" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Ermilov" ;
+    dwc:scientificNameAuthorship "Ermilov", "Ermilov, 2022" ;
     dwc:species "altaica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oribatella_altaica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Oribatella_canadensis_Eamer_2010>
     dwc:class "Arachnida" ;
+    dwc:family "Oribatellidae" ;
+    dwc:genus "Oribatella" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Sarcoptiformes" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Behan-Pelletier et Eamer, 2010" ;
+    dwc:species "canadensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oribatella_canadensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Oribatella_altaica>
+    dwc:class "Arachnida" ;
+    dwc:family "Oribatellidae" ;
+    dwc:genus "Oribatella" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Sarcoptiformes" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "species" ;
+    dwc:species "altaica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oribatella> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oribatella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oribatellidae> ;
     dwc:class "Arachnida" ;
     dwc:family "Oribatellidae" ;
     dwc:genus "Oribatella" ;
@@ -63,10 +77,49 @@
     dwc:order "Sarcoptiformes" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oribatellidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Oribatella_altaica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oribatella> ;
+<http://taxon-name.plazi.org/id/Animalia/Oribatellidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Oribatellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sarcoptiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sarcoptiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sarcoptiformes>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sarcoptiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oribatella_canadensis>
     dwc:class "Arachnida" ;
     dwc:family "Oribatellidae" ;
     dwc:genus "Oribatella" ;
@@ -74,31 +127,6 @@
     dwc:order "Sarcoptiformes" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "altaica" ;
+    dwc:species "canadensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oribatella> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Oribatellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sarcoptiformes> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Oribatellidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Sarcoptiformes" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sarcoptiformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Sarcoptiformes" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03DC7C02FFC7FFB08DB3D6B9FBEDD625>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oribatella_altaica_Ermilov_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.17109/azh.68.1.73.2022> ;
-    dc:creator "Döker, Ismail", "Ermilov, Sergey G.", "Joharchi, Omid", "Khaustov, Alexander A.", "Khaustov, Vladimir A." ;
-    a trt:Treatment .
-
