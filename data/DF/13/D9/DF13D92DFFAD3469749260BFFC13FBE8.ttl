@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:DF13D92DFFAD3469749260BFFC13FBE8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1245354>, <http://dx.doi.org/10.5281/zenodo.1245356>, <http://dx.doi.org/10.5281/zenodo.1245358> ;
+    dc:creator "Waringer, Johann; González, Marcos A.; Martín, Luis; Martínez, Jesús; Erzinger, Felicitas; Pauls, Steffen U." ;
+    dc:title "Apatania theischingerorum Malicky 1981" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Apatania_theischingerorum_Malicky_1981> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4418.2.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4418.2.5>
-    dc:creator "Erzinger, Felicitas", "González, Marcos A.", "Martín, Luis", "Martínez, Jesús", "Pauls, Steffen U.", "Waringer, Johann" ;
-    dc:date "2018" ;
-    dc:title "DNA-based association and description of the larval stage of Apatania theischingerorum Malicky 1981 (Trichoptera, Apataniidae), with notes on its ecology" ;
     bibo:endPage "170" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "161" ;
     bibo:volume "4418" ;
+    dc:creator "Waringer, Johann; González, Marcos A.; Martín, Luis; Martínez, Jesús; Erzinger, Felicitas; Pauls, Steffen U." ;
+    dc:date "2018" ;
+    dc:title "DNA-based association and description of the larval stage of Apatania theischingerorum Malicky 1981 (Trichoptera, Apataniidae), with notes on its ecology" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1245354>, <http://dx.doi.org/10.5281/zenodo.1245356>, <http://dx.doi.org/10.5281/zenodo.1245358> ;
     a fabio:JournalArticle .
 
@@ -37,8 +46,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Apatania_theischingerorum_Malicky_1981>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apatania_theischingerorum> ;
-    dwc:ID-CoL "F8KT" ;
     dwc:authority "Waringer, 2018" ;
     dwc:authorityName "Waringer" ;
     dwc:authorityYear "2018" ;
@@ -49,16 +56,13 @@
     dwc:order "Trichoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Malicky, 1981" ;
     dwc:species "theischingerorum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/F8KT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apatania_theischingerorum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Apatania>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apataniidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Apatania_Kolenati_1848>
     dwc:class "Insecta" ;
     dwc:family "Apataniidae" ;
     dwc:genus "Apatania" ;
@@ -66,10 +70,11 @@
     dwc:order "Trichoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Kolenati, 1848" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apatania> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Apatania_theischingerorum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apatania> ;
     dwc:class "Insecta" ;
     dwc:family "Apataniidae" ;
     dwc:genus "Apatania" ;
@@ -78,46 +83,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "theischingerorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apatania> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apatania>
+    dwc:class "Insecta" ;
+    dwc:family "Apataniidae" ;
+    dwc:genus "Apatania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apataniidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Apataniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Apataniidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Trichoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Trichoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DF13D92DFFAD3469749260BFFC13FBE8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Apatania_theischingerorum_Malicky_1981> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4418.2.5> ;
-    dc:creator "Erzinger, Felicitas", "González, Marcos A.", "Martín, Luis", "Martínez, Jesús", "Pauls, Steffen U.", "Waringer, Johann" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1245354>, <http://dx.doi.org/10.5281/zenodo.1245356>, <http://dx.doi.org/10.5281/zenodo.1245358> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
