@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:632E7F4C6F7FFF9FFC9E0460FE93FB1A
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/pamirensis_Ashurova_1971>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.886413> ;
+    dc:creator "Tomáš Scholz; Alain de Chambrier; Takeshi Shimazu; Alexey Ermolenko; Andrea Waeschenbach" ;
+    dc:title "Proteocephalus sagittus La Rue 1911" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_sagittus_Grimm_1872> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ichthyotaenia_sagitta_Grimm_1872>, <http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_pamirensis_Ashurova_1971> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6010890> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6010890>
-    dc:creator "Alain de Chambrier", "Alexey Ermolenko", "Andrea Waeschenbach", "Takeshi Shimazu", "Tomáš Scholz" ;
-    dc:date "2017" ;
-    dc:title "Proteocephalid tapeworms (Cestoda: Onchoproteocephalidea) of loaches (Cobitoidea): Evidence for monophyly and high endemism of parasites in the Far East" ;
     bibo:endPage "883" ;
     bibo:journal "Parasitology International" ;
     bibo:startPage "871" ;
     bibo:volume "66" ;
+    dc:creator "Tomáš Scholz; Alain de Chambrier; Takeshi Shimazu; Alexey Ermolenko; Andrea Waeschenbach" ;
+    dc:date "2017" ;
+    dc:title "Proteocephalid tapeworms (Cestoda: Onchoproteocephalidea) of loaches (Cobitoidea): Evidence for monophyly and high endemism of parasites in the Far East" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.886413> ;
     a fabio:JournalArticle .
 
@@ -25,8 +36,27 @@
     fabio:hasRepresentation "https://zenodo.org/record/886413/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_sagittus_Grimm_1872>
+    dwc:class "Cestoda" ;
+    dwc:family "Proteocephalidae" ;
+    dwc:genus "Proteocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Proteocephalidea", "Onchoproteocephalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Grimm, 1872) La Rue, 1911", "Grimm, 1872", "(Grimm, 1872)" ;
+    dwc:species "sagittus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus_sagittus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/sagittus_Rue_1911>
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Grimm, 1872) La Rue, 1911" ;
+    dwc:species "sagittus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/sagittus> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Ichthyotaenia_sagitta_Grimm_1872>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia_sagitta> ;
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
     dwc:genus "Ichthyotaenia" ;
@@ -36,10 +66,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Grimm, 1872" ;
     dwc:species "sagitta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia_sagitta> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_pamirensis_Ashurova_1971>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus_pamirensis> ;
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
     dwc:genus "Proteocephalus" ;
@@ -49,10 +79,74 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Dzhalilov and Ashurova, 1971" ;
     dwc:species "pamirensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus_pamirensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_sagittus_Grimm_1872>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus_sagittus> ;
+<http://taxon-concept.plazi.org/id/Animalia/pamirensis_Ashurova_1971>
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Dzhalilov and Ashurova, 1971" ;
+    dwc:species "pamirensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/pamirensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Barbatula_barbatula_(Linnaeus_1758>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:genus "Barbatula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "barbatula (Linnaeus, 1758)", "barbatula" ;
+    dwc:species "barbatula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Barbatula_barbatula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cobitis_Linnaeus_1758>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Cobitidae" ;
+    dwc:genus "Cobitis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cobitis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/taenia_Linnaeus_1758>
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus" ;
+    dwc:species "taenia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/taenia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Triplophysa_stoliczkai_Steindachner_1866>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:genus "Triplophysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Steindachner, 1866)", "Steindachner, 1866" ;
+    dwc:species "stoliczkai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Triplophysa_stoliczkai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_Scholz_2017>
+    dwc:class "Cestoda" ;
+    dwc:family "Proteocephalidae" ;
+    dwc:genus "Proteocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Proteocephalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Tomáš Scholz & Alain de Chambrier & Takeshi Shimazu & Alexey Ermolenko & Andrea Waeschenbach, 2017" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_torulosus_Batsch_1786>
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
     dwc:genus "Proteocephalus" ;
@@ -60,36 +154,122 @@
     dwc:order "Proteocephalidea" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Grimm, 1872) La Rue, 1911" ;
-    dwc:species "sagittus" ;
+    dwc:scientificNameAuthorship "Batsch, 1786" ;
+    dwc:species "torulosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus_torulosus> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Perciformes_Bleeker_1859>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    dwc:scientificNameAuthorship "Bleeker, 1859" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Perciformes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Salvelinus_alpinus_Linnaeus_1758>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Salmonidae" ;
+    dwc:genus "Salvelinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Salmoniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "alpinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Salvelinus_alpinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Salmoniformes_Bleeker_1859>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Salmoniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    dwc:scientificNameAuthorship "Bleeker, 1859" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Salmoniformes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Proteocephalus_sagittus>
+    dwc:class "Cestoda" ;
+    dwc:family "Proteocephalidae" ;
+    dwc:genus "Proteocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Proteocephalidea", "Onchoproteocephalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "sagittus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proteocephalus>
+    dwc:class "Cestoda" ;
+    dwc:family "Proteocephalidae" ;
+    dwc:genus "Proteocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Proteocephalidea", "Onchoproteocephalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proteocephalidae>
+    dwc:class "Cestoda" ;
+    dwc:family "Proteocephalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Proteocephalidea", "Onchoproteocephalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalidea>, <http://taxon-name.plazi.org/id/Animalia/Onchoproteocephalidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proteocephalidea>
+    dwc:class "Cestoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Proteocephalidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cestoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cestoda>
+    dwc:class "Cestoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Cestoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+<http://taxon-name.plazi.org/id/Animalia/Onchoproteocephalidea>
     dwc:class "Cestoda" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Onchoproteocephalidea" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cestoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalidae> ;
-    dwc:class "Cestoda" ;
-    dwc:family "Proteocephalidae" ;
-    dwc:genus "Ichthyotaenia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Proteocephalidea" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "genus" ;
+<http://taxon-name.plazi.org/id/Animalia/sagittus>
+    # Warning: Could not determine parent name ;
+    dwc:rank "species" ;
+    dwc:species "sagittus" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia_sagitta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia> ;
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
     dwc:genus "Ichthyotaenia" ;
@@ -98,47 +278,21 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "sagitta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Proteocephalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalidea> ;
+<http://taxon-name.plazi.org/id/Animalia/Ichthyotaenia>
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Proteocephalidea" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Proteocephalidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cestoda> ;
-    dwc:class "Cestoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Proteocephalidea" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Proteocephalus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalidae> ;
-    dwc:class "Cestoda" ;
-    dwc:family "Proteocephalidae" ;
-    dwc:genus "Proteocephalus" ;
+    dwc:genus "Ichthyotaenia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Proteocephalidea" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Proteocephalus_pamirensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus> ;
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
     dwc:genus "Proteocephalus" ;
@@ -147,10 +301,123 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "pamirensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Proteocephalus_sagittus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus> ;
+<http://taxon-name.plazi.org/id/Animalia/pamirensis>
+    # Warning: Could not determine parent name ;
+    dwc:rank "species" ;
+    dwc:species "pamirensis" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Barbatula_barbatula>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:genus "Barbatula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "barbatula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Barbatula> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Barbatula>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:genus "Barbatula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemacheilidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nemacheilidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cypriniformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cypriniformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cobitis>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Cobitidae" ;
+    dwc:genus "Cobitis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cobitidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cobitidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Cobitidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cypriniformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/taenia>
+    # Warning: Could not determine parent name ;
+    dwc:rank "species" ;
+    dwc:species "taenia" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Triplophysa_stoliczkai>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:genus "Triplophysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "stoliczkai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Triplophysa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Triplophysa>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Nemacheilidae" ;
+    dwc:genus "Triplophysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cypriniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemacheilidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proteocephalus_torulosus>
     dwc:class "Cestoda" ;
     dwc:family "Proteocephalidae" ;
     dwc:genus "Proteocephalus" ;
@@ -158,14 +425,57 @@
     dwc:order "Proteocephalidea" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
-    dwc:species "sagittus" ;
+    dwc:species "torulosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proteocephalus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/632E7F4C6F7FFF9FFC9E0460FE93FB1A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_sagittus_Grimm_1872> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ichthyotaenia_sagitta_Grimm_1872>, <http://taxon-concept.plazi.org/id/Animalia/Proteocephalus_pamirensis_Ashurova_1971> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6010890> ;
-    dc:creator "Alain de Chambrier", "Alexey Ermolenko", "Andrea Waeschenbach", "Takeshi Shimazu", "Tomáš Scholz" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.886413> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Perciformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Salvelinus_alpinus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Salmonidae" ;
+    dwc:genus "Salvelinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Salmoniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "alpinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salvelinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Salvelinus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Salmonidae" ;
+    dwc:genus "Salvelinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Salmoniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salmonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Salmonidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Salmonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Salmoniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salmoniformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Salmoniformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Salmoniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
