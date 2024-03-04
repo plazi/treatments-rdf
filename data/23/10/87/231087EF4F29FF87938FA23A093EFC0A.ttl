@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:231087EF4F29FF87938FA23A093EFC0A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5393047> ;
+    dc:creator "Lourenço, Wilson R." ;
+    dc:title "Uroplectes monardi , Vachon 1950" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Uroplectes_monardi__1950> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi_Vachon_1950> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5393043> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5393043>
-    dc:creator "Lourenço, Wilson R." ;
-    dc:date "2000" ;
-    dc:title "Analyse taxonomique de quelques espèces du genre Uroplectes Peters, 1861 présentes en Angola et description d’une espèce nouvelle (Scorpiones, Buthidae)" ;
     bibo:endPage "506" ;
     bibo:issue "3" ;
     bibo:journal "Zoosystema" ;
     bibo:startPage "499" ;
     bibo:volume "22" ;
+    dc:creator "Lourenço, Wilson R." ;
+    dc:date "2000" ;
+    dc:title "Analyse taxonomique de quelques espèces du genre Uroplectes Peters, 1861 présentes en Angola et description d’une espèce nouvelle (Scorpiones, Buthidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5393047> ;
     a fabio:JournalArticle .
 
@@ -27,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Uroplectes_monardi__1950>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_monardi> ;
     dwc:class "Arachnida" ;
     dwc:family "Buthidae" ;
     dwc:genus "Uroplectes" ;
@@ -37,75 +46,39 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Vachon, 1950" ;
     dwc:species "monardi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_monardi> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi_Vachon_1950>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi> ;
-    dwc:ID-CoL "7L6NS" ;
     dwc:class "Arachnida" ;
     dwc:family "Buthidae" ;
     dwc:genus "Uroplectes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "variety" ;
-    dwc:scientificNameAuthorship "Vachon, 1950: 15" ;
+    dwc:rank "variety", "subSpecies" ;
+    dwc:scientificNameAuthorship "Vachon, 1950: 15", "Vachon, 1950" ;
     dwc:species "occidentalis" ;
+    dwc:subSpecies "monardi" ;
     dwc:variety "monardi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Buthidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scorpiones> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Buthidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Scorpiones>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Uroplectes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Buthidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Uroplectes_occidentalis_Simon_1876>
     dwc:class "Arachnida" ;
     dwc:family "Buthidae" ;
     dwc:genus "Uroplectes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Simon, 1876" ;
+    dwc:species "occidentalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Uroplectes_monardi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uroplectes> ;
     dwc:class "Arachnida" ;
     dwc:family "Buthidae" ;
     dwc:genus "Uroplectes" ;
@@ -114,10 +87,74 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "monardi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uroplectes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Uroplectes>
+    dwc:class "Arachnida" ;
+    dwc:family "Buthidae" ;
+    dwc:genus "Uroplectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Buthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Buthidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Buthidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scorpiones> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scorpiones>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi>
+    dwc:class "Arachnida" ;
+    dwc:family "Buthidae" ;
+    dwc:genus "Uroplectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety", "subSpecies" ;
+    dwc:species "occidentalis" ;
+    dwc:subSpecies "monardi" ;
+    dwc:variety "monardi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uroplectes> ;
     dwc:class "Arachnida" ;
     dwc:family "Buthidae" ;
     dwc:genus "Uroplectes" ;
@@ -126,26 +163,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "occidentalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uroplectes> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uroplectes_occidentalis> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Buthidae" ;
-    dwc:genus "Uroplectes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "variety" ;
-    dwc:species "occidentalis" ;
-    dwc:variety "monardi" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/231087EF4F29FF87938FA23A093EFC0A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Uroplectes_monardi__1950> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Uroplectes_occidentalis_monardi_Vachon_1950> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5393043> ;
-    dc:creator "Lourenço, Wilson R." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5393047> ;
-    a trt:Treatment .
-
