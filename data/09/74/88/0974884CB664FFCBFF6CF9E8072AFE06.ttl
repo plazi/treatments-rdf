@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0974884CB664FFCBFF6CF9E8072AFE06
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1459546>, <http://dx.doi.org/10.5281/zenodo.1459548> ;
+    dc:creator "Choi, Jinyeong; Soysouvanh, Pheophanh; Lee, Seunghwan; Hong, Ki-Jeong" ;
+    dc:title "Coccus formicarii" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0974884CB664FFCBFF6CF9E8072AFE06.mc.31B53307B66BFFC9FF3CF83E07D7F865> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Coccus_formicarii_Green_1896> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Lecanium_formicarii_Green_1896> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaXa.4460.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaXa.4460.1.1>
-    dc:creator "Choi, Jinyeong", "Hong, Ki-Jeong", "Lee, Seunghwan", "Soysouvanh, Pheophanh" ;
-    dc:date "2018" ;
-    dc:title "Review of the family Coccidae (Hemiptera: Coccomorpha) in Laos" ;
     bibo:endPage "62" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-08-17" ;
     bibo:startPage "1" ;
     bibo:volume "4460" ;
+    dc:creator "Choi, Jinyeong; Soysouvanh, Pheophanh; Lee, Seunghwan; Hong, Ki-Jeong" ;
+    dc:date "2018" ;
+    dc:title "Review of the family Coccidae (Hemiptera: Coccomorpha) in Laos" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1459546>, <http://dx.doi.org/10.5281/zenodo.1459548> ;
     a fabio:JournalArticle .
 
@@ -32,8 +43,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/1459548/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/0974884CB664FFCBFF6CF9E8072AFE06.mc.31B53307B66BFFC9FF3CF83E07D7F865>
+    dwc:locality "Phou Khao Khuay National Bio-Diversity" ;
+    trt:gbifOccurrenceId "1918155441" ;
+    trt:httpUri <https://treatment.plazi.org/id/0974884CB664FFCBFF6CF9E8072AFE06#31B53307B66BFFC9FF3CF83E07D7F865> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Coccus_formicarii_Green_1896>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Coccus_formicarii> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Arecaceae" ;
     dwc:genus "Coccus" ;
@@ -41,12 +57,12 @@
     dwc:order "Arecales" ;
     dwc:phylum "Magnoliophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Green, 1896)" ;
+    dwc:scientificNameAuthorship "(Green, 1896)", "Green, 1896" ;
     dwc:species "formicarii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Coccus_formicarii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Lecanium_formicarii_Green_1896>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Lecanium_formicarii> ;
     dwc:class "Polypodiopsida" ;
     dwc:family "Polypodiaceae" ;
     dwc:genus "Lecanium" ;
@@ -56,45 +72,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Green, 1896: 10" ;
     dwc:species "formicarii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Lecanium_formicarii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Arecaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Arecaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Arecales" ;
-    dwc:phylum "Magnoliophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Arecales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Arecales" ;
-    dwc:phylum "Magnoliophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Coccus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Coccus_celatus_For_1960>
     dwc:class "Magnoliopsida" ;
     dwc:family "Arecaceae" ;
     dwc:genus "Coccus" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Arecales" ;
     dwc:phylum "Magnoliophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "De Lotto, 1960" ;
+    dwc:species "celatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Coccus_celatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Coccus_multisetus_Wang_2012>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Coccus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wang & Feng", "Wang & Feng, 2012" ;
+    dwc:species "multisetus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Coccus_multisetus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Coccus_formicarii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Coccus> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Arecaceae" ;
     dwc:genus "Coccus" ;
@@ -103,28 +110,136 @@
     dwc:phylum "Magnoliophyta" ;
     dwc:rank "species" ;
     dwc:species "formicarii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Coccus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Magnoliophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Coccus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Coccus" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
     dwc:phylum "Magnoliophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Arecaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Arecales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Magnoliophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliophyta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0974884CB664FFCBFF6CF9E8072AFE06>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Coccus_formicarii_Green_1896> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Lecanium_formicarii_Green_1896> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaXa.4460.1.1> ;
-    dc:creator "Choi, Jinyeong", "Hong, Ki-Jeong", "Lee, Seunghwan", "Soysouvanh, Pheophanh" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1459546>, <http://dx.doi.org/10.5281/zenodo.1459548> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Magnoliophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lecanium_formicarii>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Polypodiaceae" ;
+    dwc:genus "Lecanium" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "formicarii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lecanium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lecanium>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Polypodiaceae" ;
+    dwc:genus "Lecanium" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Polypodiaceae>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Polypodiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Polypodiales>
+    dwc:class "Polypodiopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Polypodiopsida>
+    dwc:class "Polypodiopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Coccus_celatus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Coccus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "species" ;
+    dwc:species "celatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Coccus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Coccus_multisetus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Coccus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "species" ;
+    dwc:species "multisetus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Coccus> ;
+    a dwcFP:TaxonName .

@@ -1,18 +1,25 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0955F46CFF85FFA9E4D0FCF0FEC6FB53
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Oocyclus_Sharp_1882>, <http://taxon-concept.plazi.org/id/Animalia/Laccobius_Erichson_1837> ;
+    dc:creator "Short, Andrew E. Z.; Fikáček, Martin" ;
+    dc:title "Laccobius manalicus Short & Fikacek 2011, nom. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Laccobius_manalicus_Short_2011> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oocyclus_inermis_Hebauer_1998> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4468177> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.4468177>
-    dc:creator "Fikáček, Martin", "Short, Andrew E. Z." ;
-    dc:date "2011" ;
-    dc:title "World catalogue of the Hydrophiloidea (Coleoptera): additions and corrections II (2006 - 2010)" ;
     bibo:endPage "122" ;
     bibo:issue "1" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
@@ -20,23 +27,12 @@
     bibo:series "suppl." ;
     bibo:startPage "83" ;
     bibo:volume "51" ;
+    dc:creator "Short, Andrew E. Z.; Fikáček, Martin" ;
+    dc:date "2011" ;
+    dc:title "World catalogue of the Hydrophiloidea (Coleoptera): additions and corrections II (2006 - 2010)" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Laccobius_Erichson_1837>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius> ;
-    dwc:ID-CoL "8VRRY" ;
-    dwc:class "Insecta" ;
-    dwc:family "Hydrophilidae" ;
-    dwc:genus "Laccobius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Erichson, 1837" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Laccobius_manalicus_Short_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius_manalicus> ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Laccobius" ;
@@ -44,26 +40,12 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Short & Fikacek, 2011" ;
+    dwc:scientificNameAuthorship "Short & Fikacek, 2011", "Short & Fikáček, 2011" ;
     dwc:species "manalicus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Oocyclus_Sharp_1882>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oocyclus> ;
-    dwc:ID-CoL "8VZW4" ;
-    dwc:class "Insecta" ;
-    dwc:family "Hydrophilidae" ;
-    dwc:genus "Oocyclus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Sharp, 1882" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius_manalicus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oocyclus_inermis_Hebauer_1998>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oocyclus_inermis> ;
-    dwc:ID-CoL "49RVW" ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Oocyclus" ;
@@ -73,49 +55,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hebauer & Wang, 1998: 42" ;
     dwc:species "inermis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oocyclus_inermis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hydrophilidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Oocyclus_Sharp_1882>
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
+    dwc:genus "Oocyclus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Sharp, 1882" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oocyclus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Laccobius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Laccobius_Erichson_1837>
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Laccobius" ;
@@ -123,10 +80,52 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Erichson, 1837" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Laccobius_Cyclolaccobius_Gentili_1991>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Laccobius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:scientificNameAuthorship "Gentili, 1991" ;
+    dwc:subGenus "Cyclolaccobius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius_Cyclolaccobius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Laccobius_inermis_Hebauer_1998>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Laccobius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Hebauer & Wang, 1998)" ;
+    dwc:species "inermis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius_inermis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Laccobius_inermis_Gentili_1995>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Laccobius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gentili, 1995" ;
+    dwc:species "inermis" ;
+    dwc:subGenus "Cyclolaccobius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laccobius_inermis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Laccobius_manalicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laccobius> ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Laccobius" ;
@@ -135,21 +134,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "manalicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laccobius> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Oocyclus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Laccobius>
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
-    dwc:genus "Oocyclus" ;
+    dwc:genus "Laccobius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydrophilidae>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oocyclus_inermis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oocyclus> ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Oocyclus" ;
@@ -158,13 +196,41 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "inermis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oocyclus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0955F46CFF85FFA9E4D0FCF0FEC6FB53>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Laccobius_manalicus_Short_2011> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oocyclus_inermis_Hebauer_1998> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4468177> ;
-    dc:creator "Fikáček, Martin", "Short, Andrew E. Z." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Laccobius_Erichson_1837>, <http://taxon-concept.plazi.org/id/Animalia/Oocyclus_Sharp_1882> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Oocyclus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Oocyclus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Laccobius_Cyclolaccobius>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Laccobius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Cyclolaccobius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laccobius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Laccobius_inermis>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Laccobius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "inermis" ;
+    dwc:subGenus "Cyclolaccobius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laccobius>, <http://taxon-name.plazi.org/id/Animalia/Laccobius_Cyclolaccobius> ;
+    a dwcFP:TaxonName .
