@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A3D274111FFFEAFF69BBB5FB5E7AB7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5402027>, <http://dx.doi.org/10.5281/zenodo.5402029> ;
+    dc:creator "Crosnier, Alain" ;
+    dc:title "Portunus paralatibrachium Crosnier 2002, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A3D274111FFFEAFF69BBB5FB5E7AB7.mc.3B62693F111FFFEDFF15BA13FDE27C59>, <http://tb.plazi.org/GgServer/dwcaRecords/03A3D274111FFFEAFF69BBB5FB5E7AB7.mc.3B62693F111FFFEDFD00BA26FDC77C8D> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Portunus_paralatibrachium_Crosnier_2002> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5402015> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5402015>
-    dc:creator "Crosnier, Alain" ;
-    dc:date "2002" ;
-    dc:title "Portunidae (Crustacea, Decapoda, Brachyura) de Polynésie française, principalement des îles Marquises" ;
     bibo:endPage "449" ;
     bibo:issue "2" ;
     bibo:journal "Zoosystema" ;
     bibo:startPage "401" ;
     bibo:volume "24" ;
+    dc:creator "Crosnier, Alain" ;
+    dc:date "2002" ;
+    dc:title "Portunidae (Crustacea, Decapoda, Brachyura) de Polynésie française, principalement des îles Marquises" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5402027>, <http://dx.doi.org/10.5281/zenodo.5402029> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,24 @@
     fabio:hasRepresentation "https://zenodo.org/record/5402029/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03A3D274111FFFEAFF69BBB5FB5E7AB7.mc.3B62693F111FFFEDFF15BA13FDE27C59>
+    dwc:catalogNumber "MNHN-B 27956" ;
+    dwc:collectionCode "MATERIEL, TYPE" ;
+    dwc:eventDate "1997-08-22" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "55" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7#3B62693F111FFFEDFF15BA13FDE27C59> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03A3D274111FFFEAFF69BBB5FB5E7AB7.mc.3B62693F111FFFEDFD00BA26FDC77C8D>
+    dwc:catalogNumber "MNHN-B 27955, MNHN-B 27957" ;
+    dwc:eventDate "1997-08-28" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "62" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7#3B62693F111FFFEDFD00BA26FDC77C8D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Portunus_paralatibrachium_Crosnier_2002>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Portunus_paralatibrachium> ;
-    dwc:ID-CoL "4M2M4" ;
     dwc:class "Malacostraca" ;
     dwc:family "Portunidae" ;
     dwc:genus "Portunus" ;
@@ -43,49 +68,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Crosnier, 2002" ;
     dwc:species "paralatibrachium" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4M2M4> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Portunus_paralatibrachium> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Decapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Portunidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Portunus_latibrachium_Rathbun_1906>
     dwc:class "Malacostraca" ;
     dwc:family "Portunidae" ;
+    dwc:genus "Portunus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rathbun, 1906" ;
+    dwc:species "latibrachium" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Portunus_latibrachium> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Portunus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Portunidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Parathranites_latibrachium_Rathbun_1906>
+    dwc:class "Malacostraca" ;
+    dwc:family "Carcinidae" ;
+    dwc:genus "Parathranites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rathbun, 1906" ;
+    dwc:species "latibrachium" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parathranites_latibrachium> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Portunus_Weber_1795>
     dwc:class "Malacostraca" ;
     dwc:family "Portunidae" ;
     dwc:genus "Portunus" ;
@@ -93,10 +106,11 @@
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Weber, 1795" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Portunus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Portunus_paralatibrachium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Portunus> ;
     dwc:class "Malacostraca" ;
     dwc:family "Portunidae" ;
     dwc:genus "Portunus" ;
@@ -105,28 +119,100 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "paralatibrachium" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Portunus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Portunus_paralatibrachium_Crosnier_2002> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5402015> ;
-    dc:creator "Crosnier, Alain" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5402027>, <http://dx.doi.org/10.5281/zenodo.5402029> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7/MNHN-B%2027955%2C%20MNHN-B%2027957>, <http://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7/MNHN-B%2027956> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Portunus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Portunidae" ;
+    dwc:genus "Portunus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Portunidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7/MNHN-B%2027955%2C%20MNHN-B%2027957>
-    dwc:catalogNumber "MNHN-B 27955, MNHN-B 27957" ;
-    dwc:eventDate "1997-08-28" ;
-    dwc:typeStatus "paratype" ;
-    dwc:verbatimElevation "62" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Portunidae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Portunidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A3D274111FFFEAFF69BBB5FB5E7AB7/MNHN-B%2027956>
-    dwc:catalogNumber "MNHN-B 27956" ;
-    dwc:collectionCode "MATERIEL, TYPE" ;
-    dwc:eventDate "1997-08-22" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimElevation "55" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Portunus_latibrachium>
+    dwc:class "Malacostraca" ;
+    dwc:family "Portunidae" ;
+    dwc:genus "Portunus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latibrachium" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Portunus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Parathranites_latibrachium>
+    dwc:class "Malacostraca" ;
+    dwc:family "Carcinidae" ;
+    dwc:genus "Parathranites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latibrachium" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parathranites> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Parathranites>
+    dwc:class "Malacostraca" ;
+    dwc:family "Carcinidae" ;
+    dwc:genus "Parathranites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carcinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carcinidae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Carcinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+    a dwcFP:TaxonName .
