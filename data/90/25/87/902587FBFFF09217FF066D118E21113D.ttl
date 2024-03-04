@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X-74.4.699>
-    dc:creator "Steiner, Warren E.", "Steury, Brent W." ;
-    dc:date "2020" ;
-    dc:title "Descriptions of Four New Species of Tumbling Flower Beetles (Coleoptera: Mordellidae) from Eastern North America" ;
+treatment:902587FBFFF09217FF066D118E21113D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4791157>, <http://dx.doi.org/10.5281/zenodo.4791171>, <http://dx.doi.org/10.5281/zenodo.4791179>, <http://dx.doi.org/10.5281/zenodo.4791199> ;
+    dc:creator "Steury, Brent W.; Steiner, Warren E." ;
+    dc:title "Mordellina wimbledon Steury and Steiner 2020, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/902587FBFFF09217FF066D118E21113D.mc.A8E43CB0FFF09215FEDD6DE48D961737>, <http://tb.plazi.org/GgServer/dwcaRecords/902587FBFFF09217FF066D118E21113D.mc.A8E43CB0FFF09215FE786E378E021603> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mordellina_wimbledon_Steiner_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-74.4.699> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x-74.4.699>
     bibo:endPage "709" ;
     bibo:issue "4" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2020-12-22" ;
     bibo:startPage "699" ;
     bibo:volume "74" ;
+    dc:creator "Steury, Brent W.; Steiner, Warren E." ;
+    dc:date "2020" ;
+    dc:title "Descriptions of Four New Species of Tumbling Flower Beetles (Coleoptera: Mordellidae) from Eastern North America" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4791157>, <http://dx.doi.org/10.5281/zenodo.4791171>, <http://dx.doi.org/10.5281/zenodo.4791179>, <http://dx.doi.org/10.5281/zenodo.4791199> ;
     a fabio:JournalArticle .
 
@@ -42,8 +52,29 @@
     fabio:hasRepresentation "https://zenodo.org/record/4791199/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/902587FBFFF09217FF066D118E21113D.mc.A8E43CB0FFF09215FEDD6DE48D961737>
+    dwc:collectionCode "USNM, GWMP" ;
+    dwc:eventDate "2017-06-02" ;
+    dwc:locality "Dissected" ;
+    dwc:recordedBy "B. Steury & C. Davis & C. Acosta." ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3333864305" ;
+    trt:httpUri <https://treatment.plazi.org/id/902587FBFFF09217FF066D118E21113D#A8E43CB0FFF09215FEDD6DE48D961737> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/902587FBFFF09217FF066D118E21113D.mc.A8E43CB0FFF09215FE786E378E021603>
+    dwc:collectionCode "USNM, GWMP" ;
+    dwc:eventDate "2008-06-10" ;
+    dwc:locality "One" ;
+    dwc:recordedBy "A. Evans & B. Steury." ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimLatitude "36.8048" ;
+    dwc:verbatimLongitude "-75.96709" ;
+    trt:gbifOccurrenceId "3333864307" ;
+    trt:httpUri <https://treatment.plazi.org/id/902587FBFFF09217FF066D118E21113D#A8E43CB0FFF09215FE786E378E021603> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Mordellina_wimbledon_Steiner_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_wimbledon> ;
     dwc:class "Insecta" ;
     dwc:family "Mordellidae" ;
     dwc:genus "Mordellina" ;
@@ -53,49 +84,74 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Steury and Steiner" ;
     dwc:species "wimbledon" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_wimbledon> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mordellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mordellina_wimbledon_Steury_2020>
     dwc:class "Insecta" ;
     dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Steury & Steiner, 2020" ;
+    dwc:species "wimbledon" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_wimbledon> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Mordellina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mordellina_undefined-a_Steury_2020>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undefined-a" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_undefined-a> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mordellina_ancilla_LeConte_1862>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "LeConte, 1862", "(LeConte, 1862) (sensu Lisberg 2003)" ;
+    dwc:species "ancilla" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_ancilla> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mordellina_testacea_Blatchley_1910>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Blatchley, 1910" ;
+    dwc:species "testacea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_testacea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mordellina_washingtonensis_Steury_2020>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Steury & Steiner, 2020" ;
+    dwc:species "washingtonensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina_washingtonensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mordellina_Schilsky_1908>
     dwc:class "Insecta" ;
     dwc:family "Mordellidae" ;
     dwc:genus "Mordellina" ;
@@ -103,10 +159,48 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Schilsky, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Fagaceae_Dumortier_1829>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fagaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Dumortier, 1829" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Fagaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Fagus_grandifolia_Ehrh._2020>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fagaceae" ;
+    dwc:genus "Fagus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ehrh." ;
+    dwc:species "grandifolia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Fagus_grandifolia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinus_virginiana_Mill._2020>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Mill." ;
+    dwc:species "virginiana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pinus_virginiana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Mordellina_wimbledon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
     dwc:class "Insecta" ;
     dwc:family "Mordellidae" ;
     dwc:genus "Mordellina" ;
@@ -115,12 +209,215 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "wimbledon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/902587FBFFF09217FF066D118E21113D>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mordellina_wimbledon_Steiner_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-74.4.699> ;
-    dc:creator "Steiner, Warren E.", "Steury, Brent W." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4791157>, <http://dx.doi.org/10.5281/zenodo.4791171>, <http://dx.doi.org/10.5281/zenodo.4791179>, <http://dx.doi.org/10.5281/zenodo.4791199> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mordellina>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mordellidae>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mordellina_undefined-a>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undefined-a" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mordellina_ancilla>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ancilla" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mordellina_testacea>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "testacea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mordellina_washingtonensis>
+    dwc:class "Insecta" ;
+    dwc:family "Mordellidae" ;
+    dwc:genus "Mordellina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "washingtonensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mordellina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fagaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagus_grandifolia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fagaceae" ;
+    dwc:genus "Fagus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "grandifolia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fagaceae" ;
+    dwc:genus "Fagus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinus_virginiana>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "virginiana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinus>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinaceae>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinales>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinopsida>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
