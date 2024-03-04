@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039087ABFFA1CA10F0B285AE2155FEDC
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8222238> ;
+    dc:creator "Vlasak, Josef; Santos-Silva, Antonio" ;
+    dc:title "Parabaryssinus katerinae Vlasak and Santos-Silva 2023, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039087ABFFA1CA10F0B285AE2155FEDC.mc.3B513CE0FFAFCA13F11B820820E6F9C4> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Parabaryssinus_katerinae_Santos-Silva_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.8222232> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.8222232>
-    dc:creator "Santos-Silva, Antonio", "Vlasak, Josef" ;
-    dc:date "2023" ;
-    dc:title "Description of three new Acanthocinini (Coleoptera: Cerambycidae: Lamiinae) species from Ecuador" ;
     bibo:endPage "13" ;
     bibo:issue "998" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2023-06-30" ;
     bibo:startPage "1" ;
     bibo:volume "2023" ;
+    dc:creator "Vlasak, Josef; Santos-Silva, Antonio" ;
+    dc:date "2023" ;
+    dc:title "Description of three new Acanthocinini (Coleoptera: Cerambycidae: Lamiinae) species from Ecuador" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8222238> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/8222238/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039087ABFFA1CA10F0B285AE2155FEDC.mc.3B513CE0FFAFCA13F11B820820E6F9C4>
+    dwc:collectionCode "MZSP" ;
+    dwc:eventDate "2022-11-20" ;
+    dwc:locality "Papallacta" ;
+    dwc:recordedBy "K. Vlasakova" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "3400" ;
+    trt:httpUri <https://treatment.plazi.org/id/039087ABFFA1CA10F0B285AE2155FEDC#3B513CE0FFAFCA13F11B820820E6F9C4> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Parabaryssinus_katerinae_Santos-Silva_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus_katerinae> ;
-    dwc:ID-CoL "BS95X" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Parabaryssinus" ;
@@ -39,60 +57,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Vlasak and Santos-Silva" ;
     dwc:species "katerinae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BS95X> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus_katerinae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Parabaryssinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Parabaryssinus_katerinae_Vlasak_2023>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Parabaryssinus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Vlasak & Santos-Silva, 2023" ;
+    dwc:species "katerinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus_katerinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Parabaryssinus_lineaticollis_Gounelle_1910>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Parabaryssinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Gounelle, 1910)", "Gounelle, 1910" ;
+    dwc:species "lineaticollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus_lineaticollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paracleodoxus_Monne_2010>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Paracleodoxus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Monne and Monne, 2010" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paracleodoxus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus_katerinae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Parabaryssinus" ;
@@ -101,12 +108,78 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "katerinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039087ABFFA1CA10F0B285AE2155FEDC>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Parabaryssinus_katerinae_Santos-Silva_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.8222232> ;
-    dc:creator "Santos-Silva, Antonio", "Vlasak, Josef" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8222238> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Parabaryssinus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Parabaryssinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Parabaryssinus_lineaticollis>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Parabaryssinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lineaticollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parabaryssinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paracleodoxus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Paracleodoxus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
