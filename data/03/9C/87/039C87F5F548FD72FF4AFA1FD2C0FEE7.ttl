@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039C87F5F548FD72FF4AFA1FD2C0FEE7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5170912>, <http://dx.doi.org/10.5281/zenodo.5170914> ;
+    dc:creator "Miller, Robert B." ;
+    dc:title "Scotoleon stangei Miller 2016, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039C87F5F548FD72FF4AFA1FD2C0FEE7.mc.3B5D3CBEF548FD76FF4AF9FED18CF928> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scotoleon_stangei_Miller_2016> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5170908> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5170908>
-    dc:creator "Miller, Robert B." ;
-    dc:date "2016" ;
-    dc:title "A new species of cave inhabiting Scotoleon Banks from Baja California (Neuroptera: Myrmeleontidae: Brachynemurini)" ;
     bibo:endPage "5" ;
     bibo:issue "513" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2016-11-25" ;
     bibo:startPage "1" ;
     bibo:volume "2016" ;
+    dc:creator "Miller, Robert B." ;
+    dc:date "2016" ;
+    dc:title "A new species of cave inhabiting Scotoleon Banks from Baja California (Neuroptera: Myrmeleontidae: Brachynemurini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5170912>, <http://dx.doi.org/10.5281/zenodo.5170914> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/5170914/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039C87F5F548FD72FF4AFA1FD2C0FEE7.mc.3B5D3CBEF548FD76FF4AF9FED18CF928>
+    dwc:collectionCode "VI, R, FSCA" ;
+    dwc:locality "south Mulege" ;
+    dwc:recordedBy "L. Stange" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3332266301" ;
+    trt:httpUri <https://treatment.plazi.org/id/039C87F5F548FD72FF4AFA1FD2C0FEE7#3B5D3CBEF548FD76FF4AF9FED18CF928> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Scotoleon_stangei_Miller_2016>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon_stangei> ;
     dwc:class "Insecta" ;
     dwc:family "Myrmeleontidae" ;
     dwc:genus "Scotoleon" ;
@@ -41,51 +59,12 @@
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Miller" ;
+    dwc:scientificNameAuthorship "Miller", "Miller, 2016" ;
     dwc:species "stangei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon_stangei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Myrmeleontidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neuroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Scotoleon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Scotoleon_This_1913>
     dwc:class "Insecta" ;
     dwc:family "Myrmeleontidae" ;
     dwc:genus "Scotoleon" ;
@@ -93,10 +72,109 @@
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Banks. This, 1913" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eremoleon_pallens_Banks_1941>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Eremoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Banks, 1941" ;
+    dwc:species "pallens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eremoleon_pallens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eremoleon_undetermined_Miller_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Eremoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eremoleon_undetermined> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scotoleon_undetermined_Miller_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon_undetermined> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brachynemurini_Banks_1927>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Banks, 1927" ;
+    dwc:tribe "Brachynemurini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brachynemurini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scotoleon_eiseni_Banks_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Banks" ;
+    dwc:species "eiseni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon_eiseni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scotoleon_eiseni_Miller_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "eiseni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon_eiseni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scotoleon_eiseni_Banks_1908>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Banks)" ;
+    dwc:species "eiseni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scotoleon_eiseni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Myrmeleontidae_Latreille_1802>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Scotoleon_stangei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scotoleon> ;
     dwc:class "Insecta" ;
     dwc:family "Myrmeleontidae" ;
     dwc:genus "Scotoleon" ;
@@ -105,12 +183,125 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "stangei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scotoleon> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039C87F5F548FD72FF4AFA1FD2C0FEE7>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scotoleon_stangei_Miller_2016> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5170908> ;
-    dc:creator "Miller, Robert B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5170912>, <http://dx.doi.org/10.5281/zenodo.5170914> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Scotoleon>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neuroptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eremoleon_pallens>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Eremoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pallens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eremoleon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eremoleon>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Eremoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eremoleon_undetermined>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Eremoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eremoleon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scotoleon_undetermined>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scotoleon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brachynemurini>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Brachynemurini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmeleontidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scotoleon_eiseni>
+    dwc:class "Insecta" ;
+    dwc:family "Myrmeleontidae" ;
+    dwc:genus "Scotoleon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "eiseni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scotoleon> ;
+    a dwcFP:TaxonName .
