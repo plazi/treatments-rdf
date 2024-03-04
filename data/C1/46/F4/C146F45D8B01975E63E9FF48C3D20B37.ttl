@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C146F45D8B01975E63E9FF48C3D20B37
+    cito:cites <http://dx.doi.org/10.5281/zenodo.437261>, <http://dx.doi.org/10.5281/zenodo.437269> ;
+    dc:creator "Domahovski, Alexandre Cruz; Cavichioli, Rodney Ramiro" ;
+    dc:title "Polana (Varpulana) intricata Domahovski & Cavichioli, 2017, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/C146F45D8B01975E63E9FF48C3D20B37.mc.F9874F168B01975E63B9FB59C53C0AFB> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Polana_intricata_Domahovski_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4244.4.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4244.4.5>
-    dc:creator "Cavichioli, Rodney Ramiro", "Domahovski, Alexandre Cruz" ;
-    dc:date "2017" ;
-    dc:title "Six new Brazilian species of Polana (Varpulana) (Hemiptera: Cicadellidae: Gyponini) with key to males" ;
     bibo:endPage "555" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "535" ;
     bibo:volume "4244" ;
+    dc:creator "Domahovski, Alexandre Cruz; Cavichioli, Rodney Ramiro" ;
+    dc:date "2017" ;
+    dc:title "Six new Brazilian species of Polana (Varpulana) (Hemiptera: Cicadellidae: Gyponini) with key to males" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.437261>, <http://dx.doi.org/10.5281/zenodo.437269> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/437269/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/C146F45D8B01975E63E9FF48C3D20B37.mc.F9874F168B01975E63B9FB59C53C0AFB>
+    dwc:collectionCode "DZUP" ;
+    dwc:eventDate "1975-11" ;
+    dwc:locality "Encruzilhada" ;
+    dwc:recordedBy "M. Alvarenga" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "1440785860" ;
+    trt:httpUri <https://treatment.plazi.org/id/C146F45D8B01975E63E9FF48C3D20B37#F9874F168B01975E63B9FB59C53C0AFB> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Polana_intricata_Domahovski_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polana_intricata> ;
-    dwc:ID-CoL "8JYDN" ;
     dwc:authority "Domahovski, 2017" ;
     dwc:authorityName "Domahovski" ;
     dwc:authorityYear "2017" ;
@@ -44,62 +62,40 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Domahovski, Alexandre Cruz & Cavichioli, Rodney Ramiro, 2017" ;
     dwc:species "intricata" ;
     dwc:subGenus "Varpulana" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8JYDN> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polana_intricata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cicadellidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Polana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Polana_sapitanduva_Domahovski_2017>
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Polana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "sapitanduva" ;
+    dwc:subGenus "Varpulana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polana_sapitanduva> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Polana_naja_Domahovski_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Polana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "naja" ;
+    dwc:subGenus "Varpulana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polana_naja> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Polana_intricata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polana> ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Polana" ;
@@ -108,12 +104,94 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "intricata" ;
+    dwc:subGenus "Varpulana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polana_Varpulana>, <http://taxon-name.plazi.org/id/Animalia/Polana> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C146F45D8B01975E63E9FF48C3D20B37>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Polana_intricata_Domahovski_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4244.4.5> ;
-    dc:creator "Cavichioli, Rodney Ramiro", "Domahovski, Alexandre Cruz" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.437261>, <http://dx.doi.org/10.5281/zenodo.437269> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Polana_Varpulana>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Polana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Varpulana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polana> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Polana>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Polana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polana_sapitanduva>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Polana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sapitanduva" ;
+    dwc:subGenus "Varpulana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polana_Varpulana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polana_naja>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Polana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "naja" ;
+    dwc:subGenus "Varpulana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polana_Varpulana> ;
+    a dwcFP:TaxonName .
