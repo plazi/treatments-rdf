@@ -1,24 +1,39 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:79416437F7BF74A640E74F7E4ABEBA34
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Bergera koenigii Linnaeus 1771" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/79416437F7BF74A640E74F7E4ABEBA34/548.1> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Bergera_koenigii_Linnaeus_1771> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4367499> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4367499>
+    bibo:endPage "369" ;
+    bibo:startPage "343" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part B)" ;
-    bibo:endPage "369" ;
-    bibo:startPage "343" ;
     a fabio:BookSection .
 
+<http://treatment.plazi.org/id/79416437F7BF74A640E74F7E4ABEBA34/548.1>
+    dwc:catalogNumber "548.1" ;
+    dwc:collectionCode "LINN" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2612079480" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Bergera_koenigii_Linnaeus_1771>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Bergera_koenigii> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Rutaceae" ;
     dwc:genus "Bergera" ;
@@ -26,20 +41,69 @@
     dwc:order "Sapindales" ;
     dwc:phylum "Streptophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "L." ;
+    dwc:scientificNameAuthorship "L.", "Linnaeus" ;
     dwc:species "koenigii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Bergera_koenigii> ;
     a dwcFP:TaxonConcept .
 
-<http://treatment.plazi.org/id/79416437F7BF74A640E74F7E4ABEBA34>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Bergera_koenigii_Linnaeus_1771> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4367499> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/79416437F7BF74A640E74F7E4ABEBA34/548.1> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Bergera_koenigii>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rutaceae" ;
+    dwc:genus "Bergera" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Sapindales" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "species" ;
+    dwc:species "koenigii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bergera> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/79416437F7BF74A640E74F7E4ABEBA34/548.1>
-    dwc:catalogNumber "548.1" ;
-    dwc:collectionCode "LINN" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Plantae/Bergera>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rutaceae" ;
+    dwc:genus "Bergera" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Sapindales" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rutaceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Rutaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Rutaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Sapindales" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Sapindales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Sapindales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Sapindales" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Streptophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Streptophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Streptophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

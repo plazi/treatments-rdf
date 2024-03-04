@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:793DB868311DFF9CFF18FC6CB0F9F984
+    cito:cites <http://dx.doi.org/10.5281/zenodo.258395>, <http://dx.doi.org/10.5281/zenodo.258397>, <http://dx.doi.org/10.5281/zenodo.258398>, <http://dx.doi.org/10.5281/zenodo.258399>, <http://dx.doi.org/10.5281/zenodo.258400>, <http://dx.doi.org/10.5281/zenodo.258401> ;
+    dc:creator "Huang, Hao; Li, Yu-Fei" ;
+    dc:title "Polycaena lua subsp. taibaiensis Chou & Yuan 2001, new status" ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Polycaena_lua_taibaiensis_Chou_2001> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Polycaena_lama_taibaiensis_Chou_2001> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4105.6.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4105.6.4>
-    dc:creator "Huang, Hao", "Li, Yu-Fei" ;
-    dc:date "2016" ;
-    dc:title "Notes on the genus Polycaena Staudinger (Lepidoptera: Riodinidae) with descriptions of two new species from China" ;
     bibo:endPage "590" ;
     bibo:issue "6" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "575" ;
     bibo:volume "4105" ;
+    dc:creator "Huang, Hao; Li, Yu-Fei" ;
+    dc:date "2016" ;
+    dc:title "Notes on the genus Polycaena Staudinger (Lepidoptera: Riodinidae) with descriptions of two new species from China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.258395>, <http://dx.doi.org/10.5281/zenodo.258397>, <http://dx.doi.org/10.5281/zenodo.258398>, <http://dx.doi.org/10.5281/zenodo.258399>, <http://dx.doi.org/10.5281/zenodo.258400>, <http://dx.doi.org/10.5281/zenodo.258401> ;
     a fabio:JournalArticle .
 
@@ -51,8 +61,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/258401/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Polycaena_lua_taibaiensis_Chou_2001>
+    dwc:class "Insecta" ;
+    dwc:family "Lycaenidae" ;
+    dwc:genus "Polycaena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Chou & Yuan, 2001" ;
+    dwc:species "lua" ;
+    dwc:subSpecies "taibaiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lua_taibaiensis> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Polycaena_lama_taibaiensis_Chou_2001>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lama_taibaiensis> ;
     dwc:class "Insecta" ;
     dwc:family "Lycaenidae" ;
     dwc:genus "Polycaena" ;
@@ -63,49 +86,35 @@
     dwc:scientificNameAuthorship "Chou & Yuan, 2001: 142" ;
     dwc:species "lama" ;
     dwc:subSpecies "taibaiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lama_taibaiensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lycaenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Polycaena_lua_taibaiensis>
     dwc:class "Insecta" ;
     dwc:family "Lycaenidae" ;
+    dwc:genus "Polycaena" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "lua" ;
+    dwc:subSpecies "taibaiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lua> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polycaena_lua>
+    dwc:class "Insecta" ;
+    dwc:family "Lycaenidae" ;
+    dwc:genus "Polycaena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lua" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Polycaena>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycaenidae> ;
     dwc:class "Insecta" ;
     dwc:family "Lycaenidae" ;
     dwc:genus "Polycaena" ;
@@ -113,22 +122,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycaenidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Polycaena_lama>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena> ;
+<http://taxon-name.plazi.org/id/Animalia/Lycaenidae>
     dwc:class "Insecta" ;
     dwc:family "Lycaenidae" ;
-    dwc:genus "Polycaena" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "lama" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Polycaena_lama_taibaiensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lama> ;
     dwc:class "Insecta" ;
     dwc:family "Lycaenidae" ;
     dwc:genus "Polycaena" ;
@@ -138,10 +174,10 @@
     dwc:rank "subSpecies" ;
     dwc:species "lama" ;
     dwc:subSpecies "taibaiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lama> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Polycaena_lua>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena> ;
+<http://taxon-name.plazi.org/id/Animalia/Polycaena_lama>
     dwc:class "Insecta" ;
     dwc:family "Lycaenidae" ;
     dwc:genus "Polycaena" ;
@@ -149,27 +185,6 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "lua" ;
+    dwc:species "lama" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Polycaena_lua_taibaiensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lua> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lycaenidae" ;
-    dwc:genus "Polycaena" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
-    dwc:species "lua" ;
-    dwc:subSpecies "taibaiensis" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/793DB868311DFF9CFF18FC6CB0F9F984>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Polycaena_lama_taibaiensis_Chou_2001> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4105.6.4> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Polycaena_lua_taibaiensis> ;
-    dc:creator "Huang, Hao", "Li, Yu-Fei" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.258395>, <http://dx.doi.org/10.5281/zenodo.258397>, <http://dx.doi.org/10.5281/zenodo.258398>, <http://dx.doi.org/10.5281/zenodo.258399>, <http://dx.doi.org/10.5281/zenodo.258400>, <http://dx.doi.org/10.5281/zenodo.258401> ;
-    a trt:Treatment .
-
