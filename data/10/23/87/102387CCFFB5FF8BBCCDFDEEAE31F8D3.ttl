@@ -1,28 +1,49 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.11646/phytotaxa.592.1.4>
-    dc:creator "Kocabaş, Yusuf Ziya", "Tel, Ahmet Zafer", "İlçim, Ahmet" ;
-    dc:date "2023" ;
-    dc:title "Salvia adiyamanensis (Lamiaceae), a new species from South East Anatolia, Turkey" ;
+treatment:102387CCFFB5FF8BBCCDFDEEAE31F8D3
+    dc:creator "İlçim, Ahmet; Tel, Ahmet Zafer; Kocabaş, Yusuf Ziya" ;
+    dc:title "Salvia adiyamanensis Ilcim & Tel 2023, sp. nova" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3/C7>, <http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3/C7>, <http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3/C7> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Salvia_adiyamanensis_Ilcim_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "58" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-04-13" ;
     bibo:startPage "49" ;
     bibo:volume "592" ;
+    dc:creator "İlçim, Ahmet; Tel, Ahmet Zafer; Kocabaş, Yusuf Ziya" ;
+    dc:date "2023" ;
+    dc:title "Salvia adiyamanensis (Lamiaceae), a new species from South East Anatolia, Turkey" ;
     a fabio:JournalArticle .
 
+<http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3/C7>
+    dwc:catalogNumber "C7" ;
+    dwc:collectionCode "C" ;
+    dwc:eventDate "2017-05-19", "2018-05-22" ;
+    dwc:locality "Kocali village", "Kayatepe village", "Malatya" ;
+    dwc:recordedBy "A. Ilcim & A. Z. Tel", "A. Ilcim" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "1150", "1365", "875" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Salvia_adiyamanensis_Ilcim_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Salvia_adiyamanensis> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Salvia" ;
@@ -32,53 +53,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Ilcim & Tel" ;
     dwc:species "adiyamanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Salvia_adiyamanensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Lamiaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Lamiaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Lamiales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Salvia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Lamiaceae" ;
-    dwc:genus "Salvia" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Salvia_adiyamanensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Salvia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Salvia" ;
@@ -87,29 +65,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "adiyamanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Salvia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Salvia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lamiaceae" ;
+    dwc:genus "Salvia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lamiaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lamiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lamiales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Salvia_adiyamanensis_Ilcim_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Kocabaş, Yusuf Ziya", "Tel, Ahmet Zafer", "İlçim, Ahmet" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3/C7> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/102387CCFFB5FF8BBCCDFDEEAE31F8D3/C7>
-    dwc:catalogNumber "C7" ;
-    dwc:collectionCode "C" ;
-    dwc:eventDate "2017-05-19", "2018-05-22" ;
-    dwc:locality "Kayatepe village", "Kocali village", "Malatya" ;
-    dwc:recordedBy "A. Ilcim", "A. Ilcim & A. Z. Tel" ;
-    dwc:typeStatus "paratype" ;
-    dwc:verbatimElevation "1150", "1365", "875" ;
-    a dwc:MaterialCitation .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
