@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E36787DCFF917E52FEC1FF025635F978
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5359319>, <http://dx.doi.org/10.5281/zenodo.5359321> ;
+    dc:creator "Tanasevitch, Andrei V." ;
+    dc:title "Pahangone mirabilis Tanasevitch 2018, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/E36787DCFF917E52FEC1FF025635F978.mc.DBA63C97FF917E52FF42FEA35703FE58> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pahangone_mirabilis_Tanasevitch_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5359317> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5359317>
-    dc:creator "Tanasevitch, Andrei V." ;
-    dc:date "2018" ;
-    dc:title "A new erigonine genus and species from West Malaysia (Araneae: Linyphiidae)" ;
     bibo:endPage "412" ;
     bibo:journal "Raffles Bulletin of Zoology" ;
     bibo:pubDate "2018-07-23" ;
     bibo:startPage "408" ;
     bibo:volume "66" ;
+    dc:creator "Tanasevitch, Andrei V." ;
+    dc:date "2018" ;
+    dc:title "A new erigonine genus and species from West Malaysia (Araneae: Linyphiidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5359319>, <http://dx.doi.org/10.5281/zenodo.5359321> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/5359321/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/E36787DCFF917E52FEC1FF025635F978.mc.DBA63C97FF917E52FF42FEA35703FE58>
+    dwc:collectionCode "SMF, WEST, T" ;
+    dwc:eventDate "2015-02-15" ;
+    dwc:locality "Hemmant" ;
+    dwc:recordedBy "P. Jager & Laufs." ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1275" ;
+    dwc:verbatimLatitude "3.715514" ;
+    dwc:verbatimLongitude "101.73865" ;
+    trt:httpUri <https://treatment.plazi.org/id/E36787DCFF917E52FEC1FF025635F978#DBA63C97FF917E52FF42FEA35703FE58> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pahangone_mirabilis_Tanasevitch_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pahangone_mirabilis> ;
-    dwc:ID-CoL "4BZS7" ;
     dwc:class "Arachnida" ;
     dwc:family "Linyphiidae" ;
     dwc:genus "Pahangone" ;
@@ -43,60 +63,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Tanasevitch, 2018" ;
     dwc:species "mirabilis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4BZS7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pahangone_mirabilis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Linyphiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Linyphiidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pahangone>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Linyphiidae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Linyphiidae" ;
-    dwc:genus "Pahangone" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Pahangone_mirabilis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pahangone> ;
     dwc:class "Arachnida" ;
     dwc:family "Linyphiidae" ;
     dwc:genus "Pahangone" ;
@@ -105,12 +76,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "mirabilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pahangone> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E36787DCFF917E52FEC1FF025635F978>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pahangone_mirabilis_Tanasevitch_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5359317> ;
-    dc:creator "Tanasevitch, Andrei V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5359319>, <http://dx.doi.org/10.5281/zenodo.5359321> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pahangone>
+    dwc:class "Arachnida" ;
+    dwc:family "Linyphiidae" ;
+    dwc:genus "Pahangone" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Linyphiidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Linyphiidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Linyphiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
