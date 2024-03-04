@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:5359945697B4FF65FF75FC82FBA8BEFF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.10109176> ;
+    dc:creator "Ingrisch, Sigfrid" ;
+    dc:title "Neolarnaca vera subsp. nigrinotum Ingrisch 2018, ssp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/5359945697B4FF65FF75FC82FBA8BEFF.mc.6B982F1D97B4FF62FE6DFCF7FCE4BC98> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum_Ingrisch_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4510.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4510.1.1>
-    dc:creator "Ingrisch, Sigfrid" ;
-    dc:date "2018" ;
-    dc:title "New taxa and records of Gryllacrididae (Orthoptera, Stenopelmatoidea) from South East Asia and New Guinea with a key to the genera" ;
     bibo:endPage "278" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-11-05" ;
     bibo:startPage "1" ;
     bibo:volume "4510" ;
+    dc:creator "Ingrisch, Sigfrid" ;
+    dc:date "2018" ;
+    dc:title "New taxa and records of Gryllacrididae (Orthoptera, Stenopelmatoidea) from South East Asia and New Guinea with a key to the genera" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.10109176> ;
     a fabio:JournalArticle .
 
@@ -27,64 +37,80 @@
     fabio:hasRepresentation "https://zenodo.org/record/10109176/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/5359945697B4FF65FF75FC82FBA8BEFF.mc.6B982F1D97B4FF62FE6DFCF7FCE4BC98>
+    dwc:collectionCode "RBINS" ;
+    dwc:eventDate "2013-07-01" ;
+    dwc:locality "Vietnam" ;
+    dwc:recordedBy "Hoang Lien NP & J. Constant & J. Bresseel" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimLatitude "22.35" ;
+    dwc:verbatimLongitude "103.772224" ;
+    trt:gbifOccurrenceId "2028147549" ;
+    trt:httpUri <https://treatment.plazi.org/id/5359945697B4FF65FF75FC82FBA8BEFF#6B982F1D97B4FF62FE6DFCF7FCE4BC98> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum_Ingrisch_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum> ;
-    dwc:ID-CoL "8Q6BS" ;
     dwc:class "Insecta" ;
     dwc:family "Gryllacrididae" ;
     dwc:genus "Neolarnaca" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
+    dwc:rank "subSpecies", "variety" ;
     dwc:scientificNameAuthorship "Ingrisch, 2018" ;
     dwc:species "vera" ;
     dwc:subSpecies "nigrinotum" ;
+    dwc:variety "nigrinotum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8Q6BS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/nov_Ingrisch_2018>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gryllacrididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Gryllacrididae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Orthoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neolarnaca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gryllacrididae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_vera_vera_Gorochov_2004>
     dwc:class "Insecta" ;
     dwc:family "Gryllacrididae" ;
     dwc:genus "Neolarnaca" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "vera Gorochov, 2004" ;
+    dwc:species "vera" ;
+    dwc:variety "vera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_vera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_aurelostria_Bian_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllacrididae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Bian & Shi 2016", "Bian & Shi, 2016" ;
+    dwc:variety "aurelostria" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_aurelostria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllacrididae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies", "variety" ;
+    dwc:species "vera" ;
+    dwc:subSpecies "nigrinotum" ;
+    dwc:variety "nigrinotum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
     dwc:class "Insecta" ;
     dwc:family "Gryllacrididae" ;
     dwc:genus "Neolarnaca" ;
@@ -93,34 +119,86 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "vera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera> ;
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca>
     dwc:class "Insecta" ;
     dwc:family "Gryllacrididae" ;
     dwc:genus "Neolarnaca" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
-    dwc:species "vera" ;
-    dwc:subSpecies "nigrinotum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gryllacrididae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gryllacrididae>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllacrididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5359945697B4FF65FF75FC82FBA8BEFF>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_vera_nigrinotum_Ingrisch_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4510.1.1> ;
-    dc:creator "Ingrisch, Sigfrid" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.10109176> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/nov>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subSpecies" ;
+    dwc:subSpecies "nov" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_vera>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllacrididae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:species "vera" ;
+    dwc:variety "vera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_aurelostria>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllacrididae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:variety "aurelostria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
+    a dwcFP:TaxonName .
