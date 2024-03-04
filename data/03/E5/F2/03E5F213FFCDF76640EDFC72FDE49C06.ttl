@@ -1,27 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E5F213FFCDF76640EDFC72FDE49C06
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Bartolius_pierrei_Cremonte_2001> ;
+    dc:creator "Cremonte, Florencia; Drago, Fabiana B." ;
+    dc:title "Mactridae" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.273687> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Mactridae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.273687>
-    dc:creator "Cremonte, Florencia", "Drago, Fabiana B." ;
-    dc:date "2007" ;
-    dc:title "Checklist of digenean parasites of birds from Argentina" ;
     bibo:endPage "36" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "1403" ;
+    dc:creator "Cremonte, Florencia; Drago, Fabiana B." ;
+    dc:date "2007" ;
+    dc:title "Checklist of digenean parasites of birds from Argentina" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Bartolius_pierrei_Cremonte_2001>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bartolius_pierrei> ;
-    dwc:ID-CoL "68DFH" ;
     dwc:class "Trematoda" ;
     dwc:family "Gymnophallidae" ;
     dwc:genus "Bartolius" ;
@@ -31,26 +38,50 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Cremonte, 2001" ;
     dwc:species "pierrei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bartolius_pierrei> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Mactridae>
+    dwc:class "Bivalvia" ;
+    dwc:family "Mactridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Veneroida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Veneroida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Veneroida>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Veneroida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Bartolius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gymnophallidae> ;
-    dwc:class "Trematoda" ;
-    dwc:family "Gymnophallidae" ;
-    dwc:genus "Bartolius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Plagiorchiida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Bartolius_pierrei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bartolius> ;
     dwc:class "Trematoda" ;
     dwc:family "Gymnophallidae" ;
     dwc:genus "Bartolius" ;
@@ -59,80 +90,50 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "pierrei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bartolius> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Bivalvia" ;
+<http://taxon-name.plazi.org/id/Animalia/Bartolius>
+    dwc:class "Trematoda" ;
+    dwc:family "Gymnophallidae" ;
+    dwc:genus "Bartolius" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
+    dwc:order "Plagiorchiida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gymnophallidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Gymnophallidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plagiorchiida> ;
     dwc:class "Trematoda" ;
     dwc:family "Gymnophallidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Plagiorchiida" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mactridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Veneroida> ;
-    dwc:class "Bivalvia" ;
-    dwc:family "Mactridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Veneroida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plagiorchiida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Plagiorchiida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trematoda> ;
     dwc:class "Trematoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Plagiorchiida" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trematoda> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trematoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
     dwc:class "Trematoda" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Veneroida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
-    dwc:class "Bivalvia" ;
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
     dwc:kingdom "Animalia" ;
-    dwc:order "Veneroida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03E5F213FFCDF76640EDFC72FDE49C06>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.273687> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Mactridae> ;
-    dc:creator "Cremonte, Florencia", "Drago, Fabiana B." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Bartolius_pierrei_Cremonte_2001> ;
-    a trt:Treatment .
-
