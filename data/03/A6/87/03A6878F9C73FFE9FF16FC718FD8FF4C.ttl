@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A6878F9C73FFE9FF16FC718FD8FF4C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.221166> ;
+    dc:creator "Barbosa, Julianna Freires; Nessimian, Jorge Luiz" ;
+    dc:title "Buenoa salutis Kirkaldy" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3694.2.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Buenoa_salutis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3694.2.1>
-    dc:creator "Barbosa, Julianna Freires", "Nessimian, Jorge Luiz" ;
-    dc:date "2013" ;
-    dc:title "The genus Buenoa Kirkaldy, 1904 (Hemiptera: Heteroptera: Nepomorpha: Notonectidae) in northern Brazil: inventory, new records, and new species" ;
     bibo:endPage "130" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "101" ;
     bibo:volume "3694" ;
+    dc:creator "Barbosa, Julianna Freires; Nessimian, Jorge Luiz" ;
+    dc:date "2013" ;
+    dc:title "The genus Buenoa Kirkaldy, 1904 (Hemiptera: Heteroptera: Nepomorpha: Notonectidae) in northern Brazil: inventory, new records, and new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.221166> ;
     a fabio:JournalArticle .
 
@@ -26,31 +35,33 @@
     fabio:hasRepresentation "https://zenodo.org/record/221166/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Buenoa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notonectidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Buenoa_salutis_Kirkaldy_1904>
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:genus "Buenoa" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kirkaldy, 1904: 124" ;
+    dwc:species "salutis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Buenoa_salutis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Buenoa_mallochi_Jaczewski_1928>
+    dwc:class "Insecta" ;
+    dwc:family "Notonectidae" ;
+    dwc:genus "Buenoa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jaczewski (1928)" ;
+    dwc:species "mallochi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Buenoa_mallochi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Buenoa_salutis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Buenoa> ;
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:genus "Buenoa" ;
@@ -59,39 +70,67 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "salutis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Buenoa> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Buenoa>
     dwc:class "Insecta" ;
+    dwc:family "Notonectidae" ;
+    dwc:genus "Buenoa" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notonectidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Notonectidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A6878F9C73FFE9FF16FC718FD8FF4C>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3694.2.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Buenoa_salutis> ;
-    dc:creator "Barbosa, Julianna Freires", "Nessimian, Jorge Luiz" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.221166> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Buenoa_mallochi>
+    dwc:class "Insecta" ;
+    dwc:family "Notonectidae" ;
+    dwc:genus "Buenoa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mallochi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Buenoa> ;
+    a dwcFP:TaxonName .
