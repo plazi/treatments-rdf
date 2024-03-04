@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C08789C5354F64FF62D01B8913FEF5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4387689> ;
+    dc:creator "Sankaran, Pradeep M.; Caleb, John T. D.; Sebastian, Pothalil A." ;
+    dc:title "Sphingius nilgiriensis Gravely 1931" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C08789C5354F64FF62D01B8913FEF5.mc.3B013CC2C5354F6AFEABD34A8CC8F9DD> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphingius_nilgiriensis_Gravely_1931> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4896.4.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4896.4.3>
-    dc:creator "Caleb, John T. D.", "Sankaran, Pradeep M.", "Sebastian, Pothalil A." ;
-    dc:date "2020" ;
-    dc:title "A review of the genus Sphingius Thorell, 1890 from India (Araneae: Liocranidae)" ;
     bibo:endPage "522" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-12-23" ;
     bibo:startPage "505" ;
     bibo:volume "4896" ;
+    dc:creator "Sankaran, Pradeep M.; Caleb, John T. D.; Sebastian, Pothalil A." ;
+    dc:date "2020" ;
+    dc:title "A review of the genus Sphingius Thorell, 1890 from India (Araneae: Liocranidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4387689> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/4387689/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03C08789C5354F64FF62D01B8913FEF5.mc.3B013CC2C5354F6AFEABD34A8CC8F9DD>
+    dwc:eventDate "1925-09-24" ;
+    dwc:locality "Kundah" ;
+    dwc:recordedBy "Barnes" ;
+    dwc:typeStatus "syntype" ;
+    dwc:verbatimElevation "1856" ;
+    dwc:verbatimLatitude "11.262892" ;
+    dwc:verbatimLongitude "76.63333" ;
+    trt:gbifOccurrenceId "3004062310" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C08789C5354F64FF62D01B8913FEF5#3B013CC2C5354F6AFEABD34A8CC8F9DD> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Sphingius_nilgiriensis_Gravely_1931>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphingius_nilgiriensis> ;
-    dwc:ID-CoL "4YZHV" ;
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
     dwc:genus "Sphingius" ;
@@ -37,51 +57,38 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Gravely, 1931" ;
+    dwc:scientificNameAuthorship "Gravely, 1931", "Gravely, 1931: 271" ;
     dwc:species "nilgiriensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4YZHV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphingius_nilgiriensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Liocranidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sphingius_superbus_Dankittipakul_2011>
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
+    dwc:genus "Sphingius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Dankittipakul, Tavano & Singtripop, 2011" ;
+    dwc:species "superbus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sphingius_superbus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphingius_nilgiriensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Sphingius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nilgiriensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphingius> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Sphingius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranidae> ;
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
     dwc:genus "Sphingius" ;
@@ -89,10 +96,49 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Sphingius_nilgiriensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphingius> ;
+<http://taxon-name.plazi.org/id/Animalia/Liocranidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphingius_superbus>
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
     dwc:genus "Sphingius" ;
@@ -100,13 +146,6 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "nilgiriensis" ;
+    dwc:species "superbus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphingius> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03C08789C5354F64FF62D01B8913FEF5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sphingius_nilgiriensis_Gravely_1931> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4896.4.3> ;
-    dc:creator "Caleb, John T. D.", "Sankaran, Pradeep M.", "Sebastian, Pothalil A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4387689> ;
-    a trt:Treatment .
-
