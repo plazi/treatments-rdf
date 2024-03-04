@@ -1,24 +1,38 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:F4208B7CFFCEFFB4FF741DA1ADA9D66B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.200632>, <http://dx.doi.org/10.5281/zenodo.200621>, <http://dx.doi.org/10.5281/zenodo.200623> ;
+    dc:creator "Wang, Chunxia; Li, Shuqiang" ;
+    dc:title "Cangoderces christae Wang & Li, 2011, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cangoderces_christae_Wang_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.200620> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.200620>
-    dc:creator "Li, Shuqiang", "Wang, Chunxia" ;
-    dc:date "2011" ;
-    dc:title "Three new species of Telemidae (Araneae) from Western Africa" ;
     bibo:endPage "58" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "44" ;
     bibo:volume "2902" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.200621>, <http://dx.doi.org/10.5281/zenodo.200623>, <http://dx.doi.org/10.5281/zenodo.200632> ;
+    dc:creator "Wang, Chunxia; Li, Shuqiang" ;
+    dc:date "2011" ;
+    dc:title "Three new species of Telemidae (Araneae) from Western Africa" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.200632>, <http://dx.doi.org/10.5281/zenodo.200621>, <http://dx.doi.org/10.5281/zenodo.200623> ;
     a fabio:JournalArticle .
+
+<http://dx.doi.org/10.5281/zenodo.200632>
+    dc:description "FIGURE 12. Locality records for 1. Seychellia jeremyi sp. nov., 2. Cangoderces christae sp. nov., 3. Cangoderces milani sp. nov." ;
+    fabio:hasRepresentation "https://zenodo.org/record/200632/files/figure.png" ;
+    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.200621>
     dc:description "FIGURE 1. Cangoderces christae sp. nov., male holotype (A, C); female paratype (B). A. Palp, prolateral view; B. Spermatheca, lateral view; C. Embolus, retrolateral view." ;
@@ -30,14 +44,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/200623/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5281/zenodo.200632>
-    dc:description "FIGURE 12. Locality records for 1. Seychellia jeremyi sp. nov., 2. Cangoderces christae sp. nov., 3. Cangoderces milani sp. nov." ;
-    fabio:hasRepresentation "https://zenodo.org/record/200632/files/figure.png" ;
-    a fabio:Figure .
-
 <http://taxon-concept.plazi.org/id/Animalia/Cangoderces_christae_Wang_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cangoderces_christae> ;
-    dwc:ID-CoL "68XTR" ;
     dwc:authority "Wang, 2011" ;
     dwc:authorityName "Wang" ;
     dwc:authorityYear "2011" ;
@@ -48,51 +55,26 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wang, Chunxia & Li, Shuqiang, 2011" ;
     dwc:species "christae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/68XTR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cangoderces_christae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cangoderces>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Telemidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cangoderces_koupeensis_Baert_1985>
     dwc:class "Arachnida" ;
     dwc:family "Telemidae" ;
     dwc:genus "Cangoderces" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baert, 1985" ;
+    dwc:species "koupeensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cangoderces_koupeensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cangoderces_christae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cangoderces> ;
     dwc:class "Arachnida" ;
     dwc:family "Telemidae" ;
     dwc:genus "Cangoderces" ;
@@ -101,22 +83,67 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "christae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cangoderces> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cangoderces>
+    dwc:class "Arachnida" ;
+    dwc:family "Telemidae" ;
+    dwc:genus "Cangoderces" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Telemidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Telemidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Telemidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F4208B7CFFCEFFB4FF741DA1ADA9D66B>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cangoderces_christae_Wang_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.200620> ;
-    dc:creator "Li, Shuqiang", "Wang, Chunxia" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.200621>, <http://dx.doi.org/10.5281/zenodo.200623>, <http://dx.doi.org/10.5281/zenodo.200632> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cangoderces_koupeensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Telemidae" ;
+    dwc:genus "Cangoderces" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "koupeensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cangoderces> ;
+    a dwcFP:TaxonName .
