@@ -1,27 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E687FCE01CD756FF1A11F50E9C9C22
+    dc:creator "David G. Herbert; Adnan Mousalli" ;
+    dc:title "Nata Watson 1934" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nata_Watson_1934> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4094.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4094.1.1>
-    dc:creator "Adnan Mousalli", "David G. Herbert" ;
-    dc:date "2016" ;
-    dc:title "Revision of the dwarf cannibal snails (Nata s. l.) of southern Africa — Nata s. s. and Natella (Mollusca: Gastropoda: Rhytididae), with description of three new species" ;
     bibo:endPage "67" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "4094" ;
+    dc:creator "David G. Herbert; Adnan Mousalli" ;
+    dc:date "2016" ;
+    dc:title "Revision of the dwarf cannibal snails (Nata s. l.) of southern Africa — Nata s. s. and Natella (Mollusca: Gastropoda: Rhytididae), with description of three new species" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Nata_Watson_1934>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nata> ;
     dwc:class "Gastropoda" ;
     dwc:family "Rhytididae" ;
     dwc:genus "Nata" ;
@@ -29,62 +36,102 @@
     dwc:order "Pulmonata" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Watson, 1934" ;
+    dwc:scientificNameAuthorship "Watson, 1934", "Watson, 1934: 158" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nata> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Natalina_tarachodes_Connolly_1912>
+    dwc:class "Gastropoda" ;
+    dwc:family "Rhytididae" ;
+    dwc:genus "Natalina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Connolly, 1912" ;
+    dwc:species "tarachodes" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Natalina_tarachodes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Nata>
+    dwc:class "Gastropoda" ;
+    dwc:family "Rhytididae" ;
+    dwc:genus "Nata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pulmonata" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhytididae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhytididae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Rhytididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pulmonata", "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pulmonata>, <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pulmonata>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pulmonata" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhytididae> ;
+<http://taxon-name.plazi.org/id/Animalia/Natalina_tarachodes>
     dwc:class "Gastropoda" ;
     dwc:family "Rhytididae" ;
-    dwc:genus "Nata" ;
+    dwc:genus "Natalina" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Pulmonata" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "tarachodes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Natalina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Natalina>
+    dwc:class "Gastropoda" ;
+    dwc:family "Rhytididae" ;
+    dwc:genus "Natalina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhytididae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Pulmonata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Stylommatophora>
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Pulmonata" ;
+    dwc:order "Stylommatophora" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhytididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pulmonata> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Rhytididae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pulmonata" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03E687FCE01CD756FF1A11F50E9C9C22>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nata_Watson_1934> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4094.1.1> ;
-    dc:creator "Adnan Mousalli", "David G. Herbert" ;
-    a trt:Treatment .
-
