@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CA158796FFF39A60FF23CFC6FBACFE0D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4585798> ;
+    dc:creator "Troubridge, J. T." ;
+    dc:title "Euscirrhopterus argentata" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4585782> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus_argentata> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.4585782>
-    dc:creator "Troubridge, J. T." ;
-    dc:date "2020" ;
-    dc:title "A new genus and 37 new noctuoid species from peninsular Florida and the Keys (Lepidoptera: Noctuoidea)" ;
     bibo:endPage "56" ;
     bibo:issue "789" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2020-09-25" ;
     bibo:startPage "1" ;
     bibo:volume "2020" ;
+    dc:creator "Troubridge, J. T." ;
+    dc:date "2020" ;
+    dc:title "A new genus and 37 new noctuoid species from peninsular Florida and the Keys (Lepidoptera: Noctuoidea)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4585798> ;
     a fabio:JournalArticle .
 
@@ -27,31 +36,44 @@
     fabio:hasRepresentation "https://zenodo.org/record/4585798/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Euscirrhopterus_poeyi_The_1866>
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Euscirrhopterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Grote", "Grote. The, 1866" ;
+    dwc:species "poeyi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus_poeyi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Condicinae_Poole_1995>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Poole, 1995" ;
+    dwc:subFamily "Condicinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Condicinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Condicini_Poole_1995>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Poole, 1995" ;
+    dwc:tribe "Condicini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Condicini> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus_argentata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Euscirrhopterus" ;
@@ -60,39 +82,89 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "argentata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus>
     dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Euscirrhopterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Noctuidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CA158796FFF39A60FF23CFC6FBACFE0D>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4585782> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus_argentata> ;
-    dc:creator "Troubridge, J. T." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4585798> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus_poeyi>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Euscirrhopterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "poeyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euscirrhopterus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Condicinae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Condicinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Condicini>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Condicini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
