@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038487BFFF800F51FF12F93CFD66F91C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5280836>, <http://dx.doi.org/10.5281/zenodo.5293374> ;
+    dc:creator "Malipatil, M. B.; Blacket, M. J." ;
+    dc:title "Laticlerada tasmanica Malipatil & Blacket 2011, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/038487BFFF800F51FF12F93CFD66F91C.mc.3B453CF4FF800F5CFE12F973FF10F8B6> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Laticlerada_tasmanica_Malipatil_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3003.1.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3003.1.3>
-    dc:creator "Blacket, M. J.", "Malipatil, M. B." ;
-    dc:date "2011" ;
-    dc:title "Three new species of Cleradini from Australia (Hemiptera: Heteroptera: Rhyparochromidae)" ;
     bibo:endPage "54" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2011-08-25" ;
     bibo:startPage "43" ;
     bibo:volume "3003" ;
+    dc:creator "Malipatil, M. B.; Blacket, M. J." ;
+    dc:date "2011" ;
+    dc:title "Three new species of Cleradini from Australia (Hemiptera: Heteroptera: Rhyparochromidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5280836>, <http://dx.doi.org/10.5281/zenodo.5293374> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/5293374/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/038487BFFF800F51FF12F93CFD66F91C.mc.3B453CF4FF800F5CFE12F973FF10F8B6>
+    dwc:collectionCode "TM" ;
+    dwc:eventDate "1989-03-05" ;
+    dwc:locality "Coles Bay" ;
+    dwc:recordedBy "Coles Bay, M. V. & L. Hill" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/038487BFFF800F51FF12F93CFD66F91C#3B453CF4FF800F5CFE12F973FF10F8B6> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Laticlerada_tasmanica_Malipatil_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laticlerada_tasmanica> ;
-    dwc:ID-CoL "3SLBG" ;
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Laticlerada" ;
@@ -44,50 +61,61 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Malipatil & Blacket, 2011" ;
     dwc:species "tasmanica" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3SLBG> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laticlerada_tasmanica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Laticlerada>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Laticlerada_nidicolloides_Slater_1995>
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Laticlerada" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Slater & O'Donnell" ;
+    dwc:species "nidicolloides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Laticlerada_nidicolloides> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Clerada_laticollis_Horvath_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Clerada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Horvath" ;
+    dwc:species "laticollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clerada_laticollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Clerada_laticollis_Malipatil_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Clerada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "laticollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clerada_laticollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cleradini_St%C3%A5l_1874>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Stål, 1874" ;
+    dwc:tribe "Cleradini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cleradini> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Laticlerada_tasmanica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laticlerada> ;
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Laticlerada" ;
@@ -96,22 +124,101 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "tasmanica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laticlerada> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Laticlerada>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Laticlerada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038487BFFF800F51FF12F93CFD66F91C>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Laticlerada_tasmanica_Malipatil_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3003.1.3> ;
-    dc:creator "Blacket, M. J.", "Malipatil, M. B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5280836>, <http://dx.doi.org/10.5281/zenodo.5293374> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Laticlerada_nidicolloides>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Laticlerada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nidicolloides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laticlerada> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clerada_laticollis>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Clerada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "laticollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clerada> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clerada>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Clerada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cleradini>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Cleradini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae> ;
+    a dwcFP:TaxonName .
