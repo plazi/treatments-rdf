@@ -1,24 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:75DBF99AA67D8B458BC1F7A580FD1EA9
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Tetracera scandens Merr." ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Tetracera_scandens_Linnaeus_1754> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Tragia_scandens_Linnaeus_1754> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4370150> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4370150>
+    bibo:endPage "905" ;
+    bibo:startPage "878" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part T)" ;
-    bibo:endPage "905" ;
-    bibo:startPage "878" ;
     a fabio:BookSection .
 
 <http://taxon-concept.plazi.org/id/Plantae/Tetracera_scandens_Linnaeus_1754>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetracera_scandens> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Dilleniaceae" ;
     dwc:genus "Tetracera" ;
@@ -28,10 +36,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(L.) Merr." ;
     dwc:species "scandens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tetracera_scandens> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Tragia_scandens_Linnaeus_1754>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tragia_scandens> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Euphorbiaceae" ;
     dwc:genus "Tragia" ;
@@ -41,60 +49,83 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "scandens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tragia_scandens> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Dilleniaceae_R.A.Salisbury_1807>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Dilleniaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Dilleniales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "R.A.Salisbury, 1807" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Dilleniaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Plantae/Tetracera_scandens>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Dilleniaceae" ;
+    dwc:genus "Tetracera" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Dilleniales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "scandens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tetracera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tetracera>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Dilleniaceae" ;
+    dwc:genus "Tetracera" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Dilleniales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dilleniaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Dilleniaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Dilleniaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Dilleniales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dilleniales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Dilleniales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Dilleniales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae>
     dwc:kingdom "Plantae" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Euphorbiaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Malpighiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Malpighiales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Malpighiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tragia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Euphorbiaceae" ;
-    dwc:genus "Tragia" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Malpighiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Tragia_scandens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tragia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Euphorbiaceae" ;
     dwc:genus "Tragia" ;
@@ -103,12 +134,35 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "scandens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tragia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/75DBF99AA67D8B458BC1F7A580FD1EA9>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Tetracera_scandens_Linnaeus_1754> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Tragia_scandens_Linnaeus_1754> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4370150> ;
-    dc:creator "Jarvis, Charlie" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Tragia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Tragia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Malpighiales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
