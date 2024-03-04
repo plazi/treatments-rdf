@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:DBA64C0DE10054458D3402E985AEE844
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/richardsoniae>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.3897/zookeys.1080.71370.figure3> ;
+    dc:creator "Al-Kandari, Manal Abdulrahman; Khalaji-Pirbalouty, Valiallah; Abdulkhaliq, Hadeel; Chen, Weizhong" ;
+    dc:title "Cymodoce delvarii Khalaji-Pirbalouty, Bruce & Waegele 2013" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cymodoce_delvarii_Khalaji-Pirbalouty_2013> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Cymodoce_richardsoniae_Nobili_1906> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1080.71370> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1080.71370>
-    dc:creator "Abdulkhaliq, Hadeel", "Al-Kandari, Manal Abdulrahman", "Chen, Weizhong", "Khalaji-Pirbalouty, Valiallah" ;
-    dc:date "2022" ;
-    dc:title "Diversity and distribution of the Isopoda (Crustacea, Peracarida) of Kuwait, with an updated checklist" ;
     bibo:endPage "133" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2022-01-05" ;
     bibo:startPage "107" ;
     bibo:volume "1080" ;
+    dc:creator "Al-Kandari, Manal Abdulrahman; Khalaji-Pirbalouty, Valiallah; Abdulkhaliq, Hadeel; Chen, Weizhong" ;
+    dc:date "2022" ;
+    dc:title "Diversity and distribution of the Isopoda (Crustacea, Peracarida) of Kuwait, with an updated checklist" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1080.71370.figure3> ;
     a fabio:JournalArticle .
 
@@ -27,7 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cymodoce_delvarii_Khalaji-Pirbalouty_2013>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cymodoce_delvarii> ;
     dwc:LSID "DBA64C0D-E100-5445-8D34-02E985AEE844" ;
     dwc:class "Malacostraca" ;
     dwc:family "Sphaeromatidae" ;
@@ -38,10 +48,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Khalaji-Pirbalouty, Bruce & Waegele, 2013" ;
     dwc:species "delvarii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cymodoce_delvarii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cymodoce_richardsoniae_Nobili_1906>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cymodoce_richardsoniae> ;
     dwc:class "Malacostraca" ;
     dwc:family "Sphaeromatidae" ;
     dwc:genus "Cymodoce" ;
@@ -51,33 +61,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Nobili, 1906" ;
     dwc:species "richardsoniae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cymodoce_richardsoniae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cymodoce>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaeromatidae> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Sphaeromatidae" ;
-    dwc:genus "Cymodoce" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Isopoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Cymodoce_delvarii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cymodoce> ;
     dwc:class "Malacostraca" ;
     dwc:family "Sphaeromatidae" ;
     dwc:genus "Cymodoce" ;
@@ -86,10 +73,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "delvarii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cymodoce> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cymodoce>
+    dwc:class "Malacostraca" ;
+    dwc:family "Sphaeromatidae" ;
+    dwc:genus "Cymodoce" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaeromatidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphaeromatidae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Sphaeromatidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Isopoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cymodoce_richardsoniae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cymodoce> ;
     dwc:class "Malacostraca" ;
     dwc:family "Sphaeromatidae" ;
     dwc:genus "Cymodoce" ;
@@ -98,40 +135,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "richardsoniae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cymodoce> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Isopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Isopoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphaeromatidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Sphaeromatidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Isopoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/DBA64C0DE10054458D3402E985AEE844>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cymodoce_delvarii_Khalaji-Pirbalouty_2013> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Cymodoce_richardsoniae_Nobili_1906> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1080.71370> ;
-    dc:creator "Abdulkhaliq, Hadeel", "Al-Kandari, Manal Abdulrahman", "Chen, Weizhong", "Khalaji-Pirbalouty, Valiallah" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1080.71370.figure3> ;
-    a trt:Treatment .
-
