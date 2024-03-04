@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7D3A801F4D71FFE372878B8AFC2D839C
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Propilidium_curumim_Leal_1998>, <http://dx.doi.org/10.5281/zenodo.4655537> ;
+    dc:creator "Leal, José H." ;
+    dc:title "Lepetidae" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4951.1.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepetidae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4951.1.1>
-    dc:creator "Leal, José H." ;
-    dc:date "2021" ;
-    dc:title "Type specimens in the molluscan collection of the Bailey-Matthews National Shell Museum, Florida, USA" ;
     bibo:endPage "40" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-04-01" ;
     bibo:startPage "1" ;
     bibo:volume "4951" ;
+    dc:creator "Leal, José H." ;
+    dc:date "2021" ;
+    dc:title "Type specimens in the molluscan collection of the Bailey-Matthews National Shell Museum, Florida, USA" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4655537> ;
     a fabio:JournalArticle .
 
@@ -28,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Propilidium_curumim_Leal_1998>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Propilidium_curumim> ;
-    dwc:ID-CoL "4MTXS" ;
     dwc:class "Gastropoda" ;
     dwc:family "Lepetidae" ;
     dwc:genus "Propilidium" ;
@@ -39,29 +46,41 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Leal & Simone, 1998" ;
     dwc:species "curumim" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NJ9K> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Propilidium_curumim> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lepetidae>
     dwc:class "Gastropoda" ;
     dwc:family "Lepetidae" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Propilidium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepetidae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Lepetidae" ;
-    dwc:genus "Propilidium" ;
-    dwc:kingdom "Animalia" ;
     dwc:order "Pterioida" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda>, <http://taxon-name.plazi.org/id/Animalia/Pterioida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Propilidium_curumim>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Propilidium> ;
     dwc:class "Gastropoda" ;
     dwc:family "Lepetidae" ;
     dwc:genus "Propilidium" ;
@@ -70,12 +89,25 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "curumim" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Propilidium> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7D3A801F4D71FFE372878B8AFC2D839C>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4951.1.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepetidae> ;
-    dc:creator "Leal, José H." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4655537>, <http://taxon-concept.plazi.org/id/Animalia/Propilidium_curumim_Leal_1998> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Propilidium>
+    dwc:class "Gastropoda" ;
+    dwc:family "Lepetidae" ;
+    dwc:genus "Propilidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pterioida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepetidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Pterioida>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pterioida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
