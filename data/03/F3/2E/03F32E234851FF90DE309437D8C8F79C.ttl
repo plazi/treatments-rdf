@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F32E234851FF90DE309437D8C8F79C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8055678>, <http://dx.doi.org/10.5281/zenodo.8055680> ;
+    dc:creator "Dimitrijević, Rajko N.; Rađa, Tonći" ;
+    dc:title "Neobisium radjai Dimitrijevic 2017, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F32E234851FF90DE309437D8C8F79C.mc.3B3295684851FF95DDAB9504DEF1FA24> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neobisium_radjai_Dimitrijevic_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.37828/em.2017.15.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.37828/em.2017.15.2>
-    dc:creator "Dimitrijević, Rajko N.", "Rađa, Tonći" ;
-    dc:date "2017" ;
-    dc:title "Neobisium radjai n. sp. (Neobisiidae: Pseudoscorpiones), a new cave-dwelling pseudoscorpion from Bosnia and Herzegovina" ;
     bibo:endPage "16" ;
     bibo:journal "Ecologica Montenegrina" ;
     bibo:pubDate "2017-11-30" ;
     bibo:startPage "10" ;
     bibo:volume "15" ;
+    dc:creator "Dimitrijević, Rajko N.; Rađa, Tonći" ;
+    dc:date "2017" ;
+    dc:title "Neobisium radjai n. sp. (Neobisiidae: Pseudoscorpiones), a new cave-dwelling pseudoscorpion from Bosnia and Herzegovina" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8055678>, <http://dx.doi.org/10.5281/zenodo.8055680> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/8055680/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F32E234851FF90DE309437D8C8F79C.mc.3B3295684851FF95DDAB9504DEF1FA24>
+    dwc:collectionCode "T" ;
+    dwc:eventDate "2016-09-10" ;
+    dwc:locality "Livno" ;
+    dwc:recordedBy "Radja" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F32E234851FF90DE309437D8C8F79C#3B3295684851FF95DDAB9504DEF1FA24> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Neobisium_radjai_Dimitrijevic_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neobisium_radjai> ;
-    dwc:ID-CoL "7VZ8Y" ;
     dwc:class "Arachnida" ;
     dwc:family "Neobisiidae" ;
     dwc:genus "Neobisium" ;
@@ -43,51 +60,62 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Dimitrijevic" ;
     dwc:species "radjai" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7VZ8Y> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neobisium_radjai> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neobisiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudoscorpiones> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Neobisiidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pseudoscorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neobisium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neobisiidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neobisium_radjai_Dimitrijevi%C4%87_2017>
     dwc:class "Arachnida" ;
     dwc:family "Neobisiidae" ;
     dwc:genus "Neobisium" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pseudoscorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Dimitrijević & Rađa, 2017" ;
+    dwc:species "radjai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neobisium_radjai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neobisium_davidbengurioni_Curcic_2002>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:genus "Neobisium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Curcic & Dimitrijevic, 2002" ;
+    dwc:species "davidbengurioni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neobisium_davidbengurioni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neobisium_marcchagalli_Dimitrijevi%C4%87_2017>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:genus "Neobisium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "marcchagalli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neobisium_marcchagalli> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neobisium_marcchagalli_Curcic_2002>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:genus "Neobisium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "B. Curcic & S. Curcic, 2002" ;
+    dwc:species "marcchagalli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neobisium_marcchagalli> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neobisium_radjai>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neobisium> ;
     dwc:class "Arachnida" ;
     dwc:family "Neobisiidae" ;
     dwc:genus "Neobisium" ;
@@ -96,21 +124,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "radjai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neobisium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neobisium>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:genus "Neobisium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neobisiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neobisiidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudoscorpiones> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pseudoscorpiones>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
     dwc:class "Arachnida" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pseudoscorpiones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F32E234851FF90DE309437D8C8F79C>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neobisium_radjai_Dimitrijevic_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.37828/em.2017.15.2> ;
-    dc:creator "Dimitrijević, Rajko N.", "Rađa, Tonći" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8055678>, <http://dx.doi.org/10.5281/zenodo.8055680> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neobisium_davidbengurioni>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:genus "Neobisium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "davidbengurioni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neobisium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neobisium_marcchagalli>
+    dwc:class "Arachnida" ;
+    dwc:family "Neobisiidae" ;
+    dwc:genus "Neobisium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Pseudoscorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "marcchagalli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neobisium> ;
+    a dwcFP:TaxonName .
