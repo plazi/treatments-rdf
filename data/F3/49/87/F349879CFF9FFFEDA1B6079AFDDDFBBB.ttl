@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:F349879CFF9FFFEDA1B6079AFDDDFBBB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.832836> ;
+    dc:creator "Tshikolovets, Vadim" ;
+    dc:title "Clossiana gansuensis Tshikolovets 2017, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/F349879CFF9FFFEDA1B6079AFDDDFBBB.mc.CB883CD7FF9FFFEDA1B60621FEA8FE43>, <http://tb.plazi.org/GgServer/dwcaRecords/F349879CFF9FFFEDA1B6079AFDDDFBBB.mc.CB883CD7FF9FFFEDA03506D8FC02FE1E> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Clossiana_gansuensis_Tshikolovets_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4294.4.7> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4294.4.7>
-    dc:creator "Tshikolovets, Vadim" ;
-    dc:date "2017" ;
-    dc:title "Description of new taxa of Nymphalidae (Lepidoptera: Papilionoidea) from China" ;
     bibo:endPage "486" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "480" ;
     bibo:volume "4294" ;
+    dc:creator "Tshikolovets, Vadim" ;
+    dc:date "2017" ;
+    dc:title "Description of new taxa of Nymphalidae (Lepidoptera: Papilionoidea) from China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.832836> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,31 @@
     fabio:hasRepresentation "https://zenodo.org/record/832836/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/F349879CFF9FFFEDA1B6079AFDDDFBBB.mc.CB883CD7FF9FFFEDA1B60621FEA8FE43>
+    dwc:eventDate "2014-05-30" ;
+    dwc:locality "Tewo" ;
+    dwc:recordedBy "V. TshIkolovets & The & Is & In & NatIonal Museum" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "2615" ;
+    dwc:verbatimLatitude "34.06149" ;
+    dwc:verbatimLongitude "103.18386" ;
+    trt:gbifOccurrenceId "1576195548" ;
+    trt:httpUri <https://treatment.plazi.org/id/F349879CFF9FFFEDA1B6079AFDDDFBBB#CB883CD7FF9FFFEDA1B60621FEA8FE43> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/F349879CFF9FFFEDA1B6079AFDDDFBBB.mc.CB883CD7FF9FFFEDA03506D8FC02FE1E>
+    dwc:eventDate "2014-05-30" ;
+    dwc:locality "Zadi" ;
+    dwc:recordedBy "V. TshIkolovets & In" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "2615" ;
+    dwc:verbatimLatitude "34.06149" ;
+    dwc:verbatimLongitude "103.18386" ;
+    trt:gbifOccurrenceId "1576195549" ;
+    trt:httpUri <https://treatment.plazi.org/id/F349879CFF9FFFEDA1B6079AFDDDFBBB#CB883CD7FF9FFFEDA03506D8FC02FE1E> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Clossiana_gansuensis_Tshikolovets_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clossiana_gansuensis> ;
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Clossiana" ;
@@ -37,33 +70,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Tshikolovets, 2017" ;
     dwc:species "gansuensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clossiana_gansuensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Clossiana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nymphalidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Clossiana_selenis_Eversmann_1837>
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Clossiana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Eversmann, 1837" ;
+    dwc:species "selenis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clossiana_selenis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Clossiana_titania_Esper_1790>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Clossiana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Esper, 1790" ;
+    dwc:species "titania" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clossiana_titania> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Clossiana_dia_Linnaeus_1767>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Clossiana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1767" ;
+    dwc:species "dia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clossiana_dia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Clossiana_gansuensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clossiana> ;
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:genus "Clossiana" ;
@@ -72,39 +121,91 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "gansuensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clossiana> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Clossiana>
     dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Clossiana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nymphalidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Nymphalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Nymphalidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F349879CFF9FFFEDA1B6079AFDDDFBBB>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Clossiana_gansuensis_Tshikolovets_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4294.4.7> ;
-    dc:creator "Tshikolovets, Vadim" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.832836> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clossiana_selenis>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Clossiana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "selenis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clossiana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clossiana_titania>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Clossiana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "titania" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clossiana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clossiana_dia>
+    dwc:class "Insecta" ;
+    dwc:family "Nymphalidae" ;
+    dwc:genus "Clossiana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clossiana> ;
+    a dwcFP:TaxonName .
