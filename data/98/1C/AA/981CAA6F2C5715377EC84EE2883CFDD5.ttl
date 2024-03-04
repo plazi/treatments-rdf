@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:981CAA6F2C5715377EC84EE2883CFDD5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8261025> ;
+    dc:creator "Massa, Bruno" ;
+    dc:title "Phlaurocentrum morettanum Massa 2023, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/981CAA6F2C5715377EC84EE2883CFDD5.mc.A0DD11242C5715317FD34D518950F948>, <http://tb.plazi.org/GgServer/dwcaRecords/981CAA6F2C5715377EC84EE2883CFDD5.mc.A0DD11242C5715317B264D508D4BF964> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_morettanum_Massa_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5331.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5331.1.1>
-    dc:creator "Massa, Bruno" ;
-    dc:date "2023" ;
-    dc:title "Biodiversity hotspot in the Sangha Trinational Protected Area revealed through Orthoptera Tettigoniidae" ;
     bibo:endPage "67" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-08-18" ;
     bibo:startPage "1" ;
     bibo:volume "5331" ;
+    dc:creator "Massa, Bruno" ;
+    dc:date "2023" ;
+    dc:title "Biodiversity hotspot in the Sangha Trinational Protected Area revealed through Orthoptera Tettigoniidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8261025> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,27 @@
     fabio:hasRepresentation "https://zenodo.org/record/8261025/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/981CAA6F2C5715377EC84EE2883CFDD5.mc.A0DD11242C5715317FD34D518950F948>
+    dwc:collectionCode "BMPC" ;
+    dwc:eventDate "2017-04-04" ;
+    dwc:locality "Tai National Park" ;
+    dwc:recordedBy "P. Moretto" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "4398938427" ;
+    trt:httpUri <https://treatment.plazi.org/id/981CAA6F2C5715377EC84EE2883CFDD5#A0DD11242C5715317FD34D518950F948> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/981CAA6F2C5715377EC84EE2883CFDD5.mc.A0DD11242C5715317B264D508D4BF964>
+    dwc:collectionCode "BMPC" ;
+    dwc:eventDate "2017-04-04" ;
+    dwc:locality "Tai National Park" ;
+    dwc:recordedBy "P. Moretto" ;
+    dwc:typeStatus "paratype" ;
+    trt:gbifOccurrenceId "4398938532" ;
+    trt:httpUri <https://treatment.plazi.org/id/981CAA6F2C5715377EC84EE2883CFDD5#A0DD11242C5715317B264D508D4BF964> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_morettanum_Massa_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_morettanum> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Phlaurocentrum" ;
@@ -38,50 +67,62 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Massa, 2023" ;
     dwc:species "morettanum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_morettanum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Orthoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_latevittatum_Karsch_1889>
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Phlaurocentrum" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Karsch, 1889" ;
+    dwc:species "latevittatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_latevittatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_elegans_Massa_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Massa, 2013" ;
+    dwc:species "elegans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_elegans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_lobatum_Ragge_1962>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ragge, 1962" ;
+    dwc:species "lobatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_lobatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_morettoi_Massa_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Massa, 2013" ;
+    dwc:species "morettoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_morettoi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_morettanum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Phlaurocentrum" ;
@@ -90,22 +131,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "morettanum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/981CAA6F2C5715377EC84EE2883CFDD5>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phlaurocentrum_morettanum_Massa_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5331.1.1> ;
-    dc:creator "Massa, Bruno" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8261025> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_latevittatum>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latevittatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_elegans>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_lobatum>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lobatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum_morettoi>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Phlaurocentrum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "morettoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phlaurocentrum> ;
+    a dwcFP:TaxonName .
