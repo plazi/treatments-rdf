@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A637439152FFEEE4E4CC8F27C9A2B6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6419849> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Pleronotus macleayii" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A637439152FFEEE4E4CC8F27C9A2B6.mc.3B678C089152FFEEE7D0CF7D2C87A6B4> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pleronotus_macleayii_Gray_1839> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Chilonycteris_macleayii> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6419781> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6419781>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2019" ;
-    dc:title "Mormoopidae" ;
     bibo:endPage "443" ;
     bibo:startPage "424" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2019" ;
+    dc:title "Mormoopidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6419849> ;
     a fabio:BookSection .
 
@@ -23,8 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6419849/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03A637439152FFEEE4E4CC8F27C9A2B6.mc.3B678C089152FFEEE7D0CF7D2C87A6B4>
+    trt:gbifOccurrenceId "3863927313" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A637439152FFEEE4E4CC8F27C9A2B6#3B678C089152FFEEE7D0CF7D2C87A6B4> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pleronotus_macleayii_Gray_1839>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii> ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Pleronotus" ;
@@ -34,60 +49,64 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(J. E. Gray, 1839)" ;
     dwc:species "macleayii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Pteronotus_quadridens_Gundlach_1840>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:genus "Pteronotus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gundlach, 1840" ;
+    dwc:species "quadridens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pteronotus_quadridens> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Muricidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Muricidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pleronotus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pleronotus_macleayii_macleayii_Gray_1839>
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Pleronotus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "]. E. Gray, 1839" ;
+    dwc:species "macleayii" ;
+    dwc:subSpecies "macleayii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii_macleayii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pleronotus_macleayii_griseus_Gosse_1851>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Pleronotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gosse, 1851" ;
+    dwc:species "macleayii" ;
+    dwc:subSpecies "griseus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii_griseus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mormoops_blainvillei_Leach_1821>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:genus "Mormoops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Leach, 1821" ;
+    dwc:species "blainvillei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mormoops_blainvillei> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pleronotus> ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Pleronotus" ;
@@ -96,13 +115,161 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "macleayii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pleronotus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A637439152FFEEE4E4CC8F27C9A2B6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pleronotus_macleayii_Gray_1839> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/A6/37/Chilonycteris_macleayii> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6419781> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6419849> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pleronotus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Pleronotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Muricidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pteronotus_quadridens>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:genus "Pteronotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "quadridens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteronotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pteronotus>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:genus "Pteronotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mormoopidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mormoopidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii_macleayii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Pleronotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "macleayii" ;
+    dwc:subSpecies "macleayii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii_griseus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Pleronotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "macleayii" ;
+    dwc:subSpecies "griseus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pleronotus_macleayii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mormoops_blainvillei>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:genus "Mormoops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "blainvillei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mormoops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mormoops>
+    dwc:class "Mammalia" ;
+    dwc:family "Mormoopidae" ;
+    dwc:genus "Mormoops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mormoopidae> ;
+    a dwcFP:TaxonName .
