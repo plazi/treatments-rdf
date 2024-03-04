@@ -1,44 +1,62 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:665D87AE7C0B6341B9DC99917FDEF857
+    dc:creator "Cremers, Georges; Flament, Grégoire; Boudrie, Michel" ;
+    dc:title "Aspidium ghiesbreghtii E. Fourn." ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4606875> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Aspidium_ghiesbreghtii> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4606875>
-    dc:creator "Boudrie, Michel", "Cremers, Georges", "Flament, Grégoire" ;
-    dc:date "2016" ;
-    dc:title "Lectotypification de dix taxons de ptéridophytes d’Amérique tropicale, essentiellement pour l’herbier de Paris (P)" ;
     bibo:endPage "14" ;
     bibo:issue "1" ;
     bibo:journal "Adansonia" ;
     bibo:pubDate "2016-06-24" ;
     bibo:startPage "9" ;
     bibo:volume "38" ;
+    dc:creator "Cremers, Georges; Flament, Grégoire; Boudrie, Michel" ;
+    dc:date "2016" ;
+    dc:title "Lectotypification de dix taxons de ptéridophytes d’Amérique tropicale, essentiellement pour l’herbier de Paris (P)" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/Orizaba_Reuter_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Orizaba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Reuter, 1907" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Orizaba> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Aspidium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dryopteridaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Thelypteris_resinifera_Desv._1953>
     dwc:class "Polypodiopsida" ;
-    dwc:family "Dryopteridaceae" ;
-    dwc:genus "Aspidium" ;
+    dwc:family "Thelypteridaceae" ;
+    dwc:genus "Thelypteris" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Polypodiales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Desv.) Proctor" ;
+    dwc:species "resinifera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Thelypteris_resinifera> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Aspidium_ghiesbreghtii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Aspidium> ;
     dwc:class "Polypodiopsida" ;
     dwc:family "Dryopteridaceae" ;
     dwc:genus "Aspidium" ;
@@ -47,45 +65,138 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "ghiesbreghtii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Aspidium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Aspidium>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Dryopteridaceae" ;
+    dwc:genus "Aspidium" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dryopteridaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Dryopteridaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiales> ;
     dwc:class "Polypodiopsida" ;
     dwc:family "Dryopteridaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Polypodiales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Polypodiales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiopsida> ;
     dwc:class "Polypodiopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Polypodiales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Polypodiopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Polypodiopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/665D87AE7C0B6341B9DC99917FDEF857>
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4606875> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Aspidium_ghiesbreghtii> ;
-    dc:creator "Boudrie, Michel", "Cremers, Georges", "Flament, Grégoire" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Orizaba>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Orizaba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miridae>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Thelypteris_resinifera>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Thelypteridaceae" ;
+    dwc:genus "Thelypteris" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "resinifera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Thelypteris> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Thelypteris>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Thelypteridaceae" ;
+    dwc:genus "Thelypteris" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Thelypteridaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Thelypteridaceae>
+    dwc:class "Polypodiopsida" ;
+    dwc:family "Thelypteridaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Polypodiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Polypodiales> ;
+    a dwcFP:TaxonName .
