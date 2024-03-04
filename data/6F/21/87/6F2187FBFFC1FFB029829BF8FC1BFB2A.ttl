@@ -1,53 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6F2187FBFFC1FFB029829BF8FC1BFB2A
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/chrysocorporis_Hsieh_1956>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/chrysocorporis>' due to issues with rank ;
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Culex_obturbans_Walker_1860> ;
+    dc:creator "Harbach, Ralph E.; Howard, Theresa M." ;
+    dc:title "Armigeres" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres_subalbatus>, <http://taxon-name.plazi.org/id/Animalia/Armigeres_chrysocorporis>, <http://taxon-name.plazi.org/id/Animalia/Armigeres_obturbans>, <http://taxon-name.plazi.org/id/Animalia/Culex_obturbans_sensu>, <http://taxon-name.plazi.org/id/Animalia/Culex_obturbans> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Armigeres_Thurman_1959>, <http://taxon-concept.plazi.org/id/Animalia/Armigeres_Lee_1988> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.177892> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.177892>
-    dc:creator "Harbach, Ralph E.", "Howard, Theresa M." ;
-    dc:date "2007" ;
-    dc:title "Corrections in the status and rank of names used to denote varietal forms of mosquitoes (Diptera: Culicidae)" ;
     bibo:endPage "48" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "35" ;
     bibo:volume "1542" ;
+    dc:creator "Harbach, Ralph E.; Howard, Theresa M." ;
+    dc:date "2007" ;
+    dc:title "Corrections in the status and rank of names used to denote varietal forms of mosquitoes (Diptera: Culicidae)" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Armigeres_Lee_1988>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres> ;
-    dwc:ID-CoL "332W" ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:genus "Armigeres" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Lee et al., 1988" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Armigeres_Thurman_1959>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres> ;
-    dwc:ID-CoL "332W" ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:genus "Armigeres" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Thurman (1959)" ;
+<http://taxon-concept.plazi.org/id/Animalia/chrysocorporis_Hsieh_1956>
+    # Error: Invalid Rank, Invalid taxon relation ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_obturbans_Walker_1860>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_obturbans> ;
-    dwc:ID-CoL "8BNHP" ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -57,15 +45,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Walker, 1860" ;
     dwc:species "obturbans" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/332W> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_obturbans> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Armigeres>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Armigeres_Thurman_1959>
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Armigeres" ;
@@ -73,48 +57,99 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Thurman (1959)" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/332W> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Armigeres_Lee_1988>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Armigeres" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Lee et al., 1988" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/332W> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Armigeres>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Armigeres" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Culicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6F2187FBFFC1FFB029829BF8FC1BFB2A>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/6F/21/87/Armigeres_chrysocorporis>, <file:///workdir/tmprdf/data/6F/21/87/Armigeres_obturbans>, <file:///workdir/tmprdf/data/6F/21/87/Armigeres_subalbatus>, <file:///workdir/tmprdf/data/6F/21/87/Culex_obturbans>, <file:///workdir/tmprdf/data/6F/21/87/Culex_obturbans_sensu> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Armigeres_Lee_1988>, <http://taxon-concept.plazi.org/id/Animalia/Armigeres_Thurman_1959> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.177892> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Armigeres> ;
-    dc:creator "Harbach, Ralph E.", "Howard, Theresa M." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Culex_obturbans_Walker_1860> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/chrysocorporis>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "chrysocorporis" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_obturbans>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "obturbans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+    a dwcFP:TaxonName .
