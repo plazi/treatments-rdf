@@ -1,13 +1,22 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E3C818544F532EFF6FC1DC3205F990
+    dc:creator "Russell, Dale A." ;
+    dc:title "Albertosaurus lancensis Russell 1970" ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Albertosaurus_lancensis_Gilmore_1946> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Gorgosaurus_lancensis_Gilmore_1946> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.1040973> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.1040973>
     dc:creator "Russell, Dale A." ;
@@ -16,7 +25,6 @@
     a fabio:Book .
 
 <http://taxon-concept.plazi.org/id/Animalia/Albertosaurus_lancensis_Gilmore_1946>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus_lancensis> ;
     dwc:authority "Russell, 1970" ;
     dwc:authorityName "Russell" ;
     dwc:authorityYear "1970" ;
@@ -27,11 +35,24 @@
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gilmore, 1946" ;
     dwc:species "lancensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus_lancensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tyrannosaurus_Osborn_1905>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Tyrannosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Osborn, 1905" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tyrannosaurus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Gorgosaurus_lancensis_Gilmore_1946>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gorgosaurus_lancensis> ;
     dwc:class "Reptilia" ;
     dwc:family "Tyrannosauridae" ;
     dwc:genus "Gorgosaurus" ;
@@ -41,26 +62,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Gilmore, 1946" ;
     dwc:species "lancensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gorgosaurus_lancensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Albertosaurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tyrannosauridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Albertosaurus_libratus_Lambe_1914>
     dwc:class "Reptilia" ;
     dwc:family "Tyrannosauridae" ;
     dwc:genus "Albertosaurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lambe, 1914" ;
+    dwc:species "libratus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus_libratus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Albertosaurus_sarcophagus_Osborn_1905>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Albertosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Osborn, 1905" ;
+    dwc:species "sarcophagus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus_sarcophagus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Albertosaurus_lancensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus> ;
     dwc:class "Reptilia" ;
     dwc:family "Tyrannosauridae" ;
     dwc:genus "Albertosaurus" ;
@@ -69,46 +100,113 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "lancensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dinosauria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
+<http://taxon-name.plazi.org/id/Animalia/Albertosaurus>
     dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Albertosaurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tyrannosauridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tyrannosauridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dinosauria> ;
     dwc:class "Reptilia" ;
     dwc:family "Tyrannosauridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dinosauria> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E3C818544F532EFF6FC1DC3205F990>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Albertosaurus_lancensis_Gilmore_1946> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Gorgosaurus_lancensis_Gilmore_1946> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.1040973> ;
-    dc:creator "Russell, Dale A." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Dinosauria>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tyrannosaurus>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Tyrannosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tyrannosauridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gorgosaurus_lancensis>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Gorgosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "lancensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gorgosaurus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gorgosaurus>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Gorgosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tyrannosauridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Albertosaurus_libratus>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Albertosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "libratus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Albertosaurus_sarcophagus>
+    dwc:class "Reptilia" ;
+    dwc:family "Tyrannosauridae" ;
+    dwc:genus "Albertosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sarcophagus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Albertosaurus> ;
+    a dwcFP:TaxonName .

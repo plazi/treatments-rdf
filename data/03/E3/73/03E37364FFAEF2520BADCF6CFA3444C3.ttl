@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E37364FFAEF2520BADCF6CFA3444C3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7518965> ;
+    dc:creator "Bezark, Larry G.; Santos-Silva, Antonio" ;
+    dc:title "Neocompsa obliqua Bezark & Santos-Silva 2023, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03E37364FFAEF2520BADCF6CFA3444C3.mc.3B22C82FFFA3F2520A44CB35FDDC4102>, <http://tb.plazi.org/GgServer/dwcaRecords/03E37364FFAEF2520BADCF6CFA3444C3.mc.3B22C82FFFA3F2520944CB10FB264102> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neocompsa_obliqua_Bezark_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5227.4.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5227.4.5>
-    dc:creator "Bezark, Larry G.", "Santos-Silva, Antonio" ;
-    dc:date "2023" ;
-    dc:title "New species and new country records for Neotropical Cerambycinae (Coleoptera, Cerambycidae)" ;
     bibo:endPage "485" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-01-09" ;
     bibo:startPage "473" ;
     bibo:volume "5227" ;
+    dc:creator "Bezark, Larry G.; Santos-Silva, Antonio" ;
+    dc:date "2023" ;
+    dc:title "New species and new country records for Neotropical Cerambycinae (Coleoptera, Cerambycidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7518965> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,27 @@
     fabio:hasRepresentation "https://zenodo.org/record/7518965/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03E37364FFAEF2520BADCF6CFA3444C3.mc.3B22C82FFFA3F2520A44CB35FDDC4102>
+    dwc:collectionCode "CASC, LGBC" ;
+    dwc:eventDate "2019-07-10" ;
+    dwc:locality "Compostela" ;
+    dwc:recordedBy "J. Rifkind & E. Martinez" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "4015487311" ;
+    trt:httpUri <https://treatment.plazi.org/id/03E37364FFAEF2520BADCF6CFA3444C3#3B22C82FFFA3F2520A44CB35FDDC4102> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03E37364FFAEF2520BADCF6CFA3444C3.mc.3B22C82FFFA3F2520944CB10FB264102>
+    dwc:collectionCode "LGBC" ;
+    dwc:eventDate "2019-07-10" ;
+    dwc:locality "Compostela" ;
+    dwc:recordedBy "J. Rifkind & E. Martinez" ;
+    dwc:typeStatus "paratype" ;
+    trt:gbifOccurrenceId "4015487306" ;
+    trt:httpUri <https://treatment.plazi.org/id/03E37364FFAEF2520BADCF6CFA3444C3#3B22C82FFFA3F2520944CB10FB264102> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Neocompsa_obliqua_Bezark_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_obliqua> ;
-    dwc:ID-CoL "BRH9N" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Neocompsa" ;
@@ -39,60 +67,75 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bezark & Santos-Silva, 2023" ;
     dwc:species "obliqua" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BRH9N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_obliqua> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neocompsa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neocompsa_undetermined_Bezark_2023>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Neocompsa" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_undetermined> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neocompsa_tenuissima_Bates_1885>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Bates, 1885)", "Bates, 1885" ;
+    dwc:species "tenuissima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_tenuissima> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neocompsa_clerochroa_Thomson_1857>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Thomson, 1857)" ;
+    dwc:species "clerochroa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_clerochroa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neocompsa_clerochroa_Thomson_1867>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Thomson, 1867)", "Thomson, 1867" ;
+    dwc:species "clerochroa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_clerochroa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neocompsa_tuberosa_Martins_1970>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Martins, 1970" ;
+    dwc:species "tuberosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neocompsa_tuberosa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neocompsa_obliqua>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neocompsa> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Neocompsa" ;
@@ -101,12 +144,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "obliqua" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neocompsa> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E37364FFAEF2520BADCF6CFA3444C3>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neocompsa_obliqua_Bezark_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5227.4.5> ;
-    dc:creator "Bezark, Larry G.", "Santos-Silva, Antonio" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7518965> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Neocompsa>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neocompsa_undetermined>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neocompsa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neocompsa_tenuissima>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tenuissima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neocompsa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neocompsa_clerochroa>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "clerochroa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neocompsa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neocompsa_tuberosa>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Neocompsa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tuberosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neocompsa> ;
+    a dwcFP:TaxonName .
