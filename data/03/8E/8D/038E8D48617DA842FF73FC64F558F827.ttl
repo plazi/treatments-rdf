@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038E8D48617DA842FF73FC64F558F827
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7413350> ;
+    dc:creator "Telnov, Dmitry" ;
+    dc:title "Physciolagria Pic 1930" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/038E8D48617DA842FF73FC64F558F827.mc.3B4F3603617DA842FE33FBCBF7A5FA8B> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Physciolagria_Pic_1930> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Physciolagria_Telnov_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5219.2.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5219.2.2>
-    dc:creator "Telnov, Dmitry" ;
-    dc:date "2022" ;
-    dc:title "Redefinition of Physciolagria Pic, 1930 (Coleoptera: Mycteridae) with a new family placement, genus-rank synonymy, new description, and a key" ;
     bibo:endPage "138" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-12-08" ;
     bibo:startPage "121" ;
     bibo:volume "5219" ;
+    dc:creator "Telnov, Dmitry" ;
+    dc:date "2022" ;
+    dc:title "Redefinition of Physciolagria Pic, 1930 (Coleoptera: Mycteridae) with a new family placement, genus-rank synonymy, new description, and a key" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7413350> ;
     a fabio:JournalArticle .
 
@@ -27,8 +38,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/7413350/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/038E8D48617DA842FF73FC64F558F827.mc.3B4F3603617DA842FE33FBCBF7A5FA8B>
+    dwc:catalogNumber "NHMUK014663499" ;
+    dwc:collectionCode "BMNH" ;
+    dwc:eventDate "1928-09" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3988003323" ;
+    trt:httpUri <https://treatment.plazi.org/id/038E8D48617DA842FF73FC64F558F827#3B4F3603617DA842FE33FBCBF7A5FA8B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Physciolagria_Pic_1930>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physciolagria> ;
     dwc:class "Insecta" ;
     dwc:family "Mycteridae" ;
     dwc:genus "Physciolagria" ;
@@ -37,10 +56,23 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Pic, 1930" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physciolagria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Physciolagria_liturata_Pic_1930>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:genus "Physciolagria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pic, 1930" ;
+    dwc:species "liturata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physciolagria_liturata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Physciolagria_Telnov_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physciolagria> ;
     dwc:class "Insecta" ;
     dwc:family "Mycteridae" ;
     dwc:genus "Physciolagria" ;
@@ -49,49 +81,91 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Telnov, 2022" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physciolagria> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Physcius_Champion_1889>
     dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:genus "Physcius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Champion, 1889" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physcius> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mycteridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mycteridae_Blanchard_1845>
     dwc:class "Insecta" ;
     dwc:family "Mycteridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Blanchard, 1845" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mycteridae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eurypinae_Thomson_1860>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Thomson, 1860" ;
+    dwc:subFamily "Eurypinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eurypinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lacconotinae_LeConte_1862>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "LeConte, 1862" ;
+    dwc:subFamily "Lacconotinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lacconotinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lagriinae_Borchmann_1936>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Borchmann, 1936" ;
+    dwc:subFamily "Lagriinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lagriinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenebrionidae_Latreille_1802>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tenebrionidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lagriidae_Latreille_1825>
+    dwc:class "Insecta" ;
+    dwc:family "Lagriidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Latreille, 1825" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lagriidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Physciolagria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycteridae> ;
     dwc:class "Insecta" ;
     dwc:family "Mycteridae" ;
     dwc:genus "Physciolagria" ;
@@ -99,22 +173,120 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycteridae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038E8D48617DA842FF73FC64F558F827>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Physciolagria_Pic_1930> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Physciolagria_Telnov_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5219.2.2> ;
-    dc:creator "Telnov, Dmitry" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7413350> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/038E8D48617DA842FF73FC64F558F827/NHMUK014663499> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mycteridae>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038E8D48617DA842FF73FC64F558F827/NHMUK014663499>
-    trt:gbifOccurrenceId "3988003323" ;
-    dwc:catalogNumber "NHMUK014663499" ;
-    dwc:collectionCode "BMNH" ;
-    dwc:eventDate "1928-09" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Physciolagria_liturata>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:genus "Physciolagria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "liturata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Physciolagria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Physcius>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:genus "Physcius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eurypinae>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Eurypinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lacconotinae>
+    dwc:class "Insecta" ;
+    dwc:family "Mycteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Lacconotinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mycteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagriinae>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Lagriinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tenebrionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tenebrionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagriidae>
+    dwc:class "Insecta" ;
+    dwc:family "Lagriidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
