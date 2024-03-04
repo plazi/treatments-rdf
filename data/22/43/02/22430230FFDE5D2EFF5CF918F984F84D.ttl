@@ -1,42 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:22430230FFDE5D2EFF5CF918F984F84D
+    dc:creator "Agassiz, David J. L." ;
+    dc:title "Swammerdamia Hubner 1825" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Swammerdamia_Hubner_1825> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Swammerdammia_Heinemann_1870>, <http://taxon-concept.plazi.org/id/Animalia/Macarophanta_Meyrick_1932> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4600.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4600.1.1>
-    dc:creator "Agassiz, David J. L." ;
-    dc:date "2019" ;
-    dc:title "The Yponomeutidae of the Afrotropical region (Lepidoptera: Yponomeutoidea)" ;
     bibo:endPage "69" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-05-07" ;
     bibo:startPage "1" ;
     bibo:volume "4600" ;
+    dc:creator "Agassiz, David J. L." ;
+    dc:date "2019" ;
+    dc:title "The Yponomeutidae of the Afrotropical region (Lepidoptera: Yponomeutoidea)" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Macarophanta_Meyrick_1932>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macarophanta> ;
-    dwc:ID-CoL "94NJZ" ;
-    dwc:class "Insecta" ;
-    dwc:family "Yponomeutidae" ;
-    dwc:genus "Macarophanta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Meyrick, 1932: 339" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Swammerdamia_Hubner_1825>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamia> ;
-    dwc:ID-CoL "92NHX" ;
     dwc:class "Insecta" ;
     dwc:family "Yponomeutidae" ;
     dwc:genus "Swammerdamia" ;
@@ -44,11 +38,12 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Hubner, 1825" ;
+    dwc:scientificNameAuthorship "Hubner, 1825", "Hubner, 1825: 425" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/92NHX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Swammerdammia_Heinemann_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdammia> ;
     dwc:class "Insecta" ;
     dwc:family "Yponomeutidae" ;
     dwc:genus "Swammerdammia" ;
@@ -57,39 +52,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Heinemann, 1870: 104" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdammia> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Macarophanta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Macarophanta_Meyrick_1932>
     dwc:class "Insecta" ;
     dwc:family "Yponomeutidae" ;
     dwc:genus "Macarophanta" ;
@@ -97,10 +63,37 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Meyrick, 1932: 339" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/92NHX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macarophanta> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Swammerdamia_heroldella_Hubner_1825>
+    dwc:class "Insecta" ;
+    dwc:family "Yponomeutidae" ;
+    dwc:genus "Swammerdamia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hubner, [1825]" ;
+    dwc:species "heroldella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Swammerdamia_heroldella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paraswammerdamia_Friese_1960>
+    dwc:class "Insecta" ;
+    dwc:family "Yponomeutidae" ;
+    dwc:genus "Paraswammerdamia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Friese, 1960" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paraswammerdamia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Swammerdamia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
     dwc:class "Insecta" ;
     dwc:family "Yponomeutidae" ;
     dwc:genus "Swammerdamia" ;
@@ -108,10 +101,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Yponomeutidae>
+    dwc:class "Insecta" ;
+    dwc:family "Yponomeutidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Swammerdammia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
     dwc:class "Insecta" ;
     dwc:family "Yponomeutidae" ;
     dwc:genus "Swammerdammia" ;
@@ -119,22 +151,39 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Yponomeutidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Macarophanta>
     dwc:class "Insecta" ;
     dwc:family "Yponomeutidae" ;
+    dwc:genus "Macarophanta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/22430230FFDE5D2EFF5CF918F984F84D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Swammerdamia_Hubner_1825> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Macarophanta_Meyrick_1932>, <http://taxon-concept.plazi.org/id/Animalia/Swammerdammia_Heinemann_1870> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4600.1.1> ;
-    dc:creator "Agassiz, David J. L." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Swammerdamia_heroldella>
+    dwc:class "Insecta" ;
+    dwc:family "Yponomeutidae" ;
+    dwc:genus "Swammerdamia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "heroldella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Swammerdamia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Paraswammerdamia>
+    dwc:class "Insecta" ;
+    dwc:family "Yponomeutidae" ;
+    dwc:genus "Paraswammerdamia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Yponomeutidae> ;
+    a dwcFP:TaxonName .

@@ -1,23 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:22A1A356A2285D94AA43DCEF05405521
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/cyrenaicus>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.3897/zookeys.1143.94951.figures55-64>, <http://dx.doi.org/10.3897/zookeys.1143.94951.figures65-74> ;
+    dc:creator "van Achterberg, Cornelis; Smit, John T.; Ljubomirov, Toshko" ;
+    dc:title "Eumenes cyrenaicus Bluethgen 1938" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eumenes_cyrenaicus_Bluethgen_1938> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes_dubius_cyrenaicus>, <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus_cyrenaicus>, <http://taxon-name.plazi.org/id/Animalia/Eumenes_dubius_var._congruens>, <http://taxon-name.plazi.org/id/Animalia/Eumenes_dubius_var._pseudogermanica>, <http://taxon-name.plazi.org/id/Animalia/Eumenes_dubius_pseudogermanicus> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Eumenes_cyrenaicus_pseudogermanicus_Bluthgen_1938> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1143.94951> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1143.94951>
-    dc:creator "Ljubomirov, Toshko", "Smit, John T.", "van Achterberg, Cornelis" ;
-    dc:date "2023" ;
-    dc:title "Review of the European Eumenes Latreille (Hymenoptera, Vespidae) using morphology and DNA barcodes, with an illustrated key to species" ;
     bibo:endPage "163" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2023-01-31" ;
     bibo:startPage "93" ;
     bibo:volume "1143" ;
+    dc:creator "van Achterberg, Cornelis; Smit, John T.; Ljubomirov, Toshko" ;
+    dc:date "2023" ;
+    dc:title "Review of the European Eumenes Latreille (Hymenoptera, Vespidae) using morphology and DNA barcodes, with an illustrated key to species" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1143.94951.figures55-64>, <http://dx.doi.org/10.3897/zookeys.1143.94951.figures65-74> ;
     a fabio:JournalArticle .
 
@@ -32,8 +44,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eumenes_cyrenaicus_Bluethgen_1938>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus> ;
-    dwc:ID-CoL "3CDFW" ;
     dwc:LSID "22A1A356-A228-5D94-AA43-DCEF05405521" ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
@@ -44,10 +54,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bluethgen, 1938" ;
     dwc:species "cyrenaicus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3CDFW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Eumenes_cyrenaicus_pseudogermanicus_Bluthgen_1938>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus_pseudogermanicus> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Eumenes" ;
@@ -59,33 +70,10 @@
     dwc:species "cyrenaicus" ;
     dwc:subGenus "Eumenes" ;
     dwc:subSpecies "pseudogermanicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus_pseudogermanicus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eumenes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Vespidae" ;
-    dwc:genus "Eumenes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenes> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Eumenes" ;
@@ -94,10 +82,61 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "cyrenaicus" ;
+    dwc:subGenus "Eumenes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenes>, <http://taxon-name.plazi.org/id/Animalia/Eumenes_Eumenes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eumenes>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Eumenes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespidae>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus_pseudogermanicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Eumenes" ;
@@ -106,42 +145,19 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
     dwc:species "cyrenaicus" ;
+    dwc:subGenus "Eumenes" ;
     dwc:subSpecies "pseudogermanicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenes_cyrenaicus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Vespidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Eumenes_Eumenes>
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
+    dwc:genus "Eumenes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Eumenes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenes> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/22A1A356A2285D94AA43DCEF05405521>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eumenes_cyrenaicus_Bluethgen_1938> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/22/A1/A3/Eumenes_cyrenaicus_cyrenaicus>, <file:///workdir/tmprdf/data/22/A1/A3/Eumenes_dubius_congruens>, <file:///workdir/tmprdf/data/22/A1/A3/Eumenes_dubius_cyrenaicus>, <file:///workdir/tmprdf/data/22/A1/A3/Eumenes_dubius_pseudogermanica>, <file:///workdir/tmprdf/data/22/A1/A3/Eumenes_dubius_pseudogermanicus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Eumenes_cyrenaicus_pseudogermanicus_Bluthgen_1938> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1143.94951> ;
-    dc:creator "Ljubomirov, Toshko", "Smit, John T.", "van Achterberg, Cornelis" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1143.94951.figures55-64>, <http://dx.doi.org/10.3897/zookeys.1143.94951.figures65-74> ;
-    a trt:Treatment .
-
