@@ -1,52 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:AE7687EAFFBBFFADFF4359EBFA08F87B
+    dc:creator "Ahrens, Dirk; Fabrizi, Silvia; Bai, Ming; Liu, Wangang" ;
+    dc:title "Serica MacLeay 1819" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Serica_MacLeay_1819> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trichoserica_Reitter_1896>, <http://taxon-concept.plazi.org/id/Animalia/Ophthalmoserica_Brenske_1897>, <http://taxon-concept.plazi.org/id/Animalia/Podoserica_Breit_1912> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5186.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5186.1.1>
-    dc:creator "Ahrens, Dirk", "Bai, Ming", "Fabrizi, Silvia", "Liu, Wangang" ;
-    dc:date "2022" ;
-    dc:title "Taxonomic revision of Serica MacLeay, 1819 (sensu lato) from China and adjacent areas (Coleoptera: Scarabaeidae: Melolonthinae: Sericini), with updates on Nipponoserica Nomura, 1972" ;
     bibo:endPage "83" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-09-13" ;
     bibo:startPage "1" ;
     bibo:volume "5186" ;
+    dc:creator "Ahrens, Dirk; Fabrizi, Silvia; Bai, Ming; Liu, Wangang" ;
+    dc:date "2022" ;
+    dc:title "Taxonomic revision of Serica MacLeay, 1819 (sensu lato) from China and adjacent areas (Coleoptera: Scarabaeidae: Melolonthinae: Sericini), with updates on Nipponoserica Nomura, 1972" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Ophthalmoserica_Brenske_1897>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ophthalmoserica> ;
-    dwc:class "Insecta" ;
-    dwc:family "Melolonthidae" ;
-    dwc:genus "Ophthalmoserica" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Brenske, 1897: 395" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Podoserica_Breit_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Podoserica> ;
-    dwc:class "Insecta" ;
-    dwc:family "Melolonthidae" ;
-    dwc:genus "Podoserica" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Breit, 1912: 202" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Serica_MacLeay_1819>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Serica" ;
@@ -54,11 +38,11 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "MacLeay, 1819" ;
+    dwc:scientificNameAuthorship "MacLeay, 1819", "MacLeay, 1819: 146" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trichoserica_Reitter_1896>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichoserica> ;
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Trichoserica" ;
@@ -67,49 +51,23 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Reitter, 1896: 181" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichoserica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Melolonthidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Trichoserica_fulvopubens_Reitter_1896>
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
+    dwc:genus "Trichoserica" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Reitter, 1896" ;
+    dwc:species "fulvopubens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichoserica_fulvopubens> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Ophthalmoserica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ophthalmoserica_Brenske_1897>
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Ophthalmoserica" ;
@@ -117,10 +75,24 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Brenske, 1897: 395" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ophthalmoserica> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Podoserica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Serica_thibetana_Brenske_1897>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Brenske, 1897: 395" ;
+    dwc:species "thibetana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_thibetana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Podoserica_Breit_1912>
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Podoserica" ;
@@ -128,10 +100,752 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Breit, 1912: 202" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Podoserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Podoserica_reitteri_Breit_1912>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Podoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Breit, 1912: 202" ;
+    dwc:species "reitteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Podoserica_reitteri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_brunnea_Linnaeus_1758>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Linnaeus, 1758)" ;
+    dwc:species "brunnea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_brunnea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sericini_Ahrens_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Sericini" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ahrens & Vogler, 2008" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sericini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maladera_sinica_Hope_1842>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hope, 1842" ;
+    dwc:species "sinica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maladera_sinica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Trioserica_Moser_1922>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Trioserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Moser, 1922" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trioserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tetraserica_Ahrens_2004>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Tetraserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ahrens, 2004" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetraserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maladera_haba_Ahrens_2021>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu, 2021" ;
+    dwc:species "haba" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maladera_haba> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nipponoserica_Nomura_1973>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Nipponoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Nomura, 1973" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nipponoserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Xenoserica_Ahrens_2005>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Xenoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ahrens, 2005" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xenoserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maladera_Mulsant_1871>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Mulsant & Rey, 1871" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maladera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amiserica_Nomura_1974>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Amiserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Nomura, 1974" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amiserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hoplomaladera_Nomura_1974>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Hoplomaladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Nomura, 1974" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hoplomaladera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hemiserica_Brenske_1894>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Hemiserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Brenske, 1894" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemiserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maladera_brunnescens_Frey_1972>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Frey, 1972" ;
+    dwc:species "brunnescens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maladera_brunnescens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gastromaladera_Nomura_1973>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Gastromaladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Nomura, 1973" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gastromaladera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pachyserica_Brenske_1897>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Pachyserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Brenske, 1897" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachyserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Trichomaladera_Nomura_1974>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Trichomaladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Nomura, 1974" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichomaladera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paraserica_Reitter_1896>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Paraserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Reitter, 1896" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paraserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_solivaga_Brenske_1898>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Brenske, 1898)" ;
+    dwc:species "solivaga" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_solivaga> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_mengsonana_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "mengsonana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_mengsonana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_fashengi_Liu_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Liu & Ahrens, 2014" ;
+    dwc:species "fashengi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_fashengi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_falcifera_Ahrens_2009>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens & Fabrizi, 2009" ;
+    dwc:species "falcifera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_falcifera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_segregata_Arrow_1946>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Arrow, 1946" ;
+    dwc:species "segregata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_segregata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_longwan_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "longwan" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_longwan> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_longula_Frey_1972>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Frey, 1972" ;
+    dwc:species "longula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_longula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_tiammushan_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "tiammushan" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_tiammushan> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_daqiaoana_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "daqiaoana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_daqiaoana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nipponoserica_jiankouensis_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Nipponoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "jiankouensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nipponoserica_jiankouensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_excisa_Frey_1972>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Frey, 1972)" ;
+    dwc:species "excisa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_excisa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_shiduensis_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "shiduensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_shiduensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_klapperichi_Frey_1972>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Frey, 1972" ;
+    dwc:species "klapperichi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_klapperichi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_huangbaiyuanensis_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "huangbaiyuanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_huangbaiyuanensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_guangnanensis_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "guangnanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_guangnanensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_lupina_Arrow_1946>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Arrow, 1946" ;
+    dwc:species "lupina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_lupina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_yini_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "yini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_yini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_baishuitaiensis_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "baishuitaiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_baishuitaiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_paralupina_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "paralupina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_paralupina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_gaoligong_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "gaoligong" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_gaoligong> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_nanhua_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "nanhua" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_nanhua> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_longipes_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "longipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_longipes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_allolongipes_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "allolongipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_allolongipes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_paralongipes_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "paralongipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_paralongipes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_dathei_Ahrens_2005>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, 2005" ;
+    dwc:species "dathei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_dathei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_dissimillima_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "dissimillima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_dissimillima> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_zhenba_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "zhenba" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_zhenba> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_nanjiangana_Ahrens_2005>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, 2005" ;
+    dwc:species "nanjiangana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_nanjiangana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_trapezicollis_Ahrens_2005>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, 2005" ;
+    dwc:species "trapezicollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_trapezicollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_jani_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "jani" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_jani> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_jaroslavi_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "jaroslavi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_jaroslavi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_albisetis_Ahrens_2005>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, 2005" ;
+    dwc:species "albisetis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_albisetis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_shengtangshan_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "shengtangshan" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_shengtangshan> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_adspersa_Frey_1972>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Frey, 1972" ;
+    dwc:species "adspersa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_adspersa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_nigroguttata_Brenske_1897>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Brenske, 1897" ;
+    dwc:species "nigroguttata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_nigroguttata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_velutina_Arrow_1946>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Arrow, 1946" ;
+    dwc:species "velutina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_velutina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_Taiwanoserica_Nomura_1974>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:scientificNameAuthorship "Nomura, 1974" ;
+    dwc:subGenus "Taiwanoserica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_Taiwanoserica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_ziqingi_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "ziqingi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_ziqingi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_jirii_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "jirii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_jirii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Serica_pangwa_Ahrens_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ahrens, Fabrizi & Liu" ;
+    dwc:species "pangwa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serica_pangwa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Serica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Serica" ;
@@ -139,10 +853,49 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Melolonthidae>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichoserica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
     dwc:class "Insecta" ;
     dwc:family "Melolonthidae" ;
     dwc:genus "Trichoserica" ;
@@ -150,12 +903,744 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/AE7687EAFFBBFFADFF4359EBFA08F87B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Serica_MacLeay_1819> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ophthalmoserica_Brenske_1897>, <http://taxon-concept.plazi.org/id/Animalia/Podoserica_Breit_1912>, <http://taxon-concept.plazi.org/id/Animalia/Trichoserica_Reitter_1896> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5186.1.1> ;
-    dc:creator "Ahrens, Dirk", "Bai, Ming", "Fabrizi, Silvia", "Liu, Wangang" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trichoserica_fulvopubens>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Trichoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fulvopubens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichoserica> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Ophthalmoserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Ophthalmoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_thibetana>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "thibetana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Podoserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Podoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Podoserica_reitteri>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Podoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "reitteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoserica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_brunnea>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brunnea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sericini>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Sericini" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maladera_sinica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sinica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maladera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maladera>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trioserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Trioserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tetraserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Tetraserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maladera_haba>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "haba" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maladera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nipponoserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Nipponoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Xenoserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Xenoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amiserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Amiserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hoplomaladera>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Hoplomaladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Hemiserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maladera_brunnescens>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Maladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brunnescens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maladera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastromaladera>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Gastromaladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachyserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Pachyserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichomaladera>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Trichomaladera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paraserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Paraserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Melolonthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_solivaga>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "solivaga" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_mengsonana>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mengsonana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_fashengi>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fashengi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_falcifera>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "falcifera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_segregata>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "segregata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_longwan>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longwan" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_longula>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_tiammushan>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tiammushan" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_daqiaoana>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "daqiaoana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nipponoserica_jiankouensis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Nipponoserica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "jiankouensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nipponoserica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_excisa>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "excisa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_shiduensis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "shiduensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_klapperichi>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "klapperichi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_huangbaiyuanensis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "huangbaiyuanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_guangnanensis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "guangnanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_lupina>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lupina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_yini>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "yini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_baishuitaiensis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "baishuitaiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_paralupina>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "paralupina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_gaoligong>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "gaoligong" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_nanhua>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nanhua" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_longipes>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_allolongipes>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "allolongipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_paralongipes>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "paralongipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_dathei>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dathei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_dissimillima>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dissimillima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_zhenba>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "zhenba" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_nanjiangana>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nanjiangana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_trapezicollis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "trapezicollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_jani>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "jani" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_jaroslavi>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "jaroslavi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_albisetis>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "albisetis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_shengtangshan>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "shengtangshan" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_adspersa>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "adspersa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_nigroguttata>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nigroguttata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_velutina>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "velutina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_Taiwanoserica>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Taiwanoserica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_ziqingi>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ziqingi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_jirii>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "jirii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serica_pangwa>
+    dwc:class "Insecta" ;
+    dwc:family "Melolonthidae" ;
+    dwc:genus "Serica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pangwa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Serica> ;
+    a dwcFP:TaxonName .
