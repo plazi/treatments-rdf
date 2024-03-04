@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2D4F9FE0F36C51ECAB7429747813F941
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Nerineoidea_Sharpe_1850>, <http://dx.doi.org/10.3897/zitteliana.96.e84187.plate10> ;
+    dc:creator "Gruendel, Joachim; Keupp, Helmut; Lang, Fritz; Nuetzel, Alexander" ;
+    dc:title "Ptygmatis tornata" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ptygmatis_tornata_Quenstedt_1852> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Nerinea_terebra>, <http://taxon-name.plazi.org/id/Animalia/Nerinea_incavata>, <http://taxon-name.plazi.org/id/Animalia/Nerinea_tornata>, <http://taxon-name.plazi.org/id/Animalia/Nerinea_constricta>, <http://taxon-name.plazi.org/id/Animalia/Nerinea_cochlearis>, <http://taxon-name.plazi.org/id/Animalia/Nerinella_tornata>, <http://taxon-name.plazi.org/id/Animalia/Nerinella_partschi> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zitteliana.96.e84187> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zitteliana.96.e84187>
-    dc:creator "Gruendel, Joachim", "Keupp, Helmut", "Lang, Fritz", "Nuetzel, Alexander" ;
-    dc:date "2022" ;
-    dc:title "Late Jurassic (Upper Kimmeridgian) Heterobranchia (Gastropoda) of the coral-facies of Saal near Kelheim and the viciniy of Nattheim (Germany)" ;
     bibo:endPage "221" ;
     bibo:journal "Zitteliana" ;
     bibo:pubDate "2022-12-12" ;
     bibo:startPage "179" ;
     bibo:volume "96" ;
+    dc:creator "Gruendel, Joachim; Keupp, Helmut; Lang, Fritz; Nuetzel, Alexander" ;
+    dc:date "2022" ;
+    dc:title "Late Jurassic (Upper Kimmeridgian) Heterobranchia (Gastropoda) of the coral-facies of Saal near Kelheim and the viciniy of Nattheim (Germany)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zitteliana.96.e84187.plate10> ;
     a fabio:JournalArticle .
 
@@ -26,17 +36,7 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/780388" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/2017_Sharpe_1850>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/2017> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:rank "superFamily" ;
-    dwc:scientificNameAuthorship "Sharpe, 1850" ;
-    dwc:superFamily "Nerineoidea" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Ptygmatis_tornata_Quenstedt_1852>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ptygmatis_tornata> ;
     dwc:LSID "2D4F9FE0-F36C-51EC-AB74-29747813F941" ;
     dwc:class "Gastropoda" ;
     dwc:family "Ptygmatididae" ;
@@ -46,11 +46,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Quenstedt, 1852)" ;
     dwc:species "tornata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ptygmatis_tornata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/2017>
+<http://taxon-concept.plazi.org/id/Animalia/Nerineoidea_Sharpe_1850>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
     dwc:rank "superFamily" ;
+    dwc:scientificNameAuthorship "Sharpe, 1850" ;
     dwc:superFamily "Nerineoidea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nerineoidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Ptygmatis_tornata>
+    dwc:class "Gastropoda" ;
+    dwc:family "Ptygmatididae" ;
+    dwc:genus "Ptygmatis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "tornata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ptygmatis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ptygmatis>
+    dwc:class "Gastropoda" ;
+    dwc:family "Ptygmatididae" ;
+    dwc:genus "Ptygmatis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ptygmatididae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Ptygmatididae>
@@ -59,34 +85,33 @@
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Ptygmatis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ptygmatididae> ;
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
     dwc:class "Gastropoda" ;
-    dwc:family "Ptygmatididae" ;
-    dwc:genus "Ptygmatis" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca>, <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Ptygmatis_tornata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ptygmatis> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Ptygmatididae" ;
-    dwc:genus "Ptygmatis" ;
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:species "tornata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2D4F9FE0F36C51ECAB7429747813F941>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ptygmatis_tornata_Quenstedt_1852> ;
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinea_cochlearis>, <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinea_constricta>, <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinea_incavata>, <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinea_terebra>, <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinea_tornata>, <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinella_partschi>, <file:///app/workdir/tmprdf/data/2D/4F/9F/Nerinella_tornata> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zitteliana.96.e84187> ;
-    dc:creator "Gruendel, Joachim", "Keupp, Helmut", "Lang, Fritz", "Nuetzel, Alexander" ;
-    cito:cites <http://dx.doi.org/10.3897/zitteliana.96.e84187.plate10>, <http://taxon-concept.plazi.org/id/Animalia/2017_Sharpe_1850> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Nerineoidea>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:rank "superFamily" ;
+    dwc:superFamily "Nerineoidea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
