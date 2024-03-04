@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:1A1A2976FF9E09603CA78CEEFE878EB3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4520984>, <http://dx.doi.org/10.5281/zenodo.4520986>, <http://dx.doi.org/10.5281/zenodo.4520996> ;
+    dc:creator "Gnezdilov, Vladimir M.; Bonfils, Jacques; Aberlenc, Henri-Pierre; Basset, Yves" ;
+    dc:title "Oronoqua deina Fennah 1947" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/1A1A2976FF9E09603CA78CEEFE878EB3.mc.22DB923DFF9E09603C028D56FE578B89> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oronoqua_deina_Fennah_1947> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/z2010n2a3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/z2010n2a3>
-    dc:creator "Aberlenc, Henri-Pierre", "Basset, Yves", "Bonfils, Jacques", "Gnezdilov, Vladimir M." ;
-    dc:date "2010" ;
-    dc:title "Review of the Neotropical genus Oronoqua Fennah, 1947 (Insecta, Hemiptera, Issidae)" ;
     bibo:endPage "257" ;
     bibo:issue "2" ;
     bibo:journal "Zoosystema" ;
     bibo:pubDate "2010-06-30" ;
     bibo:startPage "247" ;
     bibo:volume "32" ;
+    dc:creator "Gnezdilov, Vladimir M.; Bonfils, Jacques; Aberlenc, Henri-Pierre; Basset, Yves" ;
+    dc:date "2010" ;
+    dc:title "Review of the Neotropical genus Oronoqua Fennah, 1947 (Insecta, Hemiptera, Issidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4520984>, <http://dx.doi.org/10.5281/zenodo.4520986>, <http://dx.doi.org/10.5281/zenodo.4520996> ;
     a fabio:JournalArticle .
 
@@ -37,9 +47,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/4520996/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/1A1A2976FF9E09603CA78CEEFE878EB3.mc.22DB923DFF9E09603C028D56FE578B89>
+    dwc:eventDate "1937-10-16" ;
+    dwc:locality "Guyana" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3042105302" ;
+    trt:httpUri <https://treatment.plazi.org/id/1A1A2976FF9E09603CA78CEEFE878EB3#22DB923DFF9E09603C028D56FE578B89> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Oronoqua_deina_Fennah_1947>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oronoqua_deina> ;
-    dwc:ID-CoL "6T7Y7" ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Oronoqua" ;
@@ -47,51 +63,25 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Fennah, 1947" ;
+    dwc:scientificNameAuthorship "Fennah, 1947", "Fennah, 1947: 91" ;
     dwc:species "deina" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6T7Y7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oronoqua_deina> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Issidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Oronoqua_deina>
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
+    dwc:genus "Oronoqua" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "deina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oronoqua> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oronoqua>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Oronoqua" ;
@@ -99,24 +89,44 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Oronoqua_deina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oronoqua> ;
+<http://taxon-name.plazi.org/id/Animalia/Issidae>
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
-    dwc:genus "Oronoqua" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "deina" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/1A1A2976FF9E09603CA78CEEFE878EB3>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oronoqua_deina_Fennah_1947> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/z2010n2a3> ;
-    dc:creator "Aberlenc, Henri-Pierre", "Basset, Yves", "Bonfils, Jacques", "Gnezdilov, Vladimir M." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4520984>, <http://dx.doi.org/10.5281/zenodo.4520986>, <http://dx.doi.org/10.5281/zenodo.4520996> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
