@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4B5E3035190F736DE454FA53FD53ADDB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3712661>, <http://dx.doi.org/10.5281/zenodo.3712663> ;
+    dc:creator "Manzuetti, Aldo; Perea, Daniel; Jones, Washington; Ubilla, Martın; Rinderknecht, Andres" ;
+    dc:title "Smilodon populator Lund 1842" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/4B5E3035190F736DE454FA53FD53ADDB.mc.739F8B7E190F736CE305F9E0FC2AAE01> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Smilodon_populator_Lund_1842> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/03115518.2019.1701080> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/03115518.2019.1701080>
-    dc:creator "Jones, Washington", "Manzuetti, Aldo", "Perea, Daniel", "Rinderknecht, Andres", "Ubilla, Martın" ;
-    dc:date "2020" ;
-    dc:title "An extremely large saber-tooth cat skull from Uruguay (late Pleistocene - early Holocene, Dolores Formation): body size and paleobiological implications" ;
     bibo:endPage "8" ;
     bibo:journal "Alcheringa: an Australian Journal of Paleontology" ;
     bibo:pubDate "2020-03-14" ;
     bibo:startPage "1" ;
     bibo:volume "44" ;
+    dc:creator "Manzuetti, Aldo; Perea, Daniel; Jones, Washington; Ubilla, Martın; Rinderknecht, Andres" ;
+    dc:date "2020" ;
+    dc:title "An extremely large saber-tooth cat skull from Uruguay (late Pleistocene - early Holocene, Dolores Formation): body size and paleobiological implications" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3712661>, <http://dx.doi.org/10.5281/zenodo.3712663> ;
     a fabio:JournalArticle .
 
@@ -31,8 +41,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/3712663/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/4B5E3035190F736DE454FA53FD53ADDB.mc.739F8B7E190F736CE305F9E0FC2AAE01>
+    dwc:catalogNumber "MNHN-P 957" ;
+    dwc:locality "Limetas Creek" ;
+    trt:gbifOccurrenceId "4433104301" ;
+    trt:httpUri <https://treatment.plazi.org/id/4B5E3035190F736DE454FA53FD53ADDB#739F8B7E190F736CE305F9E0FC2AAE01> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Smilodon_populator_Lund_1842>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Smilodon_populator> ;
     dwc:class "Mammalia" ;
     dwc:family "Felidae" ;
     dwc:genus "Smilodon" ;
@@ -42,60 +58,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lund, 1842" ;
     dwc:species "populator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Smilodon_populator> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Felidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Felidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Smilodon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Felidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Smilodon_fatalis_Kurten_1990>
     dwc:class "Mammalia" ;
     dwc:family "Felidae" ;
     dwc:genus "Smilodon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Kurten & Werdelin 1990)", "Kurten & Werdelin, 1990" ;
+    dwc:species "fatalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Smilodon_fatalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Smilodon_gracilis_Cope_1880>
+    dwc:class "Mammalia" ;
+    dwc:family "Felidae" ;
+    dwc:genus "Smilodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cope, 1880" ;
+    dwc:species "gracilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Smilodon_gracilis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Smilodon_populator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Smilodon> ;
     dwc:class "Mammalia" ;
     dwc:family "Felidae" ;
     dwc:genus "Smilodon" ;
@@ -104,19 +96,79 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "populator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Smilodon> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4B5E3035190F736DE454FA53FD53ADDB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Smilodon_populator_Lund_1842> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/03115518.2019.1701080> ;
-    dc:creator "Jones, Washington", "Manzuetti, Aldo", "Perea, Daniel", "Rinderknecht, Andres", "Ubilla, Martın" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3712661>, <http://dx.doi.org/10.5281/zenodo.3712663> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/4B5E3035190F736DE454FA53FD53ADDB/MNHN-P%20957> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Smilodon>
+    dwc:class "Mammalia" ;
+    dwc:family "Felidae" ;
+    dwc:genus "Smilodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Felidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4B5E3035190F736DE454FA53FD53ADDB/MNHN-P%20957>
-    trt:gbifOccurrenceId "4433104301" ;
-    dwc:catalogNumber "MNHN-P 957" ;
-    dwc:locality "Limetas Creek" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Felidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Felidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Smilodon_fatalis>
+    dwc:class "Mammalia" ;
+    dwc:family "Felidae" ;
+    dwc:genus "Smilodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "fatalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Smilodon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Smilodon_gracilis>
+    dwc:class "Mammalia" ;
+    dwc:family "Felidae" ;
+    dwc:genus "Smilodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Smilodon> ;
+    a dwcFP:TaxonName .
