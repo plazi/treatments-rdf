@@ -1,13 +1,21 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:11BE8511F0F5AFDBB08A04A3A87F1242
+    dc:creator "Linnaeus, Carolus" ;
+    dc:title "Itea virginica Linnaeus, 1753, spec. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Itea_virginica_Linnaeus_1753> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4353849> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4353849>
     dc:creator "Linnaeus, Carolus" ;
@@ -16,7 +24,6 @@
     a fabio:Book .
 
 <http://taxon-concept.plazi.org/id/Plantae/Itea_virginica_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Itea_virginica> ;
     dwc:authority "Linnaeus, 1753" ;
     dwc:authorityName "Linnaeus" ;
     dwc:authorityYear "1753" ;
@@ -27,27 +34,12 @@
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1753" ;
     dwc:species "virginica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Itea_virginica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Itea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Iteaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Iteaceae" ;
-    dwc:genus "Itea" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Saxifragales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Itea_virginica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Itea> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Iteaceae" ;
     dwc:genus "Itea" ;
@@ -56,45 +48,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "virginica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Itea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Itea>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Iteaceae" ;
+    dwc:genus "Itea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Iteaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Iteaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifragales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Iteaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifragales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Saxifragales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/11BE8511F0F5AFDBB08A04A3A87F1242>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Itea_virginica_Linnaeus_1753> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4353849> ;
-    dc:creator "Linnaeus, Carolus" ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
