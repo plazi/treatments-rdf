@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:550497F1605D73CE696364408961727F
+    cito:cites <http://dx.doi.org/10.3897/jhr.62.23559.figure1>, <http://dx.doi.org/10.3897/jhr.62.23559.figure4> ;
+    dc:creator "Matsumoto, Rikio" ;
+    dc:title "Dolichomitus khasianus Gupta & Tikar 1976" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dolichomitus_khasianus_Gupta_1976> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.62.23559> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.62.23559>
-    dc:creator "Matsumoto, Rikio" ;
-    dc:date "2018" ;
-    dc:title "Review of the mandibularis group of the genus Dolichomitus (Hymenoptera, Ichneumonidae, Pimplinae)" ;
     bibo:endPage "82" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2018-02-26" ;
     bibo:startPage "73" ;
     bibo:volume "62" ;
+    dc:creator "Matsumoto, Rikio" ;
+    dc:date "2018" ;
+    dc:title "Review of the mandibularis group of the genus Dolichomitus (Hymenoptera, Ichneumonidae, Pimplinae)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/jhr.62.23559.figure1>, <http://dx.doi.org/10.3897/jhr.62.23559.figure4> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dolichomitus_khasianus_Gupta_1976>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichomitus_khasianus> ;
-    dwc:ID-CoL "375KZ" ;
     dwc:LSID "5268840D-2DAD-5935-9874-60B9BE92DAA9" ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
@@ -42,35 +50,26 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Gupta & Tikar" ;
+    dwc:scientificNameAuthorship "Gupta & Tikar", "Gupta & Tikar, 1976" ;
     dwc:species "khasianus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/375KZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichomitus_khasianus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dolichomitus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dolichomitus_flavicrus_Matsumoto_2018>
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Dolichomitus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Matsumoto, 2018" ;
+    dwc:species "flavicrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dolichomitus_flavicrus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dolichomitus_khasianus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichomitus> ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Dolichomitus" ;
@@ -79,39 +78,67 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "khasianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichomitus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Dolichomitus>
     dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Dolichomitus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/550497F1605D73CE696364408961727F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dolichomitus_khasianus_Gupta_1976> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.62.23559> ;
-    dc:creator "Matsumoto, Rikio" ;
-    cito:cites <http://dx.doi.org/10.3897/jhr.62.23559.figure1>, <http://dx.doi.org/10.3897/jhr.62.23559.figure4> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichomitus_flavicrus>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Dolichomitus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "flavicrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichomitus> ;
+    a dwcFP:TaxonName .
