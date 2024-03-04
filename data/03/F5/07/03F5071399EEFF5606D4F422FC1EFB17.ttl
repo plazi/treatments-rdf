@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F5071399EEFF5606D4F422FC1EFB17
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6512975> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Oreotragus aureus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F5071399EEFF5606D4F422FC1EFB17.mc.3B34BC5899EEFF550B89F3AAF938F3E8> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oreotragus_aureus_Heller_1913> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oreotragus_oreotragus_aureus_Heller_1913> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6512484> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6512484>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2011" ;
-    dc:title "Bovidae" ;
     bibo:endPage "779" ;
     bibo:startPage "444" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2011" ;
+    dc:title "Bovidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6512975> ;
     a fabio:BookSection .
 
@@ -23,8 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6512975/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F5071399EEFF5606D4F422FC1EFB17.mc.3B34BC5899EEFF550B89F3AAF938F3E8>
+    trt:gbifOccurrenceId "3785198356" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F5071399EEFF5606D4F422FC1EFB17#3B34BC5899EEFF550B89F3AAF938F3E8> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Oreotragus_aureus_Heller_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_aureus> ;
     dwc:authority "Wilson, 2011" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2011" ;
@@ -35,11 +50,12 @@
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Heller, 1913" ;
     dwc:species "aureus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_aureus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oreotragus_oreotragus_aureus_Heller_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus_aureus> ;
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Oreotragus" ;
@@ -50,60 +66,23 @@
     dwc:scientificNameAuthorship "Heller, 1913" ;
     dwc:species "oreotragus" ;
     dwc:subSpecies "aureus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus_aureus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bovidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Bovidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Oreotragus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bovidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Oreotragus_schillingsi_Neumann_1902>
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Oreotragus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Neumann, 1902" ;
+    dwc:species "schillingsi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_schillingsi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Oreotragus_aureus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus> ;
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Oreotragus" ;
@@ -112,22 +91,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "aureus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus> ;
+<http://taxon-name.plazi.org/id/Animalia/Oreotragus>
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Oreotragus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "oreotragus" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bovidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus_aureus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus> ;
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Oreotragus" ;
@@ -137,13 +154,29 @@
     dwc:rank "subSpecies" ;
     dwc:species "oreotragus" ;
     dwc:subSpecies "aureus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F5071399EEFF5606D4F422FC1EFB17>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Oreotragus_aureus_Heller_1913> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oreotragus_oreotragus_aureus_Heller_1913> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6512484> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6512975> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Oreotragus_oreotragus>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Oreotragus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "oreotragus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Oreotragus_schillingsi>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Oreotragus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "schillingsi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oreotragus> ;
+    a dwcFP:TaxonName .

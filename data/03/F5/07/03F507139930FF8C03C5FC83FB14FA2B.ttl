@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F507139930FF8C03C5FC83FB14FA2B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6512959> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Ovis canadensis Shaw 1804" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F507139930FF8C03C5FC83FB14FA2B.mc.3B34BC589930FF8B064DFC58FBECFB9B> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ovis_canadensis_Shaw_1804> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6512484> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6512484>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2011" ;
-    dc:title "Bovidae" ;
     bibo:endPage "779" ;
     bibo:startPage "444" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2011" ;
+    dc:title "Bovidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6512959> ;
     a fabio:BookSection .
 
@@ -23,9 +33,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6512959/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F507139930FF8C03C5FC83FB14FA2B.mc.3B34BC589930FF8B064DFC58FBECFB9B>
+    trt:gbifOccurrenceId "3785198401" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F507139930FF8C03C5FC83FB14FA2B#3B34BC589930FF8B064DFC58FBECFB9B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Ovis_canadensis_Shaw_1804>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ovis_canadensis> ;
-    dwc:ID-CoL "4B9VG" ;
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Ovis" ;
@@ -35,60 +48,93 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Shaw, 1804" ;
     dwc:species "canadensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4B9VG> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ovis_canadensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bovidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Bovidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ovis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bovidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ovis_dalli_Shaw_1804>
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Ovis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Shaw, 1804" ;
+    dwc:species "dalli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ovis_dalli> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ouis_canadensis_canadensis_Shaw_1804>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Shaw, 1804" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "canadensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_canadensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/_Merriam_1901>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:scientificNameAuthorship "Merriam, 1901" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "mexicana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ouis_canadensis_nelsoni_Merriam_1897>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1897" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "nelsoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_nelsoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ouis_canadensis_sierrae_Grinnell_1912>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Grinnell, 1912" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "sierrae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_sierrae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ouis_canadensis_weemsi_Goldman_1937>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Goldman, 1937" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "weemsi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_weemsi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Ovis_canadensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ovis> ;
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Ovis" ;
@@ -97,12 +143,194 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "canadensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ovis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F507139930FF8C03C5FC83FB14FA2B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ovis_canadensis_Shaw_1804> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6512484> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6512959> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Ovis>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Ovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bovidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Bovidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ovis_dalli>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Ovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dalli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ovis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_canadensis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "canadensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "canadensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ouis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ouis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Commelinaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Commelinales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "mexicana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_nelsoni>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "nelsoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_sierrae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "sierrae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis_weemsi>
+    dwc:class "Liliopsida" ;
+    dwc:family "Commelinaceae" ;
+    dwc:genus "Ouis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "canadensis" ;
+    dwc:subSpecies "weemsi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ouis_canadensis> ;
+    a dwcFP:TaxonName .
