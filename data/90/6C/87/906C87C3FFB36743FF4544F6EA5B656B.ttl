@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:906C87C3FFB36743FF4544F6EA5B656B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5364566> ;
+    dc:creator "Smith, David R." ;
+    dc:title "Pristaulacus annulatus KIEFFER 1911" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/906C87C3FFB36743FF4544F6EA5B656B.mc.A8AD3C88FFB46743FF0F47E0EF5762C2> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1911> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Psilaulacus_annulatus_KIEFFER_1911>, <http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1912> ;
+    trt:publishedIn <http://dx.doi.org/10.21248/contrib.entomol.58.2.267-355> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.21248/contrib.entomol.58.2.267-355>
-    dc:creator "Smith, David R." ;
-    dc:date "2008" ;
-    dc:title "Aulacidae of the southwestern United States, Mexico, and Central America (Hymenoptera)" ;
     bibo:endPage "355" ;
     bibo:issue "2" ;
     bibo:journal "Beiträge Zur Entomologie = Contributions to Entomology" ;
     bibo:pubDate "2008-11-15" ;
     bibo:startPage "267" ;
     bibo:volume "58" ;
+    dc:creator "Smith, David R." ;
+    dc:date "2008" ;
+    dc:title "Aulacidae of the southwestern United States, Mexico, and Central America (Hymenoptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5364566> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/5364566/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/906C87C3FFB36743FF4544F6EA5B656B.mc.A8AD3C88FFB46743FF0F47E0EF5762C2>
+    dwc:collectionCode "BMNH" ;
+    dwc:recordedBy "Dr. Kieffer" ;
+    dwc:typeStatus "syntype" ;
+    trt:httpUri <https://treatment.plazi.org/id/906C87C3FFB36743FF4544F6EA5B656B#A8AD3C88FFB46743FF0F47E0EF5762C2> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pristaulacus_annulatus> ;
-    dwc:ID-CoL "77WH3" ;
     dwc:class "Insecta" ;
     dwc:family "Aulacidae" ;
     dwc:genus "Pristaulacus" ;
@@ -39,24 +55,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "KIEFFER" ;
     dwc:species "annulatus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1912>
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/77WH3> ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pristaulacus_annulatus> ;
-    dwc:ID-CoL "77WH3" ;
-    dwc:class "Insecta" ;
-    dwc:family "Aulacidae" ;
-    dwc:genus "Pristaulacus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship ": KIEFFER 1912: 381" ;
-    dwc:species "annulatus" ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Psilaulacus_annulatus_KIEFFER_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilaulacus_annulatus> ;
     dwc:class "Insecta" ;
     dwc:family "Aulacidae" ;
     dwc:genus "Psilaulacus" ;
@@ -64,62 +67,26 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "KIEFFER 1911: 230" ;
+    dwc:scientificNameAuthorship "KIEFFER 1911: 230", "Kieffer 1911" ;
     dwc:species "annulatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psilaulacus_annulatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aulacidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Aulacidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pristaulacus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aulacidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1912>
     dwc:class "Insecta" ;
     dwc:family "Aulacidae" ;
     dwc:genus "Pristaulacus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ": KIEFFER 1912: 381", ": KIEFFER, 1912" ;
+    dwc:species "annulatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/77WH3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pristaulacus_annulatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pristaulacus_annulatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pristaulacus> ;
     dwc:class "Insecta" ;
     dwc:family "Aulacidae" ;
     dwc:genus "Pristaulacus" ;
@@ -128,13 +95,78 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "annulatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pristaulacus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/906C87C3FFB36743FF4544F6EA5B656B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1911> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pristaulacus_annulatus_KIEFFER_1912>, <http://taxon-concept.plazi.org/id/Animalia/Psilaulacus_annulatus_KIEFFER_1911> ;
-    trt:publishedIn <http://dx.doi.org/10.21248/contrib.entomol.58.2.267-355> ;
-    dc:creator "Smith, David R." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5364566> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pristaulacus>
+    dwc:class "Insecta" ;
+    dwc:family "Aulacidae" ;
+    dwc:genus "Pristaulacus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aulacidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Aulacidae>
+    dwc:class "Insecta" ;
+    dwc:family "Aulacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilaulacus_annulatus>
+    dwc:class "Insecta" ;
+    dwc:family "Aulacidae" ;
+    dwc:genus "Psilaulacus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "annulatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psilaulacus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psilaulacus>
+    dwc:class "Insecta" ;
+    dwc:family "Aulacidae" ;
+    dwc:genus "Psilaulacus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aulacidae> ;
+    a dwcFP:TaxonName .
