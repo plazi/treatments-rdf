@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.35929/RSZ.0009>
-    dc:creator "Acharya, Shelley", "Caleb, John T. D." ;
-    dc:date "2020" ;
-    dc:title "Jumping spiders of the genus Phintelloides from India, with the description of a new species (Araneae: Salticidae: Chrysillini)" ;
+treatment:03F387F9FFC7FFE5FC1185F33F5A87EB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5743613>, <http://dx.doi.org/10.5281/zenodo.5743619> ;
+    dc:creator "Caleb, John T. D.; Acharya, Shelley" ;
+    dc:title "Phintelloides manipur Caleb & Acharya 2020, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03F387F9FFC7FFE5FC1185F33F5A87EB.mc.3B323CB2FFC7FFE6FBB585933EB887E2> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phintelloides_manipur_Caleb_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0009> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.35929/rsz.0009>
     bibo:endPage "100" ;
     bibo:issue "1" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2020-06-04" ;
     bibo:startPage "95" ;
     bibo:volume "127" ;
+    dc:creator "Caleb, John T. D.; Acharya, Shelley" ;
+    dc:date "2020" ;
+    dc:title "Jumping spiders of the genus Phintelloides from India, with the description of a new species (Araneae: Salticidae: Chrysillini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5743613>, <http://dx.doi.org/10.5281/zenodo.5743619> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/5743619/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03F387F9FFC7FFE5FC1185F33F5A87EB.mc.3B323CB2FFC7FFE6FBB585933EB887E2>
+    dwc:collectionCode "NZC-ZSI" ;
+    dwc:locality "Manipur" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3881385302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03F387F9FFC7FFE5FC1185F33F5A87EB#3B323CB2FFC7FFE6FBB585933EB887E2> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Phintelloides_manipur_Caleb_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phintelloides_manipur> ;
-    dwc:ID-CoL "99BGJ" ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Phintelloides" ;
@@ -44,50 +60,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Caleb" ;
     dwc:species "manipur" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/99BGJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phintelloides_manipur> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phintelloides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phintelloides_versicolor_Koch_1846>
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Phintelloides" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "C. L. Koch, 1846" ;
+    dwc:species "versicolor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phintelloides_versicolor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phintelloides_brunne_Kanesharatnam_2019>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Phintelloides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kanesharatnam & Benjamin, 2019" ;
+    dwc:species "brunne" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phintelloides_brunne> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Phintelloides_manipur>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phintelloides> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Phintelloides" ;
@@ -96,22 +99,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "manipur" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phintelloides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phintelloides>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Phintelloides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Salticidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F387F9FFC7FFE5FC1185F33F5A87EB>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phintelloides_manipur_Caleb_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0009> ;
-    dc:creator "Acharya, Shelley", "Caleb, John T. D." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5743613>, <http://dx.doi.org/10.5281/zenodo.5743619> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phintelloides_versicolor>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Phintelloides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "versicolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phintelloides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phintelloides_brunne>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Phintelloides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brunne" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phintelloides> ;
+    a dwcFP:TaxonName .
