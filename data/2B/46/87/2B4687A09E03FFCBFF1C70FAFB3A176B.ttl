@@ -1,29 +1,50 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:2B4687A09E03FFCBFF1C70FAFB3A176B
+    dc:creator "LeCroy, Mary" ;
+    dc:title "Dendroica pinus subsp. chrysoleuca Griscom 1923" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/2B4687A09E03FFCBFF1C70FAFB3A176B/AMNH%20166327> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dendroica_pinus_chrysoleuca_Griscom_1923> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Setophaga_pinus_chrysoleuca_Griscom_1923> ;
+    trt:publishedIn <http://dx.doi.org/10.1206/832.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1206/832.1>
-    dc:creator "LeCroy, Mary" ;
-    dc:date "2013" ;
-    dc:title "Type Specimens Of Birds In The American Museum Of Natural History Part 11. Passeriformes: Parulidae, Drepanididae, Vireonidae, Icteridae, Fringillinae, Carduelinae, Estrildidae, And Viduinae" ;
     bibo:endPage "155" ;
     bibo:issue "381" ;
     bibo:journal "Bulletin of the American Museum of Natural History" ;
     bibo:pubDate "2013-09-26" ;
     bibo:startPage "1" ;
     bibo:volume "2013" ;
+    dc:creator "LeCroy, Mary" ;
+    dc:date "2013" ;
+    dc:title "Type Specimens Of Birds In The American Museum Of Natural History Part 11. Passeriformes: Parulidae, Drepanididae, Vireonidae, Icteridae, Fringillinae, Carduelinae, Estrildidae, And Viduinae" ;
     a fabio:JournalArticle .
 
+<http://treatment.plazi.org/id/2B4687A09E03FFCBFF1C70FAFB3A176B/AMNH%20166327>
+    dwc:catalogNumber "AMNH 166327" ;
+    dwc:collectionCode "AMNH" ;
+    dwc:eventDate "1917-01-10" ;
+    dwc:locality "Hispaniola Island" ;
+    dwc:recordedBy "Rollo H. Beck & Sanford Expedition" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimLatitude "18.46" ;
+    dwc:verbatimLongitude "-70.42" ;
+    trt:gbifOccurrenceId "3059738846" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Dendroica_pinus_chrysoleuca_Griscom_1923>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus_chrysoleuca> ;
-    dwc:ID-CoL "7JPQV" ;
     dwc:class "Aves" ;
     dwc:family "Parulidae" ;
     dwc:genus "Dendroica" ;
@@ -31,14 +52,14 @@
     dwc:order "Passeriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "Griscom" ;
+    dwc:scientificNameAuthorship "Griscom", "Griscom, 1923: 5" ;
     dwc:species "pinus" ;
     dwc:subSpecies "chrysoleuca" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7JPQV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus_chrysoleuca> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Setophaga_pinus_chrysoleuca_Griscom_1923>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus_chrysoleuca> ;
-    dwc:ID-CoL "5L66X" ;
     dwc:class "Aves" ;
     dwc:family "Parulidae" ;
     dwc:genus "Setophaga" ;
@@ -49,53 +70,11 @@
     dwc:scientificNameAuthorship "(Griscom, 1923)" ;
     dwc:species "pinus" ;
     dwc:subSpecies "chrysoleuca" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7JPQV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus_chrysoleuca> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aves>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Aves" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dendroica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parulidae> ;
-    dwc:class "Aves" ;
-    dwc:family "Parulidae" ;
-    dwc:genus "Dendroica" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Passeriformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dendroica> ;
-    dwc:class "Aves" ;
-    dwc:family "Parulidae" ;
-    dwc:genus "Dendroica" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Passeriformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "pinus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus_chrysoleuca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus> ;
     dwc:class "Aves" ;
     dwc:family "Parulidae" ;
     dwc:genus "Dendroica" ;
@@ -105,52 +84,72 @@
     dwc:rank "subSpecies" ;
     dwc:species "pinus" ;
     dwc:subSpecies "chrysoleuca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dendroica_pinus>
+    dwc:class "Aves" ;
+    dwc:family "Parulidae" ;
+    dwc:genus "Dendroica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Passeriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dendroica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dendroica>
+    dwc:class "Aves" ;
+    dwc:family "Parulidae" ;
+    dwc:genus "Dendroica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Passeriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parulidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Parulidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Passeriformes> ;
     dwc:class "Aves" ;
     dwc:family "Parulidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Passeriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Passeriformes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Passeriformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
     dwc:class "Aves" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Passeriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Setophaga>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parulidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Aves>
     dwc:class "Aves" ;
-    dwc:family "Parulidae" ;
-    dwc:genus "Setophaga" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Passeriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setophaga> ;
-    dwc:class "Aves" ;
-    dwc:family "Parulidae" ;
-    dwc:genus "Setophaga" ;
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
     dwc:kingdom "Animalia" ;
-    dwc:order "Passeriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "pinus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus_chrysoleuca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus> ;
     dwc:class "Aves" ;
     dwc:family "Parulidae" ;
     dwc:genus "Setophaga" ;
@@ -160,25 +159,28 @@
     dwc:rank "subSpecies" ;
     dwc:species "pinus" ;
     dwc:subSpecies "chrysoleuca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2B4687A09E03FFCBFF1C70FAFB3A176B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dendroica_pinus_chrysoleuca_Griscom_1923> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Setophaga_pinus_chrysoleuca_Griscom_1923> ;
-    trt:publishedIn <http://dx.doi.org/10.1206/832.1> ;
-    dc:creator "LeCroy, Mary" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/2B4687A09E03FFCBFF1C70FAFB3A176B/AMNH%20166327> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Setophaga_pinus>
+    dwc:class "Aves" ;
+    dwc:family "Parulidae" ;
+    dwc:genus "Setophaga" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Passeriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setophaga> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2B4687A09E03FFCBFF1C70FAFB3A176B/AMNH%20166327>
-    trt:gbifOccurrenceId "3059738846" ;
-    dwc:catalogNumber "AMNH 166327" ;
-    dwc:collectionCode "AMNH" ;
-    dwc:eventDate "1917-01-10" ;
-    dwc:locality "Hispaniola Island" ;
-    dwc:recordedBy "Rollo H. Beck & Sanford Expedition" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimLatitude "18.46" ;
-    dwc:verbatimLongitude "-70.42" ;
-    a dwc:MaterialCitation .
-
+<http://taxon-name.plazi.org/id/Animalia/Setophaga>
+    dwc:class "Aves" ;
+    dwc:family "Parulidae" ;
+    dwc:genus "Setophaga" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Passeriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parulidae> ;
+    a dwcFP:TaxonName .
