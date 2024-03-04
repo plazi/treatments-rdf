@@ -1,24 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03D487CF1C5BA35CFF23A5C7AA0B8DCB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5181312> ;
+    dc:creator "Schatz, George E.; Lowry Ii, Porter P." ;
+    dc:title "Brexia arborea H. Perrier" ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.5181310> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Brexia_arborea> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.5181310>
-    dc:creator "Lowry Ii, Porter P.", "Schatz, George E." ;
-    dc:date "2004" ;
-    dc:title "A synoptic revision of Brexia (Celastraceae) in Madagascar" ;
     bibo:endPage "81" ;
     bibo:issue "1" ;
     bibo:journal "Adansonia" ;
     bibo:series "3" ;
     bibo:startPage "67" ;
     bibo:volume "26" ;
+    dc:creator "Schatz, George E.; Lowry Ii, Porter P." ;
+    dc:date "2004" ;
+    dc:title "A synoptic revision of Brexia (Celastraceae) in Madagascar" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5181312> ;
     a fabio:JournalArticle .
 
@@ -27,24 +39,32 @@
     fabio:hasRepresentation "https://zenodo.org/record/5181312/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/Humbert_Wahl_2002>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Humbert" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Wahl & Sime, 2002", "Capuron" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Humbert> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Brexia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Celastraceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Brexia_australis_Schatz_2004>
     dwc:class "Magnoliopsida" ;
     dwc:family "Celastraceae" ;
     dwc:genus "Brexia" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Celastrales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "G.E. Schatz & Lowry", "G. E. Schatz & Lowry, 2004" ;
+    dwc:species "australis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Brexia_australis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Brexia_arborea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brexia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Celastraceae" ;
     dwc:genus "Brexia" ;
@@ -53,46 +73,117 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "arborea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brexia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Brexia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Celastraceae" ;
+    dwc:genus "Brexia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Celastrales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Celastraceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Celastraceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Celastrales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Celastraceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Celastrales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Celastrales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Celastrales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Celastrales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D487CF1C5BA35CFF23A5C7AA0B8DCB>
-    trt:publishedIn <http://doi.org/10.5281/zenodo.5181310> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Brexia_arborea> ;
-    dc:creator "Lowry Ii, Porter P.", "Schatz, George E." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5181312> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Humbert>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Humbert" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Brexia_australis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Celastraceae" ;
+    dwc:genus "Brexia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Celastrales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "australis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brexia> ;
+    a dwcFP:TaxonName .
