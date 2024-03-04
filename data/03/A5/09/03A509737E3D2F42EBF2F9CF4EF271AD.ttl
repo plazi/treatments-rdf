@@ -1,24 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03A509737E3D2F42EBF2F9CF4EF271AD
+    cito:cites <http://dx.doi.org/10.5281/zenodo.252026>, <http://dx.doi.org/10.5281/zenodo.252031> ;
+    dc:creator "Sparks, Kathryn S.; Andersen, Alan N.; Austin, Andrew D." ;
+    dc:title "Monomorium bogischi Wheeler 1917, stat. rev." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Chelaner_subapterum_bosischi>, <http://taxon-name.plazi.org/id/Animalia/Monomorium_subapterum_bogischi>, <http://taxon-name.plazi.org/id/Animalia/Monomorium_rothsteini> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Monomorium_bogischi_Wheeler_1917> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Monomorium_subapterum_Wheeler_1917> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3893.4.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3893.4.2>
-    dc:creator "Andersen, Alan N.", "Austin, Andrew D.", "Sparks, Kathryn S." ;
-    dc:date "2014" ;
-    dc:title "Systematics of the Monomorium rothsteini Forel species complex (Hymenoptera: Formicidae), a problematic ant group in Australia" ;
     bibo:endPage "529" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2014-12-10" ;
     bibo:startPage "489" ;
     bibo:volume "3893" ;
+    dc:creator "Sparks, Kathryn S.; Andersen, Alan N.; Austin, Andrew D." ;
+    dc:date "2014" ;
+    dc:title "Systematics of the Monomorium rothsteini Forel species complex (Hymenoptera: Formicidae), a problematic ant group in Australia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.252026>, <http://dx.doi.org/10.5281/zenodo.252031> ;
     a fabio:JournalArticle .
 
@@ -32,9 +48,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/252031/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Monomorium_bogischi_Wheeler_1917>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Monomorium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wheeler 1917" ;
+    dwc:species "bogischi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Monomorium_bogischi> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Monomorium_subapterum_Wheeler_1917>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Monomorium_subapterum> ;
-    dwc:ID-CoL "6RPZD" ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Monomorium" ;
@@ -44,60 +71,35 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Wheeler, 1917:112" ;
     dwc:species "subapterum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Monomorium_subapterum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Formicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Formicidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Monomorium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Monomorium_torrens_Sparks_2014>
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Monomorium" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "torrens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Monomorium_torrens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Monomorium_speculum_Sparks_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Monomorium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "speculum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Monomorium_speculum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Monomorium_bogischi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Monomorium" ;
@@ -106,10 +108,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "bogischi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Monomorium>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Monomorium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formicidae>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Monomorium_subapterum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Monomorium" ;
@@ -118,14 +170,29 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "subapterum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A509737E3D2F42EBF2F9CF4EF271AD>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/A5/09/Chelaner_subapterum_bosischi>, <file:///workdir/tmprdf/data/03/A5/09/Monomorium_rothsteini>, <file:///workdir/tmprdf/data/03/A5/09/Monomorium_subapterum_bogischi> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Monomorium_subapterum_Wheeler_1917> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3893.4.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Monomorium_bogischi> ;
-    dc:creator "Andersen, Alan N.", "Austin, Andrew D.", "Sparks, Kathryn S." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.252026>, <http://dx.doi.org/10.5281/zenodo.252031> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Monomorium_torrens>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Monomorium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "torrens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Monomorium_speculum>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Monomorium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "speculum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Monomorium> ;
+    a dwcFP:TaxonName .
