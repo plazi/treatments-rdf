@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4110C10CFFBBD166B59FFB5CB697F137
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6838414> ;
+    dc:creator "Glotov, Serhii V.; Martynov, Alexander V.; Shavrin, Alexey V." ;
+    dc:title "Brachyusa concolor V. Gusarov" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Brachyusa_concolor_Erichson_1839> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5165.3.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5165.3.1>
-    dc:creator "Glotov, Serhii V.", "Martynov, Alexander V.", "Shavrin, Alexey V." ;
-    dc:date "2022" ;
-    dc:title "A catalogue of the types of rove beetles (Coleoptera: Staphylinidae) deposited in the collection of Johan Heinrich Hochhuth in the National Museum of Natural History of the National Academy of Sciences of Ukraine" ;
     bibo:endPage "345" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-07-15" ;
     bibo:startPage "301" ;
     bibo:volume "5165" ;
+    dc:creator "Glotov, Serhii V.; Martynov, Alexander V.; Shavrin, Alexey V." ;
+    dc:date "2022" ;
+    dc:title "A catalogue of the types of rove beetles (Coleoptera: Staphylinidae) deposited in the collection of Johan Heinrich Hochhuth in the National Museum of Natural History of the National Academy of Sciences of Ukraine" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6838414> ;
     a fabio:JournalArticle .
 
@@ -28,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Brachyusa_concolor_Erichson_1839>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brachyusa_concolor> ;
-    dwc:ID-CoL "N3BR" ;
     dwc:class "Insecta" ;
     dwc:family "Staphylinidae" ;
     dwc:genus "Brachyusa" ;
@@ -37,24 +44,38 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Erichson, 1839)" ;
+    dwc:scientificNameAuthorship "(Erichson, 1839)", "(Er.) V. Gusarov" ;
     dwc:species "concolor" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/N3BR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brachyusa_concolor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Tachyusa_sulcata_Kiesenwetter_1850>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Tachyusa" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kiesenwetter, 1850" ;
+    dwc:species "sulcata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tachyusa_sulcata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Brachyusa_concolor>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Brachyusa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "concolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brachyusa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Brachyusa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
     dwc:class "Insecta" ;
     dwc:family "Staphylinidae" ;
     dwc:genus "Brachyusa" ;
@@ -62,51 +83,67 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Brachyusa_concolor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brachyusa> ;
-    dwc:class "Insecta" ;
-    dwc:family "Staphylinidae" ;
-    dwc:genus "Brachyusa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "concolor" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Staphylinidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4110C10CFFBBD166B59FFB5CB697F137>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Brachyusa_concolor_Erichson_1839> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5165.3.1> ;
-    dc:creator "Glotov, Serhii V.", "Martynov, Alexander V.", "Shavrin, Alexey V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6838414> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tachyusa_sulcata>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Tachyusa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sulcata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tachyusa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tachyusa>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Tachyusa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
+    a dwcFP:TaxonName .
