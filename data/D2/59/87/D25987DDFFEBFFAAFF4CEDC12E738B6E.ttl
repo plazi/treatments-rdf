@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:D25987DDFFEBFFAAFF4CEDC12E738B6E
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4538543> ;
+    dc:creator "Sanjuan, Josep; Martín-Closas, Carles" ;
+    dc:title "Gyrogona caelata Grambast 1956" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Gyrogona_caelata_Reid_1921> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Chara_caelata_Reid_1921> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/g2014n3a3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/g2014n3a3>
-    dc:creator "Martín-Closas, Carles", "Sanjuan, Josep" ;
-    dc:date "2014" ;
-    dc:title "Taxonomy and palaeobiogeography of charophytes from the Upper Eocene- Lower Oligocene of the Eastern Ebro Basin (Catalonia, NE Spain)" ;
     bibo:endPage "420" ;
     bibo:issue "3" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2014-09-26" ;
     bibo:startPage "385" ;
     bibo:volume "36" ;
+    dc:creator "Sanjuan, Josep; Martín-Closas, Carles" ;
+    dc:date "2014" ;
+    dc:title "Taxonomy and palaeobiogeography of charophytes from the Upper Eocene- Lower Oligocene of the Eastern Ebro Basin (Catalonia, NE Spain)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4538543> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/4538543/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Plantae/Gyrogona_caelata_Reid_1921>
+    dwc:class "Charophyceae" ;
+    dwc:family "Characeae" ;
+    dwc:genus "Gyrogona" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Charales" ;
+    dwc:phylum "Charophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Reid & Groves, 1921) Grambast, 1956", "Reid & Groves, 1921" ;
+    dwc:species "caelata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Gyrogona_caelata> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Chara_caelata_Reid_1921>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chara_caelata> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Chara" ;
@@ -38,10 +60,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Reid & Groves, 1921: 184" ;
     dwc:species "caelata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chara_caelata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Plantae/Gyrogona_caelata_Reid_1921>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Gyrogona_caelata> ;
+<http://taxon-name.plazi.org/id/Plantae/Gyrogona_caelata>
     dwc:class "Charophyceae" ;
     dwc:family "Characeae" ;
     dwc:genus "Gyrogona" ;
@@ -49,51 +71,11 @@
     dwc:order "Charales" ;
     dwc:phylum "Charophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Reid & Groves, 1921) Grambast, 1956" ;
     dwc:species "caelata" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Characeae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Charales> ;
-    dwc:class "Charophyceae" ;
-    dwc:family "Characeae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Charales" ;
-    dwc:phylum "Charophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Charales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Charophyceae> ;
-    dwc:class "Charophyceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Charales" ;
-    dwc:phylum "Charophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Charophyceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Charophyta> ;
-    dwc:class "Charophyceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Charophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Charophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Charophyta" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Gyrogona> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Gyrogona>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Characeae> ;
     dwc:class "Charophyceae" ;
     dwc:family "Characeae" ;
     dwc:genus "Gyrogona" ;
@@ -101,25 +83,106 @@
     dwc:order "Charales" ;
     dwc:phylum "Charophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Characeae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Gyrogona_caelata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Gyrogona> ;
+<http://taxon-name.plazi.org/id/Plantae/Characeae>
     dwc:class "Charophyceae" ;
     dwc:family "Characeae" ;
-    dwc:genus "Gyrogona" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Charales" ;
     dwc:phylum "Charophyta" ;
-    dwc:rank "species" ;
-    dwc:species "caelata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Charales> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D25987DDFFEBFFAAFF4CEDC12E738B6E>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Gyrogona_caelata_Reid_1921> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Chara_caelata_Reid_1921> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/g2014n3a3> ;
-    dc:creator "Martín-Closas, Carles", "Sanjuan, Josep" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4538543> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Charales>
+    dwc:class "Charophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Charales" ;
+    dwc:phylum "Charophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Charophyceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Charophyceae>
+    dwc:class "Charophyceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Charophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Charophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Charophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Charophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chara_caelata>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Chara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "caelata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chara> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chara>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Chara" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
