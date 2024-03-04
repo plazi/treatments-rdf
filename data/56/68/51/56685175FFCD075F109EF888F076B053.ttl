@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:56685175FFCD075F109EF888F076B053
+    dc:creator "Fachin, Diego Aguilar; Zichinelli, Marcela Maria Parada; Barrett, Bolívar Rafael Garcete" ;
+    dc:title "Stratiomicrodon convexus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stratiomicrodon_convexus_Wulp_1881> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Stratiomyia_convexa_Wulp_1881>, <http://taxon-concept.plazi.org/id/Animalia/Stratiomys_connexa_Hunter_1900> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5190.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5190.1.1>
-    dc:creator "Barrett, Bolívar Rafael Garcete", "Fachin, Diego Aguilar", "Zichinelli, Marcela Maria Parada" ;
-    dc:date "2022" ;
-    dc:title "An illustrated checklist of Stratiomyidae (Diptera: Brachycera) from Paraguay with three new synonyms and 22 new records of species for the country" ;
     bibo:endPage "55" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-09-27" ;
     bibo:startPage "1" ;
     bibo:volume "5190" ;
+    dc:creator "Fachin, Diego Aguilar; Zichinelli, Marcela Maria Parada; Barrett, Bolívar Rafael Garcete" ;
+    dc:date "2022" ;
+    dc:title "An illustrated checklist of Stratiomyidae (Diptera: Brachycera) from Paraguay with three new synonyms and 22 new records of species for the country" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stratiomicrodon_convexus_Wulp_1881>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon_convexus> ;
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
     dwc:genus "Stratiomicrodon" ;
@@ -32,10 +40,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Wulp, 1881)" ;
     dwc:species "convexus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon_convexus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stratiomyia_convexa_Wulp_1881>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomyia_convexa> ;
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
     dwc:genus "Stratiomyia" ;
@@ -43,13 +51,12 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Wulp, 1881: 154" ;
+    dwc:scientificNameAuthorship "Wulp, 1881: 154", "Wulp, 1881" ;
     dwc:species "convexa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomyia_convexa> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stratiomys_connexa_Hunter_1900>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomys_connexa> ;
-    dwc:ID-CoL "52WF6" ;
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
     dwc:genus "Stratiomys" ;
@@ -59,50 +66,114 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hunter, 1900: 127" ;
     dwc:species "connexa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomys_connexa> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Stratiomys_Geoffroy_1872>
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
-    dwc:genus "Stratiomicrodon" ;
+    dwc:genus "Stratiomys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Geoffroy, 1872" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chrysochlorina_albipes_James_1939>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Chrysochlorina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 1939" ;
+    dwc:species "albipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysochlorina_albipes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyphomyia_leucocephala_Wiedemann_1819>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Cyphomyia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wiedemann, 1819" ;
+    dwc:species "leucocephala" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyphomyia_leucocephala> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyphomyia_wiedemanni_Gerstaecker_1857>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Cyphomyia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gerstaecker, 1857" ;
+    dwc:species "wiedemanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyphomyia_wiedemanni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leucoptilum_plaumanni_James_1943>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Leucoptilum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 1943" ;
+    dwc:species "plaumanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leucoptilum_plaumanni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gowdeyana_vitrisetosus_Lindner_1935>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Gowdeyana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Lindner, 1935)" ;
+    dwc:species "vitrisetosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gowdeyana_vitrisetosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stratiomys_convexa_Wulp_1881>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Stratiomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wulp, 1881" ;
+    dwc:species "convexa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomys_convexa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stratiomys_constricta_Walker_1860>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Stratiomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Walker, 1860" ;
+    dwc:species "constricta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stratiomys_constricta> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon_convexus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon> ;
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
     dwc:genus "Stratiomicrodon" ;
@@ -111,21 +182,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "convexus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Stratiomyia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Stratiomicrodon>
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
-    dwc:genus "Stratiomyia" ;
+    dwc:genus "Stratiomicrodon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stratiomyidae>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Stratiomyia_convexa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyia> ;
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
     dwc:genus "Stratiomyia" ;
@@ -134,31 +244,21 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "convexa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Stratiomyidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Stratiomyia>
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stratiomys>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Stratiomyidae" ;
-    dwc:genus "Stratiomys" ;
+    dwc:genus "Stratiomyia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Stratiomys_connexa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomys> ;
     dwc:class "Insecta" ;
     dwc:family "Stratiomyidae" ;
     dwc:genus "Stratiomys" ;
@@ -167,12 +267,144 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "connexa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomys> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/56685175FFCD075F109EF888F076B053>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stratiomicrodon_convexus_Wulp_1881> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Stratiomyia_convexa_Wulp_1881>, <http://taxon-concept.plazi.org/id/Animalia/Stratiomys_connexa_Hunter_1900> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5190.1.1> ;
-    dc:creator "Barrett, Bolívar Rafael Garcete", "Fachin, Diego Aguilar", "Zichinelli, Marcela Maria Parada" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Stratiomys>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Stratiomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chrysochlorina_albipes>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Chrysochlorina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "albipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysochlorina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysochlorina>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Chrysochlorina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyphomyia_leucocephala>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Cyphomyia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "leucocephala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyphomyia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyphomyia>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Cyphomyia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyphomyia_wiedemanni>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Cyphomyia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wiedemanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyphomyia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leucoptilum_plaumanni>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Leucoptilum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "plaumanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leucoptilum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leucoptilum>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Leucoptilum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gowdeyana_vitrisetosus>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Gowdeyana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vitrisetosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gowdeyana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gowdeyana>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Gowdeyana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stratiomys_convexa>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Stratiomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "convexa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stratiomys_constricta>
+    dwc:class "Insecta" ;
+    dwc:family "Stratiomyidae" ;
+    dwc:genus "Stratiomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "constricta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stratiomys> ;
+    a dwcFP:TaxonName .

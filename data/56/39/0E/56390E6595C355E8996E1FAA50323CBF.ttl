@@ -1,38 +1,61 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:56390E6595C355E8996E1FAA50323CBF
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/pyrrhonota>' due to issues with rank ;
+    dc:creator "Jansen, Justin J. F. J." ;
+    dc:title "Œnanthe pyrrhonota Vieillot" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Saxicola_Caprata_pyrrhonota> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zse.93.19964> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/pyrrhonota> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zse.93.19964>
-    dc:creator "Jansen, Justin J. F. J." ;
-    dc:date "2017" ;
-    dc:title "Rene Mauge's ornithological collections from Kupang Bay, West-Timor, Indonesia, August-November 1801, with special regard to type-specimens" ;
     bibo:endPage "492" ;
     bibo:issue "2" ;
     bibo:journal "Zoosystematics and Evolution" ;
     bibo:pubDate "2017-11-16" ;
     bibo:startPage "467" ;
     bibo:volume "93" ;
+    dc:creator "Jansen, Justin J. F. J." ;
+    dc:date "2017" ;
+    dc:title "Rene Mauge's ornithological collections from Kupang Bay, West-Timor, Indonesia, August-November 1801, with special regard to type-specimens" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Animalia/_pyrrhonota>
+<http://taxon-name.plazi.org/id/Animalia/pyrrhonota>
     dwc:family "Muscicapidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Passeriformes" ;
     dwc:rank "species" ;
     dwc:species "pyrrhonota" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muscicapidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/56390E6595C355E8996E1FAA50323CBF>
-    trt:citesTaxonName <file:///workspace/rdf/data/56/39/0E/Saxicola_Caprata_pyrrhonota> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zse.93.19964> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/_pyrrhonota> ;
-    dc:creator "Jansen, Justin J. F. J." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Muscicapidae>
+    dwc:family "Muscicapidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Passeriformes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Passeriformes> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Passeriformes>
+    dwc:kingdom "Animalia" ;
+    dwc:order "Passeriformes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
