@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6D1FA548FFE33C1A7C2FFC5F5D1465D4
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8292178>, <http://dx.doi.org/10.5281/zenodo.8292180>, <http://dx.doi.org/10.5281/zenodo.8292182>, <http://dx.doi.org/10.5281/zenodo.8292184> ;
+    dc:creator "Razeq, Fakhria M.; Kosma, Dylan K.; D; França, ebora; Rowland, Owen; Molina, Isabel" ;
+    dc:title "Camelina sativa extracellular" ;
+    trt:publishedIn <http://dx.doi.org/10.1016/j.phytochem.2021.112665> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Camelina_sativa> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1016/j.phytochem.2021.112665>
-    dc:creator "D", "França, ebora", "Kosma, Dylan K.", "Molina, Isabel", "Razeq, Fakhria M.", "Rowland, Owen" ;
-    dc:date "2021" ;
-    dc:title "Extracellular lipids of Camelina sativa: Characterization of cutin and suberin reveals typical polyester monomers and unusual dicarboxylic fatty acids" ;
     bibo:endPage "11" ;
     bibo:journal "Phytochemistry" ;
     bibo:pubDate "2021-04-30" ;
     bibo:series "112665" ;
     bibo:startPage "1" ;
     bibo:volume "184" ;
+    dc:creator "Razeq, Fakhria M.; Kosma, Dylan K.; D; França, ebora; Rowland, Owen; Molina, Isabel" ;
+    dc:date "2021" ;
+    dc:title "Extracellular lipids of Camelina sativa: Characterization of cutin and suberin reveals typical polyester monomers and unusual dicarboxylic fatty acids" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8292178>, <http://dx.doi.org/10.5281/zenodo.8292180>, <http://dx.doi.org/10.5281/zenodo.8292182>, <http://dx.doi.org/10.5281/zenodo.8292184> ;
     a fabio:JournalArticle .
 
@@ -42,43 +51,58 @@
     fabio:hasRepresentation "https://zenodo.org/record/8292184/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Brassicaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicales> ;
+<http://taxon-concept.plazi.org/id/Plantae/Arabidopsis_Wang_2003>
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
+    dwc:genus "Arabidopsis" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Perry and Wang, 2003", "(Perry and Wang, 2003)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Arabidopsis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Brassicales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Brassicales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Camelina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Camelina_sativa_Franke_2005>
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:genus "Camelina" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Franke et al., 2005)" ;
+    dwc:species "sativa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Camelina_sativa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Ricinus_communis_Schreiber_2005>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Ricinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Schreiber et al., 2005)" ;
+    dwc:species "communis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Ricinus_communis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Brassica_napus_Bonaventure_2004>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Brassica" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Bonaventure et al., 2004)" ;
+    dwc:species "napus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Brassica_napus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Camelina_sativa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Camelina> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:genus "Camelina" ;
@@ -87,27 +111,131 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "sativa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Camelina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Camelina>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Camelina" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Brassicaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Brassicales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6D1FA548FFE33C1A7C2FFC5F5D1465D4>
-    trt:publishedIn <http://dx.doi.org/10.1016/j.phytochem.2021.112665> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Camelina_sativa> ;
-    dc:creator "D", "França, ebora", "Kosma, Dylan K.", "Molina, Isabel", "Razeq, Fakhria M.", "Rowland, Owen" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8292178>, <http://dx.doi.org/10.5281/zenodo.8292180>, <http://dx.doi.org/10.5281/zenodo.8292182>, <http://dx.doi.org/10.5281/zenodo.8292184> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Arabidopsis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Arabidopsis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ricinus_communis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Ricinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "communis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ricinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ricinus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:genus "Ricinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Euphorbiaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Euphorbiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Malpighiales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Brassica_napus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Brassica" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "napus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Brassica>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Brassica" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+    a dwcFP:TaxonName .
