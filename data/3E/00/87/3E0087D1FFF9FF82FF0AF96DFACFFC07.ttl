@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:3E0087D1FFF9FF82FF0AF96DFACFFC07
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5056792> ;
+    dc:creator "Hong, Yong; James, Samuel W." ;
+    dc:title "Pheretima bontocensis Hong & James 2021, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/3E0087D1FFF9FF82FF0AF96DFACFFC07.mc.06C13C9AFFF9FF88FE11F89EFE06F86A>, <http://tb.plazi.org/GgServer/dwcaRecords/3E0087D1FFF9FF82FF0AF96DFACFFC07.mc.06C13C9AFFF9FF88FF5AF856FBFEF84E> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pheretima_bontocensis_Hong_2021> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4995.2.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4995.2.8>
-    dc:creator "Hong, Yong", "James, Samuel W." ;
-    dc:date "2021" ;
-    dc:title "Two new earthworms of the Pheretima sangirensis species group (Clitellata Megascolecidae) from Mountain Province, Philippines" ;
     bibo:endPage "366" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-06-30" ;
     bibo:startPage "357" ;
     bibo:volume "4995" ;
+    dc:creator "Hong, Yong; James, Samuel W." ;
+    dc:date "2021" ;
+    dc:title "Two new earthworms of the Pheretima sangirensis species group (Clitellata Megascolecidae) from Mountain Province, Philippines" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5056792> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,27 @@
     fabio:hasRepresentation "https://zenodo.org/record/5056792/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/3E0087D1FFF9FF82FF0AF96DFACFFC07.mc.06C13C9AFFF9FF88FE11F89EFE06F86A>
+    dwc:catalogNumber "NMA 4630" ;
+    dwc:collectionCode "NMA" ;
+    dwc:locality "Clitellate" ;
+    dwc:recordedBy "April & S. W. James" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1200" ;
+    trt:httpUri <https://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07#06C13C9AFFF9FF88FE11F89EFE06F86A> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/3E0087D1FFF9FF82FF0AF96DFACFFC07.mc.06C13C9AFFF9FF88FF5AF856FBFEF84E>
+    dwc:catalogNumber "NMA 4638" ;
+    dwc:collectionCode "NMA" ;
+    dwc:locality "Clitellate" ;
+    dwc:recordedBy "April & S. W. James" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "1200" ;
+    trt:httpUri <https://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07#06C13C9AFFF9FF88FF5AF856FBFEF84E> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pheretima_bontocensis_Hong_2021>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_bontocensis> ;
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:genus "Pheretima" ;
@@ -38,60 +67,374 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hong & James, 2021" ;
     dwc:species "bontocensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_bontocensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Annelida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Clitellata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Megascolecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisthopora> ;
-    dwc:class "Clitellata" ;
-    dwc:family "Megascolecidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Opisthopora" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Opisthopora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Opisthopora" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pheretima>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megascolecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_sangirensis_Michaelsen_1891>
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:genus "Pheretima" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opisthopora" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Michaelsen, 1891", "(Michaelsen, 1891)" ;
+    dwc:species "sangirensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_sangirensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_riparianensis_Hong_2021>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hong & James, 2021" ;
+    dwc:species "riparianensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_riparianensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_floresi_Aspe_2017>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2017" ;
+    dwc:species "floresi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_floresi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_solisi_Aspe_2017>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2017" ;
+    dwc:species "solisi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_solisi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_sibucalensis_Aspe_2016>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2016" ;
+    dwc:species "sibucalensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_sibucalensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_apoensis_Aspe_2016>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2016" ;
+    dwc:species "apoensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_apoensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_tigris_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "tigris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_tigris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_immanis_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "immanis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_immanis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_lago_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "lago" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_lago> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_nunezae_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "nunezae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_nunezae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_boniaoi_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "boniaoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_boniaoi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_misamisensis_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "misamisensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_misamisensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_wati_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "wati" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_wati> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_longiprostata_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "longiprostata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_longiprostata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_nolani_Aspe_2014>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2014" ;
+    dwc:species "nolani" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_nolani> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_mariae_Hong_2008>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hong & James, 2008" ;
+    dwc:species "mariae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_mariae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_lagunaensis_Hong_2008>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hong & James, 2008" ;
+    dwc:species "lagunaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_lagunaensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_quincunxia_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "quincunxia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_quincunxia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_diesmosi_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "diesmosi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_diesmosi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_rugosa_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "rugosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_rugosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_vicinipora_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "vicinipora" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_vicinipora> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_paucisetosa_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "paucisetosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_paucisetosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_alba_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "alba" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_alba> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_rubida_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "rubida" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_rubida> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_virgata_James_2004>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "James, 2004" ;
+    dwc:species "virgata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_virgata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_unicystis_Lee_1981>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lee, 1981" ;
+    dwc:species "unicystis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_unicystis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_ceramensis_Cognetti_1922>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cognetti, 1922" ;
+    dwc:species "ceramensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_ceramensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pheretima_baracatanensis_Aspe_2017>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aspe & James, 2017" ;
+    dwc:species "baracatanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pheretima_baracatanensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pheretima_bontocensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:genus "Pheretima" ;
@@ -100,31 +443,391 @@
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
     dwc:species "bontocensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pheretima_bontocensis_Hong_2021> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4995.2.8> ;
-    dc:creator "Hong, Yong", "James, Samuel W." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5056792> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07/NMA%204630>, <http://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07/NMA%204638> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pheretima>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megascolecidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07/NMA%204630>
-    dwc:catalogNumber "NMA 4630" ;
-    dwc:collectionCode "NMA" ;
-    dwc:locality "Clitellate" ;
-    dwc:recordedBy "April & S. W. James" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimElevation "1200" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Megascolecidae>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisthopora> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3E0087D1FFF9FF82FF0AF96DFACFFC07/NMA%204638>
-    dwc:catalogNumber "NMA 4638" ;
-    dwc:collectionCode "NMA" ;
-    dwc:locality "Clitellate" ;
-    dwc:recordedBy "April & S. W. James" ;
-    dwc:typeStatus "paratype" ;
-    dwc:verbatimElevation "1200" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Opisthopora>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Clitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_sangirensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "sangirensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_riparianensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "riparianensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_floresi>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "floresi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_solisi>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "solisi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_sibucalensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "sibucalensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_apoensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "apoensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_tigris>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "tigris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_immanis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "immanis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_lago>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "lago" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_nunezae>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "nunezae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_boniaoi>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "boniaoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_misamisensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "misamisensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_wati>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "wati" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_longiprostata>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "longiprostata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_nolani>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "nolani" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_mariae>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "mariae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_lagunaensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "lagunaensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_quincunxia>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "quincunxia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_diesmosi>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "diesmosi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_rugosa>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "rugosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_vicinipora>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "vicinipora" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_paucisetosa>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "paucisetosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_alba>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "alba" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_rubida>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "rubida" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_virgata>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "virgata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_unicystis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "unicystis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_ceramensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "ceramensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pheretima_baracatanensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Pheretima" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "baracatanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pheretima> ;
+    a dwcFP:TaxonName .
