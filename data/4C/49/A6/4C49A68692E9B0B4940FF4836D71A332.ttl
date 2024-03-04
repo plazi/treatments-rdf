@@ -1,41 +1,44 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:4C49A68692E9B0B4940FF4836D71A332
+    dc:creator "Vinarski, Maxim V." ;
+    dc:title "coreana von Martens 1886" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/coreana_Martens_1886> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Limnaea_auricularia_coreana>, <http://taxon-name.plazi.org/id/Animalia/Lymnaea_auricularia_coreana>, <http://taxon-name.plazi.org/id/Animalia/Lymnaea_coreana> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zse.92.8107> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zse.92.8107>
-    dc:creator "Vinarski, Maxim V." ;
-    dc:date "2016" ;
-    dc:title "Annotated type catalogue of lymnaeid snails (Mollusca, Gastropoda) in the collection of the Natural History Museum, Berlin" ;
     bibo:endPage "152" ;
     bibo:issue "1" ;
     bibo:journal "Zoosystematics and Evolution" ;
     bibo:startPage "131" ;
     bibo:volume "92" ;
+    dc:creator "Vinarski, Maxim V." ;
+    dc:date "2016" ;
+    dc:title "Annotated type catalogue of lymnaeid snails (Mollusca, Gastropoda) in the collection of the Natural History Museum, Berlin" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/_coreana_Martens_1886>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/_coreana> ;
+<http://taxon-concept.plazi.org/id/Animalia/coreana_Martens_1886>
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "von Martens, 1886" ;
     dwc:species "coreana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/coreana> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/_coreana>
+<http://taxon-name.plazi.org/id/Animalia/coreana>
+    # Warning: Could not determine parent name ;
     dwc:rank "species" ;
     dwc:species "coreana" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/4C49A68692E9B0B4940FF4836D71A332>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/_coreana_Martens_1886> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/4C/49/A6/Limnaea_auricularia_coreana>, <file:///workdir/tmprdf/data/4C/49/A6/Lymnaea_auricularia_coreana>, <file:///workdir/tmprdf/data/4C/49/A6/Lymnaea_coreana> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zse.92.8107> ;
-    dc:creator "Vinarski, Maxim V." ;
-    a trt:Treatment .
-

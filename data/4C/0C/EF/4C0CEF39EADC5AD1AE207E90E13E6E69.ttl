@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4C0CEF39EADC5AD1AE207E90E13E6E69
+    cito:cites <http://dx.doi.org/10.3897/mycokeys.63.46836.figure5>, <http://dx.doi.org/10.3897/mycokeys.63.46836.figure8> ;
+    dc:creator "Bien, Steffen; Damm, Ulrike" ;
+    dc:title "Cadophora bubakii Damm & S. Bien 2020, comb. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Cadophora_bubakii_Damm_2020> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Fungi/Margarinomyces_bubakii_Laxa_1930>, <http://taxon-concept.plazi.org/id/Fungi/Phialophora_bubakii_Laxa_1970> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/mycokeys.63.46836> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/mycokeys.63.46836>
-    dc:creator "Bien, Steffen", "Damm, Ulrike" ;
-    dc:date "2020" ;
-    dc:title "Arboricolonus simplex gen. et sp. nov. and novelties in Cadophora, Minutiella and Proliferodiscus from Prunus wood in Germany" ;
     bibo:endPage "161" ;
     bibo:journal "MycoKeys" ;
     bibo:startPage "119" ;
     bibo:volume "63" ;
+    dc:creator "Bien, Steffen; Damm, Ulrike" ;
+    dc:date "2020" ;
+    dc:title "Arboricolonus simplex gen. et sp. nov. and novelties in Cadophora, Minutiella and Proliferodiscus from Prunus wood in Germany" ;
     fabio:hasPart <http://dx.doi.org/10.3897/mycokeys.63.46836.figure5>, <http://dx.doi.org/10.3897/mycokeys.63.46836.figure8> ;
     a fabio:JournalArticle .
 
@@ -31,21 +41,20 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Fungi/Cadophora_bubakii_Damm_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Cadophora_bubakii> ;
     dwc:LSID "4C0CEF39-EADC-5AD1-AE20-7E90E13E6E69" ;
-    dwc:class "Eurotiomycetes" ;
+    dwc:class "Eurotiomycetes", "Dothideomycetes" ;
     dwc:family "Herpotrichiellaceae" ;
     dwc:genus "Cadophora" ;
     dwc:kingdom "Fungi" ;
-    dwc:order "Chaetothyriales" ;
+    dwc:order "Chaetothyriales", "Pleosporales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Laxa) Damm & S. Bien" ;
+    dwc:scientificNameAuthorship "(Laxa) Damm & S. Bien", "Damm & S. Bien, 2020" ;
     dwc:species "bubakii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Cadophora_bubakii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Fungi/Margarinomyces_bubakii_Laxa_1930>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Margarinomyces_bubakii> ;
     dwc:class "Eurotiomycetes" ;
     dwc:family "Herpotrichiellaceae" ;
     dwc:genus "Margarinomyces" ;
@@ -55,10 +64,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Laxa, 1930" ;
     dwc:species "bubakii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Margarinomyces_bubakii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Fungi/Phialophora_bubakii_Schol-Schwarz_1970>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Phialophora_bubakii> ;
+<http://taxon-concept.plazi.org/id/Fungi/Phialophora_bubakii_Laxa_1970>
     dwc:class "Eurotiomycetes" ;
     dwc:family "Herpotrichiellaceae" ;
     dwc:genus "Phialophora" ;
@@ -68,75 +77,165 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Schol-Schwarz, 1970" ;
     dwc:species "bubakii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Phialophora_bubakii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Fungi>
-    dwc:kingdom "Fungi" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Cadophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Herpotrichiellaceae> ;
+<http://taxon-concept.plazi.org/id/Fungi/Margarinomyces_O.Laxa_1930>
     dwc:class "Eurotiomycetes" ;
     dwc:family "Herpotrichiellaceae" ;
-    dwc:genus "Cadophora" ;
+    dwc:genus "Margarinomyces" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Chaetothyriales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "O.Laxa, 1930" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Margarinomyces> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Phialophora_Medlar_1915>
+    dwc:class "Eurotiomycetes" ;
+    dwc:family "Herpotrichiellaceae" ;
+    dwc:genus "Phialophora" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Chaetothyriales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Medlar, 1915" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Phialophora> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Cadophora_T.Lagerberg_1927>
+    dwc:class "Dothideomycetes" ;
+    dwc:genus "Cadophora" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "T.Lagerberg & E.Melin, 1927" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Cadophora> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Fungi/Cadophora_bubakii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Cadophora> ;
-    dwc:class "Eurotiomycetes" ;
+    dwc:class "Eurotiomycetes", "Dothideomycetes" ;
     dwc:family "Herpotrichiellaceae" ;
     dwc:genus "Cadophora" ;
     dwc:kingdom "Fungi" ;
-    dwc:order "Chaetothyriales" ;
+    dwc:order "Chaetothyriales", "Pleosporales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
     dwc:species "bubakii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Cadophora> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Fungi/Chaetothyriales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Eurotiomycetes> ;
-    dwc:class "Eurotiomycetes" ;
+<http://taxon-name.plazi.org/id/Fungi/Cadophora>
+    dwc:class "Eurotiomycetes", "Dothideomycetes" ;
+    dwc:family "Herpotrichiellaceae" ;
+    dwc:genus "Cadophora" ;
     dwc:kingdom "Fungi" ;
-    dwc:order "Chaetothyriales" ;
+    dwc:order "Chaetothyriales", "Pleosporales" ;
     dwc:phylum "Ascomycota" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Eurotiomycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
-    dwc:class "Eurotiomycetes" ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Herpotrichiellaceae>, <http://taxon-name.plazi.org/id/Fungi/Pleosporales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Herpotrichiellaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Chaetothyriales> ;
     dwc:class "Eurotiomycetes" ;
     dwc:family "Herpotrichiellaceae" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Chaetothyriales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Chaetothyriales> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4C0CEF39EADC5AD1AE207E90E13E6E69>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Cadophora_bubakii_Damm_2020> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Fungi/Margarinomyces_bubakii_Laxa_1930>, <http://taxon-concept.plazi.org/id/Fungi/Phialophora_bubakii_Schol-Schwarz_1970> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/mycokeys.63.46836> ;
-    dc:creator "Bien, Steffen", "Damm, Ulrike" ;
-    cito:cites <http://dx.doi.org/10.3897/mycokeys.63.46836.figure5>, <http://dx.doi.org/10.3897/mycokeys.63.46836.figure8> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Fungi/Chaetothyriales>
+    dwc:class "Eurotiomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Chaetothyriales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Eurotiomycetes> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Fungi/Eurotiomycetes>
+    dwc:class "Eurotiomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Margarinomyces_bubakii>
+    dwc:class "Eurotiomycetes" ;
+    dwc:family "Herpotrichiellaceae" ;
+    dwc:genus "Margarinomyces" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Chaetothyriales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:species "bubakii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Margarinomyces> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Margarinomyces>
+    dwc:class "Eurotiomycetes" ;
+    dwc:family "Herpotrichiellaceae" ;
+    dwc:genus "Margarinomyces" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Chaetothyriales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Herpotrichiellaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Phialophora_bubakii>
+    dwc:class "Eurotiomycetes" ;
+    dwc:family "Herpotrichiellaceae" ;
+    dwc:genus "Phialophora" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Chaetothyriales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:species "bubakii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Phialophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Phialophora>
+    dwc:class "Eurotiomycetes" ;
+    dwc:family "Herpotrichiellaceae" ;
+    dwc:genus "Phialophora" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Chaetothyriales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Herpotrichiellaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Pleosporales>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Dothideomycetes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Dothideomycetes>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
+    a dwcFP:TaxonName .
