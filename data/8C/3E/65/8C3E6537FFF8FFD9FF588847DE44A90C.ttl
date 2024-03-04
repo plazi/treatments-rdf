@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:8C3E6537FFF8FFD9FF588847DE44A90C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.202306> ;
+    dc:creator "Gnezdilov, Vladimir M.; Soulier-Perkins, Adeline; Bourgoin, Thierry" ;
+    dc:title "Thabena fissala Fieber 1876, comb. n." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Thabena_fissala_Fieber_1876> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Issus_fissala_Fieber_1876> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.202303> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.202303>
-    dc:creator "Bourgoin, Thierry", "Gnezdilov, Vladimir M.", "Soulier-Perkins, Adeline" ;
-    dc:date "2011" ;
-    dc:title "Fieber’s original drawings and their corresponding types for the family Issidae (Hemiptera, Fulgoromorpha) in the Muséum national d’Histoire naturelle of Paris, France" ;
     bibo:endPage "34" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "24" ;
     bibo:volume "2806" ;
+    dc:creator "Gnezdilov, Vladimir M.; Soulier-Perkins, Adeline; Bourgoin, Thierry" ;
+    dc:date "2011" ;
+    dc:title "Fieber’s original drawings and their corresponding types for the family Issidae (Hemiptera, Fulgoromorpha) in the Muséum national d’Histoire naturelle of Paris, France" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.202306> ;
     a fabio:JournalArticle .
 
@@ -25,9 +35,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/202306/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Thabena_fissala_Fieber_1876>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Thabena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fieber, 1876" ;
+    dwc:species "fissala" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/55YHZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thabena_fissala> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Issus_fissala_Fieber_1876>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Issus_fissala> ;
-    dwc:ID-CoL "3QD4K" ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Issus" ;
@@ -37,49 +59,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fieber, 1876: 259" ;
     dwc:species "fissala" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/55YHZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Issus_fissala> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Issidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Issidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Thabena>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Thabena_Stal_1866>
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Thabena" ;
@@ -87,10 +71,23 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Stal, 1866" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thabena> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tshurtshurnella_Kusnezov_1927>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Tshurtshurnella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kusnezov, 1927" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tshurtshurnella> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Thabena_fissala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thabena> ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Thabena" ;
@@ -99,13 +96,89 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "fissala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thabena> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/8C3E6537FFF8FFD9FF588847DE44A90C>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Issus_fissala_Fieber_1876> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.202303> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Thabena_fissala> ;
-    dc:creator "Bourgoin, Thierry", "Gnezdilov, Vladimir M.", "Soulier-Perkins, Adeline" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.202306> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Thabena>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Thabena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Issidae>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Issus_fissala>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Issus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fissala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Issus>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Issus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tshurtshurnella>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Tshurtshurnella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
+    a dwcFP:TaxonName .

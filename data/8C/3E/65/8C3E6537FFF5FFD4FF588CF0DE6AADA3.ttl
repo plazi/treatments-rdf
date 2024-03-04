@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:8C3E6537FFF5FFD4FF588CF0DE6AADA3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.202310> ;
+    dc:creator "Gnezdilov, Vladimir M.; Soulier-Perkins, Adeline; Bourgoin, Thierry" ;
+    dc:title "Fieberium impressum Fieber 1877" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Fieberium_impressum_Fieber_1877> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hysteropterum_impressum_Fieber_1877> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.202303> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.202303>
-    dc:creator "Bourgoin, Thierry", "Gnezdilov, Vladimir M.", "Soulier-Perkins, Adeline" ;
-    dc:date "2011" ;
-    dc:title "Fieber’s original drawings and their corresponding types for the family Issidae (Hemiptera, Fulgoromorpha) in the Muséum national d’Histoire naturelle of Paris, France" ;
     bibo:endPage "34" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "24" ;
     bibo:volume "2806" ;
+    dc:creator "Gnezdilov, Vladimir M.; Soulier-Perkins, Adeline; Bourgoin, Thierry" ;
+    dc:date "2011" ;
+    dc:title "Fieber’s original drawings and their corresponding types for the family Issidae (Hemiptera, Fulgoromorpha) in the Muséum national d’Histoire naturelle of Paris, France" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.202310> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Fieberium_impressum_Fieber_1877>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fieberium_impressum> ;
-    dwc:ID-CoL "6HZ4S" ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Fieberium" ;
@@ -37,11 +45,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fieber, 1877" ;
     dwc:species "impressum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6HZ4S> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fieberium_impressum> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Hysteropterum_impressum_Fieber_1877>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hysteropterum_impressum> ;
-    dwc:ID-CoL "9XXM2" ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Hysteropterum" ;
@@ -51,33 +59,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fieber, 1877: 31" ;
     dwc:species "impressum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6HZ4S> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hysteropterum_impressum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Fieberium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Issidae" ;
-    dwc:genus "Fieberium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Fieberium_impressum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fieberium> ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:genus "Fieberium" ;
@@ -86,40 +72,78 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "impressum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fieberium> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Fieberium>
     dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Fieberium" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Issidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Issidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/8C3E6537FFF5FFD4FF588CF0DE6AADA3>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Fieberium_impressum_Fieber_1877> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hysteropterum_impressum_Fieber_1877> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.202303> ;
-    dc:creator "Bourgoin, Thierry", "Gnezdilov, Vladimir M.", "Soulier-Perkins, Adeline" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.202310> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hysteropterum_impressum>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Hysteropterum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "impressum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hysteropterum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hysteropterum>
+    dwc:class "Insecta" ;
+    dwc:family "Issidae" ;
+    dwc:genus "Hysteropterum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Issidae> ;
+    a dwcFP:TaxonName .
