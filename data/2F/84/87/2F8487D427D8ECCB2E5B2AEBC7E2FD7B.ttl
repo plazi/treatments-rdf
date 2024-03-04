@@ -1,24 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2F8487D427D8ECCB2E5B2AEBC7E2FD7B
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Bufonia tenuifolia Linnaeus 1753" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/2F8487D427D8ECCB2E5B2AEBC7E2FD7B/168.1> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Bufonia_tenuifolia_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Bufonia_tenuissima_Linnaeus_1759> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4367966> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4367966>
+    bibo:endPage "369" ;
+    bibo:startPage "343" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part B)" ;
-    bibo:endPage "369" ;
-    bibo:startPage "343" ;
     a fabio:BookSection .
 
+<http://treatment.plazi.org/id/2F8487D427D8ECCB2E5B2AEBC7E2FD7B/168.1>
+    dwc:catalogNumber "168.1" ;
+    dwc:collectionCode "LINN" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2612079414" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Bufonia_tenuifolia_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuifolia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Caryophyllaceae" ;
     dwc:genus "Bufonia" ;
@@ -26,12 +42,12 @@
     dwc:order "Caryophyllales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "L." ;
+    dwc:scientificNameAuthorship "L.", "L. (1753)" ;
     dwc:species "tenuifolia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuifolia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Bufonia_tenuissima_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuissima> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Caryophyllaceae" ;
     dwc:genus "Bufonia" ;
@@ -39,17 +55,24 @@
     dwc:order "Caryophyllales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus" ;
+    dwc:scientificNameAuthorship "Linnaeus", "L." ;
     dwc:species "tenuissima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuissima> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
+<http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuifolia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Caryophyllaceae" ;
+    dwc:genus "Bufonia" ;
     dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "tenuifolia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bufonia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Bufonia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllaceae> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Caryophyllaceae" ;
     dwc:genus "Bufonia" ;
@@ -57,22 +80,49 @@
     dwc:order "Caryophyllales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllaceae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuifolia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bufonia> ;
+<http://taxon-name.plazi.org/id/Plantae/Caryophyllaceae>
     dwc:class "Magnoliopsida" ;
     dwc:family "Caryophyllaceae" ;
-    dwc:genus "Bufonia" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Caryophyllales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:species "tenuifolia" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Caryophyllales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Caryophyllales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Bufonia_tenuissima>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bufonia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Caryophyllaceae" ;
     dwc:genus "Bufonia" ;
@@ -81,53 +131,5 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "tenuissima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Bufonia> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Caryophyllaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Caryophyllales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Caryophyllaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Caryophyllales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Caryophyllales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Caryophyllales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/2F8487D427D8ECCB2E5B2AEBC7E2FD7B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Bufonia_tenuifolia_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Bufonia_tenuissima_Linnaeus_1759> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4367966> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/2F8487D427D8ECCB2E5B2AEBC7E2FD7B/168.1> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/2F8487D427D8ECCB2E5B2AEBC7E2FD7B/168.1>
-    dwc:catalogNumber "168.1" ;
-    dwc:collectionCode "LINN" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
-
