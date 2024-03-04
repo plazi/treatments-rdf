@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A987B9D52AB21BFF61FAB9B92E299D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.2609362> ;
+    dc:creator "Yamamoto, Nao; Yamamoto, Masaru" ;
+    dc:title "Smittia nudipennis" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A987B9D52AB21BFF61FAB9B92E299D.mc.3B683CF2D52AB21BFE6AF9EDB8F0292E> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Smittia_nudipennis_Goetghebuer_1913> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Bryophaenocladius_togatenuis_Okazawa_1992> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4514.4.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4514.4.5>
-    dc:creator "Yamamoto, Masaru", "Yamamoto, Nao" ;
-    dc:date "2018" ;
-    dc:title "Taxonomic information on some Japanese Chironomidae (Diptera) described by Dr. M. Sasa (†)" ;
     bibo:endPage "528" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-11-09" ;
     bibo:startPage "516" ;
     bibo:volume "4514" ;
+    dc:creator "Yamamoto, Nao; Yamamoto, Masaru" ;
+    dc:date "2018" ;
+    dc:title "Taxonomic information on some Japanese Chironomidae (Diptera) described by Dr. M. Sasa (†)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.2609362> ;
     a fabio:JournalArticle .
 
@@ -27,23 +38,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/2609362/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Bryophaenocladius_togatenuis_Okazawa_1992>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius_togatenuis> ;
-    dwc:ID-CoL "9HXNN" ;
-    dwc:class "Insecta" ;
-    dwc:family "Chironomidae" ;
-    dwc:genus "Bryophaenocladius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Sasa et Okazawa, 1992", "Sasa et Okazawa, 1992: 136" ;
-    dwc:species "togatenuis" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03A987B9D52AB21BFF61FAB9B92E299D.mc.3B683CF2D52AB21BFE6AF9EDB8F0292E>
+    dwc:eventDate "1990-05-31" ;
+    dwc:locality "Toga Village" ;
+    dwc:recordedBy "T. Okazawa & M. Sasa" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2028438462" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A987B9D52AB21BFF61FAB9B92E299D#3B683CF2D52AB21BFE6AF9EDB8F0292E> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Smittia_nudipennis_Goetghebuer_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Smittia_nudipennis> ;
-    dwc:ID-CoL "4XXP2" ;
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
     dwc:genus "Smittia" ;
@@ -51,35 +55,13 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Goetghebuer, 1913)" ;
+    dwc:scientificNameAuthorship "(Goetghebuer, 1913)", "(Goetghebuer, 1913: 166) (Camptocladius)", "Goetghebuer, 1913" ;
     dwc:species "nudipennis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4XXP2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Smittia_nudipennis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chironomidae" ;
-    dwc:genus "Bryophaenocladius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius_togatenuis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius> ;
+<http://taxon-concept.plazi.org/id/Animalia/Bryophaenocladius_togatenuis_Okazawa_1992>
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
     dwc:genus "Bryophaenocladius" ;
@@ -87,64 +69,93 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sasa et Okazawa, 1992: 136", "Sasa et Okazawa, 1992" ;
     dwc:species "togatenuis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4XXP2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius_togatenuis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Smittia_nudipennis>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Smittia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nudipennis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Smittia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Smittia>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Smittia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Chironomidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Smittia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chironomidae" ;
-    dwc:genus "Smittia" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
     dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Smittia_nudipennis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Smittia> ;
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius_togatenuis>
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
-    dwc:genus "Smittia" ;
+    dwc:genus "Bryophaenocladius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "nudipennis" ;
+    dwc:species "togatenuis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A987B9D52AB21BFF61FAB9B92E299D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Smittia_nudipennis_Goetghebuer_1913> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Bryophaenocladius_togatenuis_Okazawa_1992> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4514.4.5> ;
-    dc:creator "Yamamoto, Masaru", "Yamamoto, Nao" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.2609362> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Bryophaenocladius>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Bryophaenocladius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
+    a dwcFP:TaxonName .
