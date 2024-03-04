@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:537DC83F88D6526F9B2BD13C8473A106
+    cito:cites <http://dx.doi.org/10.3897/jhr.83.63353.figuresa5-a8> ;
+    dc:creator "Samartsev, Konstantin; Ku, Deok-Seo" ;
+    dc:title "Bracon (Rostrobracon) urinator" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bracon_urinator_Fabricius_1798> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.83.63353> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.83.63353>
-    dc:creator "Ku, Deok-Seo", "Samartsev, Konstantin" ;
-    dc:date "2021" ;
-    dc:title "New records of Braconinae (Hymenoptera, Braconidae) from South Korea" ;
     bibo:endPage "72" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2021-06-28" ;
     bibo:startPage "21" ;
     bibo:volume "83" ;
+    dc:creator "Samartsev, Konstantin; Ku, Deok-Seo" ;
+    dc:date "2021" ;
+    dc:title "New records of Braconinae (Hymenoptera, Braconidae) from South Korea" ;
     fabio:hasPart <http://dx.doi.org/10.3897/jhr.83.63353.figuresa5-a8> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Bracon_urinator_Fabricius_1798>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bracon_urinator> ;
-    dwc:ID-CoL "N4FC" ;
     dwc:LSID "537DC83F-88D6-526F-9B2B-D13C8473A106" ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
@@ -40,33 +48,35 @@
     dwc:scientificNameAuthorship "(Fabricius, 1798)" ;
     dwc:species "urinator" ;
     dwc:subGenus "Rostrobracon" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/N4FC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bracon_urinator> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bracon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rostrobracon_Tobias_1957>
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
-    dwc:genus "Bracon" ;
+    dwc:genus "Rostrobracon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Tobias, 1957" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rostrobracon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyanopterobracon_Tobias_1957>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Cyanopterobracon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Tobias, 1957" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyanopterobracon> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Bracon_urinator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bracon> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Bracon" ;
@@ -75,39 +85,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "urinator" ;
+    dwc:subGenus "Rostrobracon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bracon_Rostrobracon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bracon_Rostrobracon>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Bracon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Rostrobracon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bracon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bracon>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Bracon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/537DC83F88D6526F9B2BD13C8473A106>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bracon_urinator_Fabricius_1798> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.83.63353> ;
-    dc:creator "Ku, Deok-Seo", "Samartsev, Konstantin" ;
-    cito:cites <http://dx.doi.org/10.3897/jhr.83.63353.figuresa5-a8> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rostrobracon>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Rostrobracon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyanopterobracon>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Cyanopterobracon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
