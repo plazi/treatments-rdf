@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B487F0E0405919FF543CB9EAC0FE35
+    cito:cites <http://dx.doi.org/10.5281/zenodo.239477> ;
+    dc:creator "Batelka, Jan; Hájek, Jiří" ;
+    dc:title "Denierella thailandica Dvorak 1996, comb. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Denierella_thailandica_Dvorak_1996> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Epicauta_thailandica_Dvorak_1996>, <http://taxon-concept.plazi.org/id/Animalia/Denierella_striolata_Yang_2007> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4000.1.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4000.1.6>
-    dc:creator "Batelka, Jan", "Hájek, Jiří" ;
-    dc:date "2015" ;
-    dc:title "New synonyms, combinations and faunistic records in the genus Denierella Kaszab (Coleoptera: Meloidae)" ;
     bibo:endPage "130" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "123" ;
     bibo:volume "4000" ;
+    dc:creator "Batelka, Jan; Hájek, Jiří" ;
+    dc:date "2015" ;
+    dc:title "New synonyms, combinations and faunistic records in the genus Denierella Kaszab (Coleoptera: Meloidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.239477> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/239477/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Denierella_striolata_Yang_2007>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Denierella_striolata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Denierella_thailandica_Dvorak_1996>
     dwc:class "Insecta" ;
     dwc:family "Meloidae" ;
     dwc:genus "Denierella" ;
@@ -35,12 +44,12 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Yang & Ren, 2007: 54" ;
-    dwc:species "striolata" ;
+    dwc:scientificNameAuthorship "Dvorak, 1996" ;
+    dwc:species "thailandica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Denierella_thailandica> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Epicauta_thailandica_Dvorak_1996>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epicauta_thailandica> ;
     dwc:class "Insecta" ;
     dwc:family "Meloidae" ;
     dwc:genus "Epicauta" ;
@@ -50,42 +59,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Dvorak, 1996: 40" ;
     dwc:species "thailandica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epicauta_thailandica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Denierella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Meloidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Meloidae" ;
-    dwc:genus "Denierella" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Denierella_striolata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Denierella> ;
+<http://taxon-concept.plazi.org/id/Animalia/Denierella_striolata_Yang_2007>
     dwc:class "Insecta" ;
     dwc:family "Meloidae" ;
     dwc:genus "Denierella" ;
@@ -93,11 +70,24 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Yang & Ren, 2007: 54", "Yang & Ren, 2007" ;
     dwc:species "striolata" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Denierella_striolata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Epicauta_thailandica_Batelka_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Meloidae" ;
+    dwc:genus "Epicauta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "thailandica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epicauta_thailandica> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Denierella_thailandica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Denierella> ;
     dwc:class "Insecta" ;
     dwc:family "Meloidae" ;
     dwc:genus "Denierella" ;
@@ -106,31 +96,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "thailandica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Denierella> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Denierella>
     dwc:class "Insecta" ;
+    dwc:family "Meloidae" ;
+    dwc:genus "Denierella" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Meloidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Meloidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Meloidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B487F0E0405919FF543CB9EAC0FE35>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Denierella_striolata_Yang_2007>, <http://taxon-concept.plazi.org/id/Animalia/Epicauta_thailandica_Dvorak_1996> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4000.1.6> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Denierella_thailandica> ;
-    dc:creator "Batelka, Jan", "Hájek, Jiří" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.239477> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Epicauta_thailandica>
+    dwc:class "Insecta" ;
+    dwc:family "Meloidae" ;
+    dwc:genus "Epicauta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "thailandica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epicauta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Epicauta>
+    dwc:class "Insecta" ;
+    dwc:family "Meloidae" ;
+    dwc:genus "Epicauta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Meloidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Denierella_striolata>
+    dwc:class "Insecta" ;
+    dwc:family "Meloidae" ;
+    dwc:genus "Denierella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "striolata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Denierella> ;
+    a dwcFP:TaxonName .
