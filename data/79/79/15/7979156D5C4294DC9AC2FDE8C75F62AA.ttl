@@ -1,17 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7979156D5C4294DC9AC2FDE8C75F62AA
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Agapanthus africanus Hoffmanns." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/7979156D5C4294DC9AC2FDE8C75F62AA.mc.C46C61CD25E208F2B1919EB93CF5FB2E> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Agapanthus_africanus_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Crinum_africanum_Linnaeus_1753> ;
+    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
+    a trt:Treatment .
+
+<https://doi.org/10.5281/zenodo.291971>
+    bibo:endPage "473" ;
+    bibo:startPage "370" ;
+    dc:creator "Jarvis, Charlie" ;
+    dc:date "2007" ;
+    dc:title "Chapter 7: Linnaean Plant Names and their Types (part C)" ;
+    a fabio:BookSection .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/7979156D5C4294DC9AC2FDE8C75F62AA.mc.C46C61CD25E208F2B1919EB93CF5FB2E>
+    dwc:catalogNumber "415.6" ;
+    dwc:collectionCode "LINN" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2612072674" ;
+    trt:httpUri <https://treatment.plazi.org/id/7979156D5C4294DC9AC2FDE8C75F62AA#C46C61CD25E208F2B1919EB93CF5FB2E> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Plantae/Agapanthus_africanus_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Agapanthus_africanus> ;
-    dwc:ID-CoL "65KRH" ;
     dwc:class "Liliopsida" ;
     dwc:family "Amaryllidaceae" ;
     dwc:genus "Agapanthus" ;
@@ -21,11 +45,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(L.) Hoffmanns." ;
     dwc:species "africanus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/65KRH> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Agapanthus_africanus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Crinum_africanum_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Crinum_africanum> ;
-    dwc:ID-CoL "7VH65" ;
     dwc:class "Liliopsida" ;
     dwc:family "Amaryllidaceae" ;
     dwc:genus "Crinum" ;
@@ -35,26 +59,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "africanum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/65KRH> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Crinum_africanum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Agapanthus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Amaryllidaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Liliaceae_Jussieu_1789>
     dwc:class "Liliopsida" ;
-    dwc:family "Amaryllidaceae" ;
-    dwc:genus "Agapanthus" ;
+    dwc:family "Liliaceae" ;
     dwc:kingdom "Plantae" ;
-    dwc:order "Asparagales" ;
+    dwc:order "Liliales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "de Jussieu, 1789" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Liliaceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Agapanthus_africanus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Agapanthus> ;
     dwc:class "Liliopsida" ;
     dwc:family "Amaryllidaceae" ;
     dwc:genus "Agapanthus" ;
@@ -63,40 +83,60 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "africanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Agapanthus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Agapanthus>
+    dwc:class "Liliopsida" ;
+    dwc:family "Amaryllidaceae" ;
+    dwc:genus "Agapanthus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asparagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Amaryllidaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Amaryllidaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asparagales> ;
     dwc:class "Liliopsida" ;
     dwc:family "Amaryllidaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Asparagales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asparagales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Asparagales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     dwc:class "Liliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Asparagales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Crinum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Amaryllidaceae> ;
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
     dwc:class "Liliopsida" ;
-    dwc:family "Amaryllidaceae" ;
-    dwc:genus "Crinum" ;
     dwc:kingdom "Plantae" ;
-    dwc:order "Asparagales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Crinum_africanum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Crinum> ;
     dwc:class "Liliopsida" ;
     dwc:family "Amaryllidaceae" ;
     dwc:genus "Crinum" ;
@@ -105,43 +145,35 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "africanum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Crinum> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+<http://taxon-name.plazi.org/id/Plantae/Crinum>
+    dwc:class "Liliopsida" ;
+    dwc:family "Amaryllidaceae" ;
+    dwc:genus "Crinum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asparagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Amaryllidaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Liliaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Liliales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliales>
     dwc:class "Liliopsida" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Liliales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/7979156D5C4294DC9AC2FDE8C75F62AA>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Agapanthus_africanus_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Crinum_africanum_Linnaeus_1753> ;
-    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/7979156D5C4294DC9AC2FDE8C75F62AA/415.6> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/7979156D5C4294DC9AC2FDE8C75F62AA/415.6>
-    trt:gbifOccurrenceId "2612072674" ;
-    dwc:catalogNumber "415.6" ;
-    dwc:collectionCode "LINN" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
-
-<https://doi.org/10.5281/zenodo.291971>
-    dc:creator "Jarvis, Charlie" ;
-    dc:date "2007" ;
-    dc:title "Chapter 7: Linnaean Plant Names and their Types (part C)" ;
-    bibo:endPage "473" ;
-    bibo:startPage "370" ;
-    a fabio:BookSection .
-
