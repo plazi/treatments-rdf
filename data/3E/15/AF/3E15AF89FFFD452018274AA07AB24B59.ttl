@@ -1,33 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///workspace/rdf/data/3E/15/AF/3E15AF89FFFD452018274AA07AB24B59.rdf>
-    dc:description "Figures 21 - 22. Trigonalys championi, female. 21 Lateral view 22 Dorsal view." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/11567" ;
-    a fabio:Figure .
+treatment:3E15AF89FFFD452018274AA07AB24B59
+    cito:cites <https://binary.pensoft.net/fig/11567> ;
+    dc:creator "Smith, David R.; Janzen, Daniel H.; Hallwachs, Winnie; Smith, M. Alexander" ;
+    dc:title "Trigonalys championi Cameron 1897" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trigonalys_championi_Cameron_1897> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.29.3233> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.29.3233>
-    dc:creator "Hallwachs, Winnie", "Janzen, Daniel H.", "Smith, David R.", "Smith, M. Alexander" ;
-    dc:date "2012" ;
-    dc:title "Hyperparasitoid wasps (Hymenoptera, Trigonalidae) reared from dry forest and rain forest caterpillars of Area de Conservacion Guanacaste, Costa Rica" ;
     bibo:endPage "144" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2012-10-15" ;
     bibo:startPage "119" ;
     bibo:volume "29" ;
-    fabio:hasPart <file:///workspace/rdf/data/3E/15/AF/3E15AF89FFFD452018274AA07AB24B59.rdf> ;
+    dc:creator "Smith, David R.; Janzen, Daniel H.; Hallwachs, Winnie; Smith, M. Alexander" ;
+    dc:date "2012" ;
+    dc:title "Hyperparasitoid wasps (Hymenoptera, Trigonalidae) reared from dry forest and rain forest caterpillars of Area de Conservacion Guanacaste, Costa Rica" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/11567> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/11567>
+    dc:description "Figures 21 - 22. Trigonalys championi, female. 21 Lateral view 22 Dorsal view." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/11567" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Trigonalys_championi_Cameron_1897>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonalys_championi> ;
     dwc:LSID "http://species-id.net/wiki/Trigonalys_championi" ;
     dwc:class "Insecta" ;
     dwc:family "Trigonalidae" ;
@@ -36,62 +44,78 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Cameron" ;
+    dwc:scientificNameAuthorship "Cameron", "Cameron, 1897" ;
     dwc:species "championi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonalys_championi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trigonalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
+<http://taxon-concept.plazi.org/id/Animalia/Trigonalidae_Cresson_1887>
+    dwc:class "Hexapoda" ;
     dwc:family "Trigonalidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Cresson, 1887" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonalidae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Trigonalys>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonalidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Trigonalidae" ;
-    dwc:genus "Trigonalys" ;
+<http://taxon-concept.plazi.org/id/Animalia/Enicospilus_monticola_Cameron_1886>
+    dwc:class "Hexapoda" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Enicospilus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cameron, 1886" ;
+    dwc:species "monticola" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enicospilus_monticola> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ichneumonidae_Latreille_1802>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ophioninae_Shuckard_1840>
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Shuckard, 1840" ;
+    dwc:subFamily "Ophioninae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ophioninae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Oraesia_Guenee_1852>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Oraesia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Guenee, 1852" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oraesia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gonodonta_Hubner_1818>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Gonodonta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Hubner, 1818" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gonodonta> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Trigonalys_championi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonalys> ;
     dwc:class "Insecta" ;
     dwc:family "Trigonalidae" ;
     dwc:genus "Trigonalys" ;
@@ -100,12 +124,143 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "championi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonalys> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3E15AF89FFFD452018274AA07AB24B59>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trigonalys_championi_Cameron_1897> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.29.3233> ;
-    dc:creator "Hallwachs, Winnie", "Janzen, Daniel H.", "Smith, David R.", "Smith, M. Alexander" ;
-    cito:cites <file:///workspace/rdf/data/3E/15/AF/3E15AF89FFFD452018274AA07AB24B59.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trigonalys>
+    dwc:class "Insecta" ;
+    dwc:family "Trigonalidae" ;
+    dwc:genus "Trigonalys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonalidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Trigonalidae>
+    dwc:class "Insecta", "Hexapoda" ;
+    dwc:family "Trigonalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta", "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta>, <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enicospilus_monticola>
+    dwc:class "Hexapoda" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Enicospilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "monticola" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enicospilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enicospilus>
+    dwc:class "Hexapoda" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Enicospilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
+    dwc:class "Hexapoda", "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ophioninae>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Ophioninae" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oraesia>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Oraesia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gonodonta>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Gonodonta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
