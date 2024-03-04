@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0F23E968FF8DFF97FEB27BAED786FB7A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5628449> ;
+    dc:creator "Augé, Marc Louis; Dion, Michaël; Phélizon, Alain" ;
+    dc:title "Camptognathosaurus parisiensis" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0F23E968FF8DFF97FEB27BAED786FB7A.mc.37E25223FF8DFF97FE3F7811D5E8F90C> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/geodiversitas2021v43a17> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus_parisiensis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/geodiversitas2021v43a17>
-    dc:creator "Augé, Marc Louis", "Dion, Michaël", "Phélizon, Alain" ;
-    dc:date "2021" ;
-    dc:title "The lizard (Reptilia, Squamata) assemblage from the Paleocene of Montchenot (Paris Basin, MP 6)" ;
     bibo:endPage "661" ;
     bibo:issue "17" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2021-09-09" ;
     bibo:startPage "645" ;
     bibo:volume "43" ;
+    dc:creator "Augé, Marc Louis; Dion, Michaël; Phélizon, Alain" ;
+    dc:date "2021" ;
+    dc:title "The lizard (Reptilia, Squamata) assemblage from the Paleocene of Montchenot (Paris Basin, MP 6)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5628449> ;
     a fabio:JournalArticle .
 
@@ -27,24 +37,37 @@
     fabio:hasRepresentation "https://zenodo.org/record/5628449/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://tb.plazi.org/GgServer/dwcaRecords/0F23E968FF8DFF97FEB27BAED786FB7A.mc.37E25223FF8DFF97FE3F7811D5E8F90C>
+    trt:gbifOccurrenceId "3396082301" ;
+    trt:httpUri <https://treatment.plazi.org/id/0F23E968FF8DFF97FEB27BAED786FB7A#37E25223FF8DFF97FE3F7811D5E8F90C> ;
+    a dwc:MaterialCitation .
 
-<http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polyodontobaenidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ophiomorus_A.M.C.Dumeril_1839>
+    dwc:class "Reptilia" ;
+    dwc:family "Scincidae" ;
+    dwc:genus "Ophiomorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "A.M.C.Dumeril & Bibron, 1839" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ophiomorus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Camptognathosaurus_parisiensis_Folie_2013>
     dwc:class "Reptilia" ;
     dwc:family "Polyodontobaenidae" ;
     dwc:genus "Camptognathosaurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Folie et al. 2013)" ;
+    dwc:species "parisiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus_parisiensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus_parisiensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus> ;
     dwc:class "Reptilia" ;
     dwc:family "Polyodontobaenidae" ;
     dwc:genus "Camptognathosaurus" ;
@@ -53,46 +76,76 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "parisiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus>
+    dwc:class "Reptilia" ;
+    dwc:family "Polyodontobaenidae" ;
+    dwc:genus "Camptognathosaurus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polyodontobaenidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Polyodontobaenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     dwc:class "Reptilia" ;
     dwc:family "Polyodontobaenidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0F23E968FF8DFF97FEB27BAED786FB7A>
-    trt:publishedIn <http://dx.doi.org/10.5252/geodiversitas2021v43a17> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Camptognathosaurus_parisiensis> ;
-    dc:creator "Augé, Marc Louis", "Dion, Michaël", "Phélizon, Alain" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5628449> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ophiomorus>
+    dwc:class "Reptilia" ;
+    dwc:family "Scincidae" ;
+    dwc:genus "Ophiomorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scincidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scincidae>
+    dwc:class "Reptilia" ;
+    dwc:family "Scincidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
+    a dwcFP:TaxonName .
