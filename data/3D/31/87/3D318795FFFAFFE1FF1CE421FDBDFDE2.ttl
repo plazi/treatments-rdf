@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:3D318795FFFAFFE1FF1CE421FDBDFDE2
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5440607>, <http://dx.doi.org/10.5281/zenodo.5440611> ;
+    dc:creator "Bibi, Faysal" ;
+    dc:title "Tragelaphus nakuae Reed & Bibi 2011" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/3D318795FFFAFFE1FF1CE421FDBDFDE2.mc.05F03CDEFFFAFFE0FCF5E0EEFBB4FC33> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tragelaphus_nakuae_Reed_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2010.00691.x> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1111/j.1096-3642.2010.00691.x>
-    dc:creator "Bibi, Faysal" ;
-    dc:date "2011" ;
-    dc:title "Tragelaphus nakuae: evolutionary change, biochronology, and turnover in the African Plio-Pleistocene" ;
     bibo:endPage "711" ;
     bibo:issue "3" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
     bibo:pubDate "2011-06-24" ;
     bibo:startPage "699" ;
     bibo:volume "162" ;
+    dc:creator "Bibi, Faysal" ;
+    dc:date "2011" ;
+    dc:title "Tragelaphus nakuae: evolutionary change, biochronology, and turnover in the African Plio-Pleistocene" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5440607>, <http://dx.doi.org/10.5281/zenodo.5440611> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/5440611/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/3D318795FFFAFFE1FF1CE421FDBDFDE2.mc.05F03CDEFFFAFFE0FCF5E0EEFBB4FC33>
+    dwc:catalogNumber "MNHN 1933-9, 89, 106" ;
+    dwc:collectionCode "MNHN" ;
+    dwc:locality "Both" ;
+    dwc:typeStatus "syntype" ;
+    trt:httpUri <https://treatment.plazi.org/id/3D318795FFFAFFE1FF1CE421FDBDFDE2#05F03CDEFFFAFFE0FCF5E0EEFBB4FC33> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Tragelaphus_nakuae_Reed_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus_nakuae> ;
     dwc:authority "Bibi, 2011" ;
     dwc:authorityName "Bibi" ;
     dwc:authorityYear "2011" ;
@@ -44,61 +61,38 @@
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Reed & Bibi, 2011" ;
     dwc:species "nakuae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus_nakuae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bovidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Bovidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Artiodactyla" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tragelaphus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bovidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tragelaphus_rastafari_Bibi_2011>
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Tragelaphus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Artiodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bibi, 2011" ;
+    dwc:species "rastafari" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus_rastafari> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragelaphus_saraitu_Geraads_2009>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Tragelaphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Geraads, Melillo & Haile-Selassie, 2009" ;
+    dwc:species "saraitu" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus_saraitu> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tragelaphus_nakuae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus> ;
     dwc:class "Mammalia" ;
     dwc:family "Bovidae" ;
     dwc:genus "Tragelaphus" ;
@@ -107,20 +101,79 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "nakuae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3D318795FFFAFFE1FF1CE421FDBDFDE2>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tragelaphus_nakuae_Reed_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2010.00691.x> ;
-    dc:creator "Bibi, Faysal" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5440607>, <http://dx.doi.org/10.5281/zenodo.5440611> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/3D318795FFFAFFE1FF1CE421FDBDFDE2/MNHN%201933-9%2C%2089%2C%20106> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tragelaphus>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Tragelaphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bovidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/3D318795FFFAFFE1FF1CE421FDBDFDE2/MNHN%201933-9%2C%2089%2C%20106>
-    dwc:catalogNumber "MNHN 1933-9, 89, 106" ;
-    dwc:collectionCode "MNHN" ;
-    dwc:locality "Both" ;
-    dwc:typeStatus "syntype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Bovidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artiodactyla> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Artiodactyla>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragelaphus_rastafari>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Tragelaphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "rastafari" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragelaphus_saraitu>
+    dwc:class "Mammalia" ;
+    dwc:family "Bovidae" ;
+    dwc:genus "Tragelaphus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Artiodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "saraitu" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragelaphus> ;
+    a dwcFP:TaxonName .
