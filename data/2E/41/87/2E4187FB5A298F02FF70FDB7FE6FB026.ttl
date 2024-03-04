@@ -1,22 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2E4187FB5A298F02FF70FDB7FE6FB026
+    cito:cites <http://dx.doi.org/10.5281/zenodo.212809>, <http://dx.doi.org/10.5281/zenodo.212810>, <http://dx.doi.org/10.5281/zenodo.212811>, <http://dx.doi.org/10.5281/zenodo.212812> ;
+    dc:creator "Tauber, Catherine A.; Albuquerque, Gilberto S.; Tauber, Maurice J." ;
+    dc:title "Titanochrysa simpliciala Tauber" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.212801> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_simpliciala> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.212801>
-    dc:creator "Albuquerque, Gilberto S.", "Tauber, Catherine A.", "Tauber, Maurice J." ;
-    dc:date "2012" ;
-    dc:title "The Neotropical genus Titanochrysa (Neuroptera, Chrysopidae): larval descriptions, biological notes, a new species, and taxonomic changes" ;
     bibo:endPage "26" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3514" ;
+    dc:creator "Tauber, Catherine A.; Albuquerque, Gilberto S.; Tauber, Maurice J." ;
+    dc:date "2012" ;
+    dc:title "The Neotropical genus Titanochrysa (Neuroptera, Chrysopidae): larval descriptions, biological notes, a new species, and taxonomic changes" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.212809>, <http://dx.doi.org/10.5281/zenodo.212810>, <http://dx.doi.org/10.5281/zenodo.212811>, <http://dx.doi.org/10.5281/zenodo.212812> ;
     a fabio:JournalArticle .
 
@@ -40,47 +49,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/212812/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chrysopidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysopidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neuroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Titanochrysa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Titanochrysa_Sosa_2012>
     dwc:class "Insecta" ;
     dwc:family "Chrysopidae" ;
     dwc:genus "Titanochrysa" ;
@@ -88,10 +57,11 @@
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Sosa & Freitas 2012: 17" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_simpliciala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysopidae" ;
     dwc:genus "Titanochrysa" ;
@@ -100,12 +70,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "simpliciala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2E4187FB5A298F02FF70FDB7FE6FB026>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.212801> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_simpliciala> ;
-    dc:creator "Albuquerque, Gilberto S.", "Tauber, Catherine A.", "Tauber, Maurice J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.212809>, <http://dx.doi.org/10.5281/zenodo.212810>, <http://dx.doi.org/10.5281/zenodo.212811>, <http://dx.doi.org/10.5281/zenodo.212812> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Titanochrysa>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:genus "Titanochrysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chrysopidae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neuroptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

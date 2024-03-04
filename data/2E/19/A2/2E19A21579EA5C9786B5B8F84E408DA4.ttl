@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2E19A21579EA5C9786B5B8F84E408DA4
+    cito:cites <http://dx.doi.org/10.3897/zitteliana.97.115682.figure6> ;
+    dc:creator "Neubauer, Thomas A.; Wesselingh, Frank P." ;
+    dc:title "Graecoanatolica ? sp." ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zitteliana.97.115682> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Graecoanatolica> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zitteliana.97.115682>
-    dc:creator "Neubauer, Thomas A.", "Wesselingh, Frank P." ;
-    dc:date "2023" ;
-    dc:title "The Early Pleistocene freshwater mollusks of the Denizli Basin (Turkey): a new long-lived lake fauna at the crossroads of Pontocaspian and Aegean-Anatolian realms" ;
     bibo:endPage "88" ;
     bibo:journal "Zitteliana" ;
     bibo:pubDate "2023-12-12" ;
     bibo:startPage "53" ;
     bibo:volume "97" ;
+    dc:creator "Neubauer, Thomas A.; Wesselingh, Frank P." ;
+    dc:date "2023" ;
+    dc:title "The Early Pleistocene freshwater mollusks of the Denizli Basin (Turkey): a new long-lived lake fauna at the crossroads of Pontocaspian and Aegean-Anatolian realms" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zitteliana.97.115682.figure6> ;
     a fabio:JournalArticle .
 
@@ -26,21 +35,20 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/950743" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+<http://taxon-concept.plazi.org/id/Animalia/Iraklimelania_minutissima_Neubauer_2023>
     dwc:class "Gastropoda" ;
+    dwc:family "Hydrobiidae" ;
+    dwc:genus "Iraklimelania" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Neubauer & Wesselingh, 2023" ;
+    dwc:species "minutissima" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iraklimelania_minutissima> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Graecoanatolica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrobiidae> ;
     dwc:class "Gastropoda" ;
     dwc:family "Hydrobiidae" ;
     dwc:genus "Graecoanatolica" ;
@@ -48,38 +56,67 @@
     dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrobiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hydrobiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
     dwc:class "Gastropoda" ;
     dwc:family "Hydrobiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2E19A21579EA5C9786B5B8F84E408DA4>
-    trt:publishedIn <http://dx.doi.org/10.3897/zitteliana.97.115682> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Graecoanatolica> ;
-    dc:creator "Neubauer, Thomas A.", "Wesselingh, Frank P." ;
-    cito:cites <http://dx.doi.org/10.3897/zitteliana.97.115682.figure6> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Iraklimelania_minutissima>
+    dwc:class "Gastropoda" ;
+    dwc:family "Hydrobiidae" ;
+    dwc:genus "Iraklimelania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "minutissima" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Iraklimelania> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Iraklimelania>
+    dwc:class "Gastropoda" ;
+    dwc:family "Hydrobiidae" ;
+    dwc:genus "Iraklimelania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrobiidae> ;
+    a dwcFP:TaxonName .

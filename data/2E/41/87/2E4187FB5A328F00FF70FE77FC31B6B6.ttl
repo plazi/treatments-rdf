@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2E4187FB5A328F00FF70FE77FC31B6B6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.212809>, <http://dx.doi.org/10.5281/zenodo.212816> ;
+    dc:creator "Tauber, Catherine A.; Albuquerque, Gilberto S.; Tauber, Maurice J." ;
+    dc:title "Titanochrysa annotaria Banks 1946, New Combination" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_annotaria>, <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_pseudovaricosa> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Titanochrysa_annotaria_Banks_1946> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Chrysopa_annotaria_Banks_1945>, <http://taxon-concept.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa_Penny_1998> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.212801> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.212801>
-    dc:creator "Albuquerque, Gilberto S.", "Tauber, Catherine A.", "Tauber, Maurice J." ;
-    dc:date "2012" ;
-    dc:title "The Neotropical genus Titanochrysa (Neuroptera, Chrysopidae): larval descriptions, biological notes, a new species, and taxonomic changes" ;
     bibo:endPage "26" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3514" ;
+    dc:creator "Tauber, Catherine A.; Albuquerque, Gilberto S.; Tauber, Maurice J." ;
+    dc:date "2012" ;
+    dc:title "The Neotropical genus Titanochrysa (Neuroptera, Chrysopidae): larval descriptions, biological notes, a new species, and taxonomic changes" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.212809>, <http://dx.doi.org/10.5281/zenodo.212816> ;
     a fabio:JournalArticle .
 
@@ -30,22 +41,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/212816/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa_Penny_1998>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa> ;
+<http://taxon-concept.plazi.org/id/Animalia/Titanochrysa_annotaria_Banks_1946>
     dwc:class "Insecta" ;
     dwc:family "Chrysopidae" ;
-    dwc:genus "Ceraeaochrysa" ;
+    dwc:genus "Titanochrysa" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Penny, 1998: 62" ;
-    dwc:species "pseudovaricosa" ;
+    dwc:scientificNameAuthorship "Banks, 1946" ;
+    dwc:species "annotaria" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/577YJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_annotaria> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chrysopa_annotaria_Banks_1945>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysopa_annotaria> ;
-    dwc:ID-CoL "5YPPB" ;
     dwc:class "Insecta" ;
     dwc:family "Chrysopidae" ;
     dwc:genus "Chrysopa" ;
@@ -55,33 +65,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Banks, 1945" ;
     dwc:species "annotaria" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/577YJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysopa_annotaria> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysopidae" ;
-    dwc:genus "Ceraeaochrysa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa_Penny_1998>
     dwc:class "Insecta" ;
     dwc:family "Chrysopidae" ;
     dwc:genus "Ceraeaochrysa" ;
@@ -89,49 +77,12 @@
     dwc:order "Neuroptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Penny, 1998: 62" ;
     dwc:species "pseudovaricosa" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chrysopidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysopidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neuroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Titanochrysa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysopidae" ;
-    dwc:genus "Titanochrysa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neuroptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_annotaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysopidae" ;
     dwc:genus "Titanochrysa" ;
@@ -140,14 +91,101 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "annotaria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2E4187FB5A328F00FF70FE77FC31B6B6>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/2E/41/87/Titanochrysa_annotaria>, <file:///workdir/tmprdf/data/2E/41/87/Titanochrysa_pseudovaricosa> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa_Penny_1998>, <http://taxon-concept.plazi.org/id/Animalia/Chrysopa_annotaria_Banks_1945> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.212801> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Titanochrysa_annotaria> ;
-    dc:creator "Albuquerque, Gilberto S.", "Tauber, Catherine A.", "Tauber, Maurice J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.212809>, <http://dx.doi.org/10.5281/zenodo.212816> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Titanochrysa>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:genus "Titanochrysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chrysopidae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neuroptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neuroptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysopa_annotaria>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:genus "Chrysopa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "annotaria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysopa>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:genus "Chrysopa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa_pseudovaricosa>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:genus "Ceraeaochrysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pseudovaricosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ceraeaochrysa>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysopidae" ;
+    dwc:genus "Ceraeaochrysa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neuroptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysopidae> ;
+    a dwcFP:TaxonName .
