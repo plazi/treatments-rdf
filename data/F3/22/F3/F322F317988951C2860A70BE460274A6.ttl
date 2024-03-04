@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:F322F317988951C2860A70BE460274A6
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/Corylicola_Wijesinghe_2020>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Corylicola_italica>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.3897/BDJ.8.e55957.figure1> ;
+    dc:creator "Wijesinghe, Subodini Nuwanthika; Wang, Yong; Camporesi, Erio; Wanasinghe, Dhanushka Nadeeshan; Boonmee, Saranyaphat; Hyde, Kevin David" ;
+    dc:title "Corylicola Wijesinghe, E. Camporesi, Yong Wang bis & K. D. Hyde 2020, gen. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corylicola_Wijesinghe_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/BDJ.8.e55957> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/BDJ.8.e55957>
-    dc:creator "Boonmee, Saranyaphat", "Camporesi, Erio", "Hyde, Kevin David", "Wanasinghe, Dhanushka Nadeeshan", "Wang, Yong", "Wijesinghe, Subodini Nuwanthika" ;
-    dc:date "2020" ;
-    dc:title "A new genus of Bambusicolaceae (Pleosporales) on Corylus avellana (Fagales) from Italy" ;
     bibo:endPage "55957" ;
     bibo:journal "Biodiversity Data Journal" ;
     bibo:startPage "55957" ;
     bibo:volume "8" ;
+    dc:creator "Wijesinghe, Subodini Nuwanthika; Wang, Yong; Camporesi, Erio; Wanasinghe, Dhanushka Nadeeshan; Boonmee, Saranyaphat; Hyde, Kevin David" ;
+    dc:date "2020" ;
+    dc:title "A new genus of Bambusicolaceae (Pleosporales) on Corylus avellana (Fagales) from Italy" ;
     fabio:hasPart <http://dx.doi.org/10.3897/BDJ.8.e55957.figure1> ;
     a fabio:JournalArticle .
 
@@ -26,22 +37,215 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Corylicola_Wijesinghe_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corylicola> ;
     dwc:LSID "F322F317-9889-51C2-860A-70BE460274A6" ;
     dwc:genus "Corylicola" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Wijesinghe, E. Camporesi, Yong Wang bis & K. D. Hyde, 2020" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corylicola> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Corylus_C.Linnaeus_1753>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:genus "Corylus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "C.Linnaeus, 1753" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Corylus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Palmiascoma_R.Phookamsak_2015>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Bambusicolaceae" ;
+    dwc:genus "Palmiascoma" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "R.Phookamsak & K.D.Hyde, 2015" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Palmiascoma> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bambusicolaceae_R.Phookamsak_2015>
+    dwc:family "Bambusicolaceae" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "R.Phookamsak & K.D.Hyde, 2015" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bambusicolaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Munkovalsaria_A.Aptroot_1995>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Didymosphaeriaceae" ;
+    dwc:genus "Munkovalsaria" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "A.Aptroot, 1995" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Munkovalsaria> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bambusicolaceae_Wijesinghe_2020>
+    dwc:family "Bambusicolaceae" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Wijesinghe, E. Camporesi, Yong Wang bis & K. D. Hyde, 2020" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bambusicolaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Leucaenicola_Jayasiri_2019>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Bambusicolaceae" ;
+    dwc:genus "Leucaenicola" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Jayasiri, E.B.G.Jones & K.D.Hyde, 2019" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Leucaenicola> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Corylicola>
+    # Warning: Could not determine parent name ;
     dwc:genus "Corylicola" ;
     dwc:rank "genus" ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F322F317988951C2860A70BE460274A6>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corylicola_Wijesinghe_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/BDJ.8.e55957> ;
-    dc:creator "Boonmee, Saranyaphat", "Camporesi, Erio", "Hyde, Kevin David", "Wanasinghe, Dhanushka Nadeeshan", "Wang, Yong", "Wijesinghe, Subodini Nuwanthika" ;
-    cito:cites <http://dx.doi.org/10.3897/BDJ.8.e55957.figure1> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Corylus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:genus "Corylus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Betulaceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Betulaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Palmiascoma>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Bambusicolaceae" ;
+    dwc:genus "Palmiascoma" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Bambusicolaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Bambusicolaceae>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Bambusicolaceae" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Pleosporales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Pleosporales>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Dothideomycetes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Dothideomycetes>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bambusicolaceae>
+    # Warning: Could not determine parent name ;
+    dwc:family "Bambusicolaceae" ;
+    dwc:rank "family" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Munkovalsaria>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Didymosphaeriaceae" ;
+    dwc:genus "Munkovalsaria" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Didymosphaeriaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Didymosphaeriaceae>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Didymosphaeriaceae" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Pleosporales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Leucaenicola>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Bambusicolaceae" ;
+    dwc:genus "Leucaenicola" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Bambusicolaceae> ;
+    a dwcFP:TaxonName .
