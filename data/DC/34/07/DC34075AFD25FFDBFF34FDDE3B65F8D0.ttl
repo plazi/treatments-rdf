@@ -1,24 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://doi.org/10.5281/zenodo.6301106>
-    dc:creator "Akimov, Yuri", "Glaser, Karin", "Holzinger, Andreas", "Karsten, Ulf", "Mikhailyuk, Tatiana", "Vinogradova, Oksana" ;
-    dc:date "2022" ;
-    dc:title "Timaviella dunensis sp. nov. from sand dunes of the Baltic Sea, Germany, and emendation of Timaviella edaphica (Elenkin) O. M. Vynogr. & Mikhailyuk (Synechococcales, Cyanobacteria) based on an integrative approach" ;
+treatment:DC34075AFD25FFDBFF34FDDE3B65F8D0
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5964578>, <http://dx.doi.org/10.5281/zenodo.5964582>, <http://dx.doi.org/10.5281/zenodo.5964590> ;
+    dc:creator "Mikhailyuk, Tatiana; Vinogradova, Oksana; Holzinger, Andreas; Glaser, Karin; Akimov, Yuri; Karsten, Ulf" ;
+    dc:title "Timaviella edaphica O. M. Vynogr. & Mikhailyuk (Vinogradova & Mikhailyuk 2018" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Bacteria/Timaviella_edaphica_Elenkin_2018> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Bacteria/Plectonema_edaphicum>, <http://taxon-name.plazi.org/id/Bacteria/Leptolyngbya_edaphica> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Bacteria/Plectonema_puteale_edaphicum_Elenkin_1949>, <http://taxon-concept.plazi.org/id/Bacteria/Plectonema_edaphicum_Elenkin_1959>, <http://taxon-concept.plazi.org/id/Bacteria/Pseudophormidium_edaphicum_Elenkin_1988> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.532.3.1> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.11646/phytotaxa.532.3.1>
     bibo:endPage "208" ;
     bibo:issue "3" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2022-02-02" ;
     bibo:startPage "192" ;
     bibo:volume "532" ;
+    dc:creator "Mikhailyuk, Tatiana; Vinogradova, Oksana; Holzinger, Andreas; Glaser, Karin; Akimov, Yuri; Karsten, Ulf" ;
+    dc:date "2022" ;
+    dc:title "Timaviella dunensis sp. nov. from sand dunes of the Baltic Sea, Germany, and emendation of Timaviella edaphica (Elenkin) O. M. Vynogr. & Mikhailyuk (Synechococcales, Cyanobacteria) based on an integrative approach" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5964578>, <http://dx.doi.org/10.5281/zenodo.5964582>, <http://dx.doi.org/10.5281/zenodo.5964590> ;
     a fabio:JournalArticle .
 
@@ -37,21 +50,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/5964590/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Bacteria/Plectonema_edaphicum_Vaulina_1959>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Plectonema_edaphicum> ;
+<http://taxon-concept.plazi.org/id/Bacteria/Timaviella_edaphica_Elenkin_2018>
     dwc:class "Cyanophyceae" ;
-    dwc:family "Scytonemataceae" ;
-    dwc:genus "Plectonema" ;
+    dwc:family "Oculatellaceae" ;
+    dwc:genus "Timaviella" ;
     dwc:kingdom "Bacteria" ;
-    dwc:order "Nostocales" ;
+    dwc:order "Synechococcales" ;
     dwc:phylum "Cyanobacteria" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Elenkin) Vaulina 1959" ;
-    dwc:species "edaphicum" ;
+    dwc:scientificNameAuthorship "(Elenkin) O. M. Vynogr. & Mikhailyuk" ;
+    dwc:species "edaphica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Timaviella_edaphica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Bacteria/Plectonema_puteale_Elenkin_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Plectonema_puteale> ;
+<http://taxon-concept.plazi.org/id/Bacteria/Plectonema_puteale_edaphicum_Elenkin_1949>
     dwc:class "Cyanophyceae" ;
     dwc:family "Scytonemataceae" ;
     dwc:form "edaphicum" ;
@@ -62,10 +74,23 @@
     dwc:rank "form" ;
     dwc:scientificNameAuthorship "Elenkin 1949" ;
     dwc:species "puteale" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Plectonema_puteale_edaphicum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Bacteria/Pseudophormidium_edaphicum_Komarek_1988>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Pseudophormidium_edaphicum> ;
+<http://taxon-concept.plazi.org/id/Bacteria/Plectonema_edaphicum_Elenkin_1959>
+    dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:genus "Plectonema" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Elenkin) Vaulina 1959" ;
+    dwc:species "edaphicum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Plectonema_edaphicum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Bacteria/Pseudophormidium_edaphicum_Elenkin_1988>
     dwc:class "Cyanophyceae" ;
     dwc:family "Scytonemataceae" ;
     dwc:genus "Pseudophormidium" ;
@@ -75,10 +100,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Elenkin) Anagnostidis et Komarek 1988" ;
     dwc:species "edaphicum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Pseudophormidium_edaphicum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Bacteria/Timaviella_edaphica_Vynogr._2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Bacteria/Timaviella_edaphica> ;
+<http://taxon-name.plazi.org/id/Bacteria/Timaviella_edaphica>
     dwc:class "Cyanophyceae" ;
     dwc:family "Oculatellaceae" ;
     dwc:genus "Timaviella" ;
@@ -86,42 +111,116 @@
     dwc:order "Synechococcales" ;
     dwc:phylum "Cyanobacteria" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Elenkin) O. M. Vynogr. & Mikhailyuk" ;
     dwc:species "edaphica" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Bacteria>
-    dwc:kingdom "Bacteria" ;
-    dwc:rank "kingdom" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Timaviella> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Bacteria/Cyanobacteria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria> ;
-    dwc:kingdom "Bacteria" ;
-    dwc:phylum "Cyanobacteria" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Bacteria/Cyanophyceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Cyanobacteria> ;
+<http://taxon-name.plazi.org/id/Bacteria/Timaviella>
     dwc:class "Cyanophyceae" ;
+    dwc:family "Oculatellaceae" ;
+    dwc:genus "Timaviella" ;
     dwc:kingdom "Bacteria" ;
+    dwc:order "Synechococcales" ;
     dwc:phylum "Cyanobacteria" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Oculatellaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Bacteria/Oculatellaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Synechococcales> ;
     dwc:class "Cyanophyceae" ;
     dwc:family "Oculatellaceae" ;
     dwc:kingdom "Bacteria" ;
     dwc:order "Synechococcales" ;
     dwc:phylum "Cyanobacteria" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Synechococcales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Synechococcales>
+    dwc:class "Cyanophyceae" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Synechococcales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Cyanophyceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Cyanophyceae>
+    dwc:class "Cyanophyceae" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Cyanobacteria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Cyanobacteria>
+    dwc:kingdom "Bacteria" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria>
+    dwc:kingdom "Bacteria" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Plectonema_puteale_edaphicum>
+    dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:form "edaphicum" ;
+    dwc:genus "Plectonema" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "form" ;
+    dwc:species "puteale" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Plectonema_puteale> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Plectonema_puteale>
+    dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:genus "Plectonema" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "species" ;
+    dwc:species "puteale" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Plectonema> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Plectonema>
+    dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:genus "Plectonema" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Scytonemataceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Scytonemataceae>
+    dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Nostocales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Bacteria/Nostocales>
+    dwc:class "Cyanophyceae" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Cyanophyceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Bacteria/Plectonema_edaphicum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Plectonema> ;
     dwc:class "Cyanophyceae" ;
     dwc:family "Scytonemataceae" ;
     dwc:genus "Plectonema" ;
@@ -130,51 +229,28 @@
     dwc:phylum "Cyanobacteria" ;
     dwc:rank "species" ;
     dwc:species "edaphicum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Plectonema> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Bacteria/Plectonema_puteale>
-    dwc:form "edaphicum" ;
-    dwc:rank "form" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Bacteria/Synechococcales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Cyanophyceae> ;
+<http://taxon-name.plazi.org/id/Bacteria/Pseudophormidium_edaphicum>
     dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:genus "Pseudophormidium" ;
     dwc:kingdom "Bacteria" ;
-    dwc:order "Synechococcales" ;
-    dwc:phylum "Cyanobacteria" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Bacteria/Timaviella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Oculatellaceae> ;
-    dwc:class "Cyanophyceae" ;
-    dwc:family "Oculatellaceae" ;
-    dwc:genus "Timaviella" ;
-    dwc:kingdom "Bacteria" ;
-    dwc:order "Synechococcales" ;
-    dwc:phylum "Cyanobacteria" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Bacteria/Timaviella_edaphica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Timaviella> ;
-    dwc:class "Cyanophyceae" ;
-    dwc:family "Oculatellaceae" ;
-    dwc:genus "Timaviella" ;
-    dwc:kingdom "Bacteria" ;
-    dwc:order "Synechococcales" ;
+    dwc:order "Nostocales" ;
     dwc:phylum "Cyanobacteria" ;
     dwc:rank "species" ;
-    dwc:species "edaphica" ;
+    dwc:species "edaphicum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Pseudophormidium> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DC34075AFD25FFDBFF34FDDE3B65F8D0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Bacteria/Timaviella_edaphica_Vynogr._2018> ;
-    trt:citesTaxonName <file:///workspace/rdf/data/DC/34/07/Leptolyngbya_edaphica>, <file:///workspace/rdf/data/DC/34/07/Plectonema_edaphicum> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Bacteria/Plectonema_edaphicum_Vaulina_1959>, <http://taxon-concept.plazi.org/id/Bacteria/Plectonema_puteale_Elenkin_1949>, <http://taxon-concept.plazi.org/id/Bacteria/Pseudophormidium_edaphicum_Komarek_1988> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6301106> ;
-    dc:creator "Akimov, Yuri", "Glaser, Karin", "Holzinger, Andreas", "Karsten, Ulf", "Mikhailyuk, Tatiana", "Vinogradova, Oksana" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5964578>, <http://dx.doi.org/10.5281/zenodo.5964582>, <http://dx.doi.org/10.5281/zenodo.5964590> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Bacteria/Pseudophormidium>
+    dwc:class "Cyanophyceae" ;
+    dwc:family "Scytonemataceae" ;
+    dwc:genus "Pseudophormidium" ;
+    dwc:kingdom "Bacteria" ;
+    dwc:order "Nostocales" ;
+    dwc:phylum "Cyanobacteria" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Bacteria/Scytonemataceae> ;
+    a dwcFP:TaxonName .

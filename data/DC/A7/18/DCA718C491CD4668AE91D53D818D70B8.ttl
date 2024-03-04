@@ -1,33 +1,122 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:DCA718C491CD4668AE91D53D818D70B8
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Mayrellinae>' due to issues with rank ;
+    dc:creator "Noort, Simon van; Buffington, Matthew L." ;
+    dc:title "Mayrellinae Hedicke" ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.31.4072> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Mayrellinae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.31.4072>
-    dc:creator "Buffington, Matthew L.", "Noort, Simon van" ;
-    dc:date "2013" ;
-    dc:title "Revision of the Afrotropical Mayrellinae (Cynipoidea, Liopteridae), with the first record of Paramblynotus from Madagascar" ;
     bibo:endPage "64" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2013-03-13" ;
     bibo:startPage "1" ;
     bibo:volume "31" ;
+    dc:creator "Noort, Simon van; Buffington, Matthew L." ;
+    dc:date "2013" ;
+    dc:title "Revision of the Afrotropical Mayrellinae (Cynipoidea, Liopteridae), with the first record of Paramblynotus from Madagascar" ;
     a fabio:JournalArticle .
 
+<http://taxon-concept.plazi.org/id/Animalia/Kiefferiella_Ashmead_1903>
+    dwc:class "Hexapoda" ;
+    dwc:family "Liopteridae" ;
+    dwc:genus "Kiefferiella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ashmead, 1903" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Kiefferiella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paramblynotus_Cameron_1908>
+    dwc:class "Hexapoda" ;
+    dwc:family "Liopteridae" ;
+    dwc:genus "Paramblynotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Cameron, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramblynotus> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-name.plazi.org/id/Animalia/Mayrellinae>
+    # Warning: Could not determine parent name ;
     dwc:genus "Mayrellinae" ;
     dwc:rank "genus" ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DCA718C491CD4668AE91D53D818D70B8>
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.31.4072> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Mayrellinae> ;
-    dc:creator "Buffington, Matthew L.", "Noort, Simon van" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Kiefferiella>
+    dwc:class "Hexapoda" ;
+    dwc:family "Liopteridae" ;
+    dwc:genus "Kiefferiella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liopteridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Liopteridae>
+    dwc:class "Hexapoda" ;
+    dwc:family "Liopteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paramblynotus>
+    dwc:class "Hexapoda" ;
+    dwc:family "Liopteridae" ;
+    dwc:genus "Paramblynotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liopteridae> ;
+    a dwcFP:TaxonName .
