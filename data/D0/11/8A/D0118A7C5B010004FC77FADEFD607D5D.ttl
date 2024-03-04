@@ -1,24 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:D0118A7C5B010004FC77FADEFD607D5D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5639956>, <http://dx.doi.org/10.5281/zenodo.5710580> ;
+    dc:creator "Schuchert, Peter; Collins, Richard" ;
+    dc:title "Pandeopsis ikarii" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/BFLA4088>, <http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/MHNG-INVE-0092017> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_ikarii_Uchida_1927> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tiaranna_ikarii_Uchida_1927>, <http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_scutigera_Kramp_1959> ;
+    trt:publishedIn <http://dx.doi.org/10.35929/RSZ.0049> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.35929/RSZ.0049>
-    dc:creator "Collins, Richard", "Schuchert, Peter" ;
-    dc:date "2021" ;
-    dc:title "Hydromedusae observed during night dives in the Gulf Stream" ;
     bibo:endPage "356" ;
     bibo:issue "2" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2021-10-21" ;
     bibo:startPage "237" ;
     bibo:volume "128" ;
+    dc:creator "Schuchert, Peter; Collins, Richard" ;
+    dc:date "2021" ;
+    dc:title "Hydromedusae observed during night dives in the Gulf Stream" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5639956>, <http://dx.doi.org/10.5281/zenodo.5710580> ;
     a fabio:JournalArticle .
 
@@ -32,9 +44,23 @@
     fabio:hasRepresentation "https://zenodo.org/record/5710580/files/figure.png" ;
     a fabio:Figure .
 
+<http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/BFLA4088>
+    dwc:catalogNumber "BFLA4088" ;
+    dwc:collectionCode "BFLA" ;
+    dwc:eventDate "07 - MAY- 2019" ;
+    trt:gbifOccurrenceId "3410574425" ;
+    a dwc:MaterialCitation .
+
+<http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/MHNG-INVE-0092017>
+    dwc:catalogNumber "MHNG-INVE-0092017" ;
+    dwc:locality "Toba City" ;
+    dwc:recordedBy "Takanori Suehiro" ;
+    dwc:verbatimLatitude "34.4781" ;
+    dwc:verbatimLongitude "136.867" ;
+    trt:gbifOccurrenceId "3410574318" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_ikarii_Uchida_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_ikarii> ;
-    dwc:ID-CoL "4CBQ2" ;
     dwc:ID-ENA "2176029" ;
     dwc:class "Hydrozoa" ;
     dwc:family "Pandeidae" ;
@@ -43,26 +69,13 @@
     dwc:order "Anthoathecata" ;
     dwc:phylum "Cnidaria" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Uchida, 1927)" ;
+    dwc:scientificNameAuthorship "(Uchida, 1927)", "Uchida, 1927" ;
     dwc:species "ikarii" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_scutigera_Kramp_1959>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_scutigera> ;
-    dwc:ID-CoL "4CBQ3" ;
-    dwc:class "Hydrozoa" ;
-    dwc:family "Pandeidae" ;
-    dwc:genus "Pandeopsis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Anthoathecata" ;
-    dwc:phylum "Cnidaria" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kramp, 1959 b: 232" ;
-    dwc:species "scutigera" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4CBQ2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_ikarii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tiaranna_ikarii_Uchida_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tiaranna_ikarii> ;
     dwc:class "Hydrozoa" ;
     dwc:family "Tiarannidae" ;
     dwc:genus "Tiaranna" ;
@@ -72,60 +85,49 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Uchida, 1927 a: 208" ;
     dwc:species "ikarii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tiaranna_ikarii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anthoathecata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrozoa> ;
-    dwc:class "Hydrozoa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Anthoathecata" ;
-    dwc:phylum "Cnidaria" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cnidaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Cnidaria" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hydrozoa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cnidaria> ;
-    dwc:class "Hydrozoa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Cnidaria" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pandeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthoathecata> ;
-    dwc:class "Hydrozoa" ;
-    dwc:family "Pandeidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Anthoathecata" ;
-    dwc:phylum "Cnidaria" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pandeopsis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_scutigera_Kramp_1959>
     dwc:class "Hydrozoa" ;
     dwc:family "Pandeidae" ;
     dwc:genus "Pandeopsis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anthoathecata" ;
     dwc:phylum "Cnidaria" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kramp, 1959 b: 232" ;
+    dwc:species "scutigera" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4CBQ2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_scutigera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_prolifera_Peter_2021>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Pandeidae" ;
+    dwc:genus "Pandeopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anthoathecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Peter, 2021" ;
+    dwc:species "prolifera" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4CBQ2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_prolifera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pandeidae_Haeckel_1879>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Pandeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anthoathecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Haeckel, 1879" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandeidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_ikarii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis> ;
     dwc:class "Hydrozoa" ;
     dwc:family "Pandeidae" ;
     dwc:genus "Pandeopsis" ;
@@ -134,10 +136,102 @@
     dwc:phylum "Cnidaria" ;
     dwc:rank "species" ;
     dwc:species "ikarii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pandeopsis>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Pandeidae" ;
+    dwc:genus "Pandeopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anthoathecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pandeidae>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Pandeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anthoathecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anthoathecata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anthoathecata>
+    dwc:class "Hydrozoa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anthoathecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrozoa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydrozoa>
+    dwc:class "Hydrozoa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cnidaria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cnidaria>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tiaranna_ikarii>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Tiarannidae" ;
+    dwc:genus "Tiaranna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Leptothecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "species" ;
+    dwc:species "ikarii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tiaranna> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tiaranna>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Tiarannidae" ;
+    dwc:genus "Tiaranna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Leptothecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tiarannidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tiarannidae>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Tiarannidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Leptothecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptothecata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptothecata>
+    dwc:class "Hydrozoa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Leptothecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrozoa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pandeopsis_scutigera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis> ;
     dwc:class "Hydrozoa" ;
     dwc:family "Pandeidae" ;
     dwc:genus "Pandeopsis" ;
@@ -146,30 +240,17 @@
     dwc:phylum "Cnidaria" ;
     dwc:rank "species" ;
     dwc:species "scutigera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_ikarii_Uchida_1927> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pandeopsis_scutigera_Kramp_1959>, <http://taxon-concept.plazi.org/id/Animalia/Tiaranna_ikarii_Uchida_1927> ;
-    trt:publishedIn <http://dx.doi.org/10.35929/RSZ.0049> ;
-    dc:creator "Collins, Richard", "Schuchert, Peter" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5639956>, <http://dx.doi.org/10.5281/zenodo.5710580> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/BFLA4088>, <http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/MHNG-INVE-0092017> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/BFLA4088>
-    trt:gbifOccurrenceId "3410574425" ;
-    dwc:catalogNumber "BFLA4088" ;
-    dwc:collectionCode "BFLA" ;
-    dwc:eventDate "07 - MAY- 2019" ;
-    a dwc:MaterialCitation .
-
-<http://treatment.plazi.org/id/D0118A7C5B010004FC77FADEFD607D5D/MHNG-INVE-0092017>
-    trt:gbifOccurrenceId "3410574318" ;
-    dwc:catalogNumber "MHNG-INVE-0092017" ;
-    dwc:locality "Toba City" ;
-    dwc:recordedBy "Takanori Suehiro" ;
-    dwc:verbatimLatitude "34.4781" ;
-    dwc:verbatimLongitude "136.867" ;
-    a dwc:MaterialCitation .
-
+<http://taxon-name.plazi.org/id/Animalia/Pandeopsis_prolifera>
+    dwc:class "Hydrozoa" ;
+    dwc:family "Pandeidae" ;
+    dwc:genus "Pandeopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anthoathecata" ;
+    dwc:phylum "Cnidaria" ;
+    dwc:rank "species" ;
+    dwc:species "prolifera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pandeopsis> ;
+    a dwcFP:TaxonName .
