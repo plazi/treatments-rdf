@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0389064BFFCD3D593EEEE1B7FDC5BF69
+    cito:cites <http://dx.doi.org/10.5281/zenodo.272935> ;
+    dc:creator "Mamo, Briony L." ;
+    dc:title "Pyrgo" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4215.1.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Chromista/Pyrgo> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4215.1.1>
-    dc:creator "Mamo, Briony L." ;
-    dc:date "2016" ;
-    dc:title "Benthic Foraminifera from the Capricorn Group, Great Barrier Reef, Australia" ;
     bibo:endPage "123" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "4215" ;
+    dc:creator "Mamo, Briony L." ;
+    dc:date "2016" ;
+    dc:title "Benthic Foraminifera from the Capricorn Group, Great Barrier Reef, Australia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.272935> ;
     a fabio:JournalArticle .
 
@@ -26,39 +35,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/272935/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Chromista>
-    dwc:kingdom "Chromista" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Foraminifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
-    dwc:kingdom "Chromista" ;
-    dwc:phylum "Foraminifera" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Hauerinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Miliolida> ;
+<http://taxon-concept.plazi.org/id/Chromista/Pyrgo_anomala_Schlumberger_1891>
     dwc:class "Tubothalamea" ;
     dwc:family "Hauerinidae" ;
+    dwc:genus "Pyrgo" ;
     dwc:kingdom "Chromista" ;
     dwc:order "Miliolida" ;
     dwc:phylum "Foraminifera" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Miliolida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Tubothalamea> ;
-    dwc:class "Tubothalamea" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Miliolida" ;
-    dwc:phylum "Foraminifera" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schlumberger 1891" ;
+    dwc:species "anomala" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Pyrgo_anomala> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Chromista/Pyrgo>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Hauerinidae> ;
     dwc:class "Tubothalamea" ;
     dwc:family "Hauerinidae" ;
     dwc:genus "Pyrgo" ;
@@ -66,20 +56,56 @@
     dwc:order "Miliolida" ;
     dwc:phylum "Foraminifera" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Hauerinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Hauerinidae>
+    dwc:class "Tubothalamea" ;
+    dwc:family "Hauerinidae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Miliolida" ;
+    dwc:phylum "Foraminifera" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Miliolida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Miliolida>
+    dwc:class "Tubothalamea" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Miliolida" ;
+    dwc:phylum "Foraminifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Tubothalamea> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Tubothalamea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Foraminifera> ;
     dwc:class "Tubothalamea" ;
     dwc:kingdom "Chromista" ;
     dwc:phylum "Foraminifera" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Foraminifera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0389064BFFCD3D593EEEE1B7FDC5BF69>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4215.1.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Pyrgo> ;
-    dc:creator "Mamo, Briony L." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.272935> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Chromista/Foraminifera>
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Foraminifera" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Chromista>
+    dwc:kingdom "Chromista" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Pyrgo_anomala>
+    dwc:class "Tubothalamea" ;
+    dwc:family "Hauerinidae" ;
+    dwc:genus "Pyrgo" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Miliolida" ;
+    dwc:phylum "Foraminifera" ;
+    dwc:rank "species" ;
+    dwc:species "anomala" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Pyrgo> ;
+    a dwcFP:TaxonName .

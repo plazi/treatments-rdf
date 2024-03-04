@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B7DE6C8A1BF842FF38C0B0FBB8C6BF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.248184> ;
+    dc:creator "Calcinai, Barbara; Bavestrello, Giorgio; Bertolino, Marco; Pica, Daniela; Wagner, Daniel; Cerrano, Carlo" ;
+    dc:title "Callyspongia" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3617.1.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Callyspongia> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3617.1.1>
-    dc:creator "Bavestrello, Giorgio", "Bertolino, Marco", "Calcinai, Barbara", "Cerrano, Carlo", "Pica, Daniela", "Wagner, Daniel" ;
-    dc:date "2013" ;
-    dc:title "Sponges associated with octocorals in the Indo-Pacific, with the description of four new species" ;
     bibo:endPage "61" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3617" ;
+    dc:creator "Calcinai, Barbara; Bavestrello, Giorgio; Bertolino, Marco; Pica, Daniela; Wagner, Daniel; Cerrano, Carlo" ;
+    dc:date "2013" ;
+    dc:title "Sponges associated with octocorals in the Indo-Pacific, with the description of four new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.248184> ;
     a fabio:JournalArticle .
 
@@ -26,13 +35,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/248184/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Callyspongia_serpentina_Lamarck_1814>
+    dwc:class "Demospongiae" ;
+    dwc:family "Callyspongiidae" ;
+    dwc:genus "Callyspongia" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Haplosclerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lamarck, 1814" ;
+    dwc:species "serpentina" ;
+    dwc:subGenus "Carmia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Callyspongia_serpentina> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Callyspongia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Callyspongiidae> ;
     dwc:class "Demospongiae" ;
     dwc:family "Callyspongiidae" ;
     dwc:genus "Callyspongia" ;
@@ -40,46 +57,69 @@
     dwc:order "Haplosclerida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Callyspongiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Callyspongiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haplosclerida> ;
     dwc:class "Demospongiae" ;
     dwc:family "Callyspongiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Haplosclerida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haplosclerida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Haplosclerida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
     dwc:class "Demospongiae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Haplosclerida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Porifera" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B7DE6C8A1BF842FF38C0B0FBB8C6BF>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3617.1.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Callyspongia> ;
-    dc:creator "Bavestrello, Giorgio", "Bertolino, Marco", "Calcinai, Barbara", "Cerrano, Carlo", "Pica, Daniela", "Wagner, Daniel" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.248184> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Callyspongia_serpentina>
+    dwc:class "Demospongiae" ;
+    dwc:family "Callyspongiidae" ;
+    dwc:genus "Callyspongia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplosclerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "serpentina" ;
+    dwc:subGenus "Carmia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Callyspongia_Carmia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Callyspongia_Carmia>
+    dwc:class "Demospongiae" ;
+    dwc:family "Callyspongiidae" ;
+    dwc:genus "Callyspongia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplosclerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Carmia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Callyspongia> ;
+    a dwcFP:TaxonName .

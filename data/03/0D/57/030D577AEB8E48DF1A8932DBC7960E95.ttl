@@ -1,33 +1,56 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/03/0D/57/030D577AEB8E48DF1A8932DBC7960E95.rdf>
-    dc:description "Figure 1. Photographs of Costus loangensis from the single known population. Photo credit: J. P. Vande weghe.", "Figure 2. Map of locality for Costus loangensis. The red dot represents the type locality.", "Figure 3. Costus loangensis habit and habitat, as being studied by co-author P. J. M. Maas. Photo credit: H. Maas-van de Kamer.", "Figure 4. Phylogeny of African Costus species (Table 2) including newly described Costus loangensis. The phylogeny was constructed in PhyML (Guindon and Gascuel 2003) with aligned sequence data for two low copy nuclear markers [calmodulin (cam) intron (Johansen 2005) and rpb 2 (Specht 2006 a)] and nrDNA markers ITS and ETS. All nodes indicated have> 50 % bootstrap support." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/10200", "https://binary.pensoft.net/fig/10201", "https://binary.pensoft.net/fig/10202", "https://binary.pensoft.net/fig/10203" ;
-    a fabio:Figure .
+treatment:030D577AEB8E48DF1A8932DBC7960E95
+    cito:cites <https://binary.pensoft.net/fig/10200>, <https://binary.pensoft.net/fig/10201>, <https://binary.pensoft.net/fig/10202>, <https://binary.pensoft.net/fig/10203> ;
+    dc:creator "Kamer, Hiltje Maas-van de; Maas, Paul J. M.; Specht, Chelsea D." ;
+    dc:title "Costus loangensis H. Maas & Maas 2012, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Costus_loangensis_Maas_2012> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.18.3713> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.18.3713>
-    dc:creator "Kamer, Hiltje Maas-van de", "Maas, Paul J. M.", "Specht, Chelsea D." ;
-    dc:date "2012" ;
-    dc:title "Costus loangensis, an exciting new species from Gabon, Africa" ;
     bibo:endPage "18" ;
     bibo:journal "PhytoKeys" ;
     bibo:pubDate "2012-11-19" ;
     bibo:startPage "11" ;
     bibo:volume "18" ;
-    fabio:hasPart <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/03/0D/57/030D577AEB8E48DF1A8932DBC7960E95.rdf> ;
+    dc:creator "Kamer, Hiltje Maas-van de; Maas, Paul J. M.; Specht, Chelsea D." ;
+    dc:date "2012" ;
+    dc:title "Costus loangensis, an exciting new species from Gabon, Africa" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/10200>, <https://binary.pensoft.net/fig/10201>, <https://binary.pensoft.net/fig/10202>, <https://binary.pensoft.net/fig/10203> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/10200>
+    dc:description "Figure 1. Photographs of Costus loangensis from the single known population. Photo credit: J. P. Vande weghe." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/10200" ;
+    a fabio:Figure .
+
+<https://binary.pensoft.net/fig/10201>
+    dc:description "Figure 2. Map of locality for Costus loangensis. The red dot represents the type locality." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/10201" ;
+    a fabio:Figure .
+
+<https://binary.pensoft.net/fig/10202>
+    dc:description "Figure 3. Costus loangensis habit and habitat, as being studied by co-author P. J. M. Maas. Photo credit: H. Maas-van de Kamer." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/10202" ;
+    a fabio:Figure .
+
+<https://binary.pensoft.net/fig/10203>
+    dc:description "Figure 4. Phylogeny of African Costus species (Table 2) including newly described Costus loangensis. The phylogeny was constructed in PhyML (Guindon and Gascuel 2003) with aligned sequence data for two low copy nuclear markers [calmodulin (cam) intron (Johansen 2005) and rpb 2 (Specht 2006 a)] and nrDNA markers ITS and ETS. All nodes indicated have> 50 % bootstrap support." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/10203" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Plantae/Costus_loangensis_Maas_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_loangensis> ;
     dwc:LSID "030D577A-EB8E-48DF-1A89-32DBC7960E95" ;
     dwc:class "Monocotyledoneae" ;
     dwc:family "Costaceae" ;
@@ -36,45 +59,77 @@
     dwc:order "Scitamineae" ;
     dwc:phylum "Angiospermae" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "H. Maas & Maas" ;
+    dwc:scientificNameAuthorship "H. Maas & Maas", "H. Maas & Maas, 2012" ;
     dwc:species "loangensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_loangensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Angiospermae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Angiospermae" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Costaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Scitamineae> ;
-    dwc:class "Monocotyledoneae" ;
-    dwc:family "Costaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Scitamineae" ;
-    dwc:phylum "Angiospermae" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Costus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Costus_ligularis_Baker_1898>
     dwc:class "Monocotyledoneae" ;
     dwc:family "Costaceae" ;
     dwc:genus "Costus" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Scitamineae" ;
     dwc:phylum "Angiospermae" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1898" ;
+    dwc:species "ligularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_ligularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Costus_gabonensis_Koechlin_1964>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Koechlin, 1964" ;
+    dwc:species "gabonensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_gabonensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Costus_albiflos_Maas_2016>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Maas & H.Maas, 2016" ;
+    dwc:species "albiflos" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_albiflos> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Costus_lateriflorus_Baker_1898>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1898" ;
+    dwc:species "lateriflorus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_lateriflorus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Costus_phyllocephalus_Schum_1892>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "K. Schum, 1892" ;
+    dwc:species "phyllocephalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Costus_phyllocephalus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Costus_loangensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
     dwc:class "Monocotyledoneae" ;
     dwc:family "Costaceae" ;
     dwc:genus "Costus" ;
@@ -83,29 +138,115 @@
     dwc:phylum "Angiospermae" ;
     dwc:rank "species" ;
     dwc:species "loangensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Monocotyledoneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Angiospermae> ;
+<http://taxon-name.plazi.org/id/Plantae/Costus>
     dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
     dwc:phylum "Angiospermae" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Costaceae>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Scitamineae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Scitamineae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Monocotyledoneae> ;
     dwc:class "Monocotyledoneae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Scitamineae" ;
     dwc:phylum "Angiospermae" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Monocotyledoneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/030D577AEB8E48DF1A8932DBC7960E95>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Costus_loangensis_Maas_2012> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.18.3713> ;
-    dc:creator "Kamer, Hiltje Maas-van de", "Maas, Paul J. M.", "Specht, Chelsea D." ;
-    cito:cites <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/03/0D/57/030D577AEB8E48DF1A8932DBC7960E95.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Monocotyledoneae>
+    dwc:class "Monocotyledoneae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Angiospermae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Angiospermae>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Costus_ligularis>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:species "ligularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Costus_gabonensis>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:species "gabonensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Costus_albiflos>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:species "albiflos" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Costus_lateriflorus>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:species "lateriflorus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Costus_phyllocephalus>
+    dwc:class "Monocotyledoneae" ;
+    dwc:family "Costaceae" ;
+    dwc:genus "Costus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Scitamineae" ;
+    dwc:phylum "Angiospermae" ;
+    dwc:rank "species" ;
+    dwc:species "phyllocephalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Costus> ;
+    a dwcFP:TaxonName .
