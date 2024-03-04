@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:DB698781FFFCFFE8FBFFF8F6FB642FBA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6246023>, <http://dx.doi.org/10.5281/zenodo.6246033> ;
+    dc:creator "Stoetzel, Emmanuelle; Pickford, Martin" ;
+    dc:title "Mus kerati, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/DB698781FFFCFFE8FBFFF8F6FB642FBA.mc.E3A83CCAFFFCFFEDFCC0F87AFB1F2AC1>, <http://tb.plazi.org/GgServer/dwcaRecords/DB698781FFFCFFE8FBFFF8F6FB642FBA.mc.E3A83CCAFFFAFFEBFF69F934FDBE2A1D> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mus_kerati_Stoetzel_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/geodiversitas2022v44a8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/geodiversitas2022v44a8>
-    dc:creator "Pickford, Martin", "Stoetzel, Emmanuelle" ;
-    dc:date "2022" ;
-    dc:title "Étude d’un assemblage original de microvertébrés du Pléistocène moyen du nord-est de l’Algérie (Ben Kérat, Oued Zenati) et description de deux nouveaux muridés" ;
     bibo:endPage "263" ;
     bibo:issue "8" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2022-02-17" ;
     bibo:startPage "237" ;
     bibo:volume "44" ;
+    dc:creator "Stoetzel, Emmanuelle; Pickford, Martin" ;
+    dc:date "2022" ;
+    dc:title "Étude d’un assemblage original de microvertébrés du Pléistocène moyen du nord-est de l’Algérie (Ben Kérat, Oued Zenati) et description de deux nouveaux muridés" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6246023>, <http://dx.doi.org/10.5281/zenodo.6246033> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,22 @@
     fabio:hasRepresentation "https://zenodo.org/record/6246033/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/DB698781FFFCFFE8FBFFF8F6FB642FBA.mc.E3A83CCAFFFCFFEDFCC0F87AFB1F2AC1>
+    dwc:catalogNumber "UCBL-FSL 99508, UMR 5276" ;
+    dwc:collectionCode "UMR" ;
+    dwc:locality "Ben Kerat" ;
+    dwc:recordedBy "Une M & de Geologie" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3748611305" ;
+    trt:httpUri <https://treatment.plazi.org/id/DB698781FFFCFFE8FBFFF8F6FB642FBA#E3A83CCAFFFCFFEDFCC0F87AFB1F2AC1> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/DB698781FFFCFFE8FBFFF8F6FB642FBA.mc.E3A83CCAFFFAFFEBFF69F934FDBE2A1D>
+    trt:gbifOccurrenceId "3748611301" ;
+    trt:httpUri <https://treatment.plazi.org/id/DB698781FFFCFFE8FBFFF8F6FB642FBA#E3A83CCAFFFAFFEBFF69F934FDBE2A1D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Mus_kerati_Stoetzel_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_kerati> ;
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
     dwc:genus "Mus" ;
@@ -43,40 +67,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Stoetzel & Pickford, 2022" ;
     dwc:species "kerati" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_kerati> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Muridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Paraethomys_geraadsi_Stoetzel_2022>
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
+    dwc:genus "Paraethomys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "geraadsi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paraethomys_geraadsi> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Mus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mus_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
     dwc:genus "Mus" ;
@@ -84,10 +90,114 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_spretus_Lataste_1883>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lataste, 1883 du Pleistocene", "Lataste, 1883" ;
+    dwc:species "spretus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_spretus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_ique_Geraads_1998>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Geraads, 1998" ;
+    dwc:species "ique" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_ique> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_haouzi_Jaeger_1975>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jaeger, 1975" ;
+    dwc:species "haouzi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_haouzi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_jotterandi_Jaeger_1975>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jaeger, 1975" ;
+    dwc:species "jotterandi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_jotterandi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_hamidae_Geraads_1994>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Geraads, 1994" ;
+    dwc:species "hamidae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_hamidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_musculus_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "musculus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_musculus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_hamidae_Hamida_2022>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "de Oulad Hamida" ;
+    dwc:species "hamidae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_hamidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mus_hamidae_Stoetzel_2022>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "hamidae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mus_hamidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Mus_kerati>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
     dwc:genus "Mus" ;
@@ -96,31 +206,150 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "kerati" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DB698781FFFCFFE8FBFFF8F6FB642FBA>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mus_kerati_Stoetzel_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/geodiversitas2022v44a8> ;
-    dc:creator "Pickford, Martin", "Stoetzel, Emmanuelle" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6246023>, <http://dx.doi.org/10.5281/zenodo.6246033> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/DB698781FFFCFFE8FBFFF8F6FB642FBA/UCBL-FSL%2099508%2C%20UMR%205276> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DB698781FFFCFFE8FBFFF8F6FB642FBA/UCBL-FSL%2099508%2C%20UMR%205276>
-    trt:gbifOccurrenceId "3748611305" ;
-    dwc:catalogNumber "UCBL-FSL 99508, UMR 5276" ;
-    dwc:collectionCode "UMR" ;
-    dwc:locality "Ben Kerat" ;
-    dwc:recordedBy "Une M & de Geologie" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paraethomys_geraadsi>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Paraethomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "geraadsi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paraethomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paraethomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Paraethomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_spretus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "spretus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_ique>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ique" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_haouzi>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "haouzi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_jotterandi>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "jotterandi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_hamidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "hamidae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mus_musculus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Mus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "musculus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mus> ;
+    a dwcFP:TaxonName .
