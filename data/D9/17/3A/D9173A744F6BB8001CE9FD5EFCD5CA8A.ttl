@@ -1,28 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:D9173A744F6BB8001CE9FD5EFCD5CA8A
+    dc:creator "Yang, C.; Wei, Z. - D.; Liu, T.; Liu, H. - Y." ;
+    dc:title "Euscyrtus (Osus) hemelytrus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/D9173A744F6BB8001CE9FD5EFCD5CA8A.mc.E1D6813F4F6BB8001D03FC83FBD9CA78> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Euscyrtus_hemelytrus_Haan_1844> ;
+    trt:publishedIn <http://dx.doi.org/10.25221/fee.376.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.25221/fee.376.2>
-    dc:creator "Liu, H. - Y.", "Liu, T.", "Wei, Z. - D.", "Yang, C." ;
-    dc:date "2019" ;
-    dc:title "Crickets (Orthoptera: Gryllidae) of the Yang County, Shaanxi province of China" ;
     bibo:endPage "22" ;
     bibo:journal "Far Eastern Entomologist" ;
     bibo:pubDate "2019-02-04" ;
     bibo:startPage "15" ;
     bibo:volume "376" ;
+    dc:creator "Yang, C.; Wei, Z. - D.; Liu, T.; Liu, H. - Y." ;
+    dc:date "2019" ;
+    dc:title "Crickets (Orthoptera: Gryllidae) of the Yang County, Shaanxi province of China" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/D9173A744F6BB8001CE9FD5EFCD5CA8A.mc.E1D6813F4F6BB8001D03FC83FBD9CA78>
+    dwc:locality "Shaanxi" ;
+    trt:httpUri <https://treatment.plazi.org/id/D9173A744F6BB8001CE9FD5EFCD5CA8A#E1D6813F4F6BB8001D03FC83FBD9CA78> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Euscyrtus_hemelytrus_Haan_1844>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euscyrtus_hemelytrus> ;
-    dwc:ID-CoL "3D95F" ;
     dwc:class "Insecta" ;
     dwc:family "Gryllidae" ;
     dwc:genus "Euscyrtus" ;
@@ -33,33 +45,23 @@
     dwc:scientificNameAuthorship "(Haan, 1844)" ;
     dwc:species "hemelytrus" ;
     dwc:subGenus "Osus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3D95F> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euscyrtus_hemelytrus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Euscyrtus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gryllidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Gryllinae_Laicharting_1781>
     dwc:class "Insecta" ;
     dwc:family "Gryllidae" ;
-    dwc:genus "Euscyrtus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Laicharting, 1781" ;
+    dwc:subFamily "Gryllinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gryllinae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Euscyrtus_hemelytrus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euscyrtus> ;
     dwc:class "Insecta" ;
     dwc:family "Gryllidae" ;
     dwc:genus "Euscyrtus" ;
@@ -68,38 +70,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "hemelytrus" ;
+    dwc:subGenus "Osus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euscyrtus_Osus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Euscyrtus_Osus>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllidae" ;
+    dwc:genus "Euscyrtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Osus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euscyrtus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Euscyrtus>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllidae" ;
+    dwc:genus "Euscyrtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gryllidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Gryllidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Gryllidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D9173A744F6BB8001CE9FD5EFCD5CA8A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Euscyrtus_hemelytrus_Haan_1844> ;
-    trt:publishedIn <http://dx.doi.org/10.25221/fee.376.2> ;
-    dc:creator "Liu, H. - Y.", "Liu, T.", "Wei, Z. - D.", "Yang, C." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gryllinae>
+    dwc:class "Insecta" ;
+    dwc:family "Gryllidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Gryllinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gryllidae> ;
+    a dwcFP:TaxonName .
