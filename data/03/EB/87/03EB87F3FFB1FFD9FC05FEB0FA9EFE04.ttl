@@ -1,27 +1,46 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03EB87F3FFB1FFD9FC05FEB0FA9EFE04
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Phyllospongiinae_Hyatt_1877> ;
+    dc:creator "Wahab, Muhammad Azmi Abdul; Wilson, Nerida G.; Prada, Diana; Gomez, Oliver; Fromont, Jane" ;
+    dc:title "Thorectidae Bergquist 1978" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Thorectidae_Bergquist_1978> ;
+    trt:publishedIn <http://publication.plazi.org/id/FFD2FF8BFFB4FFDCFF8FFFC4FFF1FFBD> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/FFD2FF8BFFB4FFDCFF8FFFC4FFF1FFBD>
-    dc:creator "Fromont, Jane", "Gomez, Oliver", "Prada, Diana", "Wahab, Muhammad Azmi Abdul", "Wilson, Nerida G." ;
-    dc:date "2021" ;
-    dc:title "Molecular and morphological assessment of tropical sponges in the subfamily Phyllospongiinae, with the descriptions of two new species" ;
     bibo:endPage "355" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
     bibo:startPage "319" ;
     bibo:volume "193" ;
+    dc:creator "Wahab, Muhammad Azmi Abdul; Wilson, Nerida G.; Prada, Diana; Gomez, Oliver; Fromont, Jane" ;
+    dc:date "2021" ;
+    dc:title "Molecular and morphological assessment of tropical sponges in the subfamily Phyllospongiinae, with the descriptions of two new species" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/PHYLLOSPONGIINAE_Hyatt_1877>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/PHYLLOSPONGIINAE> ;
-    dwc:ID-CoL "84KYT" ;
+<http://taxon-concept.plazi.org/id/Animalia/Thorectidae_Bergquist_1978>
+    dwc:class "Demospongiae" ;
+    dwc:family "Thorectidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dictyoceratida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "BERGQUIST, 1978" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/84KVS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thorectidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Phyllospongiinae_Hyatt_1877>
     dwc:class "Demospongiae" ;
     dwc:family "Thorectidae" ;
     dwc:kingdom "Animalia" ;
@@ -30,44 +49,50 @@
     dwc:rank "subFamily" ;
     dwc:scientificNameAuthorship "HYATT, 1877" ;
     dwc:subFamily "Phyllospongiinae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/84KVS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllospongiinae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/THORECTIDAE_Bergquist_1978>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/THORECTIDAE> ;
-    dwc:ID-CoL "84KVS" ;
+<http://taxon-name.plazi.org/id/Animalia/Thorectidae>
     dwc:class "Demospongiae" ;
     dwc:family "Thorectidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dictyoceratida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "family" ;
-    dwc:scientificNameAuthorship "BERGQUIST, 1978" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dictyoceratida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dictyoceratida>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dictyoceratida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Porifera>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dictyoceratida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dictyoceratida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/PHYLLOSPONGIINAE>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thorectidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Phyllospongiinae>
     dwc:class "Demospongiae" ;
     dwc:family "Thorectidae" ;
     dwc:kingdom "Animalia" ;
@@ -75,29 +100,5 @@
     dwc:phylum "Porifera" ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Phyllospongiinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thorectidae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/THORECTIDAE>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dictyoceratida> ;
-    dwc:class "Demospongiae" ;
-    dwc:family "Thorectidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dictyoceratida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03EB87F3FFB1FFD9FC05FEB0FA9EFE04>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/THORECTIDAE_Bergquist_1978> ;
-    trt:publishedIn <http://publication.plazi.org/id/FFD2FF8BFFB4FFDCFF8FFFC4FFF1FFBD> ;
-    dc:creator "Fromont, Jane", "Gomez, Oliver", "Prada, Diana", "Wahab, Muhammad Azmi Abdul", "Wilson, Nerida G." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/PHYLLOSPONGIINAE_Hyatt_1877> ;
-    a trt:Treatment .
-
