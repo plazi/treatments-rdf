@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0383CD7AFF80FFFAD790FDA537B3F8D2
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3602924>, <http://dx.doi.org/10.5281/zenodo.3603004> ;
+    dc:creator "Siewert, Ricardo Russo; Mielke, Olaf Hermann Hendrik; Casagrande, Mirna Martins" ;
+    dc:title "Telemiades centrites" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0383CD7AFF80FFFAD790FDA537B3F8D2.mc.3B427631FF80FFFAD6BCF94C37B7F8D2> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Telemiades_centrites_Hewitson_1870> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Telegonus_centrites>, <http://taxon-name.plazi.org/id/Animalia/Thymele_centrites>, <http://taxon-name.plazi.org/id/Animalia/Astraptes_centrites>, <http://taxon-name.plazi.org/id/Animalia/Telemiades_centrites_centrites>, <http://taxon-name.plazi.org/id/Animalia/Atlas>, <http://taxon-name.plazi.org/id/Animalia/Telemiades_centrides> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4721.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4721.1.1>
-    dc:creator "Casagrande, Mirna Martins", "Mielke, Olaf Hermann Hendrik", "Siewert, Ricardo Russo" ;
-    dc:date "2020" ;
-    dc:title "Taxonomic revision of the Neotropical genus Telemiades Hübner, [1819] (Lepidoptera: Hesperiidae: Eudaminae), with descriptions of fourteen new species" ;
     bibo:endPage "111" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-01-09" ;
     bibo:startPage "1" ;
     bibo:volume "4721" ;
+    dc:creator "Siewert, Ricardo Russo; Mielke, Olaf Hermann Hendrik; Casagrande, Mirna Martins" ;
+    dc:date "2020" ;
+    dc:title "Taxonomic revision of the Neotropical genus Telemiades Hübner, [1819] (Lepidoptera: Hesperiidae: Eudaminae), with descriptions of fourteen new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3602924>, <http://dx.doi.org/10.5281/zenodo.3603004> ;
     a fabio:JournalArticle .
 
@@ -32,9 +43,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/3603004/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/0383CD7AFF80FFFAD790FDA537B3F8D2.mc.3B427631FF80FFFAD6BCF94C37B7F8D2>
+    dwc:collectionCode "NHMUK" ;
+    dwc:locality "ECUADOR" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2545463192" ;
+    trt:httpUri <https://treatment.plazi.org/id/0383CD7AFF80FFFAD790FDA537B3F8D2#3B427631FF80FFFAD6BCF94C37B7F8D2> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Telemiades_centrites_Hewitson_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telemiades_centrites> ;
-    dwc:ID-CoL "555SX" ;
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Telemiades" ;
@@ -42,51 +59,62 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Hewitson, 1870)" ;
+    dwc:scientificNameAuthorship "(Hewitson, 1870)", "Hewitson, 1870" ;
     dwc:species "centrites" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/555SX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telemiades_centrites> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hesperiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eudamus_centrites_Hewitson_1870>
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
+    dwc:genus "Eudamus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hewitson, 1870", "Hewitson, 1870 Siewert, Mielke & Casagrande" ;
+    dwc:species "centrites" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eudamus_centrites> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Telegonus_Kirby_1877>
     dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Telegonus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kirby, 1877" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telegonus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Telemiades>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Thymele_Godman_1893>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Thymele" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Godman & Salvin, 1893" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thymele> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Astraptes_Hayward_1947>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Astraptes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Hayward, 1947" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Astraptes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Telemiades_Mabille_1878>
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Telemiades" ;
@@ -94,10 +122,37 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Mabille, 1878" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telemiades> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Astraptes_anaphus_Cramer_1777>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Astraptes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Cramer, 1777)" ;
+    dwc:species "anaphus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Astraptes_anaphus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Astraptes_phalaecus_Godman_1893>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Astraptes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Godman & Salvin, 1893))" ;
+    dwc:species "phalaecus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Astraptes_phalaecus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Telemiades_centrites>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Telemiades> ;
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Telemiades" ;
@@ -106,13 +161,135 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "centrites" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Telemiades> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0383CD7AFF80FFFAD790FDA537B3F8D2>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Telemiades_centrites_Hewitson_1870> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/83/CD/Astraptes_centrites>, <file:///workdir/tmprdf/data/03/83/CD/Atlas>, <file:///workdir/tmprdf/data/03/83/CD/Telegonus_centrites>, <file:///workdir/tmprdf/data/03/83/CD/Telemiades_centrides>, <file:///workdir/tmprdf/data/03/83/CD/Telemiades_centrites_centrites>, <file:///workdir/tmprdf/data/03/83/CD/Thymele_centrites> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4721.1.1> ;
-    dc:creator "Casagrande, Mirna Martins", "Mielke, Olaf Hermann Hendrik", "Siewert, Ricardo Russo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3602924>, <http://dx.doi.org/10.5281/zenodo.3603004> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Telemiades>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Telemiades" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hesperiidae>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudamus_centrites>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Eudamus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "centrites" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudamus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudamus>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Eudamus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Telegonus>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Telegonus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thymele>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Thymele" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Astraptes>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Astraptes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Astraptes_anaphus>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Astraptes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "anaphus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Astraptes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Astraptes_phalaecus>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Astraptes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "phalaecus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Astraptes> ;
+    a dwcFP:TaxonName .
