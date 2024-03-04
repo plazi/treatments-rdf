@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03ACCF40BF3AFFC77BA1F707F7BCDF51
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Canis_Linnaeus_1758>, <http://dx.doi.org/10.5281/zenodo.6331235> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Chrysocyon brachyurus Illiger 1815" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chrysocyon_brachyurus_Illiger_1815> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6331155> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6331155>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2009" ;
-    dc:title "Canidae" ;
     bibo:endPage "446" ;
     bibo:startPage "352" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2009" ;
+    dc:title "Canidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6331235> ;
     a fabio:BookSection .
 
@@ -23,20 +33,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6331235/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Canis_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Canis> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Canidae" ;
-    dwc:genus "Canis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Illiger, 1815" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Chrysocyon_brachyurus_Illiger_1815>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysocyon_brachyurus> ;
     dwc:authority "Wilson, 2009" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2009" ;
@@ -47,26 +44,12 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Illiger, 1815" ;
     dwc:species "brachyurus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysocyon_brachyurus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Canidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Canidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Canis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Canis_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:genus "Canis" ;
@@ -74,26 +57,11 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Illiger, 1815", "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Canis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chrysocyon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Chrysocyon_Smith_1839>
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:genus "Chrysocyon" ;
@@ -101,10 +69,33 @@
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "C. E. H. Smith, 1839" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysocyon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Caviidae_Waldheim_1817>
+    dwc:class "Mammalia" ;
+    dwc:family "Caviidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Fischer de Waldheim, 1817" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Caviidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dasypodidae_Gray_1821>
+    dwc:class "Mammalia" ;
+    dwc:family "Dasypodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cingulata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Gray, 1821" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dasypodidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysocyon_brachyurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysocyon> ;
     dwc:class "Mammalia" ;
     dwc:family "Canidae" ;
     dwc:genus "Chrysocyon" ;
@@ -113,20 +104,104 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "brachyurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysocyon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysocyon>
+    dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:genus "Chrysocyon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Canidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03ACCF40BF3AFFC77BA1F707F7BCDF51>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chrysocyon_brachyurus_Illiger_1815> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6331155> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6331235>, <http://taxon-concept.plazi.org/id/Animalia/Canis_Linnaeus_1758> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Canis>
+    dwc:class "Mammalia" ;
+    dwc:family "Canidae" ;
+    dwc:genus "Canis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Canidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Caviidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Caviidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dasypodidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Dasypodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cingulata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cingulata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cingulata>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cingulata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .

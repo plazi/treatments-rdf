@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.12651/JSR.2015.4.1.001>
-    dc:creator "Blakemore, Robert J.", "Lee, Seunghan", "Seo, Hong-Yul" ;
-    dc:date "2015" ;
-    dc:title "Account of montane and insular speciation in some Korean megadriles (Annelida: Oligochaeta)" ;
+treatment:03ACEB12FFE1F560FF0D0CE7FAAFCFBC
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8135084> ;
+    dc:creator "Blakemore, Robert J.; Lee, Seunghan; Seo, Hong-Yul" ;
+    dc:title "Amynthas bangtaesan subsp. bangtaesan Blakemore" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03ACEB12FFE1F560FF0D0CE7FAAFCFBC.mc.3B6D5059FFE1F560FE860B47FD03CA9B> ;
+    trt:publishedIn <http://dx.doi.org/10.12651/jsr.2015.4.1.001> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan_bangtaesan> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.12651/jsr.2015.4.1.001>
     bibo:endPage "22" ;
     bibo:issue "1" ;
     bibo:journal "Journal of Species Research" ;
     bibo:pubDate "2015-02-28" ;
     bibo:startPage "1" ;
     bibo:volume "4" ;
+    dc:creator "Blakemore, Robert J.; Lee, Seunghan; Seo, Hong-Yul" ;
+    dc:date "2015" ;
+    dc:title "Account of montane and insular speciation in some Korean megadriles (Annelida: Oligochaeta)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8135084> ;
     a fabio:JournalArticle .
 
@@ -27,24 +37,40 @@
     fabio:hasRepresentation "https://zenodo.org/record/8135084/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://tb.plazi.org/GgServer/dwcaRecords/03ACEB12FFE1F560FF0D0CE7FAAFCFBC.mc.3B6D5059FFE1F560FE860B47FD03CA9B>
+    dwc:catalogNumber "IV0000261300" ;
+    dwc:collectionCode "IV" ;
+    dwc:locality "Bangtaesan Mt." ;
+    dwc:recordedBy "Dr H. - Y. & H. - Y. Seo" ;
+    trt:httpUri <https://treatment.plazi.org/id/03ACEB12FFE1F560FF0D0CE7FAAFCFBC#3B6D5059FFE1F560FE860B47FD03CA9B> ;
+    a dwc:MaterialCitation .
 
-<http://taxon-name.plazi.org/id/Animalia/Amynthas>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megascolecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Amynthas_chiakensis_Hong_2013>
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:genus "Amynthas" ;
+    dwc:isUncertain "true" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opisthopora" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hong & James, 2013" ;
+    dwc:species "chiakensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amynthas_chiakensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas> ;
+<http://taxon-concept.plazi.org/id/Animalia/Megascolecidae_Rosa_1891>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Rosa, 1891" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Megascolecidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amynthas_gucheonensis_Song_1970>
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:genus "Amynthas" ;
@@ -52,11 +78,38 @@
     dwc:order "Opisthopora" ;
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
-    dwc:species "bangtaesan" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Song & Paik, 1970" ;
+    dwc:species "gucheonensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amynthas_gucheonensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amynthas_vittatus_Goto_1898>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Goto & Hatai, 1898)" ;
+    dwc:species "vittatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amynthas_vittatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amynthas_tappensis_Ohfuchi_1935>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Ohfuchi, 1935)" ;
+    dwc:species "tappensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amynthas_tappensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan_bangtaesan>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan> ;
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:genus "Amynthas" ;
@@ -66,54 +119,115 @@
     dwc:rank "subSpecies" ;
     dwc:species "bangtaesan" ;
     dwc:subSpecies "bangtaesan" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Annelida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Clitellata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+<http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan>
     dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "bangtaesan" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amynthas>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megascolecidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Megascolecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisthopora> ;
     dwc:class "Clitellata" ;
     dwc:family "Megascolecidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opisthopora" ;
     dwc:phylum "Annelida" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisthopora> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Opisthopora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
     dwc:class "Clitellata" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opisthopora" ;
     dwc:phylum "Annelida" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03ACEB12FFE1F560FF0D0CE7FAAFCFBC>
-    trt:publishedIn <http://dx.doi.org/10.12651/jsr.2015.4.1.001> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Amynthas_bangtaesan_bangtaesan> ;
-    dc:creator "Blakemore, Robert J.", "Lee, Seunghan", "Seo, Hong-Yul" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8135084> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03ACEB12FFE1F560FF0D0CE7FAAFCFBC/IV0000261300> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Clitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03ACEB12FFE1F560FF0D0CE7FAAFCFBC/IV0000261300>
-    dwc:catalogNumber "IV0000261300" ;
-    dwc:collectionCode "IV" ;
-    dwc:locality "Bangtaesan Mt." ;
-    dwc:recordedBy "Dr H. - Y. & H. - Y. Seo" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amynthas_chiakensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "chiakensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amynthas_gucheonensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "gucheonensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amynthas_vittatus>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "vittatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amynthas_tappensis>
+    dwc:class "Clitellata" ;
+    dwc:family "Megascolecidae" ;
+    dwc:genus "Amynthas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opisthopora" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "tappensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amynthas> ;
+    a dwcFP:TaxonName .
