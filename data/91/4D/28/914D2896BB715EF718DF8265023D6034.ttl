@@ -1,46 +1,49 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///workdir/tmprdf/data/91/4D/28/914D2896BB715EF718DF8265023D6034.rdf>
-    dc:description "Figure 1. Argogorytes matangensis (F. Smith), female: a scutellum (arrows indicate scutellar fossa) b mesopleuron c left wings d pygidial plate e gaster in dorsal view.", "Figure 2. Collecting localities of Argogorytes matangensis (F. Smith)." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/11142", "https://binary.pensoft.net/fig/11143" ;
-    a fabio:Figure .
+treatment:914D2896BB715EF718DF8265023D6034
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/Astatinae_Fargeau_1845>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/Bembicinae_Latreille_1802>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/Gorytini_Lepeletier_1845>' due to issues with rank ;
+    cito:cites <https://binary.pensoft.net/fig/11142>, <https://binary.pensoft.net/fig/11143> ;
+    dc:creator "Pulawski, Wojciech J." ;
+    dc:title "Argogorytes matangensis" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Argogorytes_matangensis> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Gorytes_matangensis_Turner_1914>, <http://taxon-concept.plazi.org/id/Animalia/Malaygorytes_konishii_Nemkov_1999>, <http://taxon-concept.plazi.org/id/Animalia/Argogorytes_konishii_Nemkov_1999> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.29.869> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Argogorytes_matangensis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.29.869>
-    dc:creator "Pulawski, Wojciech J." ;
-    dc:date "2011" ;
-    dc:title "Two new synonyms in Oriental Crabronidae (Hymenoptera)" ;
     bibo:endPage "7" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2011-02-08" ;
     bibo:startPage "1" ;
     bibo:volume "20" ;
-    fabio:hasPart <file:///workdir/tmprdf/data/91/4D/28/914D2896BB715EF718DF8265023D6034.rdf> ;
+    dc:creator "Pulawski, Wojciech J." ;
+    dc:date "2011" ;
+    dc:title "Two new synonyms in Oriental Crabronidae (Hymenoptera)" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/11142>, <https://binary.pensoft.net/fig/11143> ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Argogorytes_konishii_Nemkov_1999>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Argogorytes_konishii> ;
-    dwc:class "Insecta" ;
-    dwc:family "Crabronidae" ;
-    dwc:genus "Argogorytes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Nemkov, 1999" ;
-    dwc:species "konishii" ;
-    a dwcFP:TaxonConcept .
+<https://binary.pensoft.net/fig/11142>
+    dc:description "Figure 1. Argogorytes matangensis (F. Smith), female: a scutellum (arrows indicate scutellar fossa) b mesopleuron c left wings d pygidial plate e gaster in dorsal view." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/11142" ;
+    a fabio:Figure .
+
+<https://binary.pensoft.net/fig/11143>
+    dc:description "Figure 2. Collecting localities of Argogorytes matangensis (F. Smith)." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/11143" ;
+    a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Gorytes_matangensis_Turner_1914>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gorytes_matangensis> ;
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
     dwc:genus "Gorytes" ;
@@ -50,10 +53,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "R. Turner, 1914" ;
     dwc:species "matangensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gorytes_matangensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Astatinae_Fargeau_1845>
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Lepeletier de Saint Fargeau, 1845" ;
+    dwc:subFamily "Astatinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Astatinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bembicinae_Latreille_1802>
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    dwc:subFamily "Bembicinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bembicinae> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Malaygorytes_konishii_Nemkov_1999>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Malaygorytes_konishii> ;
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
     dwc:genus "Malaygorytes" ;
@@ -63,26 +80,43 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Nemkov, 1999" ;
     dwc:species "konishii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Malaygorytes_konishii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Argogorytes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Argogorytes_konishii_Nemkov_1999>
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
     dwc:genus "Argogorytes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Nemkov, 1999" ;
+    dwc:species "konishii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Argogorytes_konishii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gorytini_Lepeletier_1845>
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Lepeletier, 1845" ;
+    dwc:tribe "Gorytini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gorytini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Argogorytes_fuliginosus_Tsuneki_1968>
+    dwc:class "Insecta" ;
+    dwc:family "Crabronidae" ;
+    dwc:genus "Argogorytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tsuneki, 1968" ;
+    dwc:species "fuliginosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Argogorytes_fuliginosus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Argogorytes_matangensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Argogorytes> ;
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
     dwc:genus "Argogorytes" ;
@@ -91,55 +125,95 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "matangensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Argogorytes> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Argogorytes>
+    dwc:class "Insecta" ;
+    dwc:family "Crabronidae" ;
+    dwc:genus "Argogorytes" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Crabronidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Malaygorytes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gorytes_matangensis>
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
-    dwc:genus "Malaygorytes" ;
+    dwc:genus "Gorytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "matangensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gorytes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gorytes>
+    dwc:class "Insecta" ;
+    dwc:family "Crabronidae" ;
+    dwc:genus "Gorytes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Astatinae>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Astatinae" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bembicinae>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Bembicinae" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Malaygorytes_konishii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malaygorytes> ;
     dwc:class "Insecta" ;
     dwc:family "Crabronidae" ;
     dwc:genus "Malaygorytes" ;
@@ -148,14 +222,46 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "konishii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malaygorytes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/914D2896BB715EF718DF8265023D6034>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/91/4D/28/Argogorytes_matangensis> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Argogorytes_konishii_Nemkov_1999>, <http://taxon-concept.plazi.org/id/Animalia/Gorytes_matangensis_Turner_1914>, <http://taxon-concept.plazi.org/id/Animalia/Malaygorytes_konishii_Nemkov_1999> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.29.869> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Argogorytes_matangensis> ;
-    dc:creator "Pulawski, Wojciech J." ;
-    cito:cites <file:///workdir/tmprdf/data/91/4D/28/914D2896BB715EF718DF8265023D6034.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Malaygorytes>
+    dwc:class "Insecta" ;
+    dwc:family "Crabronidae" ;
+    dwc:genus "Malaygorytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crabronidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Argogorytes_konishii>
+    dwc:class "Insecta" ;
+    dwc:family "Crabronidae" ;
+    dwc:genus "Argogorytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "konishii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Argogorytes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gorytini>
+    # Warning: Could not determine parent name ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Gorytini" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Argogorytes_fuliginosus>
+    dwc:class "Insecta" ;
+    dwc:family "Crabronidae" ;
+    dwc:genus "Argogorytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fuliginosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Argogorytes> ;
+    a dwcFP:TaxonName .
