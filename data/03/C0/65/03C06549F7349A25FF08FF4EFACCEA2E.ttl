@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C06549F7349A25FF08FF4EFACCEA2E
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/depressa_Foissner_1989>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.245716> ;
+    dc:creator "Yang, Caiting; Liu, An; Xu, Yusen; Xu, Yuan; Fan, Xinpeng; Al-Farraj, Saleh A.; Ni, Bing; Gu, Fukang" ;
+    dc:title "Rigidohymena inquieta (Stokes, 1887) Berger 2011" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Protozoa/Rigidohymena_inquieta_Berger_2011> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena_inquieta>, <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena_candens>, <http://taxon-name.plazi.org/id/Protozoa/Cyrtohymena_candens>, <http://taxon-name.plazi.org/id/Protozoa/Cyrtohymena>, <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena>, <http://taxon-name.plazi.org/id/Protozoa/Pattersoniella_vitiphila>, <http://taxon-name.plazi.org/id/Protozoa/Notohymena_australis>, <http://taxon-name.plazi.org/id/Protozoa/Cyrtohymena_australis> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4000.4.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4000.4.4>
-    dc:creator "Al-Farraj, Saleh A.", "Fan, Xinpeng", "Gu, Fukang", "Liu, An", "Ni, Bing", "Xu, Yuan", "Xu, Yusen", "Yang, Caiting" ;
-    dc:date "2015" ;
-    dc:title "Phylogenetic positions of four hypotrichous ciliates (Protista, Ciliophora) based on SSU rRNA gene, with notes on their morphological characters" ;
     bibo:endPage "463" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "451" ;
     bibo:volume "4000" ;
+    dc:creator "Yang, Caiting; Liu, An; Xu, Yusen; Xu, Yuan; Fan, Xinpeng; Al-Farraj, Saleh A.; Ni, Bing; Gu, Fukang" ;
+    dc:date "2015" ;
+    dc:title "Phylogenetic positions of four hypotrichous ciliates (Protista, Ciliophora) based on SSU rRNA gene, with notes on their morphological characters" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.245716> ;
     a fabio:JournalArticle .
 
@@ -27,7 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Protozoa/Rigidohymena_inquieta_Berger_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena_inquieta> ;
     dwc:class "Hypotrichea" ;
     dwc:family "Oxytrichidae" ;
     dwc:genus "Rigidohymena" ;
@@ -37,60 +47,14 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Stokes, 1887) Berger, 2011" ;
     dwc:species "inquieta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena_inquieta> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Protozoa>
-    dwc:kingdom "Protozoa" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Protozoa/Ciliophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa> ;
-    dwc:kingdom "Protozoa" ;
-    dwc:phylum "Ciliophora" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Protozoa/Hypotrichea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Ciliophora> ;
-    dwc:class "Hypotrichea" ;
-    dwc:kingdom "Protozoa" ;
-    dwc:phylum "Ciliophora" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Protozoa/Oxytrichida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Hypotrichea> ;
-    dwc:class "Hypotrichea" ;
-    dwc:kingdom "Protozoa" ;
-    dwc:order "Oxytrichida" ;
-    dwc:phylum "Ciliophora" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Protozoa/Oxytrichidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Oxytrichida> ;
-    dwc:class "Hypotrichea" ;
-    dwc:family "Oxytrichidae" ;
-    dwc:kingdom "Protozoa" ;
-    dwc:order "Oxytrichida" ;
-    dwc:phylum "Ciliophora" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Protozoa/Rigidohymena>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Oxytrichidae> ;
-    dwc:class "Hypotrichea" ;
-    dwc:family "Oxytrichidae" ;
-    dwc:genus "Rigidohymena" ;
-    dwc:kingdom "Protozoa" ;
-    dwc:order "Oxytrichida" ;
-    dwc:phylum "Ciliophora" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/depressa_Foissner_1989>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena_inquieta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena> ;
     dwc:class "Hypotrichea" ;
     dwc:family "Oxytrichidae" ;
     dwc:genus "Rigidohymena" ;
@@ -99,13 +63,61 @@
     dwc:phylum "Ciliophora" ;
     dwc:rank "species" ;
     dwc:species "inquieta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Rigidohymena> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C06549F7349A25FF08FF4EFACCEA2E>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Protozoa/Rigidohymena_inquieta_Berger_2011> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/C0/65/Cyrtohymena>, <file:///workdir/tmprdf/data/03/C0/65/Cyrtohymena_australis>, <file:///workdir/tmprdf/data/03/C0/65/Cyrtohymena_candens>, <file:///workdir/tmprdf/data/03/C0/65/Notohymena_australis>, <file:///workdir/tmprdf/data/03/C0/65/Pattersoniella_vitiphila>, <file:///workdir/tmprdf/data/03/C0/65/Rigidohymena>, <file:///workdir/tmprdf/data/03/C0/65/Rigidohymena_candens>, <file:///workdir/tmprdf/data/03/C0/65/Rigidohymena_inquieta> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4000.4.4> ;
-    dc:creator "Al-Farraj, Saleh A.", "Fan, Xinpeng", "Gu, Fukang", "Liu, An", "Ni, Bing", "Xu, Yuan", "Xu, Yusen", "Yang, Caiting" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.245716> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Protozoa/Rigidohymena>
+    dwc:class "Hypotrichea" ;
+    dwc:family "Oxytrichidae" ;
+    dwc:genus "Rigidohymena" ;
+    dwc:kingdom "Protozoa" ;
+    dwc:order "Oxytrichida" ;
+    dwc:phylum "Ciliophora" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Oxytrichidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Protozoa/Oxytrichidae>
+    dwc:class "Hypotrichea" ;
+    dwc:family "Oxytrichidae" ;
+    dwc:kingdom "Protozoa" ;
+    dwc:order "Oxytrichida" ;
+    dwc:phylum "Ciliophora" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Oxytrichida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Protozoa/Oxytrichida>
+    dwc:class "Hypotrichea" ;
+    dwc:kingdom "Protozoa" ;
+    dwc:order "Oxytrichida" ;
+    dwc:phylum "Ciliophora" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Hypotrichea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Protozoa/Hypotrichea>
+    dwc:class "Hypotrichea" ;
+    dwc:kingdom "Protozoa" ;
+    dwc:phylum "Ciliophora" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa/Ciliophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Protozoa/Ciliophora>
+    dwc:kingdom "Protozoa" ;
+    dwc:phylum "Ciliophora" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Protozoa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Protozoa>
+    dwc:kingdom "Protozoa" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/depressa>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "depressa" ;
+    a dwcFP:TaxonName .
