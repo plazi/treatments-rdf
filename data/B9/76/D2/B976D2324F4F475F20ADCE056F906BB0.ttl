@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B976D2324F4F475F20ADCE056F906BB0
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/maritimus_(Liro_1951>' due to issues with rank ;
+    cito:cites <http://taxon-concept.plazi.org/id/Plantae/Lyriomyza_augustifolius_(Houard_1909>, <http://dx.doi.org/10.5281/zenodo.188045>, <http://dx.doi.org/10.5281/zenodo.188046> ;
+    dc:creator "Knihinicki, Danuta K.; Mccarren, Kathryn L.; Scott, John K." ;
+    dc:title "Aceria sonchi Nalepa 1902" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aceria_sonchi_Nalepa_1902> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Aceria_sonchi>, <http://taxon-name.plazi.org/id/Plantae/Sonchus_maritimus>, <http://taxon-name.plazi.org/id/Plantae/Sonchus_arvensis> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.188042> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.188042>
-    dc:creator "Knihinicki, Danuta K.", "Mccarren, Kathryn L.", "Scott, John K." ;
-    dc:date "2009" ;
-    dc:title "A new species of Aceria (Acari: Eriophyidae) damaging sowthistles, Sonchus spp. (Asteraceae), in Australia with notes on Aceria sonchi (Nalepa, 1902)" ;
     bibo:endPage "38" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "23" ;
     bibo:volume "2119" ;
+    dc:creator "Knihinicki, Danuta K.; Mccarren, Kathryn L.; Scott, John K." ;
+    dc:date "2009" ;
+    dc:title "A new species of Aceria (Acari: Eriophyidae) damaging sowthistles, Sonchus spp. (Asteraceae), in Australia with notes on Aceria sonchi (Nalepa, 1902)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.188045>, <http://dx.doi.org/10.5281/zenodo.188046> ;
     a fabio:JournalArticle .
 
@@ -31,7 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Aceria_sonchi_Nalepa_1902>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aceria_sonchi> ;
     dwc:class "Arachnida" ;
     dwc:family "Eriophyidae" ;
     dwc:genus "Aceria" ;
@@ -41,10 +51,39 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Nalepa, 1902" ;
     dwc:species "sonchi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aceria_sonchi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Plantae/Lyriomyza__augustifolius_%2528Houard_1909>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Lyriomyza__augustifolius> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eriophyes_sonchi_Knihinicki_2009>
+    dwc:class "Arachnida" ;
+    dwc:family "Eriophyidae" ;
+    dwc:genus "Eriophyes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sonchi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eriophyes_sonchi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eriophyes_sonchi_Nal._1904>
+    dwc:class "Arachnida" ;
+    dwc:family "Eriophyidae" ;
+    dwc:genus "Eriophyes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Nal. 1904" ;
+    dwc:species "sonchi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eriophyes_sonchi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/maritimus_(Liro_1951>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Lyriomyza_augustifolius_(Houard_1909>
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Lyriomyza" ;
@@ -54,26 +93,10 @@
     dwc:rank "variety" ;
     dwc:scientificNameAuthorship "Bisch. (Houard 1909)" ;
     dwc:variety "augustifolius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Lyriomyza_augustifolius> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aceria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eriophyidae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Eriophyidae" ;
-    dwc:genus "Aceria" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Prostigmata" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Aceria_sonchi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aceria> ;
     dwc:class "Arachnida" ;
     dwc:family "Eriophyidae" ;
     dwc:genus "Aceria" ;
@@ -82,43 +105,89 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "sonchi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aceria> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Aceria>
     dwc:class "Arachnida" ;
+    dwc:family "Eriophyidae" ;
+    dwc:genus "Aceria" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eriophyidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Eriophyidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostigmata> ;
     dwc:class "Arachnida" ;
     dwc:family "Eriophyidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostigmata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Prostigmata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
     dwc:class "Arachnida" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Lyriomyza__augustifolius>
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eriophyes_sonchi>
+    dwc:class "Arachnida" ;
+    dwc:family "Eriophyidae" ;
+    dwc:genus "Eriophyes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sonchi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eriophyes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eriophyes>
+    dwc:class "Arachnida" ;
+    dwc:family "Eriophyidae" ;
+    dwc:genus "Eriophyes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eriophyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/maritimus>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "maritimus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lyriomyza_augustifolius>
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Lyriomyza" ;
@@ -127,13 +196,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "variety" ;
     dwc:variety "augustifolius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lyriomyza> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B976D2324F4F475F20ADCE056F906BB0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aceria_sonchi_Nalepa_1902> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/B9/76/D2/Aceria_sonchi>, <file:///workdir/tmprdf/data/B9/76/D2/Sonchus_arvensis>, <file:///workdir/tmprdf/data/B9/76/D2/Sonchus_maritimus> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.188042> ;
-    dc:creator "Knihinicki, Danuta K.", "Mccarren, Kathryn L.", "Scott, John K." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.188045>, <http://dx.doi.org/10.5281/zenodo.188046>, <http://taxon-concept.plazi.org/id/Plantae/Lyriomyza__augustifolius_%2528Houard_1909> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Lyriomyza>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Lyriomyza" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asteraceae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Asteraceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asterales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Asterales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
