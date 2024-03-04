@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03BD8781FFD3FE5BFF6B0EE9E48A0369
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7163855>, <http://dx.doi.org/10.5281/zenodo.7163857> ;
+    dc:creator "Rosa, P.; Lelej, A. S.; Proshchalykin, M. Yu.; Loktionov, V. M.; Mokrousov, M. V." ;
+    dc:title "Pseudomalus agnolii Rosa & Lelej & Proshchalykin & Loktionov & Mokrousov 2017, sp. n." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_agnolii_Rosa_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.25221/fee.345.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.25221/fee.345.1>
-    dc:creator "Lelej, A. S.", "Loktionov, V. M.", "Mokrousov, M. V.", "Proshchalykin, M. Yu.", "Rosa, P." ;
-    dc:date "2017" ;
-    dc:title "New records of Chrysididae (Hymenoptera) from Russia with description of five new species" ;
     bibo:endPage "33" ;
     bibo:journal "Far Eastern Entomologist" ;
     bibo:pubDate "2017-10-23" ;
     bibo:startPage "1" ;
     bibo:volume "345" ;
+    dc:creator "Rosa, P.; Lelej, A. S.; Proshchalykin, M. Yu.; Loktionov, V. M.; Mokrousov, M. V." ;
+    dc:date "2017" ;
+    dc:title "New records of Chrysididae (Hymenoptera) from Russia with description of five new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7163855>, <http://dx.doi.org/10.5281/zenodo.7163857> ;
     a fabio:JournalArticle .
 
@@ -32,7 +43,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_agnolii_Rosa_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_agnolii> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
     dwc:genus "Pseudomalus" ;
@@ -40,51 +50,25 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Rosa" ;
+    dwc:scientificNameAuthorship "Rosa", "Rosa & Lelej & Proshchalykin & Loktionov & Mokrousov, 2017" ;
     dwc:species "agnolii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_agnolii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chrysididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ellampus_grandis_Tsuneki_1950>
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
+    dwc:genus "Ellampus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Tsuneki, 1950)", "Tsuneki, 1950" ;
+    dwc:species "grandis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ellampus_grandis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudomalus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_Ashmead_1902>
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
     dwc:genus "Pseudomalus" ;
@@ -92,10 +76,76 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Ashmead, 1902" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_cupratus_Rosa_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Mocsary" ;
+    dwc:species "cupratus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_cupratus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_meridianus_Strumia_1996>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Strumia, 1996" ;
+    dwc:species "meridianus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_meridianus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_auratus_Linnaeus_1758>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Linnaeus, 1758)", "Linnaeus, 1758" ;
+    dwc:species "auratus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_auratus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_grandis_Tsuneki_1950>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Tsuneki)" ;
+    dwc:species "grandis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_grandis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_triangulifer_Perrin_1877>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Abeille de Perrin, 1877)", "Abeille de Perrin, 1877" ;
+    dwc:species "triangulifer" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_triangulifer> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pseudomalus_agnolii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysididae" ;
     dwc:genus "Pseudomalus" ;
@@ -104,12 +154,138 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "agnolii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03BD8781FFD3FE5BFF6B0EE9E48A0369>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudomalus_agnolii_Rosa_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.25221/fee.345.1> ;
-    dc:creator "Lelej, A. S.", "Loktionov, V. M.", "Mokrousov, M. V.", "Proshchalykin, M. Yu.", "Rosa, P." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7163855>, <http://dx.doi.org/10.5281/zenodo.7163857> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pseudomalus>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chrysididae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ellampus_grandis>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Ellampus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grandis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ellampus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ellampus>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Ellampus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudomalus_cupratus>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cupratus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudomalus_meridianus>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "meridianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudomalus_auratus>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "auratus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudomalus_grandis>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grandis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudomalus_triangulifer>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Pseudomalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "triangulifer" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomalus> ;
+    a dwcFP:TaxonName .
