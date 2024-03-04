@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CA2B87AB6C48FFA1FB7CEE719709CB6B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4597055> ;
+    dc:creator "Derycke, Claire; Goujet, Daniel" ;
+    dc:title "Tassiliodus Derycke & Goujet 2011, n. gen." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tassiliodus_Derycke_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/g2011n2a1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/g2011n2a1>
-    dc:creator "Derycke, Claire", "Goujet, Daniel" ;
-    dc:date "2011" ;
-    dc:title "Multicuspidate shark teeth associated with chondrichthyan and acanthodian scales from the Emsian (Devonian) of southern Algeria" ;
     bibo:endPage "226" ;
     bibo:issue "2" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2011-06-30" ;
     bibo:startPage "209" ;
     bibo:volume "33" ;
+    dc:creator "Derycke, Claire; Goujet, Daniel" ;
+    dc:date "2011" ;
+    dc:title "Multicuspidate shark teeth associated with chondrichthyan and acanthodian scales from the Emsian (Devonian) of southern Algeria" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4597055> ;
     a fabio:JournalArticle .
 
@@ -28,13 +37,13 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tassiliodus_Derycke_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tassiliodus> ;
     dwc:class "Chondrichthyes" ;
     dwc:genus "Tassiliodus" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "genus", "species" ;
     dwc:scientificNameAuthorship "Derycke & Goujet, 2011" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tassiliodus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tassiliodus>
@@ -43,12 +52,25 @@
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chondrichthyes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CA2B87AB6C48FFA1FB7CEE719709CB6B>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tassiliodus_Derycke_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/g2011n2a1> ;
-    dc:creator "Derycke, Claire", "Goujet, Daniel" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4597055> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chondrichthyes>
+    dwc:class "Chondrichthyes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
