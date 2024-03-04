@@ -1,26 +1,47 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0C0D87E0FF58FF92F8F27D76E917FBC8
+    dc:creator "Ineich, Ivan" ;
+    dc:title "Lamprophis virgatus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lamprophis_virgatus_Hallowell_1854> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Boaedon_virgatus_Villiers_1950> ;
+    trt:publishedIn <http://publication.plazi.org/id/F034FF98FF4BFF81F8007F58EB24FF9B> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/F034FF98FF4BFF81F8007F58EB24FF9B>
-    dc:creator "Ineich, Ivan" ;
-    dc:date "2003" ;
-    dc:title "Contribution à la connaissance de la biodiversité des régions afro-montagnardes: les Reptiles du mont Nimba" ;
     bibo:endPage "638" ;
     bibo:journal "Mémoires du Muséum national d'Histoire naturelle" ;
     bibo:startPage "597" ;
     bibo:volume "190" ;
+    dc:creator "Ineich, Ivan" ;
+    dc:date "2003" ;
+    dc:title "Contribution à la connaissance de la biodiversité des régions afro-montagnardes: les Reptiles du mont Nimba" ;
     a fabio:JournalArticle .
 
+<http://taxon-concept.plazi.org/id/Animalia/Lamprophis_virgatus_Hallowell_1854>
+    dwc:class "Reptilia" ;
+    dwc:family "Lamprophiidae" ;
+    dwc:genus "Lamprophis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Hallowell, 1854)", "Hallowell, 1854" ;
+    dwc:species "virgatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lamprophis_virgatus> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Boaedon_virgatus_Villiers_1950>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Boaedon_virgatus> ;
     dwc:class "Reptilia" ;
     dwc:family "Lamprophiidae" ;
     dwc:genus "Boaedon" ;
@@ -28,12 +49,26 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "¢ Villiers 1950: 48" ;
+    dwc:scientificNameAuthorship "¢ Villiers 1950: 48", "¢ Villiers, 1950" ;
     dwc:species "virgatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Boaedon_virgatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lamprophis_virgatus_Hallowell_1854>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lamprophis_virgatus> ;
+<http://taxon-concept.plazi.org/id/Animalia/Hemidactylus_fasciatus_fasciatus_Gray_1842>
+    dwc:class "Reptilia" ;
+    dwc:family "Gekkonidae" ;
+    dwc:genus "Hemidactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "fasciatus" ;
+    dwc:species "fasciatus" ;
+    dwc:subSpecies "fasciatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemidactylus_fasciatus_fasciatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamprophis_virgatus>
     dwc:class "Reptilia" ;
     dwc:family "Lamprophiidae" ;
     dwc:genus "Lamprophis" ;
@@ -41,34 +76,11 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Hallowell, 1854)" ;
     dwc:species "virgatus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lamprophiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Lamprophiidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamprophis> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Lamprophis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamprophiidae> ;
     dwc:class "Reptilia" ;
     dwc:family "Lamprophiidae" ;
     dwc:genus "Lamprophis" ;
@@ -76,41 +88,113 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamprophiidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Lamprophis_virgatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamprophis> ;
+<http://taxon-name.plazi.org/id/Animalia/Lamprophiidae>
     dwc:class "Reptilia" ;
     dwc:family "Lamprophiidae" ;
-    dwc:genus "Lamprophis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "virgatus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0C0D87E0FF58FF92F8F27D76E917FBC8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lamprophis_virgatus_Hallowell_1854> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Boaedon_virgatus_Villiers_1950> ;
-    trt:publishedIn <http://publication.plazi.org/id/F034FF98FF4BFF81F8007F58EB24FF9B> ;
-    dc:creator "Ineich, Ivan" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Boaedon_virgatus>
+    dwc:class "Reptilia" ;
+    dwc:family "Lamprophiidae" ;
+    dwc:genus "Boaedon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "virgatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Boaedon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Boaedon>
+    dwc:class "Reptilia" ;
+    dwc:family "Lamprophiidae" ;
+    dwc:genus "Boaedon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamprophiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemidactylus_fasciatus_fasciatus>
+    dwc:class "Reptilia" ;
+    dwc:family "Gekkonidae" ;
+    dwc:genus "Hemidactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "fasciatus" ;
+    dwc:subSpecies "fasciatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemidactylus_fasciatus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemidactylus_fasciatus>
+    dwc:class "Reptilia" ;
+    dwc:family "Gekkonidae" ;
+    dwc:genus "Hemidactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "fasciatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemidactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemidactylus>
+    dwc:class "Reptilia" ;
+    dwc:family "Gekkonidae" ;
+    dwc:genus "Hemidactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gekkonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gekkonidae>
+    dwc:class "Reptilia" ;
+    dwc:family "Gekkonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
+    a dwcFP:TaxonName .
