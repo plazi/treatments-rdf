@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6B72879EFF93FFC5FD6CFA7FA44CF92B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4605872>, <http://dx.doi.org/10.5281/zenodo.4605874>, <http://dx.doi.org/10.5281/zenodo.4605876> ;
+    dc:creator "Rodriguez, Ivana" ;
+    dc:title "Nicandra physalodes" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Nicandra_physalodes_HUNZIKER_1979> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4605860> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.4605860>
-    dc:creator "Rodriguez, Ivana" ;
-    dc:date "2000" ;
-    dc:title "Flower anatomy and morphology of Exodeconus maritimus (Solanaceae, Solaneae) and Nicandra physalodes (Solanaceae, Nicandreae): importance for their systematic relationships" ;
     bibo:endPage "199" ;
     bibo:issue "2" ;
     bibo:journal "Adansonia" ;
     bibo:series "3" ;
     bibo:startPage "187" ;
     bibo:volume "22" ;
+    dc:creator "Rodriguez, Ivana" ;
+    dc:date "2000" ;
+    dc:title "Flower anatomy and morphology of Exodeconus maritimus (Solanaceae, Solaneae) and Nicandra physalodes (Solanaceae, Nicandreae): importance for their systematic relationships" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4605872>, <http://dx.doi.org/10.5281/zenodo.4605874>, <http://dx.doi.org/10.5281/zenodo.4605876> ;
     a fabio:JournalArticle .
 
@@ -38,8 +47,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Plantae/Nicandra_physalodes_HUNZIKER_1979>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Nicandra_physalodes> ;
-    dwc:ID-CoL "749S3" ;
     dwc:authority "Rodriguez, 2000" ;
     dwc:authorityName "Rodriguez" ;
     dwc:authorityYear "2000" ;
@@ -50,24 +57,13 @@
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "HUNZIKER, 1979" ;
     dwc:species "physalodes" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/749S3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Nicandra_physalodes> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Nicandra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Nicandra_Adanson_1763>
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
     dwc:genus "Nicandra" ;
@@ -75,10 +71,11 @@
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Adanson, 1763" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Nicandra> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Nicandra_physalodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Nicandra> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
     dwc:genus "Nicandra" ;
@@ -87,38 +84,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "physalodes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Nicandra> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Nicandra>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Solanaceae" ;
+    dwc:genus "Nicandra" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Solanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Solanaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Solanales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6B72879EFF93FFC5FD6CFA7FA44CF92B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Nicandra_physalodes_HUNZIKER_1979> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4605860> ;
-    dc:creator "Rodriguez, Ivana" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4605872>, <http://dx.doi.org/10.5281/zenodo.4605874>, <http://dx.doi.org/10.5281/zenodo.4605876> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
