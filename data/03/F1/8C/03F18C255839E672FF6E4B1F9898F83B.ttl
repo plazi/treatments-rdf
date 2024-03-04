@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F18C255839E672FF6E4B1F9898F83B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.280408>, <http://dx.doi.org/10.5281/zenodo.280410> ;
+    dc:creator "Li, Zongxu; Framenau, Volker W.; Zhang, Zhi-Sheng" ;
+    dc:title "Artoria ligulacea Qu, Peng & Yin 2009, comb. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Artoria_ligulacea_Qu_2009> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hygrolycosa_ligulacea_Qu_2009> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.280404> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.280404>
-    dc:creator "Framenau, Volker W.", "Li, Zongxu", "Zhang, Zhi-Sheng" ;
-    dc:date "2012" ;
-    dc:title "First record of the wolf spider subfamily Artoriinae and the genus Artoria from China (Araneae: Lycosidae)" ;
     bibo:endPage "44" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "35" ;
     bibo:volume "3235" ;
+    dc:creator "Li, Zongxu; Framenau, Volker W.; Zhang, Zhi-Sheng" ;
+    dc:date "2012" ;
+    dc:title "First record of the wolf spider subfamily Artoriinae and the genus Artoria from China (Araneae: Lycosidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.280408>, <http://dx.doi.org/10.5281/zenodo.280410> ;
     a fabio:JournalArticle .
 
@@ -30,8 +40,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/280410/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Artoria_ligulacea_Qu_2009>
+    dwc:class "Arachnida" ;
+    dwc:family "Lycosidae" ;
+    dwc:genus "Artoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Qu, Peng & Yin, 2009" ;
+    dwc:species "ligulacea" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/H2BY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Artoria_ligulacea> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Hygrolycosa_ligulacea_Qu_2009>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hygrolycosa_ligulacea> ;
     dwc:class "Arachnida" ;
     dwc:family "Lycosidae" ;
     dwc:genus "Hygrolycosa" ;
@@ -41,50 +64,35 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Qu, Peng and Yin, 2009: 71" ;
     dwc:species "ligulacea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hygrolycosa_ligulacea> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Artoria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycosidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Artoria_howquaensis_Framenau_2002>
     dwc:class "Arachnida" ;
     dwc:family "Lycosidae" ;
     dwc:genus "Artoria" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Framenau, 2002" ;
+    dwc:species "howquaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Artoria_howquaensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hygrolycosa_Dahl_1908>
+    dwc:class "Arachnida" ;
+    dwc:family "Lycosidae" ;
+    dwc:genus "Hygrolycosa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Dahl, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hygrolycosa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Artoria_ligulacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artoria> ;
     dwc:class "Arachnida" ;
     dwc:family "Lycosidae" ;
     dwc:genus "Artoria" ;
@@ -93,23 +101,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ligulacea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artoria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Artoria>
+    dwc:class "Arachnida" ;
+    dwc:family "Lycosidae" ;
+    dwc:genus "Artoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycosidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Lycosidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Lycosidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F18C255839E672FF6E4B1F9898F83B>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hygrolycosa_ligulacea_Qu_2009> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.280404> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Artoria_ligulacea> ;
-    dc:creator "Framenau, Volker W.", "Li, Zongxu", "Zhang, Zhi-Sheng" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.280408>, <http://dx.doi.org/10.5281/zenodo.280410> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hygrolycosa_ligulacea>
+    dwc:class "Arachnida" ;
+    dwc:family "Lycosidae" ;
+    dwc:genus "Hygrolycosa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ligulacea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hygrolycosa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hygrolycosa>
+    dwc:class "Arachnida" ;
+    dwc:family "Lycosidae" ;
+    dwc:genus "Hygrolycosa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycosidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Artoria_howquaensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Lycosidae" ;
+    dwc:genus "Artoria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "howquaensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Artoria> ;
+    a dwcFP:TaxonName .
