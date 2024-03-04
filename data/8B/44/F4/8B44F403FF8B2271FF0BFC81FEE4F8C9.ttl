@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:8B44F403FF8B2271FF0BFC81FEE4F8C9
+    cito:cites <http://dx.doi.org/10.5281/zenodo.197824>, <http://dx.doi.org/10.5281/zenodo.197825>, <http://dx.doi.org/10.5281/zenodo.197826> ;
+    dc:creator "Ebert, David A.; White, William T.; Goldman, Kenneth J.; Compagno, Leonard J. V.; Daly, Toby S.; Engel, -; Ward, Robert D." ;
+    dc:title "Squalus suckleyi Girard 1854" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Squalus_suckleyi_Girard_1854> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_acanthias>, <http://taxon-name.plazi.org/id/Animalia/Squalus_suckleyi> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Spinax_suckleyi_Girard_1854>, <http://taxon-concept.plazi.org/id/Animalia/Spinax_suckleyi_Suckley_1860>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Girard_1858>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_mitsukurii_Tanaka_1908>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Gill_1862>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_wakiyae_Tanaka_1918> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.197823> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.197823>
-    dc:creator "Compagno, Leonard J. V.", "Daly, Toby S.", "Ebert, David A.", "Engel, -", "Goldman, Kenneth J.", "Ward, Robert D.", "White, William T." ;
-    dc:date "2010" ;
-    dc:title "Resurrection and redescription of Squalus suckleyi (Girard, 1854) from the North Pacific, with comments on the Squalus acanthias subgroup (Squaliformes: Squalidae)" ;
     bibo:endPage "40" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "22" ;
     bibo:volume "2612" ;
+    dc:creator "Ebert, David A.; White, William T.; Goldman, Kenneth J.; Compagno, Leonard J. V.; Daly, Toby S.; Engel, -; Ward, Robert D." ;
+    dc:date "2010" ;
+    dc:title "Resurrection and redescription of Squalus suckleyi (Girard, 1854) from the North Pacific, with comments on the Squalus acanthias subgroup (Squaliformes: Squalidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.197824>, <http://dx.doi.org/10.5281/zenodo.197825>, <http://dx.doi.org/10.5281/zenodo.197826> ;
     a fabio:JournalArticle .
 
@@ -35,8 +46,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/197826/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Squalus_suckleyi_Girard_1854>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Squalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Girard, 1854" ;
+    dwc:species "suckleyi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6ZFP3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_suckleyi> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Spinax_suckleyi_Girard_1854>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spinax_suckleyi> ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Spinax" ;
@@ -47,10 +71,10 @@
     dwc:scientificNameAuthorship "Girard, 1854" ;
     dwc:species "suckleyi" ;
     dwc:subGenus "Acanthias" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spinax_suckleyi> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Spinax_suckleyi_Suckley_1860>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spinax_suckleyi> ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Spinax" ;
@@ -60,53 +84,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Suckley, 1860" ;
     dwc:species "suckleyi" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Squalus_mitsukurii_Tanaka_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_mitsukurii> ;
-    dwc:ID-CoL "6ZFNC" ;
-    dwc:class "Elasmobranchii" ;
-    dwc:family "Squalidae" ;
-    dwc:genus "Squalus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squaliformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Tanaka, 1908" ;
-    dwc:species "mitsukurii" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Squalus_suckleyi_Girard_1854>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_suckleyi> ;
-    dwc:ID-CoL "6ZFP3" ;
-    dwc:class "Elasmobranchii" ;
-    dwc:family "Squalidae" ;
-    dwc:genus "Squalus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squaliformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Girard, 1854" ;
-    dwc:species "suckleyi" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Gill_1862>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_sucklii> ;
-    dwc:ID-CoL "8TNB" ;
-    dwc:class "Elasmobranchii" ;
-    dwc:family "Squalidae" ;
-    dwc:genus "Squalus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squaliformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Gill, 1862" ;
-    dwc:species "sucklii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spinax_suckleyi> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Girard_1858>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_sucklii> ;
-    dwc:ID-CoL "8TNB" ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Squalus" ;
@@ -116,11 +97,39 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Girard, 1858" ;
     dwc:species "sucklii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6ZFP3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_sucklii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Squalus_mitsukurii_Tanaka_1908>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Squalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tanaka, 1908" ;
+    dwc:species "mitsukurii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6ZFP3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_mitsukurii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Gill_1862>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Squalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gill, 1862" ;
+    dwc:species "sucklii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6ZFP3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_sucklii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Squalus_wakiyae_Tanaka_1918>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_wakiyae> ;
-    dwc:ID-CoL "6ZFRP" ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Squalus" ;
@@ -130,60 +139,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Tanaka, 1918" ;
     dwc:species "wakiyae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6ZFP3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_wakiyae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Elasmobranchii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Elasmobranchii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squaliformes> ;
-    dwc:class "Elasmobranchii" ;
-    dwc:family "Squalidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squaliformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squaliformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmobranchii> ;
-    dwc:class "Elasmobranchii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squaliformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squalus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalidae> ;
-    dwc:class "Elasmobranchii" ;
-    dwc:family "Squalidae" ;
-    dwc:genus "Squalus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squaliformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squalus_mitsukurii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
+<http://taxon-concept.plazi.org/id/Animalia/Squalus_acanthias_Fordham_2006>
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Squalus" ;
@@ -191,11 +151,64 @@
     dwc:order "Squaliformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "mitsukurii" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Fordham et al., 2006" ;
+    dwc:species "acanthias" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Squalus_acanthias> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Somniosus_pacificus_Bigelow_1944>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Somniosidae" ;
+    dwc:genus "Somniosus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bigelow & Schroeder, 1944" ;
+    dwc:species "pacificus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Somniosus_pacificus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lamna_ditropis_Hubbs_1947>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Lamnidae" ;
+    dwc:genus "Lamna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hubbs & Follet, 1947" ;
+    dwc:species "ditropis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lamna_ditropis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Somniosus_microcephalus_Bloch_1801>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Somniosidae" ;
+    dwc:genus "Somniosus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bloch & Schneider, 1801" ;
+    dwc:species "microcephalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Somniosus_microcephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lamna_nasus_Bonnaterre_1788>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Lamnidae" ;
+    dwc:genus "Lamna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bonnaterre, 1788" ;
+    dwc:species "nasus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lamna_nasus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Squalus_suckleyi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Squalus" ;
@@ -204,10 +217,96 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "suckleyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Squalus>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Squalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Squalidae>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squaliformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Squaliformes>
+    dwc:class "Elasmobranchii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmobranchii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmobranchii>
+    dwc:class "Elasmobranchii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spinax_suckleyi>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Spinax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "suckleyi" ;
+    dwc:subGenus "Acanthias" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spinax_Acanthias>, <http://taxon-name.plazi.org/id/Animalia/Spinax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spinax_Acanthias>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Spinax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Acanthias" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spinax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spinax>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Spinax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Squalus_sucklii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Squalus" ;
@@ -216,10 +315,22 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "sucklii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Squalus_mitsukurii>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Squalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "mitsukurii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Squalus_wakiyae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
     dwc:class "Elasmobranchii" ;
     dwc:family "Squalidae" ;
     dwc:genus "Squalus" ;
@@ -228,14 +339,116 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "wakiyae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/8B44F403FF8B2271FF0BFC81FEE4F8C9>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Squalus_suckleyi_Girard_1854> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/8B/44/F4/Squalus_acanthias>, <file:///workdir/tmprdf/data/8B/44/F4/Squalus_suckleyi> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Spinax_suckleyi_Girard_1854>, <http://taxon-concept.plazi.org/id/Animalia/Spinax_suckleyi_Suckley_1860>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_mitsukurii_Tanaka_1908>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Gill_1862>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_sucklii_Girard_1858>, <http://taxon-concept.plazi.org/id/Animalia/Squalus_wakiyae_Tanaka_1918> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.197823> ;
-    dc:creator "Compagno, Leonard J. V.", "Daly, Toby S.", "Ebert, David A.", "Engel, -", "Goldman, Kenneth J.", "Ward, Robert D.", "White, William T." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.197824>, <http://dx.doi.org/10.5281/zenodo.197825>, <http://dx.doi.org/10.5281/zenodo.197826> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Squalus_acanthias>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Squalidae" ;
+    dwc:genus "Squalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "acanthias" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squalus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Somniosus_pacificus>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Somniosidae" ;
+    dwc:genus "Somniosus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "pacificus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Somniosus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Somniosus>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Somniosidae" ;
+    dwc:genus "Somniosus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Somniosidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Somniosidae>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Somniosidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squaliformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamna_ditropis>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Lamnidae" ;
+    dwc:genus "Lamna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ditropis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamna> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamna>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Lamnidae" ;
+    dwc:genus "Lamna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamnidae>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Lamnidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamniformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamniformes>
+    dwc:class "Elasmobranchii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmobranchii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Somniosus_microcephalus>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Somniosidae" ;
+    dwc:genus "Somniosus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squaliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "microcephalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Somniosus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamna_nasus>
+    dwc:class "Elasmobranchii" ;
+    dwc:family "Lamnidae" ;
+    dwc:genus "Lamna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lamniformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "nasus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamna> ;
+    a dwcFP:TaxonName .
