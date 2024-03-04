@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F987FF9D13B83FFF60F96FFB18E52F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1301907> ;
+    dc:creator "Kury, Adriano B.; Machado, Glauco" ;
+    dc:title "Metibalonius triceratops Kury & Machado 2018" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Metibalonius_triceratops_Kury_2018> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trispinibunus_abnormis_Roewer_1915>, <http://taxon-concept.plazi.org/id/Animalia/Metibalonius_abnormis_Strand_1911> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4441.1.9> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4441.1.9>
-    dc:creator "Kury, Adriano B.", "Machado, Glauco" ;
-    dc:date "2018" ;
-    dc:title "Do the species with facies reclinobunoides make up a clade? - A new Lomanius (Opiliones, Podoctidae) from Vietnam and a discussion on its relationships" ;
     bibo:endPage "170" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-06-26" ;
     bibo:startPage "151" ;
     bibo:volume "4441" ;
+    dc:creator "Kury, Adriano B.; Machado, Glauco" ;
+    dc:date "2018" ;
+    dc:title "Do the species with facies reclinobunoides make up a clade? - A new Lomanius (Opiliones, Podoctidae) from Vietnam and a discussion on its relationships" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1301907> ;
     a fabio:JournalArticle .
 
@@ -27,22 +37,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/1301907/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Metibalonius_abnormis_Strand_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metibalonius_abnormis> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Podoctidae" ;
-    dwc:genus "Metibalonius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Opiliones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Strand, 1911)", "Strand, 1911" ;
-    dwc:species "abnormis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Metibalonius_triceratops_Kury_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metibalonius_triceratops> ;
-    dwc:ID-CoL "7X9H7" ;
     dwc:authority "Kury, 2018" ;
     dwc:authorityName "Kury" ;
     dwc:authorityYear "2018" ;
@@ -53,12 +48,13 @@
     dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kury & Machado, 2018" ;
     dwc:species "triceratops" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7X9H7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metibalonius_triceratops> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trispinibunus_abnormis_Roewer_1915>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trispinibunus_abnormis> ;
-    dwc:ID-CoL "7Z6FT" ;
     dwc:class "Arachnida" ;
     dwc:family "Podoctidae" ;
     dwc:genus "Trispinibunus" ;
@@ -66,32 +62,38 @@
     dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Roewer 1915: 46" ;
+    dwc:scientificNameAuthorship "Roewer 1915: 46", "Roewer, 1915" ;
     dwc:species "abnormis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7X9H7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trispinibunus_abnormis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Metibalonius_abnormis_Strand_1911>
     dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Metibalonius" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Strand, 1911", "(Strand, 1911)" ;
+    dwc:species "abnormis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metibalonius_abnormis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Trispinibunus_Roewer_1915>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Trispinibunus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Roewer, 1915" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trispinibunus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Metibalonius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoctidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Metibalonius_Roewer_1915>
     dwc:class "Arachnida" ;
     dwc:family "Podoctidae" ;
     dwc:genus "Metibalonius" ;
@@ -99,10 +101,36 @@
     dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Roewer, 1915" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metibalonius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ibalonius_abnormis_Strand_1911>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Ibalonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Strand, 1911" ;
+    dwc:species "abnormis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ibalonius_abnormis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Strandibalonius_Roewer_1912>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Strandibalonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Roewer, 1912" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Strandibalonius> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Metibalonius_triceratops>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metibalonius> ;
     dwc:class "Arachnida" ;
     dwc:family "Podoctidae" ;
     dwc:genus "Metibalonius" ;
@@ -111,40 +139,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "triceratops" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metibalonius> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Opiliones>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+<http://taxon-name.plazi.org/id/Animalia/Metibalonius>
     dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Metibalonius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoctidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Podoctidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opiliones> ;
     dwc:class "Arachnida" ;
     dwc:family "Podoctidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opiliones> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Trispinibunus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoctidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Opiliones>
     dwc:class "Arachnida" ;
-    dwc:family "Podoctidae" ;
-    dwc:genus "Trispinibunus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Opiliones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trispinibunus_abnormis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trispinibunus> ;
     dwc:class "Arachnida" ;
     dwc:family "Podoctidae" ;
     dwc:genus "Trispinibunus" ;
@@ -153,13 +201,62 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "abnormis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trispinibunus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03F987FF9D13B83FFF60F96FFB18E52F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Metibalonius_triceratops_Kury_2018> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Metibalonius_abnormis_Strand_1911>, <http://taxon-concept.plazi.org/id/Animalia/Trispinibunus_abnormis_Roewer_1915> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4441.1.9> ;
-    dc:creator "Kury, Adriano B.", "Machado, Glauco" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1301907> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trispinibunus>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Trispinibunus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoctidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Metibalonius_abnormis>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Metibalonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "abnormis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metibalonius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ibalonius_abnormis>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Ibalonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "abnormis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ibalonius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ibalonius>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Ibalonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoctidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Strandibalonius>
+    dwc:class "Arachnida" ;
+    dwc:family "Podoctidae" ;
+    dwc:genus "Strandibalonius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Opiliones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podoctidae> ;
+    a dwcFP:TaxonName .
