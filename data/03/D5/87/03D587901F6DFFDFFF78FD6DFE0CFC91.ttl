@@ -1,29 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D587901F6DFFDFFF78FD6DFE0CFC91
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Odynerus_biphaleratus_SAUSSURE_1852> ;
+    dc:creator "Gusenleitner, J." ;
+    dc:title "Ancistrocerus WESMAEL 1836" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ancistrocerus_WESMAEL_1836> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4526087> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.4526087>
-    dc:creator "Gusenleitner, J." ;
-    dc:date "2013" ;
-    dc:title "Die Gattungen der Eumeninae im Nahen Osten, in Nordafrika und in Arabien (Hymenoptera: Vespidae: Eumeninae)" ;
     bibo:endPage "107" ;
     bibo:issue "1" ;
     bibo:journal "Linzer biologische Beiträge" ;
     bibo:pubDate "2013-07-31" ;
     bibo:startPage "5" ;
     bibo:volume "45" ;
+    dc:creator "Gusenleitner, J." ;
+    dc:date "2013" ;
+    dc:title "Die Gattungen der Eumeninae im Nahen Osten, in Nordafrika und in Arabien (Hymenoptera: Vespidae: Eumeninae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ancistrocerus_WESMAEL_1836>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ancistrocerus> ;
-    dwc:ID-CoL "VJJ" ;
     dwc:ID-ENA "76989" ;
     dwc:authority "Gusenleitner, 2013" ;
     dwc:authorityName "Gusenleitner" ;
@@ -35,10 +42,12 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "WESMAEL, 1836" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/VJJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ancistrocerus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Odynerus_biphaleratus_SAUSSURE_1852>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odynerus_biphaleratus> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Odynerus" ;
@@ -49,15 +58,10 @@
     dwc:scientificNameAuthorship "DE SAUSSURE 1852" ;
     dwc:species "biphaleratus" ;
     dwc:subGenus "Ancistrocerus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Odynerus_biphaleratus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Ancistrocerus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Ancistrocerus" ;
@@ -65,45 +69,49 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Vespidae>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Odynerus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Vespidae" ;
-    dwc:genus "Odynerus" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
     dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Odynerus_biphaleratus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odynerus> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Odynerus" ;
@@ -112,22 +120,29 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "biphaleratus" ;
+    dwc:subGenus "Ancistrocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odynerus_Ancistrocerus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Vespidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Odynerus_Ancistrocerus>
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
+    dwc:genus "Odynerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Ancistrocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odynerus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D587901F6DFFDFFF78FD6DFE0CFC91>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ancistrocerus_WESMAEL_1836> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4526087> ;
-    dc:creator "Gusenleitner, J." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Odynerus_biphaleratus_SAUSSURE_1852> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Odynerus>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Odynerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
+    a dwcFP:TaxonName .
