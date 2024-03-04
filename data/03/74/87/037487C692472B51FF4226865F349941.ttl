@@ -1,18 +1,24 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.5281/zenodo.7507232>
-    dc:creator "Eckelt, Andreas", "Heiss, Ernst", "Lederwasch, Manfred", "Unterasinger, Romed" ;
-    dc:date "2022" ;
-    dc:title "Die Heteropterensammlung Ernst Heiss im Tiroler Landesmuseum Ferdinandeum. Teil VIII: Pentatomomorpha II, Familie Largidae" ;
+treatment:037487C692472B51FF4226865F349941
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Iphita_heissi_STEHLIK_2008>, <http://taxon-concept.plazi.org/id/Animalia/Iphita_varians_rubra_STEHLIK_2008> ;
+    dc:creator "Heiss, Ernst; Eckelt, Andreas; Lederwasch, Manfred; Unterasinger, Romed" ;
+    dc:title "Iphita STAL 1870" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Iphita_STAL_1870> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.7507435> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.5281/zenodo.7507435>
     bibo:endPage "148" ;
     bibo:issue "1" ;
     bibo:journal "Linzer biologische Beiträge" ;
@@ -20,11 +26,12 @@
     bibo:series "Oxford, England" ;
     bibo:startPage "143" ;
     bibo:volume "54" ;
+    dc:creator "Heiss, Ernst; Eckelt, Andreas; Lederwasch, Manfred; Unterasinger, Romed" ;
+    dc:date "2022" ;
+    dc:title "Die Heteropterensammlung Ernst Heiss im Tiroler Landesmuseum Ferdinandeum. Teil VIII: Pentatomomorpha II, Familie Largidae" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Iphita_STAL_1870>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iphita> ;
-    dwc:ID-CoL "62WLX" ;
     dwc:ID-ENA "702483" ;
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
@@ -34,11 +41,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "STAL, 1870" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62WLX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iphita> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Iphita_heissi_STEHLIK_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iphita_heissi> ;
-    dwc:ID-CoL "3PVB4" ;
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
     dwc:genus "Iphita" ;
@@ -48,11 +55,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "STEHLIK & JINDRA, 2008" ;
     dwc:species "heissi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62WLX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iphita_heissi> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Iphita_varians_rubra_STEHLIK_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iphita_varians_rubra> ;
-    dwc:ID-CoL "5J4VQ" ;
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
     dwc:genus "Iphita" ;
@@ -63,39 +70,11 @@
     dwc:scientificNameAuthorship "STEHLIK & JINDRA, 2008" ;
     dwc:species "varians" ;
     dwc:subSpecies "rubra" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62WLX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iphita_varians_rubra> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Iphita>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Largidae> ;
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
     dwc:genus "Iphita" ;
@@ -103,10 +82,49 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Largidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Largidae>
+    dwc:class "Insecta" ;
+    dwc:family "Largidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Iphita_heissi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Iphita> ;
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
     dwc:genus "Iphita" ;
@@ -115,22 +133,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "heissi" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Iphita_varians>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Iphita> ;
-    dwc:class "Insecta" ;
-    dwc:family "Largidae" ;
-    dwc:genus "Iphita" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "varians" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Iphita_varians_rubra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Iphita_varians> ;
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
     dwc:genus "Iphita" ;
@@ -140,22 +146,17 @@
     dwc:rank "subSpecies" ;
     dwc:species "varians" ;
     dwc:subSpecies "rubra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Iphita_varians> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Largidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Iphita_varians>
     dwc:class "Insecta" ;
     dwc:family "Largidae" ;
+    dwc:genus "Iphita" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "varians" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Iphita> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/037487C692472B51FF4226865F349941>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Iphita_STAL_1870> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.7507435> ;
-    dc:creator "Eckelt, Andreas", "Heiss, Ernst", "Lederwasch, Manfred", "Unterasinger, Romed" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Iphita_heissi_STEHLIK_2008>, <http://taxon-concept.plazi.org/id/Animalia/Iphita_varians_rubra_STEHLIK_2008> ;
-    a trt:Treatment .
-
