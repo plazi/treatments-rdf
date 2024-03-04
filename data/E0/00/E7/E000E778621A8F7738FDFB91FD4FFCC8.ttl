@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.35929/RSZ.0011>
+treatment:E000E778621A8F7738FDFB91FD4FFCC8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5743363> ;
     dc:creator "Anisyutkin, Leonid N." ;
-    dc:date "2020" ;
-    dc:title "New and little known Epilamprinae (Dictyoptera: Blaberidae) from the collections of the Muséum d’histoire naturelle de Genève and the Zoological Institute of Saint Petersburg. Part 4" ;
+    dc:title "Molytria inquinata" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/E000E778621A8F7738FDFB91FD4FFCC8.mc.D8C15C33621A8F743F0BFBE0FB86FB44>, <http://tb.plazi.org/GgServer/dwcaRecords/E000E778621A8F7738FDFB91FD4FFCC8.mc.D8C15C33621A8F743FB1FB47FAB1FAA3> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Molytria_inquinata_Stal_1860> ;
+    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0011> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.35929/rsz.0011>
     bibo:endPage "117" ;
     bibo:issue "1" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2020-06-04" ;
     bibo:startPage "105" ;
     bibo:volume "127" ;
+    dc:creator "Anisyutkin, Leonid N." ;
+    dc:date "2020" ;
+    dc:title "New and little known Epilamprinae (Dictyoptera: Blaberidae) from the collections of the Muséum d’histoire naturelle de Genève and the Zoological Institute of Saint Petersburg. Part 4" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5743363> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,25 @@
     fabio:hasRepresentation "https://zenodo.org/record/5743363/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/E000E778621A8F7738FDFB91FD4FFCC8.mc.D8C15C33621A8F743F0BFBE0FB86FB44>
+    dwc:collectionCode "ZIN" ;
+    dwc:eventDate "1959-06-07" ;
+    dwc:locality "East Karajong" ;
+    dwc:recordedBy "M. Nikitin" ;
+    trt:gbifOccurrenceId "3879092308" ;
+    trt:httpUri <https://treatment.plazi.org/id/E000E778621A8F7738FDFB91FD4FFCC8#D8C15C33621A8F743F0BFBE0FB86FB44> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/E000E778621A8F7738FDFB91FD4FFCC8.mc.D8C15C33621A8F743FB1FB47FAB1FAA3>
+    dwc:collectionCode "ZIN" ;
+    dwc:eventDate "1969-02-21" ;
+    dwc:locality "Brisbane" ;
+    dwc:recordedBy "Plechanov" ;
+    trt:gbifOccurrenceId "3879092302" ;
+    trt:httpUri <https://treatment.plazi.org/id/E000E778621A8F7738FDFB91FD4FFCC8#D8C15C33621A8F743FB1FB47FAB1FAA3> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Molytria_inquinata_Stal_1860>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molytria_inquinata> ;
-    dwc:ID-CoL "43YVX" ;
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
     dwc:genus "Molytria" ;
@@ -39,60 +65,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Stal, 1860)" ;
     dwc:species "inquinata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/43YVX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molytria_inquinata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Blaberidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blattodea> ;
+<http://taxon-concept.plazi.org/id/Animalia/Placoblatta_semialata_Anisyutkin_2020>
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
+    dwc:genus "Placoblatta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Blattodea" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Blattodea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Blattodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Molytria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blaberidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Blaberidae" ;
-    dwc:genus "Molytria" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Blattodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Anisyutkin, 2020" ;
+    dwc:species "semialata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Placoblatta_semialata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Molytria_inquinata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molytria> ;
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
     dwc:genus "Molytria" ;
@@ -101,12 +91,78 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "inquinata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molytria> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E000E778621A8F7738FDFB91FD4FFCC8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Molytria_inquinata_Stal_1860> ;
-    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0011> ;
-    dc:creator "Anisyutkin, Leonid N." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5743363> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Molytria>
+    dwc:class "Insecta" ;
+    dwc:family "Blaberidae" ;
+    dwc:genus "Molytria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blaberidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Blaberidae>
+    dwc:class "Insecta" ;
+    dwc:family "Blaberidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blattodea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Blattodea>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Placoblatta_semialata>
+    dwc:class "Insecta" ;
+    dwc:family "Blaberidae" ;
+    dwc:genus "Placoblatta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "semialata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Placoblatta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Placoblatta>
+    dwc:class "Insecta" ;
+    dwc:family "Blaberidae" ;
+    dwc:genus "Placoblatta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blaberidae> ;
+    a dwcFP:TaxonName .
