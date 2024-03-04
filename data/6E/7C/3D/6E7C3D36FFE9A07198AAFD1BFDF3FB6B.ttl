@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6E7C3D36FFE9A07198AAFD1BFDF3FB6B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.271179> ;
+    dc:creator "Schmidt-Rhaesa, Andreas; Martínez, Jesús" ;
+    dc:title "Gordionus" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4103.1.6> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Gordionus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4103.1.6>
-    dc:creator "Martínez, Jesús", "Schmidt-Rhaesa, Andreas" ;
-    dc:date "2016" ;
-    dc:title "Gordius gonzalezi, a new species of horsehair worms (Nematomorpha) from Spain" ;
     bibo:endPage "67" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "63" ;
     bibo:volume "4103" ;
+    dc:creator "Schmidt-Rhaesa, Andreas; Martínez, Jesús" ;
+    dc:date "2016" ;
+    dc:title "Gordius gonzalezi, a new species of horsehair worms (Nematomorpha) from Spain" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.271179> ;
     a fabio:JournalArticle .
 
@@ -26,40 +35,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/271179/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioidea> ;
-    dwc:class "Gordioida" ;
-    dwc:family "Chordodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gordioidea" ;
-    dwc:phylum "Nematomorpha" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gordioida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematomorpha> ;
-    dwc:class "Gordioida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Nematomorpha" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gordioidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioida> ;
-    dwc:class "Gordioida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Gordioidea" ;
-    dwc:phylum "Nematomorpha" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Gordionus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordodidae> ;
     dwc:class "Gordioida" ;
     dwc:family "Chordodidae" ;
     dwc:genus "Gordionus" ;
@@ -67,19 +43,44 @@
     dwc:order "Gordioidea" ;
     dwc:phylum "Nematomorpha" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordodidae>
+    dwc:class "Gordioida" ;
+    dwc:family "Chordodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gordioidea" ;
+    dwc:phylum "Nematomorpha" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gordioidea>
+    dwc:class "Gordioida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gordioidea" ;
+    dwc:phylum "Nematomorpha" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gordioida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gordioida>
+    dwc:class "Gordioida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nematomorpha" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematomorpha> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Nematomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Nematomorpha" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6E7C3D36FFE9A07198AAFD1BFDF3FB6B>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4103.1.6> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Gordionus> ;
-    dc:creator "Martínez, Jesús", "Schmidt-Rhaesa, Andreas" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.271179> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
