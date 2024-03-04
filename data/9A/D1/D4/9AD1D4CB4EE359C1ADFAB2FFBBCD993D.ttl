@@ -1,48 +1,52 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:9AD1D4CB4EE359C1ADFAB2FFBBCD993D
+    dc:creator "Shear, William A." ;
+    dc:title "Maratensolasma jocheni Shear 2006" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Maratensolasma_jocheni_Shear_2006> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Martensolasma_jocheni> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.52.471> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.52.471>
-    dc:creator "Shear, William A." ;
-    dc:date "2010" ;
-    dc:title "New species and records of ortholasmatine harvestmen from Mexico, Honduras, and the western United States (Opiliones, Nemastomatidae, Ortholasmatinae)" ;
     bibo:endPage "46" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "9" ;
     bibo:volume "52" ;
+    dc:creator "Shear, William A." ;
+    dc:date "2010" ;
+    dc:title "New species and records of ortholasmatine harvestmen from Mexico, Honduras, and the western United States (Opiliones, Nemastomatidae, Ortholasmatinae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Maratensolasma_jocheni_Shear_2006>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maratensolasma_jocheni> ;
     dwc:genus "Maratensolasma" ;
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Shear, 2006" ;
     dwc:species "jocheni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maratensolasma_jocheni> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Maratensolasma_jocheni>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Maratensolasma" ;
+    dwc:rank "species" ;
+    dwc:species "jocheni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratensolasma> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Maratensolasma>
     dwc:genus "Maratensolasma" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratensolasma_jocheni> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Maratensolasma_jocheni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratensolasma> ;
-    dwc:genus "Maratensolasma" ;
-    dwc:rank "species" ;
-    dwc:species "jocheni" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/9AD1D4CB4EE359C1ADFAB2FFBBCD993D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Maratensolasma_jocheni_Shear_2006> ;
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/9A/D1/D4/Martensolasma_jocheni> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.52.471> ;
-    dc:creator "Shear, William A." ;
-    a trt:Treatment .
-

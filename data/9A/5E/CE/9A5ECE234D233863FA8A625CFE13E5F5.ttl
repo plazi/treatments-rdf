@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:9A5ECE234D233863FA8A625CFE13E5F5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6670532> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Pseudocheirus peregrinus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/9A5ECE234D233863FA8A625CFE13E5F5.mc.A29F75684D233862F7FC628AF7C7EB1B> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_Boddaert_1785> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Didelphis_peregrinus_Boddaert_1785> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6670456> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6670456>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2015" ;
-    dc:title "Pseudocheiridae" ;
     bibo:endPage "530" ;
     bibo:startPage "498" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2015" ;
+    dc:title "Pseudocheiridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6670532> ;
     a fabio:BookSection .
 
@@ -23,22 +34,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6670532/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Didelphis_peregrinus_Boddaert_1785>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Didelphis_peregrinus> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Pseudocheiridae" ;
-    dwc:genus "Didelphis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diprotodontia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Boddaert, 1785" ;
-    dwc:species "peregrinus" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/9A5ECE234D233863FA8A625CFE13E5F5.mc.A29F75684D233862F7FC628AF7C7EB1B>
+    dwc:locality "flumen Endeavour" ;
+    trt:gbifOccurrenceId "3815643301" ;
+    trt:httpUri <https://treatment.plazi.org/id/9A5ECE234D233863FA8A625CFE13E5F5#A29F75684D233862F7FC628AF7C7EB1B> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_Boddaert_1785>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus> ;
-    dwc:ID-CoL "6WDJX" ;
     dwc:authority "Mittermeier, 2015" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2015" ;
@@ -49,61 +51,171 @@
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Boddaert, 1785" ;
     dwc:species "peregrinus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6WDJX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diprotodontia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diprotodontia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diprotodontia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Didelphis_peregrinus_Boddaert_1785>
     dwc:class "Mammalia" ;
     dwc:family "Pseudocheiridae" ;
+    dwc:genus "Didelphis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Boddaert, 1785" ;
+    dwc:species "peregrinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Didelphis_peregrinus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Pseudocheirus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_peregrinus_Boddaert_1785>
     dwc:class "Mammalia" ;
     dwc:family "Pseudocheiridae" ;
     dwc:genus "Pseudocheirus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Boddaert, 1785" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "peregrinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_peregrinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_convolutor_Schinz_1821>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Schinz, 1821" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "convolutor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_convolutor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_cookii_Desmarest_1817>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Desmarest, 1818" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "cookii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_cookii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_pulcher_Matschie_1915>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Matschie, 1915" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "pulcher" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_pulcher> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Petauroides_volans_Kerr_1792>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Petauroides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kerr, 1792" ;
+    dwc:species "volans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Petauroides_volans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Petropseudes_Thomas_1923>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Petropseudes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Thomas, 1923" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Petropseudes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudochirops_Matschie_1915>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Matschie, 1915" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudochirops_coronatus_Thomas_1897>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1897" ;
+    dwc:species "coronatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops_coronatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudochirops_albertisii_Peters_1874>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Peters, 1874" ;
+    dwc:species "albertisii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops_albertisii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudochirops_archeri_Collett_1884>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Collett, 1884" ;
+    dwc:species "archeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops_archeri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudochirops_cupreus_Thomas_1897>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1897" ;
+    dwc:species "cupreus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops_cupreus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus> ;
     dwc:class "Mammalia" ;
     dwc:family "Pseudocheiridae" ;
     dwc:genus "Pseudocheirus" ;
@@ -112,13 +224,223 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "peregrinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/9A5ECE234D233863FA8A625CFE13E5F5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudocheirus_peregrinus_Boddaert_1785> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Didelphis_peregrinus_Boddaert_1785> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6670456> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6670532> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pseudocheirus>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diprotodontia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diprotodontia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Didelphis_peregrinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Didelphis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "peregrinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Didelphis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Didelphis>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Didelphis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_peregrinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "peregrinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_convolutor>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "convolutor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_cookii>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "cookii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus_pulcher>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudocheirus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "peregrinus" ;
+    dwc:subSpecies "pulcher" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheirus_peregrinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Petauroides_volans>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Petauroides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "volans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Petauroides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Petauroides>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Petauroides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Petropseudes>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Petropseudes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudochirops>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudocheiridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudochirops_coronatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "coronatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudochirops_albertisii>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "albertisii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudochirops_archeri>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "archeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudochirops_cupreus>
+    dwc:class "Mammalia" ;
+    dwc:family "Pseudocheiridae" ;
+    dwc:genus "Pseudochirops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "cupreus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudochirops> ;
+    a dwcFP:TaxonName .
