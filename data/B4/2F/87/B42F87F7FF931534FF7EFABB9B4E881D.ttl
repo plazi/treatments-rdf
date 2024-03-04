@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B42F87F7FF931534FF7EFABB9B4E881D
+    dc:creator "Parnaby, Harry; Gill, Anthony C." ;
+    dc:title "Antechinus (Podabrus) froggatti Ramsay 1887" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Antechinus_froggatti_Ramsay_1887> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sminthopsis_macroura_froggatti_Ramsay_1887> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4975.2.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4975.2.1>
-    dc:creator "Gill, Anthony C.", "Parnaby, Harry" ;
-    dc:date "2021" ;
-    dc:title "Mammal type specimens in the Macleay Collections, University of Sydney" ;
     bibo:endPage "252" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-05-25" ;
     bibo:startPage "201" ;
     bibo:volume "4975" ;
+    dc:creator "Parnaby, Harry; Gill, Anthony C." ;
+    dc:date "2021" ;
+    dc:title "Mammal type specimens in the Macleay Collections, University of Sydney" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Antechinus_froggatti_Ramsay_1887>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Antechinus_froggatti> ;
     dwc:class "Mammalia" ;
     dwc:family "Dasyuridae" ;
     dwc:genus "Antechinus" ;
@@ -33,10 +41,10 @@
     dwc:scientificNameAuthorship "Ramsay, 1887" ;
     dwc:species "froggatti" ;
     dwc:subGenus "Podabrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Antechinus_froggatti> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sminthopsis_macroura_froggatti_Ramsay_1887>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura_froggatti> ;
     dwc:class "Mammalia" ;
     dwc:family "Dasyuridae" ;
     dwc:genus "Sminthopsis" ;
@@ -44,29 +52,26 @@
     dwc:order "Dasyuromorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "(Ramsay, 1887)" ;
+    dwc:scientificNameAuthorship "(Ramsay, 1887)", "Ramsay, 1887" ;
     dwc:species "macroura" ;
     dwc:subSpecies "froggatti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura_froggatti> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Antechinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dasyuridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sminthopsis_macroura_Gould_1845>
     dwc:class "Mammalia" ;
     dwc:family "Dasyuridae" ;
-    dwc:genus "Antechinus" ;
+    dwc:genus "Sminthopsis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dasyuromorphia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Gould, 1845)" ;
+    dwc:species "macroura" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Antechinus_froggatti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Antechinus> ;
     dwc:class "Mammalia" ;
     dwc:family "Dasyuridae" ;
     dwc:genus "Antechinus" ;
@@ -75,67 +80,73 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "froggatti" ;
+    dwc:subGenus "Podabrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Antechinus_Podabrus>, <http://taxon-name.plazi.org/id/Animalia/Antechinus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Antechinus_Podabrus>
+    dwc:class "Mammalia" ;
+    dwc:family "Dasyuridae" ;
+    dwc:genus "Antechinus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Dasyuromorphia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Podabrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Antechinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Antechinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Dasyuridae" ;
+    dwc:genus "Antechinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dasyuromorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dasyuridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dasyuridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dasyuromorphia> ;
     dwc:class "Mammalia" ;
     dwc:family "Dasyuridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dasyuromorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dasyuromorphia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dasyuromorphia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dasyuromorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Sminthopsis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dasyuridae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Dasyuridae" ;
-    dwc:genus "Sminthopsis" ;
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
     dwc:kingdom "Animalia" ;
-    dwc:order "Dasyuromorphia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Dasyuridae" ;
-    dwc:genus "Sminthopsis" ;
+<http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
-    dwc:order "Dasyuromorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "macroura" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura_froggatti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura> ;
     dwc:class "Mammalia" ;
     dwc:family "Dasyuridae" ;
     dwc:genus "Sminthopsis" ;
@@ -145,12 +156,28 @@
     dwc:rank "subSpecies" ;
     dwc:species "macroura" ;
     dwc:subSpecies "froggatti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B42F87F7FF931534FF7EFABB9B4E881D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Antechinus_froggatti_Ramsay_1887> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sminthopsis_macroura_froggatti_Ramsay_1887> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4975.2.1> ;
-    dc:creator "Gill, Anthony C.", "Parnaby, Harry" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sminthopsis_macroura>
+    dwc:class "Mammalia" ;
+    dwc:family "Dasyuridae" ;
+    dwc:genus "Sminthopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dasyuromorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "macroura" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sminthopsis> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Sminthopsis>
+    dwc:class "Mammalia" ;
+    dwc:family "Dasyuridae" ;
+    dwc:genus "Sminthopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dasyuromorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dasyuridae> ;
+    a dwcFP:TaxonName .

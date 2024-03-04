@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B42F87F7FF85151FFF7EFAE29BFF8DA6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4806954>, <http://dx.doi.org/10.5281/zenodo.4806956> ;
+    dc:creator "Parnaby, Harry; Gill, Anthony C." ;
+    dc:title "Macropus jukesii Miklouho-Maclay 1885" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/B42F87F7FF85151FFF7EFAE29BFF8DA6.mc.8CEE3CBCFFBA151EFF2EFEA39D4788A5>, <http://tb.plazi.org/GgServer/dwcaRecords/B42F87F7FF85151FFF7EFAE29BFF8DA6.mc.8CEE3CBCFFBA151EFDF9FD0B9DDE88ED> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Macropus_jukesii_Miklouho-Maclay_1885> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4975.2.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4975.2.1>
-    dc:creator "Gill, Anthony C.", "Parnaby, Harry" ;
-    dc:date "2021" ;
-    dc:title "Mammal type specimens in the Macleay Collections, University of Sydney" ;
     bibo:endPage "252" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-05-25" ;
     bibo:startPage "201" ;
     bibo:volume "4975" ;
+    dc:creator "Parnaby, Harry; Gill, Anthony C." ;
+    dc:date "2021" ;
+    dc:title "Mammal type specimens in the Macleay Collections, University of Sydney" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4806954>, <http://dx.doi.org/10.5281/zenodo.4806956> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/4806956/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/B42F87F7FF85151FFF7EFAE29BFF8DA6.mc.8CEE3CBCFFBA151EFF2EFEA39D4788A5>
+    dwc:locality "South Coast" ;
+    dwc:recordedBy "P. Mpzesly" ;
+    trt:gbifOccurrenceId "3128590317" ;
+    trt:httpUri <https://treatment.plazi.org/id/B42F87F7FF85151FFF7EFAE29BFF8DA6#8CEE3CBCFFBA151EFF2EFEA39D4788A5> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/B42F87F7FF85151FFF7EFAE29BFF8DA6.mc.8CEE3CBCFFBA151EFDF9FD0B9DDE88ED>
+    dwc:locality "Central Province" ;
+    trt:gbifOccurrenceId "3128590305" ;
+    trt:httpUri <https://treatment.plazi.org/id/B42F87F7FF85151FFF7EFAE29BFF8DA6#8CEE3CBCFFBA151EFDF9FD0B9DDE88ED> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Macropus_jukesii_Miklouho-Maclay_1885>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macropus_jukesii> ;
     dwc:class "Mammalia" ;
     dwc:family "Macropodidae" ;
     dwc:genus "Macropus" ;
@@ -41,43 +63,113 @@
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Miklouho-Maclay, 1885 b" ;
+    dwc:scientificNameAuthorship "Miklouho-Maclay, 1885 b", "Miklouho-Maclay, 1885", "Miklouho-Maclay 1885 b" ;
     dwc:species "jukesii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macropus_jukesii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diprotodontia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diprotodontia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Macropodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diprotodontia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Thylogale_brunii_Schreber_1778>
     dwc:class "Mammalia" ;
     dwc:family "Macropodidae" ;
+    dwc:genus "Thylogale" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Schreber, 1778)" ;
+    dwc:species "brunii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thylogale_brunii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Macropus_browni_Ramsay_1877>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Macropus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Ramsay, 1877 d)" ;
+    dwc:species "browni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macropus_browni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thylogale_browni_Ramsay_1877>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Thylogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ramsay, 1877" ;
+    dwc:species "browni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thylogale_browni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thylogale_Flannery_1992>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Thylogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Flannery, 1992" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thylogale> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dorcopsis_Groves_1989>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Dorcopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Groves & Flannery, 1989" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcopsis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Macropus_gracilis_Miklouho-Maclay_1885>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Macropus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Miklouho-Maclay, 1885" ;
+    dwc:species "gracilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macropus_gracilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Petrogale_assimilis_Ramsay_1877>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Petrogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ramsay, 1877" ;
+    dwc:species "assimilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Petrogale_assimilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Macropus_jukesii>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Macropus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "jukesii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Macropus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropodidae> ;
     dwc:class "Mammalia" ;
     dwc:family "Macropodidae" ;
     dwc:genus "Macropus" ;
@@ -85,10 +177,72 @@
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropodidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Macropus_jukesii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropus> ;
+<http://taxon-name.plazi.org/id/Animalia/Macropodidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diprotodontia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diprotodontia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thylogale_brunii>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Thylogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "brunii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thylogale> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thylogale>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Thylogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Macropus_browni>
     dwc:class "Mammalia" ;
     dwc:family "Macropodidae" ;
     dwc:genus "Macropus" ;
@@ -96,21 +250,64 @@
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "jukesii" ;
+    dwc:species "browni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Thylogale_browni>
     dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Thylogale" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "browni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thylogale> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B42F87F7FF85151FFF7EFAE29BFF8DA6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Macropus_jukesii_Miklouho-Maclay_1885> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4975.2.1> ;
-    dc:creator "Gill, Anthony C.", "Parnaby, Harry" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4806954>, <http://dx.doi.org/10.5281/zenodo.4806956> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Dorcopsis>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Dorcopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropodidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Macropus_gracilis>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Macropus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Petrogale_assimilis>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Petrogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "assimilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Petrogale> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Petrogale>
+    dwc:class "Mammalia" ;
+    dwc:family "Macropodidae" ;
+    dwc:genus "Petrogale" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macropodidae> ;
+    a dwcFP:TaxonName .
