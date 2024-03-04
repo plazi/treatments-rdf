@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B42090645363FFEDFF5FFC70FE486EAA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.233172>, <http://dx.doi.org/10.5281/zenodo.233174> ;
+    dc:creator "Andrew Hamilton, K. G." ;
+    dc:title "Tremapterus (Patriziana) peregrinus Hesse, comb. nov." ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sepullia_peregrina_Hesse_1925>, <http://taxon-concept.plazi.org/id/Animalia/Sepullia_stali_Hesse_1925> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3946.2.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_peregrinus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3946.2.1>
-    dc:creator "Andrew Hamilton, K. G." ;
-    dc:date "2015" ;
-    dc:title "A new tribe and species of Clastopterinae (Hemiptera: Cercopoidea: Clastopteridae) from Africa, Asia and North America" ;
     bibo:endPage "189" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "151" ;
     bibo:volume "3946" ;
+    dc:creator "Andrew Hamilton, K. G." ;
+    dc:date "2015" ;
+    dc:title "A new tribe and species of Clastopterinae (Hemiptera: Cercopoidea: Clastopteridae) from Africa, Asia and North America" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.233172>, <http://dx.doi.org/10.5281/zenodo.233174> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sepullia_peregrina_Hesse_1925>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sepullia_peregrina> ;
-    dwc:ID-CoL "4WSNW" ;
     dwc:class "Insecta" ;
     dwc:family "Aphrophoridae" ;
     dwc:genus "Sepullia" ;
@@ -43,11 +51,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hesse, 1925: 173" ;
     dwc:species "peregrina" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sepullia_peregrina> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sepullia_stali_Hesse_1925>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sepullia_stali> ;
-    dwc:ID-CoL "4WSP2" ;
     dwc:class "Insecta" ;
     dwc:family "Aphrophoridae" ;
     dwc:genus "Sepullia" ;
@@ -57,95 +65,50 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hesse 1925a: 174" ;
     dwc:species "stali" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sepullia_stali> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aphrophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Aphrophoridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sepullia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphrophoridae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Aphrophoridae" ;
-    dwc:genus "Sepullia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sepullia_peregrina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sepullia> ;
-    dwc:class "Insecta" ;
-    dwc:family "Aphrophoridae" ;
-    dwc:genus "Sepullia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "peregrina" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sepullia_stali>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sepullia> ;
-    dwc:class "Insecta" ;
-    dwc:family "Aphrophoridae" ;
-    dwc:genus "Sepullia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "stali" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tremapterus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphrophoridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tremapterus_splendens_Hamilton_2015>
     dwc:class "Insecta" ;
     dwc:family "Aphrophoridae" ;
     dwc:genus "Tremapterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "splendens" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_splendens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tremapterus_turneri_Hamilton_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "turneri" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_turneri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tremapterus_wardi_Hamilton_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wardi" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_wardi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tremapterus_peregrinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tremapterus> ;
     dwc:class "Insecta" ;
     dwc:family "Aphrophoridae" ;
     dwc:genus "Tremapterus" ;
@@ -154,13 +117,142 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "peregrinus" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_Patriziana> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B42090645363FFEDFF5FFC70FE486EAA>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sepullia_peregrina_Hesse_1925>, <http://taxon-concept.plazi.org/id/Animalia/Sepullia_stali_Hesse_1925> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3946.2.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_peregrinus> ;
-    dc:creator "Andrew Hamilton, K. G." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.233172>, <http://dx.doi.org/10.5281/zenodo.233174> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tremapterus_Patriziana>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tremapterus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Tremapterus>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphrophoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphrophoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sepullia_peregrina>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Sepullia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "peregrina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sepullia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sepullia>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Sepullia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphrophoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sepullia_stali>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Sepullia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stali" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sepullia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tremapterus_splendens>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "splendens" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_Patriziana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tremapterus_turneri>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "turneri" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_Patriziana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tremapterus_wardi>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Tremapterus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wardi" ;
+    dwc:subGenus "Patriziana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tremapterus_Patriziana> ;
+    a dwcFP:TaxonName .

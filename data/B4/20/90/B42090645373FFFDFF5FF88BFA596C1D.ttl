@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B42090645373FFFDFF5FF88BFA596C1D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.233176> ;
+    dc:creator "Andrew Hamilton, K. G." ;
+    dc:title "Beesoniella" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3946.2.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Beesoniella> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3946.2.1>
-    dc:creator "Andrew Hamilton, K. G." ;
-    dc:date "2015" ;
-    dc:title "A new tribe and species of Clastopterinae (Hemiptera: Cercopoidea: Clastopteridae) from Africa, Asia and North America" ;
     bibo:endPage "189" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "151" ;
     bibo:volume "3946" ;
+    dc:creator "Andrew Hamilton, K. G." ;
+    dc:date "2015" ;
+    dc:title "A new tribe and species of Clastopterinae (Hemiptera: Cercopoidea: Clastopteridae) from Africa, Asia and North America" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.233176> ;
     a fabio:JournalArticle .
 
@@ -26,30 +35,31 @@
     fabio:hasRepresentation "https://zenodo.org/record/233176/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aphrophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Beesoniella_forceps_Hamilton_2015>
     dwc:class "Insecta" ;
     dwc:family "Aphrophoridae" ;
+    dwc:genus "Beesoniella" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "forceps" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Beesoniella_forceps> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Beesoniella_cyclops_Hamilton_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Beesoniella" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "cyclops" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Beesoniella_cyclops> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Beesoniella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphrophoridae> ;
     dwc:class "Insecta" ;
     dwc:family "Aphrophoridae" ;
     dwc:genus "Beesoniella" ;
@@ -57,29 +67,68 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphrophoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphrophoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B42090645373FFFDFF5FF88BFA596C1D>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3946.2.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Beesoniella> ;
-    dc:creator "Andrew Hamilton, K. G." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.233176> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Beesoniella_forceps>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Beesoniella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "forceps" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Beesoniella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Beesoniella_cyclops>
+    dwc:class "Insecta" ;
+    dwc:family "Aphrophoridae" ;
+    dwc:genus "Beesoniella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cyclops" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Beesoniella> ;
+    a dwcFP:TaxonName .
