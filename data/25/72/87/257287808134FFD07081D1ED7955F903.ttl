@@ -1,42 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/zootaxa.4919.1.1>
-    dc:creator "Brown, Graham R.", "Carpenter, James M." ;
-    dc:date "2021" ;
-    dc:title "Catalogue of the Australian Eumeninae (Hymenoptera: Vespidae)" ;
+treatment:257287808134FFD07081D1ED7955F903
+    dc:creator "Carpenter, James M.; Brown, Graham R." ;
+    dc:title "Delta de Saussure 1855" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Delta_Saussure_1855> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Erinys_Zirngiebl_1953>, <http://taxon-concept.plazi.org/id/Animalia/Alfieria_Soika_1934> ;
+    trt:publishedIn <https://doi.org/10.11646/zootaxa.4919.1.1> ;
+    a trt:Treatment .
+
+<https://doi.org/10.11646/zootaxa.4919.1.1>
     bibo:endPage "68" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-01-26" ;
     bibo:startPage "1" ;
     bibo:volume "4919" ;
+    dc:creator "Carpenter, James M.; Brown, Graham R." ;
+    dc:date "2021" ;
+    dc:title "Catalogue of the Australian Eumeninae (Hymenoptera: Vespidae)" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Alfieria_Soika_1934>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alfieria> ;
-    dwc:ID-CoL "6292H" ;
-    dwc:class "Insecta" ;
-    dwc:family "Eumenidae" ;
-    dwc:genus "Alfieria" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Giordani Soika 1934 b: 436" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Delta_Saussure_1855>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Delta> ;
-    dwc:ID-CoL "42RD" ;
     dwc:ID-ENA "998453" ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
@@ -45,11 +39,39 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "de Saussure" ;
+    dwc:scientificNameAuthorship "de Saussure", "de Saussure 1855: 130" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42RD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Delta> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_maxillosa_DeGeer_1775>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "DeGeer 1775" ;
+    dwc:species "maxillosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_maxillosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_emarginata_Linnaeus_1758>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "emarginata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42RD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_emarginata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Erinys_Zirngiebl_1953>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Erinys> ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Erinys" ;
@@ -57,16 +79,49 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Zirngiebl 1953: 173" ;
+    dwc:scientificNameAuthorship "Zirngiebl 1953: 173", "Zirngiebl" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Erinys> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Eumenes_Saussure_1852>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Eumenes" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Latreille" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42RD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Alfieria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Erinys_Rye_1876>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Erinys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Rye 1876" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Erinys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_unguiculata_Villers_1789>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Villers, 1789" ;
+    dwc:species "unguiculata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_unguiculata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Alfieria_Soika_1934>
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Alfieria" ;
@@ -74,17 +129,25 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Giordani Soika 1934 b: 436", "Giordani Soika" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42RD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alfieria> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eumenes_anomalus_Zavattari_1909>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Eumenes" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zavattari 1909" ;
+    dwc:species "anomalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eumenes_anomalus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Delta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Delta" ;
@@ -92,10 +155,94 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eumenidae>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa_maxillosa>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "maxillosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespidae>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa_emarginata>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "emarginata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Erinys>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Erinys" ;
@@ -103,39 +250,51 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Eumenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Eumenes>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Eumenes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa_unguiculata>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "unguiculata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Alfieria>
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
+    dwc:genus "Alfieria" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Eumenes_anomalus>
     dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Eumenes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "anomalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenes> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/257287808134FFD07081D1ED7955F903>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Delta_Saussure_1855> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Alfieria_Soika_1934>, <http://taxon-concept.plazi.org/id/Animalia/Erinys_Zirngiebl_1953> ;
-    trt:publishedIn <https://doi.org/10.11646/zootaxa.4919.1.1> ;
-    dc:creator "Brown, Graham R.", "Carpenter, James M." ;
-    a trt:Treatment .
-
