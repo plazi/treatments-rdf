@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.11646/phytotaxa.588.1.1>
-    dc:creator "Cavalcanti, Taciana Barbosa", "Facco, Marlon Garlet" ;
-    dc:date "2023" ;
-    dc:title "Taxonomic Revision of Cuphea sect. Trispermum s. l. (Lythraceae)" ;
+treatment:0382DB75FC3B055A05AADD850B4EFBCF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7751606>, <http://dx.doi.org/10.5281/zenodo.7751626> ;
+    dc:creator "Facco, Marlon Garlet; Cavalcanti, Taciana Barbosa" ;
+    dc:title "Cuphea carajasensis Lourteig 1987" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Cuphea_carajasensis_Lourteig_1987> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "1935" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-03-20" ;
     bibo:startPage "1921" ;
     bibo:volume "588" ;
+    dc:creator "Facco, Marlon Garlet; Cavalcanti, Taciana Barbosa" ;
+    dc:date "2023" ;
+    dc:title "Taxonomic Revision of Cuphea sect. Trispermum s. l. (Lythraceae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7751606>, <http://dx.doi.org/10.5281/zenodo.7751626> ;
     a fabio:JournalArticle .
 
@@ -33,8 +43,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Plantae/Cuphea_carajasensis_Lourteig_1987>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cuphea_carajasensis> ;
-    dwc:ID-CoL "32F4S" ;
     dwc:ID-ENA "2182553" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lythraceae" ;
@@ -45,26 +53,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lourteig (1987: 13)" ;
     dwc:species "carajasensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/32F4S> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cuphea_carajasensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Cuphea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lythraceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Cuphea_gracilis_Kunth_1824>
     dwc:class "Magnoliopsida" ;
     dwc:family "Lythraceae" ;
     dwc:genus "Cuphea" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kunth, 1824" ;
+    dwc:species "gracilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cuphea_gracilis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Cuphea_carajasensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cuphea> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lythraceae" ;
     dwc:genus "Cuphea" ;
@@ -73,46 +79,67 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "carajasensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cuphea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cuphea>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lythraceae" ;
+    dwc:genus "Cuphea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lythraceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Lythraceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lythraceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Myrtales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0382DB75FC3B055A05AADD850B4EFBCF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Cuphea_carajasensis_Lourteig_1987> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Cavalcanti, Taciana Barbosa", "Facco, Marlon Garlet" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7751606>, <http://dx.doi.org/10.5281/zenodo.7751626> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Cuphea_gracilis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lythraceae" ;
+    dwc:genus "Cuphea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cuphea> ;
+    a dwcFP:TaxonName .
