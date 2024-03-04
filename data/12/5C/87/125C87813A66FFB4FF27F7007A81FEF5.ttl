@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:125C87813A66FFB4FF27F7007A81FEF5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8392059> ;
+    dc:creator "Veloso-Junior, Vanderlei C.; Pinto, Danilo P.; Da Silva, Eduardo M.; Neves, Elizabeth; Santana, José C.; Menegola, Carla" ;
+    dc:title "Amorphinopsis atlantica Carvalho, Hajdu, Mothes & van Soest 2004" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/125C87813A66FFB4FF27F7007A81FEF5.mc.2A9D3CCA3A66FFB4FE34F76C7A8DFEF5> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Amorphinopsis_atlantica_Carvalho_2004> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5351.4.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5351.4.4>
-    dc:creator "Da Silva, Eduardo M.", "Menegola, Carla", "Neves, Elizabeth", "Pinto, Danilo P.", "Santana, José C.", "Veloso-Junior, Vanderlei C." ;
-    dc:date "2023" ;
-    dc:title "First record of Amorphinopsis atlantica (Porifera: Demospongiae: Halicondriidae) in the Paraguaçu River estuary: Is its presence an invasion or an adaptation to changing environmental conditions?" ;
     bibo:endPage "474" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-09-28" ;
     bibo:startPage "467" ;
     bibo:volume "5351" ;
+    dc:creator "Veloso-Junior, Vanderlei C.; Pinto, Danilo P.; Da Silva, Eduardo M.; Neves, Elizabeth; Santana, José C.; Menegola, Carla" ;
+    dc:date "2023" ;
+    dc:title "First record of Amorphinopsis atlantica (Porifera: Demospongiae: Halicondriidae) in the Paraguaçu River estuary: Is its presence an invasion or an adaptation to changing environmental conditions?" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8392059> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/8392059/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/125C87813A66FFB4FF27F7007A81FEF5.mc.2A9D3CCA3A66FFB4FE34F76C7A8DFEF5>
+    dwc:collectionCode "V" ;
+    dwc:eventDate "2019-11-13" ;
+    dwc:locality "Iguape Bay" ;
+    dwc:recordedBy "C. Veloso-Junior" ;
+    dwc:verbatimLatitude "-12.673889" ;
+    dwc:verbatimLongitude "-38.856667" ;
+    trt:httpUri <https://treatment.plazi.org/id/125C87813A66FFB4FF27F7007A81FEF5#2A9D3CCA3A66FFB4FE34F76C7A8DFEF5> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Amorphinopsis_atlantica_Carvalho_2004>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amorphinopsis_atlantica> ;
-    dwc:ID-CoL "CX6R" ;
     dwc:ID-ENA "2029679" ;
     dwc:class "Demospongiae" ;
     dwc:family "Halichondriidae" ;
@@ -40,26 +58,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Carvalho, Hajdu, Mothes & van Soest, 2004" ;
     dwc:species "atlantica" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CX6R> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amorphinopsis_atlantica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amorphinopsis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halichondriidae> ;
-    dwc:class "Demospongiae" ;
-    dwc:family "Halichondriidae" ;
-    dwc:genus "Amorphinopsis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Suberitida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Amorphinopsis_atlantica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amorphinopsis> ;
     dwc:class "Demospongiae" ;
     dwc:family "Halichondriidae" ;
     dwc:genus "Amorphinopsis" ;
@@ -68,46 +71,55 @@
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
     dwc:species "atlantica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amorphinopsis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
+<http://taxon-name.plazi.org/id/Animalia/Amorphinopsis>
     dwc:class "Demospongiae" ;
+    dwc:family "Halichondriidae" ;
+    dwc:genus "Amorphinopsis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Suberitida" ;
     dwc:phylum "Porifera" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halichondriidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Halichondriidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberitida> ;
     dwc:class "Demospongiae" ;
     dwc:family "Halichondriidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Suberitida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberitida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Suberitida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
     dwc:class "Demospongiae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Suberitida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/125C87813A66FFB4FF27F7007A81FEF5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Amorphinopsis_atlantica_Carvalho_2004> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5351.4.4> ;
-    dc:creator "Da Silva, Eduardo M.", "Menegola, Carla", "Neves, Elizabeth", "Pinto, Danilo P.", "Santana, José C.", "Veloso-Junior, Vanderlei C." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8392059> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Porifera>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
