@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039D8794F661C76D95AF7E5EFDF7F970
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6373580> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Ursus arctos" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039D8794F661C76D95AF7E5EFDF7F970.mc.3B5C3CDFF661C76C96057EB0FB81FD9D> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714493> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5714493>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2009" ;
-    dc:title "Ursidae" ;
     bibo:endPage "497" ;
     bibo:startPage "448" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2009" ;
+    dc:title "Ursidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6373580> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6373580/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039D8794F661C76D95AF7E5EFDF7F970.mc.3B5C3CDFF661C76C96057EB0FB81FD9D>
+    trt:gbifOccurrenceId "3712020306" ;
+    trt:httpUri <https://treatment.plazi.org/id/039D8794F661C76D95AF7E5EFDF7F970#3B5C3CDFF661C76C96057EB0FB81FD9D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
-    dwc:ID-CoL "7F2KB" ;
     dwc:authority "Wilson, 2009" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2009" ;
@@ -38,60 +52,215 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "arctos" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7F2KB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/californicus_Merriam_1896>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Carnivora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/crowthert_Schinz_1844>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ursidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Ursidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Carnivora" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ursus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_arctos_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Ursidae" ;
     dwc:genus "Ursus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Carnivora" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "arctos" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_arctos> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_alascensis_Merriam_1896>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1896" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "alascensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_alascensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_beringianus_Middendorff_1853>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Middendorff, 1853" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "beringianus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_beringianus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_collaris_Cuvier_1824>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Cuvier, 1824" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "collaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_collaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_dalli_Merriam_1896>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1896" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "dalli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_dalli> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_gyas_Merriam_1902>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1902" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "gyas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_gyas> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_horribilis_Ord_1815>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Ord, 1815" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "horribilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_horribilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_isabellinus_Horsfield_1826>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Horsfield, 1826" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "isabellinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_isabellinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_lasiotus_Gray_1867>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gray, 1867" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "lasiotus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_lasiotus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_middendorffi_Merriam_1896>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1896" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "middendorffi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_middendorffi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_pruinosus_Blyth_1853>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Blyth, 1853" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "pruinosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_pruinosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_sitkensis_Merriam_1896>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1896" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "sitkensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_sitkensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_stikeenensis_Merriam_1914>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Merriam, 1914" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "stikeenensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_stikeenensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_syriacus_Hemprich_1828>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hemprich & Ehrenberg, 1828" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "syriacus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_syriacus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus> ;
     dwc:class "Mammalia" ;
     dwc:family "Ursidae" ;
     dwc:genus "Ursus" ;
@@ -100,13 +269,249 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "arctos" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039D8794F661C76D95AF7E5EFDF7F970>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_Linnaeus_1758> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ursus_arctos_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5714493> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6373580> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Ursus>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Ursidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carnivora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carnivora>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/californicus>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subSpecies" ;
+    dwc:subSpecies "californicus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/crowthert>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subSpecies" ;
+    dwc:subSpecies "crowthert" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_arctos>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "arctos" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_alascensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "alascensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_beringianus>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "beringianus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_collaris>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "collaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_dalli>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "dalli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_gyas>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "gyas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_horribilis>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "horribilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_isabellinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "isabellinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_lasiotus>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "lasiotus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_middendorffi>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "middendorffi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_pruinosus>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "pruinosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_sitkensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "sitkensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_stikeenensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "stikeenensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ursus_arctos_syriacus>
+    dwc:class "Mammalia" ;
+    dwc:family "Ursidae" ;
+    dwc:genus "Ursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Carnivora" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "arctos" ;
+    dwc:subSpecies "syriacus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ursus_arctos> ;
+    a dwcFP:TaxonName .
