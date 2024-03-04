@@ -1,27 +1,46 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F68795E247793109BEFB9EFC2E2202
+    dc:creator "Zhang, Jun-Long; Xu, Feng-Shan; Liu, Rui-Yu" ;
+    dc:title "Paramya Conrad 1860" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paramya_Conrad_1860> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Myalina_Conrad_1845> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.281734> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.281734>
-    dc:creator "Liu, Rui-Yu", "Xu, Feng-Shan", "Zhang, Jun-Long" ;
-    dc:date "2012" ;
-    dc:title "The Myidae (Mollusca, Bivalvia) from Chinese waters with description of a new species" ;
     bibo:endPage "60" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "39" ;
     bibo:volume "3383" ;
+    dc:creator "Zhang, Jun-Long; Xu, Feng-Shan; Liu, Rui-Yu" ;
+    dc:date "2012" ;
+    dc:title "The Myidae (Mollusca, Bivalvia) from Chinese waters with description of a new species" ;
     a fabio:JournalArticle .
 
+<http://taxon-concept.plazi.org/id/Animalia/Paramya_Conrad_1860>
+    dwc:class "Bivalvia" ;
+    dwc:family "Myidae" ;
+    dwc:genus "Paramya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Conrad, 1860", "Conrad, 1860: 232" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramya> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Myalina_Conrad_1845>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myalina> ;
-    dwc:ID-CoL "4fb5f270-de90-4f68-8eaa-15069e449642" ;
     dwc:class "Bivalvia" ;
     dwc:family "Basterotiidae" ;
     dwc:genus "Myalina" ;
@@ -30,10 +49,24 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Conrad, 1845: 65" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myalina> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Paramya_Conrad_1860>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paramya> ;
+<http://taxon-concept.plazi.org/id/Animalia/Myalina_subovata_Conrad_1845>
+    dwc:class "Bivalvia" ;
+    dwc:family "Basterotiidae" ;
+    dwc:genus "Myalina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Galeommatida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Conrad, 1845" ;
+    dwc:species "subovata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Myalina_subovata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Paramya>
     dwc:class "Bivalvia" ;
     dwc:family "Myidae" ;
     dwc:genus "Paramya" ;
@@ -41,50 +74,49 @@
     dwc:order "Myoida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Conrad, 1860" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myidae>
+    dwc:class "Bivalvia" ;
+    dwc:family "Myidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myoida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myoida>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Basterotiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Galeommatida> ;
-    dwc:class "Bivalvia" ;
-    dwc:family "Basterotiidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Galeommatida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Bivalvia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Galeommatida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
-    dwc:class "Bivalvia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Galeommatida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Myalina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Basterotiidae> ;
     dwc:class "Bivalvia" ;
     dwc:family "Basterotiidae" ;
     dwc:genus "Myalina" ;
@@ -92,42 +124,36 @@
     dwc:order "Galeommatida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Basterotiidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Myidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myoida> ;
+<http://taxon-name.plazi.org/id/Animalia/Basterotiidae>
     dwc:class "Bivalvia" ;
-    dwc:family "Myidae" ;
+    dwc:family "Basterotiidae" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Myoida" ;
+    dwc:order "Galeommatida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Galeommatida> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Myoida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
+<http://taxon-name.plazi.org/id/Animalia/Galeommatida>
     dwc:class "Bivalvia" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Myoida" ;
+    dwc:order "Galeommatida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Paramya>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Myalina_subovata>
     dwc:class "Bivalvia" ;
-    dwc:family "Myidae" ;
-    dwc:genus "Paramya" ;
+    dwc:family "Basterotiidae" ;
+    dwc:genus "Myalina" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Myoida" ;
+    dwc:order "Galeommatida" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:species "subovata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myalina> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03F68795E247793109BEFB9EFC2E2202>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paramya_Conrad_1860> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Myalina_Conrad_1845> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.281734> ;
-    dc:creator "Liu, Rui-Yu", "Xu, Feng-Shan", "Zhang, Jun-Long" ;
-    a trt:Treatment .
-
