@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6C2D24149048A00CFF79F895B202FB2D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.168304> ;
+    dc:creator "Samyn, Yves; Vandenspiegel, Didier" ;
+    dc:title "Molpadia lenticulum Cherbonnier & Feral 1981, new comb." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/6C2D24149048A00CFF79F895B202FB2D.mc.54EC9F5F9047A00CFF29FBADB202FB2D> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Molpadia_lenticulum_Cherbonnier_1981> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trochostoma_lenticulum_Cherbonnier_1981> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4196.4.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4196.4.1>
-    dc:creator "Samyn, Yves", "Vandenspiegel, Didier" ;
-    dc:date "2016" ;
-    dc:title "Sublittoral and bathyal sea cucumbers (Echinodermata: Holothuroidea) from the Northern Mozambique Channel with description of six new species" ;
     bibo:endPage "497" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "451" ;
     bibo:volume "4196" ;
+    dc:creator "Samyn, Yves; Vandenspiegel, Didier" ;
+    dc:date "2016" ;
+    dc:title "Sublittoral and bathyal sea cucumbers (Echinodermata: Holothuroidea) from the Northern Mozambique Channel with description of six new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.168304> ;
     a fabio:JournalArticle .
 
@@ -26,8 +37,29 @@
     fabio:hasRepresentation "https://zenodo.org/record/168304/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/6C2D24149048A00CFF79F895B202FB2D.mc.54EC9F5F9047A00CFF29FBADB202FB2D>
+    dwc:locality "The" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "750" ;
+    trt:gbifOccurrenceId "1343648457" ;
+    trt:httpUri <https://treatment.plazi.org/id/6C2D24149048A00CFF79F895B202FB2D#54EC9F5F9047A00CFF29FBADB202FB2D> ;
+    a dwc:MaterialCitation .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molpadia_lenticulum_Cherbonnier_1981>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Molpadiidae" ;
+    dwc:genus "Molpadia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Molpadida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cherbonnier & Feral, 1981" ;
+    dwc:species "lenticulum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/597SJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molpadia_lenticulum> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Trochostoma_lenticulum_Cherbonnier_1981>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trochostoma_lenticulum> ;
     dwc:class "Holothuroidea" ;
     dwc:family "Molpadiidae" ;
     dwc:genus "Trochostoma" ;
@@ -37,41 +69,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Cherbonnier & Feral, 1981: 405" ;
     dwc:species "lenticulum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trochostoma_lenticulum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Echinodermata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Holothuroidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
-    dwc:class "Holothuroidea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Molpadia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadiidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Molpadia_andamanensis_Clark_1907>
     dwc:class "Holothuroidea" ;
     dwc:family "Molpadiidae" ;
     dwc:genus "Molpadia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Molpadida" ;
     dwc:phylum "Echinodermata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Clark, 1907" ;
+    dwc:species "andamanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molpadia_andamanensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Molpadia_lenticulum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadia> ;
     dwc:class "Holothuroidea" ;
     dwc:family "Molpadiidae" ;
     dwc:genus "Molpadia" ;
@@ -80,32 +94,90 @@
     dwc:phylum "Echinodermata" ;
     dwc:rank "species" ;
     dwc:species "lenticulum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Molpadida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
+<http://taxon-name.plazi.org/id/Animalia/Molpadia>
     dwc:class "Holothuroidea" ;
+    dwc:family "Molpadiidae" ;
+    dwc:genus "Molpadia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Molpadida" ;
     dwc:phylum "Echinodermata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Molpadiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadida> ;
     dwc:class "Holothuroidea" ;
     dwc:family "Molpadiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Molpadida" ;
     dwc:phylum "Echinodermata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6C2D24149048A00CFF79F895B202FB2D>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trochostoma_lenticulum_Cherbonnier_1981> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4196.4.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Molpadia_lenticulum> ;
-    dc:creator "Samyn, Yves", "Vandenspiegel, Didier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.168304> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Molpadida>
+    dwc:class "Holothuroidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Molpadida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Holothuroidea>
+    dwc:class "Holothuroidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Echinodermata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trochostoma_lenticulum>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Molpadiidae" ;
+    dwc:genus "Trochostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Molpadida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "species" ;
+    dwc:species "lenticulum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trochostoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trochostoma>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Molpadiidae" ;
+    dwc:genus "Trochostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Molpadida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molpadia_andamanensis>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Molpadiidae" ;
+    dwc:genus "Molpadia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Molpadida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "species" ;
+    dwc:species "andamanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molpadia> ;
+    a dwcFP:TaxonName .
