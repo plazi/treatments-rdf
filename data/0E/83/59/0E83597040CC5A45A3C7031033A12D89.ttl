@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0E83597040CC5A45A3C7031033A12D89
+    cito:cites <http://dx.doi.org/10.3897/phytokeys.232.106675.figure1>, <http://dx.doi.org/10.3897/phytokeys.232.106675.figure2> ;
+    dc:creator "Zhang, Tong-Tong; Yang, Shu-Yun; Tan, Ke; Ren, Ming-Xun" ;
+    dc:title "Hiptage stenopterum K. Tan & M. X. Ren 2023, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/0E83597040CC5A45A3C7031033A12D89.mc.E5CE7174FED95FD0AF8CFBB380057BB8> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Hiptage_stenopterum_Tan_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.232.106675> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.232.106675>
-    dc:creator "Ren, Ming-Xun", "Tan, Ke", "Yang, Shu-Yun", "Zhang, Tong-Tong" ;
-    dc:date "2023" ;
-    dc:title "A new species of Hiptage (Malpighiaceae) from northwest Yunnan (China) based on molecular and morphological data" ;
     bibo:endPage "57" ;
     bibo:journal "PhytoKeys" ;
     bibo:pubDate "2023-09-04" ;
     bibo:startPage "45" ;
     bibo:volume "232" ;
+    dc:creator "Zhang, Tong-Tong; Yang, Shu-Yun; Tan, Ke; Ren, Ming-Xun" ;
+    dc:date "2023" ;
+    dc:title "A new species of Hiptage (Malpighiaceae) from northwest Yunnan (China) based on molecular and morphological data" ;
     fabio:hasPart <http://dx.doi.org/10.3897/phytokeys.232.106675.figure1>, <http://dx.doi.org/10.3897/phytokeys.232.106675.figure2> ;
     a fabio:JournalArticle .
 
@@ -31,8 +41,18 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/901014" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/0E83597040CC5A45A3C7031033A12D89.mc.E5CE7174FED95FD0AF8CFBB380057BB8>
+    dwc:eventDate "2019-04-02" ;
+    dwc:locality "Laowo River" ;
+    dwc:recordedBy "K. Tan" ;
+    dwc:typeStatus "Holotype" ;
+    dwc:verbatimElevation "1071" ;
+    dwc:verbatimLatitude "25.835556" ;
+    dwc:verbatimLongitude "98.907776" ;
+    trt:httpUri <https://treatment.plazi.org/id/0E83597040CC5A45A3C7031033A12D89#E5CE7174FED95FD0AF8CFBB380057BB8> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Hiptage_stenopterum_Tan_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Hiptage_stenopterum> ;
     dwc:LSID "0E835970-40CC-5A45-A3C7-031033A12D89" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Malpighiaceae" ;
@@ -41,28 +61,12 @@
     dwc:order "Malpighiales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "K. Tan & M. X. Ren" ;
+    dwc:scientificNameAuthorship "K. Tan & M. X. Ren", "K. Tan & M. X. Ren, 2023" ;
     dwc:species "stenopterum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Hiptage_stenopterum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Hiptage>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Malpighiaceae" ;
-    dwc:genus "Hiptage" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Malpighiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Hiptage_stenopterum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Hiptage> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Malpighiaceae" ;
     dwc:genus "Hiptage" ;
@@ -71,46 +75,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "stenopterum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Hiptage> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+<http://taxon-name.plazi.org/id/Plantae/Hiptage>
     dwc:class "Magnoliopsida" ;
+    dwc:family "Malpighiaceae" ;
+    dwc:genus "Hiptage" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Malpighiales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Malpighiaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Malpighiaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Malpighiales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Malpighiales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Malpighiales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Malpighiales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0E83597040CC5A45A3C7031033A12D89>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Hiptage_stenopterum_Tan_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.232.106675> ;
-    dc:creator "Ren, Ming-Xun", "Tan, Ke", "Yang, Shu-Yun", "Zhang, Tong-Tong" ;
-    cito:cites <http://dx.doi.org/10.3897/phytokeys.232.106675.figure1>, <http://dx.doi.org/10.3897/phytokeys.232.106675.figure2> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
