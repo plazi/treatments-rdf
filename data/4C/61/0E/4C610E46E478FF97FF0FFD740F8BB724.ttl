@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4C610E46E478FF97FF0FFD740F8BB724
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1459826> ;
+    dc:creator "Mengual, Ximo; Miranda, Gil Felipe G.; Thompson, F. Christian" ;
+    dc:title "Ocyptamus myiophagus Mengual & Miranda & Thompson 2018, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/4C610E46E478FF97FF0FFD740F8BB724.mc.74A0B50DE47BFF97FF5FFF580FE4B3A8>, <http://tb.plazi.org/GgServer/dwcaRecords/4C610E46E478FF97FF0FFD740F8BB724.mc.74A0B50DE47BFF97FD74FF580C97B38B> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ocyptamus_myiophagus_Mengual_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4461.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4461.1.1>
-    dc:creator "Mengual, Ximo", "Miranda, Gil Felipe G.", "Thompson, F. Christian" ;
-    dc:date "2018" ;
-    dc:title "Unraveling Ocyptamus and the Baccha legacy (Diptera: Syrphidae): redefinition of groups and new species descriptions" ;
     bibo:endPage "44" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-08-20" ;
     bibo:startPage "1" ;
     bibo:volume "4461" ;
+    dc:creator "Mengual, Ximo; Miranda, Gil Felipe G.; Thompson, F. Christian" ;
+    dc:date "2018" ;
+    dc:title "Unraveling Ocyptamus and the Baccha legacy (Diptera: Syrphidae): redefinition of groups and new species descriptions" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1459826> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/1459826/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/4C610E46E478FF97FF0FFD740F8BB724.mc.74A0B50DE47BFF97FF5FFF580FE4B3A8>
+    dwc:locality "San Jose" ;
+    trt:gbifOccurrenceId "1919493144" ;
+    trt:httpUri <https://treatment.plazi.org/id/4C610E46E478FF97FF0FFD740F8BB724#74A0B50DE47BFF97FF5FFF580FE4B3A8> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/4C610E46E478FF97FF0FFD740F8BB724.mc.74A0B50DE47BFF97FD74FF580C97B38B>
+    dwc:locality "San Pedro" ;
+    dwc:verbatimLatitude "9.935833" ;
+    dwc:verbatimLongitude "-84.05056" ;
+    trt:gbifOccurrenceId "1919493160" ;
+    trt:httpUri <https://treatment.plazi.org/id/4C610E46E478FF97FF0FFD740F8BB724#74A0B50DE47BFF97FD74FF580C97B38B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Ocyptamus_myiophagus_Mengual_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus_myiophagus> ;
-    dwc:ID-CoL "8D2TP" ;
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:genus "Ocyptamus" ;
@@ -37,41 +59,13 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Thompson" ;
+    dwc:scientificNameAuthorship "Thompson", "Mengual & Miranda & Thompson, 2018" ;
     dwc:species "myiophagus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8D2TP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus_myiophagus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ocyptamus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syrphidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ocyptamus_Mengual_2018>
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:genus "Ocyptamus" ;
@@ -79,10 +73,84 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Mengual & Miranda & Thompson, 2018" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ocyptamus_lepidus_Macquart_1842>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Ocyptamus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Macquart, 1842" ;
+    dwc:species "lepidus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus_lepidus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aleyrodidae_Westwood_1840>
+    dwc:class "Insecta" ;
+    dwc:family "Aleyrodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Westwood, 1840" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleyrodidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Drosophila_melanogaster_Meigen_1830>
+    dwc:class "Insecta" ;
+    dwc:family "Drosophilidae" ;
+    dwc:genus "Drosophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meigen, 1830" ;
+    dwc:species "melanogaster" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Drosophila_melanogaster> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Drosophila_saltans_Sturtevant_1916>
+    dwc:class "Insecta" ;
+    dwc:family "Drosophilidae" ;
+    dwc:genus "Drosophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sturtevant, 1916" ;
+    dwc:species "saltans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Drosophila_saltans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paracarotomus_Ashmead_1894>
+    dwc:class "Insecta" ;
+    dwc:family "Pteromalidae" ;
+    dwc:genus "Paracarotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ashmead, 1894" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paracarotomus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pteromalidae_Dalman_1820>
+    dwc:class "Insecta" ;
+    dwc:family "Pteromalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Dalman, 1820" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pteromalidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Ocyptamus_myiophagus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus> ;
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:genus "Ocyptamus" ;
@@ -91,22 +159,161 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "myiophagus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ocyptamus>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Ocyptamus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syrphidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Syrphidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Syrphidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4C610E46E478FF97FF0FFD740F8BB724>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ocyptamus_myiophagus_Mengual_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4461.1.1> ;
-    dc:creator "Mengual, Ximo", "Miranda, Gil Felipe G.", "Thompson, F. Christian" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1459826> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ocyptamus_lepidus>
+    dwc:class "Insecta" ;
+    dwc:family "Syrphidae" ;
+    dwc:genus "Ocyptamus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lepidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ocyptamus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aleyrodidae>
+    dwc:class "Insecta" ;
+    dwc:family "Aleyrodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Drosophila_melanogaster>
+    dwc:class "Insecta" ;
+    dwc:family "Drosophilidae" ;
+    dwc:genus "Drosophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "melanogaster" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Drosophila> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Drosophila>
+    dwc:class "Insecta" ;
+    dwc:family "Drosophilidae" ;
+    dwc:genus "Drosophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Drosophilidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Drosophilidae>
+    dwc:class "Insecta" ;
+    dwc:family "Drosophilidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Drosophila_saltans>
+    dwc:class "Insecta" ;
+    dwc:family "Drosophilidae" ;
+    dwc:genus "Drosophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "saltans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Drosophila> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paracarotomus>
+    dwc:class "Insecta" ;
+    dwc:family "Pteromalidae" ;
+    dwc:genus "Paracarotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pteromalidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pteromalidae>
+    dwc:class "Insecta" ;
+    dwc:family "Pteromalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
