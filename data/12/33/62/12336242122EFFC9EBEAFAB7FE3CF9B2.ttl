@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:12336242122EFFC9EBEAFAB7FE3CF9B2
+    cito:cites <http://dx.doi.org/10.5281/zenodo.269118>, <http://dx.doi.org/10.5281/zenodo.269119>, <http://dx.doi.org/10.5281/zenodo.269120> ;
+    dc:creator "Hugh D. Jones; Ronald Sluys" ;
+    dc:title "Marionfyfea adventor Jones & Sluys, 2016, sp. nov." ;
+    dwc:basisOfRecord <https://www.youtube.com/watch?v=8OkQiKqm9UM> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Marionfyfea_adventor_Jones_2016> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.5641200> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.5641200>
-    dc:creator "Hugh D. Jones", "Ronald Sluys" ;
-    dc:date "2016" ;
-    dc:title "A new terrestrial planarian species of the genus Marionfyfea (Platyhelminthes: Tricladida) found in Europe" ;
     bibo:endPage "2690" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2016-08-07" ;
     bibo:startPage "2673" ;
     bibo:volume "50" ;
+    dc:creator "Hugh D. Jones; Ronald Sluys" ;
+    dc:date "2016" ;
+    dc:title "A new terrestrial planarian species of the genus Marionfyfea (Platyhelminthes: Tricladida) found in Europe" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.269118>, <http://dx.doi.org/10.5281/zenodo.269119>, <http://dx.doi.org/10.5281/zenodo.269120> ;
     a fabio:JournalArticle .
 
@@ -36,8 +47,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/269120/files/figure.png" ;
     a fabio:Figure .
 
+<https://www.youtube.com/watch?v=8OkQiKqm9UM>
+    dwc:collectionCode "NHMUK" ;
+    dwc:eventDate "2014-03-22" ;
+    dwc:locality "three locations around Newquay, so the precise location is not known" ;
+    dwc:recordedBy "Elaine Roll" ;
+    trt:gbifOccurrenceId "3396422301" ;
+    trt:httpUri "https://www.youtube.com/watch?v=8OkQiKqm9UM" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Marionfyfea_adventor_Jones_2016>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marionfyfea_adventor> ;
     dwc:authority "Jones, 2016" ;
     dwc:authorityName "Jones" ;
     dwc:authorityYear "2016" ;
@@ -48,38 +67,22 @@
     dwc:order "Tricladida" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hugh D. Jones & Ronald Sluys, 2016" ;
     dwc:species "adventor" ;
     dwc:subFamily "Rhynchodeminae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marionfyfea_adventor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Geoplanidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tricladida> ;
-    dwc:class "Rhabditophora" ;
-    dwc:family "Geoplanidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Tricladida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Marionfyfea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geoplanidae> ;
-    dwc:class "Rhabditophora" ;
-    dwc:family "Geoplanidae" ;
+<http://taxon-concept.plazi.org/id/Animalia/Marionfyfea_adventor_Latin_2016>
     dwc:genus "Marionfyfea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Tricladida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Latin" ;
+    dwc:species "adventor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marionfyfea_adventor> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Marionfyfea_adventor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Marionfyfea> ;
+    # Warning: Could not determine parent name ;
     dwc:class "Rhabditophora" ;
     dwc:family "Geoplanidae" ;
     dwc:genus "Marionfyfea" ;
@@ -88,36 +91,68 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "adventor" ;
+    dwc:subFamily "Rhynchodeminae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Marionfyfea> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+<http://taxon-name.plazi.org/id/Animalia/Marionfyfea>
     dwc:class "Rhabditophora" ;
+    dwc:family "Geoplanidae" ;
+    dwc:genus "Marionfyfea" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Tricladida" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    dwc:subFamily "Rhynchodeminae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhynchodeminae>, <http://taxon-name.plazi.org/id/Animalia/Marionfyfea_adventor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhynchodeminae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Geoplanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tricladida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Rhynchodeminae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geoplanidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geoplanidae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Geoplanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tricladida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tricladida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tricladida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
     dwc:class "Rhabditophora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Tricladida" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/12336242122EFFC9EBEAFAB7FE3CF9B2>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Marionfyfea_adventor_Jones_2016> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.5641200> ;
-    dc:creator "Hugh D. Jones", "Ronald Sluys" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.269118>, <http://dx.doi.org/10.5281/zenodo.269119>, <http://dx.doi.org/10.5281/zenodo.269120> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
