@@ -1,33 +1,47 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///app/workdir/tmprdf/data/35/EC/EE/35ECEEAFD73B3A9CED36790C4AB834E0.rdf>
-    dc:description "Figure 3. A Calitys scabra B Larinotus umblicatus C Acalanthis quadrisignata D Calanthosoma flavomaculata E Calanthosoma (syn. Marnia) sipolisi F Egolia variegata G Necrobiopsis tasmanicus.", "Map 2. A distribution of the tribe Larinotini." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/21071", "https://binary.pensoft.net/fig/21073" ;
-    a fabio:Figure .
+treatment:35ECEEAFD73B3A9CED36790C4AB834E0
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Colydidae>' due to issues with rank ;
+    cito:cites <https://binary.pensoft.net/fig/21071>, <https://binary.pensoft.net/fig/21073> ;
+    dc:creator "Kolibac, Jiri" ;
+    dc:title "Larinotus Carter & Zeck 1937" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Larinotus_Carter_1937> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.366.6172> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.366.6172>
-    dc:creator "Kolibac, Jiri" ;
-    dc:date "2013" ;
-    dc:title "Trogossitidae: A review of the beetle family, with a catalogue and keys" ;
     bibo:endPage "194" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2013-12-31" ;
     bibo:startPage "1" ;
     bibo:volume "366" ;
-    fabio:hasPart <file:///app/workdir/tmprdf/data/35/EC/EE/35ECEEAFD73B3A9CED36790C4AB834E0.rdf> ;
+    dc:creator "Kolibac, Jiri" ;
+    dc:date "2013" ;
+    dc:title "Trogossitidae: A review of the beetle family, with a catalogue and keys" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/21071>, <https://binary.pensoft.net/fig/21073> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/21071>
+    dc:description "Figure 3. A Calitys scabra B Larinotus umblicatus C Acalanthis quadrisignata D Calanthosoma flavomaculata E Calanthosoma (syn. Marnia) sipolisi F Egolia variegata G Necrobiopsis tasmanicus." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/21071" ;
+    a fabio:Figure .
+
+<https://binary.pensoft.net/fig/21073>
+    dc:description "Map 2. A distribution of the tribe Larinotini." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/21073" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Larinotus_Carter_1937>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larinotus> ;
     dwc:LSID "35ECEEAF-D73B-3A9C-ED36-790C4AB834E0" ;
     dwc:class "Insecta" ;
     dwc:family "Trogossitidae" ;
@@ -37,39 +51,67 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Carter & Zeck, 1937" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larinotus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Larinotus_umblicatus_Carter_1937>
     dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Larinotus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Carter & Zeck, 1937" ;
+    dwc:species "umblicatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larinotus_umblicatus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Nebophilus_Crowson_1970>
     dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Nebophilus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Crowson, 1970" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nebophilus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nebophilus_hirsutus_Crowson_1970>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Nebophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Crowson, 1970" ;
+    dwc:species "hirsutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nebophilus_hirsutus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Peltis_Mueller_1764>
+    dwc:class "Hexapoda" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Peltis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "O. F. Mueller, 1764" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Peltis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Larinotini_Slipinski_1992>
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Slipinski, 1992" ;
+    dwc:tribe "Larinotini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larinotini> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Larinotus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
     dwc:class "Insecta" ;
     dwc:family "Trogossitidae" ;
     dwc:genus "Larinotus" ;
@@ -77,22 +119,104 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trogossitidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
+    dwc:class "Insecta", "Hexapoda" ;
     dwc:family "Trogossitidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/35ECEEAFD73B3A9CED36790C4AB834E0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Larinotus_Carter_1937> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.366.6172> ;
-    dc:creator "Kolibac, Jiri" ;
-    cito:cites <file:///app/workdir/tmprdf/data/35/EC/EE/35ECEEAFD73B3A9CED36790C4AB834E0.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta", "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta>, <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Larinotus_umblicatus>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Larinotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "umblicatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Larinotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nebophilus>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Nebophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nebophilus_hirsutus>
+    dwc:class "Insecta" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Nebophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hirsutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nebophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peltis>
+    dwc:class "Hexapoda" ;
+    dwc:family "Trogossitidae" ;
+    dwc:genus "Peltis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trogossitidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Larinotini>
+    # Warning: Could not determine parent name ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Larinotini" ;
+    a dwcFP:TaxonName .
