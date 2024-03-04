@@ -1,33 +1,43 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<file:///workspace/rdf/data/D9/F0/2A/D9F02ADAF64599715388C6D52638783F.rdf>
-    dc:description "Figures 18 - 26. Habitus of representative Listroderini. 18 Adioristidius hirsutus 19 Puranius nigrinus 20 Haversiella albolimbata 21 Listronotus bosqi 22 Neopachytychius squamosus 23 Falklandiellus suffodens 24 Falklandiopsis magellanica 25 Falklandius antarcticus 26 Gromilus veneris." ;
-    fabio:hasRepresentation "https://binary.pensoft.net/fig/28345" ;
-    a fabio:Figure .
+treatment:D9F02ADAF64599715388C6D52638783F
+    cito:cites <https://binary.pensoft.net/fig/28345> ;
+    dc:creator "Morrone, Juan J." ;
+    dc:title "Puranius Germain 1895" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Puranius_Germain_1895> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Reichertia>, <http://taxon-name.plazi.org/id/Animalia/Listroderes_sculpticollis> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Puranus_Germain_1911> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.273.4116> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.273.4116>
-    dc:creator "Morrone, Juan J." ;
-    dc:date "2013" ;
-    dc:title "The subtribes and genera of the tribe Listroderini (Coleoptera, Curculionidae, Cyclominae): Phylogenetic analysis with systematic and biogeographical accounts" ;
     bibo:endPage "71" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2013-02-28" ;
     bibo:startPage "15" ;
     bibo:volume "273" ;
-    fabio:hasPart <file:///workspace/rdf/data/D9/F0/2A/D9F02ADAF64599715388C6D52638783F.rdf> ;
+    dc:creator "Morrone, Juan J." ;
+    dc:date "2013" ;
+    dc:title "The subtribes and genera of the tribe Listroderini (Coleoptera, Curculionidae, Cyclominae): Phylogenetic analysis with systematic and biogeographical accounts" ;
+    fabio:hasPart <https://binary.pensoft.net/fig/28345> ;
     a fabio:JournalArticle .
 
+<https://binary.pensoft.net/fig/28345>
+    dc:description "Figures 18 - 26. Habitus of representative Listroderini. 18 Adioristidius hirsutus 19 Puranius nigrinus 20 Haversiella albolimbata 21 Listronotus bosqi 22 Neopachytychius squamosus 23 Falklandiellus suffodens 24 Falklandiopsis magellanica 25 Falklandius antarcticus 26 Gromilus veneris." ;
+    fabio:hasRepresentation "https://binary.pensoft.net/fig/28345" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Puranius_Germain_1895>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
     dwc:LSID "D9F02ADA-F645-9971-5388-C6D52638783F" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
@@ -37,10 +47,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Germain, 1895" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Puranus_Germain_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Puranus" ;
@@ -49,49 +59,193 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Germain, 1911" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_argentinensis_Morrone_1994>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "argentinensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_argentinensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_championi_Kuschel_1952>
     dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuschel, 1952" ;
+    dwc:species "championi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_championi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_elguetai_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "elguetai" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_elguetai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_exsculpticollis_Enderlein_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Enderlein, 1907" ;
+    dwc:species "exsculpticollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_exsculpticollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_fasciculiger_Kuschel_1955>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuschel, 1955" ;
+    dwc:species "fasciculiger" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_fasciculiger> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_midas_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "midas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_midas> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_obrienorum_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "obrienorum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_obrienorum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_pusillus_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "pusillus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_pusillus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_scaber_Enderlein_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Enderlein, 1907" ;
+    dwc:species "scaber" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_scaber> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_sylvanius_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "sylvanius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_sylvanius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_torosus_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "torosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_torosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_tothus_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "tothus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_tothus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Puranius_vulgaris_Morrone_1994>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Morrone, 1994" ;
+    dwc:species "vulgaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puranius_vulgaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nothofagaceae_Kuprianova_1962>
+    dwc:genus "Nothofagaceae" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kuprianova, 1962" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nothofagaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ephedraceae_Dumortier_1829>
+    dwc:genus "Ephedraceae" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Dumortier, 1829" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ephedraceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Puranius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Puranius" ;
@@ -99,10 +253,49 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Puranus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Puranus" ;
@@ -110,14 +303,173 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D9F02ADAF64599715388C6D52638783F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Puranius_Germain_1895> ;
-    trt:citesTaxonName <file:///workspace/rdf/data/D9/F0/2A/Listroderes_sculpticollis>, <file:///workspace/rdf/data/D9/F0/2A/Reichertia> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Puranus_Germain_1911> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.273.4116> ;
-    dc:creator "Morrone, Juan J." ;
-    cito:cites <file:///workspace/rdf/data/D9/F0/2A/D9F02ADAF64599715388C6D52638783F.rdf> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Puranius_argentinensis>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "argentinensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Puranius_championi>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "championi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_elguetai>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "elguetai" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_exsculpticollis>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "exsculpticollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_fasciculiger>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fasciculiger" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_midas>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "midas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_obrienorum>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "obrienorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_pusillus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pusillus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_scaber>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "scaber" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_sylvanius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sylvanius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_torosus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "torosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_tothus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tothus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puranius_vulgaris>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Puranius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vulgaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puranius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nothofagaceae>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Nothofagaceae" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ephedraceae>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Ephedraceae" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
