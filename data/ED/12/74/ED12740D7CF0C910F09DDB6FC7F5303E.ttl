@@ -1,40 +1,43 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:ED12740D7CF0C910F09DDB6FC7F5303E
+    dc:creator "Soest, Rob van; Carballo, Jose Luis; Hooper, John" ;
+    dc:title "Cyamon (?) spinispinosum Topsent 1904" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/spinispinosum_Topsent_1904> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Hymeraphia_spinispinosa>, <http://taxon-name.plazi.org/id/Animalia/Acantheurypon_spinispinosum>, <http://taxon-name.plazi.org/id/Animalia/Acantheurypon_incipiens>, <http://taxon-name.plazi.org/id/Animalia/Cyamon_spinispinosum> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.239.3734> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.239.3734>
-    dc:creator "Carballo, Jose Luis", "Hooper, John", "Soest, Rob van" ;
-    dc:date "2012" ;
-    dc:title "Polyaxone monaxonids: revision of raspailiid sponges with polyactine megascleres (Cyamon and Trikentrion)" ;
     bibo:endPage "70" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "239" ;
+    dc:creator "Soest, Rob van; Carballo, Jose Luis; Hooper, John" ;
+    dc:date "2012" ;
+    dc:title "Polyaxone monaxonids: revision of raspailiid sponges with polyactine megascleres (Cyamon and Trikentrion)" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/_spinispinosum_Topsent_1904>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/_spinispinosum> ;
+<http://taxon-concept.plazi.org/id/Animalia/spinispinosum_Topsent_1904>
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Topsent, 1904" ;
     dwc:species "spinispinosum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/spinispinosum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/_spinispinosum>
+<http://taxon-name.plazi.org/id/Animalia/spinispinosum>
+    # Warning: Could not determine parent name ;
     dwc:rank "species" ;
     dwc:species "spinispinosum" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/ED12740D7CF0C910F09DDB6FC7F5303E>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/_spinispinosum_Topsent_1904> ;
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/ED/12/74/Acantheurypon_incipiens>, <file:///app/workdir/tmprdf/data/ED/12/74/Acantheurypon_spinispinosum>, <file:///app/workdir/tmprdf/data/ED/12/74/Cyamon_spinispinosum>, <file:///app/workdir/tmprdf/data/ED/12/74/Hymeraphia_spinispinosa> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.239.3734> ;
-    dc:creator "Carballo, Jose Luis", "Hooper, John", "Soest, Rob van" ;
-    a trt:Treatment .
-
