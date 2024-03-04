@@ -1,53 +1,72 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X-71.2.211>
-    dc:creator "Newton, Alfred F.", "Peck, Stewart B." ;
-    dc:date "2017" ;
-    dc:title "An Annotated Catalog of the Leiodidae (Coleoptera) of the Nearctic Region (Continental North America North of Mexico)" ;
+treatment:832A9704D16B7F0D77A6FB4FFDD2F9F1
+    dc:creator "Peck, Stewart B.; Newton, Alfred F." ;
+    dc:title "Catopocerini Hatch 1927" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Catopocerini_Hatch_1927> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-71.2.211> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x-71.2.211>
     bibo:endPage "258" ;
     bibo:issue "2" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2017-06-27" ;
     bibo:startPage "211" ;
     bibo:volume "71" ;
+    dc:creator "Peck, Stewart B.; Newton, Alfred F." ;
+    dc:date "2017" ;
+    dc:title "An Annotated Catalog of the Leiodidae (Coleoptera) of the Nearctic Region (Continental North America North of Mexico)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Catopocerini_Hatch_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Catopocerini> ;
-    dwc:ID-CoL "8VR7J" ;
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "tribe" ;
-    dwc:scientificNameAuthorship "Hatch, 1927: 4" ;
+    dwc:scientificNameAuthorship "Hatch, 1927: 4", "Hatch, 1927" ;
     dwc:tribe "Catopocerini" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8VR7J> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Catopocerini> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Catopocerus_Motschulsky_1870>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Catopocerus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Motschulsky, 1870" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Catopocerus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pinodytes_Horn_1880>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Pinodytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Horn, 1880" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pinodytes> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Catopocerini>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodidae> ;
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:kingdom "Animalia" ;
@@ -55,38 +74,66 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "tribe" ;
     dwc:tribe "Catopocerini" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Leiodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/832A9704D16B7F0D77A6FB4FFDD2F9F1>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Catopocerini_Hatch_1927> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-71.2.211> ;
-    dc:creator "Newton, Alfred F.", "Peck, Stewart B." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Catopocerus>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Catopocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pinodytes>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Pinodytes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodidae> ;
+    a dwcFP:TaxonName .
