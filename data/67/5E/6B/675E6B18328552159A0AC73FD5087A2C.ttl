@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:675E6B18328552159A0AC73FD5087A2C
+    cito:cites <http://dx.doi.org/10.3897/zookeys.935.51414.figure1>, <http://dx.doi.org/10.3897/zookeys.935.51414.figure4> ;
+    dc:creator "Chen, Zhe-Yu; Wu, Min" ;
+    dc:title "Pincerna costulosa" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pincerna_costulosa_Bavay_1912> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Alycaeus_costulosus_Bavay_1912> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.935.51414> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.935.51414>
-    dc:creator "Chen, Zhe-Yu", "Wu, Min" ;
-    dc:date "2020" ;
-    dc:title "Two new cyclophoroid species from Hubei, China, with proposal of a new genus (Gastropoda, Caenogastropoda, Diplommatinidae and Alycaeidae)" ;
     bibo:endPage "46" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "37" ;
     bibo:volume "935" ;
+    dc:creator "Chen, Zhe-Yu; Wu, Min" ;
+    dc:date "2020" ;
+    dc:title "Two new cyclophoroid species from Hubei, China, with proposal of a new genus (Gastropoda, Caenogastropoda, Diplommatinidae and Alycaeidae)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.935.51414.figure1>, <http://dx.doi.org/10.3897/zookeys.935.51414.figure4> ;
     a fabio:JournalArticle .
 
@@ -30,8 +40,21 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/412414" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Pincerna_costulosa_Bavay_1912>
+    dwc:LSID "675E6B18-3285-5215-9A0A-C73FD5087A2C" ;
+    dwc:class "Gastropoda" ;
+    dwc:family "Cyclophoridae" ;
+    dwc:genus "Pincerna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Architaenioglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Bavay & Dautzenberg, 1912)", "Bavay & Dautzenberg, 1912" ;
+    dwc:species "costulosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pincerna_costulosa> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Alycaeus_costulosus_Bavay_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alycaeus_costulosus> ;
     dwc:class "Gastropoda" ;
     dwc:family "Cyclophoridae" ;
     dwc:genus "Alycaeus" ;
@@ -41,11 +64,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bavay & Dautzenberg, 1912" ;
     dwc:species "costulosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Alycaeus_costulosus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Pincerna_costulosa_Bavay_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pincerna_costulosa> ;
-    dwc:LSID "675E6B18-3285-5215-9A0A-C73FD5087A2C" ;
+<http://taxon-name.plazi.org/id/Animalia/Pincerna_costulosa>
     dwc:class "Gastropoda" ;
     dwc:family "Cyclophoridae" ;
     dwc:genus "Pincerna" ;
@@ -53,28 +75,61 @@
     dwc:order "Architaenioglossa" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Bavay & Dautzenberg, 1912)" ;
     dwc:species "costulosa" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pincerna> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pincerna>
+    dwc:class "Gastropoda" ;
+    dwc:family "Cyclophoridae" ;
+    dwc:genus "Pincerna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Architaenioglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclophoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyclophoridae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Cyclophoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Architaenioglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Architaenioglossa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Architaenioglossa>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Architaenioglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Alycaeus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclophoridae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Cyclophoridae" ;
-    dwc:genus "Alycaeus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Architaenioglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Alycaeus_costulosus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Alycaeus> ;
     dwc:class "Gastropoda" ;
     dwc:family "Cyclophoridae" ;
     dwc:genus "Alycaeus" ;
@@ -83,70 +138,16 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "costulosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Alycaeus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Architaenioglossa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Architaenioglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cyclophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Architaenioglossa> ;
+<http://taxon-name.plazi.org/id/Animalia/Alycaeus>
     dwc:class "Gastropoda" ;
     dwc:family "Cyclophoridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Architaenioglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pincerna>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclophoridae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Cyclophoridae" ;
-    dwc:genus "Pincerna" ;
+    dwc:genus "Alycaeus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Architaenioglossa" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclophoridae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pincerna_costulosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pincerna> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Cyclophoridae" ;
-    dwc:genus "Pincerna" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Architaenioglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:species "costulosa" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/675E6B18328552159A0AC73FD5087A2C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pincerna_costulosa_Bavay_1912> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Alycaeus_costulosus_Bavay_1912> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.935.51414> ;
-    dc:creator "Chen, Zhe-Yu", "Wu, Min" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.935.51414.figure1>, <http://dx.doi.org/10.3897/zookeys.935.51414.figure4> ;
-    a trt:Treatment .
-
