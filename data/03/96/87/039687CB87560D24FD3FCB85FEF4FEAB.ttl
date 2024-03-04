@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X-70.3.562>
-    dc:creator "Hayashi, Masakazu", "Iwata, Yasuyuki", "Minoshima, Yûsuke N." ;
-    dc:date "2016" ;
-    dc:title "Egg-Case and Pupa ofEnochrus (methydrus) japonicus (Sharp) (Coleoptera: Hydrophilidae)" ;
+treatment:039687CB87560D24FD3FCB85FEF4FEAB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5407500>, <http://dx.doi.org/10.5281/zenodo.5407502> ;
+    dc:creator "Minoshima, Yûsuke N.; Iwata, Yasuyuki; Hayashi, Masakazu" ;
+    dc:title "Enochrus (Methydrus) japonicus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039687CB87560D24FD3FCB85FEF4FEAB.mc.3B573C8087560D21FC55CC26FBF9FB59> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enochrus_japonicus_Sharp_1873> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-70.3.562> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x-70.3.562>
     bibo:endPage "565" ;
     bibo:issue "3" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2016-09-30" ;
     bibo:startPage "561" ;
     bibo:volume "70" ;
+    dc:creator "Minoshima, Yûsuke N.; Iwata, Yasuyuki; Hayashi, Masakazu" ;
+    dc:date "2016" ;
+    dc:title "Egg-Case and Pupa ofEnochrus (methydrus) japonicus (Sharp) (Coleoptera: Hydrophilidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5407500>, <http://dx.doi.org/10.5281/zenodo.5407502> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/5407502/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039687CB87560D24FD3FCB85FEF4FEAB.mc.3B573C8087560D21FC55CC26FBF9FB59>
+    dwc:catalogNumber "R22" ;
+    dwc:collectionCode "R" ;
+    dwc:eventDate "2012-05-27" ;
+    dwc:locality "Five" ;
+    dwc:recordedBy "Y. Iwata & Y. Minoshima" ;
+    trt:gbifOccurrenceId "3340951301" ;
+    trt:httpUri <https://treatment.plazi.org/id/039687CB87560D24FD3FCB85FEF4FEAB#3B573C8087560D21FC55CC26FBF9FB59> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Enochrus_japonicus_Sharp_1873>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_japonicus> ;
-    dwc:ID-CoL "39WD7" ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Enochrus" ;
@@ -42,34 +60,28 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Sharp, 1873)" ;
+    dwc:scientificNameAuthorship "(Sharp, 1873)", "Sharp, 1873" ;
     dwc:species "japonicus" ;
     dwc:subGenus "Methydrus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/39WD7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_japonicus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_simulans_Sharp_1873>
     dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sharp, 1873" ;
+    dwc:species "simulans" ;
+    dwc:subGenus "Holcophilydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_simulans> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Enochrus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_Thomson_1859>
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Enochrus" ;
@@ -77,10 +89,122 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Thomson, 1859" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_cinctus_Say_1824>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Say, 1824)" ;
+    dwc:species "cinctus" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_cinctus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_Methydrus_Rey_1885>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:scientificNameAuthorship "Rey, 1885" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_vulgaris_Steinheil_1869>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Steinheil, 1869)" ;
+    dwc:species "vulgaris" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_vulgaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_fimbriatus_Melsheimer_1844>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Melsheimer, 1844)" ;
+    dwc:species "fimbriatus" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_fimbriatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_maculiceps_MacLeay_1871>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(MacLeay, 1871)" ;
+    dwc:species "maculiceps" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_maculiceps> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_variegatus_Steinheil_1869>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Steinheil, 1869)" ;
+    dwc:species "variegatus" ;
+    dwc:subGenus "Hugoscottia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_variegatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enochrus_barituensis_Fernandez_2006>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fernandez, 2006" ;
+    dwc:species "barituensis" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enochrus_barituensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eochrus_quadripunctatus_Herbst_1797>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Eochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Herbst, 1797)" ;
+    dwc:species "quadripunctatus" ;
+    dwc:subGenus "Lumetus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eochrus_quadripunctatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Enochrus_japonicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus> ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:genus "Enochrus" ;
@@ -89,40 +213,219 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "japonicus" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus>, <http://taxon-name.plazi.org/id/Animalia/Enochrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Hydrophilidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039687CB87560D24FD3FCB85FEF4FEAB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enochrus_japonicus_Sharp_1873> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-70.3.562> ;
-    dc:creator "Hayashi, Masakazu", "Iwata, Yasuyuki", "Minoshima, Yûsuke N." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5407500>, <http://dx.doi.org/10.5281/zenodo.5407502> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/039687CB87560D24FD3FCB85FEF4FEAB/R22> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039687CB87560D24FD3FCB85FEF4FEAB/R22>
-    trt:gbifOccurrenceId "3340951301" ;
-    dwc:catalogNumber "R22" ;
-    dwc:collectionCode "R" ;
-    dwc:eventDate "2012-05-27" ;
-    dwc:locality "Five" ;
-    dwc:recordedBy "Y. Iwata & Y. Minoshima" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_simulans>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "simulans" ;
+    dwc:subGenus "Holcophilydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Holcophilydrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_Holcophilydrus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Holcophilydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_cinctus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cinctus" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_vulgaris>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vulgaris" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_fimbriatus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fimbriatus" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_maculiceps>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "maculiceps" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_variegatus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "variegatus" ;
+    dwc:subGenus "Hugoscottia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Hugoscottia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_Hugoscottia>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Hugoscottia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enochrus_barituensis>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Enochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "barituensis" ;
+    dwc:subGenus "Methydrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enochrus_Methydrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eochrus_quadripunctatus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Eochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "quadripunctatus" ;
+    dwc:subGenus "Lumetus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eochrus_Lumetus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eochrus_Lumetus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Eochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Lumetus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eochrus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eochrus>
+    dwc:class "Insecta" ;
+    dwc:family "Hydrophilidae" ;
+    dwc:genus "Eochrus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrophilidae> ;
+    a dwcFP:TaxonName .
