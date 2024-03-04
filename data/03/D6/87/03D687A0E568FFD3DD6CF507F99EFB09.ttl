@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D687A0E568FFD3DD6CF507F99EFB09
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8145059> ;
+    dc:creator "MAQSOOD AHMAD; M. SHAMIM JAIRAJPURI" ;
+    dc:title "Enchodelus (Paraenchodelus) thornei Baqri & Jairajpuri 1974" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enchodelus_thornei_Baqri_1974> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.8145041> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.8145041>
-    dc:creator "M. SHAMIM JAIRAJPURI", "MAQSOOD AHMAD" ;
-    dc:date "1980" ;
-    dc:title "A REVIEW OF THE GENUS ENCHODELUS THORNE, 1939 WITH DESCRIPTIONS - OF SPECIES FROM INDIA" ;
     bibo:endPage "42" ;
     bibo:journal "Records of the Zoological Survey of India" ;
     bibo:pubDate "1980-01-01" ;
     bibo:startPage "1" ;
     bibo:volume "15" ;
+    dc:creator "MAQSOOD AHMAD; M. SHAMIM JAIRAJPURI" ;
+    dc:date "1980" ;
+    dc:title "A REVIEW OF THE GENUS ENCHODELUS THORNE, 1939 WITH DESCRIPTIONS - OF SPECIES FROM INDIA" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8145059> ;
     a fabio:JournalArticle .
 
@@ -27,8 +36,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Enchodelus_thornei_Baqri_1974>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchodelus_thornei> ;
-    dwc:ID-CoL "fdce9bff-05c4-49b2-bc49-81f0ee15a874" ;
     dwc:class "Enoplea" ;
     dwc:family "Nordiidae" ;
     dwc:genus "Enchodelus" ;
@@ -36,27 +43,39 @@
     dwc:order "Dorylaimida" ;
     dwc:phylum "Nematoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Baqri & Jairajpuri (1974)" ;
+    dwc:scientificNameAuthorship "Baqri & Jairajpuri (1974)", "Baqri & Jairajpuri, 1974" ;
     dwc:species "thornei" ;
     dwc:subGenus "Paraenchodelus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/fdce9bff-05c4-49b2-bc49-81f0ee15a874> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enchodelus_thornei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dorylaimida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enoplea> ;
+<http://taxon-name.plazi.org/id/Animalia/Enchodelus_thornei>
     dwc:class "Enoplea" ;
+    dwc:family "Nordiidae" ;
+    dwc:genus "Enchodelus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dorylaimida" ;
     dwc:phylum "Nematoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "thornei" ;
+    dwc:subGenus "Paraenchodelus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchodelus_Paraenchodelus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enchodelus_Paraenchodelus>
+    dwc:class "Enoplea" ;
+    dwc:family "Nordiidae" ;
+    dwc:genus "Enchodelus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dorylaimida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Paraenchodelus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchodelus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Enchodelus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nordiidae> ;
     dwc:class "Enoplea" ;
     dwc:family "Nordiidae" ;
     dwc:genus "Enchodelus" ;
@@ -64,49 +83,44 @@
     dwc:order "Dorylaimida" ;
     dwc:phylum "Nematoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enchodelus_thornei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchodelus> ;
-    dwc:class "Enoplea" ;
-    dwc:family "Nordiidae" ;
-    dwc:genus "Enchodelus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dorylaimida" ;
-    dwc:phylum "Nematoda" ;
-    dwc:rank "species" ;
-    dwc:species "thornei" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enoplea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematoda> ;
-    dwc:class "Enoplea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Nematoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nematoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Nematoda" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nordiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Nordiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorylaimida> ;
     dwc:class "Enoplea" ;
     dwc:family "Nordiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dorylaimida" ;
     dwc:phylum "Nematoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorylaimida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D687A0E568FFD3DD6CF507F99EFB09>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Enchodelus_thornei_Baqri_1974> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.8145041> ;
-    dc:creator "M. SHAMIM JAIRAJPURI", "MAQSOOD AHMAD" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8145059> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Dorylaimida>
+    dwc:class "Enoplea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dorylaimida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enoplea> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Enoplea>
+    dwc:class "Enoplea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nematoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

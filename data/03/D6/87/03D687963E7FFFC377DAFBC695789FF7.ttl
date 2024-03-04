@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D687963E7FFFC377DAFBC695789FF7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.253077> ;
+    dc:creator "Tan, Jiang-Li; Achterberg, Kees Van; Duan, Mei-Jiao; Chen, Xue-Xin" ;
+    dc:title "Polistes (Gyrostoma) olivaceus De Geer 1773" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Polistes_olivaceus_Geer_1773> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Vespa_olivacea_Geer_1773>, <http://taxon-concept.plazi.org/id/Animalia/Vespa_macaensis_Fabricius_1793> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3785.3.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3785.3.3>
-    dc:creator "Achterberg, Kees Van", "Chen, Xue-Xin", "Duan, Mei-Jiao", "Tan, Jiang-Li" ;
-    dc:date "2014" ;
-    dc:title "An illustrated key to the species of subgenus Gyrostoma Kirby, 1828 (Hymenoptera, Vespidae, Polistinae) from China, with discovery of Polistes (Gyrostoma) tenuispunctia Kim, 2001" ;
     bibo:endPage "399" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "377" ;
     bibo:volume "3785" ;
+    dc:creator "Tan, Jiang-Li; Achterberg, Kees Van; Duan, Mei-Jiao; Chen, Xue-Xin" ;
+    dc:date "2014" ;
+    dc:title "An illustrated key to the species of subgenus Gyrostoma Kirby, 1828 (Hymenoptera, Vespidae, Polistinae) from China, with discovery of Polistes (Gyrostoma) tenuispunctia Kim, 2001" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.253077> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Polistes_olivaceus_Geer_1773>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polistes_olivaceus> ;
-    dwc:ID-CoL "4KYFM" ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Polistes" ;
@@ -39,23 +47,11 @@
     dwc:scientificNameAuthorship "De Geer, 1773" ;
     dwc:species "olivaceus" ;
     dwc:subGenus "Gyrostoma" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Vespa_macaensis_Fabricius_1793>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_macaensis> ;
-    dwc:class "Insecta" ;
-    dwc:family "Vespidae" ;
-    dwc:genus "Vespa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Fabricius 1793: 259" ;
-    dwc:species "macaensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4KYFM> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polistes_olivaceus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Vespa_olivacea_Geer_1773>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_olivacea> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Vespa" ;
@@ -65,60 +61,62 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "De Geer 1773: 582" ;
     dwc:species "olivacea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_olivacea> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Eumenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_hebraea_Fabricius_1787>
     dwc:class "Insecta" ;
-    dwc:family "Eumenidae" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fabricius 1787: 292" ;
+    dwc:species "hebraea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_hebraea> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_macaensis_Fabricius_1793>
     dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fabricius 1793: 259" ;
+    dwc:species "macaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_macaensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Vespa_macaensis_Fab._1793>
     dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fab., 1793" ;
+    dwc:species "macaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vespa_macaensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Polistes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Polistes_hebraeus_Fabricius_1787>
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Polistes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fabricius, 1787" ;
+    dwc:species "hebraeus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polistes_hebraeus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Polistes_olivaceus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polistes> ;
     dwc:class "Insecta" ;
     dwc:family "Eumenidae" ;
     dwc:genus "Polistes" ;
@@ -127,33 +125,73 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "olivaceus" ;
+    dwc:subGenus "Gyrostoma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polistes_Gyrostoma> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Vespa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Polistes_Gyrostoma>
     dwc:class "Insecta" ;
-    dwc:family "Vespidae" ;
-    dwc:genus "Vespa" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Polistes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Gyrostoma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polistes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polistes>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Polistes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eumenidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Vespa_macaensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
+<http://taxon-name.plazi.org/id/Animalia/Eumenidae>
     dwc:class "Insecta" ;
-    dwc:family "Vespidae" ;
-    dwc:genus "Vespa" ;
+    dwc:family "Eumenidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "macaensis" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Vespa_olivacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Vespa" ;
@@ -162,23 +200,62 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "olivacea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vespa>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Vespidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D687963E7FFFC377DAFBC695789FF7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Polistes_olivaceus_Geer_1773> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Vespa_macaensis_Fabricius_1793>, <http://taxon-concept.plazi.org/id/Animalia/Vespa_olivacea_Geer_1773> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3785.3.3> ;
-    dc:creator "Achterberg, Kees Van", "Chen, Xue-Xin", "Duan, Mei-Jiao", "Tan, Jiang-Li" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.253077> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Vespa_hebraea>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hebraea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Vespa_macaensis>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Vespa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "macaensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polistes_hebraeus>
+    dwc:class "Insecta" ;
+    dwc:family "Eumenidae" ;
+    dwc:genus "Polistes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hebraeus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polistes> ;
+    a dwcFP:TaxonName .
