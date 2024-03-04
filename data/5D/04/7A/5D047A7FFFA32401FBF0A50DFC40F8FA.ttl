@@ -1,28 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.35929/RSZ.0005>
-    dc:creator "Drago, Fabiana B.", "Díaz, Mariano Dueñas", "Núñez, Verónica" ;
-    dc:date "2020" ;
-    dc:title "Checklist of the nematode parasites of wild birds of Argentina" ;
+treatment:5D047A7FFFA32401FBF0A50DFC40F8FA
+    dc:creator "Drago, Fabiana B.; Núñez, Verónica; Díaz, Mariano Dueñas" ;
+    dc:title "Capillaria Zeder 1800" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Capillaria_Zeder_1800> ;
+    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0005> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.35929/rsz.0005>
     bibo:endPage "61" ;
     bibo:issue "1" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2020-06-04" ;
     bibo:startPage "43" ;
     bibo:volume "127" ;
+    dc:creator "Drago, Fabiana B.; Núñez, Verónica; Díaz, Mariano Dueñas" ;
+    dc:date "2020" ;
+    dc:title "Checklist of the nematode parasites of wild birds of Argentina" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Capillaria_Zeder_1800>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Capillaria> ;
     dwc:authority "Drago, 2020" ;
     dwc:authorityName "Drago" ;
     dwc:authorityYear "2020" ;
@@ -33,22 +42,38 @@
     dwc:order "Enoplida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Zeder, 1800" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Capillaria> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Larus_Dominicanus_Lichtenstein_1823>
+    dwc:class "Aves" ;
+    dwc:family "Laridae" ;
+    dwc:genus "Larus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lichtenstein & Mhk, 1823" ;
+    dwc:species "Dominicanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larus_Dominicanus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Nothura_Maculosa_nigroguttata_Salvadori_1895>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Nothura" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Salvadori, 1895" ;
+    dwc:species "Maculosa" ;
+    dwc:subSpecies "nigroguttata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nothura_Maculosa_nigroguttata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Capillaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichuridae> ;
     dwc:class "Insecta" ;
     dwc:family "Trichuridae" ;
     dwc:genus "Capillaria" ;
@@ -56,38 +81,156 @@
     dwc:order "Enoplida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enoplida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Enoplida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichuridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichuridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enoplida> ;
     dwc:class "Insecta" ;
     dwc:family "Trichuridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Enoplida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enoplida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5D047A7FFFA32401FBF0A50DFC40F8FA>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Capillaria_Zeder_1800> ;
-    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0005> ;
-    dc:creator "Drago, Fabiana B.", "Díaz, Mariano Dueñas", "Núñez, Verónica" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Enoplida>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enoplida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Larus_Dominicanus>
+    dwc:class "Aves" ;
+    dwc:family "Laridae" ;
+    dwc:genus "Larus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "Dominicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Larus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Larus>
+    dwc:class "Aves" ;
+    dwc:family "Laridae" ;
+    dwc:genus "Larus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Laridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Laridae>
+    dwc:class "Aves" ;
+    dwc:family "Laridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Charadriiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Charadriiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Charadriiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nothura_Maculosa_nigroguttata>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Nothura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "Maculosa" ;
+    dwc:subSpecies "nigroguttata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nothura_Maculosa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nothura_Maculosa>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Nothura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "Maculosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nothura> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nothura>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Nothura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tinamidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tinamidae>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tinamiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tinamiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
