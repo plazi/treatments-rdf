@@ -1,23 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:4FFC3BA6DC0A68E0C6294D9C9C3304E0
+    cito:cites <http://dx.doi.org/10.3897/jhr.56.10158.figures94>, <http://dx.doi.org/10.3897/jhr.56.10158.figures95-97> ;
+    dc:creator "Talamas, Elijah J.; Buffington, Matthew L.; Hoelmer, Kim" ;
+    dc:title "Trissolcus larides" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trissolcus_larides_Nixon_1943> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Microphanurus_larides_Nixon_1943> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.56.10158> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.56.10158>
-    dc:creator "Buffington, Matthew L.", "Hoelmer, Kim", "Talamas, Elijah J." ;
-    dc:date "2017" ;
-    dc:title "Revision of Palearctic Trissolcus Ashmead (Hymenoptera, Scelionidae)" ;
     bibo:endPage "185" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2017-06-21" ;
     bibo:startPage "3" ;
     bibo:volume "56" ;
+    dc:creator "Talamas, Elijah J.; Buffington, Matthew L.; Hoelmer, Kim" ;
+    dc:date "2017" ;
+    dc:title "Revision of Palearctic Trissolcus Ashmead (Hymenoptera, Scelionidae)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/jhr.56.10158.figures94>, <http://dx.doi.org/10.3897/jhr.56.10158.figures95-97> ;
     a fabio:JournalArticle .
 
@@ -31,8 +43,21 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/138630" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Trissolcus_larides_Nixon_1943>
+    dwc:LSID "4FFC3BA6-DC0A-68E0-C629-4D9C9C3304E0" ;
+    dwc:class "Insecta" ;
+    dwc:family "Platygastroidea" ;
+    dwc:genus "Trissolcus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera", "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Nixon)", "Ashmead, 1893" ;
+    dwc:species "larides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trissolcus_larides> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Microphanurus_larides_Nixon_1943>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microphanurus_larides> ;
     dwc:class "Insecta" ;
     dwc:family "Platygastroidea" ;
     dwc:genus "Microphanurus" ;
@@ -42,89 +67,99 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Kieffer, 1926" ;
     dwc:species "larides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microphanurus_larides> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Trissolcus_larides_Nixon_1943>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trissolcus_larides> ;
-    dwc:LSID "4FFC3BA6-DC0A-68E0-C629-4D9C9C3304E0" ;
+<http://taxon-name.plazi.org/id/Animalia/Trissolcus_larides>
     dwc:class "Insecta" ;
     dwc:family "Platygastroidea" ;
     dwc:genus "Trissolcus" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
+    dwc:order "Hymenoptera", "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Nixon)" ;
     dwc:species "larides" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trissolcus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trissolcus>
+    dwc:class "Insecta" ;
+    dwc:family "Platygastroidea" ;
+    dwc:genus "Trissolcus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera", "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platygastroidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platygastroidea>
+    dwc:class "Insecta" ;
+    dwc:family "Platygastroidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera", "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>, <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Platygastroidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Microphanurus_larides>
     dwc:class "Insecta" ;
     dwc:family "Platygastroidea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trissolcus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platygastroidea> ;
-    dwc:class "Insecta" ;
-    dwc:family "Platygastroidea" ;
-    dwc:genus "Trissolcus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trissolcus_larides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trissolcus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Platygastroidea" ;
-    dwc:genus "Trissolcus" ;
+    dwc:genus "Microphanurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "larides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microphanurus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4FFC3BA6DC0A68E0C6294D9C9C3304E0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trissolcus_larides_Nixon_1943> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Microphanurus_larides_Nixon_1943> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.56.10158> ;
-    dc:creator "Buffington, Matthew L.", "Hoelmer, Kim", "Talamas, Elijah J." ;
-    cito:cites <http://dx.doi.org/10.3897/jhr.56.10158.figures94>, <http://dx.doi.org/10.3897/jhr.56.10158.figures95-97> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Microphanurus>
+    dwc:class "Insecta" ;
+    dwc:family "Platygastroidea" ;
+    dwc:genus "Microphanurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platygastroidea> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .

@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4F3A5135FFBADC064FE3F9316E80FD70
+    cito:cites <http://dx.doi.org/10.5281/zenodo.322015>, <http://dx.doi.org/10.5281/zenodo.322016> ;
+    dc:creator "Anisyutkin, Leonid N.; Yushkova, Olga V." ;
+    dc:title "Aptera fusca Thunberg 1784" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/4F3A5135FFBADC064FE3F9316E80FD70.mc.77FBEA7EFFBADC014FE3F8AB6D25F83A> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aptera_fusca_Thunberg_1784> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4236.1.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4236.1.2>
-    dc:creator "Anisyutkin, Leonid N.", "Yushkova, Olga V." ;
-    dc:date "2017" ;
-    dc:title "New data on cockroaches of the subfamily Epilamprinae (Dictyoptera: Blaberidae) from India and Sri Lanka, with descriptions of new species and the genital complex of Aptera fusca (Thunberg, 1784)" ;
     bibo:endPage "64" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "41" ;
     bibo:volume "4236" ;
+    dc:creator "Anisyutkin, Leonid N.; Yushkova, Olga V." ;
+    dc:date "2017" ;
+    dc:title "New data on cockroaches of the subfamily Epilamprinae (Dictyoptera: Blaberidae) from India and Sri Lanka, with descriptions of new species and the genital complex of Aptera fusca (Thunberg, 1784)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.322015>, <http://dx.doi.org/10.5281/zenodo.322016> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/322016/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/4F3A5135FFBADC064FE3F9316E80FD70.mc.77FBEA7EFFBADC014FE3F8AB6D25F83A>
+    dwc:locality "Cap" ;
+    trt:gbifOccurrenceId "1434656676" ;
+    trt:httpUri <https://treatment.plazi.org/id/4F3A5135FFBADC064FE3F9316E80FD70#77FBEA7EFFBADC014FE3F8AB6D25F83A> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Aptera_fusca_Thunberg_1784>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aptera_fusca> ;
-    dwc:ID-CoL "FYDR" ;
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
     dwc:genus "Aptera" ;
@@ -43,26 +57,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Thunberg, 1784" ;
     dwc:species "fusca" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/FYDR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aptera_fusca> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blaberidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Aptera_brindlei_Anisyutkin_2017>
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
     dwc:genus "Aptera" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Blattodea" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "brindlei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aptera_brindlei> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aptera_fusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aptera> ;
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
     dwc:genus "Aptera" ;
@@ -71,46 +82,67 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "fusca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aptera> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Aptera>
+    dwc:class "Insecta" ;
+    dwc:family "Blaberidae" ;
+    dwc:genus "Aptera" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blaberidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Blaberidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blattodea> ;
     dwc:class "Insecta" ;
     dwc:family "Blaberidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Blattodea" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blattodea> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Blattodea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Blattodea" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4F3A5135FFBADC064FE3F9316E80FD70>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aptera_fusca_Thunberg_1784> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4236.1.2> ;
-    dc:creator "Anisyutkin, Leonid N.", "Yushkova, Olga V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.322015>, <http://dx.doi.org/10.5281/zenodo.322016> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aptera_brindlei>
+    dwc:class "Insecta" ;
+    dwc:family "Blaberidae" ;
+    dwc:genus "Aptera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Blattodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brindlei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aptera> ;
+    a dwcFP:TaxonName .
