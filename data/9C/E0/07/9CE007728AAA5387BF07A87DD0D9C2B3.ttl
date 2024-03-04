@@ -1,22 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:9CE007728AAA5387BF07A87DD0D9C2B3
+    cito:cites <http://dx.doi.org/10.3897/phytokeys.154.53223.figure1>, <http://dx.doi.org/10.3897/phytokeys.154.53223.figure2> ;
+    dc:creator "Zhong, Cairong; Li, Donglin; Zhang, Ying" ;
+    dc:title "S. zhongcairongii Y. S. Wang & S. H. Shi 2020, nothosp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/zhongcairongii_Wang_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.154.53223> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.154.53223>
-    dc:creator "Li, Donglin", "Zhang, Ying", "Zhong, Cairong" ;
-    dc:date "2020" ;
-    dc:title "Description of a new natural Sonneratia hybrid from Hainan Island, China" ;
     bibo:endPage "9" ;
     bibo:journal "PhytoKeys" ;
     bibo:startPage "1" ;
     bibo:volume "154" ;
+    dc:creator "Zhong, Cairong; Li, Donglin; Zhang, Ying" ;
+    dc:date "2020" ;
+    dc:title "Description of a new natural Sonneratia hybrid from Hainan Island, China" ;
     fabio:hasPart <http://dx.doi.org/10.3897/phytokeys.154.53223.figure1>, <http://dx.doi.org/10.3897/phytokeys.154.53223.figure2> ;
     a fabio:JournalArticle .
 
@@ -30,8 +39,7 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/438198" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Plantae/_zhongcairongii_Wang_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/_zhongcairongii> ;
+<http://taxon-concept.plazi.org/id/Plantae/zhongcairongii_Wang_2020>
     dwc:LSID "9CE00772-8AAA-5387-BF07-A87DD0D9C2B3" ;
     dwc:family "Hoplitidae" ;
     dwc:kingdom "Plantae" ;
@@ -39,20 +47,47 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Y. S. Wang & S. H. Shi" ;
     dwc:species "zhongcairongii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/zhongcairongii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/_zhongcairongii>
+<http://taxon-concept.plazi.org/id/Animalia/zhongcairongii_Wang_2020>
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Y. S. Wang & S. H. Shi, 2020" ;
+    dwc:species "zhongcairongii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/zhongcairongii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Plantae/zhongcairongii>
     dwc:family "Hoplitidae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Ammonoidea" ;
     dwc:rank "species" ;
     dwc:species "zhongcairongii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Hoplitidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/9CE007728AAA5387BF07A87DD0D9C2B3>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/_zhongcairongii_Wang_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.154.53223> ;
-    dc:creator "Li, Donglin", "Zhang, Ying", "Zhong, Cairong" ;
-    cito:cites <http://dx.doi.org/10.3897/phytokeys.154.53223.figure1>, <http://dx.doi.org/10.3897/phytokeys.154.53223.figure2> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Hoplitidae>
+    dwc:family "Hoplitidae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ammonoidea" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ammonoidea> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Ammonoidea>
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ammonoidea" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/zhongcairongii>
+    # Warning: Could not determine parent name ;
+    dwc:rank "species" ;
+    dwc:species "zhongcairongii" ;
+    a dwcFP:TaxonName .
