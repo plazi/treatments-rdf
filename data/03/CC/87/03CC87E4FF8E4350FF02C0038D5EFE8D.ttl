@@ -1,28 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CC87E4FF8E4350FF02C0038D5EFE8D
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_aulacaspidis_Brethes_1914>, <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_odonaspidis_Fullaway_1913> ;
+    dc:creator "Zuparko, Robert L." ;
+    dc:title "Adelencyrtus Ashmead 1900" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_Ashmead_1900> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4017.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4017.1.1>
-    dc:creator "Zuparko, Robert L." ;
-    dc:date "2015" ;
-    dc:title "Annotated Checklist of California Encyrtidae (Hymenoptera)" ;
     bibo:endPage "126" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "4017" ;
+    dc:creator "Zuparko, Robert L." ;
+    dc:date "2015" ;
+    dc:title "Annotated Checklist of California Encyrtidae (Hymenoptera)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_Ashmead_1900>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus> ;
-    dwc:ID-CoL "NZY" ;
     dwc:ID-ENA "1981267" ;
     dwc:class "Insecta" ;
     dwc:family "Encyrtidae" ;
@@ -32,10 +39,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Ashmead 1900" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/NZY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_aulacaspidis_Brethes_1914>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus_aulacaspidis> ;
     dwc:class "Insecta" ;
     dwc:family "Encyrtidae" ;
     dwc:genus "Adelencyrtus" ;
@@ -45,11 +53,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Brethes 1914: 29) (Prionomitus)" ;
     dwc:species "aulacaspidis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus_aulacaspidis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_odonaspidis_Fullaway_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus_odonaspidis> ;
-    dwc:ID-CoL "9XHY" ;
     dwc:class "Insecta" ;
     dwc:family "Encyrtidae" ;
     dwc:genus "Adelencyrtus" ;
@@ -59,15 +66,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fullaway 1913: 27" ;
     dwc:species "odonaspidis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/NZY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus_odonaspidis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Encyrtidae> ;
     dwc:class "Insecta" ;
     dwc:family "Encyrtidae" ;
     dwc:genus "Adelencyrtus" ;
@@ -75,10 +78,49 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Encyrtidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Encyrtidae>
+    dwc:class "Insecta" ;
+    dwc:family "Encyrtidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus_aulacaspidis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus> ;
     dwc:class "Insecta" ;
     dwc:family "Encyrtidae" ;
     dwc:genus "Adelencyrtus" ;
@@ -87,10 +129,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "aulacaspidis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus_odonaspidis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus> ;
     dwc:class "Insecta" ;
     dwc:family "Encyrtidae" ;
     dwc:genus "Adelencyrtus" ;
@@ -99,46 +141,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "odonaspidis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Adelencyrtus> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Encyrtidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Encyrtidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03CC87E4FF8E4350FF02C0038D5EFE8D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_Ashmead_1900> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4017.1.1> ;
-    dc:creator "Zuparko, Robert L." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_aulacaspidis_Brethes_1914>, <http://taxon-concept.plazi.org/id/Animalia/Adelencyrtus_odonaspidis_Fullaway_1913> ;
-    a trt:Treatment .
-
