@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039DC377FFBCFFD94D92FADDFAED5CA7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6461101> ;
+    dc:creator "Klinth, Mårten J.; Rota, Emilia; Martinsson, Svante; Prantoni, Alessandro L.; Erséus, Christer" ;
+    dc:title "Lumbricillus finisafricae Klinth, Rota, Martinsson, Prantoni & Erséus, 2022, SP. NOV." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039DC377FFBCFFD94D92FADDFAED5CA7.mc.3B5C783CFFBCFFD84DB0F995FD7459FA> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_finisafricae_Klinth_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.1093/zoolinnean/zlab073> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1093/zoolinnean/zlab073>
-    dc:creator "Erséus, Christer", "Klinth, Mårten J.", "Martinsson, Svante", "Prantoni, Alessandro L.", "Rota, Emilia" ;
-    dc:date "2022" ;
-    dc:title "New insights into the systematics of Lumbricillus and Marionina (Clitellata: Enchytraeidae) inferred from Southern Hemisphere samples, including three new species" ;
     bibo:endPage "1133" ;
     bibo:issue "4" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
     bibo:pubDate "2021-09-24" ;
     bibo:startPage "1103" ;
     bibo:volume "194" ;
+    dc:creator "Klinth, Mårten J.; Rota, Emilia; Martinsson, Svante; Prantoni, Alessandro L.; Erséus, Christer" ;
+    dc:date "2022" ;
+    dc:title "New insights into the systematics of Lumbricillus and Marionina (Clitellata: Enchytraeidae) inferred from Southern Hemisphere samples, including three new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6461101> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6461101/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039DC377FFBCFFD94D92FADDFAED5CA7.mc.3B5C783CFFBCFFD84DB0F995FD7459FA>
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3751562310" ;
+    trt:httpUri <https://treatment.plazi.org/id/039DC377FFBCFFD94D92FADDFAED5CA7#3B5C783CFFBCFFD84DB0F995FD7459FA> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_finisafricae_Klinth_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_finisafricae> ;
-    dwc:ID-CoL "8TG78" ;
     dwc:authority "Klinth, 2022" ;
     dwc:authorityName "Klinth" ;
     dwc:authorityYear "2022" ;
@@ -40,50 +54,39 @@
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Klinth & Rota & Martinsson & Prantoni & Erséus, 2022" ;
     dwc:species "finisafricae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8TG78> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_finisafricae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Annelida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Clitellata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enchytraeida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Enchytraeida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Enchytraeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeida> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_lineatus_Muller_1774>
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Muller, 1774" ;
+    dwc:species "lineatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_lineatus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Lumbricillus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_sadovskyi_Marcus_1965>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Marcus, 1965" ;
+    dwc:species "sadovskyi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_sadovskyi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_Orsted_1844>
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
     dwc:genus "Lumbricillus" ;
@@ -91,10 +94,89 @@
     dwc:order "Enchytraeida" ;
     dwc:phylum "Annelida" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Orsted, 1844" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pachydrilus_lineatus_Backlund_1947>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Pachydrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "' sensu Backlund (1947)" ;
+    dwc:species "lineatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachydrilus_lineatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_incisus_Wang_1997>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wang & Liang, 1997" ;
+    dwc:species "incisus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_incisus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_arenarius_Michaelsen_1889>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Michaelsen, 1889" ;
+    dwc:species "arenarius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_arenarius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_mangeri_Michaelsen_1914>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Michaelsen, 1914)" ;
+    dwc:species "mangeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_mangeri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Marionina_Xie_2001>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Marionina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Xie & Rota, 2001" ;
+    dwc:sensu "lato" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marionina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_verrucosus_Claparede_1861>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Claparede, 1861)", "Claparede, 1861" ;
+    dwc:species "verrucosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_verrucosus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lumbricillus_finisafricae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
     dwc:class "Clitellata" ;
     dwc:family "Enchytraeidae" ;
     dwc:genus "Lumbricillus" ;
@@ -103,12 +185,161 @@
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
     dwc:species "finisafricae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039DC377FFBCFFD94D92FADDFAED5CA7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lumbricillus_finisafricae_Klinth_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.1093/zoolinnean/zlab073> ;
-    dc:creator "Erséus, Christer", "Klinth, Mårten J.", "Martinsson, Svante", "Prantoni, Alessandro L.", "Rota, Emilia" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6461101> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeidae>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enchytraeida>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus_lineatus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "lineatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus_sadovskyi>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "sadovskyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachydrilus_lineatus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Pachydrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "lineatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachydrilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachydrilus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Pachydrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus_incisus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "incisus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus_arenarius>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "arenarius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus_mangeri>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "mangeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Marionina>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Marionina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enchytraeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricillus_verrucosus>
+    dwc:class "Clitellata" ;
+    dwc:family "Enchytraeidae" ;
+    dwc:genus "Lumbricillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Enchytraeida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "verrucosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lumbricillus> ;
+    a dwcFP:TaxonName .
