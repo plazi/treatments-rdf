@@ -1,24 +1,38 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:634387D1A346FFA01579FF0CFAF23961
+    cito:cites <http://dx.doi.org/10.5281/zenodo.270064>, <http://dx.doi.org/10.5281/zenodo.270096>, <http://dx.doi.org/10.5281/zenodo.270072>, <http://dx.doi.org/10.5281/zenodo.270083>, <http://dx.doi.org/10.5281/zenodo.270094> ;
+    dc:creator "Piotr Naskrecki" ;
+    dc:title "Vestria punctata Redtenbacher 1891" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Vestria_punctata_Redtenbacher_1891> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6280424> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6280424>
     dc:creator "Piotr Naskrecki" ;
     dc:date "2000" ;
     dc:title "Katydids of Costa Rica / Vol. 1, Systematics and bioacoustics of the cone-head katydids (Orthoptera: Tettigoniidae: Conocephalinae sensu lato)." ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.270064>, <http://dx.doi.org/10.5281/zenodo.270072>, <http://dx.doi.org/10.5281/zenodo.270083>, <http://dx.doi.org/10.5281/zenodo.270094>, <http://dx.doi.org/10.5281/zenodo.270096> ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.270064>, <http://dx.doi.org/10.5281/zenodo.270096>, <http://dx.doi.org/10.5281/zenodo.270072>, <http://dx.doi.org/10.5281/zenodo.270083>, <http://dx.doi.org/10.5281/zenodo.270094> ;
     a fabio:Book .
 
 <http://dx.doi.org/10.5281/zenodo.270064>
     dc:description "FIG. 28. Vestria punctata. A. female - habitus, B. female face, C. female head and pronotum, dorsal view, D. male cerci, dorsal and ventral views, E. titillators, posterior view." ;
     fabio:hasRepresentation "https://zenodo.org/record/270064/files/figure.png" ;
+    a fabio:Figure .
+
+<http://dx.doi.org/10.5281/zenodo.270096>
+    dc:description "MAPS 7 - 12. Distribution of species of Conocephalinae s. l. in Costa Rica. 7. Neoconocephalus affinis, N. triops, 8. Neoconocephalus punctipes, N. cf. spiza, 9. Bucrates capitatus, B. clausus, Metacaputus brenesi, 10. Pyrgocorypha rogersi, P. hamata, 11. Caulopsis cuspidata, C. microprora, 12. Moncheca elegans, M. pretiosa, Vestria punctata." ;
+    fabio:hasRepresentation "https://zenodo.org/record/270096/files/figure.png" ;
     a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.270072>
@@ -36,13 +50,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/270094/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5281/zenodo.270096>
-    dc:description "MAPS 7 - 12. Distribution of species of Conocephalinae s. l. in Costa Rica. 7. Neoconocephalus affinis, N. triops, 8. Neoconocephalus punctipes, N. cf. spiza, 9. Bucrates capitatus, B. clausus, Metacaputus brenesi, 10. Pyrgocorypha rogersi, P. hamata, 11. Caulopsis cuspidata, C. microprora, 12. Moncheca elegans, M. pretiosa, Vestria punctata." ;
-    fabio:hasRepresentation "https://zenodo.org/record/270096/files/figure.png" ;
-    a fabio:Figure .
-
 <http://taxon-concept.plazi.org/id/Animalia/Vestria_punctata_Redtenbacher_1891>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vestria_punctata> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Vestria" ;
@@ -52,60 +60,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Redtenbacher, 1891" ;
     dwc:species "punctata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vestria_punctata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Orthoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tettigoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Exocephala_Audinet-Serville_1831>
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Orthoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Vestria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Tettigoniidae" ;
-    dwc:genus "Vestria" ;
+    dwc:genus "Exocephala" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Audinet-Serville, 1831" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Exocephala> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Vestria_punctata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vestria> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Vestria" ;
@@ -114,12 +84,66 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "punctata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vestria> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/634387D1A346FFA01579FF0CFAF23961>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Vestria_punctata_Redtenbacher_1891> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6280424> ;
-    dc:creator "Piotr Naskrecki" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.270064>, <http://dx.doi.org/10.5281/zenodo.270072>, <http://dx.doi.org/10.5281/zenodo.270083>, <http://dx.doi.org/10.5281/zenodo.270094>, <http://dx.doi.org/10.5281/zenodo.270096> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Vestria>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Vestria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Tettigoniidae>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Exocephala>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Exocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
+    a dwcFP:TaxonName .

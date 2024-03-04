@@ -1,28 +1,38 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:63045976EF67FF9B3799FE9F8672FDFC
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Gravesteiniella_Wagner_1963> ;
+    dc:creator "Emeljanov, Alexandr F." ;
+    dc:title "Gabrinotum lapilla Emeljanov 2019, comb.n." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Atropidius_lapilla>, <http://taxon-name.plazi.org/id/Plantae/Achnatherum_splendens> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gabrinotum_lapilla_Emeljanov_1982> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Glabrinotum_qitaiensis_Ding_2006> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4559.2.13> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4559.2.13>
-    dc:creator "Emeljanov, Alexandr F." ;
-    dc:date "2019" ;
-    dc:title "New synonyms and new combinations for some Delphacidae (Hemiptera, Auchenorrhyncha) of Eastern and Central Palaearctic Region" ;
     bibo:endPage "400" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-02-20" ;
     bibo:startPage "396" ;
     bibo:volume "4559" ;
+    dc:creator "Emeljanov, Alexandr F." ;
+    dc:date "2019" ;
+    dc:title "New synonyms and new combinations for some Delphacidae (Hemiptera, Auchenorrhyncha) of Eastern and Central Palaearctic Region" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Gabrinotum_lapilla_Emeljanov_1982>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gabrinotum_lapilla> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Gabrinotum" ;
@@ -30,27 +40,13 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Emeljanov, 1982)" ;
+    dwc:scientificNameAuthorship "(Emeljanov, 1982)", "Emeljanov, 1982: 95" ;
     dwc:species "lapilla" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Glabrinotum_qitaiensis_Ding_2006>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glabrinotum_qitaiensis> ;
-    dwc:ID-CoL "3G4B2" ;
-    dwc:class "Insecta" ;
-    dwc:family "Delphacidae" ;
-    dwc:genus "Glabrinotum" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Ding, 2006", "Ding, 2006: 383" ;
-    dwc:species "qitaiensis" ;
+    dwc:subGenus "Atropidius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gabrinotum_lapilla> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Gravesteiniella_Wagner_1963>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gravesteiniella> ;
-    dwc:ID-CoL "4QY6" ;
     dwc:class "Insecta" ;
     dwc:family "Delphacidae" ;
     dwc:genus "Gravesteiniella" ;
@@ -59,62 +55,25 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Wagner, 1963" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gravesteiniella> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chrysomelidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysomelidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Delphacidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Glabrinotum_qitaiensis_Ding_2006>
     dwc:class "Insecta" ;
     dwc:family "Delphacidae" ;
+    dwc:genus "Glabrinotum" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gabrinotum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysomelidae" ;
-    dwc:genus "Gabrinotum" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ding, 2006: 383", "Ding, 2006" ;
+    dwc:species "qitaiensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glabrinotum_qitaiensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Gabrinotum_lapilla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gabrinotum> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Gabrinotum" ;
@@ -123,21 +82,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "lapilla" ;
+    dwc:subGenus "Atropidius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gabrinotum>, <http://taxon-name.plazi.org/id/Animalia/Gabrinotum_Atropidius> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Glabrinotum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphacidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Gabrinotum>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Gabrinotum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysomelidae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gravesteiniella>
     dwc:class "Insecta" ;
     dwc:family "Delphacidae" ;
-    dwc:genus "Glabrinotum" ;
+    dwc:genus "Gravesteiniella" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Delphacidae>
+    dwc:class "Insecta" ;
+    dwc:family "Delphacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gabrinotum_Atropidius>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Gabrinotum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Atropidius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gabrinotum> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Glabrinotum_qitaiensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glabrinotum> ;
     dwc:class "Insecta" ;
     dwc:family "Delphacidae" ;
     dwc:genus "Glabrinotum" ;
@@ -146,42 +187,16 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "qitaiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glabrinotum> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Gravesteiniella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphacidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Glabrinotum>
     dwc:class "Insecta" ;
     dwc:family "Delphacidae" ;
-    dwc:genus "Gravesteiniella" ;
+    dwc:genus "Glabrinotum" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphacidae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/63045976EF67FF9B3799FE9F8672FDFC>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/63/04/59/Achnatherum_splendens>, <file:///workdir/tmprdf/data/63/04/59/Atropidius_lapilla> ;
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gabrinotum_lapilla_Emeljanov_1982> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Glabrinotum_qitaiensis_Ding_2006> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4559.2.13> ;
-    dc:creator "Emeljanov, Alexandr F." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Gravesteiniella_Wagner_1963> ;
-    a trt:Treatment .
-
