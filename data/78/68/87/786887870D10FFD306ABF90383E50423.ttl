@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:786887870D10FFD306ABF90383E50423
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5267475>, <http://dx.doi.org/10.5281/zenodo.5267479> ;
+    dc:creator "Wu, Shipher" ;
+    dc:title "Teratoglaea hohuanshanensis Wu 2013, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/786887870D10FFD306ABF90383E50423.mc.40A93CCC0D10FFD10777F8BE872700A8> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_hohuanshanensis_Wu_2013> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_pacifica_Hreblay_1997> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3722.3.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3722.3.8>
-    dc:creator "Wu, Shipher" ;
-    dc:date "2013" ;
-    dc:title "Teratoglaea hohuanshanensis sp. nov., a new Xylenini moth endemic to Taiwan (Lepidoptera, Noctuidae, Noctuinae)" ;
     bibo:endPage "400" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2013-10-23" ;
     bibo:startPage "396" ;
     bibo:volume "3722" ;
+    dc:creator "Wu, Shipher" ;
+    dc:date "2013" ;
+    dc:title "Teratoglaea hohuanshanensis sp. nov., a new Xylenini moth endemic to Taiwan (Lepidoptera, Noctuidae, Noctuinae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5267475>, <http://dx.doi.org/10.5281/zenodo.5267479> ;
     a fabio:JournalArticle .
 
@@ -32,8 +43,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/5267479/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/786887870D10FFD306ABF90383E50423.mc.40A93CCC0D10FFD10777F8BE872700A8>
+    dwc:collectionCode "TFRI, ESRI" ;
+    dwc:eventDate "1996-11-07" ;
+    dwc:locality "Ci'en" ;
+    dwc:recordedBy "S. Wu & L. C. Shih & Yuanfeng, SW & Road No. & A. Kun & Kun, L & L. Ronkay & G. Ronkay & Budapest & T. Csovari & Cs. Szab & No. HM & Hreblay & Xiaofengko & W. C. Chang" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "2400" ;
+    dwc:verbatimLatitude "24.15" ;
+    dwc:verbatimLongitude "121.28333" ;
+    trt:httpUri <https://treatment.plazi.org/id/786887870D10FFD306ABF90383E50423#40A93CCC0D10FFD10777F8BE872700A8> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_hohuanshanensis_Wu_2013>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_hohuanshanensis> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Teratoglaea" ;
@@ -41,13 +63,12 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Wu" ;
+    dwc:scientificNameAuthorship "Wu", "Wu, 2013" ;
     dwc:species "hohuanshanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_hohuanshanensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_pacifica_Hreblay_1997>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_pacifica> ;
-    dwc:ID-CoL "55DSZ" ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Teratoglaea" ;
@@ -57,60 +78,108 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship ": Hreblay & Ronkay, 1997" ;
     dwc:species "pacifica" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_pacifica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Noctuidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Teratoglaea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_undefined-1_Wu_2013>
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Teratoglaea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "undefined-1" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_undefined-1> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_pacifica_Sugi_1958>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Teratoglaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sugi, 1958" ;
+    dwc:species "pacifica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_pacifica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_undefined-9_Wu_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Teratoglaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undefined-9" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_undefined-9> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Abies_undetermined_Wu_2013>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Abies_undetermined> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinus_koraiensis_Wu_2013>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "koraiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pinus_koraiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Abies_kawakamii_Wu_2013>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "kawakamii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Abies_kawakamii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinus_undetermined_Wu_2013>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pinus_undetermined> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pinus_taiwanensis_Wu_2013>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "taiwanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pinus_taiwanensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_hohuanshanensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Teratoglaea" ;
@@ -119,10 +188,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "hohuanshanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Teratoglaea>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Teratoglaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Teratoglaea_pacifica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Teratoglaea" ;
@@ -131,13 +250,150 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pacifica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/786887870D10FFD306ABF90383E50423>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_hohuanshanensis_Wu_2013> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Teratoglaea_pacifica_Hreblay_1997> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3722.3.8> ;
-    dc:creator "Wu, Shipher" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5267475>, <http://dx.doi.org/10.5281/zenodo.5267479> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Teratoglaea_undefined-1>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Teratoglaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undefined-1" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Teratoglaea_undefined-9>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Teratoglaea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undefined-9" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teratoglaea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Abies_undetermined>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Abies> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Abies>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinaceae>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinales>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinopsida>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinus_koraiensis>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "koraiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinus>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Abies_kawakamii>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "kawakamii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Abies> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinus_undetermined>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinus_taiwanensis>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Pinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "taiwanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinus> ;
+    a dwcFP:TaxonName .
