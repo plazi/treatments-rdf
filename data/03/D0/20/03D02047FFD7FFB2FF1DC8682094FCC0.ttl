@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D02047FFD7FFB2FF1DC8682094FCC0
+    cito:cites <http://dx.doi.org/10.5281/zenodo.244849>, <http://dx.doi.org/10.5281/zenodo.244851> ;
+    dc:creator "Watson, Gillian W.; Williams, Douglas J.; Miller, Douglass R." ;
+    dc:title "Fiorinia phantasma Cockerell & Robinson 1915" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Fiorinia_phantasma_Cockerell_1915> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Fiorinia_coronata_Williams_1988> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4048.2.9> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4048.2.9>
-    dc:creator "Miller, Douglass R.", "Watson, Gillian W.", "Williams, Douglas J." ;
-    dc:date "2015" ;
-    dc:title "The identity and distribution of Fiorinia phantasma (Cockerell & Robinson) (Hemiptera: Coccomorpha: Diaspididae), with a new synonym" ;
     bibo:endPage "300" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "291" ;
     bibo:volume "4048" ;
+    dc:creator "Watson, Gillian W.; Williams, Douglas J.; Miller, Douglass R." ;
+    dc:date "2015" ;
+    dc:title "The identity and distribution of Fiorinia phantasma (Cockerell & Robinson) (Hemiptera: Coccomorpha: Diaspididae), with a new synonym" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.244849>, <http://dx.doi.org/10.5281/zenodo.244851> ;
     a fabio:JournalArticle .
 
@@ -31,23 +41,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/244851/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Fiorinia_coronata_Williams_1988>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_coronata> ;
-    dwc:ID-CoL "6J3FB" ;
-    dwc:class "Insecta" ;
-    dwc:family "Diaspididae" ;
-    dwc:genus "Fiorinia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Williams & Watson, 1988: 114" ;
-    dwc:species "coronata" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Fiorinia_phantasma_Cockerell_1915>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_phantasma> ;
-    dwc:ID-CoL "6J5BW" ;
     dwc:class "Insecta" ;
     dwc:family "Diaspididae" ;
     dwc:genus "Fiorinia" ;
@@ -57,43 +51,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Cockerell & Robinson, 1915" ;
     dwc:species "phantasma" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6J5BW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_phantasma> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diaspididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Diaspididae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Fiorinia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diaspididae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Diaspididae" ;
-    dwc:genus "Fiorinia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Fiorinia_coronata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Fiorinia_coronata_Williams_1988>
     dwc:class "Insecta" ;
     dwc:family "Diaspididae" ;
     dwc:genus "Fiorinia" ;
@@ -101,11 +63,13 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Williams & Watson, 1988: 114" ;
     dwc:species "coronata" ;
-    a dwcFP:TaxonName .
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6J5BW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_coronata> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Fiorinia_phantasma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Fiorinia_phantasma_Watson_2015>
     dwc:class "Insecta" ;
     dwc:family "Diaspididae" ;
     dwc:genus "Fiorinia" ;
@@ -114,30 +78,154 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "phantasma" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_phantasma> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Fiorinia_neocaledonica_Lindinger_1911>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lindinger, 1911" ;
+    dwc:species "neocaledonica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_neocaledonica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Fiorinia_iavanica_Leonardi_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Leonardi, 1907" ;
+    dwc:species "iavanica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_iavanica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Fiorinia_geijeriae_Froggatt_1914>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Froggatt, 1914" ;
+    dwc:species "geijeriae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fiorinia_geijeriae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Fiorinia_phantasma>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "phantasma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fiorinia>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diaspididae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diaspididae>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D02047FFD7FFB2FF1DC8682094FCC0>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Fiorinia_phantasma_Cockerell_1915> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Fiorinia_coronata_Williams_1988> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4048.2.9> ;
-    dc:creator "Miller, Douglass R.", "Watson, Gillian W.", "Williams, Douglas J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.244849>, <http://dx.doi.org/10.5281/zenodo.244851> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fiorinia_coronata>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "coronata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fiorinia_neocaledonica>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "neocaledonica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fiorinia_iavanica>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "iavanica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fiorinia_geijeriae>
+    dwc:class "Insecta" ;
+    dwc:family "Diaspididae" ;
+    dwc:genus "Fiorinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "geijeriae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fiorinia> ;
+    a dwcFP:TaxonName .
