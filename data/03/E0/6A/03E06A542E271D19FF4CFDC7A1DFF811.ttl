@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E06A542E271D19FF4CFDC7A1DFF811
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Bassus_calcitrator_Gravenhorst_1807>, <http://dx.doi.org/10.5281/zenodo.244046> ;
+    dc:creator "Yurtcan, Murat; Kolarov, Janko" ;
+    dc:title "Collyria Schiodte 1839" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Collyria_Schiodte_1839> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Collyria_pronotalis> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3985.1.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3985.1.6>
-    dc:creator "Kolarov, Janko", "Yurtcan, Murat" ;
-    dc:date "2015" ;
-    dc:title "A new species and additional records of the genus Collyria Schiødte, 1839 (Hymenoptera, Ichneumonidae) from Turkey" ;
     bibo:endPage "124" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "117" ;
     bibo:volume "3985" ;
+    dc:creator "Yurtcan, Murat; Kolarov, Janko" ;
+    dc:date "2015" ;
+    dc:title "A new species and additional records of the genus Collyria Schiødte, 1839 (Hymenoptera, Ichneumonidae) from Turkey" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.244046> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/244046/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Collyria_Schiodte_1839>
+    dwc:ID-ENA "65306" ;
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Collyria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Schiodte, 1839", "Schiodte, 1839: 1" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62MTV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Collyria> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Bassus_calcitrator_Gravenhorst_1807>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bassus_calcitrator> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Bassus" ;
@@ -37,12 +60,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Gravenhorst, 1807" ;
     dwc:species "calcitrator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bassus_calcitrator> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Collyria_Schiodte_1839>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Collyria> ;
-    dwc:ID-CoL "62MTV" ;
-    dwc:ID-ENA "65306" ;
+<http://taxon-concept.plazi.org/id/Animalia/Collyria_pronotalis_Yurtcan_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Collyria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Yurtcan & Kolarov" ;
+    dwc:species "pronotalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Collyria_pronotalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Collyria>
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Collyria" ;
@@ -50,34 +84,49 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Schiodte, 1839" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bassus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:genus "Bassus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Bassus_calcitrator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bassus> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Bassus" ;
@@ -86,61 +135,38 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "calcitrator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bassus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bassus>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Bassus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Collyria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Collyria_pronotalis>
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Collyria" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:species "pronotalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Collyria> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Ichneumonidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03E06A542E271D19FF4CFDC7A1DFF811>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Collyria_Schiodte_1839> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/E0/6A/Collyria_pronotalis> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3985.1.6> ;
-    dc:creator "Kolarov, Janko", "Yurtcan, Murat" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.244046>, <http://taxon-concept.plazi.org/id/Animalia/Bassus_calcitrator_Gravenhorst_1807> ;
-    a trt:Treatment .
-
