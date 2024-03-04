@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A1D975FFD1246D1086FDB4C8916E2D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4003952>, <http://dx.doi.org/10.5281/zenodo.4003954> ;
+    dc:creator "Li, LongFeng; Shih, ChungKun" ;
+    dc:title "Praeaulacus obtutus Li, Shih & Ren 2014, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A1D975FFD1246D1086FDB4C8916E2D.mc.3B60623EFFD0246B11A0FA39C96A69EA> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Praeaulacus_obtutus_Li_2014> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2014.953223> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222933.2014.953223>
-    dc:creator "Li, LongFeng", "Shih, ChungKun" ;
-    dc:date "2014" ;
-    dc:title "Two new fossil wasps (Insecta: Hymenoptera: Apocrita) from northeastern China" ;
     bibo:endPage "840" ;
     bibo:issue "13" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2014-08-31" ;
     bibo:startPage "829" ;
     bibo:volume "49" ;
+    dc:creator "Li, LongFeng; Shih, ChungKun" ;
+    dc:date "2014" ;
+    dc:title "Two new fossil wasps (Insecta: Hymenoptera: Apocrita) from northeastern China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4003952>, <http://dx.doi.org/10.5281/zenodo.4003954> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/4003954/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03A1D975FFD1246D1086FDB4C8916E2D.mc.3B60623EFFD0246B11A0FA39C96A69EA>
+    dwc:catalogNumber "CNU-HYM-NN-2012039" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2849228302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A1D975FFD1246D1086FDB4C8916E2D#3B60623EFFD0246B11A0FA39C96A69EA> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Praeaulacus_obtutus_Li_2014>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Praeaulacus_obtutus> ;
     dwc:class "Insecta" ;
     dwc:family "Praeaulacidae" ;
     dwc:genus "Praeaulacus" ;
@@ -41,51 +57,58 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Li, Shih & Ren" ;
+    dwc:scientificNameAuthorship "Li, Shih & Ren", "Li & Shih, 2014" ;
     dwc:species "obtutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Praeaulacus_obtutus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Praeaulacidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Praeaulacidae__1972>
     dwc:class "Insecta" ;
     dwc:family "Praeaulacidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship ", Rasnitsyn, 1972" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Praeaulacidae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Praeaulacus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Praeaulacidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Praeaulacinae_Rasnitsyn_1972>
+    dwc:class "Insecta" ;
+    dwc:family "Ephialtitidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Rasnitsyn, 1972" ;
+    dwc:subFamily "Praeaulacinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Praeaulacinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Evanioidea_Latreille_1802>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "superFamily" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    dwc:superFamily "Evanioidea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Evanioidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nevaniinae_Li_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Praeaulacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Li & Shih, 2014" ;
+    dwc:subFamily "Nevaniinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nevaniinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Praeaulacus_Rasnitsyn_1972>
     dwc:class "Insecta" ;
     dwc:family "Praeaulacidae" ;
     dwc:genus "Praeaulacus" ;
@@ -93,10 +116,11 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Rasnitsyn, 1972" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Praeaulacus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Praeaulacus_obtutus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Praeaulacus> ;
     dwc:class "Insecta" ;
     dwc:family "Praeaulacidae" ;
     dwc:genus "Praeaulacus" ;
@@ -105,19 +129,97 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "obtutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Praeaulacus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A1D975FFD1246D1086FDB4C8916E2D>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Praeaulacus_obtutus_Li_2014> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2014.953223> ;
-    dc:creator "Li, LongFeng", "Shih, ChungKun" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4003952>, <http://dx.doi.org/10.5281/zenodo.4003954> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03A1D975FFD1246D1086FDB4C8916E2D/CNU-HYM-NN-2012039> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Praeaulacus>
+    dwc:class "Insecta" ;
+    dwc:family "Praeaulacidae" ;
+    dwc:genus "Praeaulacus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Praeaulacidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A1D975FFD1246D1086FDB4C8916E2D/CNU-HYM-NN-2012039>
-    trt:gbifOccurrenceId "2849228302" ;
-    dwc:catalogNumber "CNU-HYM-NN-2012039" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Praeaulacidae>
+    dwc:class "Insecta" ;
+    dwc:family "Praeaulacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Praeaulacinae>
+    dwc:class "Insecta" ;
+    dwc:family "Ephialtitidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Praeaulacinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ephialtitidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ephialtitidae>
+    dwc:class "Insecta" ;
+    dwc:family "Ephialtitidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Evanioidea>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "superFamily" ;
+    dwc:superFamily "Evanioidea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nevaniinae>
+    dwc:class "Insecta" ;
+    dwc:family "Praeaulacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Nevaniinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Praeaulacidae> ;
+    a dwcFP:TaxonName .
