@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:91480C63345D477CFF2EFDEDA26DB0B8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.234361> ;
+    dc:creator "Kondorosy, Előd; Rédei, Dávid" ;
+    dc:title "Paromius robustior Breddin 1907" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paromius_robustior_Breddin_1907> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Paromius_exiguus_Distant_1883> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3964.1.7> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3964.1.7>
-    dc:creator "Kondorosy, Előd", "Rédei, Dávid" ;
-    dc:date "2015" ;
-    dc:title "Lectotype designations and taxonomic corrections on species of Lygaeoidea (Hemiptera: Heteroptera) described by Gustav Breddin" ;
     bibo:endPage "113" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "101" ;
     bibo:volume "3964" ;
+    dc:creator "Kondorosy, Előd; Rédei, Dávid" ;
+    dc:date "2015" ;
+    dc:title "Lectotype designations and taxonomic corrections on species of Lygaeoidea (Hemiptera: Heteroptera) described by Gustav Breddin" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.234361> ;
     a fabio:JournalArticle .
 
@@ -26,9 +36,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/234361/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Paromius_robustior_Breddin_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:genus "Paromius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Breddin, 1907", "Breddin, 1907b: 204" ;
+    dwc:species "robustior" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4DRCZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paromius_robustior> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Paromius_exiguus_Distant_1883>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paromius_exiguus> ;
-    dwc:ID-CoL "4DRCN" ;
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Paromius" ;
@@ -38,11 +60,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Distant, 1883" ;
     dwc:species "exiguus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4DRCZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paromius_exiguus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Paromius_robustior_Breddin_1907>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paromius_robustior> ;
-    dwc:ID-CoL "4DRCZ" ;
+<http://taxon-name.plazi.org/id/Animalia/Paromius_robustior>
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Paromius" ;
@@ -50,41 +72,11 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Breddin, 1907" ;
     dwc:species "robustior" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paromius> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Paromius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae> ;
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Paromius" ;
@@ -92,10 +84,49 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae>
+    dwc:class "Insecta" ;
+    dwc:family "Rhyparochromidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Paromius_exiguus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paromius> ;
     dwc:class "Insecta" ;
     dwc:family "Rhyparochromidae" ;
     dwc:genus "Paromius" ;
@@ -104,35 +135,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "exiguus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Paromius_robustior>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paromius> ;
-    dwc:class "Insecta" ;
-    dwc:family "Rhyparochromidae" ;
-    dwc:genus "Paromius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "robustior" ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhyparochromidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Rhyparochromidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/91480C63345D477CFF2EFDEDA26DB0B8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Paromius_robustior_Breddin_1907> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Paromius_exiguus_Distant_1883> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3964.1.7> ;
-    dc:creator "Kondorosy, Előd", "Rédei, Dávid" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.234361> ;
-    a trt:Treatment .
-
