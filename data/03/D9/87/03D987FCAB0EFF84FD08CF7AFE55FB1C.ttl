@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X-73.1.179>
-    dc:creator "Bezděk, Jan", "Geiser, Michael" ;
-    dc:date "2019" ;
-    dc:title "On the Identity of Crioceris aulica Fabricius, 1781, a Member of Malachiidae Misplaced in Chrysomelidae (Coleoptera) and Consequent Taxonomical Changes in Atelechira Lacordaire, 1848" ;
+treatment:03D987FCAB0EFF84FD08CF7AFE55FB1C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5333888> ;
+    dc:creator "Geiser, Michael; Bezděk, Jan" ;
+    dc:title "Atelechira elegans" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Atelechira_elegans_Thunberg_1821> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Clythra_elegans_Thunberg_1821>, <http://taxon-concept.plazi.org/id/Animalia/Clythra_aulica_Lacordaire_1848>, <http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Harold_1874>, <http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Clavareau_1906>, <http://taxon-concept.plazi.org/id/Animalia/Atelechira_aulica_Weise_1908> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-73.1.179> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x-73.1.179>
     bibo:endPage "184" ;
     bibo:issue "1" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2019-03-25" ;
     bibo:startPage "179" ;
     bibo:volume "73" ;
+    dc:creator "Geiser, Michael; Bezděk, Jan" ;
+    dc:date "2019" ;
+    dc:title "On the Identity of Crioceris aulica Fabricius, 1781, a Member of Malachiidae Misplaced in Chrysomelidae (Coleoptera) and Consequent Taxonomical Changes in Atelechira Lacordaire, 1848" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5333888> ;
     a fabio:JournalArticle .
 
@@ -27,21 +37,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/5333888/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Atelechira_aulica_Weise_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atelechira_aulica> ;
-    dwc:class "Insecta" ;
-    dwc:family "Chrysomelidae" ;
-    dwc:genus "Atelechira" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship ": Weise 1908: 144" ;
-    dwc:species "aulica" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Atelechira_elegans_Thunberg_1821>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atelechira_elegans> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Atelechira" ;
@@ -51,10 +47,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Thunberg, 1821)" ;
     dwc:species "elegans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atelechira_elegans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Clythra_elegans_Thunberg_1821>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Clythra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thunberg 1821: 184", "Thunberg, 1821" ;
+    dwc:species "elegans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clythra_elegans> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Clythra_aulica_Lacordaire_1848>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clythra_aulica> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Clythra" ;
@@ -65,23 +74,23 @@
     dwc:scientificNameAuthorship ": Lacordaire 1848: 85 - 87" ;
     dwc:species "aulica" ;
     dwc:subGenus "Atelechira" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clythra_aulica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Clythra_elegans_Thunberg_1821>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clythra_elegans> ;
+<http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Harold_1874>
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
-    dwc:genus "Clythra" ;
+    dwc:genus "Miopristis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Thunberg 1821: 184", "Thunberg, 1821" ;
-    dwc:species "elegans" ;
+    dwc:scientificNameAuthorship ": Gemminger and Harold 1874: 3279" ;
+    dwc:species "aulica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miopristis_aulica> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Clavareau_1906>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miopristis_aulica> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Miopristis" ;
@@ -92,35 +101,24 @@
     dwc:scientificNameAuthorship ": Jacoby and Clavareau 1906: 13" ;
     dwc:species "aulica" ;
     dwc:subGenus "Atelechira" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miopristis_aulica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Harold_1874>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Miopristis_aulica> ;
+<http://taxon-concept.plazi.org/id/Animalia/Atelechira_aulica_Weise_1908>
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
-    dwc:genus "Miopristis" ;
+    dwc:genus "Atelechira" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship ": Gemminger and Harold 1874: 3279" ;
+    dwc:scientificNameAuthorship ": Weise 1908: 144", ": Weise, 1908" ;
     dwc:species "aulica" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atelechira_aulica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Atelechira>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Atelechira_It_1848>
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Atelechira" ;
@@ -128,10 +126,49 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Lacordaire. It, 1848" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atelechira> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Clythra_baculus_Lacordaire_1848>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Clythra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lacordaire, 1848" ;
+    dwc:species "baculus" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Clythra_baculus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Protoclytra_Weise_1905>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Protoclytra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Weise" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Protoclytra> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hirtolenes_Medvedev_1970>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Hirtolenes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Medvedev, 1970" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hirtolenes> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Atelechira_elegans>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atelechira> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Atelechira" ;
@@ -140,20 +177,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atelechira> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atelechira>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Atelechira" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clythra_elegans>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Clythra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clythra> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clythra>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Clythra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Clythra_aulica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clythra> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Clythra" ;
@@ -162,30 +262,114 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "aulica" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clythra_Atelechira> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Clythra_Atelechira>
     dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Clythra" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clythra> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Miopristis_aulica>
     dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Miopristis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "aulica" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miopristis>, <http://taxon-name.plazi.org/id/Animalia/Miopristis_Atelechira> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D987FCAB0EFF84FD08CF7AFE55FB1C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Atelechira_elegans_Thunberg_1821> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Atelechira_aulica_Weise_1908>, <http://taxon-concept.plazi.org/id/Animalia/Clythra_aulica_Lacordaire_1848>, <http://taxon-concept.plazi.org/id/Animalia/Clythra_elegans_Thunberg_1821>, <http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Clavareau_1906>, <http://taxon-concept.plazi.org/id/Animalia/Miopristis_aulica_Harold_1874> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-73.1.179> ;
-    dc:creator "Bezděk, Jan", "Geiser, Michael" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5333888> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Miopristis>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Miopristis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Miopristis_Atelechira>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Miopristis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miopristis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atelechira_aulica>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Atelechira" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "aulica" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atelechira>, <http://taxon-name.plazi.org/id/Animalia/Atelechira_Atelechira> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atelechira_Atelechira>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Atelechira" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atelechira> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clythra_baculus>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Clythra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "baculus" ;
+    dwc:subGenus "Atelechira" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clythra_Atelechira>, <http://taxon-name.plazi.org/id/Animalia/Clythra> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Protoclytra>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Protoclytra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hirtolenes>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Hirtolenes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+    a dwcFP:TaxonName .
