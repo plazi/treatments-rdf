@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03EA87B1FF9E820B7E5CFCB7FB71FD6D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.162856>, <http://dx.doi.org/10.5281/zenodo.162863>, <http://dx.doi.org/10.5281/zenodo.162870>, <http://dx.doi.org/10.5281/zenodo.162883> ;
+    dc:creator "Bernard Landry" ;
+    dc:title "Lineodes vulcanalis Landry, 2016, sp. n." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03EA87B1FF9E820B7E5CFCB7FB71FD6D.mc.3B2B3CFAFF9E820D7FFCFC04FEE9FBE6> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lineodes_vulcanalis_Landry_2016> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.155309> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.155309>
-    dc:creator "Bernard Landry" ;
-    dc:date "2016" ;
-    dc:title "Taxonomic revision of the Spilomelinae (Lepidoptera, Pyralidae s. l.) of the Galápagos Islands, Ecuador" ;
     bibo:endPage "399" ;
     bibo:issue "2" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:startPage "315" ;
     bibo:volume "123" ;
+    dc:creator "Bernard Landry" ;
+    dc:date "2016" ;
+    dc:title "Taxonomic revision of the Spilomelinae (Lepidoptera, Pyralidae s. l.) of the Galápagos Islands, Ecuador" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.162856>, <http://dx.doi.org/10.5281/zenodo.162863>, <http://dx.doi.org/10.5281/zenodo.162870>, <http://dx.doi.org/10.5281/zenodo.162883> ;
     a fabio:JournalArticle .
 
@@ -41,8 +51,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/162883/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03EA87B1FF9E820B7E5CFCB7FB71FD6D.mc.3B2B3CFAFF9E820D7FFCFC04FEE9FBE6>
+    dwc:catalogNumber "B.M. 1970-567, L. 118" ;
+    dwc:collectionCode "BMNH" ;
+    dwc:countryCode "Ecuador" ;
+    dwc:eventDate "1970-06" ;
+    dwc:locality "Santa Cruz (Indefatigable)" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "1324016925" ;
+    trt:httpUri <https://treatment.plazi.org/id/03EA87B1FF9E820B7E5CFCB7FB71FD6D#3B2B3CFAFF9E820D7FFCFC04FEE9FBE6> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Lineodes_vulcanalis_Landry_2016>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lineodes_vulcanalis> ;
     dwc:authority "Landry, 2016" ;
     dwc:authorityName "Landry" ;
     dwc:authorityYear "2016" ;
@@ -53,52 +73,92 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bernard Landry, 2016" ;
     dwc:species "vulcanalis" ;
     dwc:subFamily "Spilomelinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lineodes_vulcanalis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lineodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyralidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lineodes_triangulalis_Moschler_2016>
     dwc:class "Insecta" ;
     dwc:family "Pyralidae" ;
     dwc:genus "Lineodes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Moschler" ;
+    dwc:species "triangulalis" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lineodes_triangulalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lineodes_serpulalis_Lederer_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Lineodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lederer" ;
+    dwc:species "serpulalis" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lineodes_serpulalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Atomopteryx_coelodactyla_Zeller_1863>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Atomopteryx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zeller, 1863" ;
+    dwc:species "coelodactyla" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atomopteryx_coelodactyla> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diaphania_indica_Landry_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Diaphania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "indica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diaphania_indica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diaphania_nitidalis_Landry_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Diaphania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nitidalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diaphania_nitidalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ercta_vittata_Landry_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Ercta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vittata" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ercta_vittata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lineodes_vulcanalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lineodes> ;
     dwc:class "Insecta" ;
     dwc:family "Pyralidae" ;
     dwc:genus "Lineodes" ;
@@ -107,33 +167,179 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "vulcanalis" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lineodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lineodes>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Lineodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spilomelinae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spilomelinae>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyralidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pyralidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Pyralidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03EA87B1FF9E820B7E5CFCB7FB71FD6D>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lineodes_vulcanalis_Landry_2016> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.155309> ;
-    dc:creator "Bernard Landry" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.162856>, <http://dx.doi.org/10.5281/zenodo.162863>, <http://dx.doi.org/10.5281/zenodo.162870>, <http://dx.doi.org/10.5281/zenodo.162883> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03EA87B1FF9E820B7E5CFCB7FB71FD6D/B.M.%201970-567%2C%20L.%20118> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03EA87B1FF9E820B7E5CFCB7FB71FD6D/B.M.%201970-567%2C%20L.%20118>
-    trt:gbifOccurrenceId "1324016925" ;
-    dwc:catalogNumber "B.M. 1970-567, L. 118" ;
-    dwc:collectionCode "BMNH" ;
-    dwc:countryCode "Ecuador" ;
-    dwc:eventDate "1970-06" ;
-    dwc:locality "Santa Cruz (Indefatigable)" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lineodes_triangulalis>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Lineodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "triangulalis" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lineodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lineodes_serpulalis>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Lineodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "serpulalis" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lineodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atomopteryx_coelodactyla>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Atomopteryx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "coelodactyla" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atomopteryx> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atomopteryx>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Atomopteryx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spilomelinae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diaphania_indica>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Diaphania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "indica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diaphania> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diaphania>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Diaphania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyralidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diaphania_nitidalis>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Diaphania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nitidalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diaphania> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ercta_vittata>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Ercta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vittata" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ercta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ercta>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Ercta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:subFamily "Spilomelinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spilomelinae> ;
+    a dwcFP:TaxonName .
