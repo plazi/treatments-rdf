@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CB87991217FA1FFF645958FB68FBF6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5057247>, <http://dx.doi.org/10.5281/zenodo.5057255> ;
+    dc:creator "Kato, Daichi" ;
+    dc:title "Eloeophila hadrophallus Kato 2021, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03CB87991217FA1FFF645958FB68FBF6.mc.3B0A3CD21217FA19FE895AC0FDAAF8C6>, <http://tb.plazi.org/GgServer/dwcaRecords/03CB87991217FA1FFF645958FB68FBF6.mc.3B0A3CD21217FA19FD845AECFEDAF8EA> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eloeophila_hadrophallus_Kato_2021> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4995.3.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4995.3.2>
-    dc:creator "Kato, Daichi" ;
-    dc:date "2021" ;
-    dc:title "Taxonomic study of the genus Eloeophila Rondani, 1856 of Japan (Limoniidae Diptera)" ;
     bibo:endPage "451" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-07-01" ;
     bibo:startPage "425" ;
     bibo:volume "4995" ;
+    dc:creator "Kato, Daichi" ;
+    dc:date "2021" ;
+    dc:title "Taxonomic study of the genus Eloeophila Rondani, 1856 of Japan (Limoniidae Diptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5057247>, <http://dx.doi.org/10.5281/zenodo.5057255> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,27 @@
     fabio:hasRepresentation "https://zenodo.org/record/5057255/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03CB87991217FA1FFF645958FB68FBF6.mc.3B0A3CD21217FA19FE895AC0FDAAF8C6>
+    dwc:collectionCode "BLKU" ;
+    dwc:eventDate "2019-03-31" ;
+    dwc:locality "Yamato-son" ;
+    dwc:recordedBy "D. Kato" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "250" ;
+    trt:httpUri <https://treatment.plazi.org/id/03CB87991217FA1FFF645958FB68FBF6#3B0A3CD21217FA19FE895AC0FDAAF8C6> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03CB87991217FA1FFF645958FB68FBF6.mc.3B0A3CD21217FA19FD845AECFEDAF8EA>
+    dwc:collectionCode "BLKU" ;
+    dwc:eventDate "2019-03-31" ;
+    dwc:locality "Amami Is" ;
+    dwc:recordedBy "D. Kato" ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "250" ;
+    trt:httpUri <https://treatment.plazi.org/id/03CB87991217FA1FFF645958FB68FBF6#3B0A3CD21217FA19FD845AECFEDAF8EA> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Eloeophila_hadrophallus_Kato_2021>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eloeophila_hadrophallus> ;
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Eloeophila" ;
@@ -41,33 +70,37 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kato" ;
+    dwc:scientificNameAuthorship "Kato", "Kato, 2021" ;
     dwc:species "hadrophallus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eloeophila_hadrophallus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eloeophila_enischnophallus_Kato_2021>
     dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Eloeophila" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kato, 2021" ;
+    dwc:species "enischnophallus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eloeophila_enischnophallus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Eloeophila_hadrophallus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Eloeophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hadrophallus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eloeophila> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Eloeophila>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limoniidae> ;
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Eloeophila" ;
@@ -75,10 +108,49 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limoniidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Eloeophila_hadrophallus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eloeophila> ;
+<http://taxon-name.plazi.org/id/Animalia/Limoniidae>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eloeophila_enischnophallus>
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Eloeophila" ;
@@ -86,31 +158,6 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "hadrophallus" ;
+    dwc:species "enischnophallus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eloeophila> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Limoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Limoniidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03CB87991217FA1FFF645958FB68FBF6>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Eloeophila_hadrophallus_Kato_2021> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4995.3.2> ;
-    dc:creator "Kato, Daichi" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5057247>, <http://dx.doi.org/10.5281/zenodo.5057255> ;
-    a trt:Treatment .
-
