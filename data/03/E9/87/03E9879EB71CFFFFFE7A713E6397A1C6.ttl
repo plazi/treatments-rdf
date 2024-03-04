@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E9879EB71CFFFFFE7A713E6397A1C6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5173629>, <http://dx.doi.org/10.5281/zenodo.5173633> ;
+    dc:creator "Mironov, Sergey V.; Ramilo, David W. R." ;
+    dc:title "Neottialges (Caloenectes) ciconiae Mironov & Ramilo 2019, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03E9879EB71CFFFFFE7A713E6397A1C6.mc.3B283CD5B71CFFFBFD58703D6461A0A1> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neottialges_ciconiae_Mironov_2019> ;
+    trt:publishedIn <http://dx.doi.org/10.24349/acarologia/20194332> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.24349/acarologia/20194332>
-    dc:creator "Mironov, Sergey V.", "Ramilo, David W. R." ;
-    dc:date "2019" ;
-    dc:title "A new mite species of the genus Neottialges (Acariformes: Hypoderatidae) from the black stork Ciconia nigra (Ciconiiformes: Ciconiidae) in Portugal" ;
     bibo:endPage "287" ;
     bibo:issue "2" ;
     bibo:journal "Acarologia" ;
     bibo:pubDate "2019-07-15" ;
     bibo:startPage "279" ;
     bibo:volume "59" ;
+    dc:creator "Mironov, Sergey V.; Ramilo, David W. R." ;
+    dc:date "2019" ;
+    dc:title "A new mite species of the genus Neottialges (Acariformes: Hypoderatidae) from the black stork Ciconia nigra (Ciconiiformes: Ciconiidae) in Portugal" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5173629>, <http://dx.doi.org/10.5281/zenodo.5173633> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/5173633/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03E9879EB71CFFFFFE7A713E6397A1C6.mc.3B283CD5B71CFFFBFD58703D6461A0A1>
+    dwc:collectionCode "FMV, UMMZ, ZISP" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03E9879EB71CFFFFFE7A713E6397A1C6#3B283CD5B71CFFFBFD58703D6461A0A1> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Neottialges_ciconiae_Mironov_2019>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neottialges_ciconiae> ;
     dwc:class "Arachnida" ;
     dwc:family "Hypoderidae" ;
     dwc:genus "Neottialges" ;
@@ -44,60 +59,52 @@
     dwc:scientificNameAuthorship "Mironov & Ramilo, 2019" ;
     dwc:species "ciconiae" ;
     dwc:subGenus "Caloenectes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neottialges_ciconiae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Ciconia_nigra_Linnaeus_1758>
+    dwc:class "Aves" ;
+    dwc:family "Ciconiidae" ;
+    dwc:genus "Ciconia" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Ciconiiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Linnaeus)" ;
+    dwc:species "nigra" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ciconia_nigra> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Acari>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
+<http://taxon-concept.plazi.org/id/Animalia/Ciconiidae_Sundevall_1836>
+    dwc:class "Aves" ;
+    dwc:family "Ciconiidae" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Acari" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hypoderidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acari> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Hypoderidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Acari" ;
-    dwc:phylum "Arthropoda" ;
+    dwc:order "Ciconiiformes" ;
+    dwc:phylum "Chordata" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Sundevall, 1836" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ciconiidae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Neottialges>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hypoderidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/_Mironov_2019>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neottialges_distinctus_Lawrence_1986>
     dwc:class "Arachnida" ;
     dwc:family "Hypoderidae" ;
     dwc:genus "Neottialges" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Acari" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fain and Lawrence, 1986" ;
+    dwc:species "distinctus" ;
+    dwc:subGenus "Caloenectes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neottialges_distinctus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neottialges_ciconiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neottialges> ;
     dwc:class "Arachnida" ;
     dwc:family "Hypoderidae" ;
     dwc:genus "Neottialges" ;
@@ -106,12 +113,142 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ciconiae" ;
+    dwc:subGenus "Caloenectes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neottialges_Caloenectes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E9879EB71CFFFFFE7A713E6397A1C6>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neottialges_ciconiae_Mironov_2019> ;
-    trt:publishedIn <http://dx.doi.org/10.24349/acarologia/20194332> ;
-    dc:creator "Mironov, Sergey V.", "Ramilo, David W. R." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5173629>, <http://dx.doi.org/10.5281/zenodo.5173633> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Neottialges_Caloenectes>
+    dwc:class "Arachnida" ;
+    dwc:family "Hypoderidae" ;
+    dwc:genus "Neottialges" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Acari" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Caloenectes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neottialges> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Neottialges>
+    dwc:class "Arachnida" ;
+    dwc:family "Hypoderidae" ;
+    dwc:genus "Neottialges" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Acari" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hypoderidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hypoderidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Hypoderidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Acari" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acari> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Acari>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Acari" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ciconia_nigra>
+    dwc:class "Aves" ;
+    dwc:family "Ciconiidae" ;
+    dwc:genus "Ciconia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ciconiiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "nigra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ciconia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ciconia>
+    dwc:class "Aves" ;
+    dwc:family "Ciconiidae" ;
+    dwc:genus "Ciconia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ciconiiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ciconiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ciconiidae>
+    dwc:class "Aves" ;
+    dwc:family "Ciconiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ciconiiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ciconiiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ciconiiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ciconiiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/>
+    # Warning: Could not determine parent name ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neottialges_distinctus>
+    dwc:class "Arachnida" ;
+    dwc:family "Hypoderidae" ;
+    dwc:genus "Neottialges" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Acari" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "distinctus" ;
+    dwc:subGenus "Caloenectes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neottialges_Caloenectes> ;
+    a dwcFP:TaxonName .
