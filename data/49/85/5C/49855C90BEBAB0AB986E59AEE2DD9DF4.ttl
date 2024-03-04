@@ -1,24 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:49855C90BEBAB0AB986E59AEE2DD9DF4
+    cito:cites <http://taxon-concept.plazi.org/id/Plantae/Dorstenia_caulescens_Linnaeus_1753> ;
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Dorstenia Linnaeus 1754" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Dorstenia_Linnaeus_1754> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4363014> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4363014>
+    bibo:endPage "489" ;
+    bibo:startPage "474" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part D)" ;
-    bibo:endPage "489" ;
-    bibo:startPage "474" ;
     a fabio:BookSection .
 
 <http://taxon-concept.plazi.org/id/Plantae/Dorstenia_Linnaeus_1754>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Dorstenia> ;
     dwc:authority "Jarvis, 2007" ;
     dwc:authorityName "Jarvis" ;
     dwc:authorityYear "2007" ;
@@ -29,10 +37,11 @@
     dwc:order "Rosales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1754" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Dorstenia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Dorstenia_caulescens_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Dorstenia_caulescens> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Moraceae" ;
     dwc:genus "Dorstenia" ;
@@ -42,15 +51,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "caulescens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Dorstenia_caulescens> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Plantae/Dorstenia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Moraceae> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Moraceae" ;
     dwc:genus "Dorstenia" ;
@@ -58,10 +62,49 @@
     dwc:order "Rosales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Moraceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Moraceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Moraceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Rosales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Dorstenia_caulescens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dorstenia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Moraceae" ;
     dwc:genus "Dorstenia" ;
@@ -70,46 +113,5 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "caulescens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Dorstenia> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Moraceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Moraceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Rosales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Rosales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Rosales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/49855C90BEBAB0AB986E59AEE2DD9DF4>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Dorstenia_Linnaeus_1754> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4363014> ;
-    dc:creator "Jarvis, Charlie" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Plantae/Dorstenia_caulescens_Linnaeus_1753> ;
-    a trt:Treatment .
-
