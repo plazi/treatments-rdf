@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:560F8786B726285308F2F3D13BA5F844
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6628638> ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:title "Saimiri cassiquiarensis" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/560F8786B726285308F2F3D13BA5F844.mc.6ECE3CCDB72628540BD5F3603E24F28D> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Saimiri_cassiquiarensis_Lesson_1840> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Simia_sciurea_cassiquiarensis_Lesson_1840> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6628559> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6628559>
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2013" ;
-    dc:title "Cebidae" ;
     bibo:endPage "413" ;
     bibo:startPage "348" ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:date "2013" ;
+    dc:title "Cebidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6628638> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6628638/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/560F8786B726285308F2F3D13BA5F844.mc.6ECE3CCDB72628540BD5F3603E24F28D>
+    trt:gbifOccurrenceId "3804722314" ;
+    trt:httpUri <https://treatment.plazi.org/id/560F8786B726285308F2F3D13BA5F844#6ECE3CCDB72628540BD5F3603E24F28D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Saimiri_cassiquiarensis_Lesson_1840>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis> ;
-    dwc:ID-CoL "4TZJV" ;
     dwc:authority "Mittermeier, 2013" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2013" ;
@@ -36,11 +50,13 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lesson, 1840" ;
     dwc:species "cassiquiarensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4TZJV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Simia_sciurea_cassiquiarensis_Lesson_1840>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simia_sciurea_cassiquiarensis> ;
     dwc:class "Mammalia" ;
     dwc:family "Cebidae" ;
     dwc:genus "Simia" ;
@@ -51,60 +67,100 @@
     dwc:scientificNameAuthorship "Lesson, 1840" ;
     dwc:species "sciurea" ;
     dwc:subSpecies "cassiquiarensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Simia_sciurea_cassiquiarensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cebidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Cebidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Primates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Saimiri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cebidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Saimiri_sciureus_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Cebidae" ;
     dwc:genus "Saimiri" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "sciureus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Saimiri_sciureus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Saimiri_cassiquiarensis_cassiquiarensis_Lesson_1840>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Saimiri" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Lesson, 1840" ;
+    dwc:species "cassiquiarensis" ;
+    dwc:subSpecies "cassiquiarensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis_cassiquiarensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Saimiri_cassiquiarensis_albigenavon_Pusch_1942>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Saimiri" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Pusch, 1942" ;
+    dwc:species "cassiquiarensis" ;
+    dwc:subSpecies "albigenavon" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis_albigenavon> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Mauritia_Troschel_1863>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Mauritia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Troschel, 1863" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Mauritia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sapajus_macrocephalus_Spix_1823>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Sapajus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Spix, 1823" ;
+    dwc:species "macrocephalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sapajus_macrocephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ateles_Saint-Hilaire_1806>
+    dwc:class "Mammalia" ;
+    dwc:family "Atelidae" ;
+    dwc:genus "Ateles" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "E. Geoffroy Saint-Hilaire, 1806" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ateles> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lagothrix_Humboldt_1812>
+    dwc:class "Mammalia" ;
+    dwc:family "Atelidae" ;
+    dwc:genus "Lagothrix" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "E. Geoffroy Saint-Hilaire in Humboldt, 1812" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lagothrix> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Saimiri> ;
     dwc:class "Mammalia" ;
     dwc:family "Cebidae" ;
     dwc:genus "Saimiri" ;
@@ -113,33 +169,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "cassiquiarensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Saimiri> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Simia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cebidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Saimiri>
     dwc:class "Mammalia" ;
     dwc:family "Cebidae" ;
-    dwc:genus "Simia" ;
+    dwc:genus "Saimiri" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cebidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Simia_sciurea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simia> ;
+<http://taxon-name.plazi.org/id/Animalia/Cebidae>
     dwc:class "Mammalia" ;
     dwc:family "Cebidae" ;
-    dwc:genus "Simia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "sciurea" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Primates>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Simia_sciurea_cassiquiarensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simia_sciurea> ;
     dwc:class "Mammalia" ;
     dwc:family "Cebidae" ;
     dwc:genus "Simia" ;
@@ -149,13 +232,171 @@
     dwc:rank "subSpecies" ;
     dwc:species "sciurea" ;
     dwc:subSpecies "cassiquiarensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simia_sciurea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/560F8786B726285308F2F3D13BA5F844>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Saimiri_cassiquiarensis_Lesson_1840> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Simia_sciurea_cassiquiarensis_Lesson_1840> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6628559> ;
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6628638> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Simia_sciurea>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Simia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sciurea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Simia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Simia>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Simia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cebidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Saimiri_sciureus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Saimiri" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sciureus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Saimiri> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis_cassiquiarensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Saimiri" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "cassiquiarensis" ;
+    dwc:subSpecies "cassiquiarensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis_albigenavon>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Saimiri" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "cassiquiarensis" ;
+    dwc:subSpecies "albigenavon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Saimiri_cassiquiarensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Mauritia>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Mauritia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Arecaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Arecales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sapajus_macrocephalus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Sapajus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "macrocephalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sapajus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sapajus>
+    dwc:class "Mammalia" ;
+    dwc:family "Cebidae" ;
+    dwc:genus "Sapajus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cebidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ateles>
+    dwc:class "Mammalia" ;
+    dwc:family "Atelidae" ;
+    dwc:genus "Ateles" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atelidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atelidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Atelidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagothrix>
+    dwc:class "Mammalia" ;
+    dwc:family "Atelidae" ;
+    dwc:genus "Lagothrix" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atelidae> ;
+    a dwcFP:TaxonName .
