@@ -1,22 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CC6E8784FFE3FFA2FF54FA65FD7AD021
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/didymum_Sharp_1897>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.173187> ;
+    dc:creator "Caetano, Carlos Henrique Soares; Scarabino, Victor; Absalão, Ricardo Silva" ;
+    dc:title "Episiphon didymum Watson 1879" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Watson_1879> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Dentalium_ensiculus> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Watson_1879>, <http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Henderson_1920>, <http://taxon-concept.plazi.org/id/Animalia/Dentalium_johnsoni_Emerson_1952>, <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Scarabino_1985>, <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymus_Redfern_2001> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.173183> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.173183>
-    dc:creator "Absalão, Ricardo Silva", "Caetano, Carlos Henrique Soares", "Scarabino, Victor" ;
-    dc:date "2006" ;
-    dc:title "Scaphopoda (Mollusca) from the Brazilian continental shelf and upper slope (13 º to 21 ºS) with descriptions of two new species of the genus Cadulus Philippi, 1844" ;
     bibo:endPage "47" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "1267" ;
+    dc:creator "Caetano, Carlos Henrique Soares; Scarabino, Victor; Absalão, Ricardo Silva" ;
+    dc:date "2006" ;
+    dc:title "Scaphopoda (Mollusca) from the Brazilian continental shelf and upper slope (13 º to 21 ºS) with descriptions of two new species of the genus Cadulus Philippi, 1844" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.173187> ;
     a fabio:JournalArticle .
 
@@ -25,8 +37,38 @@
     fabio:hasRepresentation "https://zenodo.org/record/173187/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Henderson_1920>
+<http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Watson_1879>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Gadilinidae" ;
+    dwc:genus "Episiphon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Watson, 1879" ;
+    dwc:species "didymum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6G83G> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Watson_1879>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:genus "Dentalium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Watson 1879: 517" ;
+    dwc:species "didymum" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dentalium_didymum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/didymum_Sharp_1897>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Henderson_1920>
     dwc:class "Scaphopoda" ;
     dwc:family "Dentaliidae" ;
     dwc:genus "Dentalium" ;
@@ -37,23 +79,10 @@
     dwc:scientificNameAuthorship "Henderson 1920: 83" ;
     dwc:species "didymum" ;
     dwc:subGenus "Bathoxiphus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Watson_1879>
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dentalium_didymum> ;
-    dwc:class "Scaphopoda" ;
-    dwc:family "Dentaliidae" ;
-    dwc:genus "Dentalium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dentaliida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Watson 1879: 517" ;
-    dwc:species "didymum" ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dentalium_johnsoni_Emerson_1952>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dentalium_johnsoni> ;
     dwc:class "Scaphopoda" ;
     dwc:family "Dentaliidae" ;
     dwc:genus "Dentalium" ;
@@ -64,11 +93,10 @@
     dwc:scientificNameAuthorship "Emerson 1952: 5" ;
     dwc:species "johnsoni" ;
     dwc:subGenus "Episiphon" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dentalium_johnsoni> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Scarabino_1985>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymum> ;
-    dwc:ID-CoL "6G83G" ;
     dwc:class "Scaphopoda" ;
     dwc:family "Gadilinidae" ;
     dwc:genus "Episiphon" ;
@@ -78,25 +106,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Scarabino 1985: 200" ;
     dwc:species "didymum" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Watson_1879>
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6G83G> ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymum> ;
-    dwc:ID-CoL "6G83G" ;
-    dwc:class "Scaphopoda" ;
-    dwc:family "Gadilinidae" ;
-    dwc:genus "Episiphon" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dentaliida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Watson, 1879" ;
-    dwc:species "didymum" ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymus_Redfern_2001>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymus> ;
-    dwc:ID-CoL "6FVRD" ;
     dwc:class "Scaphopoda" ;
     dwc:family "Gadilinidae" ;
     dwc:genus "Episiphon" ;
@@ -106,47 +120,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Redfern 2001: 190" ;
     dwc:species "didymus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6G83G> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dentaliida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scaphopoda> ;
-    dwc:class "Scaphopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dentaliida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dentalium_johnsoni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentalium> ;
-    dwc:class "Scaphopoda" ;
-    dwc:family "Dentaliidae" ;
-    dwc:genus "Dentalium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dentaliida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:species "johnsoni" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Episiphon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gadilinidae> ;
-    dwc:class "Scaphopoda" ;
-    dwc:family "Gadilinidae" ;
-    dwc:genus "Episiphon" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dentaliida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Episiphon> ;
     dwc:class "Scaphopoda" ;
     dwc:family "Gadilinidae" ;
     dwc:genus "Episiphon" ;
@@ -155,10 +133,137 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "didymum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Episiphon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Episiphon>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Gadilinidae" ;
+    dwc:genus "Episiphon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gadilinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gadilinidae>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Gadilinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentaliida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentaliida>
+    dwc:class "Scaphopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scaphopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scaphopoda>
+    dwc:class "Scaphopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentalium_didymum>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:genus "Dentalium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "didymum" ;
+    dwc:subGenus "Bathoxiphus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentalium>, <http://taxon-name.plazi.org/id/Animalia/Dentalium_Bathoxiphus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentalium>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:genus "Dentalium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentaliidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentaliidae>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentaliida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/didymum>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "didymum" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentalium_Bathoxiphus>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:genus "Dentalium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Bathoxiphus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentalium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentalium_johnsoni>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:genus "Dentalium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "johnsoni" ;
+    dwc:subGenus "Episiphon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentalium_Episiphon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dentalium_Episiphon>
+    dwc:class "Scaphopoda" ;
+    dwc:family "Dentaliidae" ;
+    dwc:genus "Dentalium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dentaliida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Episiphon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentalium> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Episiphon_didymus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Episiphon> ;
     dwc:class "Scaphopoda" ;
     dwc:family "Gadilinidae" ;
     dwc:genus "Episiphon" ;
@@ -167,39 +272,5 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "didymus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Episiphon> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gadilinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dentaliida> ;
-    dwc:class "Scaphopoda" ;
-    dwc:family "Gadilinidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dentaliida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Scaphopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Scaphopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/CC6E8784FFE3FFA2FF54FA65FD7AD021>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Watson_1879> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/CC/6E/87/Dentalium_ensiculus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Henderson_1920>, <http://taxon-concept.plazi.org/id/Animalia/Dentalium_didymum_Watson_1879>, <http://taxon-concept.plazi.org/id/Animalia/Dentalium_johnsoni_Emerson_1952>, <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymum_Scarabino_1985>, <http://taxon-concept.plazi.org/id/Animalia/Episiphon_didymus_Redfern_2001> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.173183> ;
-    dc:creator "Absalão, Ricardo Silva", "Caetano, Carlos Henrique Soares", "Scarabino, Victor" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.173187> ;
-    a trt:Treatment .
-
