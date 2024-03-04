@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:1E30E2753462FFD3E4862D287E16888F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6887420> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:title "Apomys microdon Hollister 1913" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Apomys_microdon_Hollister_1913> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6887260> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6887260>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2017" ;
-    dc:title "Muridae" ;
     bibo:endPage "884" ;
     bibo:startPage "536" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier; Thomas E. Lacher, Jr" ;
+    dc:date "2017" ;
+    dc:title "Muridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6887420> ;
     a fabio:BookSection .
 
@@ -24,7 +34,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Apomys_microdon_Hollister_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apomys_microdon> ;
     dwc:authority "Wilson, 2017" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2017" ;
@@ -35,27 +44,42 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hollister, 1913" ;
     dwc:species "microdon" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apomys_microdon> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Apomys>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Apomys_musculus_Miller_1910>
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
     dwc:genus "Apomys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "G. S. Miller, 1910" ;
+    dwc:species "musculus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apomys_musculus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apomys_hollisteri_Ellerman_1949>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ellerman, 1949" ;
+    dwc:species "hollisteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apomys_hollisteri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Proposed_Wilson_2017>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Apomys_microdon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apomys> ;
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
     dwc:genus "Apomys" ;
@@ -64,46 +88,85 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "microdon" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apomys> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Apomys>
     dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apomys" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Muridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     dwc:class "Mammalia" ;
     dwc:family "Muridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/1E30E2753462FFD3E4862D287E16888F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Apomys_microdon_Hollister_1913> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6887260> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6887420> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apomys_musculus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "musculus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apomys_hollisteri>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "hollisteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proposed>
+    # Warning: Could not determine parent name ;
+    dwc:form "Proposed" ;
+    dwc:rank "form" ;
+    a dwcFP:TaxonName .
