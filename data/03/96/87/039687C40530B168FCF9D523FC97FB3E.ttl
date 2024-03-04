@@ -1,71 +1,60 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:039687C40530B168FCF9D523FC97FB3E
+    dc:creator "Laivao, Michel O.; Callmander, Martin W.; Buerki, Sven" ;
+    dc:title "Pandanus barbellatus Huynh" ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.5370762> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Pandanus_barbellatus> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.5370762>
-    dc:creator "Buerki, Sven", "Callmander, Martin W.", "Laivao, Michel O." ;
-    dc:date "2007" ;
-    dc:title "Révision de Pandanus sect. Foullioya Warb. (Pandanaceae) à Madagascar" ;
     bibo:endPage "57" ;
     bibo:issue "1" ;
     bibo:journal "Adansonia" ;
     bibo:series "3" ;
     bibo:startPage "39" ;
     bibo:volume "29" ;
+    dc:creator "Laivao, Michel O.; Callmander, Martin W.; Buerki, Sven" ;
+    dc:date "2007" ;
+    dc:title "Révision de Pandanus sect. Foullioya Warb. (Pandanaceae) à Madagascar" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Liliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Pandanaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanales> ;
+<http://taxon-concept.plazi.org/id/Plantae/Foullioya_Huynh_1998>
     dwc:class "Liliopsida" ;
     dwc:family "Pandanaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Pandanales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Pandanales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
-    dwc:class "Liliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Pandanales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Pandanus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanaceae> ;
-    dwc:class "Liliopsida" ;
-    dwc:family "Pandanaceae" ;
-    dwc:genus "Pandanus" ;
+    dwc:genus "Foullioya" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Pandanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "(Huynh 1998)", "Huynh, 1998" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Foullioya> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Heterostigma_Arnback-Christie-Linde_1924>
+    dwc:class "Ascidiacea" ;
+    dwc:family "Pyuridae" ;
+    dwc:genus "Heterostigma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stolidobranchia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Arnback-Christie-Linde, 1924" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Heterostigma> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Pandanus_barbellatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanus> ;
     dwc:class "Liliopsida" ;
     dwc:family "Pandanaceae" ;
     dwc:genus "Pandanus" ;
@@ -74,18 +63,116 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "barbellatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pandanus>
+    dwc:class "Liliopsida" ;
+    dwc:family "Pandanaceae" ;
+    dwc:genus "Pandanus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pandanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pandanaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Pandanaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pandanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pandanales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pandanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039687C40530B168FCF9D523FC97FB3E>
-    trt:publishedIn <http://doi.org/10.5281/zenodo.5370762> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Pandanus_barbellatus> ;
-    dc:creator "Buerki, Sven", "Callmander, Martin W.", "Laivao, Michel O." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Foullioya>
+    dwc:class "Liliopsida" ;
+    dwc:family "Pandanaceae" ;
+    dwc:genus "Foullioya" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pandanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pandanaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Heterostigma>
+    dwc:class "Ascidiacea" ;
+    dwc:family "Pyuridae" ;
+    dwc:genus "Heterostigma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stolidobranchia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyuridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pyuridae>
+    dwc:class "Ascidiacea" ;
+    dwc:family "Pyuridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stolidobranchia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stolidobranchia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stolidobranchia>
+    dwc:class "Ascidiacea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stolidobranchia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ascidiacea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ascidiacea>
+    dwc:class "Ascidiacea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
