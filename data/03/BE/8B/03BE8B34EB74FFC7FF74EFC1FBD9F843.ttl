@@ -1,28 +1,43 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03BE8B34EB74FFC7FF74EFC1FBD9F843
+    dc:creator "Fasulo, Giuseppe; Duraccio, Sergio; Federico, Antonio; Crocetta, Fabio" ;
+    dc:title "Pseudomurex meyendorffi var. caprensis Bellini 1929" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03BE8B34EB74FFC7FF74EFC1FBD9F843.mc.3B7F307FEB74FFC7FF74EC08FCC1F9CF> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudomurex_meyendorffi_caprensis_Bellini_1929> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4668.3.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4668.3.3>
-    dc:creator "Crocetta, Fabio", "Duraccio, Sergio", "Fasulo, Giuseppe", "Federico, Antonio" ;
-    dc:date "2019" ;
-    dc:title "The (almost) unknown Italian naturalist Raffaello Bellini (1874 - 1930): biography malacological publications, and status of his recent molluscan taxa" ;
     bibo:endPage "369" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-09-11" ;
     bibo:startPage "343" ;
     bibo:volume "4668" ;
+    dc:creator "Fasulo, Giuseppe; Duraccio, Sergio; Federico, Antonio; Crocetta, Fabio" ;
+    dc:date "2019" ;
+    dc:title "The (almost) unknown Italian naturalist Raffaello Bellini (1874 - 1930): biography malacological publications, and status of his recent molluscan taxa" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03BE8B34EB74FFC7FF74EFC1FBD9F843.mc.3B7F307FEB74FFC7FF74EC08FCC1F9CF>
+    dwc:locality "Capri Island" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2416712176" ;
+    trt:httpUri <https://treatment.plazi.org/id/03BE8B34EB74FFC7FF74EFC1FBD9F843#3B7F307FEB74FFC7FF74EC08FCC1F9CF> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pseudomurex_meyendorffi_caprensis_Bellini_1929>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi_caprensis> ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Pseudomurex" ;
@@ -33,72 +48,49 @@
     dwc:scientificNameAuthorship "Bellini, 1929 a: 38" ;
     dwc:species "meyendorffi" ;
     dwc:variety "caprensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi_caprensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Muricidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Coralliophila_meyendorffii_Calcara_1845>
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudomurex>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Muricidae" ;
-    dwc:genus "Pseudomurex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomurex> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Muricidae" ;
-    dwc:genus "Pseudomurex" ;
+    dwc:genus "Coralliophila" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
-    dwc:species "meyendorffi" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "(Calcara, 1845)", "Calcara, 1845" ;
+    dwc:species "meyendorffii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coralliophila_meyendorffii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Coralliophila_brevis_Blainville_1832>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Coralliophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Blainville, 1832)" ;
+    dwc:species "brevis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coralliophila_brevis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Coralliophila_panormitana_Monterosato_1869>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Coralliophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Monterosato, 1869)" ;
+    dwc:species "panormitana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coralliophila_panormitana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi_caprensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi> ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Pseudomurex" ;
@@ -108,11 +100,114 @@
     dwc:rank "variety" ;
     dwc:species "meyendorffi" ;
     dwc:variety "caprensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03BE8B34EB74FFC7FF74EFC1FBD9F843>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudomurex_meyendorffi_caprensis_Bellini_1929> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4668.3.3> ;
-    dc:creator "Crocetta, Fabio", "Duraccio, Sergio", "Fasulo, Giuseppe", "Federico, Antonio" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pseudomurex_meyendorffi>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Pseudomurex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "meyendorffi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudomurex> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Pseudomurex>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Pseudomurex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muricidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coralliophila_meyendorffii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Coralliophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "meyendorffii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coralliophila> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coralliophila>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Coralliophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coralliophila_brevis>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Coralliophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "brevis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coralliophila> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coralliophila_panormitana>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Coralliophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "panormitana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coralliophila> ;
+    a dwcFP:TaxonName .
