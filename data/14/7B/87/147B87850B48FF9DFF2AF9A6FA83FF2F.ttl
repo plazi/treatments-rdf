@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:147B87850B48FF9DFF2AF9A6FA83FF2F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.213173> ;
+    dc:creator "Posadas, Paula" ;
+    dc:title "Falklandius antarcticus Stierlin" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Nothofagus>, <http://taxon-name.plazi.org/id/Animalia/Otiorhynchus_antarcticus>, <http://taxon-name.plazi.org/id/Plantae/Myrteola_numularia>, <http://taxon-name.plazi.org/id/Plantae/Nothofagus_antarctica> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Otiorhynchus_antarcticus_Stierlin_1903>, <http://taxon-concept.plazi.org/id/Plantae/Poa_flabellata_Morrone_1992> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.213158> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Falklandius_antarcticus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.213158>
-    dc:creator "Posadas, Paula" ;
-    dc:date "2012" ;
-    dc:title "Species composition and geographic distribution of Fuegian Curculionidae (Coleoptera: Curculionoidea)" ;
     bibo:endPage "36" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3303" ;
+    dc:creator "Posadas, Paula" ;
+    dc:date "2012" ;
+    dc:title "Species composition and geographic distribution of Fuegian Curculionidae (Coleoptera: Curculionoidea)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.213173> ;
     a fabio:JournalArticle .
 
@@ -26,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Otiorhynchus_antarcticus_Stierlin_1903>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otiorhynchus_antarcticus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Otiorhynchus" ;
@@ -36,11 +46,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Stierlin 1903: 57" ;
     dwc:species "antarcticus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otiorhynchus_antarcticus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Falklandius_brachyomma_Enderlein_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Falklandius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Enderlein 1907: 66" ;
+    dwc:species "brachyomma" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Falklandius_brachyomma> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Poa_flabellata_Morrone_1992>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Poa_flabellata> ;
-    dwc:ID-CoL "4KLSZ" ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Poa" ;
@@ -50,52 +73,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Morrone 1992b)" ;
     dwc:species "flabellata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Poa_flabellata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Falklandius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:genus "Falklandius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Falklandius_antarcticus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Falklandius> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Falklandius" ;
@@ -104,37 +86,95 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "antarcticus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Falklandius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Falklandius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Falklandius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Liliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Poa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
-    dwc:class "Liliopsida" ;
-    dwc:family "Poaceae" ;
-    dwc:genus "Poa" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Poales" ;
-    dwc:phylum "Tracheophyta" ;
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otiorhynchus_antarcticus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Otiorhynchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "antarcticus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otiorhynchus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otiorhynchus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Otiorhynchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Falklandius_brachyomma>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Falklandius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brachyomma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Falklandius> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Poa_flabellata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poa> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Poa" ;
@@ -143,33 +183,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "flabellata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poa>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Poa" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Poaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Poales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     dwc:class "Liliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/147B87850B48FF9DFF2AF9A6FA83FF2F>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/14/7B/87/Myrteola_numularia>, <file:///workdir/tmprdf/data/14/7B/87/Nothofagus>, <file:///workdir/tmprdf/data/14/7B/87/Nothofagus_antarctica>, <file:///workdir/tmprdf/data/14/7B/87/Otiorhynchus_antarcticus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Otiorhynchus_antarcticus_Stierlin_1903>, <http://taxon-concept.plazi.org/id/Plantae/Poa_flabellata_Morrone_1992> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.213158> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Falklandius_antarcticus> ;
-    dc:creator "Posadas, Paula" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.213173> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
