@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DC87CBFFBF873FB267FB17FFA3AEFA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5326892> ;
+    dc:creator "Linnavuori, Rauno E." ;
+    dc:title "Tuponia (Chlorotuponia) shadeganica Linnavuori 2010, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03DC87CBFFBF873FB267FB17FFA3AEFA.mc.3B1D3C80FFBF873CB3C7FB5FFFA4AEE7> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tuponia_shadeganica_Linnavuori_2010> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5326810> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5326810>
-    dc:creator "Linnavuori, Rauno E." ;
-    dc:date "2010" ;
-    dc:title "Studies on the Miridae (Phylinae, addenda to Deraeocorinae and Orthotylinae) of Khuzestan and the adjacent provinces of Iran (Hemiptera: Heteroptera)" ;
     bibo:endPage "414" ;
     bibo:issue "2" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
     bibo:pubDate "2010-12-15" ;
     bibo:startPage "369" ;
     bibo:volume "50" ;
+    dc:creator "Linnavuori, Rauno E." ;
+    dc:date "2010" ;
+    dc:title "Studies on the Miridae (Phylinae, addenda to Deraeocorinae and Orthotylinae) of Khuzestan and the adjacent provinces of Iran (Hemiptera: Heteroptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5326892> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/5326892/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03DC87CBFFBF873FB267FB17FFA3AEFA.mc.3B1D3C80FFBF873CB3C7FB5FFFA4AEE7>
+    dwc:eventDate "2007-04-20" ;
+    dwc:locality "Shadegan" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03DC87CBFFBF873FB267FB17FFA3AEFA#3B1D3C80FFBF873CB3C7FB5FFFA4AEE7> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Tuponia_shadeganica_Linnavuori_2010>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tuponia_shadeganica> ;
-    dwc:ID-CoL "59MC5" ;
     dwc:class "Insecta" ;
     dwc:family "Miridae" ;
     dwc:genus "Tuponia" ;
@@ -40,60 +55,51 @@
     dwc:scientificNameAuthorship "Linnavuori, 2010" ;
     dwc:species "shadeganica" ;
     dwc:subGenus "Chlorotuponia" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/59MC5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tuponia_shadeganica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Miridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Miridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tuponia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tuponia_kurdestanica_Linnavuori_2010>
     dwc:class "Insecta" ;
     dwc:family "Miridae" ;
     dwc:genus "Tuponia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnavuori, 2010" ;
+    dwc:species "kurdestanica" ;
+    dwc:subGenus "Tuponia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tuponia_kurdestanica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tuponia_Chlorotuponia_Wagner_1964>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:scientificNameAuthorship "Wagner, 1964" ;
+    dwc:subGenus "Chlorotuponia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tuponia_Chlorotuponia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tuponia_prasina_Fieber_1864>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fieber, 1864" ;
+    dwc:species "prasina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tuponia_prasina> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tuponia_shadeganica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tuponia> ;
     dwc:class "Insecta" ;
     dwc:family "Miridae" ;
     dwc:genus "Tuponia" ;
@@ -102,12 +108,105 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "shadeganica" ;
+    dwc:subGenus "Chlorotuponia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tuponia_Chlorotuponia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DC87CBFFBF873FB267FB17FFA3AEFA>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tuponia_shadeganica_Linnavuori_2010> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5326810> ;
-    dc:creator "Linnavuori, Rauno E." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5326892> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tuponia_Chlorotuponia>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Chlorotuponia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tuponia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Tuponia>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Miridae>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tuponia_kurdestanica>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "kurdestanica" ;
+    dwc:subGenus "Tuponia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tuponia_Tuponia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tuponia_Tuponia>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Tuponia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tuponia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tuponia_prasina>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Tuponia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "prasina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tuponia> ;
+    a dwcFP:TaxonName .

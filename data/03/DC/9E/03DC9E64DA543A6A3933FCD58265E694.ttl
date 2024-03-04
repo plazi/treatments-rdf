@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DC9E64DA543A6A3933FCD58265E694
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4546712> ;
+    dc:creator "Montreuil, Olivier" ;
+    dc:title "Arachnodes viettei Montreuil 2011, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03DC9E64DA543A6A3933FCD58265E694.mc.3B1D252FDA543A6438BAFC0E80D6E493> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Arachnodes_viettei_Montreuil_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/z2011n1a5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/z2011n1a5>
-    dc:creator "Montreuil, Olivier" ;
-    dc:date "2011" ;
-    dc:title "Monophylie du « groupe Epilissus » et refonte des genres Epilissus Reiche, 1841, Arachnodes Westwood, 1847 et Apterepilissus n. gen. de Madagascar (Insecta, Coleoptera, Scarabaeidae, Epilissini)" ;
     bibo:endPage "122" ;
     bibo:issue "1" ;
     bibo:journal "Zoosystema" ;
     bibo:pubDate "2011-03-31" ;
     bibo:startPage "101" ;
     bibo:volume "33" ;
+    dc:creator "Montreuil, Olivier" ;
+    dc:date "2011" ;
+    dc:title "Monophylie du « groupe Epilissus » et refonte des genres Epilissus Reiche, 1841, Arachnodes Westwood, 1847 et Apterepilissus n. gen. de Madagascar (Insecta, Coleoptera, Scarabaeidae, Epilissini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4546712> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4546712/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03DC9E64DA543A6A3933FCD58265E694.mc.3B1D252FDA543A6438BAFC0E80D6E493>
+    dwc:catalogNumber "EC1907" ;
+    dwc:collectionCode "MNHN" ;
+    dwc:eventDate "1974-01-18" ;
+    dwc:recordedBy "Sud. Plateau Mahafaly & d'Ankalifano & P. Viette" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "250" ;
+    trt:httpUri <https://treatment.plazi.org/id/03DC9E64DA543A6A3933FCD58265E694#3B1D252FDA543A6438BAFC0E80D6E493> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Arachnodes_viettei_Montreuil_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_viettei> ;
-    dwc:ID-CoL "682HD" ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Arachnodes" ;
@@ -39,15 +57,18 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Montreuil, 2011" ;
     dwc:species "viettei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/682HD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_viettei> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/Madagascar_Montreuil_2011>
+    dwc:genus "Madagascar" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Montreuil, 2011" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Madagascar> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arachnodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_Westwood_1847>
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Arachnodes" ;
@@ -55,10 +76,89 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Westwood, 1847" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_bicolor_Montreuil_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Montreuil, 2011" ;
+    dwc:species "bicolor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_bicolor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_luctuosus_Boucomont_1937>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Boucomont, 1937)" ;
+    dwc:species "luctuosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_luctuosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_seyrigi_Lebis_1953>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lebis, 1953" ;
+    dwc:species "seyrigi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_seyrigi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_zombitsyensis_Montreuil_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Montreuil, 2011" ;
+    dwc:species "zombitsyensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_zombitsyensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_dichrous_Paulian_1976>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Paulian" ;
+    dwc:species "dichrous" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_dichrous> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arachnodes_mahafalyensis_Montreuil_2006>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Montreuil, 2006" ;
+    dwc:species "mahafalyensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arachnodes_mahafalyensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Arachnodes_viettei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Arachnodes" ;
@@ -67,56 +167,133 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "viettei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes>
     dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DC9E64DA543A6A3933FCD58265E694>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Arachnodes_viettei_Montreuil_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/z2011n1a5> ;
-    dc:creator "Montreuil, Olivier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4546712> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03DC9E64DA543A6A3933FCD58265E694/EC1907> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DC9E64DA543A6A3933FCD58265E694/EC1907>
-    dwc:catalogNumber "EC1907" ;
-    dwc:collectionCode "MNHN" ;
-    dwc:eventDate "1974-01-18" ;
-    dwc:recordedBy "Sud. Plateau Mahafaly & d'Ankalifano & P. Viette" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimElevation "250" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Madagascar>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Madagascar" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes_bicolor>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bicolor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes_luctuosus>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "luctuosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes_seyrigi>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "seyrigi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes_zombitsyensis>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "zombitsyensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes_dichrous>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dichrous" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnodes_mahafalyensis>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Arachnodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mahafalyensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnodes> ;
+    a dwcFP:TaxonName .

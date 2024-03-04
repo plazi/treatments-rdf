@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DC87EB1C5B5444FF6AFF54C8ED8B0C
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Raphidia_crassicornis_Schummel_1832> ;
+    dc:creator "Liu, Xingyue; Aspöck, Horst; Aspöck, Ulrike" ;
+    dc:title "Inocellia Schneider" ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Inocellia_Schneider_1843> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3753.3.2> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Inocellia> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3753.3.2>
-    dc:creator "Aspöck, Horst", "Aspöck, Ulrike", "Liu, Xingyue" ;
-    dc:date "2014" ;
-    dc:title "Inocellia rara sp. nov. (Raphidioptera: Inocelliidae), a new snakefly species from Taiwan, with remarks on systematics and biogeography of the Inocelliidae of the island" ;
     bibo:endPage "232" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "226" ;
     bibo:volume "3753" ;
+    dc:creator "Liu, Xingyue; Aspöck, Horst; Aspöck, Ulrike" ;
+    dc:date "2014" ;
+    dc:title "Inocellia rara sp. nov. (Raphidioptera: Inocelliidae), a new snakefly species from Taiwan, with remarks on systematics and biogeography of the Inocelliidae of the island" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Inocellia_Schneider_1843>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Inocellia> ;
-    dwc:ID-CoL "54HF" ;
     dwc:class "Insecta" ;
     dwc:family "Inocelliidae" ;
     dwc:genus "Inocellia" ;
@@ -31,10 +39,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Schneider, 1843: 84" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/54HF> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Inocellia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Raphidia_crassicornis_Schummel_1832>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Raphidia_crassicornis> ;
     dwc:class "Insecta" ;
     dwc:family "Raphidiidae" ;
     dwc:genus "Raphidia" ;
@@ -44,22 +53,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Schummel, 1832" ;
     dwc:species "crassicornis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Raphidia_crassicornis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Inocellia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Inocelliidae> ;
     dwc:class "Insecta" ;
     dwc:family "Inocelliidae" ;
     dwc:genus "Inocellia" ;
@@ -67,39 +64,49 @@
     dwc:order "Raphidioptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Inocelliidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Inocelliidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidioptera> ;
     dwc:class "Insecta" ;
     dwc:family "Inocelliidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Raphidioptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidioptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Raphidioptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Raphidioptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Raphidia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidiidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Raphidiidae" ;
-    dwc:genus "Raphidia" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
     dwc:kingdom "Animalia" ;
-    dwc:order "Raphidioptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Raphidia_crassicornis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidia> ;
     dwc:class "Insecta" ;
     dwc:family "Raphidiidae" ;
     dwc:genus "Raphidia" ;
@@ -108,32 +115,26 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "crassicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Raphidia>
+    dwc:class "Insecta" ;
+    dwc:family "Raphidiidae" ;
+    dwc:genus "Raphidia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Raphidioptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Raphidiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidioptera> ;
     dwc:class "Insecta" ;
     dwc:family "Raphidiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Raphidioptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Raphidioptera> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Raphidioptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Raphidioptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03DC87EB1C5B5444FF6AFF54C8ED8B0C>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Inocellia_Schneider_1843> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3753.3.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Inocellia> ;
-    dc:creator "Aspöck, Horst", "Aspöck, Ulrike", "Liu, Xingyue" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Raphidia_crassicornis_Schummel_1832> ;
-    a trt:Treatment .
-
