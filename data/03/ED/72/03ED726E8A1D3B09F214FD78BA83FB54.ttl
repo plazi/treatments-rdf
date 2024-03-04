@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X(2005)059%5B0091:LDOESO%5D2.0.CO;2>
-    dc:creator "Morón, Miguel-Angel", "Ratcliffe, Brett C." ;
-    dc:date "2005" ;
-    dc:title "Larval Descriptions Of Eight Species Of Megasoma Kirby (Coleoptera: Scarabaeidae: Dynastinae) With A Key For Identification And Notes On Biology" ;
+treatment:03ED726E8A1D3B09F214FD78BA83FB54
+    cito:cites <http://dx.doi.org/10.5281/zenodo.10104918> ;
+    dc:creator "Ratcliffe, Brett C.; Morón, Miguel-Angel" ;
+    dc:title "Megasoma vogti Cartwright 1963" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Megasoma_vogti_Cartwright_1963> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x(2005)059%5B0091:ldoeso%5D2.0.co;2> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x(2005)059%5B0091:ldoeso%5D2.0.co;2>
     bibo:endPage "126" ;
     bibo:issue "1" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2005-03-31" ;
     bibo:startPage "91" ;
     bibo:volume "59" ;
+    dc:creator "Ratcliffe, Brett C.; Morón, Miguel-Angel" ;
+    dc:date "2005" ;
+    dc:title "Larval Descriptions Of Eight Species Of Megasoma Kirby (Coleoptera: Scarabaeidae: Dynastinae) With A Key For Identification And Notes On Biology" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.10104918> ;
     a fabio:JournalArticle .
 
@@ -28,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Megasoma_vogti_Cartwright_1963>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Megasoma_vogti> ;
     dwc:class "Insecta" ;
     dwc:family "Dynastidae" ;
     dwc:genus "Megasoma" ;
@@ -36,51 +44,35 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Cartwright" ;
+    dwc:scientificNameAuthorship "Cartwright", "Cartwright, 1963" ;
     dwc:species "vogti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Megasoma_vogti> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Mimosaceae_R.Brown_1814>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Mimosaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "R.Brown, 1814" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Mimosaceae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dynastidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Megasoma_vogti>
     dwc:class "Insecta" ;
     dwc:family "Dynastidae" ;
+    dwc:genus "Megasoma" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "vogti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megasoma> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Megasoma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dynastidae> ;
     dwc:class "Insecta" ;
     dwc:family "Dynastidae" ;
     dwc:genus "Megasoma" ;
@@ -88,24 +80,83 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dynastidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Megasoma_vogti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megasoma> ;
+<http://taxon-name.plazi.org/id/Animalia/Dynastidae>
     dwc:class "Insecta" ;
     dwc:family "Dynastidae" ;
-    dwc:genus "Megasoma" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "vogti" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03ED726E8A1D3B09F214FD78BA83FB54>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Megasoma_vogti_Cartwright_1963> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x(2005)059%5B0091:ldoeso%5D2.0.co;2> ;
-    dc:creator "Morón, Miguel-Angel", "Ratcliffe, Brett C." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.10104918> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Mimosaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Mimosaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
