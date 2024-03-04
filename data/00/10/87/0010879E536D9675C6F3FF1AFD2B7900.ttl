@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0010879E536D9675C6F3FF1AFD2B7900
+    cito:cites <http://dx.doi.org/10.5281/zenodo.289245> ;
+    dc:creator "Sharkey, Michael J.; Chapman, Eric G." ;
+    dc:title "Aphelagathis verticalis Cresson, NEW COMBINATION" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4000.1.2> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphelagathis_verticalis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4000.1.2>
-    dc:creator "Chapman, Eric G.", "Sharkey, Michael J." ;
-    dc:date "2015" ;
-    dc:title "The Nearctic genera of Agathidinae (Hymenoptera: Braconidae) with a phylogenetic analysis, illustrated generic key, and the description of three new genera" ;
     bibo:endPage "72" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "49" ;
     bibo:volume "4000" ;
+    dc:creator "Sharkey, Michael J.; Chapman, Eric G." ;
+    dc:date "2015" ;
+    dc:title "The Nearctic genera of Agathidinae (Hymenoptera: Braconidae) with a phylogenetic analysis, illustrated generic key, and the description of three new genera" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.289245> ;
     a fabio:JournalArticle .
 
@@ -26,24 +35,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/289245/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Microdus_verticalis_Cresson_1872>
+    dwc:class "Bryopsida" ;
+    dwc:family "Dicranaceae" ;
+    dwc:genus "Microdus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aphelagathis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:genus "Aphelagathis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:order "Dicranales" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cresson 1872" ;
+    dwc:species "verticalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microdus_verticalis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aphelagathis_verticalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphelagathis> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Aphelagathis" ;
@@ -52,46 +57,112 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "verticalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphelagathis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Aphelagathis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aphelagathis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0010879E536D9675C6F3FF1AFD2B7900>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4000.1.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphelagathis_verticalis> ;
-    dc:creator "Chapman, Eric G.", "Sharkey, Michael J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.289245> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microdus_verticalis>
+    dwc:class "Bryopsida" ;
+    dwc:family "Dicranaceae" ;
+    dwc:genus "Microdus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dicranales" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "species" ;
+    dwc:species "verticalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microdus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microdus>
+    dwc:class "Bryopsida" ;
+    dwc:family "Dicranaceae" ;
+    dwc:genus "Microdus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dicranales" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dicranaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dicranaceae>
+    dwc:class "Bryopsida" ;
+    dwc:family "Dicranaceae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dicranales" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dicranales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dicranales>
+    dwc:class "Bryopsida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dicranales" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bryopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bryopsida>
+    dwc:class "Bryopsida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bryophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bryophyta>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Bryophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
