@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D2E067FFC1FFEBFA75FAD4623BFB2A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6657071> ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:title "Otolemur garnettii" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03D2E067FFC1FFEBFA75FAD4623BFB2A.mc.3B135B2CFFC1FFE8F78AF9B763DBF956> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnettii_Ogilby_1838> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Otolicnus_garnettii_Ogilby_1838> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6657019> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6657019>
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2013" ;
-    dc:title "Galagidae" ;
     bibo:endPage "209" ;
     bibo:startPage "184" ;
+    dc:creator "Russell A. Mittermeier; Anthony B. Rylands; Don E. Wilson" ;
+    dc:date "2013" ;
+    dc:title "Galagidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6657071> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6657071/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03D2E067FFC1FFEBFA75FAD4623BFB2A.mc.3B135B2CFFC1FFE8F78AF9B763DBF956>
+    trt:gbifOccurrenceId "3813040306" ;
+    trt:httpUri <https://treatment.plazi.org/id/03D2E067FFC1FFEBFA75FAD4623BFB2A#3B135B2CFFC1FFE8F78AF9B763DBF956> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnettii_Ogilby_1838>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnettii> ;
-    dwc:ID-CoL "75DM9" ;
     dwc:authority "Mittermeier, 2013" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2013" ;
@@ -36,11 +50,13 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ogilby, 1838" ;
     dwc:species "garnettii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/75DM9> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnettii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Otolicnus_garnettii_Ogilby_1838>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolicnus_garnettii> ;
     dwc:class "Mammalia" ;
     dwc:family "Galagidae" ;
     dwc:genus "Otolicnus" ;
@@ -50,40 +66,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Ogilby, 1838" ;
     dwc:species "garnettii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolicnus_garnettii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Galagidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Galagidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Primates" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Otolemur>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Galagidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Otolemur_Coquerel_1859>
     dwc:class "Mammalia" ;
     dwc:family "Galagidae" ;
     dwc:genus "Otolemur" ;
@@ -91,10 +77,80 @@
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Coquerel, 1859" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Otolemur_crassicaudatus_Saint-Hilaire_1812>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "E. Geoffroy Saint-Hilaire, 1812" ;
+    dwc:species "crassicaudatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_crassicaudatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnet_garnettii_Ogilby_1838>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Ogilby, 1838" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "garnettii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_garnettii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnet_kikuyuensis_Lonnberg_1912>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Lonnberg, 1912" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "kikuyuensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_kikuyuensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnet_lasiotis_Peters_1876>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Peters, 1876" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "lasiotis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_lasiotis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnet_panganiensis_Matschie_1905>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Matschie, 1905" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "panganiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_panganiensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnettii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur> ;
     dwc:class "Mammalia" ;
     dwc:family "Galagidae" ;
     dwc:genus "Otolemur" ;
@@ -103,22 +159,154 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "garnettii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Galagidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Galagidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Primates> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Primates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Primates" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D2E067FFC1FFEBFA75FAD4623BFB2A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Otolemur_garnettii_Ogilby_1838> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Otolicnus_garnettii_Ogilby_1838> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6657019> ;
-    dc:creator "Anthony B. Rylands", "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6657071> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolicnus_garnettii>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolicnus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "garnettii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolicnus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolicnus>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolicnus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Galagidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur_crassicaudatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "crassicaudatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_garnettii>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "garnettii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "garnet" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_kikuyuensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "kikuyuensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_lasiotis>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "lasiotis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet_panganiensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Galagidae" ;
+    dwc:genus "Otolemur" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Primates" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "garnet" ;
+    dwc:subSpecies "panganiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otolemur_garnet> ;
+    a dwcFP:TaxonName .
