@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/zootaxa.5303.1.1>
-    dc:creator "Harbach, Ralph E.", "Wilkerson, Richard C." ;
-    dc:date "2023" ;
-    dc:title "The insupportable validity of mosquito subspecies (Diptera: Culicidae) and their exclusion from culicid classification" ;
+treatment:161B87CDBA600A03FF54F9C6FC4C5C0C
+    dc:creator "Harbach, Ralph E.; Wilkerson, Richard C." ;
+    dc:title "Culex (Culex) grahamii Theobald" ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Culex_farakoensis_Hamon_1955>, <http://taxon-concept.plazi.org/id/Animalia/Culex_grahami_Theobald_1910>, <http://taxon-concept.plazi.org/id/Animalia/Culex_grahamii_Theobald_1910>, <http://taxon-concept.plazi.org/id/Animalia/Culex_pullatus_Graham_1910> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_grahamii> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "184" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-06-15" ;
     bibo:startPage "1" ;
     bibo:volume "5303" ;
+    dc:creator "Harbach, Ralph E.; Wilkerson, Richard C." ;
+    dc:date "2023" ;
+    dc:title "The insupportable validity of mosquito subspecies (Diptera: Culicidae) and their exclusion from culicid classification" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_farakoensis_Hamon_1955>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_farakoensis> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -32,10 +40,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hamon, 1955" ;
     dwc:species "farakoensis" ;
+    dwc:subGenus "Culex" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_farakoensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_grahami_Theobald_1910>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_grahami> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -46,11 +55,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Theobald, 1910" ;
     dwc:species "grahami" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_grahami> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_grahamii_Theobald_1910>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_grahamii> ;
-    dwc:ID-CoL "8BMK7" ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -60,11 +68,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Theobald, 1910" ;
     dwc:species "grahamii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8BMK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_grahamii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_pullatus_Graham_1910>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_pullatus> ;
-    dwc:ID-CoL "32BQ9" ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -74,57 +82,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Graham, 1910" ;
     dwc:species "pullatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8BMK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_pullatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Culex>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:genus "Culex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Culex_farakoensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:genus "Culex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "farakoensis" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Culex_grahami>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:genus "Culex" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "grahami" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Culex_grahamii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -133,10 +95,98 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "grahamii" ;
+    dwc:subGenus "Culex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex_Culex>, <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Culex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culicidae>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_farakoensis>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "farakoensis" ;
+    dwc:subGenus "Culex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex>, <http://taxon-name.plazi.org/id/Animalia/Culex_Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_grahami>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grahami" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Culex_pullatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -145,39 +195,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pullatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Culicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/161B87CDBA600A03FF54F9C6FC4C5C0C>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Culex_farakoensis_Hamon_1955>, <http://taxon-concept.plazi.org/id/Animalia/Culex_grahami_Theobald_1910>, <http://taxon-concept.plazi.org/id/Animalia/Culex_grahamii_Theobald_1910>, <http://taxon-concept.plazi.org/id/Animalia/Culex_pullatus_Graham_1910> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_grahamii> ;
-    dc:creator "Harbach, Ralph E.", "Wilkerson, Richard C." ;
-    a trt:Treatment .
-

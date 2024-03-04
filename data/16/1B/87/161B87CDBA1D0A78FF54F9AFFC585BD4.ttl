@@ -1,29 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/zootaxa.5303.1.1>
-    dc:creator "Harbach, Ralph E.", "Wilkerson, Richard C." ;
-    dc:date "2023" ;
-    dc:title "The insupportable validity of mosquito subspecies (Diptera: Culicidae) and their exclusion from culicid classification" ;
+treatment:161B87CDBA1D0A78FF54F9AFFC585BD4
+    dc:creator "Harbach, Ralph E.; Wilkerson, Richard C." ;
+    dc:title "Aedes (Rusticoidus) rusticus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aedes_rusticus_Rossi_1790> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Aedes_rusticus_Rossi_1790>, <http://taxon-concept.plazi.org/id/Animalia/Culex_rusticus_Rossi_1790>, <http://taxon-concept.plazi.org/id/Animalia/Aedes_subtrichurus_Martini_1927> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "184" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-06-15" ;
     bibo:startPage "1" ;
     bibo:volume "5303" ;
+    dc:creator "Harbach, Ralph E.; Wilkerson, Richard C." ;
+    dc:date "2023" ;
+    dc:title "The insupportable validity of mosquito subspecies (Diptera: Culicidae) and their exclusion from culicid classification" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Aedes_rusticus_Rossi_1790>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aedes_rusticus> ;
-    dwc:ID-CoL "89W6D" ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Aedes" ;
@@ -31,28 +38,14 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Rossi)" ;
+    dwc:scientificNameAuthorship "(Rossi)", "(Rossi, 1790)", "Rossi, 1790" ;
     dwc:species "rusticus" ;
     dwc:subGenus "Rusticoidus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Aedes_subtrichurus_Martini_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aedes_subtrichurus> ;
-    dwc:ID-CoL "89W6G" ;
-    dwc:class "Insecta" ;
-    dwc:family "Culicidae" ;
-    dwc:genus "Aedes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Martini, 1927" ;
-    dwc:species "subtrichurus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/89W6D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aedes_rusticus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_rusticus_Rossi_1790>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_rusticus> ;
-    dwc:ID-CoL "8BNJJ" ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -62,26 +55,104 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Rossi, 1790" ;
     dwc:species "rusticus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/89W6D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_rusticus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aedes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Aedes_subtrichurus_Martini_1927>
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Aedes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Martini, 1927" ;
+    dwc:species "subtrichurus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/89W6D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aedes_subtrichurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_diversus_Theobald_1901>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Theobald, 1901 c)", "Theobald, 1901", "Theobald, 1901 c" ;
+    dwc:species "diversus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_diversus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_maculatus_Meigen_1804>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meigen, 1804" ;
+    dwc:species "maculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_maculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_musicus_Leach_1825>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Leach, 1825" ;
+    dwc:species "musicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_musicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_pungens_Robineau-Desvoidy_1827>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Robineau-Desvoidy, 1827" ;
+    dwc:species "pungens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_pungens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_quadratimaculatus_Macquart_1834>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Macquart, 1834" ;
+    dwc:species "quadratimaculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_quadratimaculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_nemorosus_luteovittata_Theobald_1901>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Theobald, 1901 c" ;
+    dwc:species "nemorosus" ;
+    dwc:variety "luteovittata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_nemorosus_luteovittata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aedes_rusticus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aedes> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Aedes" ;
@@ -90,10 +161,96 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "rusticus" ;
+    dwc:subGenus "Rusticoidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aedes_Rusticoidus>, <http://taxon-name.plazi.org/id/Animalia/Aedes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aedes_Rusticoidus>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Aedes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Rusticoidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aedes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aedes>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Aedes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culicidae>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_rusticus>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rusticus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Aedes_subtrichurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aedes> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Aedes" ;
@@ -102,46 +259,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "subtrichurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aedes> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Culicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Culex_diversus>
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "diversus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Culex_maculatus>
     dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "maculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Culex_musicus>
     dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "musicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/161B87CDBA1D0A78FF54F9AFFC585BD4>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aedes_rusticus_Rossi_1790> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Aedes_subtrichurus_Martini_1927>, <http://taxon-concept.plazi.org/id/Animalia/Culex_rusticus_Rossi_1790> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Harbach, Ralph E.", "Wilkerson, Richard C." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Culex_pungens>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pungens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Culex_quadratimaculatus>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "quadratimaculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_nemorosus_luteovittata>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:species "nemorosus" ;
+    dwc:variety "luteovittata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex_nemorosus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_nemorosus>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nemorosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
