@@ -1,28 +1,62 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:174CE445FFE32E4508099A439194FACD
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/>' due to issues with rank ;
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Syntropinae_KRAEPELIN_1905>, <http://taxon-concept.plazi.org/id/Animalia/Paravaejovini_Fet_2008>, <http://taxon-concept.plazi.org/id/Animalia/Thorelliina_Fet_2008> ;
+    dc:creator "González-Santillán, Edmundo; Prendini, Lorenzo" ;
+    dc:title "Syntropinae KRAEPELIN 1905" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Syntropinae_KRAEPELIN_1905> ;
+    trt:publishedIn <http://dx.doi.org/10.1206/830.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1206/830.1>
-    dc:creator "González-Santillán, Edmundo", "Prendini, Lorenzo" ;
-    dc:date "2013" ;
-    dc:title "Redefinition And Generic Revision Of The North American Vaejovid Scorpion Subfamily Syntropinae Kraepelin, 1905, With Descriptions Of Six New Genera" ;
     bibo:endPage "71" ;
     bibo:issue "382" ;
     bibo:journal "Bulletin of the American Museum of Natural History" ;
     bibo:pubDate "2013-12-02" ;
     bibo:startPage "1" ;
     bibo:volume "2013" ;
+    dc:creator "González-Santillán, Edmundo; Prendini, Lorenzo" ;
+    dc:date "2013" ;
+    dc:title "Redefinition And Generic Revision Of The North American Vaejovid Scorpion Subfamily Syntropinae Kraepelin, 1905, With Descriptions Of Six New Genera" ;
     a fabio:JournalArticle .
 
+<http://taxon-concept.plazi.org/id/Animalia/Syntropinae_KRAEPELIN_1905>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Kraepelin, 1905", "Kraepelin, 1905: 340", "KRAEPELIN, 1905" ;
+    dwc:subFamily "Syntropinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Syntropinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Syntropis_Kraepelin_1900>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Syntropis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kraepelin, 1900" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Syntropis> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Paravaejovini_Fet_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paravaejovini> ;
     dwc:class "Arachnida" ;
     dwc:family "Vaejovidae" ;
     dwc:kingdom "Animalia" ;
@@ -31,22 +65,10 @@
     dwc:rank "tribe" ;
     dwc:scientificNameAuthorship "Soleglad and Fet, 2008" ;
     dwc:tribe "Paravaejovini" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Syntropinae_KRAEPELIN_1905>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Syntropinae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Vaejovidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "subFamily" ;
-    dwc:scientificNameAuthorship "Kraepelin, 1905", "Kraepelin, 1905: 340" ;
-    dwc:subFamily "Syntropinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paravaejovini> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Thorelliina_Fet_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thorelliina> ;
     dwc:class "Arachnida" ;
     dwc:family "Vaejovidae" ;
     dwc:kingdom "Animalia" ;
@@ -55,50 +77,358 @@
     dwc:rank "subTribe" ;
     dwc:scientificNameAuthorship "Soleglad and Fet, 2008" ;
     dwc:subTribe "Thorelliina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thorelliina> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Gertschius_Soleglad_2007>
     dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Gertschius" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Graham and Soleglad, 2007" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gertschius> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Serradigitus_Stahnke_1974>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Serradigitus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Stahnke, 1974" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Serradigitus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Paravaejovini>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Stahnkeus_Fet_2006>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Stahnkeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Soleglad and Fet, 2006" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stahnkeus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Wernerius_Fet_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Wernerius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Soleglad and Fet, 2008" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Wernerius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stahnkeini_Fet_2008>
     dwc:class "Arachnida" ;
     dwc:family "Vaejovidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "tribe" ;
-    dwc:tribe "Paravaejovini" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "(Soleglad and Fet, 2008)", "Soleglad and Fet, 2008" ;
+    dwc:tribe "Stahnkeini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stahnkeini> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Scorpiones>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+<http://taxon-concept.plazi.org/id/Animalia/Franckeus_Fet_2005>
     dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Franckeus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Soleglad and Fet, 2005" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Franckeus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vaejovis_Koch_1836>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "C. L. Koch, 1836" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vaejovis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vaejovis_mexicanus_C.L.Koch_1836>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "C.L.Koch, 1836" ;
+    dwc:species "mexicanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vaejovis_mexicanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vaejovis_vorhiesi_Stahnke_1940>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stahnke, 1940" ;
+    dwc:species "vorhiesi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vaejovis_vorhiesi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudouroctonus_Stahnke_1974>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Pseudouroctonus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Stahnke, 1974" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudouroctonus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudouroctonus_apacheanus_Soleglad_1972>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Pseudouroctonus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Gertsch and Soleglad, 1972)" ;
+    dwc:species "apacheanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudouroctonus_apacheanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Kochius_Fet_2008>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Kochius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Soleglad and Fet, 2008" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Kochius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chihuahuanus_Gonz%C3%A1lez-Santill%C3%A1n_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Chihuahuanus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "González-Santillán & Prendini, 2013" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chihuahuanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thorellius_Fet_2008>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Thorellius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Soleglad and Fet, 2008" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thorellius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Kochius_punctipalpi_Wood_1863>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Kochius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Wood, 1863)" ;
+    dwc:species "punctipalpi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Kochius_punctipalpi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Balsateres_Gonz%C3%A1lez-Santill%C3%A1n_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Balsateres" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "González-Santillán & Prendini, 2013" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Balsateres> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Konetontli_Gonz%C3%A1lez-Santill%C3%A1n_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Konetontli" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "González-Santillán & Prendini, 2013" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Konetontli> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Kuarapu_Ponce-Saavedra_2010>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Kuarapu" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Francke and Ponce-Saavedra, 2010" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Kuarapu> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maaykuyak_Gonz%C3%A1lez-Santill%C3%A1n_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Maaykuyak" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "González-Santillán & Prendini, 2013" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maaykuyak> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mesomexovis_Gonz%C3%A1lez-Santill%C3%A1n_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Mesomexovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "González-Santillán & Prendini, 2013" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mesomexovis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paravaejovis_Williams_1980>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Paravaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Williams, 1980" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paravaejovis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Vizcaino_Gonz%C3%A1lez-Santill%C3%A1n_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vizcaino" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "González-Santillán & Prendini, 2013" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vizcaino> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chihuahuanus_bilineatus_Pocock_1898>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Chihuahuanus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Pocock, 1898)" ;
+    dwc:species "bilineatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chihuahuanus_bilineatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Syntropis_williamsi_Soleglad_2007>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Syntropis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Soleglad et al., 2007" ;
+    dwc:species "williamsi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Syntropis_williamsi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Paravaejovis_pumilis_Williams_1980>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Paravaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Williams, 1980)", "Williams, 1980" ;
+    dwc:species "pumilis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paravaejovis_pumilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mesomexovis_atenango_Gonzalez-Santillan_2007>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Mesomexovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Francke and Gonzalez-Santillan, 2007)" ;
+    dwc:species "atenango" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mesomexovis_atenango> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Balsateres_cisnerosi_Sissom_2004>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Balsateres" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Ponce-Saavedra and Sissom, 2004)" ;
+    dwc:species "cisnerosi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Balsateres_cisnerosi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Syntropinae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
     dwc:class "Arachnida" ;
     dwc:family "Vaejovidae" ;
     dwc:kingdom "Animalia" ;
@@ -106,33 +436,410 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Syntropinae" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Thorelliina>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Vaejovidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scorpiones" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "subTribe" ;
-    dwc:subTribe "Thorelliina" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Vaejovidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scorpiones> ;
     dwc:class "Arachnida" ;
     dwc:family "Vaejovidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scorpiones" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scorpiones> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/174CE445FFE32E4508099A439194FACD>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Syntropinae_KRAEPELIN_1905> ;
-    trt:publishedIn <http://dx.doi.org/10.1206/830.1> ;
-    dc:creator "González-Santillán, Edmundo", "Prendini, Lorenzo" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Paravaejovini_Fet_2008>, <http://taxon-concept.plazi.org/id/Animalia/Syntropinae_KRAEPELIN_1905>, <http://taxon-concept.plazi.org/id/Animalia/Thorelliina_Fet_2008> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Scorpiones>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Syntropis>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Syntropis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paravaejovini>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Paravaejovini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thorelliina>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subTribe" ;
+    dwc:subTribe "Thorelliina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gertschius>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Gertschius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Serradigitus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Serradigitus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stahnkeus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Stahnkeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Wernerius>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Wernerius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stahnkeini>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "tribe" ;
+    dwc:tribe "Stahnkeini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Franckeus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Franckeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vaejovis>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vaejovis_mexicanus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mexicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vaejovis_vorhiesi>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vorhiesi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudouroctonus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Pseudouroctonus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudouroctonus_apacheanus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Pseudouroctonus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "apacheanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudouroctonus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Kochius>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Kochius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chihuahuanus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Chihuahuanus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thorellius>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Thorellius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Kochius_punctipalpi>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Kochius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "punctipalpi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Kochius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Balsateres>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Balsateres" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Konetontli>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Konetontli" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Kuarapu>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Kuarapu" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maaykuyak>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Maaykuyak" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mesomexovis>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Mesomexovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paravaejovis>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Paravaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Vizcaino>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Vizcaino" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vaejovidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chihuahuanus_bilineatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Chihuahuanus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bilineatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chihuahuanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Syntropis_williamsi>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Syntropis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "williamsi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Syntropis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paravaejovis_pumilis>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Paravaejovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pumilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paravaejovis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mesomexovis_atenango>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Mesomexovis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "atenango" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mesomexovis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Balsateres_cisnerosi>
+    dwc:class "Arachnida" ;
+    dwc:family "Vaejovidae" ;
+    dwc:genus "Balsateres" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scorpiones" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cisnerosi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Balsateres> ;
+    a dwcFP:TaxonName .
