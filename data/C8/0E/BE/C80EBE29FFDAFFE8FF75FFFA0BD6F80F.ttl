@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C80EBE29FFDAFFE8FF75FFFA0BD6F80F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.2607607> ;
+    dc:creator "Kaiser, Christine M.; Kaiser, Hinrich; O’Shea, Mark" ;
+    dc:title "Stegonotus parvus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/C80EBE29FFDAFFE8FF75FFFA0BD6F80F.mc.F0CF0562FFDAFFEBFF25FCFC0D27FD2D>, <http://tb.plazi.org/GgServer/dwcaRecords/C80EBE29FFDAFFE8FF75FFFA0BD6F80F.mc.F0CF0562FFDAFFEBFBB4FB460A22FA51> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stegonotus_parvus_Meyer_1874> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4512.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4512.1.1>
-    dc:creator "Kaiser, Christine M.", "Kaiser, Hinrich", "O’Shea, Mark" ;
-    dc:date "2018" ;
-    dc:title "The taxonomic history of Indo-Papuan groundsnakes, genus Stegonotus Duméril et al., 1854 (Colubridae), with some taxonomic revisions and the designation of a neotype for S. parvus (Meyer, 1874)" ;
     bibo:endPage "73" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-11-05" ;
     bibo:startPage "1" ;
     bibo:volume "4512" ;
+    dc:creator "Kaiser, Christine M.; Kaiser, Hinrich; O’Shea, Mark" ;
+    dc:date "2018" ;
+    dc:title "The taxonomic history of Indo-Papuan groundsnakes, genus Stegonotus Duméril et al., 1854 (Colubridae), with some taxonomic revisions and the designation of a neotype for S. parvus (Meyer, 1874)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.2607607> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,22 @@
     fabio:hasRepresentation "https://zenodo.org/record/2607607/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/C80EBE29FFDAFFE8FF75FFFA0BD6F80F.mc.F0CF0562FFDAFFEBFF25FCFC0D27FD2D>
+    dwc:catalogNumber "MTKD 876" ;
+    dwc:collectionCode "MTKD" ;
+    dwc:typeStatus "syntype" ;
+    trt:gbifOccurrenceId "2028140005" ;
+    trt:httpUri <https://treatment.plazi.org/id/C80EBE29FFDAFFE8FF75FFFA0BD6F80F#F0CF0562FFDAFFEBFF25FCFC0D27FD2D> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/C80EBE29FFDAFFE8FF75FFFA0BD6F80F.mc.F0CF0562FFDAFFEBFBB4FB460A22FA51>
+    dwc:collectionCode "SVL, TTL, SCR, IL" ;
+    dwc:typeStatus "syntype" ;
+    trt:gbifOccurrenceId "2028140015" ;
+    trt:httpUri <https://treatment.plazi.org/id/C80EBE29FFDAFFE8FF75FFFA0BD6F80F#F0CF0562FFDAFFEBFBB4FB460A22FA51> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Stegonotus_parvus_Meyer_1874>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus_parvus> ;
     dwc:class "Reptilia" ;
     dwc:family "Colubridae" ;
     dwc:genus "Stegonotus" ;
@@ -36,51 +60,38 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Meyer, 1874: 137)" ;
+    dwc:scientificNameAuthorship "(Meyer, 1874: 137)", "Meyer, 1874" ;
     dwc:species "parvus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus_parvus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Colubridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lycodon_parvus_Meyer_1874>
     dwc:class "Reptilia" ;
     dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyer, 1874: 137", "Meyer, 1874" ;
+    dwc:species "parvus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lycodon_parvus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lycodon_magnus_Meyer_1874>
     dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
-    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyer, 1874" ;
+    dwc:species "magnus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lycodon_magnus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Stegonotus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colubridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Stegonotus__1972>
     dwc:class "Reptilia" ;
     dwc:family "Colubridae" ;
     dwc:genus "Stegonotus" ;
@@ -88,10 +99,76 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship ", McDowell, 1972" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stegonotus_lividus_Dumeril_1854>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "S. Muller in Dumeril et al., 1854" ;
+    dwc:species "lividus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus_lividus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stegonotus_florensis_Rooij_1917>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "de Rooij, 1917" ;
+    dwc:species "florensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus_florensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lycodon_keyensis_Doria_1874>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Doria, 1874" ;
+    dwc:species "keyensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lycodon_keyensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stegonotus_modestus_Schlegel_1837>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schlegel, 1837" ;
+    dwc:species "modestus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus_modestus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stegonotus_sutteri_Forcart_1953>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Forcart, 1953" ;
+    dwc:species "sutteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stegonotus_sutteri> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Stegonotus_parvus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
     dwc:class "Reptilia" ;
     dwc:family "Colubridae" ;
     dwc:genus "Stegonotus" ;
@@ -100,20 +177,150 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "parvus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C80EBE29FFDAFFE8FF75FFFA0BD6F80F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stegonotus_parvus_Meyer_1874> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4512.1.1> ;
-    dc:creator "Kaiser, Christine M.", "Kaiser, Hinrich", "O’Shea, Mark" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.2607607> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/C80EBE29FFDAFFE8FF75FFFA0BD6F80F/MTKD%20876> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Stegonotus>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colubridae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C80EBE29FFDAFFE8FF75FFFA0BD6F80F/MTKD%20876>
-    trt:gbifOccurrenceId "2028140005" ;
-    dwc:catalogNumber "MTKD 876" ;
-    dwc:collectionCode "MTKD" ;
-    dwc:typeStatus "syntype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Colubridae>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Squamata>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lycodon_parvus>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "parvus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycodon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lycodon>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Colubridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lycodon_magnus>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "magnus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycodon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stegonotus_lividus>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "lividus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stegonotus_florensis>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "florensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lycodon_keyensis>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Lycodon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "keyensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lycodon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stegonotus_modestus>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "modestus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stegonotus_sutteri>
+    dwc:class "Reptilia" ;
+    dwc:family "Colubridae" ;
+    dwc:genus "Stegonotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sutteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stegonotus> ;
+    a dwcFP:TaxonName .
