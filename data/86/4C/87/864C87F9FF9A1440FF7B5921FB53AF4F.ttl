@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:864C87F9FF9A1440FF7B5921FB53AF4F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.199964> ;
+    dc:creator "Pinto, Roberta Richard; Passos, Paulo; Portilla, José Rances Caicedo; Arredondo, Juan Camilo; Fernandes, Ronaldo" ;
+    dc:title "Epictia signata Jan 1861" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Epictia_signata_Jan_1861> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenostoma>, <http://taxon-name.plazi.org/id/Animalia/Glauconia>, <http://taxon-name.plazi.org/id/Animalia/Leptotyphlops>, <http://taxon-name.plazi.org/id/Animalia/Epictia> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Stenostoma_signatum_Jan_1861> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.199951> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.199951>
-    dc:creator "Arredondo, Juan Camilo", "Fernandes, Ronaldo", "Passos, Paulo", "Pinto, Roberta Richard", "Portilla, José Rances Caicedo" ;
-    dc:date "2010" ;
-    dc:title "Taxonomy of the Threadsnakes of the tribe Epictini (Squamata: Serpentes: Leptotyphlopidae) in Colombia" ;
     bibo:endPage "28" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "2724" ;
+    dc:creator "Pinto, Roberta Richard; Passos, Paulo; Portilla, José Rances Caicedo; Arredondo, Juan Camilo; Fernandes, Ronaldo" ;
+    dc:date "2010" ;
+    dc:title "Taxonomy of the Threadsnakes of the tribe Epictini (Squamata: Serpentes: Leptotyphlopidae) in Colombia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.199964> ;
     a fabio:JournalArticle .
 
@@ -26,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Epictia_signata_Jan_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epictia_signata> ;
     dwc:class "Reptilia" ;
     dwc:family "Leptotyphlopidae" ;
     dwc:genus "Epictia" ;
@@ -36,10 +46,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Jan 1861" ;
     dwc:species "signata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epictia_signata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Stenostoma_signatum_Jan_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenostoma_signatum> ;
     dwc:class "Squamata" ;
     dwc:family "Leptotyphlopidae" ;
     dwc:genus "Stenostoma" ;
@@ -48,82 +58,72 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Jan 1861" ;
     dwc:species "signatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenostoma_signatum> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Epictia_signata>
+    dwc:class "Reptilia" ;
+    dwc:family "Leptotyphlopidae" ;
+    dwc:genus "Epictia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "signata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epictia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Epictia>
+    dwc:class "Reptilia" ;
+    dwc:family "Leptotyphlopidae" ;
+    dwc:genus "Epictia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptotyphlopidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptotyphlopidae>
+    dwc:class "Reptilia", "Squamata" ;
+    dwc:family "Leptotyphlopidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Squamata>
+    dwc:class "Reptilia", "Squamata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order", "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia>, <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Epictia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptotyphlopidae> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Leptotyphlopidae" ;
-    dwc:genus "Epictia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Epictia_signata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epictia> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Leptotyphlopidae" ;
-    dwc:genus "Epictia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "signata" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leptotyphlopidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Leptotyphlopidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
-    dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenostoma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptotyphlopidae> ;
-    dwc:class "Squamata" ;
-    dwc:family "Leptotyphlopidae" ;
-    dwc:genus "Stenostoma" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Stenostoma_signatum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenostoma> ;
     dwc:class "Squamata" ;
     dwc:family "Leptotyphlopidae" ;
     dwc:genus "Stenostoma" ;
@@ -131,14 +131,15 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "signatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenostoma> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/864C87F9FF9A1440FF7B5921FB53AF4F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Epictia_signata_Jan_1861> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/86/4C/87/Epictia>, <file:///workdir/tmprdf/data/86/4C/87/Glauconia>, <file:///workdir/tmprdf/data/86/4C/87/Leptotyphlops>, <file:///workdir/tmprdf/data/86/4C/87/Stenostoma> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Stenostoma_signatum_Jan_1861> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.199951> ;
-    dc:creator "Arredondo, Juan Camilo", "Fernandes, Ronaldo", "Passos, Paulo", "Pinto, Roberta Richard", "Portilla, José Rances Caicedo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.199964> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Stenostoma>
+    dwc:class "Squamata" ;
+    dwc:family "Leptotyphlopidae" ;
+    dwc:genus "Stenostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptotyphlopidae> ;
+    a dwcFP:TaxonName .

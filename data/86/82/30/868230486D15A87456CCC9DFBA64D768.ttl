@@ -1,40 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:868230486D15A87456CCC9DFBA64D768
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Schonnherria>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleoptera>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Scarabaeoidea>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Shornherria>' due to issues with rank ;
+    dc:creator "Lucia, Mariano; Gonzalez, Victor H.; Abrahamovich, Alberto H." ;
+    dc:title "(Schonnherria) Lepeletier de Saint Fargeau 1841" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Schonnherria_Fargeau_1841> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Xylocopa_Schonnherria>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa_micans>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa>, <http://taxon-name.plazi.org/id/Animalia/Scarabaeoidea_Schonnherria>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa_Schoenherria>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa_Ioxylocopa>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa_chrysopoda>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa_Xylocospila>, <http://taxon-name.plazi.org/id/Animalia/Xylocopa_bambusae> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.543.6300> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.543.6300>
-    dc:creator "Abrahamovich, Alberto H.", "Gonzalez, Victor H.", "Lucia, Mariano" ;
-    dc:date "2015" ;
-    dc:title "Systematics and biology of XylocopasubgenusSchonnherria (Hymenoptera, Apidae) in Argentina" ;
     bibo:endPage "167" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "129" ;
     bibo:volume "543" ;
+    dc:creator "Lucia, Mariano; Gonzalez, Victor H.; Abrahamovich, Alberto H." ;
+    dc:date "2015" ;
+    dc:title "Systematics and biology of XylocopasubgenusSchonnherria (Hymenoptera, Apidae) in Argentina" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/_Schonnherria_Fargeau_1841>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/_Schonnherria> ;
-    dwc:rank "subGenus" ;
-    dwc:scientificNameAuthorship "Lepeletier de Saint Fargeau, 1841" ;
-    dwc:subGenus "Schonnherria" ;
+<http://taxon-concept.plazi.org/id/Animalia/Schonnherria_Fargeau_1841>
+    # Error: Invalid Rank, Invalid taxon relation ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/_Schonnherria>
+<http://taxon-name.plazi.org/id/Animalia/Schonnherria>
+    # Warning: Could not determine parent name ;
     dwc:rank "subGenus" ;
     dwc:subGenus "Schonnherria" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/868230486D15A87456CCC9DFBA64D768>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/_Schonnherria_Fargeau_1841> ;
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/86/82/30/Scarabaeoidea_Schonnherria>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_Ioxylocopa>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_Schoenherria>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_Schonnherria>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_Xylocospila>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_bambusae>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_chrysopoda>, <file:///app/workdir/tmprdf/data/86/82/30/Xylocopa_micans> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.543.6300> ;
-    dc:creator "Abrahamovich, Alberto H.", "Gonzalez, Victor H.", "Lucia, Mariano" ;
-    a trt:Treatment .
-
