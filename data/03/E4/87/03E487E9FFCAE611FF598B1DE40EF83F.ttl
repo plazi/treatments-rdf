@@ -1,27 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E487E9FFCAE611FF598B1DE40EF83F
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Thyene_Proszynski_2010> ;
+    dc:creator "Richardson, Barry J." ;
+    dc:title "Gangus longulus Simon 1902" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gangus_longulus_Simon_1902> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Thyene>, <http://taxon-name.plazi.org/id/Animalia/Gangus>, <http://taxon-name.plazi.org/id/Animalia/Evarcha_longula>, <http://taxon-name.plazi.org/id/Animalia/Gangus_longulus>, <http://taxon-name.plazi.org/id/Animalia/Evarcha> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Marptusa_longula_Thorell_1881> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4114.5.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4114.5.1>
-    dc:creator "Richardson, Barry J." ;
-    dc:date "2016" ;
-    dc:title "New genera, new species and redescriptions of Australian jumping spiders (Araneae: Salticidae)" ;
     bibo:endPage "560" ;
     bibo:issue "5" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "501" ;
     bibo:volume "4114" ;
+    dc:creator "Richardson, Barry J." ;
+    dc:date "2016" ;
+    dc:title "New genera, new species and redescriptions of Australian jumping spiders (Araneae: Salticidae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Gangus_longulus_Simon_1902>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gangus_longulus> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Gangus" ;
@@ -29,12 +39,25 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Simon, 1902" ;
+    dwc:scientificNameAuthorship "Simon, 1902", "Simon, 1902: 390" ;
     dwc:species "longulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gangus_longulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thyene_Proszynski_2010>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Thyene" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Proszynski & Deeleman-Reinhold 2010" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thyene> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Marptusa_longula_Thorell_1881>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marptusa_longula> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Marptusa" ;
@@ -44,63 +67,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Thorell, 1881" ;
     dwc:species "longula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Marptusa_longula> ;
     a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Thyene_Proszynski_2010>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thyene> ;
-    dwc:ID-CoL "7WGG" ;
-    dwc:class "Arachnida" ;
-    dwc:family "Salticidae" ;
-    dwc:genus "Thyene" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Proszynski & Deeleman-Reinhold 2010" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gangus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Salticidae" ;
-    dwc:genus "Gangus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Gangus_longulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gangus> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Gangus" ;
@@ -109,24 +79,89 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "longulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gangus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gangus>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Gangus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Salticidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E487E9FFCAE611FF598B1DE40EF83F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gangus_longulus_Simon_1902> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/E4/87/Evarcha>, <file:///workdir/tmprdf/data/03/E4/87/Evarcha_longula>, <file:///workdir/tmprdf/data/03/E4/87/Gangus>, <file:///workdir/tmprdf/data/03/E4/87/Gangus_longulus>, <file:///workdir/tmprdf/data/03/E4/87/Thyene> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Marptusa_longula_Thorell_1881> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4114.5.1> ;
-    dc:creator "Richardson, Barry J." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Thyene_Proszynski_2010> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thyene>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Thyene" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Marptusa_longula>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Marptusa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Marptusa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Marptusa>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Marptusa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
+    a dwcFP:TaxonName .
