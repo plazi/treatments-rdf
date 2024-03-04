@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C84D87CD8348D26CFF181228628AF826
+    cito:cites <http://dx.doi.org/10.5281/zenodo.2584985> ;
+    dc:creator "Stekolnikov, Alexandr A.; Saboori, Alireza; Shamsi, Mohsen; Hakimitabar, Masoud" ;
+    dc:title "Hirsutiella llogorensis" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/C84D87CD8348D26CFF181228628AF826.mc.F08C3C868348D26CFEDB11C36336F896> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hirsutiella_llogorensis_Daniel_1960> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trombicula_llogorensis_Daniel_1960> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4549.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4549.1.1>
-    dc:creator "Hakimitabar, Masoud", "Saboori, Alireza", "Shamsi, Mohsen", "Stekolnikov, Alexandr A." ;
-    dc:date "2019" ;
-    dc:title "Chigger mites (Acariformes: Trombiculidae) of Iran" ;
     bibo:endPage "66" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-01-22" ;
     bibo:startPage "1" ;
     bibo:volume "4549" ;
+    dc:creator "Stekolnikov, Alexandr A.; Saboori, Alireza; Shamsi, Mohsen; Hakimitabar, Masoud" ;
+    dc:date "2019" ;
+    dc:title "Chigger mites (Acariformes: Trombiculidae) of Iran" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.2584985> ;
     a fabio:JournalArticle .
 
@@ -27,8 +38,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/2584985/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/C84D87CD8348D26CFF181228628AF826.mc.F08C3C868348D26CFEDB11C36336F896>
+    dwc:collectionCode "ASCR" ;
+    dwc:eventDate "1958-05-12" ;
+    dwc:locality "Institute of Parasitology" ;
+    dwc:recordedBy "M. Daniel." ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1050" ;
+    trt:gbifOccurrenceId "2005760690" ;
+    trt:httpUri <https://treatment.plazi.org/id/C84D87CD8348D26CFF181228628AF826#F08C3C868348D26CFEDB11C36336F896> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Hirsutiella_llogorensis_Daniel_1960>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hirsutiella_llogorensis> ;
     dwc:class "Arachnida" ;
     dwc:family "Trombiculidae" ;
     dwc:genus "Hirsutiella" ;
@@ -38,10 +59,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Daniel, 1960)" ;
     dwc:species "llogorensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hirsutiella_llogorensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trombicula_llogorensis_Daniel_1960>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trombicula_llogorensis> ;
     dwc:class "Arachnida" ;
     dwc:family "Trombiculidae" ;
     dwc:genus "Trombicula" ;
@@ -52,41 +73,127 @@
     dwc:scientificNameAuthorship "Daniel, 1960: 25" ;
     dwc:species "llogorensis" ;
     dwc:subGenus "Neotrombicula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trombicula_llogorensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hirsutiella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombiculidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Hirsutiella_llogorensis_Kudryashova_1978>
     dwc:class "Arachnida" ;
     dwc:family "Trombiculidae" ;
     dwc:genus "Hirsutiella" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ": Kudryashova et al. 1978: 139" ;
+    dwc:species "llogorensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hirsutiella_llogorensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apodemus_flavicollis_Melchior_1834>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Melchior, 1834" ;
+    dwc:species "flavicollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apodemus_flavicollis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chionomys_gud_Satunin_1909>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Chionomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Satunin, 1909" ;
+    dwc:species "gud" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chionomys_gud> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chionomys_roberti_Thomas_1906>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Chionomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1906" ;
+    dwc:species "roberti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chionomys_roberti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_agrestis_Linnaeus_1761>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1761" ;
+    dwc:species "agrestis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_agrestis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_daghestanicus_Shidlovsky_1919>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Shidlovsky, 1919" ;
+    dwc:species "daghestanicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_daghestanicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microtus_majori_Thomas_1906>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1906" ;
+    dwc:species "majori" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microtus_majori> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apodemus_agrarius_Pallas_1771>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pallas, 1771" ;
+    dwc:species "agrarius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apodemus_agrarius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apodemus_ponticus_Sviridenko_1936>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sviridenko, 1936" ;
+    dwc:species "ponticus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apodemus_ponticus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Hirsutiella_llogorensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hirsutiella> ;
     dwc:class "Arachnida" ;
     dwc:family "Trombiculidae" ;
     dwc:genus "Hirsutiella" ;
@@ -95,32 +202,254 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "llogorensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hirsutiella> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Prostigmata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+<http://taxon-name.plazi.org/id/Animalia/Hirsutiella>
     dwc:class "Arachnida" ;
+    dwc:family "Trombiculidae" ;
+    dwc:genus "Hirsutiella" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombiculidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trombiculidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostigmata> ;
     dwc:class "Arachnida" ;
     dwc:family "Trombiculidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostigmata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C84D87CD8348D26CFF181228628AF826>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hirsutiella_llogorensis_Daniel_1960> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trombicula_llogorensis_Daniel_1960> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4549.1.1> ;
-    dc:creator "Hakimitabar, Masoud", "Saboori, Alireza", "Shamsi, Mohsen", "Stekolnikov, Alexandr A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.2584985> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Prostigmata>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trombicula_llogorensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Trombiculidae" ;
+    dwc:genus "Trombicula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "llogorensis" ;
+    dwc:subGenus "Neotrombicula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombicula_Neotrombicula> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trombicula_Neotrombicula>
+    dwc:class "Arachnida" ;
+    dwc:family "Trombiculidae" ;
+    dwc:genus "Trombicula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Neotrombicula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombicula> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trombicula>
+    dwc:class "Arachnida" ;
+    dwc:family "Trombiculidae" ;
+    dwc:genus "Trombicula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombiculidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apodemus_flavicollis>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "flavicollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apodemus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apodemus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muridae>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rodentia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chionomys_gud>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Chionomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "gud" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chionomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chionomys>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Chionomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chionomys_roberti>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Chionomys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "roberti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chionomys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_agrestis>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "agrestis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_daghestanicus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "daghestanicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microtus_majori>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Microtus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "majori" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microtus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apodemus_agrarius>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "agrarius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apodemus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apodemus_ponticus>
+    dwc:class "Mammalia" ;
+    dwc:family "Muridae" ;
+    dwc:genus "Apodemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ponticus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apodemus> ;
+    a dwcFP:TaxonName .
