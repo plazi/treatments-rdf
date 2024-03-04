@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E077879EFFDD7F6FFF44FDC5FDA6441F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5287224>, <http://dx.doi.org/10.5281/zenodo.5287360> ;
+    dc:creator "Lonsdale, Owen" ;
+    dc:title "Liriomyza nebulosa Lonsdale 2011, spec. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/E077879EFFDD7F6FFF44FDC5FDA6441F.mc.D8B63CD5FFDD7F68FE52F9D5FA8D438D> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Liriomyza_nebulosa_Lonsdale_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.2850.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.2850.1.1>
-    dc:creator "Lonsdale, Owen" ;
-    dc:date "2011" ;
-    dc:title "The Liriomyza (Agromyzidae: Schizophora: Diptera) of California 2850" ;
     bibo:endPage "123" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2011-04-29" ;
     bibo:startPage "1" ;
     bibo:volume "2850" ;
+    dc:creator "Lonsdale, Owen" ;
+    dc:date "2011" ;
+    dc:title "The Liriomyza (Agromyzidae: Schizophora: Diptera) of California 2850" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5287224>, <http://dx.doi.org/10.5281/zenodo.5287360> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/5287360/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/E077879EFFDD7F6FFF44FDC5FDA6441F.mc.D8B63CD5FFDD7F68FE52F9D5FA8D438D>
+    dwc:collectionCode "CSCA" ;
+    dwc:eventDate "2009-06-03" ;
+    dwc:locality "Bear Basin Outlk" ;
+    dwc:recordedBy "Six Rivers NF For Route & P. Kerr & O. Lonsdale" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1500" ;
+    dwc:verbatimLatitude "41.8016" ;
+    dwc:verbatimLongitude "-123.7369" ;
+    trt:httpUri <https://treatment.plazi.org/id/E077879EFFDD7F6FFF44FDC5FDA6441F#D8B63CD5FFDD7F68FE52F9D5FA8D438D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Liriomyza_nebulosa_Lonsdale_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_nebulosa> ;
-    dwc:ID-CoL "8CMQC" ;
     dwc:class "Insecta" ;
     dwc:family "Agromyzidae" ;
     dwc:genus "Liriomyza" ;
@@ -44,60 +64,86 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lonsdale, 2011" ;
     dwc:species "nebulosa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8CMQC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_nebulosa> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Agromyzidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Agromyzidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Liriomyza>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agromyzidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Liriomyza_chemsaki_California_2011>
     dwc:class "Insecta" ;
     dwc:family "Agromyzidae" ;
     dwc:genus "Liriomyza" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(California)" ;
+    dwc:species "chemsaki" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_chemsaki> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liriomyza_smilacinae_Lonsdale_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "smilacinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_smilacinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liriomyza_pulloides_Spencer_1986>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Spencer", "Spencer, 1986" ;
+    dwc:species "pulloides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_pulloides> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liriomyza_flavicola_Lonsdale_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "flavicola" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_flavicola> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liriomyza_chemsaki_Lonsdale_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "chemsaki" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_chemsaki> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liriomyza_chiensis_Spencer_1984>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Spencer" ;
+    dwc:species "chiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liriomyza_chiensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Liriomyza_nebulosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
     dwc:class "Insecta" ;
     dwc:family "Agromyzidae" ;
     dwc:genus "Liriomyza" ;
@@ -106,12 +152,115 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "nebulosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E077879EFFDD7F6FFF44FDC5FDA6441F>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Liriomyza_nebulosa_Lonsdale_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.2850.1.1> ;
-    dc:creator "Lonsdale, Owen" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5287224>, <http://dx.doi.org/10.5281/zenodo.5287360> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Liriomyza>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agromyzidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Agromyzidae>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liriomyza_chemsaki>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "chemsaki" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liriomyza_smilacinae>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "smilacinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liriomyza_pulloides>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pulloides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liriomyza_flavicola>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "flavicola" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liriomyza_chiensis>
+    dwc:class "Insecta" ;
+    dwc:family "Agromyzidae" ;
+    dwc:genus "Liriomyza" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "chiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liriomyza> ;
+    a dwcFP:TaxonName .
