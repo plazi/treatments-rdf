@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B40B67FF977C36FF09FD521A0A9444
+    cito:cites <http://dx.doi.org/10.5281/zenodo.214156> ;
+    dc:creator "Rousse, Pascal; Villemant, Claire" ;
+    dc:title "Diadegma semiclausum Hellen 1949" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Diadegma_semiclausum_Hellen_1949> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Angitia_semiclausa_Hellen_1949> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.214150> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.214150>
-    dc:creator "Rousse, Pascal", "Villemant, Claire" ;
-    dc:date "2012" ;
-    dc:title "Ichneumons in Reunion Island: a catalogue of the local Ichneumonidae (Hymenoptera) species, including 15 new taxa and a key to species" ;
     bibo:endPage "57" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3278" ;
+    dc:creator "Rousse, Pascal; Villemant, Claire" ;
+    dc:date "2012" ;
+    dc:title "Ichneumons in Reunion Island: a catalogue of the local Ichneumonidae (Hymenoptera) species, including 15 new taxa and a key to species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.214156> ;
     a fabio:JournalArticle .
 
@@ -25,22 +35,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/214156/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Angitia_semiclausa_Hellen_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Angitia_semiclausa> ;
-    dwc:class "Insecta" ;
-    dwc:family "Noctuidae" ;
-    dwc:genus "Angitia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Hellen, 1949: 20" ;
-    dwc:species "semiclausa" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Diadegma_semiclausum_Hellen_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diadegma_semiclausum> ;
-    dwc:ID-CoL "6D2GZ" ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Diadegma" ;
@@ -50,26 +45,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hellen, 1949" ;
     dwc:species "semiclausum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6D2GZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diadegma_semiclausum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Angitia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Noctuidae" ;
-    dwc:genus "Angitia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Angitia_semiclausa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Angitia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Angitia_semiclausa_Hellen_1949>
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Angitia" ;
@@ -77,29 +57,39 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hellen, 1949: 20" ;
     dwc:species "semiclausa" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Angitia_semiclausa> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diadegma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Diadegma_eucerophaga_Horstmann_1969>
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Diadegma" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Horstmann, 1969: 461" ;
+    dwc:species "eucerophaga" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diadegma_eucerophaga> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diadegma_xylostellae_Kusigemati_1988>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Diadegma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kusigemati, 1988: 812" ;
+    dwc:species "xylostellae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6D2GZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diadegma_xylostellae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Diadegma_semiclausum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diadegma> ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:genus "Diadegma" ;
@@ -108,59 +98,121 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "semiclausum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diadegma> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Diadegma>
     dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Diadegma" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Ichneumonidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Ichneumonidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Angitia_semiclausa>
     dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Angitia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "semiclausa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Angitia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Angitia>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Angitia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Noctuidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B40B67FF977C36FF09FD521A0A9444>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Diadegma_semiclausum_Hellen_1949> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Angitia_semiclausa_Hellen_1949> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.214150> ;
-    dc:creator "Rousse, Pascal", "Villemant, Claire" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.214156> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Diadegma_eucerophaga>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Diadegma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "eucerophaga" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diadegma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diadegma_xylostellae>
+    dwc:class "Insecta" ;
+    dwc:family "Ichneumonidae" ;
+    dwc:genus "Diadegma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "xylostellae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diadegma> ;
+    a dwcFP:TaxonName .
