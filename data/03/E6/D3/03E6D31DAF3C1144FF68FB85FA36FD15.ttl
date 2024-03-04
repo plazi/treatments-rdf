@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E6D31DAF3C1144FF68FB85FA36FD15
+    cito:cites <http://dx.doi.org/10.5281/zenodo.270351> ;
+    dc:creator "Xun Bian; Fuming Shi" ;
+    dc:title "Neolarnaca Gorochov." ;
+    trt:publishedIn <http://dx.doi.org/10.11865/zs.201621> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11865/zs.201621>
-    dc:creator "Fuming Shi", "Xun Bian" ;
-    dc:date "2016" ;
-    dc:title "Review of the genus Neolarnaca Gorochov, 2005 (Orthoptera: Gryllacrididae) from China" ;
     bibo:endPage "230" ;
     bibo:issue "2" ;
     bibo:journal "Zoological Systematics" ;
     bibo:startPage "227" ;
     bibo:volume "41" ;
+    dc:creator "Xun Bian; Fuming Shi" ;
+    dc:date "2016" ;
+    dc:title "Review of the genus Neolarnaca Gorochov, 2005 (Orthoptera: Gryllacrididae) from China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.270351> ;
     a fabio:JournalArticle .
 
@@ -26,38 +35,46 @@
     fabio:hasRepresentation "https://zenodo.org/record/270351/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Haglidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_longipenna_Bian_2016>
     dwc:class "Insecta" ;
     dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "longipenna" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_longipenna> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_vera_vera_Gorochov_2004>
     dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Gorochov, 2004" ;
+    dwc:species "vera" ;
+    dwc:subSpecies "vera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_vera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neolarnaca_vera_aurelostria_Bian_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "vera" ;
+    dwc:subSpecies "aurelostria" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_aurelostria> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neolarnaca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haglidae> ;
     dwc:class "Insecta" ;
     dwc:family "Haglidae" ;
     dwc:genus "Neolarnaca" ;
@@ -65,21 +82,94 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haglidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haglidae>
+    dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E6D31DAF3C1144FF68FB85FA36FD15>
-    trt:publishedIn <http://dx.doi.org/10.11865/zs.201621> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
-    dc:creator "Fuming Shi", "Xun Bian" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.270351> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_longipenna>
+    dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longipenna" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_vera>
+    dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "vera" ;
+    dwc:subSpecies "vera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera>
+    dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera_aurelostria>
+    dwc:class "Insecta" ;
+    dwc:family "Haglidae" ;
+    dwc:genus "Neolarnaca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "vera" ;
+    dwc:subSpecies "aurelostria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neolarnaca_vera> ;
+    a dwcFP:TaxonName .
