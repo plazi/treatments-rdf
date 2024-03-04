@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:246CF300FFF61734FEC822D7FDB2FE97
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5402003>, <http://dx.doi.org/10.5281/zenodo.5402005> ;
+    dc:creator "Sarà, Michele; Bavestrello, Giorgio; Calcinai, Barbara" ;
+    dc:title "Tethya ornata Sarà & Bavestrello & Calcinai 2000, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/246CF300FFF61734FEC822D7FDB2FE97.mc.1CAD484BFFF61732FFAA251FFDF7FBEF> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tethya_ornata_Sar%C3%A0_2000> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5402001> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5402001>
-    dc:creator "Bavestrello, Giorgio", "Calcinai, Barbara", "Sarà, Michele" ;
-    dc:date "2000" ;
-    dc:title "New Tethya species (Porifera, Demospongiae) from the Pacific area" ;
     bibo:endPage "354" ;
     bibo:issue "2" ;
     bibo:journal "Zoosystema" ;
     bibo:startPage "345" ;
     bibo:volume "22" ;
+    dc:creator "Sarà, Michele; Bavestrello, Giorgio; Calcinai, Barbara" ;
+    dc:date "2000" ;
+    dc:title "New Tethya species (Porifera, Demospongiae) from the Pacific area" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5402003>, <http://dx.doi.org/10.5281/zenodo.5402005> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/5402005/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Tethya_ornata_Sar%25C3%25A0_2000>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tethya_ornata> ;
-    dwc:ID-CoL "55KJF" ;
+<http://tb.plazi.org/GgServer/dwcaRecords/246CF300FFF61734FEC822D7FDB2FE97.mc.1CAD484BFFF61732FFAA251FFDF7FBEF>
+    dwc:catalogNumber "MSNG 49675" ;
+    dwc:collectionCode "MATERIAL" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/246CF300FFF61734FEC822D7FDB2FE97#1CAD484BFFF61732FFAA251FFDF7FBEF> ;
+    a dwc:MaterialCitation .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tethya_ornata_Sar%C3%A0_2000>
     dwc:class "Demospongiae" ;
     dwc:family "Tethyidae" ;
     dwc:genus "Tethya" ;
@@ -43,30 +58,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Sarà & Bavestrello & Calcinai, 2000" ;
     dwc:species "ornata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/55KJF> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tethya_ornata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tethya>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethyidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tethya_Lamarck_1814>
     dwc:class "Demospongiae" ;
     dwc:family "Tethyidae" ;
     dwc:genus "Tethya" ;
@@ -74,10 +70,49 @@
     dwc:order "Tethyida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Lamarck, 1814" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tethya> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tethya_tethya_Sar%C3%A0_2000>
+    dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "tethya" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tethya_tethya> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tethya_japonica_Sollas_1888>
+    dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sollas, 1888" ;
+    dwc:species "japonica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tethya_japonica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tethya_deformis_Thiele_1898>
+    dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Thiele 1898)", "Thiele, 1898" ;
+    dwc:species "deformis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tethya_deformis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tethya_ornata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethya> ;
     dwc:class "Demospongiae" ;
     dwc:family "Tethyidae" ;
     dwc:genus "Tethya" ;
@@ -86,38 +121,91 @@
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
     dwc:species "ornata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethya> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Tethyida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+<http://taxon-name.plazi.org/id/Animalia/Tethya>
     dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Tethyida" ;
     dwc:phylum "Porifera" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethyidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tethyidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethyida> ;
     dwc:class "Demospongiae" ;
     dwc:family "Tethyidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Tethyida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethyida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/246CF300FFF61734FEC822D7FDB2FE97>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tethya_ornata_Sar%25C3%25A0_2000> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5402001> ;
-    dc:creator "Bavestrello, Giorgio", "Calcinai, Barbara", "Sarà, Michele" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5402003>, <http://dx.doi.org/10.5281/zenodo.5402005> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/246CF300FFF61734FEC822D7FDB2FE97/MSNG%2049675> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tethyida>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/246CF300FFF61734FEC822D7FDB2FE97/MSNG%2049675>
-    dwc:catalogNumber "MSNG 49675" ;
-    dwc:collectionCode "MATERIAL" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Porifera>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tethya_tethya>
+    dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "tethya" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethya> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tethya_japonica>
+    dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "japonica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethya> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tethya_deformis>
+    dwc:class "Demospongiae" ;
+    dwc:family "Tethyidae" ;
+    dwc:genus "Tethya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tethyida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "deformis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tethya> ;
+    a dwcFP:TaxonName .
