@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:AD437D0CF156AD5D94CE16FDF7F61FAA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.254450>, <http://dx.doi.org/10.5281/zenodo.254451> ;
+    dc:creator "Anker, Arthur; Pratama, Idham Sumarto; Firdaus, Muhammad; Rahayu, Dwi Listyo" ;
+    dc:title "Neaxius glyptocercus" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Axius_glyptocercus>, <http://taxon-name.plazi.org/id/Animalia/Eiconaxius_acanthus>, <http://taxon-name.plazi.org/id/Animalia/Axius_acanthus>, <http://taxon-name.plazi.org/id/Animalia/Neaxius_glyptocercus> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3911.3.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Neaxius_glyptocercus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3911.3.1>
-    dc:creator "Anker, Arthur", "Firdaus, Muhammad", "Pratama, Idham Sumarto", "Rahayu, Dwi Listyo" ;
-    dc:date "2015" ;
-    dc:title "On some interesting marine decapod crustaceans (Alpheidae, Laomediidae, Strahlaxiidae) from Lombok, Indonesia" ;
     bibo:endPage "342" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "301" ;
     bibo:volume "3911" ;
+    dc:creator "Anker, Arthur; Pratama, Idham Sumarto; Firdaus, Muhammad; Rahayu, Dwi Listyo" ;
+    dc:date "2015" ;
+    dc:title "On some interesting marine decapod crustaceans (Alpheidae, Laomediidae, Strahlaxiidae) from Lombok, Indonesia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.254450>, <http://dx.doi.org/10.5281/zenodo.254451> ;
     a fabio:JournalArticle .
 
@@ -31,58 +41,54 @@
     fabio:hasRepresentation "https://zenodo.org/record/254451/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Axia_acantha_Milne-Edwards_1878>
+    dwc:class "Insecta" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Axia" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "A. Milne-Edwards 1878: 110" ;
+    dwc:species "acantha" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Axia_acantha> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Axiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eiconaxius_taliliensis_Borradaile_1900>
     dwc:class "Malacostraca" ;
     dwc:family "Axiidae" ;
+    dwc:genus "Eiconaxius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Borradaile 1900: 420", "Borradaile, 1900" ;
+    dwc:species "taliliensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eiconaxius_taliliensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Decapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/mauritianus_Bouvier_1915>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neaxius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Axiidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eiconaxius_acanthus_Milne-Edwards_1878>
     dwc:class "Malacostraca" ;
     dwc:family "Axiidae" ;
-    dwc:genus "Neaxius" ;
+    dwc:genus "Eiconaxius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "A. Milne-Edwards, 1878" ;
+    dwc:species "acanthus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eiconaxius_acanthus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/mauritiana_Bouvier_1915>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neaxius_glyptocercus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neaxius> ;
     dwc:class "Malacostraca" ;
     dwc:family "Axiidae" ;
     dwc:genus "Neaxius" ;
@@ -91,13 +97,142 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "glyptocercus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neaxius> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/AD437D0CF156AD5D94CE16FDF7F61FAA>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/AD/43/7D/Axius_acanthus>, <file:///workdir/tmprdf/data/AD/43/7D/Axius_glyptocercus>, <file:///workdir/tmprdf/data/AD/43/7D/Eiconaxius_acanthus>, <file:///workdir/tmprdf/data/AD/43/7D/Neaxius_glyptocercus> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3911.3.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Neaxius_glyptocercus> ;
-    dc:creator "Anker, Arthur", "Firdaus, Muhammad", "Pratama, Idham Sumarto", "Rahayu, Dwi Listyo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.254450>, <http://dx.doi.org/10.5281/zenodo.254451> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Neaxius>
+    dwc:class "Malacostraca" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Neaxius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Axiidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Axiidae>
+    dwc:class "Malacostraca", "Insecta" ;
+    dwc:family "Axiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda", "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda>, <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Axia_acantha>
+    dwc:class "Insecta" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Axia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "acantha" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Axia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Axia>
+    dwc:class "Insecta" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Axia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Axiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eiconaxius_taliliensis>
+    dwc:class "Malacostraca" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Eiconaxius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "taliliensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eiconaxius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eiconaxius>
+    dwc:class "Malacostraca" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Eiconaxius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Axiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/mauritianus>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "mauritianus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eiconaxius_acanthus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Axiidae" ;
+    dwc:genus "Eiconaxius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "acanthus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eiconaxius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/mauritiana>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "mauritiana" ;
+    a dwcFP:TaxonName .
