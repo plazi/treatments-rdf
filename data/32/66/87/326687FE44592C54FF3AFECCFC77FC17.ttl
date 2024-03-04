@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/phytotaxa.599.1.1>
-    dc:creator "Duan, Ziyan", "Guan, Qianxin", "Luo, Kaiyue", "Zhao, Changlin" ;
-    dc:date "2023" ;
-    dc:title "Morphological and molecular identification of three new resupinate species of Hyphoderma (Hyphodermataceae, Agaricomycetes) from East Asia" ;
+treatment:326687FE44592C54FF3AFECCFC77FC17
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7989167>, <http://dx.doi.org/10.5281/zenodo.7989171> ;
+    dc:creator "Duan, Ziyan; Guan, Qianxin; Luo, Kaiyue; Zhao, Changlin" ;
+    dc:title "Hyphoderma yunnanense Z. Y. Duan & C. L. Zhao 2023, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/326687FE44592C54FF3AFECCFC77FC17.mc.0AA73CB544592C54FF0FFE5BFB83FDBF> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Hyphoderma_yunnanense_Duan_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "19" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-05-31" ;
     bibo:startPage "1" ;
     bibo:volume "599" ;
+    dc:creator "Duan, Ziyan; Guan, Qianxin; Luo, Kaiyue; Zhao, Changlin" ;
+    dc:date "2023" ;
+    dc:title "Morphological and molecular identification of three new resupinate species of Hyphoderma (Hyphodermataceae, Agaricomycetes) from East Asia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7989167>, <http://dx.doi.org/10.5281/zenodo.7989171> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/7989171/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/326687FE44592C54FF3AFECCFC77FC17.mc.0AA73CB544592C54FF0FFE5BFB83FDBF>
+    dwc:collectionCode "SWFC" ;
+    dwc:eventDate "2018-06-31" ;
+    dwc:locality "Southwest Forestry University" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1939" ;
+    dwc:verbatimLatitude "25.066946" ;
+    dwc:verbatimLongitude "102.765274" ;
+    trt:httpUri <https://treatment.plazi.org/id/326687FE44592C54FF3AFECCFC77FC17#0AA73CB544592C54FF0FFE5BFB83FDBF> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Fungi/Hyphoderma_yunnanense_Duan_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Hyphoderma_yunnanense> ;
     dwc:class "Agaricomycetes" ;
     dwc:family "Meruliaceae" ;
     dwc:genus "Hyphoderma" ;
@@ -43,41 +63,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Z.Y. Duan & C.L. Zhao" ;
     dwc:species "yunnanense" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Hyphoderma_yunnanense> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Fungi>
-    dwc:kingdom "Fungi" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Agaricomycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Basidiomycota> ;
-    dwc:class "Agaricomycetes" ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Basidiomycota" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Basidiomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Basidiomycota" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Hyphoderma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Meruliaceae> ;
-    dwc:class "Agaricomycetes" ;
-    dwc:family "Meruliaceae" ;
-    dwc:genus "Hyphoderma" ;
-    dwc:kingdom "Fungi" ;
-    dwc:order "Polyporales" ;
-    dwc:phylum "Basidiomycota" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Fungi/Hyphoderma_yunnanense>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Hyphoderma> ;
     dwc:class "Agaricomycetes" ;
     dwc:family "Meruliaceae" ;
     dwc:genus "Hyphoderma" ;
@@ -86,31 +75,55 @@
     dwc:phylum "Basidiomycota" ;
     dwc:rank "species" ;
     dwc:species "yunnanense" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Hyphoderma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Hyphoderma>
+    dwc:class "Agaricomycetes" ;
+    dwc:family "Meruliaceae" ;
+    dwc:genus "Hyphoderma" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Polyporales" ;
+    dwc:phylum "Basidiomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Meruliaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Meruliaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Polyporales> ;
     dwc:class "Agaricomycetes" ;
     dwc:family "Meruliaceae" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Polyporales" ;
     dwc:phylum "Basidiomycota" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Polyporales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Polyporales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Agaricomycetes> ;
     dwc:class "Agaricomycetes" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Polyporales" ;
     dwc:phylum "Basidiomycota" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Agaricomycetes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/326687FE44592C54FF3AFECCFC77FC17>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Hyphoderma_yunnanense_Duan_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Duan, Ziyan", "Guan, Qianxin", "Luo, Kaiyue", "Zhao, Changlin" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7989167>, <http://dx.doi.org/10.5281/zenodo.7989171> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Fungi/Agaricomycetes>
+    dwc:class "Agaricomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Basidiomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Basidiomycota> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Fungi/Basidiomycota>
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Basidiomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
