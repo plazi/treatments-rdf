@@ -1,22 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4DEAB8858DBC588CB538E5754A94E3FC
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/venustulus>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.3897/zookeys.919.39642.figures813-814>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures815-826> ;
+    dc:creator "van Achterberg, Cornelis; Shaw, Mark R.; Quicke, Donald L. J." ;
+    dc:title "Aleiodes venustulus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_venustulus_Kokujev_1905> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Rogas_venustulus>, <http://taxon-name.plazi.org/id/Animalia/Rhogas_robustus>, <http://taxon-name.plazi.org/id/Animalia/Rogas_robustus> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhogas_venustulus_Kokujev_1905> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.919.39642> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.919.39642>
-    dc:creator "Quicke, Donald L. J.", "Shaw, Mark R.", "van Achterberg, Cornelis" ;
-    dc:date "2020" ;
-    dc:title "Revision of the western Palaearctic species of Aleiodes Wesmael (Hymenoptera, Braconidae, Rogadinae). Part 2: Revision of the A. apicalis group" ;
     bibo:endPage "259" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "919" ;
+    dc:creator "van Achterberg, Cornelis; Shaw, Mark R.; Quicke, Donald L. J." ;
+    dc:date "2020" ;
+    dc:title "Revision of the western Palaearctic species of Aleiodes Wesmael (Hymenoptera, Braconidae, Rogadinae). Part 2: Revision of the A. apicalis group" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.919.39642.figures813-814>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures815-826> ;
     a fabio:JournalArticle .
 
@@ -31,7 +43,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_venustulus_Kokujev_1905>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_venustulus> ;
     dwc:LSID "4DEAB885-8DBC-588C-B538-E5754A94E3FC" ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
@@ -40,12 +51,12 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Kokujev, 1905)" ;
+    dwc:scientificNameAuthorship "(Kokujev, 1905)", "Kokujev, 1905" ;
     dwc:species "venustulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_venustulus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Rhogas_venustulus_Kokujev_1905>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhogas_venustulus> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Rhogas" ;
@@ -55,26 +66,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Kokujev, 1905" ;
     dwc:species "venustulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhogas_venustulus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aleiodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:genus "Aleiodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Aleiodes_venustulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Aleiodes" ;
@@ -83,48 +78,78 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "venustulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Aleiodes>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4DEAB8858DBC588CB538E5754A94E3FC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_venustulus_Kokujev_1905> ;
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/4D/EA/B8/Rhogas_robustus>, <file:///app/workdir/tmprdf/data/4D/EA/B8/Rogas_robustus>, <file:///app/workdir/tmprdf/data/4D/EA/B8/Rogas_venustulus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhogas_venustulus_Kokujev_1905> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.919.39642> ;
-    dc:creator "Quicke, Donald L. J.", "Shaw, Mark R.", "van Achterberg, Cornelis" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.919.39642.figures813-814>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures815-826> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhogas_venustulus>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Rhogas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "venustulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhogas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhogas>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Rhogas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
