@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2A4587E5FFE6182DD6FFFBA4FDD0FA90
+    cito:cites <http://dx.doi.org/10.5281/zenodo.10103670>, <http://dx.doi.org/10.5281/zenodo.10103672> ;
+    dc:creator "Morelli, Enrique; MorÓn, Miguel A." ;
+    dc:title "Xyloryctes furcatus Burmeister 1847" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/2A4587E5FFE6182DD6FFFBA4FDD0FA90.mc.12843CAEFFE6182FD560FB8CFF25FADD> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Xyloryctes_furcatus_Burmeister_1847> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/557> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1649/557>
-    dc:creator "Morelli, Enrique", "MorÓn, Miguel A." ;
-    dc:date "2003" ;
-    dc:title "Descriptions of XYLORYCTES Hope Larvae with a Key to Species Based on the Third Stage Larvae (Coleoptera: Scarabaeidae: Dynastinae)" ;
     bibo:endPage "295" ;
     bibo:issue "3" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2003-09-30" ;
     bibo:startPage "289" ;
     bibo:volume "57" ;
+    dc:creator "Morelli, Enrique; MorÓn, Miguel A." ;
+    dc:date "2003" ;
+    dc:title "Descriptions of XYLORYCTES Hope Larvae with a Key to Species Based on the Third Stage Larvae (Coleoptera: Scarabaeidae: Dynastinae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.10103670>, <http://dx.doi.org/10.5281/zenodo.10103672> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/10103672/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/2A4587E5FFE6182DD6FFFBA4FDD0FA90.mc.12843CAEFFE6182FD560FB8CFF25FADD>
+    dwc:collectionCode "IEXA" ;
+    dwc:eventDate "1980-11-21" ;
+    dwc:locality "Canada de Otongo" ;
+    dwc:recordedBy "de Otongo & F. Cervantes & Pupal & Specimen & Instituto de Ecologia, A. C" ;
+    dwc:verbatimElevation "1050" ;
+    trt:httpUri <https://treatment.plazi.org/id/2A4587E5FFE6182DD6FFFBA4FDD0FA90#12843CAEFFE6182FD560FB8CFF25FADD> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Xyloryctes_furcatus_Burmeister_1847>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xyloryctes_furcatus> ;
     dwc:class "Insecta" ;
     dwc:family "Dynastidae" ;
     dwc:genus "Xyloryctes" ;
@@ -43,60 +61,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Burmeister" ;
     dwc:species "furcatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xyloryctes_furcatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dynastidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Dynastidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Xyloryctes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dynastidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Dynastidae" ;
-    dwc:genus "Xyloryctes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Xyloryctes_furcatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xyloryctes> ;
     dwc:class "Insecta" ;
     dwc:family "Dynastidae" ;
     dwc:genus "Xyloryctes" ;
@@ -105,12 +73,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "furcatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xyloryctes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2A4587E5FFE6182DD6FFFBA4FDD0FA90>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Xyloryctes_furcatus_Burmeister_1847> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/557> ;
-    dc:creator "Morelli, Enrique", "MorÓn, Miguel A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.10103670>, <http://dx.doi.org/10.5281/zenodo.10103672> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Xyloryctes>
+    dwc:class "Insecta" ;
+    dwc:family "Dynastidae" ;
+    dwc:genus "Xyloryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dynastidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Dynastidae>
+    dwc:class "Insecta" ;
+    dwc:family "Dynastidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
