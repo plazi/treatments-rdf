@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03AF8548BD283137FE13FB5E4AACFEEF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5230335>, <http://dx.doi.org/10.5281/zenodo.5230337> ;
+    dc:creator "Gee, J. Michael" ;
+    dc:title "Foweya tertia Gee 2006, comb. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03AF8548BD283137FE13FB5E4AACFEEF.mc.3B6E3E03BD28313AFF5EF9B24B27F928> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Foweya_tertia_Kunz_2006> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Parastenhelia_anglica_Scott_1905>, <http://taxon-concept.plazi.org/id/Animalia/Karllangia_tertia_Kunz_1975> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222930601108194> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222930601108194>
-    dc:creator "Gee, J. Michael" ;
-    dc:date "2006" ;
-    dc:title "Parastenheliidae (Copepoda: Harpacticoida) from the Isles of Scilly" ;
     bibo:endPage "2652" ;
     bibo:issue "47 - 48" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2006-12-30" ;
     bibo:startPage "2611" ;
     bibo:volume "40" ;
+    dc:creator "Gee, J. Michael" ;
+    dc:date "2006" ;
+    dc:title "Parastenheliidae (Copepoda: Harpacticoida) from the Isles of Scilly" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5230335>, <http://dx.doi.org/10.5281/zenodo.5230337> ;
     a fabio:JournalArticle .
 
@@ -32,8 +43,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/5230337/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03AF8548BD283137FE13FB5E4AACFEEF.mc.3B6E3E03BD28313AFF5EF9B24B27F928>
+    dwc:locality "East London" ;
+    dwc:recordedBy "Zoologisches Museum Hamburg Reg. No. & Reg. No." ;
+    dwc:typeStatus "paratype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03AF8548BD283137FE13FB5E4AACFEEF#3B6E3E03BD28313AFF5EF9B24B27F928> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Foweya_tertia_Kunz_2006>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Foweya_tertia> ;
     dwc:class "Hexanauplia" ;
     dwc:family "Parastenheliidae" ;
     dwc:genus "Foweya" ;
@@ -41,25 +58,12 @@
     dwc:order "Harpacticoida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Kunz)" ;
+    dwc:scientificNameAuthorship "(Kunz)", "Kunz, 2006" ;
     dwc:species "tertia" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Karllangia_tertia_Kunz_1975>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Karllangia_tertia> ;
-    dwc:class "Hexanauplia" ;
-    dwc:family "Parastenheliidae" ;
-    dwc:genus "Karllangia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Harpacticoida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kunz, 1975" ;
-    dwc:species "tertia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Foweya_tertia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Parastenhelia_anglica_Scott_1905>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parastenhelia_anglica> ;
     dwc:class "Hexanauplia" ;
     dwc:family "Parastenheliidae" ;
     dwc:genus "Parastenhelia" ;
@@ -69,33 +73,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Norman and T. Scott, 1905" ;
     dwc:species "anglica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parastenhelia_anglica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Foweya>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenheliidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Karllangia_tertia_Kunz_1975>
     dwc:class "Hexanauplia" ;
     dwc:family "Parastenheliidae" ;
-    dwc:genus "Foweya" ;
+    dwc:genus "Karllangia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Harpacticoida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kunz, 1975" ;
+    dwc:species "tertia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Karllangia_tertia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Foweya_tertia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Foweya> ;
     dwc:class "Hexanauplia" ;
     dwc:family "Parastenheliidae" ;
     dwc:genus "Foweya" ;
@@ -104,38 +98,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "tertia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Foweya> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Foweya>
+    dwc:class "Hexanauplia" ;
+    dwc:family "Parastenheliidae" ;
+    dwc:genus "Foweya" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Harpacticoida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenheliidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Parastenheliidae>
+    dwc:class "Hexanauplia" ;
+    dwc:family "Parastenheliidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Harpacticoida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Harpacticoida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Harpacticoida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexanauplia> ;
     dwc:class "Hexanauplia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Harpacticoida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexanauplia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hexanauplia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Hexanauplia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Parastenhelia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenheliidae> ;
-    dwc:class "Hexanauplia" ;
-    dwc:family "Parastenheliidae" ;
-    dwc:genus "Parastenhelia" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
     dwc:kingdom "Animalia" ;
-    dwc:order "Harpacticoida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Parastenhelia_anglica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenhelia> ;
     dwc:class "Hexanauplia" ;
     dwc:family "Parastenheliidae" ;
     dwc:genus "Parastenhelia" ;
@@ -144,23 +160,39 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "anglica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenhelia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Parastenheliidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Harpacticoida> ;
+<http://taxon-name.plazi.org/id/Animalia/Parastenhelia>
     dwc:class "Hexanauplia" ;
     dwc:family "Parastenheliidae" ;
+    dwc:genus "Parastenhelia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Harpacticoida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenheliidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AF8548BD283137FE13FB5E4AACFEEF>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Foweya_tertia_Kunz_2006> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Karllangia_tertia_Kunz_1975>, <http://taxon-concept.plazi.org/id/Animalia/Parastenhelia_anglica_Scott_1905> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222930601108194> ;
-    dc:creator "Gee, J. Michael" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5230335>, <http://dx.doi.org/10.5281/zenodo.5230337> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Karllangia_tertia>
+    dwc:class "Hexanauplia" ;
+    dwc:family "Parastenheliidae" ;
+    dwc:genus "Karllangia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Harpacticoida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tertia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Karllangia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Karllangia>
+    dwc:class "Hexanauplia" ;
+    dwc:family "Parastenheliidae" ;
+    dwc:genus "Karllangia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Harpacticoida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parastenheliidae> ;
+    a dwcFP:TaxonName .
