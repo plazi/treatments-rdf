@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DA87ACFFFEFFA3FF46FC6FFD132A97
+    dc:creator "Luca, Javier Di; Zelaya, Diego G." ;
+    dc:title "Acteon Montfort 1810" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acteon_Montfort_1810> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4544.1.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4544.1.2>
-    dc:creator "Luca, Javier Di", "Zelaya, Diego G." ;
-    dc:date "2019" ;
-    dc:title "Gastropods from the Burdwood Bank (southwestern Atlantic): an overview of species diversity" ;
     bibo:endPage "78" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-01-10" ;
     bibo:startPage "41" ;
     bibo:volume "4544" ;
+    dc:creator "Luca, Javier Di; Zelaya, Diego G." ;
+    dc:date "2019" ;
+    dc:title "Gastropods from the Burdwood Bank (southwestern Atlantic): an overview of species diversity" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Acteon_Montfort_1810>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acteon> ;
-    dwc:ID-CoL "7NMTH" ;
     dwc:class "Gastropoda" ;
     dwc:family "Acteonidae" ;
     dwc:genus "Acteon" ;
@@ -32,15 +38,24 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Montfort, 1810" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NMTH> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acteon> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Bulla_tornatilis_Linnaeus_1758>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bullidae" ;
+    dwc:genus "Bulla" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Cephalaspidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "tornatilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bulla_tornatilis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Acteon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acteonidae> ;
     dwc:class "Gastropoda" ;
     dwc:family "Acteonidae" ;
     dwc:genus "Acteon" ;
@@ -48,45 +63,77 @@
     dwc:order "Cephalaspidea" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acteonidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Acteonidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cephalaspidea> ;
     dwc:class "Gastropoda" ;
     dwc:family "Acteonidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cephalaspidea" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cephalaspidea> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cephalaspidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cephalaspidea" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DA87ACFFFEFFA3FF46FC6FFD132A97>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acteon_Montfort_1810> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4544.1.2> ;
-    dc:creator "Luca, Javier Di", "Zelaya, Diego G." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Bulla_tornatilis>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bullidae" ;
+    dwc:genus "Bulla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cephalaspidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "tornatilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bulla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bulla>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bullidae" ;
+    dwc:genus "Bulla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cephalaspidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bullidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bullidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bullidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cephalaspidea" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cephalaspidea> ;
+    a dwcFP:TaxonName .

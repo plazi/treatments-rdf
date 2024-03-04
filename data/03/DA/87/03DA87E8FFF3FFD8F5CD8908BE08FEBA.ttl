@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DA87E8FFF3FFD8F5CD8908BE08FEBA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.249206> ;
+    dc:creator "James Hammond, H. E.; Williams, Daryl J." ;
+    dc:title "Semanotus amplus subsp. basalis Casey 1924, new status" ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Semanotus_amplus_basalis_Casey_1924> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Anocomis_basalis_Casey_1924>, <http://taxon-concept.plazi.org/id/Animalia/Semanotus_ligneus_thujae_Dyke_1927> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3670.2.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3670.2.1>
-    dc:creator "James Hammond, H. E.", "Williams, Daryl J." ;
-    dc:date "2013" ;
-    dc:title "Casey’s conundrum, a review of the genus Semanotus Mulsant (Coleoptera: Cerambycidae: Cerambycinae: Callidiini) in North America" ;
     bibo:endPage "136" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "101" ;
     bibo:volume "3670" ;
+    dc:creator "James Hammond, H. E.; Williams, Daryl J." ;
+    dc:date "2013" ;
+    dc:title "Casey’s conundrum, a review of the genus Semanotus Mulsant (Coleoptera: Cerambycidae: Cerambycinae: Callidiini) in North America" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.249206> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,22 @@
     fabio:hasRepresentation "https://zenodo.org/record/249206/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Semanotus_amplus_basalis_Casey_1924>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Semanotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Casey, 1924" ;
+    dwc:species "amplus" ;
+    dwc:subSpecies "basalis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5F3MR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus_basalis> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Anocomis_basalis_Casey_1924>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anocomis_basalis> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Anocomis" ;
@@ -37,11 +61,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Casey, 1924: 237" ;
     dwc:species "basalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anocomis_basalis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Semanotus_ligneus_thujae_Dyke_1927>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus_thujae> ;
-    dwc:ID-CoL "5L578" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Semanotus" ;
@@ -52,95 +75,11 @@
     dwc:scientificNameAuthorship "Van Dyke, 1927: 103" ;
     dwc:species "ligneus" ;
     dwc:subSpecies "thujae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5F3MR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus_thujae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anocomis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Anocomis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anocomis_basalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anocomis> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Anocomis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "basalis" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Semanotus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Semanotus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Semanotus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "amplus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus_basalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Semanotus" ;
@@ -150,10 +89,10 @@
     dwc:rank "subSpecies" ;
     dwc:species "amplus" ;
     dwc:subSpecies "basalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus> ;
+<http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Semanotus" ;
@@ -161,11 +100,84 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "ligneus" ;
+    dwc:species "amplus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Semanotus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Semanotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anocomis_basalis>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Anocomis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "basalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anocomis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anocomis>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Anocomis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus_thujae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Semanotus" ;
@@ -175,13 +187,17 @@
     dwc:rank "subSpecies" ;
     dwc:species "ligneus" ;
     dwc:subSpecies "thujae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DA87E8FFF3FFD8F5CD8908BE08FEBA>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Anocomis_basalis_Casey_1924>, <http://taxon-concept.plazi.org/id/Animalia/Semanotus_ligneus_thujae_Dyke_1927> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3670.2.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Semanotus_amplus_basalis> ;
-    dc:creator "James Hammond, H. E.", "Williams, Daryl J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.249206> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Semanotus_ligneus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Semanotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ligneus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Semanotus> ;
+    a dwcFP:TaxonName .
