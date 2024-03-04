@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:BF18F633A955FFB02B9CC1D4FD13FCD5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3442102> ;
+    dc:creator "Hansen, Thomas" ;
+    dc:title "Tenagodus Guettard 1770" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tenagodus_Guettard_1770> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4654.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4654.1.1>
-    dc:creator "Hansen, Thomas" ;
-    dc:date "2019" ;
-    dc:title "Gastropods from the Cretaceous-Palaeogene boundary in Denmark" ;
     bibo:endPage "196" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-08-12" ;
     bibo:startPage "1" ;
     bibo:volume "4654" ;
+    dc:creator "Hansen, Thomas" ;
+    dc:date "2019" ;
+    dc:title "Gastropods from the Cretaceous-Palaeogene boundary in Denmark" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3442102> ;
     a fabio:JournalArticle .
 
@@ -28,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tenagodus_Guettard_1770>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tenagodus> ;
-    dwc:ID-CoL "9G3Q8" ;
     dwc:authority "Hansen, 2019" ;
     dwc:authorityName "Hansen" ;
     dwc:authorityYear "2019" ;
@@ -39,7 +46,44 @@
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Guettard, 1770" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/9G3Q8> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tenagodus> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenagodus_obtusus_Schumacher_1817>
+    dwc:class "Gastropoda" ;
+    dwc:family "Siliquariidae" ;
+    dwc:genus "Tenagodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Schumacher, 1817)" ;
+    dwc:species "obtusus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tenagodus_obtusus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tenagodus_ornatus_Lundgren_1867>
+    dwc:class "Gastropoda" ;
+    dwc:family "Siliquariidae" ;
+    dwc:genus "Tenagodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Lundgren, 1867)" ;
+    dwc:species "ornatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tenagodus_ornatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Tenagodus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Siliquariidae" ;
+    dwc:genus "Tenagodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siliquariidae> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Siliquariidae>
     dwc:class "Gastropoda" ;
@@ -47,22 +91,47 @@
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Tenagodus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siliquariidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tenagodus_obtusus>
     dwc:class "Gastropoda" ;
     dwc:family "Siliquariidae" ;
     dwc:genus "Tenagodus" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:species "obtusus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tenagodus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/BF18F633A955FFB02B9CC1D4FD13FCD5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tenagodus_Guettard_1770> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4654.1.1> ;
-    dc:creator "Hansen, Thomas" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3442102> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Tenagodus_ornatus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Siliquariidae" ;
+    dwc:genus "Tenagodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "ornatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tenagodus> ;
+    a dwcFP:TaxonName .

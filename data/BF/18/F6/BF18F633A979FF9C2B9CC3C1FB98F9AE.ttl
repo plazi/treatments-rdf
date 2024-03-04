@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:BF18F633A979FF9C2B9CC3C1FB98F9AE
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3442112> ;
+    dc:creator "Hansen, Thomas" ;
+    dc:title "Vatopsis heinbergi Hansen 2019, n. sp." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/BF18F633A979FF9C2B9CC3C1FB98F9AE.mc.87D94D78A979FF9C2BCCC29DFE0CFBEE> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Vatopsis_heinbergi_Hansen_2019> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4654.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4654.1.1>
-    dc:creator "Hansen, Thomas" ;
-    dc:date "2019" ;
-    dc:title "Gastropods from the Cretaceous-Palaeogene boundary in Denmark" ;
     bibo:endPage "196" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-08-12" ;
     bibo:startPage "1" ;
     bibo:volume "4654" ;
+    dc:creator "Hansen, Thomas" ;
+    dc:date "2019" ;
+    dc:title "Gastropods from the Cretaceous-Palaeogene boundary in Denmark" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3442112> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/3442112/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/BF18F633A979FF9C2B9CC3C1FB98F9AE.mc.87D94D78A979FF9C2BCCC29DFE0CFBEE>
+    dwc:locality "The" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2331574386" ;
+    trt:httpUri <https://treatment.plazi.org/id/BF18F633A979FF9C2B9CC3C1FB98F9AE#87D94D78A979FF9C2BCCC29DFE0CFBEE> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Vatopsis_heinbergi_Hansen_2019>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vatopsis_heinbergi> ;
     dwc:class "Gastropoda" ;
     dwc:family "Newtoniellidae" ;
     dwc:genus "Vatopsis" ;
@@ -38,60 +54,35 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hansen, 2019" ;
     dwc:species "heinbergi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Vatopsis_heinbergi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cerithium_Gilleaudeau_2018>
     dwc:class "Gastropoda" ;
+    dwc:family "Cerithiidae" ;
+    dwc:genus "Cerithium" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Newtoniellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ptenoglossa> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Newtoniellidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Ptenoglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ptenoglossa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Ptenoglossa" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Vatopsis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Newtoniellidae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Newtoniellidae" ;
-    dwc:genus "Vatopsis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Ptenoglossa" ;
+    dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Limestone Member", "Limestone" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerithium> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cerithium_ternatum_Reuss_1845>
+    dwc:class "Gastropoda" ;
+    dwc:family "Cerithiidae" ;
+    dwc:genus "Cerithium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Reuss, 1845" ;
+    dwc:species "ternatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerithium_ternatum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Vatopsis_heinbergi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vatopsis> ;
     dwc:class "Gastropoda" ;
     dwc:family "Newtoniellidae" ;
     dwc:genus "Vatopsis" ;
@@ -100,12 +91,97 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "heinbergi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vatopsis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/BF18F633A979FF9C2B9CC3C1FB98F9AE>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Vatopsis_heinbergi_Hansen_2019> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4654.1.1> ;
-    dc:creator "Hansen, Thomas" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3442112> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Vatopsis>
+    dwc:class "Gastropoda" ;
+    dwc:family "Newtoniellidae" ;
+    dwc:genus "Vatopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ptenoglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Newtoniellidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Newtoniellidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Newtoniellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ptenoglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ptenoglossa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ptenoglossa>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ptenoglossa" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerithium>
+    dwc:class "Gastropoda" ;
+    dwc:family "Cerithiidae" ;
+    dwc:genus "Cerithium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerithiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerithiidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Cerithiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Littorinimorpha>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerithium_ternatum>
+    dwc:class "Gastropoda" ;
+    dwc:family "Cerithiidae" ;
+    dwc:genus "Cerithium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "ternatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerithium> ;
+    a dwcFP:TaxonName .
