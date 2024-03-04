@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03FB87AC8902FFB3FF4AEEC993CEFC3D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7685266> ;
+    dc:creator "Eiseman, Charles S.; Namayandeh, Armin; Linden, John Van Der; Palmer, Michael W." ;
+    dc:title "Psectrocladius vernalis Kieffer 1906" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Psectrocladius_Malloch_1915> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5249.1.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5249.1.3>
-    dc:creator "Eiseman, Charles S.", "Linden, John Van Der", "Namayandeh, Armin", "Palmer, Michael W." ;
-    dc:date "2023" ;
-    dc:title "Metriocnemus erythranthei sp. nov. and Limnophyes viribus sp. nov. (Diptera: Chironomidae: Orthocladiinae): leafminers of monkeyflowers, speedwells, and other herbaceous plants, with new observations on the ecology and habitats of other leaf-mining Chironomidae" ;
     bibo:endPage "68" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-02-28" ;
     bibo:startPage "41" ;
     bibo:volume "5249" ;
+    dc:creator "Eiseman, Charles S.; Namayandeh, Armin; Linden, John Van Der; Palmer, Michael W." ;
+    dc:date "2023" ;
+    dc:title "Metriocnemus erythranthei sp. nov. and Limnophyes viribus sp. nov. (Diptera: Chironomidae: Orthocladiinae): leafminers of monkeyflowers, speedwells, and other herbaceous plants, with new observations on the ecology and habitats of other leaf-mining Chironomidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7685266> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Psectrocladius_Malloch_1915>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psectrocladius> ;
-    dwc:ID-CoL "63PDN" ;
     dwc:ID-ENA "288848" ;
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
@@ -39,49 +47,61 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "(Malloch, 1915)" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/63PDN> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psectrocladius> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chironomidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Metriocnemus_erythranthei_Eiseman_2023>
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
+    dwc:genus "Metriocnemus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Eiseman & Namayandeh & Linden & Palmer, 2023" ;
+    dwc:species "erythranthei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metriocnemus_erythranthei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Metriocnemus_eurynotus_Holmgren_1883>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Metriocnemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Holmgren, 1883" ;
+    dwc:species "eurynotus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metriocnemus_eurynotus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psectrocladius_vernalis_Malloch_1915>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Psectrocladius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Malloch, 1915" ;
+    dwc:species "vernalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psectrocladius_vernalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Pontederiaceae_Kunth_1816>
+    dwc:class "Liliopsida" ;
+    dwc:family "Pontederiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Kunth, 1816" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Pontederiaceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Psectrocladius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
     dwc:class "Insecta" ;
     dwc:family "Chironomidae" ;
     dwc:genus "Psectrocladius" ;
@@ -89,12 +109,130 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03FB87AC8902FFB3FF4AEEC993CEFC3D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Psectrocladius_Malloch_1915> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5249.1.3> ;
-    dc:creator "Eiseman, Charles S.", "Linden, John Van Der", "Namayandeh, Armin", "Palmer, Michael W." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7685266> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chironomidae>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Metriocnemus_erythranthei>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Metriocnemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "erythranthei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metriocnemus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Metriocnemus>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Metriocnemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chironomidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Metriocnemus_eurynotus>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Metriocnemus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "eurynotus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metriocnemus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psectrocladius_vernalis>
+    dwc:class "Insecta" ;
+    dwc:family "Chironomidae" ;
+    dwc:genus "Psectrocladius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vernalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psectrocladius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pontederiaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Pontederiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Commelinales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Commelinales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Commelinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
