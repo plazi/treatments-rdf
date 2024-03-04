@@ -1,25 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:AA18DD6F1801430DFF03F98C634178AA
+    dc:creator "Colin P. Groves" ;
+    dc:title "Caloprymnus Thomas 1888" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Caloprymnus_Thomas_1888> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.7353075> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.7353075>
+    bibo:endPage "62" ;
+    bibo:startPage "45" ;
     dc:creator "Colin P. Groves" ;
     dc:date "1993" ;
     dc:title "Order Diprotodontia" ;
-    bibo:endPage "62" ;
-    bibo:startPage "45" ;
     a fabio:BookSection .
 
 <http://taxon-concept.plazi.org/id/Animalia/Caloprymnus_Thomas_1888>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Caloprymnus> ;
-    dwc:ID-CoL "3FWQ" ;
     dwc:class "Mammalia" ;
     dwc:family "Potoroidae" ;
     dwc:genus "Caloprymnus" ;
@@ -28,15 +34,24 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Thomas, 1888" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3FWQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Caloprymnus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Bettongia_campestris_Gould_1843>
+    dwc:class "Mammalia" ;
+    dwc:family "Potoroidae" ;
+    dwc:genus "Bettongia" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gould, 1843" ;
+    dwc:species "campestris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bettongia_campestris> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Caloprymnus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Potoroidae> ;
     dwc:class "Mammalia" ;
     dwc:family "Potoroidae" ;
     dwc:genus "Caloprymnus" ;
@@ -44,45 +59,67 @@
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diprotodontia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diprotodontia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Potoroidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Potoroidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diprotodontia> ;
     dwc:class "Mammalia" ;
     dwc:family "Potoroidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diprotodontia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diprotodontia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/AA18DD6F1801430DFF03F98C634178AA>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Caloprymnus_Thomas_1888> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.7353075> ;
-    dc:creator "Colin P. Groves" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Diprotodontia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bettongia_campestris>
+    dwc:class "Mammalia" ;
+    dwc:family "Potoroidae" ;
+    dwc:genus "Bettongia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "campestris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bettongia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bettongia>
+    dwc:class "Mammalia" ;
+    dwc:family "Potoroidae" ;
+    dwc:genus "Bettongia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diprotodontia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Potoroidae> ;
+    a dwcFP:TaxonName .
