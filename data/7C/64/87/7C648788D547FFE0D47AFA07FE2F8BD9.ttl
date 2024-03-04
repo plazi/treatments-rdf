@@ -1,22 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7C648788D547FFE0D47AFA07FE2F8BD9
+    cito:cites <http://dx.doi.org/10.5281/zenodo.170163>, <http://dx.doi.org/10.5281/zenodo.170165> ;
+    dc:creator "Li, Houhun" ;
+    dc:title "Coleophora varisequens" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.170162> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleophora_varisequens> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.170162>
-    dc:creator "Li, Houhun" ;
-    dc:date "2005" ;
-    dc:title "Checklist and new species of the Coleophora salicorniae group from China (Lepidoptera: Coleophoridae)" ;
     bibo:endPage "50" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "37" ;
     bibo:volume "1060" ;
+    dc:creator "Li, Houhun" ;
+    dc:date "2005" ;
+    dc:title "Checklist and new species of the Coleophora salicorniae group from China (Lepidoptera: Coleophoridae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.170163>, <http://dx.doi.org/10.5281/zenodo.170165> ;
     a fabio:JournalArticle .
 
@@ -30,31 +39,33 @@
     fabio:hasRepresentation "https://zenodo.org/record/170165/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleophoridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Coleophora_sequens_Falkovitsh_1979>
     dwc:class "Insecta" ;
     dwc:family "Coleophoridae" ;
     dwc:genus "Coleophora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Falkovitsh, 1979" ;
+    dwc:species "sequens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleophora_sequens> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Coleophora_varisequens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleophora> ;
+<http://taxon-concept.plazi.org/id/Animalia/Coleophora_pallidiptera_Li_1998>
+    dwc:class "Insecta" ;
+    dwc:family "Coleophoridae" ;
+    dwc:genus "Coleophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Li & Zheng, 1998" ;
+    dwc:species "pallidiptera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleophora_pallidiptera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Coleophora_varisequens_Li_2005>
     dwc:class "Insecta" ;
     dwc:family "Coleophoridae" ;
     dwc:genus "Coleophora" ;
@@ -63,39 +74,91 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "varisequens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleophora_varisequens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleophora_varisequens>
+    dwc:class "Insecta" ;
+    dwc:family "Coleophoridae" ;
+    dwc:genus "Coleophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "varisequens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleophora>
+    dwc:class "Insecta" ;
+    dwc:family "Coleophoridae" ;
+    dwc:genus "Coleophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleophoridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Coleophoridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7C648788D547FFE0D47AFA07FE2F8BD9>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.170162> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleophora_varisequens> ;
-    dc:creator "Li, Houhun" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.170163>, <http://dx.doi.org/10.5281/zenodo.170165> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleophora_sequens>
+    dwc:class "Insecta" ;
+    dwc:family "Coleophoridae" ;
+    dwc:genus "Coleophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sequens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleophora_pallidiptera>
+    dwc:class "Insecta" ;
+    dwc:family "Coleophoridae" ;
+    dwc:genus "Coleophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pallidiptera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleophora> ;
+    a dwcFP:TaxonName .
