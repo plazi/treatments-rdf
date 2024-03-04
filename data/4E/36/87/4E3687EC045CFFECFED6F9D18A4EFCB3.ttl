@@ -1,47 +1,74 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:4E3687EC045CFFECFED6F9D18A4EFCB3
+    dc:creator "Ray, Donald H.; Abad, Rick L.; Rasmussen, Andrew K.; Stark, Bill P." ;
+    dc:title "Perlesta Shubuta Stark" ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4762237> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Perlesta> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4762237>
-    dc:creator "Abad, Rick L.", "Rasmussen, Andrew K.", "Ray, Donald H.", "Stark, Bill P." ;
-    dc:date "2012" ;
-    dc:title "New Records And An Updated Checklist Of The Stoneflies (Plecoptera) From Florida" ;
     bibo:endPage "9" ;
     bibo:issue "1" ;
     bibo:journal "Illiesia" ;
     bibo:startPage "1" ;
     bibo:volume "8" ;
+    dc:creator "Ray, Donald H.; Abad, Rick L.; Rasmussen, Andrew K.; Stark, Bill P." ;
+    dc:date "2012" ;
+    dc:title "New Records And An Updated Checklist Of The Stoneflies (Plecoptera) From Florida" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Kalmia_latifolia_Linnaeus_1753>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Ericaceae" ;
+    dwc:genus "Kalmia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1753" ;
+    dwc:species "latifolia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalmia_latifolia> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Perlesta_placida_Hagen_1861>
     dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Perlesta" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hagen, 1861" ;
+    dwc:species "placida" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Perlesta_placida> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Perlesta_shubuta_Stark_1989>
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Perlesta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stark, 1989" ;
+    dwc:species "shubuta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Perlesta_shubuta> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Perlesta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlidae> ;
     dwc:class "Insecta" ;
     dwc:family "Perlidae" ;
     dwc:genus "Perlesta" ;
@@ -49,30 +76,130 @@
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Perlidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Perlidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Plecoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4E3687EC045CFFECFED6F9D18A4EFCB3>
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4762237> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Perlesta> ;
-    dc:creator "Abad, Rick L.", "Rasmussen, Andrew K.", "Ray, Donald H.", "Stark, Bill P." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Kalmia_latifolia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Ericaceae" ;
+    dwc:genus "Kalmia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "latifolia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalmia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Kalmia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Ericaceae" ;
+    dwc:genus "Kalmia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ericaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ericaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Ericaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Ericales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Ericales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Ericales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Perlesta_placida>
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Perlesta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "placida" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlesta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Perlesta_shubuta>
+    dwc:class "Insecta" ;
+    dwc:family "Perlidae" ;
+    dwc:genus "Perlesta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "shubuta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perlesta> ;
+    a dwcFP:TaxonName .
