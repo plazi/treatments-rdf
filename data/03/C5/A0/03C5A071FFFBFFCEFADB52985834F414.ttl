@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C5A071FFFBFFCEFADB52985834F414
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6623784> ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:title "Proechimys roberti J. A. Allen 1899" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C5A071FFFBFFCEFADB52985834F414.mc.3B041B3AFFFBFFCFF792536052DEF445> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Proechimys_roberti_Allen_1899> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Proechimys_roberti_Thomas_1901> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6623649> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6623649>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2016" ;
-    dc:title "Echimyidae" ;
     bibo:endPage "604" ;
     bibo:startPage "552" ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:date "2016" ;
+    dc:title "Echimyidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6623784> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6623784/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03C5A071FFFBFFCEFADB52985834F414.mc.3B041B3AFFFBFFCFF792536052DEF445>
+    trt:gbifOccurrenceId "3804303311" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C5A071FFFBFFCEFADB52985834F414#3B041B3AFFFBFFCFF792536052DEF445> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Proechimys_roberti_Allen_1899>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_roberti> ;
-    dwc:ID-CoL "4MQLH" ;
     dwc:authority "Wilson, 2016" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2016" ;
@@ -36,12 +50,13 @@
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1899" ;
     dwc:species "roberti" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4MQLH> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_roberti> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Proechimys_roberti_Thomas_1901>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_roberti> ;
-    dwc:ID-CoL "4MQLH" ;
     dwc:class "Mammalia" ;
     dwc:family "Echimyidae" ;
     dwc:genus "Proechimys" ;
@@ -51,51 +66,61 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Thomas, 1901" ;
     dwc:species "roberti" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4MQLH> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_roberti> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Echimyidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Echimyidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rodentia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Proechimys>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echimyidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Proechimys_cuvieri_Petter_1978>
     dwc:class "Mammalia" ;
     dwc:family "Echimyidae" ;
     dwc:genus "Proechimys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Petter, 1978" ;
+    dwc:species "cuvieri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_cuvieri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Arecaceae_Bercht._1820>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Bercht. & J.Presl, 1820" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Arecaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Proechimys_goeldii_Thomas_1905>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:genus "Proechimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1905" ;
+    dwc:species "goeldii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_goeldii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Proechimys_longicaudatus_Rengger_1830>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:genus "Proechimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rengger, 1830" ;
+    dwc:species "longicaudatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Proechimys_longicaudatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Proechimys_roberti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proechimys> ;
     dwc:class "Mammalia" ;
     dwc:family "Echimyidae" ;
     dwc:genus "Proechimys" ;
@@ -104,22 +129,130 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "roberti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proechimys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proechimys>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:genus "Proechimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echimyidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Echimyidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rodentia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rodentia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rodentia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C5A071FFFBFFCEFADB52985834F414>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Proechimys_roberti_Allen_1899> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Proechimys_roberti_Thomas_1901> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6623649> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6623784> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proechimys_cuvieri>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:genus "Proechimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "cuvieri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proechimys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Arecaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Arecales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proechimys_goeldii>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:genus "Proechimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "goeldii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proechimys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Proechimys_longicaudatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Echimyidae" ;
+    dwc:genus "Proechimys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rodentia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "longicaudatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Proechimys> ;
+    a dwcFP:TaxonName .
