@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:773B4C70FFF1C137FF56FA9EFF67FAC7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.279293>, <http://dx.doi.org/10.5281/zenodo.279296> ;
+    dc:creator "Lapolla, John S.; Hawkes, Peter G.; Fisher, Brian L." ;
+    dc:title "Nylanderia natalenis Forel 1915, stat. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nylanderia_natalenis_Forel_1915> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Prenolepis_traegaordhi_natalensis_Forel_1915> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.279290> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.279290>
-    dc:creator "Fisher, Brian L.", "Hawkes, Peter G.", "Lapolla, John S." ;
-    dc:date "2011" ;
-    dc:title "Monograph of Nylanderia (Hymenoptera: Formicidae) of the World, Part I: Nylanderia in the Afrotropics" ;
     bibo:endPage "36" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "10" ;
     bibo:volume "3110" ;
+    dc:creator "Lapolla, John S.; Hawkes, Peter G.; Fisher, Brian L." ;
+    dc:date "2011" ;
+    dc:title "Monograph of Nylanderia (Hymenoptera: Formicidae) of the World, Part I: Nylanderia in the Afrotropics" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.279293>, <http://dx.doi.org/10.5281/zenodo.279296> ;
     a fabio:JournalArticle .
 
@@ -30,8 +40,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/279296/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Nylanderia_natalenis_Forel_1915>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Nylanderia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Forel, 1915" ;
+    dwc:species "natalenis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nylanderia_natalenis> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Prenolepis_traegaordhi_natalensis_Forel_1915>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi_natalensis> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Prenolepis" ;
@@ -43,60 +65,10 @@
     dwc:species "traegaordhi" ;
     dwc:subGenus "Nylanderia" ;
     dwc:subSpecies "natalensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi_natalensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Formicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Formicidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nylanderia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Formicidae" ;
-    dwc:genus "Nylanderia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Nylanderia_natalenis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nylanderia> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Nylanderia" ;
@@ -105,33 +77,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "natalenis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nylanderia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Prenolepis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Nylanderia>
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
-    dwc:genus "Prenolepis" ;
+    dwc:genus "Nylanderia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prenolepis> ;
+<http://taxon-name.plazi.org/id/Animalia/Formicidae>
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
-    dwc:genus "Prenolepis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "traegaordhi" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi_natalensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi> ;
     dwc:class "Insecta" ;
     dwc:family "Formicidae" ;
     dwc:genus "Prenolepis" ;
@@ -140,14 +139,43 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
     dwc:species "traegaordhi" ;
+    dwc:subGenus "Nylanderia" ;
     dwc:subSpecies "natalensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/773B4C70FFF1C137FF56FA9EFF67FAC7>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Prenolepis_traegaordhi_natalensis_Forel_1915> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.279290> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Nylanderia_natalenis> ;
-    dc:creator "Fisher, Brian L.", "Hawkes, Peter G.", "Lapolla, John S." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.279293>, <http://dx.doi.org/10.5281/zenodo.279296> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Prenolepis_traegaordhi>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Prenolepis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "traegaordhi" ;
+    dwc:subGenus "Nylanderia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prenolepis_Nylanderia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Prenolepis_Nylanderia>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Prenolepis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Nylanderia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prenolepis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Prenolepis>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Prenolepis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+    a dwcFP:TaxonName .
