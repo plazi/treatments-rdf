@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A0BE3B6494FF21FF4FF9B7FC7651CE
+    dc:creator "Jo, Yeong-Seok; Baccus, John T.; Koprowski, John L." ;
+    dc:title "Phocoena G. Cuvier 1816" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phocoena_Cuvier_1816> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4522.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4522.1.1>
-    dc:creator "Baccus, John T.", "Jo, Yeong-Seok", "Koprowski, John L." ;
-    dc:date "2018" ;
-    dc:title "Mammals of Korea: a review of their taxonomy, distribution and conservation status" ;
     bibo:endPage "216" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-11-19" ;
     bibo:startPage "1" ;
     bibo:volume "4522" ;
+    dc:creator "Jo, Yeong-Seok; Baccus, John T.; Koprowski, John L." ;
+    dc:date "2018" ;
+    dc:title "Mammals of Korea: a review of their taxonomy, distribution and conservation status" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Phocoena_Cuvier_1816>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocoena> ;
-    dwc:ID-CoL "63MH5" ;
     dwc:ID-ENA "9741" ;
     dwc:class "Mammalia" ;
     dwc:family "Phocoenidae" ;
@@ -33,39 +39,24 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "G. Cuvier, 1816" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/63MH5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocoena> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cetacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phocoena_phocoena_(Linnaeus_1758>
     dwc:class "Mammalia" ;
+    dwc:family "Phocoenidae" ;
+    dwc:genus "Phocoena" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "phocoena (Linnaeus, 1758" ;
+    dwc:species "phocoena" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phocoena_phocoena> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Phocoena>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenidae> ;
     dwc:class "Mammalia" ;
     dwc:family "Phocoenidae" ;
     dwc:genus "Phocoena" ;
@@ -73,21 +64,56 @@
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoenidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Phocoenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
     dwc:class "Mammalia" ;
     dwc:family "Phocoenidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A0BE3B6494FF21FF4FF9B7FC7651CE>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phocoena_Cuvier_1816> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4522.1.1> ;
-    dc:creator "Baccus, John T.", "Jo, Yeong-Seok", "Koprowski, John L." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Cetacea>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phocoena_phocoena>
+    dwc:class "Mammalia" ;
+    dwc:family "Phocoenidae" ;
+    dwc:genus "Phocoena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "phocoena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phocoena> ;
+    a dwcFP:TaxonName .
