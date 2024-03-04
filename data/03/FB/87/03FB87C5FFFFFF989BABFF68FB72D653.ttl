@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/zootaxa.5315.1.6>
-    dc:creator "Kosygin, Laishram", "Shangningam, Bungdon" ;
-    dc:date "2023" ;
-    dc:title "Glyptothorax viridis, a new species of catfish (Teleostei: Siluriformes: Sisoridae) from Manipur, India" ;
+treatment:03FB87C5FFFFFF989BABFF68FB72D653
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8130262>, <http://dx.doi.org/10.5281/zenodo.8130264>, <http://dx.doi.org/10.5281/zenodo.8130268> ;
+    dc:creator "Shangningam, Bungdon; Kosygin, Laishram" ;
+    dc:title "Glyptothorax viridis Shangningam & Kosygin 2023, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03FB87C5FFFFFF989BABFF68FB72D653.mc.3B3A3C8EFFFFFF9D9A74FF03FB4AD419>, <http://tb.plazi.org/GgServer/dwcaRecords/03FB87C5FFFFFF989BABFF68FB72D653.mc.3B3A3C8EFFFFFF9D99CAFE96F9CFD4C4> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_viridis_Shangningam_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "93" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-07-06" ;
     bibo:startPage "83" ;
     bibo:volume "5315" ;
+    dc:creator "Shangningam, Bungdon; Kosygin, Laishram" ;
+    dc:date "2023" ;
+    dc:title "Glyptothorax viridis, a new species of catfish (Teleostei: Siluriformes: Sisoridae) from Manipur, India" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8130262>, <http://dx.doi.org/10.5281/zenodo.8130264>, <http://dx.doi.org/10.5281/zenodo.8130268> ;
     a fabio:JournalArticle .
 
@@ -37,8 +47,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/8130268/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03FB87C5FFFFFF989BABFF68FB72D653.mc.3B3A3C8EFFFFFF9D9A74FF03FB4AD419>
+    dwc:eventDate "2021-12-23" ;
+    dwc:locality "Dutuwl" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03FB87C5FFFFFF989BABFF68FB72D653#3B3A3C8EFFFFFF9D9A74FF03FB4AD419> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03FB87C5FFFFFF989BABFF68FB72D653.mc.3B3A3C8EFFFFFF9D99CAFE96F9CFD4C4>
+    dwc:eventDate "2021-12-23" ;
+    dwc:locality "Dutuwl" ;
+    dwc:typeStatus "paratype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03FB87C5FFFFFF989BABFF68FB72D653#3B3A3C8EFFFFFF9D99CAFE96F9CFD4C4> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_viridis_Shangningam_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_viridis> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Sisoridae" ;
     dwc:genus "Glyptothorax" ;
@@ -48,41 +71,73 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Shangningam & Kosygin, 2023" ;
     dwc:species "viridis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_viridis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Glyptothorax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sisoridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_trilineatus_Shangningam_2023>
     dwc:class "Actinopterygii" ;
     dwc:family "Sisoridae" ;
     dwc:genus "Glyptothorax" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "trilineatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_trilineatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_ventrolineatus_Shangningam_2023>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ventrolineatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_ventrolineatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_viridis_FF_2023>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ", ZSI FF" ;
+    dwc:species "viridis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_viridis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_ventrolineatus_FF_2023>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "ZSI FF" ;
+    dwc:species "ventrolineatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_ventrolineatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_trilineatus_F_2023>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "ZSI F" ;
+    dwc:species "trilineatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_trilineatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Glyptothorax_viridis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Sisoridae" ;
     dwc:genus "Glyptothorax" ;
@@ -91,31 +146,79 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "viridis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Siluriformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+<http://taxon-name.plazi.org/id/Animalia/Glyptothorax>
     dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sisoridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Sisoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Sisoridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03FB87C5FFFFFF989BABFF68FB72D653>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Glyptothorax_viridis_Shangningam_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Kosygin, Laishram", "Shangningam, Bungdon" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8130262>, <http://dx.doi.org/10.5281/zenodo.8130264>, <http://dx.doi.org/10.5281/zenodo.8130268> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Siluriformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Glyptothorax_trilineatus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "trilineatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Glyptothorax_ventrolineatus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Sisoridae" ;
+    dwc:genus "Glyptothorax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ventrolineatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glyptothorax> ;
+    a dwcFP:TaxonName .
