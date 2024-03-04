@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A787D79403FFF2FF6AF2A7FA8255E9
+    cito:cites <http://dx.doi.org/10.5281/zenodo.262776>, <http://dx.doi.org/10.5281/zenodo.262777> ;
+    dc:creator "Chérot, F.; Malipatil, M. B." ;
+    dc:title "Creontiades insularis Poppius 1911" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Creontiades_insularis_Poppius_1911> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4126.2.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4126.2.1>
-    dc:creator "Chérot, F.", "Malipatil, M. B." ;
-    dc:date "2016" ;
-    dc:title "A review of Adelphocoris - Creontiades - Megacoelum complex (Hemiptera: Heteroptera: Miridae: Mirini), with descriptions of two new genera and four new species" ;
     bibo:endPage "206" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "151" ;
     bibo:volume "4126" ;
+    dc:creator "Chérot, F.; Malipatil, M. B." ;
+    dc:date "2016" ;
+    dc:title "A review of Adelphocoris - Creontiades - Megacoelum complex (Hemiptera: Heteroptera: Miridae: Mirini), with descriptions of two new genera and four new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.262776>, <http://dx.doi.org/10.5281/zenodo.262777> ;
     a fabio:JournalArticle .
 
@@ -32,8 +41,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Creontiades_insularis_Poppius_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Creontiades_insularis> ;
-    dwc:ID-CoL "ZCZN" ;
     dwc:class "Insecta" ;
     dwc:family "Miridae" ;
     dwc:genus "Creontiades" ;
@@ -41,24 +48,37 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Poppius, 1911" ;
+    dwc:scientificNameAuthorship "Poppius, 1911", "Poppius, 1911: 1", "Poppius, 1911: 23" ;
     dwc:species "insularis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/ZCZN> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Creontiades_insularis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Creontiades_insularis_Ch%C3%A9rot_2016>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Creontiades" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "species" ;
+    dwc:species "insularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Creontiades_insularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Creontiades_insularis>
+    dwc:class "Insecta" ;
+    dwc:family "Miridae" ;
+    dwc:genus "Creontiades" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "insularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Creontiades> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Creontiades>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miridae> ;
     dwc:class "Insecta" ;
     dwc:family "Miridae" ;
     dwc:genus "Creontiades" ;
@@ -66,51 +86,44 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Creontiades_insularis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Creontiades> ;
-    dwc:class "Insecta" ;
-    dwc:family "Miridae" ;
-    dwc:genus "Creontiades" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "insularis" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Miridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Miridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Miridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A787D79403FFF2FF6AF2A7FA8255E9>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Creontiades_insularis_Poppius_1911> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4126.2.1> ;
-    dc:creator "Chérot, F.", "Malipatil, M. B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.262776>, <http://dx.doi.org/10.5281/zenodo.262777> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
