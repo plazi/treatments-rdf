@@ -1,26 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:A965C724C57F1514FF54BAD5FCA1FA02
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1452742>, <http://dx.doi.org/10.5281/zenodo.1452736>, <http://dx.doi.org/10.5281/zenodo.1452738>, <http://dx.doi.org/10.5281/zenodo.1452740> ;
+    dc:creator "Fery, Hans; Ribera, Ignacio" ;
+    dc:title "Larsonectes Fery & Ribera 2018, n. gen." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Larsonectes_Fery_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4474.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4474.1.1>
-    dc:creator "Fery, Hans", "Ribera, Ignacio" ;
-    dc:date "2018" ;
-    dc:title "Phylogeny and taxonomic revision of Deronectina Galewski, 1994 (Coleoptera: Dytiscidae: Hydroporinae: Hydroporini)" ;
     bibo:endPage "104" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-09-12" ;
     bibo:startPage "1" ;
     bibo:volume "4474" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1452736>, <http://dx.doi.org/10.5281/zenodo.1452738>, <http://dx.doi.org/10.5281/zenodo.1452740>, <http://dx.doi.org/10.5281/zenodo.1452742> ;
+    dc:creator "Fery, Hans; Ribera, Ignacio" ;
+    dc:date "2018" ;
+    dc:title "Phylogeny and taxonomic revision of Deronectina Galewski, 1994 (Coleoptera: Dytiscidae: Hydroporinae: Hydroporini)" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1452742>, <http://dx.doi.org/10.5281/zenodo.1452736>, <http://dx.doi.org/10.5281/zenodo.1452738>, <http://dx.doi.org/10.5281/zenodo.1452740> ;
     a fabio:JournalArticle .
+
+<http://dx.doi.org/10.5281/zenodo.1452742>
+    dc:description "FIGURE 31A: Majority rule consensus tree of the Bayesian analysis (obtained with MrBayes) of the combined morphological and molecular characters, using all studied species. Numbers in nodes: posterior probabilities. In bold, species with molecular and morphological data; without voucher numbers, species with only morphological data." ;
+    fabio:hasRepresentation "https://zenodo.org/record/1452742/files/figure.png" ;
+    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.1452736>
     dc:description "FIGURE 28A: Strict consensus tree obtained with the parsimony analysis of the reweighted morphological characters. Numbers in nodes: parsimony bootstrap of the reweighted characters / Bayesian posterior probabilities; black circles: nodes recovered in the parsimony analysis of the equally weighted characters; in brackets, nodes noted in the text." ;
@@ -37,14 +51,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/1452740/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5281/zenodo.1452742>
-    dc:description "FIGURE 31A: Majority rule consensus tree of the Bayesian analysis (obtained with MrBayes) of the combined morphological and molecular characters, using all studied species. Numbers in nodes: posterior probabilities. In bold, species with molecular and morphological data; without voucher numbers, species with only morphological data." ;
-    fabio:hasRepresentation "https://zenodo.org/record/1452742/files/figure.png" ;
-    a fabio:Figure .
-
 <http://taxon-concept.plazi.org/id/Animalia/Larsonectes_Fery_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larsonectes> ;
-    dwc:ID-CoL "8LZXC" ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:genus "Larsonectes" ;
@@ -53,49 +60,109 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Fery & Ribera, 2018" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8LZXC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larsonectes> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dytiscidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Potamonectes_minipi_Larson_1991>
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
+    dwc:genus "Potamonectes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Larson, 1991: 280", "Larson, 1991" ;
+    dwc:species "minipi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Potamonectes_minipi> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Boreonectes_Fery_2018>
     dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Boreonectes" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fery & Ribera, 2018" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Boreonectes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Potamonectes_Zimmermann_1921>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Potamonectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Zimmermann, 1921" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Potamonectes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nebrioporus_Regimbart_1906>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Nebrioporus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Regimbart, 1906" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nebrioporus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stictotarsus_Fery_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Stictotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stictotarsus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stictotarsus_duodecimpustulatus_Fabricius_1792>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Stictotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fabricius, 1792" ;
+    dwc:species "duodecimpustulatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stictotarsus_duodecimpustulatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stictotarsus_neomexicanus_Smith_1975>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Stictotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zimmerman and A. H. Smith, 1975" ;
+    dwc:species "neomexicanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stictotarsus_neomexicanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mystonectes_Fery_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Mystonectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fery & Ribera, 2018" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mystonectes> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Larsonectes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:genus "Larsonectes" ;
@@ -103,12 +170,135 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/A965C724C57F1514FF54BAD5FCA1FA02>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Larsonectes_Fery_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4474.1.1> ;
-    dc:creator "Fery, Hans", "Ribera, Ignacio" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1452736>, <http://dx.doi.org/10.5281/zenodo.1452738>, <http://dx.doi.org/10.5281/zenodo.1452740>, <http://dx.doi.org/10.5281/zenodo.1452742> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Dytiscidae>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Potamonectes_minipi>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Potamonectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "minipi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Potamonectes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Potamonectes>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Potamonectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Boreonectes>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Boreonectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nebrioporus>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Nebrioporus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stictotarsus>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Stictotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stictotarsus_duodecimpustulatus>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Stictotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "duodecimpustulatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stictotarsus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stictotarsus_neomexicanus>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Stictotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "neomexicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stictotarsus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mystonectes>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Mystonectes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
+    a dwcFP:TaxonName .
