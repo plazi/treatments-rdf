@@ -1,22 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FB1787CDB5122C0EFF50FF155AF61867
+    cito:cites <http://dx.doi.org/10.5281/zenodo.178033> ;
+    dc:creator "Haukisalmi, Voitto; Henttonen, Heikki" ;
+    dc:title "Paranoplocephala Haukisalmi & Henttonen, 2007, n. sp." ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.178029> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.178029>
-    dc:creator "Haukisalmi, Voitto", "Henttonen, Heikki" ;
-    dc:date "2007" ;
-    dc:title "A taxonomic revision of the Paranoplocephala primordialis (Douthitt) complex (Cestoda: Anoplocephalidae) in voles and squirrels" ;
     bibo:endPage "68" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "51" ;
     bibo:volume "1548" ;
+    dc:creator "Haukisalmi, Voitto; Henttonen, Heikki" ;
+    dc:date "2007" ;
+    dc:title "A taxonomic revision of the Paranoplocephala primordialis (Douthitt) complex (Cestoda: Anoplocephalidae) in voles and squirrels" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.178033> ;
     a fabio:JournalArticle .
 
@@ -25,40 +34,31 @@
     fabio:hasRepresentation "https://zenodo.org/record/178033/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anoplocephalidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclophyllidea> ;
+<http://taxon-concept.plazi.org/id/Animalia/Paranoplocephala_nearctica_Haukisalmi_2007>
     dwc:class "Cestoda" ;
     dwc:family "Anoplocephalidae" ;
+    dwc:genus "Paranoplocephala" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cyclophyllidea" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "nearctica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala_nearctica> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Cestoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Paranoplocephala_alaskensis_Haukisalmi_2007>
     dwc:class "Cestoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cyclophyllidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cestoda> ;
-    dwc:class "Cestoda" ;
+    dwc:family "Anoplocephalidae" ;
+    dwc:genus "Paranoplocephala" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cyclophyllidea" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "alaskensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala_alaskensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anoplocephalidae> ;
     dwc:class "Cestoda" ;
     dwc:family "Anoplocephalidae" ;
     dwc:genus "Paranoplocephala" ;
@@ -66,19 +66,68 @@
     dwc:order "Cyclophyllidea" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anoplocephalidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anoplocephalidae>
+    dwc:class "Cestoda" ;
+    dwc:family "Anoplocephalidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cyclophyllidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyclophyllidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyclophyllidea>
+    dwc:class "Cestoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cyclophyllidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cestoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cestoda>
+    dwc:class "Cestoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FB1787CDB5122C0EFF50FF155AF61867>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.178029> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala> ;
-    dc:creator "Haukisalmi, Voitto", "Henttonen, Heikki" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.178033> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Paranoplocephala_nearctica>
+    dwc:class "Cestoda" ;
+    dwc:family "Anoplocephalidae" ;
+    dwc:genus "Paranoplocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cyclophyllidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "nearctica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paranoplocephala_alaskensis>
+    dwc:class "Cestoda" ;
+    dwc:family "Anoplocephalidae" ;
+    dwc:genus "Paranoplocephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cyclophyllidea" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "alaskensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paranoplocephala> ;
+    a dwcFP:TaxonName .
