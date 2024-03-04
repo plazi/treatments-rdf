@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D8893BB172CC352390F9054FE9FD9C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.244419>, <http://dx.doi.org/10.5281/zenodo.244420>, <http://dx.doi.org/10.5281/zenodo.244421>, <http://dx.doi.org/10.5281/zenodo.244422>, <http://dx.doi.org/10.5281/zenodo.244423> ;
+    dc:creator "Silva, Fernando A. B.; Vaz-De-Mello, Fernando" ;
+    dc:title "Aphengium Harold" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3955.4.3> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphengium> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3955.4.3>
-    dc:creator "Silva, Fernando A. B.", "Vaz-De-Mello, Fernando" ;
-    dc:date "2015" ;
-    dc:title "A revision of the genus Aphengium Harold, 1868 (Coleoptera: Scarabaeidae: Scarabaeinae: Ateuchini)" ;
     bibo:endPage "520" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "505" ;
     bibo:volume "3955" ;
+    dc:creator "Silva, Fernando A. B.; Vaz-De-Mello, Fernando" ;
+    dc:date "2015" ;
+    dc:title "A revision of the genus Aphengium Harold, 1868 (Coleoptera: Scarabaeidae: Scarabaeinae: Ateuchini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.244419>, <http://dx.doi.org/10.5281/zenodo.244420>, <http://dx.doi.org/10.5281/zenodo.244421>, <http://dx.doi.org/10.5281/zenodo.244422>, <http://dx.doi.org/10.5281/zenodo.244423> ;
     a fabio:JournalArticle .
 
@@ -46,13 +55,33 @@
     fabio:hasRepresentation "https://zenodo.org/record/244423/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Aphengium_curtum_Silva_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Aphengium" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "curtum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62D9J> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphengium_curtum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aphengium_ibateguara_Silva_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Aphengium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ibateguara" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/62D9J> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphengium_ibateguara> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aphengium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Aphengium" ;
@@ -60,46 +89,68 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D8893BB172CC352390F9054FE9FD9C>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3955.4.3> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphengium> ;
-    dc:creator "Silva, Fernando A. B.", "Vaz-De-Mello, Fernando" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.244419>, <http://dx.doi.org/10.5281/zenodo.244420>, <http://dx.doi.org/10.5281/zenodo.244421>, <http://dx.doi.org/10.5281/zenodo.244422>, <http://dx.doi.org/10.5281/zenodo.244423> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphengium_curtum>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Aphengium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "curtum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphengium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphengium_ibateguara>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Aphengium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ibateguara" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphengium> ;
+    a dwcFP:TaxonName .
