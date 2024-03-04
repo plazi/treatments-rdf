@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B37A8794B46E356BFF2CFADBD5A83FFB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.225346>, <http://dx.doi.org/10.5281/zenodo.225350> ;
+    dc:creator "Davies, Kerrie A.; Taylor, Gary S.; Nelson, Leigh A.; Yeates, David; Giblin-Davis, Robin M." ;
+    dc:title "Angophora" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3856.3.2> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Angophora> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3856.3.2>
-    dc:creator "Davies, Kerrie A.", "Giblin-Davis, Robin M.", "Nelson, Leigh A.", "Taylor, Gary S.", "Yeates, David" ;
-    dc:date "2014" ;
-    dc:title "Nematodes from galls on Myrtaceae. VI. Fergusobia from galls on Angophora in Australia, with description of F. colbrani n. sp. and key" ;
     bibo:endPage "348" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "326" ;
     bibo:volume "3856" ;
+    dc:creator "Davies, Kerrie A.; Taylor, Gary S.; Nelson, Leigh A.; Yeates, David; Giblin-Davis, Robin M." ;
+    dc:date "2014" ;
+    dc:title "Nematodes from galls on Myrtaceae. VI. Fergusobia from galls on Angophora in Australia, with description of F. colbrani n. sp. and key" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.225346>, <http://dx.doi.org/10.5281/zenodo.225350> ;
     a fabio:JournalArticle .
 
@@ -31,13 +40,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/225350/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/Fergusobia_pimpamensis_Davies_2013>
+    dwc:class "Secernentea" ;
+    dwc:family "Fergusobiidae" ;
+    dwc:genus "Fergusobia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tylenchida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Davies 2013" ;
+    dwc:species "pimpamensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fergusobia_pimpamensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Angophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:genus "Angophora" ;
@@ -45,46 +61,106 @@
     dwc:order "Myrtales" ;
     dwc:phylum "Magnoliophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Magnoliophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Magnoliophyta" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Myrtaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Myrtaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Magnoliophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Myrtales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Myrtales" ;
     dwc:phylum "Magnoliophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B37A8794B46E356BFF2CFADBD5A83FFB>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3856.3.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Angophora> ;
-    dc:creator "Davies, Kerrie A.", "Giblin-Davis, Robin M.", "Nelson, Leigh A.", "Taylor, Gary S.", "Yeates, David" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.225346>, <http://dx.doi.org/10.5281/zenodo.225350> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliophyta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Magnoliophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Magnoliophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fergusobia_pimpamensis>
+    dwc:class "Secernentea" ;
+    dwc:family "Fergusobiidae" ;
+    dwc:genus "Fergusobia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tylenchida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "species" ;
+    dwc:species "pimpamensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fergusobia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fergusobia>
+    dwc:class "Secernentea" ;
+    dwc:family "Fergusobiidae" ;
+    dwc:genus "Fergusobia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tylenchida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fergusobiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fergusobiidae>
+    dwc:class "Secernentea" ;
+    dwc:family "Fergusobiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tylenchida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tylenchida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tylenchida>
+    dwc:class "Secernentea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tylenchida" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Secernentea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Secernentea>
+    dwc:class "Secernentea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nematoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nematoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nematoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
