@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E987E2FD812867FF3ED280FE1FFE99
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3337172>, <http://dx.doi.org/10.5281/zenodo.3337174> ;
+    dc:creator "Olmi, Massimo; Copeland, Robert S.; Noort, Simon Van" ;
+    dc:title "Gynochelys braunsi Brues 1906" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03E987E2FD812867FF3ED280FE1FFE99.mc.3B283CA9FD802867FDBAD6D7FEE4FF50> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gynochelys_braunsi_Brues_1906> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4630.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4630.1.1>
-    dc:creator "Copeland, Robert S.", "Noort, Simon Van", "Olmi, Massimo" ;
-    dc:date "2019" ;
-    dc:title "Dryinidae of the Afrotropical region (Hymenoptera, Chrysidoidea)" ;
     bibo:endPage "619" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-07-10" ;
     bibo:startPage "1" ;
     bibo:volume "4630" ;
+    dc:creator "Olmi, Massimo; Copeland, Robert S.; Noort, Simon Van" ;
+    dc:date "2019" ;
+    dc:title "Dryinidae of the Afrotropical region (Hymenoptera, Chrysidoidea)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3337172>, <http://dx.doi.org/10.5281/zenodo.3337174> ;
     a fabio:JournalArticle .
 
@@ -32,17 +42,49 @@
     fabio:hasRepresentation "https://zenodo.org/record/3337174/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03E987E2FD812867FF3ED280FE1FFE99.mc.3B283CA9FD802867FDBAD6D7FEE4FF50>
+    dwc:collectionCode "MCPM" ;
+    dwc:locality "Algoa Bay" ;
+    dwc:recordedBy "Hans Brauns" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2275274873" ;
+    trt:httpUri <https://treatment.plazi.org/id/03E987E2FD812867FF3ED280FE1FFE99#3B283CA9FD802867FDBAD6D7FEE4FF50> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Gynochelys_braunsi_Brues_1906>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gynochelys_braunsi> ;
     dwc:class "Insecta" ;
     dwc:genus "Gynochelys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Brues, 1906" ;
+    dwc:scientificNameAuthorship "Brues, 1906", "Brues 1906: 108" ;
     dwc:species "braunsi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gynochelys_braunsi> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gonatopodinae_Richards_1953>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Richards, 1953" ;
+    dwc:subFamily "Gonatopodinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gonatopodinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Gynochelys_braunsi>
+    dwc:class "Insecta" ;
+    dwc:genus "Gynochelys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "braunsi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gynochelys> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Gynochelys>
     dwc:class "Insecta" ;
@@ -51,23 +93,55 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Gynochelys_braunsi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gynochelys> ;
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
     dwc:class "Insecta" ;
-    dwc:genus "Gynochelys" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "braunsi" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E987E2FD812867FF3ED280FE1FFE99>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gynochelys_braunsi_Brues_1906> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4630.1.1> ;
-    dc:creator "Copeland, Robert S.", "Noort, Simon Van", "Olmi, Massimo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3337172>, <http://dx.doi.org/10.5281/zenodo.3337174> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gonatopodinae>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Gonatopodinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dryinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dryinidae>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
