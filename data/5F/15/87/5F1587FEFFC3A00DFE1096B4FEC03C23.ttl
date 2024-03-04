@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:5F1587FEFFC3A00DFE1096B4FEC03C23
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4668762> ;
+    dc:creator "Faubel, A.; Warwick, R. M." ;
+    dc:title "Scilliijortex phytophilus Faubel & Warwick 2005, gen. et sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scilliijortex_phytophilus_Faubel_2005> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222930310001613593> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222930310001613593>
-    dc:creator "Faubel, A.", "Warwick, R. M." ;
-    dc:date "2005" ;
-    dc:title "The marine flora and fauna of the Isles of Scilly: Free-living Plathelminthes (‘ Turbellaria’)" ;
     bibo:endPage "45" ;
     bibo:issue "1" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2010-12-06" ;
     bibo:startPage "1" ;
     bibo:volume "39" ;
+    dc:creator "Faubel, A.; Warwick, R. M." ;
+    dc:date "2005" ;
+    dc:title "The marine flora and fauna of the Isles of Scilly: Free-living Plathelminthes (‘ Turbellaria’)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4668762> ;
     a fabio:JournalArticle .
 
@@ -28,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Scilliijortex_phytophilus_Faubel_2005>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scilliijortex_phytophilus> ;
     dwc:class "Rhabditophora" ;
     dwc:family "Provorticidae" ;
     dwc:genus "Scilliijortex" ;
@@ -38,60 +46,70 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Faubel & Warwick, 2005" ;
     dwc:species "phytophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scilliijortex_phytophilus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Pogaina_annulata_Ax_1970>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:genus "Pogaina" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ax, 1970" ;
+    dwc:species "annulata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pogaina_annulata> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Provorticidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela> ;
+<http://taxon-concept.plazi.org/id/Animalia/Provorticidae_Beklemischev_1927>
     dwc:class "Rhabditophora" ;
     dwc:family "Provorticidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rhabdocoela" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Beklemischev, 1927" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
-    dwc:class "Rhabditophora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
-    dwc:class "Rhabditophora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rhabdocoela" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Scilliijortex>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Provorticinae_Meixner_1926>
     dwc:class "Rhabditophora" ;
     dwc:family "Provorticidae" ;
-    dwc:genus "Scilliijortex" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rhabdocoela" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Meixner, 1926" ;
+    dwc:subFamily "Provorticinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Provorticinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Kirgisellinae_Luther_1962>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Luther, 1962" ;
+    dwc:subFamily "Kirgisellinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Kirgisellinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Haplovejdovskyinae_Luther_1962>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Luther, 1962" ;
+    dwc:subFamily "Haplovejdovskyinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Haplovejdovskyinae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Scilliijortex_phytophilus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scilliijortex> ;
     dwc:class "Rhabditophora" ;
     dwc:family "Provorticidae" ;
     dwc:genus "Scilliijortex" ;
@@ -100,12 +118,111 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "phytophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scilliijortex> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5F1587FEFFC3A00DFE1096B4FEC03C23>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scilliijortex_phytophilus_Faubel_2005> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222930310001613593> ;
-    dc:creator "Faubel, A.", "Warwick, R. M." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4668762> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Scilliijortex>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:genus "Scilliijortex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Provorticidae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pogaina_annulata>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:genus "Pogaina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "annulata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pogaina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pogaina>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:genus "Pogaina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Provorticinae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Provorticinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Kirgisellinae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Kirgisellinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haplovejdovskyinae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Provorticidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Haplovejdovskyinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Provorticidae> ;
+    a dwcFP:TaxonName .

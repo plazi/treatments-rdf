@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:5F738E5FFF8E45169FFE7D06EA27FCDB
+    dc:creator "Miranda, María José" ;
+    dc:title "Bostryx Troschel 1847" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bostryx_Troschel_1847> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2014.981313> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222933.2014.981313>
-    dc:creator "Miranda, María José" ;
-    dc:date "2014" ;
-    dc:title "Bostryx tortoranus (Doering, 1879) species complex (Gastropoda: Stylommatophora: Bulimulidae), a review of taxonomy and distribution of endemic species from Argentina" ;
     bibo:endPage "1022" ;
     bibo:issue "17 - 18" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2015-01-06" ;
     bibo:startPage "995" ;
     bibo:volume "49" ;
+    dc:creator "Miranda, María José" ;
+    dc:date "2014" ;
+    dc:title "Bostryx tortoranus (Doering, 1879) species complex (Gastropoda: Stylommatophora: Bulimulidae), a review of taxonomy and distribution of endemic species from Argentina" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Bostryx_Troschel_1847>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bostryx> ;
-    dwc:ID-CoL "7NTM2" ;
     dwc:class "Gastropoda" ;
     dwc:family "Bulimulidae" ;
     dwc:genus "Bostryx" ;
@@ -32,15 +38,25 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Troschel, 1847" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NTM2> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bostryx> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Bulimulus_solutus_Troschel_1847>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bulimulidae" ;
+    dwc:genus "Bulimulus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Troschel, 1847" ;
+    dwc:species "solutus" ;
+    dwc:subGenus "Bostryx" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bulimulus_solutus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Bostryx>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bulimulidae> ;
     dwc:class "Gastropoda" ;
     dwc:family "Bulimulidae" ;
     dwc:genus "Bostryx" ;
@@ -48,45 +64,80 @@
     dwc:order "Stylommatophora" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bulimulidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Bulimulidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> ;
     dwc:class "Gastropoda" ;
     dwc:family "Bulimulidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Stylommatophora" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Stylommatophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Stylommatophora" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5F738E5FFF8E45169FFE7D06EA27FCDB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bostryx_Troschel_1847> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2014.981313> ;
-    dc:creator "Miranda, María José" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bulimulus_solutus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bulimulidae" ;
+    dwc:genus "Bulimulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "solutus" ;
+    dwc:subGenus "Bostryx" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bulimulus_Bostryx> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bulimulus_Bostryx>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bulimulidae" ;
+    dwc:genus "Bulimulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Bostryx" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bulimulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bulimulus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Bulimulidae" ;
+    dwc:genus "Bulimulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bulimulidae> ;
+    a dwcFP:TaxonName .
