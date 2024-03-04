@@ -1,18 +1,25 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:0392DE4AFC04FFFBFCA20BA2FCF2A8A8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7177936>, <http://dx.doi.org/10.5281/zenodo.7177934> ;
+    dc:creator "Billingham, Zacariah D.; Theischinger, Gunther" ;
+    dc:title "Molophilus (Molophilus) sinuostylus Billingham & Theischinger 2022, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Molophilus_sinuostylus_Billingham_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.3853/j.2201-4349.74.2022.1775> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3853/j.2201-4349.74.2022.1775>
-    dc:creator "Billingham, Zacariah D.", "Theischinger, Gunther" ;
-    dc:date "2022" ;
-    dc:title "New and Poorly Known Species of Crane Flies (Diptera: Limoniidae) from New South Wales, Australia" ;
     bibo:endPage "40" ;
     bibo:issue "1" ;
     bibo:journal "Records of the Australian Museum" ;
@@ -20,21 +27,23 @@
     bibo:series "Rec. Aust. Mus." ;
     bibo:startPage "19" ;
     bibo:volume "74" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7177934>, <http://dx.doi.org/10.5281/zenodo.7177936> ;
+    dc:creator "Billingham, Zacariah D.; Theischinger, Gunther" ;
+    dc:date "2022" ;
+    dc:title "New and Poorly Known Species of Crane Flies (Diptera: Limoniidae) from New South Wales, Australia" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7177936>, <http://dx.doi.org/10.5281/zenodo.7177934> ;
     a fabio:JournalArticle .
-
-<http://dx.doi.org/10.5281/zenodo.7177934>
-    dc:description "Figure 9. Molophilus (Molophilus) opulus, female, ovipositor, lateral." ;
-    fabio:hasRepresentation "https://zenodo.org/record/7177934/files/figure.png" ;
-    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.7177936>
     dc:description "Figures 10–11. Molophilus (Molophilus) sinuostylus sp. nov., male. (10) head colouration, dorsal; (11) hypopygium, ventral view." ;
     fabio:hasRepresentation "https://zenodo.org/record/7177936/files/figure.png" ;
     a fabio:Figure .
 
+<http://dx.doi.org/10.5281/zenodo.7177934>
+    dc:description "Figure 9. Molophilus (Molophilus) opulus, female, ovipositor, lateral." ;
+    fabio:hasRepresentation "https://zenodo.org/record/7177934/files/figure.png" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Molophilus_sinuostylus_Billingham_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_sinuostylus> ;
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Molophilus" ;
@@ -45,60 +54,136 @@
     dwc:scientificNameAuthorship "Billingham & Theischinger, 2022" ;
     dwc:species "sinuostylus" ;
     dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_sinuostylus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Limoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Limoniidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Molophilus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limoniidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_opulus_Alexander_1929>
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Molophilus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alexander, 1929" ;
+    dwc:species "opulus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_opulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_vividus_Alexander_1931>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alexander, 1931" ;
+    dwc:species "vividus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_vividus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_mjobergi_Alexander_1927>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alexander, 1927" ;
+    dwc:species "mjobergi" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_mjobergi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_mediolobatus_Billingham_2019>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Billingham & Theischinger, 2019" ;
+    dwc:species "mediolobatus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_mediolobatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_difficilis_Alexander_1927>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alexander, 1927" ;
+    dwc:species "difficilis" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_difficilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_exsertus_Alexander_1927>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alexander, 1927" ;
+    dwc:species "exsertus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_exsertus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_spiculistylatus_Alexander_1930>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Alexander, 1930" ;
+    dwc:species "spiculistylatus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_spiculistylatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_insertus_Theischinger_1992>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Theischinger, 1992" ;
+    dwc:species "insertus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_insertus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Molophilus_breeae_Billingham_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Billingham & Theischinger, 2018" ;
+    dwc:species "breeae" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Molophilus_breeae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Molophilus_sinuostylus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus> ;
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Molophilus" ;
@@ -107,12 +192,185 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "sinuostylus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0392DE4AFC04FFFBFCA20BA2FCF2A8A8>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Molophilus_sinuostylus_Billingham_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.3853/j.2201-4349.74.2022.1775> ;
-    dc:creator "Billingham, Zacariah D.", "Theischinger, Gunther" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7177934>, <http://dx.doi.org/10.5281/zenodo.7177936> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Molophilus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limoniidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Limoniidae>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_opulus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "opulus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_vividus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vividus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_mjobergi>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mjobergi" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_mediolobatus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mediolobatus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_difficilis>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "difficilis" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_exsertus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "exsertus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_spiculistylatus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "spiculistylatus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_insertus>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "insertus" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Molophilus_breeae>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Molophilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "breeae" ;
+    dwc:subGenus "Molophilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Molophilus_Molophilus> ;
+    a dwcFP:TaxonName .
