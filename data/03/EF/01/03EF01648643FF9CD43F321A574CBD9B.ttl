@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03EF01648643FF9CD43F321A574CBD9B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5394891> ;
+    dc:creator "Mantilleri, Antoine" ;
+    dc:title "Cerobates (Ionthocerus) pasteuri" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03EF01648643FF9CD43F321A574CBD9B.mc.3B2EBA2F8643FF9ED566326254C3BB15> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cerobates_pasteuri_Senna_1898> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Jonthocerus_pasteuri_Senna_1898> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5394883> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5394883>
-    dc:creator "Mantilleri, Antoine" ;
-    dc:date "2005" ;
-    dc:title "Révision (Insecta, du genre Cerobates Schoenherr, 1840 Coleoptera, Brentidae)" ;
     bibo:endPage "635" ;
     bibo:issue "3" ;
     bibo:journal "Zoosystema" ;
     bibo:startPage "601" ;
     bibo:volume "27" ;
+    dc:creator "Mantilleri, Antoine" ;
+    dc:date "2005" ;
+    dc:title "Révision (Insecta, du genre Cerobates Schoenherr, 1840 Coleoptera, Brentidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5394891> ;
     a fabio:JournalArticle .
 
@@ -26,9 +37,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/5394891/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03EF01648643FF9CD43F321A574CBD9B.mc.3B2EBA2F8643FF9ED566326254C3BB15>
+    dwc:collectionCode "MZUF" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03EF01648643FF9CD43F321A574CBD9B#3B2EBA2F8643FF9ED566326254C3BB15> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Cerobates_pasteuri_Senna_1898>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerobates_pasteuri> ;
-    dwc:ID-CoL "SZQW" ;
     dwc:class "Insecta" ;
     dwc:family "Brentidae" ;
     dwc:genus "Cerobates" ;
@@ -39,10 +54,11 @@
     dwc:scientificNameAuthorship "(Senna, 1898)" ;
     dwc:species "pasteuri" ;
     dwc:subGenus "Ionthocerus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/SZQW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerobates_pasteuri> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Jonthocerus_pasteuri_Senna_1898>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Jonthocerus_pasteuri> ;
     dwc:class "Insecta" ;
     dwc:family "Brentidae" ;
     dwc:genus "Jonthocerus" ;
@@ -50,45 +66,55 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Senna, 1898 c: 55" ;
+    dwc:scientificNameAuthorship "Senna, 1898 c: 55", "Senna, 1898", "(Senna, 1898)" ;
     dwc:species "pasteuri" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Jonthocerus_pasteuri> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Brentidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Brentidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerobates>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brentidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cerobates_maai_Damoiseau_1987>
     dwc:class "Insecta" ;
     dwc:family "Brentidae" ;
     dwc:genus "Cerobates" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Damoiseau, 1987" ;
+    dwc:species "maai" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerobates_maai> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cerobates_grouvellei_Senna_1893>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Senna, 1893" ;
+    dwc:species "grouvellei" ;
+    dwc:subGenus "Cerobates" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerobates_grouvellei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cerobates_zanzibaricus_Senna_1898>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Senna, 1898" ;
+    dwc:species "zanzibaricus" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cerobates_zanzibaricus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cerobates_pasteuri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates> ;
     dwc:class "Insecta" ;
     dwc:family "Brentidae" ;
     dwc:genus "Cerobates" ;
@@ -97,30 +123,155 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pasteuri" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates_Ionthocerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerobates_Ionthocerus>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerobates>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brentidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brentidae>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03EF01648643FF9CD43F321A574CBD9B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cerobates_pasteuri_Senna_1898> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Jonthocerus_pasteuri_Senna_1898> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5394883> ;
-    dc:creator "Mantilleri, Antoine" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5394891> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Jonthocerus_pasteuri>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Jonthocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pasteuri" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Jonthocerus>, <http://taxon-name.plazi.org/id/Animalia/Jonthocerus_Ionthocerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Jonthocerus>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Jonthocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brentidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Jonthocerus_Ionthocerus>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Jonthocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Jonthocerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerobates_maai>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "maai" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates_Ionthocerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerobates_grouvellei>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grouvellei" ;
+    dwc:subGenus "Cerobates" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates_Cerobates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerobates_Cerobates>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Cerobates" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerobates_zanzibaricus>
+    dwc:class "Insecta" ;
+    dwc:family "Brentidae" ;
+    dwc:genus "Cerobates" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "zanzibaricus" ;
+    dwc:subGenus "Ionthocerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerobates_Ionthocerus> ;
+    a dwcFP:TaxonName .
