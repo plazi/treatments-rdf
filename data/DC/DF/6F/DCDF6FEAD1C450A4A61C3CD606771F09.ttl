@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:DCDF6FEAD1C450A4A61C3CD606771F09
+    cito:cites <http://dx.doi.org/10.3897/phytokeys.225.99321.figure1>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure2>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure3>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure4> ;
+    dc:creator "Rankin Rodriguez, Rosa Gloria; Gonzalez Gutierrez, Pedro Alejandro; Greuter, Werner" ;
+    dc:title "Harpalyce marianensis R. Rankin, P. A. Gonzalez & Greuter 2023, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Harpalyce_marianensis_Rankin_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.225.99321> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.225.99321>
-    dc:creator "Gonzalez Gutierrez, Pedro Alejandro", "Greuter, Werner", "Rankin Rodriguez, Rosa Gloria" ;
-    dc:date "2023" ;
-    dc:title "A note on the type of Harpalyce (Fabaceae, Brongniartieae), with description of two new local endemic species from Cuba" ;
     bibo:endPage "97" ;
     bibo:journal "PhytoKeys" ;
     bibo:pubDate "2023-04-24" ;
     bibo:startPage "83" ;
     bibo:volume "225" ;
+    dc:creator "Rankin Rodriguez, Rosa Gloria; Gonzalez Gutierrez, Pedro Alejandro; Greuter, Werner" ;
+    dc:date "2023" ;
+    dc:title "A note on the type of Harpalyce (Fabaceae, Brongniartieae), with description of two new local endemic species from Cuba" ;
     fabio:hasPart <http://dx.doi.org/10.3897/phytokeys.225.99321.figure1>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure2>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure3>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure4> ;
     a fabio:JournalArticle .
 
@@ -42,85 +52,87 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Plantae/Harpalyce_marianensis_Rankin_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Harpalyce_marianensis> ;
     dwc:LSID "DCDF6FEA-D1C4-50A4-A61C-3CD606771F09" ;
     dwc:class "Magnoliopsida" ;
-    dwc:family "Fabaceae" ;
+    dwc:family "Fabaceae", "Leguminosae" ;
     dwc:genus "Harpalyce" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Fabales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "R. Rankin, P. A. González & Greuter" ;
+    dwc:scientificNameAuthorship "R. Rankin, P. A. González & Greuter", "R. Rankin, P. A. Gonzalez & Greuter, 2023" ;
     dwc:species "marianensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Harpalyce_marianensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
+<http://taxon-name.plazi.org/id/Plantae/Harpalyce_marianensis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae", "Leguminosae" ;
+    dwc:genus "Harpalyce" ;
     dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "marianensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Harpalyce> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Harpalyce>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae", "Leguminosae" ;
+    dwc:genus "Harpalyce" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabaceae>, <http://taxon-name.plazi.org/id/Plantae/Leguminosae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Fabaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Fabaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Fabales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Fabales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Fabales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Harpalyce>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Fabaceae" ;
-    dwc:genus "Harpalyce" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Fabales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Harpalyce_marianensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Harpalyce> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Fabaceae" ;
-    dwc:genus "Harpalyce" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Fabales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:species "marianensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DCDF6FEAD1C450A4A61C3CD606771F09>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Harpalyce_marianensis_Rankin_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.225.99321> ;
-    dc:creator "Gonzalez Gutierrez, Pedro Alejandro", "Greuter, Werner", "Rankin Rodriguez, Rosa Gloria" ;
-    cito:cites <http://dx.doi.org/10.3897/phytokeys.225.99321.figure1>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure2>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure3>, <http://dx.doi.org/10.3897/phytokeys.225.99321.figure4> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Leguminosae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Leguminosae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
+    a dwcFP:TaxonName .
