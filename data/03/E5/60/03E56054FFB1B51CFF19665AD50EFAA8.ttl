@@ -1,28 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E56054FFB1B51CFF19665AD50EFAA8
+    dc:creator "Hennemann, Frank H.; Conle, Oskar V.; Zhang, Weiwei" ;
+    dc:title "Ramulus chongxinense" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03E56054FFB1B51CFF19665AD50EFAA8.mc.3B24DB1FFFB1B51CFF48663AD3F0FBE0> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ramulus_chongxinense_Chen_1991> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.180817> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.180817>
-    dc:creator "Conle, Oskar V.", "Hennemann, Frank H.", "Zhang, Weiwei" ;
-    dc:date "2008" ;
-    dc:title "Figures 12 – 17. Cnipsomorpha Erinacea N. Gen. N In Descriptions Of A New Genus And Three New Species Of Phasmatodea From Southwest China (Insecta: Phasmatodea)" ;
     bibo:endPage "77" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2008-03-31" ;
     bibo:startPage "1" ;
     bibo:volume "1735" ;
+    dc:creator "Hennemann, Frank H.; Conle, Oskar V.; Zhang, Weiwei" ;
+    dc:date "2008" ;
+    dc:title "Figures 12 – 17. Cnipsomorpha Erinacea N. Gen. N In Descriptions Of A New Genus And Three New Species Of Phasmatodea From Southwest China (Insecta: Phasmatodea)" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03E56054FFB1B51CFF19665AD50EFAA8.mc.3B24DB1FFFB1B51CFF48663AD3F0FBE0>
+    dwc:locality "Huating County" ;
+    trt:httpUri <https://treatment.plazi.org/id/03E56054FFB1B51CFF19665AD50EFAA8#3B24DB1FFFB1B51CFF48663AD3F0FBE0> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Ramulus_chongxinense_Chen_1991>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ramulus_chongxinense> ;
-    dwc:ID-CoL "4RD82" ;
     dwc:class "Insecta" ;
     dwc:family "Phasmatidae" ;
     dwc:genus "Ramulus" ;
@@ -32,60 +44,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Chen & He, 1991)" ;
     dwc:species "chongxinense" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4RD82> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ramulus_chongxinense> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phasmatidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phasmida> ;
-    dwc:class "Insecta" ;
-    dwc:family "Phasmatidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Phasmida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phasmida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Phasmida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ramulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phasmatidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Phasmatidae" ;
-    dwc:genus "Ramulus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Phasmida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Carpinus_cordata_Blume_1851>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:genus "Carpinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Blume, 1851" ;
+    dwc:species "cordata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Carpinus_cordata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Ramulus_chongxinense>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ramulus> ;
     dwc:class "Insecta" ;
     dwc:family "Phasmatidae" ;
     dwc:genus "Ramulus" ;
@@ -94,11 +70,117 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "chongxinense" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ramulus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E56054FFB1B51CFF19665AD50EFAA8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ramulus_chongxinense_Chen_1991> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.180817> ;
-    dc:creator "Conle, Oskar V.", "Hennemann, Frank H.", "Zhang, Weiwei" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Ramulus>
+    dwc:class "Insecta" ;
+    dwc:family "Phasmatidae" ;
+    dwc:genus "Ramulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Phasmida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phasmatidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Phasmatidae>
+    dwc:class "Insecta" ;
+    dwc:family "Phasmatidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Phasmida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phasmida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phasmida>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Phasmida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Carpinus_cordata>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:genus "Carpinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "cordata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Carpinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Carpinus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:genus "Carpinus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Betulaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Betulaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Betulaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
