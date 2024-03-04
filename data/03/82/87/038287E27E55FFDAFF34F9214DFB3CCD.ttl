@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038287E27E55FFDAFF34F9214DFB3CCD
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4634565> ;
+    dc:creator "Willems, Wim R.; Artois, Tom J.; Vermin, Wouter A.; Schockaert, Ernest R." ;
+    dc:title "Trigonostomum messoplanoides ARTOIS ET AL. 2000" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/038287E27E55FFDAFF34F9214DFB3CCD.mc.3B433CA97E55FFDAFBE8FEBF4B2C3F39> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trigonostomum_messoplanoides_Artois_2000> ;
+    trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2004.00124.x> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonostomum_messoplanoides> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1111/j.1096-3642.2004.00124.x>
-    dc:creator "Artois, Tom J.", "Schockaert, Ernest R.", "Vermin, Wouter A.", "Willems, Wim R." ;
-    dc:date "2004" ;
-    dc:title "Revision of Trigonostomum Schmidt, 1852 (Platyhelminthes, Typhloplanoida, Trigonostomidae) with the description of seven new species" ;
     bibo:endPage "296" ;
     bibo:issue "2" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
     bibo:pubDate "2004-06-30" ;
     bibo:startPage "271" ;
     bibo:volume "141" ;
+    dc:creator "Willems, Wim R.; Artois, Tom J.; Vermin, Wouter A.; Schockaert, Ernest R." ;
+    dc:date "2004" ;
+    dc:title "Revision of Trigonostomum Schmidt, 1852 (Platyhelminthes, Typhloplanoida, Trigonostomidae) with the description of seven new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4634565> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/4634565/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/038287E27E55FFDAFF34F9214DFB3CCD.mc.3B433CA97E55FFDAFBE8FEBF4B2C3F39>
+    dwc:collectionCode "LUC" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3325148355" ;
+    trt:httpUri <https://treatment.plazi.org/id/038287E27E55FFDAFF34F9214DFB3CCD#3B433CA97E55FFDAFBE8FEBF4B2C3F39> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Trigonostomum_messoplanoides_Artois_2000>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonostomum_messoplanoides> ;
-    dwc:ID-CoL "7CTQY" ;
     dwc:class "Rhabditophora" ;
     dwc:family "Trigonostomidae" ;
     dwc:genus "Trigonostomum" ;
@@ -39,60 +55,75 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Artois et al., 2000: 104 - 105" ;
     dwc:species "messoplanoides" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7CTQY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonostomum_messoplanoides> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
-    dwc:class "Rhabditophora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
-    dwc:class "Rhabditophora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rhabdocoela" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trigonostomidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela> ;
-    dwc:class "Rhabditophora" ;
+<http://taxon-concept.plazi.org/id/Animalia/Messoplana_Artois_2000>
+    dwc:class "Trepaxonemata" ;
     dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Rhabdocoela" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trigonostomum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonostomidae> ;
-    dwc:class "Rhabditophora" ;
-    dwc:family "Trigonostomidae" ;
-    dwc:genus "Trigonostomum" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rhabdocoela" ;
+    dwc:order "Neoophora" ;
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "(Artois et al., 2000)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Messoplana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Messoplana_elegans_Luther_1948>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Luther, 1948) Den Hartog, 1966" ;
+    dwc:species "elegans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Messoplana_elegans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Messoplana_helgolandica_Ax_1971>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ax, 1971" ;
+    dwc:species "helgolandica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Messoplana_helgolandica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Messoplana_pacifica_Karling_1986>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Karling, 1986" ;
+    dwc:species "pacifica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Messoplana_pacifica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Messoplana_rugata_Ehlers_1974>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ehlers, 1974" ;
+    dwc:species "rugata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Messoplana_rugata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Trigonostomum_messoplanoides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonostomum> ;
     dwc:class "Rhabditophora" ;
     dwc:family "Trigonostomidae" ;
     dwc:genus "Trigonostomum" ;
@@ -101,13 +132,131 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "messoplanoides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonostomum> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038287E27E55FFDAFF34F9214DFB3CCD>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trigonostomum_messoplanoides_Artois_2000> ;
-    trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2004.00124.x> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Trigonostomum_messoplanoides> ;
-    dc:creator "Artois, Tom J.", "Schockaert, Ernest R.", "Vermin, Wouter A.", "Willems, Wim R." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4634565> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trigonostomum>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Trigonostomum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonostomidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Trigonostomidae>
+    dwc:class "Rhabditophora", "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela", "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>, <http://taxon-name.plazi.org/id/Animalia/Neoophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Messoplana>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trigonostomidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoophora>
+    dwc:class "Trepaxonemata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trepaxonemata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trepaxonemata>
+    dwc:class "Trepaxonemata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Messoplana_elegans>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Messoplana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Messoplana_helgolandica>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "helgolandica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Messoplana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Messoplana_pacifica>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "pacifica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Messoplana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Messoplana_rugata>
+    dwc:class "Trepaxonemata" ;
+    dwc:family "Trigonostomidae" ;
+    dwc:genus "Messoplana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neoophora" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "rugata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Messoplana> ;
+    a dwcFP:TaxonName .
