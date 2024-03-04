@@ -1,28 +1,50 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DE8784FFC5105129B0FD8EFC191FAA
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Theischingerus_spiralifer_Satchell_1953> ;
+    dc:creator "Wagner, Rüdiger" ;
+    dc:title "Theischingerus Wagner 2018, gen. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Theischingerus_Wagner_2018> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Eutelmatoscopus_Satchell_1953>, <http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_To_1904>, <http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_Wagner_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4457.2.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4457.2.4>
-    dc:creator "Wagner, Rüdiger" ;
-    dc:date "2018" ;
-    dc:title "Remarkable new Australian mothflies (Diptera, Psychodidae)" ;
     bibo:endPage "295" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-08-08" ;
     bibo:startPage "285" ;
     bibo:volume "4457" ;
+    dc:creator "Wagner, Rüdiger" ;
+    dc:date "2018" ;
+    dc:title "Remarkable new Australian mothflies (Diptera, Psychodidae)" ;
     a fabio:JournalArticle .
 
+<http://taxon-concept.plazi.org/id/Animalia/Theischingerus_Wagner_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Theischingerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Wagner, 2018" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/89RLX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theischingerus> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Eutelmatoscopus_Satchell_1953>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eutelmatoscopus> ;
     dwc:class "Insecta" ;
     dwc:genus "Eutelmatoscopus" ;
     dwc:kingdom "Animalia" ;
@@ -30,11 +52,23 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Satchell, 1953" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eutelmatoscopus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Theischingerus_spiralifer_Satchell_1953>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Theischingerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Satchell, 1953" ;
+    dwc:species "spiralifer" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theischingerus_spiralifer> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_To_1904>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telmatoscopus> ;
-    dwc:ID-CoL "7TJK" ;
     dwc:class "Insecta" ;
     dwc:family "Psychodidae" ;
     dwc:genus "Telmatoscopus" ;
@@ -43,11 +77,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Eaton 1904" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/89RLX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telmatoscopus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_Wagner_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telmatoscopus> ;
-    dwc:ID-CoL "7TJK" ;
     dwc:class "Insecta" ;
     dwc:family "Psychodidae" ;
     dwc:genus "Telmatoscopus" ;
@@ -57,23 +91,24 @@
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Wagner, 2018" ;
     dwc:sensu "stricto" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/89RLX> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telmatoscopus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Theischingerus_Wagner_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theischingerus> ;
-    dwc:ID-CoL "89RLX" ;
+<http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_aberrans_Tonnoir_1953>
     dwc:class "Insecta" ;
     dwc:family "Psychodidae" ;
-    dwc:genus "Theischingerus" ;
+    dwc:genus "Telmatoscopus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Wagner, 2018" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tonnoir" ;
+    dwc:species "aberrans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Telmatoscopus_aberrans> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Theischingerus_spiralifer_Satchell_1953>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theischingerus_spiralifer> ;
+<http://taxon-concept.plazi.org/id/Animalia/Theischingerus_pruinosus_Duckhouse_1966>
     dwc:class "Insecta" ;
     dwc:family "Psychodidae" ;
     dwc:genus "Theischingerus" ;
@@ -81,29 +116,80 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Satchell, 1953" ;
-    dwc:species "spiralifer" ;
+    dwc:scientificNameAuthorship "(Duckhouse, 1966)" ;
+    dwc:species "pruinosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theischingerus_pruinosus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/aberrans_Tonnoir_1953>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/nivosus_Duckhouse_1966>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Theischingerus_imbricatus_Wagner_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Theischingerus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wagner, 2018" ;
+    dwc:species "imbricatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theischingerus_imbricatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Theischingerus>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Theischingerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psychodidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Psychodidae>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Eutelmatoscopus>
@@ -113,50 +199,10 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Psychodidae>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Psychodidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Telmatoscopus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psychodidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Psychodidae" ;
-    dwc:genus "Telmatoscopus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Theischingerus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psychodidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Psychodidae" ;
-    dwc:genus "Theischingerus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Theischingerus_spiralifer>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Theischingerus> ;
     dwc:class "Insecta" ;
     dwc:family "Psychodidae" ;
     dwc:genus "Theischingerus" ;
@@ -165,13 +211,64 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "spiralifer" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Theischingerus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DE8784FFC5105129B0FD8EFC191FAA>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Theischingerus_Wagner_2018> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Eutelmatoscopus_Satchell_1953>, <http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_To_1904>, <http://taxon-concept.plazi.org/id/Animalia/Telmatoscopus_Wagner_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4457.2.4> ;
-    dc:creator "Wagner, Rüdiger" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Theischingerus_spiralifer_Satchell_1953> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Telmatoscopus>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Telmatoscopus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psychodidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Telmatoscopus_aberrans>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Telmatoscopus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "aberrans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Telmatoscopus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theischingerus_pruinosus>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Theischingerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pruinosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Theischingerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/aberrans>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subSpecies" ;
+    dwc:subSpecies "aberrans" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/nivosus>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subSpecies" ;
+    dwc:subSpecies "nivosus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theischingerus_imbricatus>
+    dwc:class "Insecta" ;
+    dwc:family "Psychodidae" ;
+    dwc:genus "Theischingerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "imbricatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Theischingerus> ;
+    a dwcFP:TaxonName .
