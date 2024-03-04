@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B66BDD2A0835FF8AE0A372B0FD52E72D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5496179> ;
+    dc:creator "Norman, David B" ;
+    dc:title "Scelidosaurus Norman 2020" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scelidosaurus_Norman_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.1093/zoolinnean/zlaa061> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1093/zoolinnean/zlaa061>
-    dc:creator "Norman, David B" ;
-    dc:date "2021" ;
-    dc:title "Scelidosaurus harrisonii (Dinosauria: Ornithischia) from the Early Jurassic of Dorset, England: biology and phylogenetic relationships" ;
     bibo:endPage "86" ;
     bibo:issue "1" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
     bibo:pubDate "2021-01-01" ;
     bibo:startPage "1" ;
     bibo:volume "191" ;
+    dc:creator "Norman, David B" ;
+    dc:date "2021" ;
+    dc:title "Scelidosaurus harrisonii (Dinosauria: Ornithischia) from the Early Jurassic of Dorset, England: biology and phylogenetic relationships" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5496179> ;
     a fabio:JournalArticle .
 
@@ -28,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Scelidosaurus_Norman_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scelidosaurus> ;
     dwc:authority "Norman, 2021" ;
     dwc:authorityName "Norman" ;
     dwc:authorityYear "2021" ;
@@ -39,49 +47,30 @@
     dwc:order "Ornithischia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Norman, 2020" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scelidosaurus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithischia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ornithischia_Seeley_1887>
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Ornithischia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Seeley, 1887" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ornithischia> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Reptilia" ;
+<http://taxon-concept.plazi.org/id/Animalia/Archosauria_Schachner_2013>
+    dwc:class "Archosauria" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Scelidosauridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithischia> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Scelidosauridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Ornithischia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "(Schachner et al., 2013 a)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Archosauria> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Scelidosaurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scelidosauridae> ;
     dwc:class "Reptilia" ;
     dwc:family "Scelidosauridae" ;
     dwc:genus "Scelidosaurus" ;
@@ -89,12 +78,52 @@
     dwc:order "Ornithischia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scelidosauridae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B66BDD2A0835FF8AE0A372B0FD52E72D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scelidosaurus_Norman_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.1093/zoolinnean/zlaa061> ;
-    dc:creator "Norman, David B" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5496179> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Scelidosauridae>
+    dwc:class "Reptilia" ;
+    dwc:family "Scelidosauridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ornithischia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithischia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Ornithischia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Ornithischia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Archosauria>
+    dwc:class "Archosauria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
