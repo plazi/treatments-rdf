@@ -1,22 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B0E1D2FC6C1C54EBAB9C1858C4DF4BC9
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/unipunctator>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.3897/zookeys.919.39642.figures792-794>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures795-807>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures808-812> ;
+    dc:creator "van Achterberg, Cornelis; Shaw, Mark R.; Quicke, Donald L. J." ;
+    dc:title "Aleiodes unipunctator" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_unipunctator_Thunberg_1822> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Rogas_unipunctator>, <http://taxon-name.plazi.org/id/Animalia/Ichneumon_ductor>, <http://taxon-name.plazi.org/id/Animalia/Rhogas_unipunctator_ab.> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ichneumon_unipunctator_Thunberg_1822>, <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_unipunctator_Thunberg_1822>, <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_irregularis_Wesmael_1838> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.919.39642> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.919.39642>
-    dc:creator "Quicke, Donald L. J.", "Shaw, Mark R.", "van Achterberg, Cornelis" ;
-    dc:date "2020" ;
-    dc:title "Revision of the western Palaearctic species of Aleiodes Wesmael (Hymenoptera, Braconidae, Rogadinae). Part 2: Revision of the A. apicalis group" ;
     bibo:endPage "259" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "919" ;
+    dc:creator "van Achterberg, Cornelis; Shaw, Mark R.; Quicke, Donald L. J." ;
+    dc:date "2020" ;
+    dc:title "Revision of the western Palaearctic species of Aleiodes Wesmael (Hymenoptera, Braconidae, Rogadinae). Part 2: Revision of the A. apicalis group" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.919.39642.figures792-794>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures795-807>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures808-812> ;
     a fabio:JournalArticle .
 
@@ -35,21 +47,7 @@
     fabio:hasRepresentation "https://binary.pensoft.net/fig/390164" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Aleiodes_irregularis_Wesmael_1838>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_irregularis> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:genus "Aleiodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Wesmael, 1838" ;
-    dwc:species "irregularis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_unipunctator_Thunberg_1822>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_unipunctator> ;
     dwc:LSID "B0E1D2FC-6C1C-54EB-AB9C-1858C4DF4BC9" ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
@@ -58,12 +56,13 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Thunberg, 1822)" ;
+    dwc:scientificNameAuthorship "(Thunberg, 1822)", "Thunberg, 1822" ;
     dwc:species "unipunctator" ;
+    dwc:subGenus "Neorhogas", "Chelonorhogas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_unipunctator> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ichneumon_unipunctator_Thunberg_1822>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ichneumon_unipunctator> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Ichneumon" ;
@@ -73,26 +72,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Thunberg, 1822" ;
     dwc:species "unipunctator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ichneumon_unipunctator> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aleiodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:genus "Aleiodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aleiodes_irregularis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Aleiodes_irregularis_Wesmael_1838>
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Aleiodes" ;
@@ -100,11 +83,70 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wesmael, 1838" ;
     dwc:species "irregularis" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_irregularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apamea_crenata_Hufnagel_1767>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Apamea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hufnagel, 1767" ;
+    dwc:species "crenata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apamea_crenata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apamea_sordens_Hufnagel_1767>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Apamea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hufnagel, 1767" ;
+    dwc:species "sordens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apamea_sordens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apamea_Ochsenheimer_1816>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Apamea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ochsenheimer, 1816" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apamea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Poaceae_Ochsenheimer_1816>
+    dwc:family "Poaceae" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Ochsenheimer, 1816" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Poaceae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aleiodes_ductor_Thunberg_1822>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thunberg, 1822" ;
+    dwc:species "ductor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aleiodes_ductor> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Aleiodes_unipunctator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Aleiodes" ;
@@ -113,48 +155,187 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "unipunctator" ;
+    dwc:subGenus "Neorhogas", "Chelonorhogas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes>, <http://taxon-name.plazi.org/id/Animalia/Aleiodes_Neorhogas>, <http://taxon-name.plazi.org/id/Animalia/Aleiodes_Chelonorhogas> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Aleiodes>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B0E1D2FC6C1C54EBAB9C1858C4DF4BC9>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_unipunctator_Thunberg_1822> ;
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/B0/E1/D2/Ichneumon_ductor>, <file:///app/workdir/tmprdf/data/B0/E1/D2/Rhogas_unipunctator_ab.>, <file:///app/workdir/tmprdf/data/B0/E1/D2/Rogas_unipunctator> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Aleiodes_irregularis_Wesmael_1838>, <http://taxon-concept.plazi.org/id/Animalia/Ichneumon_unipunctator_Thunberg_1822> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.919.39642> ;
-    dc:creator "Quicke, Donald L. J.", "Shaw, Mark R.", "van Achterberg, Cornelis" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.919.39642.figures792-794>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures795-807>, <http://dx.doi.org/10.3897/zookeys.919.39642.figures808-812> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumon_unipunctator>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Ichneumon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "unipunctator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ichneumon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ichneumon>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Ichneumon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aleiodes_Neorhogas>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Neorhogas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aleiodes_Chelonorhogas>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Chelonorhogas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aleiodes_irregularis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "irregularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apamea_crenata>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Apamea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "crenata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apamea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apamea>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Apamea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apamea_sordens>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Apamea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sordens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apamea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Poaceae>
+    # Warning: Could not determine parent name ;
+    dwc:family "Poaceae" ;
+    dwc:rank "family" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aleiodes_ductor>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Aleiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ductor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aleiodes> ;
+    a dwcFP:TaxonName .

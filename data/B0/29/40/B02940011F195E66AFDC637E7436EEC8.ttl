@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:B02940011F195E66AFDC637E7436EEC8
+    cito:cites <http://dx.doi.org/10.3897/zookeys.1100.75987.figure1>, <http://dx.doi.org/10.3897/zookeys.1100.75987.figure2>, <http://dx.doi.org/10.3897/zookeys.1100.75987.figure3> ;
+    dc:creator "Chamorro, Maria Lourdes; Steiner, Warren" ;
+    dc:title "Halorhynchus remii Chamorro & Steiner 2022, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Halorhynchus_remii_Chamorro_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1100.75987> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1100.75987>
-    dc:creator "Chamorro, Maria Lourdes", "Steiner, Warren" ;
-    dc:date "2022" ;
-    dc:title "A new species of Halorhynchus from Madagascar (Coleoptera, Curculionidae, Cossoninae, Onycholipini)" ;
     bibo:endPage "116" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2022-05-16" ;
     bibo:startPage "103" ;
     bibo:volume "1100" ;
+    dc:creator "Chamorro, Maria Lourdes; Steiner, Warren" ;
+    dc:date "2022" ;
+    dc:title "A new species of Halorhynchus from Madagascar (Coleoptera, Curculionidae, Cossoninae, Onycholipini)" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1100.75987.figure1>, <http://dx.doi.org/10.3897/zookeys.1100.75987.figure2>, <http://dx.doi.org/10.3897/zookeys.1100.75987.figure3> ;
     a fabio:JournalArticle .
 
@@ -37,7 +47,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Halorhynchus_remii_Chamorro_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Halorhynchus_remii> ;
     dwc:LSID "http://zoobank.org/6AAFA8DA-C19F-44AF-9E88-1640E1C714AA" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
@@ -46,54 +55,37 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Chamorro & Steiner" ;
+    dwc:scientificNameAuthorship "Chamorro & Steiner", "Chamorro & Steiner, 2022" ;
     dwc:species "remii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Halorhynchus_remii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Halorhynchus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Curculionoidea_T.V.Wollaston_1873>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Halorhynchus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "superFamily" ;
+    dwc:scientificNameAuthorship "T.V.Wollaston, 1873" ;
+    dwc:superFamily "Curculionoidea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Curculionoidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenommatus_T.V.Wollaston_1873>
+    dwc:class "Insecta" ;
+    dwc:family "Dryophthoridae" ;
+    dwc:genus "Stenommatus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "T.V.Wollaston, 1873" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenommatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Halorhynchus_remii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halorhynchus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Halorhynchus" ;
@@ -102,20 +94,89 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "remii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halorhynchus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Halorhynchus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Halorhynchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:superFamily "Curculionoidea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera>, <http://taxon-name.plazi.org/id/Animalia/Curculionoidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B02940011F195E66AFDC637E7436EEC8>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Halorhynchus_remii_Chamorro_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1100.75987> ;
-    dc:creator "Chamorro, Maria Lourdes", "Steiner, Warren" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1100.75987.figure1>, <http://dx.doi.org/10.3897/zookeys.1100.75987.figure2>, <http://dx.doi.org/10.3897/zookeys.1100.75987.figure3> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionoidea>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Halorhynchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus", "superFamily" ;
+    dwc:superFamily "Curculionoidea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera>, <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenommatus>
+    dwc:class "Insecta" ;
+    dwc:family "Dryophthoridae" ;
+    dwc:genus "Stenommatus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dryophthoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dryophthoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Dryophthoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
