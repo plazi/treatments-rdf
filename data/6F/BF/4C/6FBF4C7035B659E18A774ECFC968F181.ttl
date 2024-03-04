@@ -1,39 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6FBF4C7035B659E18A774ECFC968F181
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebiotae>' due to issues with rank ;
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Lebia_Latreille_1802> ;
+    dc:creator "Bousquet, Yves" ;
+    dc:title "Tetragonoderus Dejean 1829" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lebiini_Dejean_1829> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.245.3416> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.245.3416>
-    dc:creator "Bousquet, Yves" ;
-    dc:date "2012" ;
-    dc:title "Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico" ;
     bibo:endPage "1722" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2012-11-28" ;
     bibo:startPage "1" ;
     bibo:volume "245" ;
+    dc:creator "Bousquet, Yves" ;
+    dc:date "2012" ;
+    dc:title "Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lebia_Latreille_1802>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebia> ;
-    dwc:class "Hexapoda" ;
-    dwc:family "Carabidae" ;
-    dwc:genus "Lebia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Latreille, 1802" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Lebiini_Dejean_1829>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebiini> ;
     dwc:LSID "6FBF4C70-35B6-59E1-8A77-4ECFC968F181" ;
     dwc:class "Hexapoda" ;
     dwc:family "Carabidae" ;
@@ -43,49 +40,10 @@
     dwc:rank "tribe" ;
     dwc:scientificNameAuthorship "Bonelli, 1810" ;
     dwc:tribe "Lebiini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebiini> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carabidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Hexapoda" ;
-    dwc:family "Carabidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
-    dwc:class "Hexapoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Hexapoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lebia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lebia_Latreille_1802>
     dwc:class "Hexapoda" ;
     dwc:family "Carabidae" ;
     dwc:genus "Lebia" ;
@@ -93,10 +51,122 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nemotarsina_Bates_1883>
+    dwc:genus "Nemotarsina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Bates, 1883" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nemotarsina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lebiini_Bonelli_1810>
+    dwc:rank "tribe" ;
+    dwc:scientificNameAuthorship "Bonelli, 1810" ;
+    dwc:tribe "Lebiini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebiini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Actenonycina_Bates_1871>
+    dwc:genus "Actenonycina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Bates, 1871" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Actenonycina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Agrina_Kirby_1837>
+    dwc:genus "Agrina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kirby, 1837" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agrina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Apenina_Ball_1983>
+    dwc:genus "Apenina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ball, 1983" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Apenina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Calleidina_Chaudoir_1873>
+    dwc:genus "Calleidina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Chaudoir, 1873" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Calleidina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Celaenephina_Habu_1982>
+    dwc:genus "Celaenephina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Habu, 1982" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Celaenephina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cymindidina_Laporte_1834>
+    dwc:genus "Cymindidina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Laporte, 1834" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cymindidina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Demetriadina_Bates_1886>
+    dwc:genus "Demetriadina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Bates, 1886" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Demetriadina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dromiusina_Bonelli_1810>
+    dwc:genus "Dromiusina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Bonelli, 1810" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dromiusina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gallerucidiina_Chaudoir_1872>
+    dwc:genus "Gallerucidiina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Chaudoir, 1872" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gallerucidiina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lebiina_Bonelli_1810>
+    dwc:genus "Lebiina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Bonelli, 1810" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lebiina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Metallicina_Basilewsky_1984>
+    dwc:genus "Metallicina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Basilewsky, 1984" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metallicina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pericalina_Hope_1838>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Pericalina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Hope, 1838" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pericalina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sugimotoina_Habu_1975>
+    dwc:genus "Sugimotoina" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Habu, 1975" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sugimotoina> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lebiini>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    # Warning: Could not determine parent name ;
     dwc:class "Hexapoda" ;
     dwc:family "Carabidae" ;
     dwc:kingdom "Animalia" ;
@@ -104,12 +174,152 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "tribe" ;
     dwc:tribe "Lebiini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6FBF4C7035B659E18A774ECFC968F181>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lebiini_Dejean_1829> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.245.3416> ;
-    dc:creator "Bousquet, Yves" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Lebia_Latreille_1802> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Carabidae>
+    dwc:class "Hexapoda", "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Hexapoda", "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda>, <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lebia>
+    dwc:class "Hexapoda" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Lebia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nemotarsina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Nemotarsina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actenonycina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Actenonycina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Agrina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Agrina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apenina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Apenina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Calleidina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Calleidina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Celaenephina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Celaenephina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cymindidina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Cymindidina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Demetriadina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Demetriadina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dromiusina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Dromiusina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gallerucidiina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Gallerucidiina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lebiina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Lebiina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Metallicina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Metallicina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pericalina>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Pericalina" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sugimotoina>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Sugimotoina" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
