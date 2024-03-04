@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6159622EFFCD64295BC6F9C546FE7E65
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5169922> ;
+    dc:creator "Swift, Ian" ;
+    dc:title "Corynellus lampyrimorphus Swift 2008, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/6159622EFFCD64295BC6F9C546FE7E65.mc.5998D965FFC364295AC6FC85440B7B25>, <http://tb.plazi.org/GgServer/dwcaRecords/6159622EFFCD64295BC6F9C546FE7E65.mc.5998D965FFC364295BF6FCE5464E7BE5> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corynellus_lampyrimorphus_Swift_2008> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5169918> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5169918>
-    dc:creator "Swift, Ian" ;
-    dc:date "2008" ;
-    dc:title "A new genus and two new species of Pteroplatini Thomson from Central America (Coleoptera: Cerambycidae)" ;
     bibo:endPage "9" ;
     bibo:issue "45" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2008-09-26" ;
     bibo:startPage "1" ;
     bibo:volume "2008" ;
+    dc:creator "Swift, Ian" ;
+    dc:date "2008" ;
+    dc:title "A new genus and two new species of Pteroplatini Thomson from Central America (Coleoptera: Cerambycidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5169922> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,26 @@
     fabio:hasRepresentation "https://zenodo.org/record/5169922/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/6159622EFFCD64295BC6F9C546FE7E65.mc.5998D965FFC364295AC6FC85440B7B25>
+    dwc:collectionCode "INBio, R" ;
+    dwc:eventDate "1990-03" ;
+    dwc:locality "Santa Cecilia" ;
+    dwc:recordedBy "P. Rios & C. Moraga & Blanco" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "700" ;
+    trt:httpUri <https://treatment.plazi.org/id/6159622EFFCD64295BC6F9C546FE7E65#5998D965FFC364295AC6FC85440B7B25> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/6159622EFFCD64295BC6F9C546FE7E65.mc.5998D965FFC364295BF6FCE5464E7BE5>
+    dwc:collectionCode "EMEC" ;
+    dwc:eventDate "1934-02-23" ;
+    dwc:locality "Limon" ;
+    dwc:recordedBy "Sta. Clara Pr." ;
+    dwc:typeStatus "paratype" ;
+    trt:httpUri <https://treatment.plazi.org/id/6159622EFFCD64295BC6F9C546FE7E65#5998D965FFC364295BF6FCE5464E7BE5> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Corynellus_lampyrimorphus_Swift_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_lampyrimorphus> ;
-    dwc:ID-CoL "YQV5" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Corynellus" ;
@@ -37,43 +64,13 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Swift" ;
+    dwc:scientificNameAuthorship "Swift", "Swift, 2008" ;
     dwc:species "lampyrimorphus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/YQV5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_lampyrimorphus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Corynellus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Corynellus_Bates_1884>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Corynellus" ;
@@ -81,10 +78,75 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Bates, 1884" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corynellus_mimulus_Bates_1885>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bates" ;
+    dwc:species "mimulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_mimulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corynellus_undetermined_Swift_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_undetermined> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corynellus_cinnabarinus_Linsley_1979>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chemsak and Linsley (1979)" ;
+    dwc:species "cinnabarinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_cinnabarinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corynellus_ochraceus_It_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bates. It" ;
+    dwc:species "ochraceus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_ochraceus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corynellus_aureus_Linsley_1961>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linsley" ;
+    dwc:species "aureus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corynellus_aureus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Corynellus_lampyrimorphus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Corynellus" ;
@@ -93,20 +155,115 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "lampyrimorphus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corynellus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/6159622EFFCD64295BC6F9C546FE7E65>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corynellus_lampyrimorphus_Swift_2008> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5169918> ;
-    dc:creator "Swift, Ian" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5169922> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corynellus_mimulus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mimulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corynellus_undetermined>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undetermined" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corynellus_cinnabarinus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cinnabarinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corynellus_ochraceus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ochraceus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corynellus_aureus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Corynellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "aureus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corynellus> ;
+    a dwcFP:TaxonName .
