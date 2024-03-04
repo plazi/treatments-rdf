@@ -1,28 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:744987F1FF924437A8EC8DD2FE21FD49
+    dc:creator "Golovatch, Sergei; Mauriès, Jean-Paul; Akkari, Nesrine; Stoev, Pavel; Geoffroy, Jean-Jacques" ;
+    dc:title "Glomeris anisosticta Brandt 1841" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Glomeris_anisosticta_Brandt_1841> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata_genuina> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Glomeris_pustulata_Latreille_1804>, <http://taxon-concept.plazi.org/id/Animalia/Glomeris_pustulata_anisosticta_Brandt_1841> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.3792168> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.3792168>
-    dc:creator "Akkari, Nesrine", "Geoffroy, Jean-Jacques", "Golovatch, Sergei", "Mauriès, Jean-Paul", "Stoev, Pavel" ;
-    dc:date "2009" ;
-    dc:title "The millipede genus Glomeris Latreille, 1802 (Diplopoda, Glomerida, Glomeridae) in North Africa" ;
     bibo:endPage "86" ;
     bibo:issue "12" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2009-06-18" ;
     bibo:startPage "47" ;
     bibo:volume "12" ;
+    dc:creator "Golovatch, Sergei; Mauriès, Jean-Paul; Akkari, Nesrine; Stoev, Pavel; Geoffroy, Jean-Jacques" ;
+    dc:date "2009" ;
+    dc:title "The millipede genus Glomeris Latreille, 1802 (Diplopoda, Glomerida, Glomeridae) in North Africa" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Glomeris_anisosticta_Brandt_1841>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_anisosticta> ;
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
     dwc:genus "Glomeris" ;
@@ -32,10 +41,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Brandt, 1841" ;
     dwc:species "anisosticta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_anisosticta> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Glomeris_pustulata_Latreille_1804>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata> ;
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
     dwc:genus "Glomeris" ;
@@ -43,65 +52,43 @@
     dwc:order "Glomerida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Latr." ;
+    dwc:scientificNameAuthorship "Latr.", "Latreille, 1804" ;
     dwc:species "pustulata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/microstemma_Brandt_1840>
+    # Error: Invalid Rank, Invalid taxon relation ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Glomeris_pustulata_anisosticta_Brandt_1841>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata_anisosticta> ;
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
     dwc:genus "Glomeris" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Glomerida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "Brandt, 1841" ;
+    dwc:rank "variety", "subSpecies" ;
+    dwc:scientificNameAuthorship "Brandt, 1841 a: 284", "Brandt, 1841" ;
     dwc:species "pustulata" ;
     dwc:subSpecies "anisosticta" ;
+    dwc:variety "anisosticta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata_anisosticta> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Diplopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Glomerida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
-    dwc:class "Diplopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Glomerida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Glomeridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomerida> ;
+<http://taxon-name.plazi.org/id/Animalia/Glomeris_anisosticta>
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
+    dwc:genus "Glomeris" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Glomerida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "anisosticta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeris> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Glomeris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeridae> ;
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
     dwc:genus "Glomeris" ;
@@ -109,22 +96,49 @@
     dwc:order "Glomerida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeridae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Glomeris_anisosticta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeris> ;
+<http://taxon-name.plazi.org/id/Animalia/Glomeridae>
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
-    dwc:genus "Glomeris" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Glomerida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "anisosticta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomerida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Glomerida>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Glomerida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeris> ;
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
     dwc:genus "Glomeris" ;
@@ -133,26 +147,25 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pustulata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeris> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/microstemma>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "microstemma" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata_anisosticta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata> ;
     dwc:class "Diplopoda" ;
     dwc:family "Glomeridae" ;
     dwc:genus "Glomeris" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Glomerida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
+    dwc:rank "variety", "subSpecies" ;
     dwc:species "pustulata" ;
     dwc:subSpecies "anisosticta" ;
+    dwc:variety "anisosticta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glomeris_pustulata> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/744987F1FF924437A8EC8DD2FE21FD49>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Glomeris_anisosticta_Brandt_1841> ;
-    trt:citesTaxonName <file:///workspace/rdf/data/74/49/87/Glomeris_pustulata_genuina> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Glomeris_pustulata_Latreille_1804>, <http://taxon-concept.plazi.org/id/Animalia/Glomeris_pustulata_anisosticta_Brandt_1841> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.3792168> ;
-    dc:creator "Akkari, Nesrine", "Geoffroy, Jean-Jacques", "Golovatch, Sergei", "Mauriès, Jean-Paul", "Stoev, Pavel" ;
-    a trt:Treatment .
-
