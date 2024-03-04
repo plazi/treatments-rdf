@@ -1,29 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CE87E0CC2CFFE5FF3DC952FCB88997
+    cito:cites <http://dx.doi.org/10.5281/zenodo.188311>, <http://dx.doi.org/10.5281/zenodo.188312>, <http://dx.doi.org/10.5281/zenodo.188307> ;
+    dc:creator "Kraus, Fred; Allison, Allen" ;
+    dc:title "Cophixalus interruptus Kraus & Allison, 2009, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cophixalus_interruptus_Kraus_2009> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.188300> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.188300>
-    dc:creator "Allison, Allen", "Kraus, Fred" ;
-    dc:date "2009" ;
-    dc:title "New species of Cophixalus (Anura: Microhylidae) from Papua New Guinea" ;
     bibo:endPage "38" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "2128" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.188307>, <http://dx.doi.org/10.5281/zenodo.188311>, <http://dx.doi.org/10.5281/zenodo.188312> ;
+    dc:creator "Kraus, Fred; Allison, Allen" ;
+    dc:date "2009" ;
+    dc:title "New species of Cophixalus (Anura: Microhylidae) from Papua New Guinea" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.188311>, <http://dx.doi.org/10.5281/zenodo.188312>, <http://dx.doi.org/10.5281/zenodo.188307> ;
     a fabio:JournalArticle .
-
-<http://dx.doi.org/10.5281/zenodo.188307>
-    dc:description "FIGURE 7. Map showing known distributions for Cophixalus interruptus (circle), C. kethuk (inverted triangles), C. linnaeus (star), and C. phaeobalius (square). Filled symbols are type localities; open symbols are additional localities, as relevant." ;
-    fabio:hasRepresentation "https://zenodo.org/record/188307/files/figure.png" ;
-    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.188311>
     dc:description "FIGURE 11. (A) Dorsal, and (B) lateral view of holotype of Cophixalus interruptus (BPBM 11523)." ;
@@ -35,9 +39,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/188312/files/figure.png" ;
     a fabio:Figure .
 
+<http://dx.doi.org/10.5281/zenodo.188307>
+    dc:description "FIGURE 7. Map showing known distributions for Cophixalus interruptus (circle), C. kethuk (inverted triangles), C. linnaeus (star), and C. phaeobalius (square). Filled symbols are type localities; open symbols are additional localities, as relevant." ;
+    fabio:hasRepresentation "https://zenodo.org/record/188307/files/figure.png" ;
+    a fabio:Figure .
+
 <http://taxon-concept.plazi.org/id/Animalia/Cophixalus_interruptus_Kraus_2009>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_interruptus> ;
-    dwc:ID-CoL "5ZYP5" ;
     dwc:authority "Kraus, 2009" ;
     dwc:authorityName "Kraus" ;
     dwc:authorityYear "2009" ;
@@ -48,51 +55,109 @@
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kraus, Fred & Allison, Allen, 2009" ;
     dwc:species "interruptus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5ZYP5> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_interruptus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amphibia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Amphibia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anura>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
-    dwc:class "Amphibia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Anura" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cophixalus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microhylidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_melanops_Kraus_2009>
     dwc:class "Amphibia" ;
     dwc:family "Microhylidae" ;
     dwc:genus "Cophixalus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "melanops" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_melanops> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_misimae_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "misimae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_misimae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_melanopos_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "melanopos" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_melanopos> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_kethuk_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "kethuk" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_kethuk> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_linnaeus_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "linnaeus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_linnaeus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_phaeobalius_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "phaeobalius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_phaeobalius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_iovaorum_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "iovaorum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_iovaorum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cophixalus_desticans_Kraus_2009>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "desticans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cophixalus_desticans> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cophixalus_interruptus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
     dwc:class "Amphibia" ;
     dwc:family "Microhylidae" ;
     dwc:genus "Cophixalus" ;
@@ -101,22 +166,151 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "interruptus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microhylidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Microhylidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     dwc:class "Amphibia" ;
     dwc:family "Microhylidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03CE87E0CC2CFFE5FF3DC952FCB88997>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cophixalus_interruptus_Kraus_2009> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.188300> ;
-    dc:creator "Allison, Allen", "Kraus, Fred" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.188307>, <http://dx.doi.org/10.5281/zenodo.188311>, <http://dx.doi.org/10.5281/zenodo.188312> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Anura>
+    dwc:class "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Amphibia>
+    dwc:class "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_melanops>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "melanops" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_misimae>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "misimae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_melanopos>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "melanopos" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_kethuk>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "kethuk" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_linnaeus>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "linnaeus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_phaeobalius>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "phaeobalius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_iovaorum>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "iovaorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cophixalus_desticans>
+    dwc:class "Amphibia" ;
+    dwc:family "Microhylidae" ;
+    dwc:genus "Cophixalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "desticans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cophixalus> ;
+    a dwcFP:TaxonName .
