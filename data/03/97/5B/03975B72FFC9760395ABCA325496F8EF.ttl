@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03975B72FFC9760395ABCA325496F8EF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7887351>, <http://dx.doi.org/10.5281/zenodo.7887375> ;
+    dc:creator "Jiang, Zhuo-Yin; Zhao, Shuang; Mai, Zu-Qi; Jia, Feng-Long; Hendrich, Lars" ;
+    dc:title "Cybister limbatus : SHARP 1882" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cybister_limbatus_Fabricius_1775> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dytiscus_limbatus_Fabricius_1775>, <http://taxon-concept.plazi.org/id/Animalia/Dytiscus_aciculatus_Herbst_1784> ;
+    trt:publishedIn <http://dx.doi.org/10.37520/aemnp.2023.003> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.37520/aemnp.2023.003>
-    dc:creator "Hendrich, Lars", "Jia, Feng-Long", "Jiang, Zhuo-Yin", "Mai, Zu-Qi", "Zhao, Shuang" ;
-    dc:date "2023" ;
-    dc:title "Review of the genus Cybister in China, with description of a new species from Guangdong (Coleoptera: Dytiscidae)" ;
     bibo:endPage "102" ;
     bibo:issue "1" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
     bibo:pubDate "2023-03-12" ;
     bibo:startPage "75" ;
     bibo:volume "63" ;
+    dc:creator "Jiang, Zhuo-Yin; Zhao, Shuang; Mai, Zu-Qi; Jia, Feng-Long; Hendrich, Lars" ;
+    dc:date "2023" ;
+    dc:title "Review of the genus Cybister in China, with description of a new species from Guangdong (Coleoptera: Dytiscidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7887351>, <http://dx.doi.org/10.5281/zenodo.7887375> ;
     a fabio:JournalArticle .
 
@@ -33,8 +43,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cybister_limbatus_Fabricius_1775>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cybister_limbatus> ;
-    dwc:ID-CoL "7SV7L" ;
     dwc:ID-ENA "1233423" ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
@@ -44,25 +52,13 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Fabricius, 1775)" ;
+    dwc:scientificNameAuthorship "(Fabricius, 1775)", ": SHARP (1882: 739)", "Fabricius, 1775" ;
     dwc:species "limbatus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Dytiscus_aciculatus_Herbst_1784>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dytiscus_aciculatus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Dytiscidae" ;
-    dwc:genus "Dytiscus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Herbst, 1784: 123" ;
-    dwc:species "aciculatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7SV7L> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cybister_limbatus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dytiscus_limbatus_Fabricius_1775>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dytiscus_limbatus> ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:genus "Dytiscus" ;
@@ -72,42 +68,62 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fabricius, 1775: 230" ;
     dwc:species "limbatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dytiscus_limbatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dytiscus_aciculatus_Herbst_1784>
     dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Dytiscus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Herbst, 1784: 123" ;
+    dwc:species "aciculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dytiscus_aciculatus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Cybister>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cybister_guerini_Aube_1838>
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:genus "Cybister" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Aube, 1838" ;
+    dwc:species "guerini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cybister_guerini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aedes_aegypti_Linnaeus_1762>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Aedes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Linnaeus, 1762)" ;
+    dwc:species "aegypti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aedes_aegypti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Culex_quinquefasciatus_Say_1823>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Say, 1823" ;
+    dwc:species "quinquefasciatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_quinquefasciatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cybister_limbatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cybister> ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:genus "Cybister" ;
@@ -116,20 +132,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "limbatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cybister> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cybister>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Cybister" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dytiscidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dytiscus_limbatus>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Dytiscus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "limbatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dytiscus>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Dytiscus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dytiscus_aciculatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscus> ;
     dwc:class "Insecta" ;
     dwc:family "Dytiscidae" ;
     dwc:genus "Dytiscus" ;
@@ -138,21 +217,82 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "aciculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dytiscus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Cybister_guerini>
+    dwc:class "Insecta" ;
+    dwc:family "Dytiscidae" ;
+    dwc:genus "Cybister" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "guerini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cybister> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aedes_aegypti>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Aedes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "aegypti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aedes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aedes>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Aedes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culicidae>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03975B72FFC9760395ABCA325496F8EF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cybister_limbatus_Fabricius_1775> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dytiscus_aciculatus_Herbst_1784>, <http://taxon-concept.plazi.org/id/Animalia/Dytiscus_limbatus_Fabricius_1775> ;
-    trt:publishedIn <http://dx.doi.org/10.37520/aemnp.2023.003> ;
-    dc:creator "Hendrich, Lars", "Jia, Feng-Long", "Jiang, Zhuo-Yin", "Mai, Zu-Qi", "Zhao, Shuang" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7887351>, <http://dx.doi.org/10.5281/zenodo.7887375> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Culex_quinquefasciatus>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "quinquefasciatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+    a dwcFP:TaxonName .
