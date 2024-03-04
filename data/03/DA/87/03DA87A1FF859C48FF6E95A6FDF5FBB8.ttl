@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DA87A1FF859C48FF6E95A6FDF5FBB8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4538024> ;
+    dc:creator "Kochhann, Karlos G. D.; Baecker-Fauth, Simone; Fauth, Gerson" ;
+    dc:title "Amphipyndax tylotus Foreman 1978" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_tylotus_Foreman_1978> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_pseudoconulus_Pessagno_1963> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/g2013n1a1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/g2013n1a1>
-    dc:creator "Baecker-Fauth, Simone", "Fauth, Gerson", "Kochhann, Karlos G. D." ;
-    dc:date "2013" ;
-    dc:title "Late Maastrichtian Radiolaria from ODP Leg 165 - Site 999 B, Colombian Basin" ;
     bibo:endPage "20" ;
     bibo:issue "1" ;
     bibo:journal "Geodiversitas" ;
     bibo:pubDate "2013-03-29" ;
     bibo:startPage "5" ;
     bibo:volume "35" ;
+    dc:creator "Kochhann, Karlos G. D.; Baecker-Fauth, Simone; Fauth, Gerson" ;
+    dc:date "2013" ;
+    dc:title "Late Maastrichtian Radiolaria from ODP Leg 165 - Site 999 B, Colombian Basin" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4538024> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/4538024/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_tylotus_Foreman_1978>
+    dwc:class "Polycystina" ;
+    dwc:family "Amphipyndacidae" ;
+    dwc:genus "Amphipyndax" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Nassellaria" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Foreman, 1978", "Foreman, 1978: 745" ;
+    dwc:species "tylotus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax_tylotus> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_pseudoconulus_Pessagno_1963>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax_pseudoconulus> ;
     dwc:class "Polycystina" ;
     dwc:family "Amphipyndacidae" ;
     dwc:genus "Amphipyndax" ;
@@ -38,10 +60,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Pessagno, 1963)" ;
     dwc:species "pseudoconulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax_pseudoconulus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_tylotus_Foreman_1978>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax_tylotus> ;
+<http://taxon-name.plazi.org/id/Chromista/Amphipyndax_tylotus>
     dwc:class "Polycystina" ;
     dwc:family "Amphipyndacidae" ;
     dwc:genus "Amphipyndax" ;
@@ -49,27 +71,11 @@
     dwc:order "Nassellaria" ;
     dwc:phylum "Radiozoa" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Foreman, 1978" ;
     dwc:species "tylotus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Chromista>
-    dwc:kingdom "Chromista" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Amphipyndacidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Nassellaria> ;
-    dwc:class "Polycystina" ;
-    dwc:family "Amphipyndacidae" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Nassellaria" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Amphipyndax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Amphipyndacidae> ;
     dwc:class "Polycystina" ;
     dwc:family "Amphipyndacidae" ;
     dwc:genus "Amphipyndax" ;
@@ -77,10 +83,49 @@
     dwc:order "Nassellaria" ;
     dwc:phylum "Radiozoa" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Amphipyndacidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Amphipyndacidae>
+    dwc:class "Polycystina" ;
+    dwc:family "Amphipyndacidae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Nassellaria" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Nassellaria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Nassellaria>
+    dwc:class "Polycystina" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Nassellaria" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Polycystina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Polycystina>
+    dwc:class "Polycystina" ;
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Radiozoa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Radiozoa>
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Radiozoa" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista>
+    dwc:kingdom "Chromista" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Amphipyndax_pseudoconulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax> ;
     dwc:class "Polycystina" ;
     dwc:family "Amphipyndacidae" ;
     dwc:genus "Amphipyndax" ;
@@ -89,49 +134,5 @@
     dwc:phylum "Radiozoa" ;
     dwc:rank "species" ;
     dwc:species "pseudoconulus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Amphipyndax_tylotus>
     trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Amphipyndax> ;
-    dwc:class "Polycystina" ;
-    dwc:family "Amphipyndacidae" ;
-    dwc:genus "Amphipyndax" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Nassellaria" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "species" ;
-    dwc:species "tylotus" ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Nassellaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Polycystina> ;
-    dwc:class "Polycystina" ;
-    dwc:kingdom "Chromista" ;
-    dwc:order "Nassellaria" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Polycystina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Radiozoa> ;
-    dwc:class "Polycystina" ;
-    dwc:kingdom "Chromista" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Radiozoa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
-    dwc:kingdom "Chromista" ;
-    dwc:phylum "Radiozoa" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03DA87A1FF859C48FF6E95A6FDF5FBB8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_tylotus_Foreman_1978> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Chromista/Amphipyndax_pseudoconulus_Pessagno_1963> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/g2013n1a1> ;
-    dc:creator "Baecker-Fauth, Simone", "Fauth, Gerson", "Kochhann, Karlos G. D." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4538024> ;
-    a trt:Treatment .
-
