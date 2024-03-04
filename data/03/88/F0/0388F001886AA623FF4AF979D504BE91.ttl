@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0388F001886AA623FF4AF979D504BE91
+    cito:cites <http://dx.doi.org/10.5281/zenodo.229227> ;
+    dc:creator "Gao, Min; Dai, Wu; Zhang, Yalin" ;
+    dc:title "Decursusnirvana excelsa Melichar, n. comb." ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tettigonia_excelsa_Melichar_1902>, <http://taxon-concept.plazi.org/id/Animalia/Chudania_nigridorsalis_Kuoh_1992> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3841.4.2> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana_excelsa> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3841.4.2>
-    dc:creator "Dai, Wu", "Gao, Min", "Zhang, Yalin" ;
-    dc:date "2014" ;
-    dc:title "Two new Nirvanini genera from China (Hemiptera: Cicadellidae)" ;
     bibo:endPage "500" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "491" ;
     bibo:volume "3841" ;
+    dc:creator "Gao, Min; Dai, Wu; Zhang, Yalin" ;
+    dc:date "2014" ;
+    dc:title "Two new Nirvanini genera from China (Hemiptera: Cicadellidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.229227> ;
     a fabio:JournalArticle .
 
@@ -26,23 +36,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/229227/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chudania_nigridorsalis_Kuoh_1992>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chudania_nigridorsalis> ;
-    dwc:ID-CoL "8JMX5" ;
-    dwc:class "Insecta" ;
-    dwc:family "Cicadellidae" ;
-    dwc:genus "Chudania" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kuoh 1992: 294" ;
-    dwc:species "nigridorsalis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Tettigonia_excelsa_Melichar_1902>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tettigonia_excelsa> ;
-    dwc:ID-CoL "8JZMX" ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Tettigonia" ;
@@ -52,33 +46,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Melichar 1902: 113" ;
     dwc:species "excelsa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8JRM3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tettigonia_excelsa> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chudania>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cicadellidae" ;
-    dwc:genus "Chudania" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chudania_nigridorsalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chudania> ;
+<http://taxon-concept.plazi.org/id/Animalia/Chudania_nigridorsalis_Kuoh_1992>
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Chudania" ;
@@ -86,21 +58,37 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuoh 1992: 294" ;
     dwc:species "nigridorsalis" ;
-    a dwcFP:TaxonName .
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8JRM3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chudania_nigridorsalis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Decursusnirvana_fasciiformis_Gao_2014>
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
+    dwc:genus "Decursusnirvana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "fasciiformis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana_fasciiformis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Decursusnirvana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Decursus_fasciiformis_Gao_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Decursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fasciiformis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Decursus_fasciiformis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Decursusnirvana_Gao_2014>
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Decursusnirvana" ;
@@ -108,10 +96,10 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana_excelsa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana> ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Decursusnirvana" ;
@@ -120,30 +108,136 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "excelsa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decursusnirvana>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Decursusnirvana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0388F001886AA623FF4AF979D504BE91>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Chudania_nigridorsalis_Kuoh_1992>, <http://taxon-concept.plazi.org/id/Animalia/Tettigonia_excelsa_Melichar_1902> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3841.4.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana_excelsa> ;
-    dc:creator "Dai, Wu", "Gao, Min", "Zhang, Yalin" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.229227> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tettigonia_excelsa>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Tettigonia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "excelsa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigonia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tettigonia>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Tettigonia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chudania_nigridorsalis>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Chudania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nigridorsalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chudania> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chudania>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Chudania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decursusnirvana_fasciiformis>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Decursusnirvana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fasciiformis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decursusnirvana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decursus_fasciiformis>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Decursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fasciiformis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decursus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decursus>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Decursus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonName .
