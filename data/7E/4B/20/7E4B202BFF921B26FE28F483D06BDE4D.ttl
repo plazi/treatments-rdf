@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7E4B202BFF921B26FE28F483D06BDE4D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3238512> ;
+    dc:creator "Carpenter, Kenneth" ;
+    dc:title "Ankylosaurus magniventris Brown 1908" ;
+    dwc:basisOfRecord <https://ucmpdb.berkeley.edu/cgi/ucmp_query2?admin=&query_src=ucmp_index&table=ucmp2&spec_id=V120195&one=T>, <https://ucmpdb.berkeley.edu/cgi/ucmp_query2?admin=&query_src=ucmp_index&table=ucmp2&spec_id=V124399&one=T> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ankylosaurus_magniventris_Brown_1908> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.5610928> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.5610928>
-    dc:creator "Carpenter, Kenneth" ;
-    dc:date "1982" ;
-    dc:title "Baby dinosaurs from the Late Cretaceous Lance and Hell Creek formations and a description of a new species of theropod" ;
     bibo:endPage "134" ;
     bibo:journal "Contributions to Geology, University of Wyoming" ;
     bibo:pubDate "1982-01-31" ;
     bibo:startPage "123" ;
     bibo:volume "20" ;
+    dc:creator "Carpenter, Kenneth" ;
+    dc:date "1982" ;
+    dc:title "Baby dinosaurs from the Late Cretaceous Lance and Hell Creek formations and a description of a new species of theropod" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3238512> ;
     a fabio:JournalArticle .
 
@@ -26,8 +36,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/3238512/files/figure.png" ;
     a fabio:Figure .
 
+<https://ucmpdb.berkeley.edu/cgi/ucmp_query2?admin=&query_src=ucmp_index&table=ucmp2&spec_id=V120195&one=T>
+    dwc:catalogNumber "UCMP 120195" ;
+    dwc:collectionCode "UCMP" ;
+    trt:gbifOccurrenceId "3396362304" ;
+    trt:httpUri "https://ucmpdb.berkeley.edu/cgi/ucmp_query2?admin=&query_src=ucmp_index&table=ucmp2&spec_id=V120195&one=T" ;
+    a dwc:MaterialCitation .
+
+<https://ucmpdb.berkeley.edu/cgi/ucmp_query2?admin=&query_src=ucmp_index&table=ucmp2&spec_id=V124399&one=T>
+    dwc:catalogNumber "UCMP 124399" ;
+    dwc:collectionCode "UCMP" ;
+    trt:gbifOccurrenceId "3396362326" ;
+    trt:httpUri "https://ucmpdb.berkeley.edu/cgi/ucmp_query2?admin=&query_src=ucmp_index&table=ucmp2&spec_id=V124399&one=T" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Ankylosaurus_magniventris_Brown_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ankylosaurus_magniventris> ;
     dwc:authority "Carpenter, 1982" ;
     dwc:authorityName "Carpenter" ;
     dwc:authorityYear "1982" ;
@@ -38,26 +61,12 @@
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Brown, 1908" ;
     dwc:species "magniventris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ankylosaurus_magniventris> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ankylosauridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dinosauria> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Ankylosauridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dinosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ankylosaurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosauridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ankylosaurus_Brown_1908>
     dwc:class "Reptilia" ;
     dwc:family "Ankylosauridae" ;
     dwc:genus "Ankylosaurus" ;
@@ -65,10 +74,47 @@
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Brown, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ankylosaurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Euoplocephalus_Lambe_1910>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Euoplocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Lambe, 1910" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euoplocephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pinacosaurus_Gilmore_1933>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Pinacosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Gilmore, 1933" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pinacosaurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Saichania_Maryanska_1977>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Saichania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Maryanska, 1977" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Saichania> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Ankylosaurus_magniventris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosaurus> ;
     dwc:class "Reptilia" ;
     dwc:family "Ankylosauridae" ;
     dwc:genus "Ankylosaurus" ;
@@ -77,47 +123,88 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "magniventris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosaurus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-name.plazi.org/id/Animalia/Ankylosaurus>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Ankylosaurus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosauridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ankylosauridae>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dinosauria> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dinosauria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Dinosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7E4B202BFF921B26FE28F483D06BDE4D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ankylosaurus_magniventris_Brown_1908> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.5610928> ;
-    dc:creator "Carpenter, Kenneth" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3238512> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/7E4B202BFF921B26FE28F483D06BDE4D/UCMP%20120195>, <http://treatment.plazi.org/id/7E4B202BFF921B26FE28F483D06BDE4D/UCMP%20124399> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7E4B202BFF921B26FE28F483D06BDE4D/UCMP%20120195>
-    dwc:catalogNumber "UCMP 120195" ;
-    dwc:collectionCode "UCMP" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7E4B202BFF921B26FE28F483D06BDE4D/UCMP%20124399>
-    dwc:catalogNumber "UCMP 124399" ;
-    dwc:collectionCode "UCMP" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Euoplocephalus>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Euoplocephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosauridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Pinacosaurus>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Pinacosaurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosauridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Saichania>
+    dwc:class "Reptilia" ;
+    dwc:family "Ankylosauridae" ;
+    dwc:genus "Saichania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dinosauria" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ankylosauridae> ;
+    a dwcFP:TaxonName .
