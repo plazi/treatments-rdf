@@ -1,24 +1,39 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:A68DAB355A88F75599990FC6CD9D43AE
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Cordia bullata Roem. & Schult." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/A68DAB355A88F75599990FC6CD9D43AE/82> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Cordia_bullata_Linnaeus_1759> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Varronia_bullata_Linnaeus_1759> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4365202> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4365202>
+    bibo:endPage "926" ;
+    bibo:startPage "911" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part V)" ;
-    bibo:endPage "926" ;
-    bibo:startPage "911" ;
     a fabio:BookSection .
 
+<http://treatment.plazi.org/id/A68DAB355A88F75599990FC6CD9D43AE/82>
+    dwc:catalogNumber "82" ;
+    dwc:collectionCode "BM-SL" ;
+    trt:gbifOccurrenceId "2611984333" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Cordia_bullata_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cordia_bullata> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Boraginaceae" ;
     dwc:genus "Cordia" ;
@@ -28,10 +43,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(L.) Roem. & Schult." ;
     dwc:species "bullata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cordia_bullata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Varronia_bullata_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Varronia_bullata> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Boraginaceae" ;
     dwc:genus "Varronia" ;
@@ -41,60 +56,72 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "bullata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Varronia_bullata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
+<http://taxon-name.plazi.org/id/Plantae/Cordia_bullata>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Boraginaceae" ;
+    dwc:genus "Cordia" ;
     dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Boraginales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "bullata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cordia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cordia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Boraginaceae" ;
+    dwc:genus "Cordia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Boraginales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Boraginaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Boraginaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Boraginales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Boraginaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Boraginales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Boraginales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Boraginales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Boraginales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Varronia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Boraginaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Boraginaceae" ;
-    dwc:genus "Varronia" ;
+<http://taxon-name.plazi.org/id/Plantae>
     dwc:kingdom "Plantae" ;
-    dwc:order "Boraginales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Varronia_bullata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Varronia> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Boraginaceae" ;
     dwc:genus "Varronia" ;
@@ -103,18 +130,16 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "bullata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Varronia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/A68DAB355A88F75599990FC6CD9D43AE>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Cordia_bullata_Linnaeus_1759> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Varronia_bullata_Linnaeus_1759> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4365202> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/A68DAB355A88F75599990FC6CD9D43AE/82> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/A68DAB355A88F75599990FC6CD9D43AE/82>
-    dwc:catalogNumber "82" ;
-    dwc:collectionCode "BM-SL" ;
-    a dwc:MaterialCitation .
-
+<http://taxon-name.plazi.org/id/Plantae/Varronia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Boraginaceae" ;
+    dwc:genus "Varronia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Boraginales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Boraginaceae> ;
+    a dwcFP:TaxonName .
