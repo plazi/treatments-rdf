@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.1649/0010-065X-75.1.191>
-    dc:creator "Husemann, Martin", "Sekerka, Lukáš", "Simões, Marianna V. P." ;
-    dc:date "2021" ;
-    dc:title "A Catalog of the Tortoise Beetle (Coleoptera: Chrysomelidae: Cassidinae) Collection Deposited in the Zoological Museum Hamburg (ZMH)" ;
+treatment:03D387F5FFA1FF9CFF2EFEFEFE7DFB62
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5454581> ;
+    dc:creator "Simões, Marianna V. P.; Husemann, Martin; Sekerka, Lukáš" ;
+    dc:title "Aspidomorpha punctum subsp. munda var. submunda Spaeth 1909" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03D387F5FFA1FF9CFF2EFEFEFE7DFB62.mc.3B123CBEFFA1FF9CFF1BFBD4FE3EFB46> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aspidomorpha_punctum_munda_submunda_Spaeth_1909> ;
+    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-75.1.191> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1649/0010-065x-75.1.191>
     bibo:endPage "210" ;
     bibo:issue "1" ;
     bibo:journal "The Coleopterists Bulletin" ;
     bibo:pubDate "2021-03-20" ;
     bibo:startPage "191" ;
     bibo:volume "75" ;
+    dc:creator "Simões, Marianna V. P.; Husemann, Martin; Sekerka, Lukáš" ;
+    dc:date "2021" ;
+    dc:title "A Catalog of the Tortoise Beetle (Coleoptera: Chrysomelidae: Cassidinae) Collection Deposited in the Zoological Museum Hamburg (ZMH)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5454581> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/5454581/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Aspidomorpha_punctum_submunda_Spaeth_1909>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum_submunda> ;
+<http://tb.plazi.org/GgServer/dwcaRecords/03D387F5FFA1FF9CFF2EFEFEFE7DFB62.mc.3B123CBEFFA1FF9CFF1BFBD4FE3EFB46>
+    dwc:collectionCode "SPECIMENS, OF" ;
+    dwc:locality "HAMBURG" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03D387F5FFA1FF9CFF2EFEFEFE7DFB62#3B123CBEFFA1FF9CFF1BFBD4FE3EFB46> ;
+    a dwc:MaterialCitation .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aspidomorpha_punctum_munda_submunda_Spaeth_1909>
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Aspidomorpha" ;
@@ -36,26 +52,14 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "variety" ;
-    dwc:scientificNameAuthorship "Spaeth, 1909" ;
+    dwc:scientificNameAuthorship "Spaeth, 1909", "Spaeth 1909 a: 29" ;
     dwc:species "punctum" ;
     dwc:subSpecies "munda" ;
     dwc:variety "submunda" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum_munda_submunda> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aspidomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Aspidomorpha_Agassiz_1848>
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Aspidomorpha" ;
@@ -63,10 +67,50 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Agassiz, 1848" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cassidinae_Gyllenhal_1813>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Gyllenhal, 1813" ;
+    dwc:subFamily "Cassidinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cassidinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum_munda_submunda>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Aspidomorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:species "punctum" ;
+    dwc:subSpecies "munda" ;
+    dwc:variety "submunda" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum_munda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum_munda>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:genus "Aspidomorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "punctum" ;
+    dwc:subSpecies "munda" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Aspidomorpha" ;
@@ -75,52 +119,66 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "punctum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum_submunda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidomorpha_punctum> ;
+<http://taxon-name.plazi.org/id/Animalia/Aspidomorpha>
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:genus "Aspidomorpha" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "variety" ;
-    dwc:species "punctum" ;
-    dwc:variety "submunda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Chrysomelidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D387F5FFA1FF9CFF2EFEFEFE7DFB62>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Aspidomorpha_punctum_submunda_Spaeth_1909> ;
-    trt:publishedIn <http://dx.doi.org/10.1649/0010-065x-75.1.191> ;
-    dc:creator "Husemann, Martin", "Sekerka, Lukáš", "Simões, Marianna V. P." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5454581> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cassidinae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysomelidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Cassidinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysomelidae> ;
+    a dwcFP:TaxonName .
