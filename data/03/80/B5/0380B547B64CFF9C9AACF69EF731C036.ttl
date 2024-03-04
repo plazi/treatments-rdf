@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:0380B547B64CFF9C9AACF69EF731C036
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6678253> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Talpa aquitania Mar- tinez-Vargas & Hugot 1758" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Talpa_aquitania_tinez-Vargas_2017> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Talpa_aquitania_tinez-Vargas_2017> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6678191> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6678191>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2018" ;
-    dc:title "Talpidae" ;
     bibo:endPage "619" ;
     bibo:startPage "52" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2018" ;
+    dc:title "Talpidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6678253> ;
     a fabio:BookSection .
 
@@ -23,21 +34,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6678253/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Talpa_aquitania_tinez-Vargas_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talpa_aquitania> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Talpidae" ;
-    dwc:genus "Talpa" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Soricomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Mar- tinez-Vargas & Hugot, 2017" ;
-    dwc:species "aquitania" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Talpa_aquitania_tinez-Vargas_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talpa_aquitania> ;
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:genus "Talpa" ;
@@ -47,39 +44,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Mar- tinez-Vargas & Hugot, 2017" ;
     dwc:species "aquitania" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talpa_aquitania> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Soricomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Soricomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Talpa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Talpa_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:genus "Talpa" ;
@@ -87,10 +55,48 @@
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talpa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Talpa_europaea_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Talpa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "europaea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talpa_europaea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Talpa_occidentalis_Cabrera_1907>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Talpa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Cabrera, 1907" ;
+    dwc:species "occidentalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Talpa_occidentalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lumbricidae_Rafinesque_1815>
+    dwc:class "Clitellata" ;
+    dwc:family "Lumbricidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Crassiclitellata" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Rafinesque, 1815" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lumbricidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Talpa_aquitania>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpa> ;
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:genus "Talpa" ;
@@ -99,23 +105,113 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "aquitania" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Talpa>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Talpa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Talpidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricomorpha> ;
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricomorpha> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0380B547B64CFF9C9AACF69EF731C036>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Talpa_aquitania_tinez-Vargas_1758> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Talpa_aquitania_tinez-Vargas_2017> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6678191> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6678253> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Soricomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Talpa_europaea>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Talpa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "europaea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Talpa_occidentalis>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Talpa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "occidentalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lumbricidae>
+    dwc:class "Clitellata" ;
+    dwc:family "Lumbricidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Crassiclitellata" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crassiclitellata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Crassiclitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Crassiclitellata" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .

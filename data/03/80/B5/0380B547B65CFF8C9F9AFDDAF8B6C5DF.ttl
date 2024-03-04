@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:0380B547B65CFF8C9F9AFDDAF8B6C5DF
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_Thomas_1912>, <http://dx.doi.org/10.5281/zenodo.6678251> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Scapanulus oweni Thomas 1912" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_oweni_Thomas_1912> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_owen_Thomas_1912>, <http://taxon-concept.plazi.org/id/Animalia/Parascalops_broweri_True_1894> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6678191> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6678191>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2018" ;
-    dc:title "Talpidae" ;
     bibo:endPage "619" ;
     bibo:startPage "52" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2018" ;
+    dc:title "Talpidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6678251> ;
     a fabio:BookSection .
 
@@ -23,46 +34,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/6678251/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Parascalops_broweri_True_1894>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parascalops_broweri> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Talpidae" ;
-    dwc:genus "Parascalops" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Soricomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "True, 1894" ;
-    dwc:species "broweri" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Scapanulus_Thomas_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapanulus> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Talpidae" ;
-    dwc:genus "Scapanulus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Soricomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Thomas, 1912" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Scapanulus_owen_Thomas_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapanulus_owen> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Talpidae" ;
-    dwc:genus "Scapanulus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Soricomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Thomas, 1912" ;
-    dwc:species "owen" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_oweni_Thomas_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapanulus_oweni> ;
     dwc:authority "Mittermeier, 2018" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2018" ;
@@ -73,42 +45,25 @@
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1912" ;
     dwc:species "oweni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapanulus_oweni> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Parascalops>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Scapanulus_owen_Thomas_1912>
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
-    dwc:genus "Parascalops" ;
+    dwc:genus "Scapanulus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1912" ;
+    dwc:species "owen" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapanulus_owen> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Parascalops_broweri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parascalops> ;
+<http://taxon-concept.plazi.org/id/Animalia/Parascalops_broweri_True_1894>
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:genus "Parascalops" ;
@@ -116,11 +71,12 @@
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "True, 1894" ;
     dwc:species "broweri" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Parascalops_broweri> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Scapanulus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Scapanulus_Thomas_1912>
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:genus "Scapanulus" ;
@@ -128,10 +84,73 @@
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Thomas, 1912" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scapanulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Scapanulus_oweni>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Scapanulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "oweni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scapanulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scapanulus>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:genus "Scapanulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Talpidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Talpidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricomorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Soricomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Soricomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Scapanulus_owen>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scapanulus> ;
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
     dwc:genus "Scapanulus" ;
@@ -140,44 +159,28 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "owen" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scapanulus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Scapanulus_oweni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scapanulus> ;
+<http://taxon-name.plazi.org/id/Animalia/Parascalops_broweri>
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
-    dwc:genus "Scapanulus" ;
+    dwc:genus "Parascalops" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:species "oweni" ;
+    dwc:species "broweri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Parascalops> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Soricomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Soricomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Talpidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Soricomorpha> ;
+<http://taxon-name.plazi.org/id/Animalia/Parascalops>
     dwc:class "Mammalia" ;
     dwc:family "Talpidae" ;
+    dwc:genus "Parascalops" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Soricomorpha" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Talpidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/0380B547B65CFF8C9F9AFDDAF8B6C5DF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_oweni_Thomas_1912> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Parascalops_broweri_True_1894>, <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_owen_Thomas_1912> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6678191> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6678251>, <http://taxon-concept.plazi.org/id/Animalia/Scapanulus_Thomas_1912> ;
-    a trt:Treatment .
-
