@@ -1,18 +1,23 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CF6FE30CFFBEFF960082CA6BFABB487D
+    dc:creator "Campos-Filho, Ivanklin Soares; Araujo, Paula Beatriz; Bichuette, Maria Elina; Trajano, Eleonora; Taiti, Stefano" ;
+    dc:title "Ischioscia VERHOEFF 1928" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ischioscia_VERHOEFF_1928> ;
+    trt:publishedIn <http://dx.doi.org/10.1111/zoj.12172> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1111/zoj.12172>
-    dc:creator "Araujo, Paula Beatriz", "Bichuette, Maria Elina", "Campos-Filho, Ivanklin Soares", "Taiti, Stefano", "Trajano, Eleonora" ;
-    dc:date "2014" ;
-    dc:title "Terrestrial isopods (Crustacea: Isopoda: Oniscidea) from Brazilian caves" ;
     bibo:endPage "425" ;
     bibo:issue "2" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
@@ -20,11 +25,12 @@
     bibo:series "Zool. J. Linn. Soc." ;
     bibo:startPage "360" ;
     bibo:volume "172" ;
+    dc:creator "Campos-Filho, Ivanklin Soares; Araujo, Paula Beatriz; Bichuette, Maria Elina; Trajano, Eleonora; Taiti, Stefano" ;
+    dc:date "2014" ;
+    dc:title "Terrestrial isopods (Crustacea: Isopoda: Oniscidea) from Brazilian caves" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ischioscia_VERHOEFF_1928>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ischioscia> ;
-    dwc:ID-CoL "7P79F" ;
     dwc:class "Malacostraca" ;
     dwc:family "Philosciidae" ;
     dwc:genus "Ischioscia" ;
@@ -33,22 +39,37 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "VERHOEFF, 1928" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P79F> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ischioscia> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Ischioscia_lobifera_Verhoeff_1928>
+    dwc:class "Malacostraca" ;
+    dwc:family "Philosciidae" ;
+    dwc:genus "Ischioscia" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Verhoeff, 1928" ;
+    dwc:species "lobifera" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ischioscia_lobifera> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ischioscia_variegata_Dollfus_1893>
+    dwc:class "Malacostraca" ;
+    dwc:family "Philosciidae" ;
+    dwc:genus "Ischioscia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Dollfus, 1893 a)" ;
+    dwc:species "variegata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ischioscia_variegata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Ischioscia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Philosciidae> ;
     dwc:class "Malacostraca" ;
     dwc:family "Philosciidae" ;
     dwc:genus "Ischioscia" ;
@@ -56,38 +77,68 @@
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Isopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Isopoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Philosciidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Philosciidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
     dwc:class "Malacostraca" ;
     dwc:family "Philosciidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CF6FE30CFFBEFF960082CA6BFABB487D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Ischioscia_VERHOEFF_1928> ;
-    trt:publishedIn <http://dx.doi.org/10.1111/zoj.12172> ;
-    dc:creator "Araujo, Paula Beatriz", "Bichuette, Maria Elina", "Campos-Filho, Ivanklin Soares", "Taiti, Stefano", "Trajano, Eleonora" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Isopoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ischioscia_lobifera>
+    dwc:class "Malacostraca" ;
+    dwc:family "Philosciidae" ;
+    dwc:genus "Ischioscia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lobifera" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ischioscia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ischioscia_variegata>
+    dwc:class "Malacostraca" ;
+    dwc:family "Philosciidae" ;
+    dwc:genus "Ischioscia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "variegata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ischioscia> ;
+    a dwcFP:TaxonName .
