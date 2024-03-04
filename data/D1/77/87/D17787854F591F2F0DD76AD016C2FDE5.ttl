@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:D17787854F591F2F0DD76AD016C2FDE5
+    cito:cites <http://dx.doi.org/10.5281/zenodo.829071> ;
+    dc:creator "ROBERTO CALDARA; CHARLES W. O’BRIEN; MASSIMO MEREGALLI" ;
+    dc:title "Hydronoplus Fairmaire 1898" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hydronoplus_Fairmaire_1898> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pseudobagous_Sharp_1917> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4287.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4287.1.1>
-    dc:creator "CHARLES W. O’BRIEN", "MASSIMO MEREGALLI", "ROBERTO CALDARA" ;
-    dc:date "2017" ;
-    dc:title "A phylogenetic analysis of the aquatic weevil tribe Bagoini (Coleoptera: Curculionidae) based on morphological characters of adults" ;
     bibo:endPage "63" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2017-07-05" ;
     bibo:startPage "1" ;
     bibo:volume "4287" ;
+    dc:creator "ROBERTO CALDARA; CHARLES W. O’BRIEN; MASSIMO MEREGALLI" ;
+    dc:date "2017" ;
+    dc:title "A phylogenetic analysis of the aquatic weevil tribe Bagoini (Coleoptera: Curculionidae) based on morphological characters of adults" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.829071> ;
     a fabio:JournalArticle .
 
@@ -28,8 +38,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Hydronoplus_Fairmaire_1898>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hydronoplus> ;
-    dwc:ID-CoL "8HKPS" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Hydronoplus" ;
@@ -37,12 +45,26 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Fairmaire, 1898", "Fairmaire, 1898: 243" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HKPS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hydronoplus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hydronoplus_signatifrons_Fairmaire_1898>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Hydronoplus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fairmaire, 1898" ;
+    dwc:species "signatifrons" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HKPS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hydronoplus_signatifrons> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pseudobagous_Sharp_1917>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudobagous> ;
-    dwc:ID-CoL "8HQ3V" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Pseudobagous" ;
@@ -51,41 +73,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Sharp, 1917a: 27" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HKPS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudobagous> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Bagous_longulus_Gyllenhal_1836>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gyllenhal, 1836" ;
+    dwc:species "longulus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HKPS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bagous_longulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bagous_junodi_Sharp_1917>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sharp, 1917" ;
+    dwc:species "junodi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bagous_junodi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bagous_micaceus_Hustache_1924>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hustache, 1924" ;
+    dwc:species "micaceus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bagous_micaceus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bagous_promontorii_Marshall_1906>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Marshall, 1906" ;
+    dwc:species "promontorii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bagous_promontorii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bagous_pilitarsis_Hustache_1923>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hustache, 1923" ;
+    dwc:species "pilitarsis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bagous_pilitarsis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Bagous_nymphaeae_Faust_1888>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Faust, 1888" ;
+    dwc:species "nymphaeae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bagous_nymphaeae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Hydronoplus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Hydronoplus" ;
@@ -93,18 +164,61 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydronoplus_signatifrons>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Hydronoplus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "signatifrons" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydronoplus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pseudobagous>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Pseudobagous" ;
@@ -112,13 +226,88 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D17787854F591F2F0DD76AD016C2FDE5>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hydronoplus_Fairmaire_1898> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pseudobagous_Sharp_1917> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4287.1.1> ;
-    dc:creator "CHARLES W. O’BRIEN", "MASSIMO MEREGALLI", "ROBERTO CALDARA" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.829071> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Bagous_longulus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bagous> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Bagous>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bagous_junodi>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "junodi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bagous> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bagous_micaceus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "micaceus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bagous> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bagous_promontorii>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "promontorii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bagous> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bagous_pilitarsis>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pilitarsis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bagous> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bagous_nymphaeae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Bagous" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nymphaeae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bagous> ;
+    a dwcFP:TaxonName .
