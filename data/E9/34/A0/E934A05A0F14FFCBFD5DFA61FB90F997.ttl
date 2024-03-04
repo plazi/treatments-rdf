@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E934A05A0F14FFCBFD5DFA61FB90F997
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1101133> ;
+    dc:creator "Mar Ferrer- Suay; James M. Carpenter; Christine Lebeau; Juli Pujade- Villar" ;
+    dc:title "Andricus tecturnarum Kinsey 1920" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/E934A05A0F14FFCBFD5DFA61FB90F997/AMNH_IZC%2000322810> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Andricus_tecturnarum_Kinsey_1920> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6023356> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6023356>
-    dc:creator "Christine Lebeau", "James M. Carpenter", "Juli Pujade- Villar", "Mar Ferrer- Suay" ;
-    dc:date "2017" ;
-    dc:title "Designation Of Lectotypes For The Mexican Species Of Andricus Described By Alfred Kinsey And Comments About Some Generic Synonymies (Hymenoptera: Cynipidae)" ;
     bibo:endPage "34" ;
     bibo:issue "1" ;
     bibo:journal "Entomologica Americana" ;
     bibo:pubDate "2017-12-12" ;
     bibo:startPage "29" ;
     bibo:volume "123" ;
+    dc:creator "Mar Ferrer- Suay; James M. Carpenter; Christine Lebeau; Juli Pujade- Villar" ;
+    dc:date "2017" ;
+    dc:title "Designation Of Lectotypes For The Mexican Species Of Andricus Described By Alfred Kinsey And Comments About Some Generic Synonymies (Hymenoptera: Cynipidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1101133> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/1101133/files/figure.png" ;
     a fabio:Figure .
 
+<http://treatment.plazi.org/id/E934A05A0F14FFCBFD5DFA61FB90F997/AMNH_IZC%2000322810>
+    dwc:catalogNumber "AMNH_IZC 00322810" ;
+    dwc:collectionCode "TYPE" ;
+    dwc:locality "Q. Potosina" ;
+    dwc:recordedBy "M. Ferrer-Suay" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "1705213855" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Andricus_tecturnarum_Kinsey_1920>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andricus_tecturnarum> ;
     dwc:class "Insecta" ;
     dwc:family "Cynipidae" ;
     dwc:genus "Andricus" ;
@@ -36,17 +54,37 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kinsey, 1920" ;
+    dwc:scientificNameAuthorship "Kinsey, 1920", "Kinsey, 1920: 312", "Kinsey, 1920: 306" ;
     dwc:species "tecturnarum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Andricus_tecturnarum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Cynips_incomptum_Kinsey_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Cynipidae" ;
+    dwc:genus "Cynips" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Kinsey)" ;
+    dwc:species "incomptum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cynips_incomptum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Andricus_tecturnarum>
+    dwc:class "Insecta" ;
+    dwc:family "Cynipidae" ;
+    dwc:genus "Andricus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tecturnarum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andricus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Andricus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cynipidae> ;
     dwc:class "Insecta" ;
     dwc:family "Cynipidae" ;
     dwc:genus "Andricus" ;
@@ -54,67 +92,67 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Andricus_tecturnarum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Andricus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cynipidae" ;
-    dwc:genus "Andricus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "tecturnarum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cynipidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cynipidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Cynipidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E934A05A0F14FFCBFD5DFA61FB90F997>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Andricus_tecturnarum_Kinsey_1920> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6023356> ;
-    dc:creator "Christine Lebeau", "James M. Carpenter", "Juli Pujade- Villar", "Mar Ferrer- Suay" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1101133> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/E934A05A0F14FFCBFD5DFA61FB90F997/AMNH_IZC%2000322810> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E934A05A0F14FFCBFD5DFA61FB90F997/AMNH_IZC%2000322810>
-    dwc:catalogNumber "AMNH_IZC 00322810" ;
-    dwc:collectionCode "TYPE" ;
-    dwc:locality "Q. Potosina" ;
-    dwc:recordedBy "M. Ferrer-Suay" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cynips_incomptum>
+    dwc:class "Insecta" ;
+    dwc:family "Cynipidae" ;
+    dwc:genus "Cynips" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "incomptum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cynips> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cynips>
+    dwc:class "Insecta" ;
+    dwc:family "Cynipidae" ;
+    dwc:genus "Cynips" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cynipidae> ;
+    a dwcFP:TaxonName .
