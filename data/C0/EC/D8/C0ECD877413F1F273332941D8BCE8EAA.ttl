@@ -1,26 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C0ECD877413F1F273332941D8BCE8EAA
+    dc:creator "Alexandre P. Marceniuk; Naércio A. Menezes" ;
+    dc:title "Brustiarius" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Brustiarius>, <http://taxon-name.plazi.org/id/Animalia/Arius_nox>, <http://taxon-name.plazi.org/id/Animalia/Arius>, <http://taxon-name.plazi.org/id/Animalia/Arius_proximus>, <http://taxon-name.plazi.org/id/Animalia/Tachysurus> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pararius_Whitley_1940> ;
+    trt:publishedIn <http://publication.plazi.org/id/E3B79C8FF6B0B87BE406EA4948E96A3B> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Brustiarius> ;
+    a trt:Treatment .
 
 <http://publication.plazi.org/id/E3B79C8FF6B0B87BE406EA4948E96A3B>
-    dc:creator "Alexandre P. Marceniuk", "Naércio A. Menezes" ;
-    dc:date "2007" ;
-    dc:title "Systematics of the family Ariidae (Ostariophysi, Siluriformes), with a redefinition of the genera." ;
     bibo:endPage "126" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "1416" ;
+    dc:creator "Alexandre P. Marceniuk; Naércio A. Menezes" ;
+    dc:date "2007" ;
+    dc:title "Systematics of the family Ariidae (Ostariophysi, Siluriformes), with a redefinition of the genera." ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pararius_Whitley_1940>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pararius> ;
     dwc:LSID-ZBK "urn:lsid:zoobank.org:act:03535822-03C9-4CD8-BBF7-0F758F9073B5" ;
     dwc:class "Actinopterygii" ;
     dwc:family "Ariidae" ;
@@ -30,33 +39,23 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Whitley, 1940" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pararius> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ariidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pachyula_Ogilby_1898>
+    dwc:LSID-ZBK "urn:lsid:zoobank.org:act:D469DDD6-F17E-4DEB-99B7-0C54A27687E2" ;
     dwc:class "Actinopterygii" ;
     dwc:family "Ariidae" ;
+    dwc:genus "Pachyula" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ogilby, 1898" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachyula> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Brustiarius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ariidae> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Ariidae" ;
     dwc:genus "Brustiarius" ;
@@ -64,17 +63,49 @@
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ariidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ariidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Ariidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Siluriformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pararius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ariidae> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Ariidae" ;
     dwc:genus "Pararius" ;
@@ -82,22 +113,16 @@
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ariidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Siluriformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+<http://taxon-name.plazi.org/id/Animalia/Pachyula>
     dwc:class "Actinopterygii" ;
+    dwc:family "Ariidae" ;
+    dwc:genus "Pachyula" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ariidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/C0ECD877413F1F273332941D8BCE8EAA>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/C0/EC/D8/Arius>, <file:///workdir/tmprdf/data/C0/EC/D8/Arius_nox>, <file:///workdir/tmprdf/data/C0/EC/D8/Arius_proximus>, <file:///workdir/tmprdf/data/C0/EC/D8/Brustiarius>, <file:///workdir/tmprdf/data/C0/EC/D8/Tachysurus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pararius_Whitley_1940> ;
-    trt:publishedIn <http://publication.plazi.org/id/E3B79C8FF6B0B87BE406EA4948E96A3B> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Brustiarius> ;
-    dc:creator "Alexandre P. Marceniuk", "Naércio A. Menezes" ;
-    a trt:Treatment .
-
