@@ -1,28 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.35929/RSZ.0015>
-    dc:creator "Decker, Peter", "Hollier, John", "Mesibov, Robert", "Sierwald, Petra", "Stöckli, Eduard", "Wesener, Thomas" ;
-    dc:date "2020" ;
-    dc:title "An annotated list of the millipede (Diplopoda) species described by Johann Carl" ;
+treatment:03C7DC6B484FFFA2E2CEFE34FD5BAC3C
+    dc:creator "Hollier, John; Stöckli, Eduard; Wesener, Thomas; Mesibov, Robert; Decker, Peter; Sierwald, Petra" ;
+    dc:title "Castanotherium decoratum Carl 1912" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Castanotherium_decoratum_Carl_1912> ;
+    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0015> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.35929/rsz.0015>
     bibo:endPage "240" ;
     bibo:issue "1" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2020-06-04" ;
     bibo:startPage "183" ;
     bibo:volume "127" ;
+    dc:creator "Hollier, John; Stöckli, Eduard; Wesener, Thomas; Mesibov, Robert; Decker, Peter; Sierwald, Petra" ;
+    dc:date "2020" ;
+    dc:title "An annotated list of the millipede (Diplopoda) species described by Johann Carl" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Castanotherium_decoratum_Carl_1912>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Castanotherium_decoratum> ;
     dwc:class "Diplopoda" ;
     dwc:family "Zephronidae" ;
     dwc:genus "Castanotherium" ;
@@ -30,24 +37,12 @@
     dwc:order "Sphaerotheriida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Carl, 1912 c: 118 - 119" ;
+    dwc:scientificNameAuthorship "Carl, 1912 c: 118 - 119", "Carl, 1912" ;
     dwc:species "decoratum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Castanotherium_decoratum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Castanotherium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zephronidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Castanotherium_Pocock_1895>
     dwc:class "Diplopoda" ;
     dwc:family "Zephronidae" ;
     dwc:genus "Castanotherium" ;
@@ -55,10 +50,21 @@
     dwc:order "Sphaerotheriida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Pocock, 1895" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Castanotherium> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Zephroniidae_Gray_1843>
+    dwc:class "Diplopoda" ;
+    dwc:family "Zephroniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Gray, 1843" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zephroniidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Castanotherium_decoratum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Castanotherium> ;
     dwc:class "Diplopoda" ;
     dwc:family "Zephronidae" ;
     dwc:genus "Castanotherium" ;
@@ -67,38 +73,64 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "decoratum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Castanotherium> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Castanotherium>
     dwc:class "Diplopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphaerotheriida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
-    dwc:class "Diplopoda" ;
+    dwc:family "Zephronidae" ;
+    dwc:genus "Castanotherium" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sphaerotheriida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zephronidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Zephronidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerotheriida> ;
     dwc:class "Diplopoda" ;
     dwc:family "Zephronidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Sphaerotheriida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphaerotheriida> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C7DC6B484FFFA2E2CEFE34FD5BAC3C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Castanotherium_decoratum_Carl_1912> ;
-    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0015> ;
-    dc:creator "Decker, Peter", "Hollier, John", "Mesibov, Robert", "Sierwald, Petra", "Stöckli, Eduard", "Wesener, Thomas" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sphaerotheriida>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Sphaerotheriida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zephroniidae>
+    dwc:class "Diplopoda" ;
+    dwc:family "Zephroniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
+    a dwcFP:TaxonName .

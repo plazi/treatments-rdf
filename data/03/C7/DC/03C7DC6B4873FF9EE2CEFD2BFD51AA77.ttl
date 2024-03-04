@@ -1,29 +1,43 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.35929/RSZ.0015>
-    dc:creator "Decker, Peter", "Hollier, John", "Mesibov, Robert", "Sierwald, Petra", "Stöckli, Eduard", "Wesener, Thomas" ;
-    dc:date "2020" ;
-    dc:title "An annotated list of the millipede (Diplopoda) species described by Johann Carl" ;
+treatment:03C7DC6B4873FF9EE2CEFD2BFD51AA77
+    dc:creator "Hollier, John; Stöckli, Eduard; Wesener, Thomas; Mesibov, Robert; Decker, Peter; Sierwald, Petra" ;
+    dc:title "Atopochetus sumatranus Carl 1906" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C7DC6B4873FF9EE2CEFD2BFD51AA77.mc.3B0667204873FF9EE28AFCA9FF49AA36> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Atopochetus_sumatranus_Carl_1906> ;
+    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0015> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.35929/rsz.0015>
     bibo:endPage "240" ;
     bibo:issue "1" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2020-06-04" ;
     bibo:startPage "183" ;
     bibo:volume "127" ;
+    dc:creator "Hollier, John; Stöckli, Eduard; Wesener, Thomas; Mesibov, Robert; Decker, Peter; Sierwald, Petra" ;
+    dc:date "2020" ;
+    dc:title "An annotated list of the millipede (Diplopoda) species described by Johann Carl" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03C7DC6B4873FF9EE2CEFD2BFD51AA77.mc.3B0667204873FF9EE28AFCA9FF49AA36>
+    dwc:locality "Sumatra" ;
+    dwc:recordedBy "Schneider & G. Schneider" ;
+    dwc:typeStatus "syntype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C7DC6B4873FF9EE2CEFD2BFD51AA77#3B0667204873FF9EE28AFCA9FF49AA36> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Atopochetus_sumatranus_Carl_1906>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atopochetus_sumatranus> ;
-    dwc:ID-CoL "846WY" ;
     dwc:class "Diplopoda" ;
     dwc:family "Pachybolidae" ;
     dwc:genus "Atopochetus" ;
@@ -31,24 +45,37 @@
     dwc:order "Spirobolida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Carl, 1906: 243 - 245" ;
+    dwc:scientificNameAuthorship "Carl, 1906: 243 - 245", "(Carl, 1906)" ;
     dwc:species "sumatranus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/846WY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atopochetus_sumatranus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Trachelomegalus_Silvestri_1896>
+    dwc:class "Diplopoda" ;
+    dwc:family "Pachybolidae" ;
+    dwc:genus "Trachelomegalus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Spirobolida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Silvestri, 1896" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trachelomegalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Atopochetus_sumatranus>
+    dwc:class "Diplopoda" ;
+    dwc:family "Pachybolidae" ;
+    dwc:genus "Atopochetus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Spirobolida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sumatranus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atopochetus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Atopochetus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachybolidae> ;
     dwc:class "Diplopoda" ;
     dwc:family "Pachybolidae" ;
     dwc:genus "Atopochetus" ;
@@ -56,50 +83,55 @@
     dwc:order "Spirobolida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Atopochetus_sumatranus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atopochetus> ;
-    dwc:class "Diplopoda" ;
-    dwc:family "Pachybolidae" ;
-    dwc:genus "Atopochetus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Spirobolida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "sumatranus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Diplopoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachybolidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pachybolidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spirobolida> ;
     dwc:class "Diplopoda" ;
     dwc:family "Pachybolidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Spirobolida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spirobolida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Spirobolida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
     dwc:class "Diplopoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Spirobolida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C7DC6B4873FF9EE2CEFD2BFD51AA77>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Atopochetus_sumatranus_Carl_1906> ;
-    trt:publishedIn <http://dx.doi.org/10.35929/rsz.0015> ;
-    dc:creator "Decker, Peter", "Hollier, John", "Mesibov, Robert", "Sierwald, Petra", "Stöckli, Eduard", "Wesener, Thomas" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trachelomegalus>
+    dwc:class "Diplopoda" ;
+    dwc:family "Pachybolidae" ;
+    dwc:genus "Trachelomegalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Spirobolida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachybolidae> ;
+    a dwcFP:TaxonName .
