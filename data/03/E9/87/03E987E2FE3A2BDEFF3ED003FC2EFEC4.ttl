@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E987E2FE3A2BDEFF3ED003FC2EFEC4
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Pterogonatopus_hortusensis_Abdul-Nour_1976>, <http://dx.doi.org/10.5281/zenodo.3337000>, <http://dx.doi.org/10.5281/zenodo.3337006>, <http://dx.doi.org/10.5281/zenodo.3337008> ;
+    dc:creator "Olmi, Massimo; Copeland, Robert S.; Noort, Simon Van" ;
+    dc:title "Echthrodelphax R. Perkins 1903" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Echthrodelphax_Perkins_1903> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pterogonatopus_Abdul-Nour_1976> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4630.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4630.1.1>
-    dc:creator "Copeland, Robert S.", "Noort, Simon Van", "Olmi, Massimo" ;
-    dc:date "2019" ;
-    dc:title "Dryinidae of the Afrotropical region (Hymenoptera, Chrysidoidea)" ;
     bibo:endPage "619" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-07-10" ;
     bibo:startPage "1" ;
     bibo:volume "4630" ;
+    dc:creator "Olmi, Massimo; Copeland, Robert S.; Noort, Simon Van" ;
+    dc:date "2019" ;
+    dc:title "Dryinidae of the Afrotropical region (Hymenoptera, Chrysidoidea)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3337000>, <http://dx.doi.org/10.5281/zenodo.3337006>, <http://dx.doi.org/10.5281/zenodo.3337008> ;
     a fabio:JournalArticle .
 
@@ -38,7 +48,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Echthrodelphax_Perkins_1903>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax> ;
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
     dwc:genus "Echthrodelphax" ;
@@ -46,11 +55,11 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "R. Perkins, 1903" ;
+    dwc:scientificNameAuthorship "R. Perkins, 1903", "R. Perkins 1903: 36" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterogonatopus_Abdul-Nour_1976>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus> ;
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
     dwc:genus "Pterogonatopus" ;
@@ -59,10 +68,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Abdul-Nour 1976: 275" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterogonatopus_hortusensis_Abdul-Nour_1976>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus_hortusensis> ;
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
     dwc:genus "Pterogonatopus" ;
@@ -72,32 +81,47 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Abdul-Nour 1976" ;
     dwc:species "hortusensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus_hortusensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dryinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Echthrodelphax_fairchildii_Perkins_1903>
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
+    dwc:genus "Echthrodelphax" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "R. Perkins 1903" ;
+    dwc:species "fairchildii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax_fairchildii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Echthrodelphax_rufus_Olmi_1984>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:genus "Echthrodelphax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Olmi 1984" ;
+    dwc:species "rufus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax_rufus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Delphacidae_Guglielmino_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Delphacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Guglielmino et al., 2013" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Delphacidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dryinidae> ;
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
     dwc:genus "Echthrodelphax" ;
@@ -105,27 +129,49 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dryinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dryinidae>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dryinidae> ;
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
     dwc:genus "Pterogonatopus" ;
@@ -133,10 +179,10 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dryinidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus_hortusensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus> ;
     dwc:class "Insecta" ;
     dwc:family "Dryinidae" ;
     dwc:genus "Pterogonatopus" ;
@@ -145,13 +191,48 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "hortusensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pterogonatopus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E987E2FE3A2BDEFF3ED003FC2EFEC4>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Echthrodelphax_Perkins_1903> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pterogonatopus_Abdul-Nour_1976> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4630.1.1> ;
-    dc:creator "Copeland, Robert S.", "Noort, Simon Van", "Olmi, Massimo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3337000>, <http://dx.doi.org/10.5281/zenodo.3337006>, <http://dx.doi.org/10.5281/zenodo.3337008>, <http://taxon-concept.plazi.org/id/Animalia/Pterogonatopus_hortusensis_Abdul-Nour_1976> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Echthrodelphax_fairchildii>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:genus "Echthrodelphax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fairchildii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Echthrodelphax_rufus>
+    dwc:class "Insecta" ;
+    dwc:family "Dryinidae" ;
+    dwc:genus "Echthrodelphax" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rufus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echthrodelphax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Delphacidae>
+    dwc:class "Insecta" ;
+    dwc:family "Delphacidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
