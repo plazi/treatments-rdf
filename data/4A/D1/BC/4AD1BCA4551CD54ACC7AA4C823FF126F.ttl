@@ -1,45 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4AD1BCA4551CD54ACC7AA4C823FF126F
+    dc:creator "Armbruster, Jonathan W.; Werneke, David C.; Tan, Milton" ;
+    dc:title "Peckoltia greedoi Armbruster, Werneke & Tan, sp. n." ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.480.6540> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Peckoltia_greedoi> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.480.6540>
-    dc:creator "Armbruster, Jonathan W.", "Tan, Milton", "Werneke, David C." ;
-    dc:date "2015" ;
-    dc:title "Three new species of saddled loricariid catfishes, and a review of Hemiancistrus, Peckoltia, and allied genera (Siluriformes)" ;
     bibo:endPage "123" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "97" ;
     bibo:volume "480" ;
+    dc:creator "Armbruster, Jonathan W.; Werneke, David C.; Tan, Milton" ;
+    dc:date "2015" ;
+    dc:title "Three new species of saddled loricariid catfishes, and a review of Hemiancistrus, Peckoltia, and allied genera (Siluriformes)" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Animalia/Loricariidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
-    dwc:family "Loricariidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Siluriformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Peckoltia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Loricariidae> ;
-    dwc:family "Loricariidae" ;
-    dwc:genus "Peckoltia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Siluriformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Peckoltia_greedoi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peckoltia> ;
     dwc:family "Loricariidae" ;
     dwc:genus "Peckoltia" ;
     dwc:kingdom "Animalia" ;
@@ -47,6 +35,26 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "greedoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peckoltia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peckoltia>
+    dwc:family "Loricariidae" ;
+    dwc:genus "Peckoltia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Loricariidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Loricariidae>
+    dwc:family "Loricariidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Siluriformes>
@@ -54,11 +62,17 @@
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4AD1BCA4551CD54ACC7AA4C823FF126F>
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.480.6540> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Peckoltia_greedoi> ;
-    dc:creator "Armbruster, Jonathan W.", "Tan, Milton", "Werneke, David C." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

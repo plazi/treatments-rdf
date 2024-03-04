@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:4A5E87B9FFB29A16FF19B3776C16B0A0
+    cito:cites <http://dx.doi.org/10.5281/zenodo.289986>, <http://dx.doi.org/10.5281/zenodo.289987>, <http://dx.doi.org/10.5281/zenodo.289988> ;
+    dc:creator "Henao, Efrain R.; Carneiro, Eduardo; Mielke, Olaf H. H.; Casagrade, Mirna M." ;
+    dc:title "Wahydra ekka Evans 1955, comb. nov." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Atlas>, <http://taxon-name.plazi.org/id/Animalia/Moeris_ekka> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Wahydra_ekka_Evans_1955> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Moeris_ekka_Evans_1955>, <http://taxon-concept.plazi.org/id/Animalia/Wahydra_obscura_Steinhauser_1991> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4040.1.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4040.1.5>
-    dc:creator "Carneiro, Eduardo", "Casagrade, Mirna M.", "Henao, Efrain R.", "Mielke, Olaf H. H." ;
-    dc:date "2015" ;
-    dc:title "Taxonomic notes on Wahydra Steinhauser (Hesperiidae, Hesperiinae, Anthoptini) with description of four new species" ;
     bibo:endPage "73" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "59" ;
     bibo:volume "4040" ;
+    dc:creator "Henao, Efrain R.; Carneiro, Eduardo; Mielke, Olaf H. H.; Casagrade, Mirna M." ;
+    dc:date "2015" ;
+    dc:title "Taxonomic notes on Wahydra Steinhauser (Hesperiidae, Hesperiinae, Anthoptini) with description of four new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.289986>, <http://dx.doi.org/10.5281/zenodo.289987>, <http://dx.doi.org/10.5281/zenodo.289988> ;
     a fabio:JournalArticle .
 
@@ -36,9 +47,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/289988/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Wahydra_ekka_Evans_1955>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Wahydra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Evans, 1955" ;
+    dwc:species "ekka" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Wahydra_ekka> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Moeris_ekka_Evans_1955>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Moeris_ekka> ;
-    dwc:ID-CoL "6RMKM" ;
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Moeris" ;
@@ -48,10 +70,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Evans, 1955" ;
     dwc:species "ekka" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Moeris_ekka> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Wahydra_obscura_Steinhauser_1991>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Wahydra_obscura> ;
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Wahydra" ;
@@ -61,60 +84,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Steinhauser, 1991" ;
     dwc:species "obscura" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Wahydra_obscura> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hesperiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Hesperiidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Wahydra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Hesperiidae" ;
-    dwc:genus "Wahydra" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Wahydra_ekka>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Wahydra> ;
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Wahydra" ;
@@ -123,10 +96,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ekka" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Wahydra> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Wahydra>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Wahydra" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hesperiidae>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Moeris_ekka>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Moeris" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ekka" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Moeris> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Moeris>
+    dwc:class "Insecta" ;
+    dwc:family "Hesperiidae" ;
+    dwc:genus "Moeris" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hesperiidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Wahydra_obscura>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Wahydra> ;
     dwc:class "Insecta" ;
     dwc:family "Hesperiidae" ;
     dwc:genus "Wahydra" ;
@@ -135,14 +181,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "obscura" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Wahydra> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/4A5E87B9FFB29A16FF19B3776C16B0A0>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/4A/5E/87/Atlas>, <file:///workdir/tmprdf/data/4A/5E/87/Moeris_ekka> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Moeris_ekka_Evans_1955>, <http://taxon-concept.plazi.org/id/Animalia/Wahydra_obscura_Steinhauser_1991> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4040.1.5> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Wahydra_ekka> ;
-    dc:creator "Carneiro, Eduardo", "Casagrade, Mirna M.", "Henao, Efrain R.", "Mielke, Olaf H. H." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.289986>, <http://dx.doi.org/10.5281/zenodo.289987>, <http://dx.doi.org/10.5281/zenodo.289988> ;
-    a trt:Treatment .
-

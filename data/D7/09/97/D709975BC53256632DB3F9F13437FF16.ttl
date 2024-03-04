@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:D709975BC53256632DB3F9F13437FF16
+    cito:cites <http://dx.doi.org/10.5281/zenodo.255789>, <http://dx.doi.org/10.5281/zenodo.255792> ;
+    dc:creator "Baehr, Barbara C.; Whyte, Robert" ;
+    dc:title "Maratus michaelorum Baehr & Whyte, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/D709975BC53256632DB3F9F13437FF16.mc.EFC82C10C53256672DB3F9663598F8A7> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Maratus_michaelorum_Baehr_2016> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4154.5.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4154.5.1>
-    dc:creator "Baehr, Barbara C.", "Whyte, Robert" ;
-    dc:date "2016" ;
-    dc:title "The Peacock Spiders (Araneae: Salticidae: Maratus) of the Queensland Museum, including six new species" ;
     bibo:endPage "525" ;
     bibo:issue "5" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "501" ;
     bibo:volume "4154" ;
+    dc:creator "Baehr, Barbara C.; Whyte, Robert" ;
+    dc:date "2016" ;
+    dc:title "The Peacock Spiders (Araneae: Salticidae: Maratus) of the Queensland Museum, including six new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.255789>, <http://dx.doi.org/10.5281/zenodo.255792> ;
     a fabio:JournalArticle .
 
@@ -31,9 +41,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/255792/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/D709975BC53256632DB3F9F13437FF16.mc.EFC82C10C53256672DB3F9663598F8A7>
+    dwc:collectionCode "MALE" ;
+    dwc:eventDate "2006-03-03" ;
+    dwc:locality "Wright" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "410" ;
+    dwc:verbatimLatitude "-25.233334" ;
+    dwc:verbatimLongitude "148.61667" ;
+    trt:gbifOccurrenceId "1292014698" ;
+    trt:httpUri <https://treatment.plazi.org/id/D709975BC53256632DB3F9F13437FF16#EFC82C10C53256672DB3F9663598F8A7> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Maratus_michaelorum_Baehr_2016>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maratus_michaelorum> ;
-    dwc:ID-CoL "3Y2FP" ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Maratus" ;
@@ -43,50 +63,48 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Baehr & Whyte" ;
     dwc:species "michaelorum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3Y2FP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maratus_michaelorum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Maratus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Maratus_anomalus_Baehr_2016>
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Maratus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "anomalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maratus_anomalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maratus_julianneae_Baehr_2016>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Maratus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baehr & Whyte" ;
+    dwc:species "julianneae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maratus_julianneae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Eucalyptus_melanophloia_Baehr_2016>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eucalyptus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "melanophloia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Eucalyptus_melanophloia> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Maratus_michaelorum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratus> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:genus "Maratus" ;
@@ -95,22 +113,141 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "michaelorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maratus>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Maratus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Salticidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Salticidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Salticidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D709975BC53256632DB3F9F13437FF16>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Maratus_michaelorum_Baehr_2016> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4154.5.1> ;
-    dc:creator "Baehr, Barbara C.", "Whyte, Robert" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.255789>, <http://dx.doi.org/10.5281/zenodo.255792> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maratus_anomalus>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Maratus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "anomalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maratus_julianneae>
+    dwc:class "Arachnida" ;
+    dwc:family "Salticidae" ;
+    dwc:genus "Maratus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "julianneae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Maratus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Eucalyptus_melanophloia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eucalyptus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "melanophloia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Eucalyptus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Eucalyptus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eucalyptus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Myrtaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Myrtales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
