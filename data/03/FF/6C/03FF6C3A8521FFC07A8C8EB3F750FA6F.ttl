@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03FF6C3A8521FFC07A8C8EB3F750FA6F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.189108>, <http://dx.doi.org/10.5281/zenodo.189109> ;
+    dc:creator "Kaprus’, Ighor J.; Weiner, Wanda M." ;
+    dc:title "Pseudachorutes pratensis Rusek 1973" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_pratensis_Rusek_1973> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_pratensis>, <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_libanensis> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_libanensis_Ellis_1976> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.189101> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.189101>
-    dc:creator "Kaprus’, Ighor J.", "Weiner, Wanda M." ;
-    dc:date "2009" ;
-    dc:title "The genus Pseudachorutes Tullberg, 1871 (Collembola, Neanuridae) in the Ukraine with descriptions of new species" ;
     bibo:endPage "23" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "2166" ;
+    dc:creator "Kaprus’, Ighor J.; Weiner, Wanda M." ;
+    dc:date "2009" ;
+    dc:title "The genus Pseudachorutes Tullberg, 1871 (Collembola, Neanuridae) in the Ukraine with descriptions of new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.189108>, <http://dx.doi.org/10.5281/zenodo.189109> ;
     a fabio:JournalArticle .
 
@@ -30,21 +41,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/189109/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_libanensis_Ellis_1976>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_libanensis> ;
-    dwc:class "Entognatha" ;
-    dwc:family "Neanuridae" ;
-    dwc:genus "Pseudachorutes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Cassagnau & Delamare, 1955) sensu Ellis 1976" ;
-    dwc:species "libanensis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_pratensis_Rusek_1973>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_pratensis> ;
     dwc:class "Entognatha" ;
     dwc:family "Neanuridae" ;
     dwc:genus "Pseudachorutes" ;
@@ -54,60 +51,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Rusek, 1973" ;
     dwc:species "pratensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_pratensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Collembola>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Entognatha> ;
-    dwc:class "Entognatha" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Entognatha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Entognatha" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neanuridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Collembola> ;
-    dwc:class "Entognatha" ;
-    dwc:family "Neanuridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neanuridae> ;
-    dwc:class "Entognatha" ;
-    dwc:family "Neanuridae" ;
-    dwc:genus "Pseudachorutes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_libanensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_corticicolus_Schaffer_1896>
     dwc:class "Entognatha" ;
     dwc:family "Neanuridae" ;
     dwc:genus "Pseudachorutes" ;
@@ -115,11 +62,112 @@
     dwc:order "Collembola" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schaffer, 1896" ;
+    dwc:species "corticicolus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_corticicolus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_parvulus_Borner_1901>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Borner, 1901" ;
+    dwc:species "parvulus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_parvulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_subcrassus_Tullberg_1871>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tullberg, 1871" ;
+    dwc:species "subcrassus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_subcrassus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_scythicus_Kaprus%E2%80%99_2009>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "scythicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_scythicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_janstachi_Kaprus%E2%80%99_2009>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "janstachi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_janstachi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_palmiensis_Borner_1903>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Borner, 1903" ;
+    dwc:species "palmiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_palmiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_vasylii_Kaprus%E2%80%99_2009>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vasylii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_vasylii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_vitalii_Kaprus%E2%80%99_2009>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vitalii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_vitalii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_libanensis_Ellis_1976>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Cassagnau & Delamare, 1955) sensu Ellis 1976" ;
     dwc:species "libanensis" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_libanensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_pratensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
     dwc:class "Entognatha" ;
     dwc:family "Neanuridae" ;
     dwc:genus "Pseudachorutes" ;
@@ -128,14 +176,163 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pratensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03FF6C3A8521FFC07A8C8EB3F750FA6F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_pratensis_Rusek_1973> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/FF/6C/Pseudachorutes_libanensis>, <file:///workdir/tmprdf/data/03/FF/6C/Pseudachorutes_pratensis> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pseudachorutes_libanensis_Ellis_1976> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.189101> ;
-    dc:creator "Kaprus’, Ighor J.", "Weiner, Wanda M." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.189108>, <http://dx.doi.org/10.5281/zenodo.189109> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neanuridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Neanuridae>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Collembola> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Collembola>
+    dwc:class "Entognatha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Entognatha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Entognatha>
+    dwc:class "Entognatha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_corticicolus>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "corticicolus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_parvulus>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "parvulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_subcrassus>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "subcrassus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_scythicus>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "scythicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_janstachi>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "janstachi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_palmiensis>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "palmiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_vasylii>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vasylii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_vitalii>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "vitalii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudachorutes_libanensis>
+    dwc:class "Entognatha" ;
+    dwc:family "Neanuridae" ;
+    dwc:genus "Pseudachorutes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "libanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudachorutes> ;
+    a dwcFP:TaxonName .
