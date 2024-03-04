@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7F4F95739341FFD8FF264F208CEEF935
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Neoneurinae_Bengtsson_1918>, <http://dx.doi.org/10.5281/zenodo.4617970>, <http://dx.doi.org/10.5281/zenodo.4617972>, <http://dx.doi.org/10.5281/zenodo.4617974>, <http://dx.doi.org/10.5281/zenodo.4617976> ;
+    dc:creator "Li, Jun; Achterberg, Cornelis van; Zheng, Minlin; Chen, Jiahua" ;
+    dc:title "Neoneurini Bengtsson 1918" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neoneurini_Bengtsson_1918> ;
+    trt:publishedIn <http://dx.doi.org/10.11865/zs.202034> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11865/zs.202034>
-    dc:creator "Achterberg, Cornelis van", "Chen, Jiahua", "Li, Jun", "Zheng, Minlin" ;
-    dc:date "2020" ;
-    dc:title "Review of Neoneurini Bengtsson (Hymenoptera: Braconidae: Euphorinae) from China" ;
     bibo:endPage "289" ;
     bibo:issue "4" ;
     bibo:journal "Zoological Systematics" ;
     bibo:startPage "281" ;
     bibo:volume "45" ;
+    dc:creator "Li, Jun; Achterberg, Cornelis van; Zheng, Minlin; Chen, Jiahua" ;
+    dc:date "2020" ;
+    dc:title "Review of Neoneurini Bengtsson (Hymenoptera: Braconidae: Euphorinae) from China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4617970>, <http://dx.doi.org/10.5281/zenodo.4617972>, <http://dx.doi.org/10.5281/zenodo.4617974>, <http://dx.doi.org/10.5281/zenodo.4617976> ;
     a fabio:JournalArticle .
 
@@ -41,20 +50,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/4617976/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Neoneurinae_Bengtsson_1918>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoneurinae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "subFamily" ;
-    dwc:scientificNameAuthorship "Bengtsson, 1918: 27" ;
-    dwc:subFamily "Neoneurinae" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Neoneurini_Bengtsson_1918>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoneurini> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
@@ -63,60 +59,133 @@
     dwc:rank "tribe" ;
     dwc:scientificNameAuthorship "Bengtsson, 1918" ;
     dwc:tribe "Neoneurini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoneurini> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Braconidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Neoneurinae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Neoneurinae_Bengtsson_1918>
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Bengtsson, 1918: 27" ;
     dwc:subFamily "Neoneurinae" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoneurinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neoneurus_Haliday_1838>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Neoneurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Haliday" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoneurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Neoneurus_clypeatus_Foerster_1863>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Neoneurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Foerster, 1863)" ;
+    dwc:species "clypeatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Neoneurus_clypeatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elasmosoma_Ruthe_1858>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ruthe", "Ruthe, 1858" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sinoneoneurus_He_1997>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Sinoneoneurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "He, Chen & van Achterberg, 1997" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sinoneoneurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elasmosoma_taiwanense_Chou_1985>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chou, 1985 Hypopygium" ;
+    dwc:species "taiwanense" ;
+    dwc:subGenus "Elasmosoma" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_taiwanense> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elasmosoma_pergandei_Ashmead_1895>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ashmead, 1895" ;
+    dwc:species "pergandei" ;
+    dwc:subGenus "Elasmosoma" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_pergandei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elasmosoma_obscuripennis_He_1997>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(He, Chen & van Achterberg, 1997)" ;
+    dwc:species "obscuripennis" ;
+    dwc:subGenus "Sinoneoneurus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_obscuripennis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Elasmosoma_pallidipennis_He_1997>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(He, Chen & van Achterberg, 1997)" ;
+    dwc:species "pallidipennis" ;
+    dwc:subGenus "Sinoneoneurus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_pallidipennis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Neoneurini>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:kingdom "Animalia" ;
@@ -124,12 +193,176 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "tribe" ;
     dwc:tribe "Neoneurini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7F4F95739341FFD8FF264F208CEEF935>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Neoneurini_Bengtsson_1918> ;
-    trt:publishedIn <http://dx.doi.org/10.11865/zs.202034> ;
-    dc:creator "Achterberg, Cornelis van", "Chen, Jiahua", "Li, Jun", "Zheng, Minlin" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4617970>, <http://dx.doi.org/10.5281/zenodo.4617972>, <http://dx.doi.org/10.5281/zenodo.4617974>, <http://dx.doi.org/10.5281/zenodo.4617976>, <http://taxon-concept.plazi.org/id/Animalia/Neoneurinae_Bengtsson_1918> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Braconidae>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoneurinae>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Neoneurinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoneurus>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Neoneurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Neoneurus_clypeatus>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Neoneurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "clypeatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neoneurus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sinoneoneurus>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Sinoneoneurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma_taiwanense>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "taiwanense" ;
+    dwc:subGenus "Elasmosoma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_Elasmosoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma_Elasmosoma>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Elasmosoma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma_pergandei>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pergandei" ;
+    dwc:subGenus "Elasmosoma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_Elasmosoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma_obscuripennis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "obscuripennis" ;
+    dwc:subGenus "Sinoneoneurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_Sinoneoneurus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma_Sinoneoneurus>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Sinoneoneurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elasmosoma_pallidipennis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Elasmosoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pallidipennis" ;
+    dwc:subGenus "Sinoneoneurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elasmosoma_Sinoneoneurus> ;
+    a dwcFP:TaxonName .
