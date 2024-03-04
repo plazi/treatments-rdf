@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038EC509DA73974BDF873B04AEDBFEB3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.241988> ;
+    dc:creator "Monné, Miguel A.; Cupello, Mario" ;
+    dc:title "Centrocerum variatum Newman 1841, comb. nov." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Ambonus_variatus>, <http://taxon-name.plazi.org/id/Animalia/Centrocerum_elegans>, <http://taxon-name.plazi.org/id/Animalia/Hypermallus_elegans>, <http://taxon-name.plazi.org/id/Animalia/Elaphidion_elegans> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Centrocerum_variatum_Newman_1841> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trichophorus_variatus_Newman_1841>, <http://taxon-concept.plazi.org/id/Animalia/Elaphidion_elegans_Chevrolat_1861> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3981.3.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3981.3.2>
-    dc:creator "Cupello, Mario", "Monné, Miguel A." ;
-    dc:date "2015" ;
-    dc:title "On the validity of some species names of South American longhorn beetles (Coleoptera, Cerambycidae)" ;
     bibo:endPage "366" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "360" ;
     bibo:volume "3981" ;
+    dc:creator "Monné, Miguel A.; Cupello, Mario" ;
+    dc:date "2015" ;
+    dc:title "On the validity of some species names of South American longhorn beetles (Coleoptera, Cerambycidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.241988> ;
     a fabio:JournalArticle .
 
@@ -26,23 +37,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/241988/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Elaphidion_elegans_Chevrolat_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elaphidion_elegans> ;
-    dwc:ID-CoL "6DZCL" ;
+<http://taxon-concept.plazi.org/id/Animalia/Centrocerum_variatum_Newman_1841>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
-    dwc:genus "Elaphidion" ;
+    dwc:genus "Centrocerum" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Chevrolat, 1861: 190" ;
-    dwc:species "elegans" ;
+    dwc:scientificNameAuthorship "Newman, 1841" ;
+    dwc:species "variatum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BJL2D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Centrocerum_variatum> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trichophorus_variatus_Newman_1841>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichophorus_variatus> ;
-    dwc:ID-CoL "58H7T" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Trichophorus" ;
@@ -50,35 +59,39 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Newman, 1841: 94" ;
+    dwc:scientificNameAuthorship "Newman, 1841: 94", "Newman, 1841" ;
     dwc:species "variatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BJL2D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichophorus_variatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Centrocerum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Elaphidion_elegans_Chevrolat_1861>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
-    dwc:genus "Centrocerum" ;
+    dwc:genus "Elaphidion" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chevrolat, 1861: 190", "Chevrolat, 1861" ;
+    dwc:species "elegans" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BJL2D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Elaphidion_elegans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/hirsutum_Chevrolat_1861>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/jocosum_Chevrolat_1861>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/puberulum_Chevrolat_1861>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Centrocerum_variatum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Centrocerum> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Centrocerum" ;
@@ -87,71 +100,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "variatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Centrocerum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Centrocerum>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Centrocerum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Elaphidion>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Elaphidion" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Elaphidion_elegans>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elaphidion> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Elaphidion" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Trichophorus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Trichophorus" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
     dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichophorus_variatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichophorus> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Trichophorus" ;
@@ -160,14 +162,57 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "variatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichophorus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038EC509DA73974BDF873B04AEDBFEB3>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/8E/C5/Ambonus_variatus>, <file:///workdir/tmprdf/data/03/8E/C5/Centrocerum_elegans>, <file:///workdir/tmprdf/data/03/8E/C5/Elaphidion_elegans>, <file:///workdir/tmprdf/data/03/8E/C5/Hypermallus_elegans> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Elaphidion_elegans_Chevrolat_1861>, <http://taxon-concept.plazi.org/id/Animalia/Trichophorus_variatus_Newman_1841> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3981.3.2> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Centrocerum_variatum> ;
-    dc:creator "Cupello, Mario", "Monné, Miguel A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.241988> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trichophorus>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Trichophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Elaphidion_elegans>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Elaphidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Elaphidion> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Elaphidion>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Elaphidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/hirsutum>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "hirsutum" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/jocosum>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "jocosum" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/puberulum>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "puberulum" ;
+    a dwcFP:TaxonName .
