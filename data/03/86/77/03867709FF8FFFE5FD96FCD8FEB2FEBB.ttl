@@ -1,13 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03867709FF8FFFE5FD96FCD8FEB2FEBB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.193003>, <http://dx.doi.org/10.5281/zenodo.193006> ;
+    dc:creator "Cristina Delgado; M. Helena Novais; Saúl Blanco; Salomé F. P. Almeida" ;
+    dc:title "Fragilaria vaucheriae (Kütz.) J. B. Petersen" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Chromista/Exilaria> ;
+    trt:publishedIn <http://dx.doi.org/10.5852/ejt.2016.248> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Chromista/Fragilaria> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.5852/ejt.2016.248>
+    bibo:endPage "16" ;
+    bibo:journal "European Journal of Taxonomy" ;
+    bibo:startPage "1" ;
+    bibo:volume "248" ;
+    dc:creator "Cristina Delgado; M. Helena Novais; Saúl Blanco; Salomé F. P. Almeida" ;
+    dc:date "2016" ;
+    dc:title "Fragilaria rinoi sp. nov. (Fragilariales, Fragilariophyceae) from periphytic river samples in Central Portugal" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.193003>, <http://dx.doi.org/10.5281/zenodo.193006> ;
+    a fabio:JournalArticle .
 
 <http://dx.doi.org/10.5281/zenodo.193003>
     dc:description "Fig. 2. Type material of Fragilaria vaucheriae deposited in the Natural History Museum of London (BM 78023, BM 78024)." ;
@@ -19,39 +40,32 @@
     fabio:hasRepresentation "https://zenodo.org/record/193006/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5852/ejt.2016.248>
-    dc:creator "Cristina Delgado", "M. Helena Novais", "Salomé F. P. Almeida", "Saúl Blanco" ;
-    dc:date "2016" ;
-    dc:title "Fragilaria rinoi sp. nov. (Fragilariales, Fragilariophyceae) from periphytic river samples in Central Portugal" ;
-    bibo:endPage "16" ;
-    bibo:journal "European Journal of Taxonomy" ;
-    bibo:startPage "1" ;
-    bibo:volume "248" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.193003>, <http://dx.doi.org/10.5281/zenodo.193006> ;
-    a fabio:JournalArticle .
-
-<http://taxon-name.plazi.org/id/Chromista>
-    dwc:kingdom "Chromista" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyta> ;
+<http://taxon-concept.plazi.org/id/Chromista/Fragilaria_vaucheriae_Kutzing_1833>
     dwc:class "Bacillariophyceae" ;
+    dwc:family "Fragilariaceae" ;
+    dwc:genus "Fragilaria" ;
     dwc:kingdom "Chromista" ;
+    dwc:order "Fragilariales" ;
     dwc:phylum "Bacillariophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Kutzing 1833b)" ;
+    dwc:species "vaucheriae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Fragilaria_vaucheriae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Chromista/Bacillariophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+<http://taxon-concept.plazi.org/id/Chromista/Fragilaria_rinoi_Delgado_2016>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Fragilariaceae" ;
+    dwc:genus "Fragilaria" ;
     dwc:kingdom "Chromista" ;
+    dwc:order "Fragilariales" ;
     dwc:phylum "Bacillariophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "rinoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Chromista/Fragilaria_rinoi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Chromista/Fragilaria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Fragilariaceae> ;
     dwc:class "Bacillariophyceae" ;
     dwc:family "Fragilariaceae" ;
     dwc:genus "Fragilaria" ;
@@ -59,32 +73,68 @@
     dwc:order "Fragilariales" ;
     dwc:phylum "Bacillariophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Fragilariaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Fragilariaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Fragilariales> ;
     dwc:class "Bacillariophyceae" ;
     dwc:family "Fragilariaceae" ;
     dwc:kingdom "Chromista" ;
     dwc:order "Fragilariales" ;
     dwc:phylum "Bacillariophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Fragilariales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Chromista/Fragilariales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae> ;
     dwc:class "Bacillariophyceae" ;
     dwc:kingdom "Chromista" ;
     dwc:order "Fragilariales" ;
     dwc:phylum "Bacillariophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03867709FF8FFFE5FD96FCD8FEB2FEBB>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/86/77/Exilaria> ;
-    trt:publishedIn <http://dx.doi.org/10.5852/ejt.2016.248> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Fragilaria> ;
-    dc:creator "Cristina Delgado", "M. Helena Novais", "Salomé F. P. Almeida", "Saúl Blanco" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.193003>, <http://dx.doi.org/10.5281/zenodo.193006> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Chromista/Bacillariophyceae>
+    dwc:class "Bacillariophyceae" ;
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Bacillariophyta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Chromista/Bacillariophyta>
+    dwc:kingdom "Chromista" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista>
+    dwc:kingdom "Chromista" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Fragilaria_vaucheriae>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Fragilariaceae" ;
+    dwc:genus "Fragilaria" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Fragilariales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:species "vaucheriae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Fragilaria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Chromista/Fragilaria_rinoi>
+    dwc:class "Bacillariophyceae" ;
+    dwc:family "Fragilariaceae" ;
+    dwc:genus "Fragilaria" ;
+    dwc:kingdom "Chromista" ;
+    dwc:order "Fragilariales" ;
+    dwc:phylum "Bacillariophyta" ;
+    dwc:rank "species" ;
+    dwc:species "rinoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Chromista/Fragilaria> ;
+    a dwcFP:TaxonName .
