@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CA514C6B2CFFBDF1336251FDE8FAF4
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Magilus_peronii_Lamarck_1818>, <http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_schrenkii_Lischke_1871>, <http://dx.doi.org/10.5281/zenodo.4520216> ;
+    dc:creator "Oliverio, Marco" ;
+    dc:title "Leptoconchus Ruppell 1834" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_Ruppell_1834> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/z2009n4a2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/z2009n4a2>
-    dc:creator "Oliverio, Marco" ;
-    dc:date "2009" ;
-    dc:title "Diversity of Coralliophilinae (Mollusca, Neogastropoda, Muricidae) at Austral Islands (South Pacific)" ;
     bibo:endPage "789" ;
     bibo:issue "4" ;
     bibo:journal "Zoosystema" ;
     bibo:pubDate "2009-12-31" ;
     bibo:startPage "759" ;
     bibo:volume "31" ;
+    dc:creator "Oliverio, Marco" ;
+    dc:date "2009" ;
+    dc:title "Diversity of Coralliophilinae (Mollusca, Neogastropoda, Muricidae) at Austral Islands (South Pacific)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4520216> ;
     a fabio:JournalArticle .
 
@@ -28,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_Ruppell_1834>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus> ;
-    dwc:ID-CoL "7P78C" ;
     dwc:authority "Oliverio, 2009" ;
     dwc:authorityName "Oliverio" ;
     dwc:authorityYear "2009" ;
@@ -40,10 +47,12 @@
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ruppell, 1834" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P78C> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_schrenkii_Lischke_1871>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus_schrenkii> ;
+<http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_peronii_Lamarck_1818>
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Leptoconchus" ;
@@ -51,13 +60,12 @@
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Lischke, 1871 a: 40" ;
-    dwc:species "schrenkii" ;
+    dwc:scientificNameAuthorship "(Lamarck, 1818)" ;
+    dwc:species "peronii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus_peronii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Magilus_peronii_Lamarck_1818>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Magilus_peronii> ;
-    dwc:ID-CoL "3XGW2" ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Magilus" ;
@@ -65,25 +73,40 @@
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Lamarck, 1818: 374" ;
+    dwc:scientificNameAuthorship "Lamarck, 1818: 374", "Lamarck, 1818" ;
     dwc:species "peronii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P78C> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Magilus_peronii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+<http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_striatus_Ruppell_1835>
     dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Leptoconchus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ruppell, 1835: 259" ;
+    dwc:species "striatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P78C> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus_striatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_schrenkii_Lischke_1871>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Leptoconchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lischke, 1871 a: 40", "Lischke, 1871" ;
+    dwc:species "schrenkii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus_schrenkii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptoconchus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:genus "Leptoconchus" ;
@@ -91,73 +114,103 @@
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leptoconchus_schrenkii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Muricidae" ;
-    dwc:genus "Leptoconchus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:species "schrenkii" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Magilus>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Muricidae" ;
-    dwc:genus "Magilus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Magilus_peronii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Magilus> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Muricidae" ;
-    dwc:genus "Magilus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:species "peronii" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Muricidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:family "Muricidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03CA514C6B2CFFBDF1336251FDE8FAF4>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_Ruppell_1834> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/z2009n4a2> ;
-    dc:creator "Oliverio, Marco" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4520216>, <http://taxon-concept.plazi.org/id/Animalia/Leptoconchus_schrenkii_Lischke_1871>, <http://taxon-concept.plazi.org/id/Animalia/Magilus_peronii_Lamarck_1818> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptoconchus_peronii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Leptoconchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "peronii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Magilus_peronii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Magilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "peronii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Magilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Magilus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Magilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muricidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptoconchus_striatus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Leptoconchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "striatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptoconchus_schrenkii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Muricidae" ;
+    dwc:genus "Leptoconchus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "schrenkii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptoconchus> ;
+    a dwcFP:TaxonName .
