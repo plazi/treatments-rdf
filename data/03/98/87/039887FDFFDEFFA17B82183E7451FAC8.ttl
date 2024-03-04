@@ -1,18 +1,25 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039887FDFFDEFFA17B82183E7451FAC8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.10135537> ;
+    dc:creator "Shamshev, I. V." ;
+    dc:title "Empis (Polyblepharis) turalae Shamshev 2019, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039887FDFFDEFFA17B82183E7451FAC8.mc.3B593CB6FFDEFFAF7BA718857143FAA2> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Empis_turalae_Shamshev_2019> ;
+    trt:publishedIn <http://dx.doi.org/10.31610/zsr/2019.28.1.24> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.31610/zsr/2019.28.1.24>
-    dc:creator "Shamshev, I. V." ;
-    dc:date "2019" ;
-    dc:title "Six new species of the genus Empis (Diptera: Empididae) from the Altai Mountains of Russia" ;
     bibo:endPage "41" ;
     bibo:issue "1" ;
     bibo:journal "Zoosystematica Rossica" ;
@@ -20,6 +27,9 @@
     bibo:series "Zoosyst. Rossica" ;
     bibo:startPage "24" ;
     bibo:volume "28" ;
+    dc:creator "Shamshev, I. V." ;
+    dc:date "2019" ;
+    dc:title "Six new species of the genus Empis (Diptera: Empididae) from the Altai Mountains of Russia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.10135537> ;
     a fabio:JournalArticle .
 
@@ -28,9 +38,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/10135537/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039887FDFFDEFFA17B82183E7451FAC8.mc.3B593CB6FFDEFFAF7BA718857143FAA2>
+    dwc:collectionCode "R, ZMUM" ;
+    dwc:eventDate "2016-12-07" ;
+    dwc:locality "Male" ;
+    dwc:recordedBy "N. Vikhrev" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "1350" ;
+    dwc:verbatimLatitude "50.99" ;
+    dwc:verbatimLongitude "85.68" ;
+    trt:gbifOccurrenceId "4144857306" ;
+    trt:httpUri <https://treatment.plazi.org/id/039887FDFFDEFFA17B82183E7451FAC8#3B593CB6FFDEFFAF7BA718857143FAA2> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Empis_turalae_Shamshev_2019>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Empis_turalae> ;
-    dwc:ID-CoL "8BZQC" ;
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:genus "Empis" ;
@@ -38,44 +59,69 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Shamshev, 2019" ;
+    dwc:scientificNameAuthorship "Shamshev, 2019", "Shamshev" ;
     dwc:species "turalae" ;
     dwc:subGenus "Polyblepharis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8BZQC> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Empis_turalae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Animalia/Polyblepharis_Bezzi_1909>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Empididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Empis_albicans_Meigen_1822>
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
+    dwc:genus "Empis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meigen, 1822" ;
+    dwc:species "albicans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Empis_albicans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Empis_kvakensis_Shamshev_2003>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Empis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Shamshev, 2003" ;
+    dwc:species "kvakensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Empis_kvakensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Empis_turalae>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Empis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "turalae" ;
+    dwc:subGenus "Polyblepharis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empis_Polyblepharis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Empis_Polyblepharis>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Empis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Polyblepharis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empis> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Empis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empididae> ;
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:genus "Empis" ;
@@ -83,10 +129,55 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empididae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Empis_turalae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empis> ;
+<http://taxon-name.plazi.org/id/Animalia/Empididae>
+    dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polyblepharis>
+    # Warning: Could not determine parent name ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Polyblepharis" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Empis_albicans>
     dwc:class "Insecta" ;
     dwc:family "Empididae" ;
     dwc:genus "Empis" ;
@@ -94,21 +185,18 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "turalae" ;
+    dwc:species "albicans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empis> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Empis_kvakensis>
     dwc:class "Insecta" ;
+    dwc:family "Empididae" ;
+    dwc:genus "Empis" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:species "kvakensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Empis> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/039887FDFFDEFFA17B82183E7451FAC8>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Empis_turalae_Shamshev_2019> ;
-    trt:publishedIn <http://dx.doi.org/10.31610/zsr/2019.28.1.24> ;
-    dc:creator "Shamshev, I. V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.10135537> ;
-    a trt:Treatment .
-
