@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C0EF49FFDAFFABFF13FD5BFD70F931
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7235825> ;
+    dc:creator "Freitas, Felipe V." ;
+    dc:title "Gaesischia (Gaesischioides) Freitas 2022, New subgenus" ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gaesischia_Gaesischioides_Freitas_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5196.4.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5196.4.8>
-    dc:creator "Freitas, Felipe V." ;
-    dc:date "2022" ;
-    dc:title "New genus and subgenus of South American long-horned bees (Apidae, Eucerini)" ;
     bibo:endPage "600" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-10-21" ;
     bibo:startPage "595" ;
     bibo:volume "5196" ;
+    dc:creator "Freitas, Felipe V." ;
+    dc:date "2022" ;
+    dc:title "New genus and subgenus of South American long-horned bees (Apidae, Eucerini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7235825> ;
     a fabio:JournalArticle .
 
@@ -28,7 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Gaesischia_Gaesischioides_Freitas_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gaesischia_Gaesischioides> ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Gaesischia" ;
@@ -38,32 +46,38 @@
     dwc:rank "subGenus" ;
     dwc:scientificNameAuthorship "Freitas, 2022" ;
     dwc:subGenus "Gaesischioides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gaesischia_Gaesischioides> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Apidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Eucera_hyptidis_Ducke_1910>
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
+    dwc:genus "Eucera" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ducke 1910" ;
+    dwc:species "hyptidis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eucera_hyptidis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Gaesischia_hyptidis_Ducke_1910>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Gaesischia" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ducke, 1910", "(Ducke 1910)" ;
+    dwc:species "hyptidis" ;
+    dwc:subGenus "Gaesischioides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gaesischia_hyptidis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Gaesischia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Gaesischia_Michener_1955>
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Gaesischia" ;
@@ -71,10 +85,54 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Michener, LaBerge & Moure, 1955" ;
+    dwc:sensu "stricto" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gaesischia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gaesischiopsis_Michener_1955>
+    dwc:class "Insecta" ;
+    dwc:genus "Gaesischiopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Michener, LaBerge & Moure, 1955" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gaesischiopsis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Agaesischia_Moure_1955>
+    dwc:class "Insecta" ;
+    dwc:genus "Agaesischia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Moure & Michener, 1955" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agaesischia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gaesischia_patellicornis_Ducke_1909>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Gaesischia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ducke, 1909" ;
+    dwc:species "patellicornis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gaesischia_patellicornis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Freitas_Freitas_2022>
+    dwc:genus "Freitas" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Freitas, 2022" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Freitas> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Gaesischia_Gaesischioides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gaesischia> ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Gaesischia" ;
@@ -83,29 +141,129 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subGenus" ;
     dwc:subGenus "Gaesischioides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gaesischia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gaesischia>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Gaesischia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apidae>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C0EF49FFDAFFABFF13FD5BFD70F931>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Gaesischia_Gaesischioides_Freitas_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5196.4.8> ;
-    dc:creator "Freitas, Felipe V." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7235825> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eucera_hyptidis>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Eucera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hyptidis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eucera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eucera>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Eucera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gaesischia_hyptidis>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Gaesischia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hyptidis" ;
+    dwc:subGenus "Gaesischioides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gaesischia_Gaesischioides>, <http://taxon-name.plazi.org/id/Animalia/Gaesischia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gaesischiopsis>
+    dwc:class "Insecta" ;
+    dwc:genus "Gaesischiopsis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Agaesischia>
+    dwc:class "Insecta" ;
+    dwc:genus "Agaesischia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gaesischia_patellicornis>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Gaesischia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "patellicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gaesischia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Freitas>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Freitas" ;
+    dwc:rank "genus" ;
+    a dwcFP:TaxonName .
