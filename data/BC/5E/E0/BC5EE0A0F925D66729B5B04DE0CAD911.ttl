@@ -1,33 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:BC5EE0A0F925D66729B5B04DE0CAD911
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Stephaniscini>' due to issues with rank ;
+    dc:creator "Belokobylskij, Sergey A." ;
+    dc:title "Leptospathiini Belokobylskij, 2011, nom. n." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Stephaniscus> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.118.914> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptospathiini> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.118.914>
-    dc:creator "Belokobylskij, Sergey A." ;
-    dc:date "2011" ;
-    dc:title "Review of the genus Stephanospathius Belokobylskij, 1992 (Hymenoptera, Braconidae), with discussion of their tribal position" ;
     bibo:endPage "17" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "118" ;
+    dc:creator "Belokobylskij, Sergey A." ;
+    dc:date "2011" ;
+    dc:title "Review of the genus Stephanospathius Belokobylskij, 1992 (Hymenoptera, Braconidae), with discussion of their tribal position" ;
     a fabio:JournalArticle .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptospathiini>
+    # Warning: Could not determine parent name ;
     dwc:rank "tribe" ;
     dwc:tribe "Leptospathiini" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/BC5EE0A0F925D66729B5B04DE0CAD911>
-    trt:citesTaxonName <file:///app/workdir/tmprdf/data/BC/5E/E0/Stephaniscus> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.118.914> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptospathiini> ;
-    dc:creator "Belokobylskij, Sergey A." ;
-    a trt:Treatment .
-

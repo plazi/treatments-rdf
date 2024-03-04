@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:2210371CCD2AFFFFCAF8599CFB20FB12
+    cito:cites <http://dx.doi.org/10.5281/zenodo.556094> ;
+    dc:creator "Bosmans; Van Keer" ;
+    dc:title "Liocranum inornatum L. Koch 1882" ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/2210371CCD2AFFFFCAF8599CFB20FB12/7920> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Liocranum_inornatum_Koch_1882> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6178765> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6178765>
-    dc:creator "Bosmans", "Van Keer" ;
-    dc:date "2012" ;
-    dc:title "On the spider species described by L. Koch in 1882 from the Balearic Islands (Araneae)" ;
     bibo:endPage "16" ;
     bibo:issue "1" ;
     bibo:journal "Arachnologische Mitteilungen" ;
     bibo:startPage "5" ;
     bibo:volume "43" ;
+    dc:creator "Bosmans; Van Keer" ;
+    dc:date "2012" ;
+    dc:title "On the spider species described by L. Koch in 1882 from the Balearic Islands (Araneae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.556094> ;
     a fabio:JournalArticle .
 
@@ -26,8 +37,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/556094/files/figure.png" ;
     a fabio:Figure .
 
+<http://treatment.plazi.org/id/2210371CCD2AFFFFCAF8599CFB20FB12/7920>
+    dwc:catalogNumber "7920" ;
+    dwc:collectionCode "ZMB" ;
+    dwc:eventDate "1866-04" ;
+    dwc:locality "Miramare" ;
+    dwc:recordedBy "Schaufuss" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "1457229217" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Liocranum_inornatum_Koch_1882>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_inornatum> ;
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
     dwc:genus "Liocranum" ;
@@ -37,60 +57,88 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "L. Koch, 1882" ;
     dwc:species "inornatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_inornatum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Zora_inornata_Koch_1882>
     dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
+    dwc:family "Zoridae" ;
+    dwc:genus "Zora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "L. Koch, 1882: 639" ;
+    dwc:species "inornata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zora_inornata> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Liocranidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Liocranidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Liocranum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Liocranum_variabilis_Wunderlich_2008>
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
     dwc:genus "Liocranum" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wunderlich, 2008: 506" ;
+    dwc:species "variabilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_variabilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liocranum_majus_Simon_1878>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Simon, 1878" ;
+    dwc:species "majus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_majus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liocranum_apertum_Denis_1954>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Denis, 1954" ;
+    dwc:species "apertum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_apertum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liocranum_pallidulum_Simon_1878>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Simon, 1878" ;
+    dwc:species "pallidulum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_pallidulum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Liocranum_segmentatum_Simon_1878>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Simon, 1878" ;
+    dwc:species "segmentatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liocranum_segmentatum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Liocranum_inornatum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
     dwc:class "Arachnida" ;
     dwc:family "Liocranidae" ;
     dwc:genus "Liocranum" ;
@@ -99,22 +147,148 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "inornatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2210371CCD2AFFFFCAF8599CFB20FB12>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Liocranum_inornatum_Koch_1882> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6178765> ;
-    dc:creator "Bosmans", "Van Keer" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.556094> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/2210371CCD2AFFFFCAF8599CFB20FB12/7920> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Liocranum>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranidae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/2210371CCD2AFFFFCAF8599CFB20FB12/7920>
-    dwc:catalogNumber "7920" ;
-    dwc:collectionCode "ZMB" ;
-    dwc:eventDate "1866-04" ;
-    dwc:locality "Miramare" ;
-    dwc:recordedBy "Schaufuss" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Liocranidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zora_inornata>
+    dwc:class "Arachnida" ;
+    dwc:family "Zoridae" ;
+    dwc:genus "Zora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "inornata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zora>
+    dwc:class "Arachnida" ;
+    dwc:family "Zoridae" ;
+    dwc:genus "Zora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Zoridae>
+    dwc:class "Arachnida" ;
+    dwc:family "Zoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liocranum_variabilis>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "variabilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liocranum_majus>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "majus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liocranum_apertum>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "apertum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liocranum_pallidulum>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pallidulum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Liocranum_segmentatum>
+    dwc:class "Arachnida" ;
+    dwc:family "Liocranidae" ;
+    dwc:genus "Liocranum" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "segmentatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liocranum> ;
+    a dwcFP:TaxonName .
