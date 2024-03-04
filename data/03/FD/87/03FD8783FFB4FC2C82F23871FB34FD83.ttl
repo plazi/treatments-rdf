@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03FD8783FFB4FC2C82F23871FB34FD83
+    cito:cites <http://dx.doi.org/10.5281/zenodo.182281>, <http://dx.doi.org/10.5281/zenodo.182282> ;
+    dc:creator "Rasmussen, Andrew K.; Harris, Steven C.; Denson, Dana R." ;
+    dc:title "Setodes chipolanus Rasmussen and Harris, new species" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes>, <http://taxon-name.plazi.org/id/Animalia/Setodes_chipolanus>, <http://taxon-name.plazi.org/id/Animalia/Setodes_dixiensis>, <http://taxon-name.plazi.org/id/Animalia/Setodes_oxapius>, <http://taxon-name.plazi.org/id/Animalia/Setodes_incertus>, <http://taxon-name.plazi.org/id/Animalia/Setodes_stehri> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Setodes_chipolanus_Harris_2008> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.182279> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.182279>
-    dc:creator "Denson, Dana R.", "Harris, Steven C.", "Rasmussen, Andrew K." ;
-    dc:date "2008" ;
-    dc:title "Two new species of Leptoceridae (Trichoptera) from Florida, USA" ;
     bibo:endPage "64" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "55" ;
     bibo:volume "1779" ;
+    dc:creator "Rasmussen, Andrew K.; Harris, Steven C.; Denson, Dana R." ;
+    dc:date "2008" ;
+    dc:title "Two new species of Leptoceridae (Trichoptera) from Florida, USA" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.182281>, <http://dx.doi.org/10.5281/zenodo.182282> ;
     a fabio:JournalArticle .
 
@@ -31,7 +41,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Setodes_chipolanus_Harris_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_chipolanus> ;
     dwc:class "Insecta" ;
     dwc:family "Leptoceridae" ;
     dwc:genus "Setodes" ;
@@ -41,40 +50,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Rasmussen and Harris" ;
     dwc:species "chipolanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_chipolanus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leptoceridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Leptoceridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Trichoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Setodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptoceridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_Rasmussen_2008>
     dwc:class "Insecta" ;
     dwc:family "Leptoceridae" ;
     dwc:genus "Setodes" ;
@@ -82,10 +61,11 @@
     dwc:order "Trichoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Setodes_chipolanus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_chipolanus_Rasmussen_2008>
     dwc:class "Insecta" ;
     dwc:family "Leptoceridae" ;
     dwc:genus "Setodes" ;
@@ -94,22 +74,219 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "chipolanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_chipolanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_dixiensis_Rasmussen_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dixiensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_dixiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_oxapius_Rasmussen_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "oxapius" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_oxapius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_incertus_Rasmussen_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "incertus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_incertus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_stehri_Rasmussen_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stehri" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_stehri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_dixiensis_Holzenthal_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Holzenthal" ;
+    dwc:species "dixiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_dixiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_oxapius_Ross_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Ross)" ;
+    dwc:species "oxapius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_oxapius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_incertus_Walker_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Walker)" ;
+    dwc:species "incertus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_incertus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Setodes_stehri_Ross_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Ross)" ;
+    dwc:species "stehri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Setodes_stehri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Setodes_chipolanus>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "chipolanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Setodes>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptoceridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptoceridae>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Trichoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Trichoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03FD8783FFB4FC2C82F23871FB34FD83>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/FD/87/Setodes>, <file:///workdir/tmprdf/data/03/FD/87/Setodes_chipolanus>, <file:///workdir/tmprdf/data/03/FD/87/Setodes_dixiensis>, <file:///workdir/tmprdf/data/03/FD/87/Setodes_incertus>, <file:///workdir/tmprdf/data/03/FD/87/Setodes_oxapius>, <file:///workdir/tmprdf/data/03/FD/87/Setodes_stehri> ;
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Setodes_chipolanus_Harris_2008> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.182279> ;
-    dc:creator "Denson, Dana R.", "Harris, Steven C.", "Rasmussen, Andrew K." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.182281>, <http://dx.doi.org/10.5281/zenodo.182282> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Setodes_dixiensis>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dixiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Setodes_oxapius>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "oxapius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Setodes_incertus>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "incertus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Setodes_stehri>
+    dwc:class "Insecta" ;
+    dwc:family "Leptoceridae" ;
+    dwc:genus "Setodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trichoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stehri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Setodes> ;
+    a dwcFP:TaxonName .
