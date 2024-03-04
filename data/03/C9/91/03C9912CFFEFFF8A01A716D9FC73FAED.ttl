@@ -1,29 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C9912CFFEFFF8A01A716D9FC73FAED
+    dc:creator "Blake, James A." ;
+    dc:title "Leodamas mucronatus Blake 2021, new species" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Scoloplos_sp.> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Leodamas_mucronatus_Blake_2021> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4930.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4930.1.1>
-    dc:creator "Blake, James A." ;
-    dc:date "2021" ;
-    dc:title "New species and records of Orbiniidae (Annelida, Polychaeta) from continental shelf and slope depths of the Western North Atlantic Ocean" ;
     bibo:endPage "123" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-02-17" ;
     bibo:startPage "1" ;
     bibo:volume "4930" ;
+    dc:creator "Blake, James A." ;
+    dc:date "2021" ;
+    dc:title "New species and records of Orbiniidae (Annelida, Polychaeta) from continental shelf and slope depths of the Western North Atlantic Ocean" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Leodamas_mucronatus_Blake_2021>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leodamas_mucronatus> ;
-    dwc:ID-CoL "9BDHF" ;
     dwc:class "Polychaeta" ;
     dwc:family "Orbiniidae" ;
     dwc:genus "Leodamas" ;
@@ -32,20 +39,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Blake, 2021" ;
     dwc:species "mucronatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/9BDHF> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leodamas_mucronatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Leodamas>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orbiniidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Scoloplos_sp._Blake_2021>
     dwc:class "Polychaeta" ;
     dwc:family "Orbiniidae" ;
-    dwc:genus "Leodamas" ;
+    dwc:genus "Scoloplos" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "sp." ;
+    dwc:subGenus "Leodamas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scoloplos_sp.> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Leodamas_mucronatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leodamas> ;
     dwc:class "Polychaeta" ;
     dwc:family "Orbiniidae" ;
     dwc:genus "Leodamas" ;
@@ -53,6 +63,17 @@
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
     dwc:species "mucronatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leodamas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leodamas>
+    dwc:class "Polychaeta" ;
+    dwc:family "Orbiniidae" ;
+    dwc:genus "Leodamas" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orbiniidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Orbiniidae>
@@ -61,12 +82,58 @@
     dwc:kingdom "Animalia" ;
     dwc:phylum "Annelida" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polychaeta> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C9912CFFEFFF8A01A716D9FC73FAED>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/C9/91/Scoloplos_sp.> ;
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Leodamas_mucronatus_Blake_2021> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4930.1.1> ;
-    dc:creator "Blake, James A." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Polychaeta>
+    dwc:class "Polychaeta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scoloplos_sp.>
+    dwc:class "Polychaeta" ;
+    dwc:family "Orbiniidae" ;
+    dwc:genus "Scoloplos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "sp." ;
+    dwc:subGenus "Leodamas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scoloplos_Leodamas> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scoloplos_Leodamas>
+    dwc:class "Polychaeta" ;
+    dwc:family "Orbiniidae" ;
+    dwc:genus "Scoloplos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Leodamas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scoloplos> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scoloplos>
+    dwc:class "Polychaeta" ;
+    dwc:family "Orbiniidae" ;
+    dwc:genus "Scoloplos" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orbiniidae> ;
+    a dwcFP:TaxonName .

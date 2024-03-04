@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C91729FFD3FFB0FD96DE8DF926100B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6621799> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Peroryctes broadbenti" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C91729FFD3FFB0FD96DE8DF926100B.mc.3B08AC62FFD3FFB0FE52DDA6FB0712E0> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Peroryctes_broadbenti_Ramsay_1879> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Perameles_broadbentii_Saint-Hilaire_1804> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6621742> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6621742>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2015" ;
-    dc:title "Peramelidae" ;
     bibo:endPage "398" ;
     bibo:startPage "362" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2015" ;
+    dc:title "Peramelidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6621799> ;
     a fabio:BookSection .
 
@@ -23,22 +34,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/6621799/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Perameles_broadbentii_Saint-Hilaire_1804>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Perameles_broadbentii> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Peramelidae" ;
-    dwc:genus "Perameles" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Peramelemorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "E. Geoffroy Saint-Hilaire, 1804" ;
-    dwc:species "broadbentii" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03C91729FFD3FFB0FD96DE8DF926100B.mc.3B08AC62FFD3FFB0FE52DDA6FB0712E0>
+    dwc:locality "Central Province" ;
+    trt:gbifOccurrenceId "3819567305" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C91729FFD3FFB0FD96DE8DF926100B#3B08AC62FFD3FFB0FE52DDA6FB0712E0> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Peroryctes_broadbenti_Ramsay_1879>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Peroryctes_broadbenti> ;
-    dwc:ID-CoL "4F8QY" ;
     dwc:authority "Mittermeier, 2015" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2015" ;
@@ -49,51 +51,100 @@
     dwc:order "Peramelemorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ramsay, 1879" ;
     dwc:species "broadbenti" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4F8QY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Peroryctes_broadbenti> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Peramelemorphia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Peramelemorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Perameles>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peramelidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Perameles_broadbentii_Saint-Hilaire_1804>
     dwc:class "Mammalia" ;
     dwc:family "Peramelidae" ;
     dwc:genus "Perameles" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Peramelemorphia" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "E. Geoffroy Saint-Hilaire, 1804" ;
+    dwc:species "broadbentii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Perameles_broadbentii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Elaeis_N.J.Jacquin_1763>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Elaeis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "N.J.Jacquin, 1763" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Elaeis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Peroryctes_broadbenti>
+    dwc:class "Mammalia" ;
+    dwc:family "Peramelidae" ;
+    dwc:genus "Peroryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Peramelemorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "broadbenti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peroryctes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peroryctes>
+    dwc:class "Mammalia" ;
+    dwc:family "Peramelidae" ;
+    dwc:genus "Peroryctes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Peramelemorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peramelidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peramelidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Peramelidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Peramelemorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peramelemorphia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peramelemorphia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Peramelemorphia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Perameles_broadbentii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perameles> ;
     dwc:class "Mammalia" ;
     dwc:family "Peramelidae" ;
     dwc:genus "Perameles" ;
@@ -102,46 +153,66 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "broadbentii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perameles> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Peramelidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peramelemorphia> ;
+<http://taxon-name.plazi.org/id/Animalia/Perameles>
     dwc:class "Mammalia" ;
     dwc:family "Peramelidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Peramelemorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Peroryctes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peramelidae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Peramelidae" ;
-    dwc:genus "Peroryctes" ;
+    dwc:genus "Perameles" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Peramelemorphia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peramelidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Peroryctes_broadbenti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peroryctes> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Peramelidae" ;
-    dwc:genus "Peroryctes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Peramelemorphia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "broadbenti" ;
+<http://taxon-name.plazi.org/id/Plantae/Elaeis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:genus "Elaeis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecaceae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C91729FFD3FFB0FD96DE8DF926100B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Peroryctes_broadbenti_Ramsay_1879> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Perameles_broadbentii_Saint-Hilaire_1804> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6621742> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6621799> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Arecaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Arecaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Arecales> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Arecales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Arecales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
