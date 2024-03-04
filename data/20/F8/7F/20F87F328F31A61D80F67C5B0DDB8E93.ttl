@@ -1,24 +1,46 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:20F87F328F31A61D80F67C5B0DDB8E93
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Saxifraga tridactylites var. alpina Linnaeus 1753" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Saxifraga_petraea_Linnaeus_1759> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4373031> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4373031>
+    bibo:endPage "877" ;
+    bibo:startPage "806" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part S)" ;
-    bibo:endPage "877" ;
-    bibo:startPage "806" ;
     a fabio:BookSection .
 
+<http://taxon-concept.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina_Linnaeus_1753>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Saxifragaceae" ;
+    dwc:genus "Saxifraga" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "L.", "Linnaeus" ;
+    dwc:species "tridactylites" ;
+    dwc:variety "alpina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Plantae/Saxifraga_petraea_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Saxifraga_petraea> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Saxifragaceae" ;
     dwc:genus "Saxifraga" ;
@@ -28,10 +50,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "L. (1759)" ;
     dwc:species "petraea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Saxifraga_petraea> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina> ;
+<http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina>
     dwc:class "Magnoliopsida" ;
     dwc:family "Saxifragaceae" ;
     dwc:genus "Saxifraga" ;
@@ -39,13 +61,74 @@
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "variety" ;
-    dwc:scientificNameAuthorship "L." ;
     dwc:species "tridactylites" ;
     dwc:variety "alpina" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Saxifragaceae" ;
+    dwc:genus "Saxifraga" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "tridactylites" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifraga> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Saxifraga>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Saxifragaceae" ;
+    dwc:genus "Saxifraga" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifragaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Saxifragaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Saxifragaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifragales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Saxifragales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Saxifraga_petraea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifraga> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Saxifragaceae" ;
     dwc:genus "Saxifraga" ;
@@ -54,25 +137,5 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "petraea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifraga> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifraga_tridactylites> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Saxifragaceae" ;
-    dwc:genus "Saxifraga" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Saxifragales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "variety" ;
-    dwc:species "tridactylites" ;
-    dwc:variety "alpina" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/20F87F328F31A61D80F67C5B0DDB8E93>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Saxifraga_tridactylites_alpina_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Saxifraga_petraea_Linnaeus_1759> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4373031> ;
-    dc:creator "Jarvis, Charlie" ;
-    a trt:Treatment .
-
