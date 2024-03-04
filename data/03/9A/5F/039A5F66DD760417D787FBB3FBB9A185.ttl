@@ -1,23 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039A5F66DD760417D787FBB3FBB9A185
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/kashmirensis_Friese_1909>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/stramineus_Friese_1909>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.286626>, <http://dx.doi.org/10.5281/zenodo.286633> ;
+    dc:creator "An, Jiandong; Huang, Jiaxing; Shao, Youquan; Zhang, Shiwen; Wang, Biao; Liu, Xinyu; Wu, Jie; Williams, Paul H." ;
+    dc:title "Bombus (Alpigenobombus) kashmirensis Friese" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Bombus_mastrucatus> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Bombus_tetrachromus_Cockerell_1909>, <http://taxon-concept.plazi.org/id/Plantae/Alpigenobombus_pulcherrimus_Skorikov_1914> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3830.1.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Bombus_kashmirensis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3830.1.1>
-    dc:creator "An, Jiandong", "Huang, Jiaxing", "Liu, Xinyu", "Shao, Youquan", "Wang, Biao", "Williams, Paul H.", "Wu, Jie", "Zhang, Shiwen" ;
-    dc:date "2014" ;
-    dc:title "The bumblebees of North China (Apidae, Bombus Latreille)" ;
     bibo:endPage "89" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3830" ;
+    dc:creator "An, Jiandong; Huang, Jiaxing; Shao, Youquan; Zhang, Shiwen; Wang, Biao; Liu, Xinyu; Wu, Jie; Williams, Paul H." ;
+    dc:date "2014" ;
+    dc:title "The bumblebees of North China (Apidae, Bombus Latreille)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.286626>, <http://dx.doi.org/10.5281/zenodo.286633> ;
     a fabio:JournalArticle .
 
@@ -31,9 +43,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/286633/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/kashmirensis_Friese_1909>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/stramineus_Friese_1909>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Bombus_tetrachromus_Cockerell_1909>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bombus_tetrachromus> ;
-    dwc:ID-CoL "MFWN" ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Bombus" ;
@@ -43,10 +61,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Cockerell, 1909" ;
     dwc:species "tetrachromus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/MFLZ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bombus_tetrachromus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Alpigenobombus_pulcherrimus_Skorikov_1914>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Alpigenobombus_pulcherrimus> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Rosaceae" ;
     dwc:genus "Alpigenobombus" ;
@@ -56,43 +75,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Skorikov, 1914:128" ;
     dwc:species "pulcherrimus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Alpigenobombus_pulcherrimus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Apidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Apidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bombus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Apidae" ;
-    dwc:genus "Bombus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Bombus_kashmirensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bombus> ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Bombus" ;
@@ -101,10 +87,85 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "kashmirensis" ;
+    dwc:subGenus "Alpigenobombus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bombus_Alpigenobombus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bombus_Alpigenobombus>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Bombus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Alpigenobombus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bombus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bombus>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:genus "Bombus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Apidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Apidae>
+    dwc:class "Insecta" ;
+    dwc:family "Apidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/kashmirensis>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "kashmirensis" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/stramineus>
+    # Warning: Could not determine parent name ;
+    dwc:rank "variety" ;
+    dwc:variety "stramineus" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Bombus_tetrachromus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bombus> ;
     dwc:class "Insecta" ;
     dwc:family "Apidae" ;
     dwc:genus "Bombus" ;
@@ -113,43 +174,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "tetrachromus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Alpigenobombus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Rosaceae" ;
-    dwc:genus "Alpigenobombus" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Rosales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bombus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Alpigenobombus_pulcherrimus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Alpigenobombus> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Rosaceae" ;
     dwc:genus "Alpigenobombus" ;
@@ -158,48 +186,55 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "pulcherrimus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Alpigenobombus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+<http://taxon-name.plazi.org/id/Plantae/Alpigenobombus>
     dwc:class "Magnoliopsida" ;
+    dwc:family "Rosaceae" ;
+    dwc:genus "Alpigenobombus" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Rosales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Rosaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Rosaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Rosales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Rosales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Rosales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Rosales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039A5F66DD760417D787FBB3FBB9A185>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/9A/5F/Bombus_mastrucatus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Bombus_tetrachromus_Cockerell_1909>, <http://taxon-concept.plazi.org/id/Plantae/Alpigenobombus_pulcherrimus_Skorikov_1914> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3830.1.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Bombus_kashmirensis> ;
-    dc:creator "An, Jiandong", "Huang, Jiaxing", "Liu, Xinyu", "Shao, Youquan", "Wang, Biao", "Williams, Paul H.", "Wu, Jie", "Zhang, Shiwen" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.286626>, <http://dx.doi.org/10.5281/zenodo.286633> ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
