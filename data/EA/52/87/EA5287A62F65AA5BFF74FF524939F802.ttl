@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:EA5287A62F65AA5BFF74FF524939F802
+    cito:cites <http://dx.doi.org/10.5281/zenodo.224526>, <http://dx.doi.org/10.5281/zenodo.224527>, <http://dx.doi.org/10.5281/zenodo.224533> ;
+    dc:creator "Cicchino, Armando C.; Valim, Michel P.; González-Acuña, Daniel" ;
+    dc:title "Tinamotaecola elegans Hellenthal, Price & Timm 2002, n. sp." ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tinamotaecola_elegans_Hellenthal_2002> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tinamotaecola_elegans_Hellenthal_2002> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3835.3.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3835.3.4>
-    dc:creator "Cicchino, Armando C.", "González-Acuña, Daniel", "Valim, Michel P." ;
-    dc:date "2014" ;
-    dc:title "A review of the louse genus Tinamotaecola (Insecta: Phthiraptera: Philopteridae sensu lato), with description of a new species" ;
     bibo:endPage "363" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "349" ;
     bibo:volume "3835" ;
+    dc:creator "Cicchino, Armando C.; Valim, Michel P.; González-Acuña, Daniel" ;
+    dc:date "2014" ;
+    dc:title "A review of the louse genus Tinamotaecola (Insecta: Phthiraptera: Philopteridae sensu lato), with description of a new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.224526>, <http://dx.doi.org/10.5281/zenodo.224527>, <http://dx.doi.org/10.5281/zenodo.224533> ;
     a fabio:JournalArticle .
 
@@ -37,7 +47,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tinamotaecola_elegans_Hellenthal_2002>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tinamotaecola_elegans> ;
     dwc:class "Insecta" ;
     dwc:family "Philopteridae" ;
     dwc:genus "Tinamotaecola" ;
@@ -45,51 +54,12 @@
     dwc:order "Phthiraptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Hellenthal et al. 2002: 138", "Hellenthal, Price & Timm, 2002" ;
+    dwc:scientificNameAuthorship "Hellenthal, Price & Timm, 2002", "Hellenthal et al. 2002: 138" ;
     dwc:species "elegans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tinamotaecola_elegans> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Philopteridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phthiraptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Philopteridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Phthiraptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phthiraptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Phthiraptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tinamotaecola>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Philopteridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tinamotaecola_Cicchino_2014>
     dwc:class "Insecta" ;
     dwc:family "Philopteridae" ;
     dwc:genus "Tinamotaecola" ;
@@ -97,10 +67,79 @@
     dwc:order "Phthiraptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tinamotaecola> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eudromia_elegans_elegans_Saint-Hilaire_1832>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "I. Geoffroy Saint-Hilaire, 1832" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "elegans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_elegans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eudromia_elegans_albida_Wetmore_1921>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Wetmore, 1921" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "albida" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_albida> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eudromia_elegans_intermedia_Dabbene_1913>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Dabbene & Lillo, 1913" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "intermedia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_intermedia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eudromia_elegans_patagonica_Conover_1950>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Conover, 1950" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "patagonica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_patagonica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Eudromia_formosa_Lillo_1905>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lillo, 1905" ;
+    dwc:species "formosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Eudromia_formosa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tinamotaecola_elegans>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tinamotaecola> ;
     dwc:class "Insecta" ;
     dwc:family "Philopteridae" ;
     dwc:genus "Tinamotaecola" ;
@@ -109,13 +148,176 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tinamotaecola> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/EA5287A62F65AA5BFF74FF524939F802>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tinamotaecola_elegans_Hellenthal_2002> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tinamotaecola_elegans_Hellenthal_2002> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3835.3.4> ;
-    dc:creator "Cicchino, Armando C.", "González-Acuña, Daniel", "Valim, Michel P." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.224526>, <http://dx.doi.org/10.5281/zenodo.224527>, <http://dx.doi.org/10.5281/zenodo.224533> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tinamotaecola>
+    dwc:class "Insecta" ;
+    dwc:family "Philopteridae" ;
+    dwc:genus "Tinamotaecola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Phthiraptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Philopteridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Philopteridae>
+    dwc:class "Insecta" ;
+    dwc:family "Philopteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Phthiraptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phthiraptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phthiraptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Phthiraptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_elegans>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "elegans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudromia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tinamidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tinamidae>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tinamiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tinamiformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_albida>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "albida" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_intermedia>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "intermedia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans_patagonica>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "elegans" ;
+    dwc:subSpecies "patagonica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudromia_elegans> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Eudromia_formosa>
+    dwc:class "Aves" ;
+    dwc:family "Tinamidae" ;
+    dwc:genus "Eudromia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Tinamiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "formosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eudromia> ;
+    a dwcFP:TaxonName .
