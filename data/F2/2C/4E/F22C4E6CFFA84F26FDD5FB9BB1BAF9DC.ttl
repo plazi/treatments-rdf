@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:F22C4E6CFFA84F26FDD5FB9BB1BAF9DC
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4675208>, <http://dx.doi.org/10.5281/zenodo.4675210> ;
+    dc:creator "KAZMI, Q. B.; MANNING, R. B." ;
+    dc:title "Sindheres karachiensis KAZMI & MANNING 2003, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/F22C4E6CFFA84F26FDD5FB9BB1BAF9DC.mc.CAEDF527FFA84F20FE56FBF3B1A4FB36> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sindheres_karachiensis_KAZMI_2003> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222930110108353> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222930110108353>
-    dc:creator "KAZMI, Q. B.", "MANNING, R. B." ;
-    dc:date "2003" ;
-    dc:title "A new genus and species of pinnotherid crab from Karachi, northern Arabian Sea (Crustacea, Decapoda, Brachyura)" ;
     bibo:endPage "1089" ;
     bibo:issue "9" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2001-09-28" ;
     bibo:startPage "1085" ;
     bibo:volume "37" ;
+    dc:creator "KAZMI, Q. B.; MANNING, R. B." ;
+    dc:date "2003" ;
+    dc:title "A new genus and species of pinnotherid crab from Karachi, northern Arabian Sea (Crustacea, Decapoda, Brachyura)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4675208>, <http://dx.doi.org/10.5281/zenodo.4675210> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/4675210/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/F22C4E6CFFA84F26FDD5FB9BB1BAF9DC.mc.CAEDF527FFA84F20FE56FBF3B1A4FB36>
+    dwc:collectionCode "MRC" ;
+    dwc:eventDate "1997-08-21" ;
+    dwc:locality "Bulleji" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3069840301" ;
+    trt:httpUri <https://treatment.plazi.org/id/F22C4E6CFFA84F26FDD5FB9BB1BAF9DC#CAEDF527FFA84F20FE56FBF3B1A4FB36> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Sindheres_karachiensis_KAZMI_2003>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sindheres_karachiensis> ;
-    dwc:ID-CoL "4XJLD" ;
     dwc:class "Malacostraca" ;
     dwc:family "Pinnotheridae" ;
     dwc:genus "Sindheres" ;
@@ -44,60 +61,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "KAZMI & MANNING, 2003" ;
     dwc:species "karachiensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4XJLD> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sindheres_karachiensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Gastrochaena_Spengler_1783>
+    dwc:class "Bivalvia" ;
+    dwc:family "Gastrochaenoidea" ;
+    dwc:genus "Gastrochaena" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Decapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pinnotheridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Pinnotheridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sindheres>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pinnotheridae> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Pinnotheridae" ;
-    dwc:genus "Sindheres" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
+    dwc:order "Gastrochaenida" ;
+    dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Spengler, 1783" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gastrochaena> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sindheres_karachiensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sindheres> ;
     dwc:class "Malacostraca" ;
     dwc:family "Pinnotheridae" ;
     dwc:genus "Sindheres" ;
@@ -106,12 +86,100 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "karachiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sindheres> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/F22C4E6CFFA84F26FDD5FB9BB1BAF9DC>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sindheres_karachiensis_KAZMI_2003> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222930110108353> ;
-    dc:creator "KAZMI, Q. B.", "MANNING, R. B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4675208>, <http://dx.doi.org/10.5281/zenodo.4675210> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sindheres>
+    dwc:class "Malacostraca" ;
+    dwc:family "Pinnotheridae" ;
+    dwc:genus "Sindheres" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pinnotheridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Pinnotheridae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Pinnotheridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastrochaena>
+    dwc:class "Bivalvia" ;
+    dwc:family "Gastrochaenoidea" ;
+    dwc:genus "Gastrochaena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gastrochaenida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastrochaenoidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastrochaenoidea>
+    dwc:class "Bivalvia" ;
+    dwc:family "Gastrochaenoidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gastrochaenida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastrochaenida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastrochaenida>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Gastrochaenida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
