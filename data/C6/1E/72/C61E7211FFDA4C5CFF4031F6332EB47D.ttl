@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C61E7211FFDA4C5CFF4031F6332EB47D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3294255> ;
+    dc:creator "Košťál, Michael; Caldara, Roberto" ;
+    dc:title "Cionus olens Eu 1792" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/C61E7211FFDA4C5CFF4031F6332EB47D.mc.FEDFC95AFFDA4C5DFF4030AC33A4B093> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cionus_olens_Fabricius_1792> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Curculio_olens_Caldara_1792>, <http://taxon-concept.plazi.org/id/Animalia/Rhynchaenus_caprimulgus_Fabricius_1801> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4631.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4631.1.1>
-    dc:creator "Caldara, Roberto", "Košťál, Michael" ;
-    dc:date "2019" ;
-    dc:title "Revision of Palaearctic species of the genus Cionus Clairville (Coleoptera: Curculionidae: Cionini)" ;
     bibo:endPage "144" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-07-10" ;
     bibo:startPage "1" ;
     bibo:volume "4631" ;
+    dc:creator "Košťál, Michael; Caldara, Roberto" ;
+    dc:date "2019" ;
+    dc:title "Revision of Palaearctic species of the genus Cionus Clairville (Coleoptera: Curculionidae: Cionini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3294255> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/3294255/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/C61E7211FFDA4C5CFF4031F6332EB47D.mc.FEDFC95AFFDA4C5DFF4030AC33A4B093>
+    dwc:locality "France" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2273923613" ;
+    trt:httpUri <https://treatment.plazi.org/id/C61E7211FFDA4C5CFF4031F6332EB47D#FEDFC95AFFDA4C5DFF4030AC33A4B093> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Cionus_olens_Fabricius_1792>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cionus_olens> ;
-    dwc:ID-CoL "VFJY" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Cionus" ;
@@ -37,12 +53,13 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Fabricius, 1792)" ;
+    dwc:scientificNameAuthorship "(Fabricius, 1792)", "Fabricius, 1792" ;
     dwc:species "olens" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/VFJY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cionus_olens> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Curculio_olens_Caldara_1792>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Curculio_olens> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Curculio" ;
@@ -50,13 +67,12 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Fabricius, 1792: 435" ;
+    dwc:scientificNameAuthorship "Fabricius, 1792: 435", "Fabricius", "Fabricius M. Kostal et R. Caldara", "Fabricius." ;
     dwc:species "olens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Curculio_olens> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Rhynchaenus_caprimulgus_Fabricius_1801>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhynchaenus_caprimulgus> ;
-    dwc:ID-CoL "8JDFV" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Rhynchaenus" ;
@@ -64,35 +80,39 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Fabricius, 1801: 480" ;
+    dwc:scientificNameAuthorship "Fabricius, 1801: 480", "Fabricius, 1801", "Fabricius" ;
     dwc:species "caprimulgus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/VFJY> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhynchaenus_caprimulgus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cionus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cionus_clairvillei_Caldara_1838>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Cionus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Boheman" ;
+    dwc:species "clairvillei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cionus_clairvillei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cionus_merkli_Kostal_1882>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Cionus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Stierlin Michael Kostal, 1882" ;
+    dwc:species "merkli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cionus_merkli> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cionus_olens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cionus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Cionus" ;
@@ -101,48 +121,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "olens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cionus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Cionus>
     dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Cionus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhynchaenus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculio_olens>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
-    dwc:genus "Rhynchaenus" ;
+    dwc:genus "Curculio" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "olens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculio> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculio>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Curculio" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhynchaenus_caprimulgus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhynchaenus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Rhynchaenus" ;
@@ -151,13 +206,40 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "caprimulgus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhynchaenus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C61E7211FFDA4C5CFF4031F6332EB47D>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cionus_olens_Fabricius_1792> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Curculio_olens_Caldara_1792>, <http://taxon-concept.plazi.org/id/Animalia/Rhynchaenus_caprimulgus_Fabricius_1801> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4631.1.1> ;
-    dc:creator "Caldara, Roberto", "Košťál, Michael" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3294255> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rhynchaenus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Rhynchaenus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cionus_clairvillei>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Cionus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "clairvillei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cionus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cionus_merkli>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Cionus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "merkli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cionus> ;
+    a dwcFP:TaxonName .
