@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:3825F43285F95D3193D225B808785798
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Liara_rufescens_Redtenbacher_1891> ;
+    dc:creator "Ingrisch, Sigfrid" ;
+    dc:title "Liara Redtenbacher 1891" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Liara_Redtenbacher_1891> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/evolsyst.4.60525> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/evolsyst.4.60525>
-    dc:creator "Ingrisch, Sigfrid" ;
-    dc:date "2020" ;
-    dc:title "New subgenera and species of Agraeciini (Orthoptera, Tettigoniidae, Conocephalinae) from South Asia found in historical insect collections" ;
     bibo:endPage "132" ;
     bibo:issue "2" ;
     bibo:journal "Evolutionary Systematics" ;
     bibo:pubDate "2020-12-15" ;
     bibo:startPage "119" ;
     bibo:volume "4" ;
+    dc:creator "Ingrisch, Sigfrid" ;
+    dc:date "2020" ;
+    dc:title "New subgenera and species of Agraeciini (Orthoptera, Tettigoniidae, Conocephalinae) from South Asia found in historical insect collections" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Liara_Redtenbacher_1891>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liara> ;
     dwc:LSID "3825F432-85F9-5D31-93D2-25B808785798" ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
@@ -32,10 +40,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Redtenbacher, 1891" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liara> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Liara_rufescens_Redtenbacher_1891>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liara_rufescens> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Liara" ;
@@ -45,30 +53,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Redtenbacher, 1891" ;
     dwc:species "rufescens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Liara_rufescens> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Unalianus_Kocak_2009>
     dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:genus "Unalianus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Kocak & Kemal, 2009" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Unalianus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Liara>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Liara" ;
@@ -76,10 +76,49 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tettigoniidae>
+    dwc:class "Insecta" ;
+    dwc:family "Tettigoniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Liara_rufescens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liara> ;
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
     dwc:genus "Liara" ;
@@ -88,31 +127,16 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "rufescens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Liara> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Orthoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tettigoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Unalianus>
     dwc:class "Insecta" ;
     dwc:family "Tettigoniidae" ;
+    dwc:genus "Unalianus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tettigoniidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/3825F43285F95D3193D225B808785798>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Liara_Redtenbacher_1891> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/evolsyst.4.60525> ;
-    dc:creator "Ingrisch, Sigfrid" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Liara_rufescens_Redtenbacher_1891> ;
-    a trt:Treatment .
-

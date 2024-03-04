@@ -1,45 +1,89 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:38595936E07DC270FC60FB84FA8FFAA6
+    dc:creator "Polechová, Marika" ;
+    dc:title "Heteroconchia HERTWIG 1895" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Heteroconchia_HERTWIG_1895> ;
+    trt:publishedIn <http://dx.doi.org/10.2478/if-2019-0010> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.2478/if-2019-0010>
-    dc:creator "Polechová, Marika" ;
-    dc:date "2019" ;
-    dc:title "The Bivalve Cuneamya From The Late Ordovician Of Bohemia" ;
     bibo:endPage "127" ;
     bibo:issue "1" ;
     bibo:journal "Fossil Imprint" ;
     bibo:pubDate "2019-08-29" ;
     bibo:startPage "120" ;
     bibo:volume "75" ;
+    dc:creator "Polechová, Marika" ;
+    dc:date "2019" ;
+    dc:title "The Bivalve Cuneamya From The Late Ordovician Of Bohemia" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Heteroconchia_HERTWIG_1895>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Heteroconchia> ;
-    dwc:ID-CoL "7NVXR" ;
     dwc:class "Bivalvia" ;
     dwc:infraClass "Heteroconchia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "infraClass" ;
     dwc:scientificNameAuthorship "HERTWIG, 1895" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NVXR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Heteroconchia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Grammysiidae_MILLER_1877>
+    dwc:class "Bivalvia" ;
+    dwc:family "Grammysiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "MILLER, 1877" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Grammysiidae> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Heteroconchia>
+    # Warning: Could not determine parent name ;
+    dwc:class "Bivalvia" ;
     dwc:infraClass "Heteroconchia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
     dwc:rank "infraClass" ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/38595936E07DC270FC60FB84FA8FFAA6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Heteroconchia_HERTWIG_1895> ;
-    trt:publishedIn <http://dx.doi.org/10.2478/if-2019-0010> ;
-    dc:creator "Polechová, Marika" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Grammysiidae>
+    dwc:class "Bivalvia" ;
+    dwc:family "Grammysiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
