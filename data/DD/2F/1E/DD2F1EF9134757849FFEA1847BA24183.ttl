@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:DD2F1EF9134757849FFEA1847BA24183
+    cito:cites <http://dx.doi.org/10.3897/jhr.85.66544.figure2>, <http://dx.doi.org/10.3897/jhr.85.66544.figure3>, <http://dx.doi.org/10.3897/jhr.85.66544.figure4> ;
+    dc:creator "Hostinska, Lucie; Kunes, Petr; Hadrava, Jiri; Bosch, Jordi; Scaramozzino, Pier Luigi; Bogusch, Petr" ;
+    dc:title "Rhodanthidium sticticum" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhodanthidium_sticticum_Fabricius_1787> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/jhr.85.66544> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/jhr.85.66544>
-    dc:creator "Bogusch, Petr", "Bosch, Jordi", "Hadrava, Jiri", "Hostinska, Lucie", "Kunes, Petr", "Scaramozzino, Pier Luigi" ;
-    dc:date "2021" ;
-    dc:title "Comparative biology of four Rhodanthidium species (Hymenoptera, Megachilidae) that nest in snail shells" ;
     bibo:endPage "28" ;
     bibo:journal "Journal of Hymenoptera Research" ;
     bibo:pubDate "2021-08-31" ;
     bibo:startPage "11" ;
     bibo:volume "85" ;
+    dc:creator "Hostinska, Lucie; Kunes, Petr; Hadrava, Jiri; Bosch, Jordi; Scaramozzino, Pier Luigi; Bogusch, Petr" ;
+    dc:date "2021" ;
+    dc:title "Comparative biology of four Rhodanthidium species (Hymenoptera, Megachilidae) that nest in snail shells" ;
     fabio:hasPart <http://dx.doi.org/10.3897/jhr.85.66544.figure2>, <http://dx.doi.org/10.3897/jhr.85.66544.figure3>, <http://dx.doi.org/10.3897/jhr.85.66544.figure4> ;
     a fabio:JournalArticle .
 
@@ -37,8 +46,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Rhodanthidium_sticticum_Fabricius_1787>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhodanthidium_sticticum> ;
-    dwc:ID-CoL "796YH" ;
     dwc:ID-ENA "2698456" ;
     dwc:LSID "DD2F1EF9-1347-5784-9FFE-A1847BA24183" ;
     dwc:class "Insecta" ;
@@ -50,60 +57,75 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Fabricius)" ;
     dwc:species "sticticum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/796YH> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhodanthidium_sticticum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Otala_lactea_Muller_1774>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Otala" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "O. F. Muller, 1774" ;
+    dwc:species "lactea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Otala_lactea> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Iberellus_P.Hesse_1908>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Iberellus" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Megachilidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Megachilidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhodanthidium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megachilidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Megachilidae" ;
-    dwc:genus "Rhodanthidium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "P.Hesse, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Iberellus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Theba_pisana_Muller_1774>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Theba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "O. F. Muller, 1774" ;
+    dwc:species "pisana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theba_pisana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chrysura_refulgens_Spinola_1806>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Chrysura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Spinola, 1806" ;
+    dwc:species "refulgens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chrysura_refulgens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Chaetodactylus_anthidii_Oudemans_1911>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaetodactylidae" ;
+    dwc:genus "Chaetodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Oudemans, 1911" ;
+    dwc:species "anthidii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chaetodactylus_anthidii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhodanthidium_sticticum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhodanthidium> ;
     dwc:class "Insecta" ;
     dwc:family "Megachilidae" ;
     dwc:genus "Rhodanthidium" ;
@@ -112,12 +134,229 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "sticticum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhodanthidium> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DD2F1EF9134757849FFEA1847BA24183>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhodanthidium_sticticum_Fabricius_1787> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/jhr.85.66544> ;
-    dc:creator "Bogusch, Petr", "Bosch, Jordi", "Hadrava, Jiri", "Hostinska, Lucie", "Kunes, Petr", "Scaramozzino, Pier Luigi" ;
-    cito:cites <http://dx.doi.org/10.3897/jhr.85.66544.figure2>, <http://dx.doi.org/10.3897/jhr.85.66544.figure3>, <http://dx.doi.org/10.3897/jhr.85.66544.figure4> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rhodanthidium>
+    dwc:class "Insecta" ;
+    dwc:family "Megachilidae" ;
+    dwc:genus "Rhodanthidium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Megachilidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Megachilidae>
+    dwc:class "Insecta" ;
+    dwc:family "Megachilidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otala_lactea>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Otala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "lactea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Otala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Otala>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Otala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Helicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Helicidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stylommatophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stylommatophora>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Iberellus>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Iberellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Helicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theba_pisana>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Theba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "pisana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Theba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theba>
+    dwc:class "Gastropoda" ;
+    dwc:family "Helicidae" ;
+    dwc:genus "Theba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Stylommatophora" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Helicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysura_refulgens>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Chrysura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "refulgens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysura> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysura>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:genus "Chrysura" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chrysididae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chrysididae>
+    dwc:class "Insecta" ;
+    dwc:family "Chrysididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaetodactylus_anthidii>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaetodactylidae" ;
+    dwc:genus "Chaetodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "anthidii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaetodactylus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaetodactylus>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaetodactylidae" ;
+    dwc:genus "Chaetodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chaetodactylidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chaetodactylidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Chaetodactylidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Astigmata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Astigmata>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Astigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .

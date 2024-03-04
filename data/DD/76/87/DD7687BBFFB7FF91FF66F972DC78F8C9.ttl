@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:DD7687BBFFB7FF91FF66F972DC78F8C9
+    cito:cites <http://dx.doi.org/10.5281/zenodo.289139>, <http://dx.doi.org/10.5281/zenodo.289140> ;
+    dc:creator "Nogueira, João Miguel De Matos; Carrerette, Orlemir; Hutchings, Pat" ;
+    dc:title "Amaeana trilobata Sars 1863" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Sars_1863> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_trilobata>, <http://taxon-name.plazi.org/id/Animalia/Amaeana_angulus>, <http://taxon-name.plazi.org/id/Animalia/Amaeana_ellobophora> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Polycirrus_trilobatus_Sars_1863>, <http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Hutchings_1986> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3994.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3994.1.1>
-    dc:creator "Carrerette, Orlemir", "Hutchings, Pat", "Nogueira, João Miguel De Matos" ;
-    dc:date "2015" ;
-    dc:title "Review of Amaeana Hartman, 1959 (Annelida, Terebelliformia, Polycirridae), with descriptions of seven new species" ;
     bibo:endPage "52" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3994" ;
+    dc:creator "Nogueira, João Miguel De Matos; Carrerette, Orlemir; Hutchings, Pat" ;
+    dc:date "2015" ;
+    dc:title "Review of Amaeana Hartman, 1959 (Annelida, Terebelliformia, Polycirridae), with descriptions of seven new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.289139>, <http://dx.doi.org/10.5281/zenodo.289140> ;
     a fabio:JournalArticle .
 
@@ -31,23 +42,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/289140/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Hutchings_1986>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_trilobata> ;
-    dwc:ID-CoL "CDB6" ;
-    dwc:class "Polychaeta" ;
-    dwc:family "Terebellidae" ;
-    dwc:genus "Amaeana" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Terebellida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Hutchings & Glasby 1986" ;
-    dwc:species "trilobata" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Sars_1863>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_trilobata> ;
-    dwc:ID-CoL "CDB6" ;
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
     dwc:genus "Amaeana" ;
@@ -57,11 +52,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Sars, 1863" ;
     dwc:species "trilobata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CDB6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_trilobata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Polycirrus_trilobatus_Sars_1863>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polycirrus_trilobatus> ;
-    dwc:ID-CoL "4L4B5" ;
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
     dwc:genus "Polycirrus" ;
@@ -71,26 +66,51 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Sars 1863: 305" ;
     dwc:species "trilobatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CDB6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Polycirrus_trilobatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amaeana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Terebellidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Hutchings_1986>
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
     dwc:genus "Amaeana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Terebellida" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hutchings & Glasby 1986" ;
+    dwc:species "trilobata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CDB6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_trilobata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amaeana_angulus_Nogueira_2015>
+    dwc:class "Polychaeta" ;
+    dwc:family "Terebellidae" ;
+    dwc:genus "Amaeana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Terebellida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "angulus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CDB6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_angulus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Amaeana_ellobophora_Nogueira_2015>
+    dwc:class "Polychaeta" ;
+    dwc:family "Terebellidae" ;
+    dwc:genus "Amaeana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Terebellida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "ellobophora" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/CDB6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Amaeana_ellobophora> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Amaeana_trilobata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amaeana> ;
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
     dwc:genus "Amaeana" ;
@@ -99,36 +119,60 @@
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
     dwc:species "trilobata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amaeana> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Annelida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Polychaeta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
-    dwc:class "Polychaeta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Polycirrus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Terebellidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Amaeana>
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
-    dwc:genus "Polycirrus" ;
+    dwc:genus "Amaeana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Terebellida" ;
     dwc:phylum "Annelida" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Terebellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Terebellidae>
+    dwc:class "Polychaeta" ;
+    dwc:family "Terebellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Terebellida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Terebellida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Terebellida>
+    dwc:class "Polychaeta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Terebellida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polychaeta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Polychaeta>
+    dwc:class "Polychaeta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Polycirrus_trilobatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycirrus> ;
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
     dwc:genus "Polycirrus" ;
@@ -137,33 +181,40 @@
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
     dwc:species "trilobatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polycirrus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Terebellida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Polychaeta> ;
-    dwc:class "Polychaeta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Terebellida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Terebellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Terebellida> ;
+<http://taxon-name.plazi.org/id/Animalia/Polycirrus>
     dwc:class "Polychaeta" ;
     dwc:family "Terebellidae" ;
+    dwc:genus "Polycirrus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Terebellida" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Terebellidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/DD7687BBFFB7FF91FF66F972DC78F8C9>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Sars_1863> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/DD/76/87/Amaeana_angulus>, <file:///workdir/tmprdf/data/DD/76/87/Amaeana_ellobophora>, <file:///workdir/tmprdf/data/DD/76/87/Amaeana_trilobata> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Amaeana_trilobata_Hutchings_1986>, <http://taxon-concept.plazi.org/id/Animalia/Polycirrus_trilobatus_Sars_1863> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3994.1.1> ;
-    dc:creator "Carrerette, Orlemir", "Hutchings, Pat", "Nogueira, João Miguel De Matos" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.289139>, <http://dx.doi.org/10.5281/zenodo.289140> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Amaeana_angulus>
+    dwc:class "Polychaeta" ;
+    dwc:family "Terebellidae" ;
+    dwc:genus "Amaeana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Terebellida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "angulus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amaeana> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Amaeana_ellobophora>
+    dwc:class "Polychaeta" ;
+    dwc:family "Terebellidae" ;
+    dwc:genus "Amaeana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Terebellida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "ellobophora" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amaeana> ;
+    a dwcFP:TaxonName .
