@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03822308B74AFFF7FA11F597FBBBFDCB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6625691> ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:title "Sylvilagus brasiliensis" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03822308B74AFFF7FA11F597FBBBFDCB.mc.3B439843B74AFFF4F7DAF545F765FD30> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Lepus_brasiliensis_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6625539> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6625539>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2016" ;
-    dc:title "Leporidae" ;
     bibo:endPage "148" ;
     bibo:startPage "107" ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:date "2016" ;
+    dc:title "Leporidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6625691> ;
     a fabio:BookSection .
 
@@ -23,23 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6625691/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lepus_brasiliensis_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_brasiliensis> ;
-    dwc:ID-CoL "6PPZ9" ;
-    dwc:class "Mammalia" ;
-    dwc:family "Leporidae" ;
-    dwc:genus "Lepus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lagomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus" ;
-    dwc:species "brasiliensis" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03822308B74AFFF7FA11F597FBBBFDCB.mc.3B439843B74AFFF4F7DAF545F765FD30>
+    trt:gbifOccurrenceId "3805018336" ;
+    trt:httpUri <https://treatment.plazi.org/id/03822308B74AFFF7FA11F597FBBBFDCB#3B439843B74AFFF4F7DAF545F765FD30> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
-    dwc:ID-CoL "53N8R" ;
     dwc:authority "Wilson, 2016" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2016" ;
@@ -50,50 +50,66 @@
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "brasiliensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/53N8R> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lagomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leporidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_brasiliensis_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus" ;
+    dwc:species "brasiliensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/53N8R> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_brasiliensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_varynaensis_Durant_2001>
     dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Durant & Guevara, 2001" ;
+    dwc:species "varynaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_varynaensis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Sylvilagus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_dicei_Harris_1932>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Harris, 1932" ;
+    dwc:species "dicei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_dicei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_gabbi_Allen_1877>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1877" ;
+    dwc:species "gabbi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_gabbi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_Gray_1867>
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
     dwc:genus "Sylvilagus" ;
@@ -101,10 +117,290 @@
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Gray, 1867" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_brasiliensis_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "brasiliensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_brasiliensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_andinus_Thomas_1897>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1897" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "andinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_andinus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_apollinaris_Thomas_1920>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1920" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "apollinaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_apollinaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_capsalis_Thomas_1913>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1913" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "capsalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_capsalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_caracasensis_Mondolfi_1957>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Mondolfi & Méndez, 1957" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "caracasensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_caracasensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_chillae_Anthony_1957>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Anthony, 1923" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "chillae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_chillae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_chotanus_Hershkovitz_1938>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1938" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "chotanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_chotanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_defilippi_Cornalia_1850>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Cornalia, 1850" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "defilippi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_defilippi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_fulvescens_Allen_1912>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "]. A. Allen, 1912" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "fulvescens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_fulvescens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_gibsoni_Thomas_1918>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1918" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "gibsoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_gibsoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_inca_Thomas_1913>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1913" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "inca" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_inca> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_kelloggi_Anthony_1923>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Anthony, 1923" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "kelloggi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_kelloggi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_meridensis_Thomas_1904>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1904" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "meridensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_meridensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_minensis_Thomas_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1901" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "minensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_minensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_paraguensis_Thomas_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1901" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "paraguensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_paraguensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_peruanus_Hershkovitz_1950>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1950" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "peruanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_peruanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_sanctaemartae_Hershkovitz_1950>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hershkovitz, 1950" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "sanctaemartae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_sanctaemartae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_surdaster_Thomas_1901>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1901" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "surdaster" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_surdaster> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_tapetillus_Thomas_1913>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas, 1913" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "tapetillus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_tapetillus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_floridanus_Allen_1890>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1890" ;
+    dwc:species "floridanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_floridanus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
     dwc:genus "Sylvilagus" ;
@@ -113,13 +409,373 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "brasiliensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03822308B74AFFF7FA11F597FBBBFDCB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_brasiliensis_Linnaeus_1758> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Lepus_brasiliensis_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6625539> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6625691> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Leporidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_brasiliensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "brasiliensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_varynaensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "varynaensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_dicei>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dicei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_gabbi>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "gabbi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_brasiliensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "brasiliensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_andinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "andinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_apollinaris>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "apollinaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_capsalis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "capsalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_caracasensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "caracasensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_chillae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "chillae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_chotanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "chotanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_defilippi>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "defilippi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_fulvescens>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "fulvescens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_gibsoni>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "gibsoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_inca>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "inca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_kelloggi>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "kelloggi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_meridensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "meridensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_minensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "minensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_paraguensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "paraguensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_peruanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "peruanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_sanctaemartae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "sanctaemartae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_surdaster>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "surdaster" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis_tapetillus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "brasiliensis" ;
+    dwc:subSpecies "tapetillus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_brasiliensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_floridanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "floridanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .

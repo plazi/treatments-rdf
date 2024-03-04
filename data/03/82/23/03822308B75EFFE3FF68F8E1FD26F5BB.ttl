@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03822308B75EFFE3FF68F8E1FD26F5BB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6625691> ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:title "Lepus capensis Linnaeus 1758" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03822308B75EFFE3FF68F8E1FD26F5BB.mc.3B439843B75EFFE0FC83F7C7FC12FE9A> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lepus_capensis_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6625539> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6625539>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2016" ;
-    dc:title "Leporidae" ;
     bibo:endPage "148" ;
     bibo:startPage "107" ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:date "2016" ;
+    dc:title "Leporidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6625691> ;
     a fabio:BookSection .
 
@@ -23,9 +33,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6625691/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03822308B75EFFE3FF68F8E1FD26F5BB.mc.3B439843B75EFFE0FC83F7C7FC12FE9A>
+    trt:gbifOccurrenceId "3805018313" ;
+    trt:httpUri <https://treatment.plazi.org/id/03822308B75EFFE3FF68F8E1FD26F5BB#3B439843B75EFFE0FC83F7C7FC12FE9A> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Lepus_capensis_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis> ;
-    dwc:ID-CoL "6PPYS" ;
     dwc:authority "Wilson, 2016" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2016" ;
@@ -36,42 +49,14 @@
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:sensu "lato" ;
     dwc:species "capensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6PPYS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lagomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leporidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Leporidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lagomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
     dwc:genus "Lepus" ;
@@ -79,10 +64,103 @@
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Spanish_whitakeri_Thomas_1902>
+    dwc:class "Aves" ;
+    dwc:family "Phasianidae" ;
+    dwc:genus "Spanish" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Galliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1902" ;
+    dwc:species "whitakeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Spanish_whitakeri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_europaeus_Pallas_1778>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pallas, 1778" ;
+    dwc:species "europaeus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_europaeus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_victoriae_Thomas_1893>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thomas, 1893" ;
+    dwc:species "victoriae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_victoriae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_capensis_aegyptius_Desmarest_1822>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Desmarest, 1822" ;
+    dwc:species "capensis" ;
+    dwc:subSpecies "aegyptius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis_aegyptius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_capensis_aquilo_Thomas_1907>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Thomas & Wroughton, 1907" ;
+    dwc:species "capensis" ;
+    dwc:subSpecies "aquilo" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis_aquilo> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_capensis_arabicus_Hemprich_1832>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Hemprich & Ehrenberg, 1832" ;
+    dwc:species "capensis" ;
+    dwc:subSpecies "arabicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis_arabicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Poaceae_R.Br._1895>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Barnhart, 1895" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
     dwc:genus "Lepus" ;
@@ -91,20 +169,207 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "capensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leporidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03822308B75EFFE3FF68F8E1FD26F5BB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lepus_capensis_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6625539> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6625691> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spanish_whitakeri>
+    dwc:class "Aves" ;
+    dwc:family "Phasianidae" ;
+    dwc:genus "Spanish" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Galliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "whitakeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Spanish> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Spanish>
+    dwc:class "Aves" ;
+    dwc:family "Phasianidae" ;
+    dwc:genus "Spanish" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Galliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phasianidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phasianidae>
+    dwc:class "Aves" ;
+    dwc:family "Phasianidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Galliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Galliformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Galliformes>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Galliformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aves> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aves>
+    dwc:class "Aves" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_europaeus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "europaeus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_victoriae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "victoriae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_capensis_aegyptius>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "capensis" ;
+    dwc:subSpecies "aegyptius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_capensis_aquilo>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "capensis" ;
+    dwc:subSpecies "aquilo" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_capensis_arabicus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "capensis" ;
+    dwc:subSpecies "arabicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus_capensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .

@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03822308B748FFF6FF6AF6DEF89CFE54
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6625691> ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:title "Sylvilagus cunicularius" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03822308B748FFF6FF6AF6DEF89CFE54.mc.3B439843B748FFF6FCD3F5A3FB9DFC21> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularius_Waterhouse_1848> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Lepus_cunicularius_Waterhouse_1848> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6625539> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6625539>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    dc:date "2016" ;
-    dc:title "Leporidae" ;
     bibo:endPage "148" ;
     bibo:startPage "107" ;
+    dc:creator "Don E. Wilson; Thomas E. Lacher, Jr; Russell A. Mittermeier" ;
+    dc:date "2016" ;
+    dc:title "Leporidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6625691> ;
     a fabio:BookSection .
 
@@ -23,23 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6625691/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lepus_cunicularius_Waterhouse_1848>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_cunicularius> ;
-    dwc:ID-CoL "bc0dbda4-2aba-4796-9d28-e3e96f5ec3d2" ;
-    dwc:class "Mammalia" ;
-    dwc:family "Leporidae" ;
-    dwc:genus "Lepus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lagomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Waterhouse" ;
-    dwc:species "cunicularius" ;
-    a dwcFP:TaxonConcept .
+<http://tb.plazi.org/GgServer/dwcaRecords/03822308B748FFF6FF6AF6DEF89CFE54.mc.3B439843B748FFF6FCD3F5A3FB9DFC21>
+    trt:gbifOccurrenceId "3805018305" ;
+    trt:httpUri <https://treatment.plazi.org/id/03822308B748FFF6FF6AF6DEF89CFE54#3B439843B748FFF6FCD3F5A3FB9DFC21> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularius_Waterhouse_1848>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius> ;
-    dwc:ID-CoL "53N8V" ;
     dwc:authority "Wilson, 2016" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2016" ;
@@ -50,50 +50,53 @@
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1848" ;
     dwc:species "cunicularius" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/53N8V> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lagomorpha" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leporidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_cunicularius_Waterhouse_1848>
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse" ;
+    dwc:species "cunicularius" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/53N8V> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_cunicularius> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_graysoni_Allen_1877>
     dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1877" ;
+    dwc:species "graysoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_graysoni> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Sylvilagus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularus_Waterhouse_1848>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1848" ;
+    dwc:species "cunicularus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_Gray_1867>
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
     dwc:genus "Sylvilagus" ;
@@ -101,10 +104,129 @@
     dwc:order "Lagomorpha" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Gray, 1867" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Romerolagus_diazi_Ferrari-Perez_1893>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Romerolagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ferrari-Perez, 1893" ;
+    dwc:species "diazi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Romerolagus_diazi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_floridanus_Allen_1890>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J. A. Allen, 1890" ;
+    dwc:species "floridanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_floridanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_audubonii_Baird_1858>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baird, 1858" ;
+    dwc:species "audubonii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_audubonii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_callotis_Wagler_1830>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wagler, 1830" ;
+    dwc:species "callotis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_callotis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lepus_californicus_Gray_1837>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gray, 1837" ;
+    dwc:species "californicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lepus_californicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularius_cunicularius_Waterhouse_1848>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Waterhouse, 1848" ;
+    dwc:species "cunicularius" ;
+    dwc:subSpecies "cunicularius" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius_cunicularius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularius_insolitusj_Allen_1890>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship ". A. Allen, 1890" ;
+    dwc:species "cunicularius" ;
+    dwc:subSpecies "insolitusj" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius_insolitusj> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularius_pacificus_Nelson_1904>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Nelson, 1904" ;
+    dwc:species "cunicularius" ;
+    dwc:subSpecies "pacificus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius_pacificus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Poaceae_R.Br._1895>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Barnhart, 1895" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
     dwc:class "Mammalia" ;
     dwc:family "Leporidae" ;
     dwc:genus "Sylvilagus" ;
@@ -113,13 +235,251 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "cunicularius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03822308B748FFF6FF6AF6DEF89CFE54>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Sylvilagus_cunicularius_Waterhouse_1848> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Lepus_cunicularius_Waterhouse_1848> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6625539> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier", "Thomas E. Lacher, Jr" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6625691> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Leporidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lagomorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lagomorpha>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_cunicularius>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "cunicularius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_graysoni>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "graysoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "cunicularus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Romerolagus_diazi>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Romerolagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "diazi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Romerolagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Romerolagus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Romerolagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leporidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_floridanus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "floridanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_audubonii>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "audubonii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_callotis>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "callotis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepus_californicus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Lepus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "californicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius_cunicularius>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "cunicularius" ;
+    dwc:subSpecies "cunicularius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius_insolitusj>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "cunicularius" ;
+    dwc:subSpecies "insolitusj" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius_pacificus>
+    dwc:class "Mammalia" ;
+    dwc:family "Leporidae" ;
+    dwc:genus "Sylvilagus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lagomorpha" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "cunicularius" ;
+    dwc:subSpecies "pacificus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sylvilagus_cunicularius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
