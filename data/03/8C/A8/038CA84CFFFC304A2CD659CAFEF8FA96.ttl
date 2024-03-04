@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038CA84CFFFC304A2CD659CAFEF8FA96
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7841731>, <http://dx.doi.org/10.5281/zenodo.7847112> ;
+    dc:creator "Kasalo, Niko; Naskrecki, Piotr; Rebrina, Fran; Skejo, Josip" ;
+    dc:title "Metrodora panamae" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/038CA84CFFFC304A2CD659CAFEF8FA96.mc.3B4D1307FFE2304A2ED85CC4FEF9FBCB> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Metrodora_panamae_Hebard_1924> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Platytettix_panamae_Hebard_1924> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/zoosystema2023v45a7> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5252/zoosystema2023v45a7>
-    dc:creator "Kasalo, Niko", "Naskrecki, Piotr", "Rebrina, Fran", "Skejo, Josip" ;
-    dc:date "2023" ;
-    dc:title "Central American Tetrigidae Rambur, 1838 (Orthoptera): a preliminary catalogue" ;
     bibo:endPage "212" ;
     bibo:issue "7" ;
     bibo:journal "Zoosystema" ;
     bibo:pubDate "2023-04-14" ;
     bibo:startPage "177" ;
     bibo:volume "45" ;
+    dc:creator "Kasalo, Niko; Naskrecki, Piotr; Rebrina, Fran; Skejo, Josip" ;
+    dc:date "2023" ;
+    dc:title "Central American Tetrigidae Rambur, 1838 (Orthoptera): a preliminary catalogue" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7841731>, <http://dx.doi.org/10.5281/zenodo.7847112> ;
     a fabio:JournalArticle .
 
@@ -32,9 +43,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/7847112/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/038CA84CFFFC304A2CD659CAFEF8FA96.mc.3B4D1307FFE2304A2ED85CC4FEF9FBCB>
+    dwc:collectionCode "USNM" ;
+    dwc:eventDate "1911-02-19" ;
+    dwc:locality "Porto Bello" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "4081348325" ;
+    trt:httpUri <https://treatment.plazi.org/id/038CA84CFFFC304A2CD659CAFEF8FA96#3B4D1307FFE2304A2ED85CC4FEF9FBCB> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Metrodora_panamae_Hebard_1924>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metrodora_panamae> ;
-    dwc:ID-CoL "42JQ3" ;
     dwc:class "Insecta" ;
     dwc:family "Tetrigidae" ;
     dwc:genus "Metrodora" ;
@@ -42,13 +60,13 @@
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Hebard, 1924)" ;
+    dwc:scientificNameAuthorship "(Hebard, 1924)", "Hebard, 1924" ;
     dwc:species "panamae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42JQ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metrodora_panamae> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Platytettix_panamae_Hebard_1924>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Platytettix_panamae> ;
-    dwc:ID-CoL "77R7H" ;
     dwc:class "Insecta" ;
     dwc:family "Tetrigidae" ;
     dwc:genus "Platytettix" ;
@@ -58,41 +76,62 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hebard, 1924: 83" ;
     dwc:species "panamae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42JQ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Platytettix_panamae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Metrodora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrigidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Metrodora_panamaea_Hebard_1924>
     dwc:class "Insecta" ;
     dwc:family "Tetrigidae" ;
     dwc:genus "Metrodora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hebard, 1924" ;
+    dwc:species "panamaea" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/42JQ3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metrodora_panamaea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Crimisus_Bolivar_1887>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Crimisus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Bolivar, 1887" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Crimisus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cotys_Bolivar_1887>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Cotys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Bolivar, 1887" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cotys> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Metrodora_harroweri_Hebard_1924>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Metrodora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Hebard, 1924)" ;
+    dwc:species "harroweri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Metrodora_harroweri> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Metrodora_panamae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metrodora> ;
     dwc:class "Insecta" ;
     dwc:family "Tetrigidae" ;
     dwc:genus "Metrodora" ;
@@ -101,32 +140,124 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "panamae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metrodora> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Metrodora>
     dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Metrodora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrigidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetrigidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Tetrigidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Orthoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038CA84CFFFC304A2CD659CAFEF8FA96>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Metrodora_panamae_Hebard_1924> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Platytettix_panamae_Hebard_1924> ;
-    trt:publishedIn <http://dx.doi.org/10.5252/zoosystema2023v45a7> ;
-    dc:creator "Kasalo, Niko", "Naskrecki, Piotr", "Rebrina, Fran", "Skejo, Josip" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7841731>, <http://dx.doi.org/10.5281/zenodo.7847112> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Orthoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platytettix_panamae>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Platytettix" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "panamae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platytettix> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platytettix>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Platytettix" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrigidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Metrodora_panamaea>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Metrodora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "panamaea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metrodora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Crimisus>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Crimisus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrigidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cotys>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Cotys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetrigidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Metrodora_harroweri>
+    dwc:class "Insecta" ;
+    dwc:family "Tetrigidae" ;
+    dwc:genus "Metrodora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Orthoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "harroweri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Metrodora> ;
+    a dwcFP:TaxonName .
