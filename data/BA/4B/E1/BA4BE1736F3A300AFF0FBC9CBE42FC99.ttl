@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:BA4BE1736F3A300AFF0FBC9CBE42FC99
+    cito:cites <http://dx.doi.org/10.5281/zenodo.180748>, <http://dx.doi.org/10.5281/zenodo.180749> ;
+    dc:creator "Dimitrov, Dimitar; Álvarez-Padilla, Fernando; Hormiga, Gustavo" ;
+    dc:title "Tetragnatha gracilis Bryant 1923, new combination" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Prionolaema_gracilis>, <http://taxon-name.plazi.org/id/Animalia/Tetragnatha_earmra> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tetragnatha_gracilis_Bryant_1923> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Prionolaema_gracilis_Bryant_1923>, <http://taxon-concept.plazi.org/id/Animalia/Tetragnatha_earmra_Levi_1981> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.180745> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.180745>
-    dc:creator "Dimitrov, Dimitar", "Hormiga, Gustavo", "Álvarez-Padilla, Fernando" ;
-    dc:date "2008" ;
-    dc:title "Until dirt do us apart: On the unremarkable palp morphology of the spider Sternospina concretipalpis Schmidt & Krause, 1993, with comments on the genus Prionolaema Simon, 1894 (Araneae, Tetragnathidae)" ;
     bibo:endPage "56" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "49" ;
     bibo:volume "1698" ;
+    dc:creator "Dimitrov, Dimitar; Álvarez-Padilla, Fernando; Hormiga, Gustavo" ;
+    dc:date "2008" ;
+    dc:title "Until dirt do us apart: On the unremarkable palp morphology of the spider Sternospina concretipalpis Schmidt & Krause, 1993, with comments on the genus Prionolaema Simon, 1894 (Araneae, Tetragnathidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.180748>, <http://dx.doi.org/10.5281/zenodo.180749> ;
     a fabio:JournalArticle .
 
@@ -30,8 +41,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/180749/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Tetragnatha_gracilis_Bryant_1923>
+    dwc:class "Arachnida" ;
+    dwc:family "Tetragnathidae" ;
+    dwc:genus "Tetragnatha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bryant, 1923" ;
+    dwc:species "gracilis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/55MBV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha_gracilis> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Prionolaema_gracilis_Bryant_1923>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Prionolaema_gracilis> ;
     dwc:class "Arachnida" ;
     dwc:family "Tetragnathidae" ;
     dwc:genus "Prionolaema" ;
@@ -41,11 +65,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bryant, 1923: 11" ;
     dwc:species "gracilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Prionolaema_gracilis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tetragnatha_earmra_Levi_1981>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha_earmra> ;
-    dwc:ID-CoL "7C38M" ;
     dwc:class "Arachnida" ;
     dwc:family "Tetragnathidae" ;
     dwc:genus "Tetragnatha" ;
@@ -55,62 +78,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Levi, 1981: 294" ;
     dwc:species "earmra" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/55MBV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha_earmra> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tetragnatha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnathidae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Tetragnathidae" ;
-    dwc:genus "Tetragnatha" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tetragnatha_earmra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Tetragnathidae" ;
-    dwc:genus "Tetragnatha" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "earmra" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Tetragnatha_gracilis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha> ;
     dwc:class "Arachnida" ;
     dwc:family "Tetragnathidae" ;
     dwc:genus "Tetragnatha" ;
@@ -119,24 +91,90 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tetragnatha>
+    dwc:class "Arachnida" ;
+    dwc:family "Tetragnathidae" ;
+    dwc:genus "Tetragnatha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnathidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tetragnathidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Tetragnathidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/BA4BE1736F3A300AFF0FBC9CBE42FC99>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/BA/4B/E1/Prionolaema_gracilis>, <file:///workdir/tmprdf/data/BA/4B/E1/Tetragnatha_earmra> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Prionolaema_gracilis_Bryant_1923>, <http://taxon-concept.plazi.org/id/Animalia/Tetragnatha_earmra_Levi_1981> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.180745> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha_gracilis> ;
-    dc:creator "Dimitrov, Dimitar", "Hormiga, Gustavo", "Álvarez-Padilla, Fernando" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.180748>, <http://dx.doi.org/10.5281/zenodo.180749> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Prionolaema_gracilis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tetragnathidae" ;
+    dwc:genus "Prionolaema" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prionolaema> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Prionolaema>
+    dwc:class "Arachnida" ;
+    dwc:family "Tetragnathidae" ;
+    dwc:genus "Prionolaema" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnathidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tetragnatha_earmra>
+    dwc:class "Arachnida" ;
+    dwc:family "Tetragnathidae" ;
+    dwc:genus "Tetragnatha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "earmra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetragnatha> ;
+    a dwcFP:TaxonName .
