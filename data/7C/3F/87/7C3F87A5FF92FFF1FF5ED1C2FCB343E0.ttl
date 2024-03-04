@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:7C3F87A5FF92FFF1FF5ED1C2FCB343E0
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8243343> ;
+    dc:creator "Wu, Kai; Tian, Wenhui; Syed, Asad; Elgorban, Abdallah M.; Bahkali, Ali H.; Maharachchikumbura, Sajeewa S. N." ;
+    dc:title "Roussoella sichuanensis W. H. Tian, K. Wu & Maharachch. 2023, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/7C3F87A5FF92FFF1FF5ED1C2FCB343E0.mc.44FE3CEEFF92FFFFFE10D202FEA3459B> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Roussoella_sichuanensis_Tian_2023> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.607.4.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/phytotaxa.607.4.2>
-    dc:creator "Bahkali, Ali H.", "Elgorban, Abdallah M.", "Maharachchikumbura, Sajeewa S. N.", "Syed, Asad", "Tian, Wenhui", "Wu, Kai" ;
-    dc:date "2023" ;
-    dc:title "Description of two new species of Roussoella (Roussoellaceae, Pleosporales) associated with bamboo from Sichuan Province, China" ;
     bibo:endPage "248" ;
     bibo:issue "4" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-08-11" ;
     bibo:startPage "235" ;
     bibo:volume "607" ;
+    dc:creator "Wu, Kai; Tian, Wenhui; Syed, Asad; Elgorban, Abdallah M.; Bahkali, Ali H.; Maharachchikumbura, Sajeewa S. N." ;
+    dc:date "2023" ;
+    dc:title "Description of two new species of Roussoella (Roussoellaceae, Pleosporales) associated with bamboo from Sichuan Province, China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8243343> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/8243343/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/7C3F87A5FF92FFF1FF5ED1C2FCB343E0.mc.44FE3CEEFF92FFFFFE10D202FEA3459B>
+    dwc:catalogNumber "HKAS 129207, CGMCC 3.25139" ;
+    dwc:collectionCode "HKAS, CGMCC" ;
+    dwc:eventDate "2021-09-27" ;
+    dwc:locality "Baiyungou" ;
+    dwc:recordedBy "WH Tian, BY" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimLatitude "30.797777" ;
+    dwc:verbatimLongitude "103.40528" ;
+    trt:httpUri <https://treatment.plazi.org/id/7C3F87A5FF92FFF1FF5ED1C2FCB343E0#44FE3CEEFF92FFFFFE10D202FEA3459B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Fungi/Roussoella_sichuanensis_Tian_2023>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Roussoella_sichuanensis> ;
     dwc:class "Dothideomycetes" ;
     dwc:family "Roussoellaceae" ;
     dwc:genus "Roussoella" ;
@@ -38,50 +59,61 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "W. H. Tian, K. Wu & Maharachch." ;
     dwc:species "sichuanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Roussoella_sichuanensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Fungi>
-    dwc:kingdom "Fungi" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Dothideomycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
-    dwc:class "Dothideomycetes" ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Pleosporales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Dothideomycetes> ;
-    dwc:class "Dothideomycetes" ;
-    dwc:kingdom "Fungi" ;
-    dwc:order "Pleosporales" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Roussoella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Roussoellaceae> ;
+<http://taxon-concept.plazi.org/id/Fungi/Roussoella_sichuanensis_Wu_2023>
     dwc:class "Dothideomycetes" ;
     dwc:family "Roussoellaceae" ;
     dwc:genus "Roussoella" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Pleosporales" ;
     dwc:phylum "Ascomycota" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wu & Tian & Syed & Elgorban & Bahkali & Maharachchikumbura, 2023" ;
+    dwc:species "sichuanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Roussoella_sichuanensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Roussoella_multiloculata_GMBCC_1065>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Roussoellaceae" ;
+    dwc:genus "Roussoella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "GMBCC, 1065" ;
+    dwc:species "multiloculata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Roussoella_multiloculata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Roussoella_verrucispora_Wu_2023>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Roussoellaceae" ;
+    dwc:genus "Roussoella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:species "verrucispora" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Roussoella_verrucispora> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Roussoella_multiloculata_GMBCC_1056>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Roussoellaceae" ;
+    dwc:genus "Roussoella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(GMBCC 1056)", "GMBCC, 1056" ;
+    dwc:species "multiloculata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Roussoella_multiloculata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Fungi/Roussoella_sichuanensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Roussoella> ;
     dwc:class "Dothideomycetes" ;
     dwc:family "Roussoellaceae" ;
     dwc:genus "Roussoella" ;
@@ -90,34 +122,79 @@
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
     dwc:species "sichuanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Roussoella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Roussoella>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Roussoellaceae" ;
+    dwc:genus "Roussoella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Roussoellaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Roussoellaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Pleosporales> ;
     dwc:class "Dothideomycetes" ;
     dwc:family "Roussoellaceae" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Pleosporales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Pleosporales> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7C3F87A5FF92FFF1FF5ED1C2FCB343E0>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Fungi/Roussoella_sichuanensis_Tian_2023> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.607.4.2> ;
-    dc:creator "Bahkali, Ali H.", "Elgorban, Abdallah M.", "Maharachchikumbura, Sajeewa S. N.", "Syed, Asad", "Tian, Wenhui", "Wu, Kai" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8243343> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/7C3F87A5FF92FFF1FF5ED1C2FCB343E0/HKAS%20129207%2C%20CGMCC%203.25139> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Fungi/Pleosporales>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Dothideomycetes> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/7C3F87A5FF92FFF1FF5ED1C2FCB343E0/HKAS%20129207%2C%20CGMCC%203.25139>
-    dwc:catalogNumber "HKAS 129207, CGMCC 3.25139" ;
-    dwc:collectionCode "HKAS, CGMCC" ;
-    dwc:eventDate "2021-09-27" ;
-    dwc:locality "Baiyungou" ;
-    dwc:recordedBy "WH Tian, BY" ;
-    dwc:typeStatus "holotype" ;
-    dwc:verbatimLatitude "30.797777" ;
-    dwc:verbatimLongitude "103.40528" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Fungi/Dothideomycetes>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Roussoella_multiloculata>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Roussoellaceae" ;
+    dwc:genus "Roussoella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:species "multiloculata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Roussoella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Roussoella_verrucispora>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Roussoellaceae" ;
+    dwc:genus "Roussoella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Pleosporales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "species" ;
+    dwc:species "verrucispora" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Roussoella> ;
+    a dwcFP:TaxonName .
