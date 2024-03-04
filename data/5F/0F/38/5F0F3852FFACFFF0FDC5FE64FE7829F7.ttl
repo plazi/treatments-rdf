@@ -1,13 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:5F0F3852FFACFFF0FDC5FE64FE7829F7
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7258860>, <http://dx.doi.org/10.5281/zenodo.7258864> ;
+    dc:creator "Sagorny, Christina; Döhren, Jörn von; Rouse, Greg W.; Tilic, Ekin" ;
+    dc:title "Heteronemertea Burger 1892" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Heteronemertea_Burger_1892> ;
+    trt:publishedIn <http://dx.doi.org/10.5852/ejt.2022.845.1959> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.5852/ejt.2022.845.1959>
+    bibo:endPage "174" ;
+    bibo:issue "1" ;
+    bibo:journal "European Journal of Taxonomy" ;
+    bibo:pubDate "2022-10-27" ;
+    bibo:startPage "132" ;
+    bibo:volume "845" ;
+    dc:creator "Sagorny, Christina; Döhren, Jörn von; Rouse, Greg W.; Tilic, Ekin" ;
+    dc:date "2022" ;
+    dc:title "Cutting the ribbon: bathyal Nemertea from seeps along the Costa Rica margin, with descriptions of 2 new genera and 9 new species" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7258860>, <http://dx.doi.org/10.5281/zenodo.7258864> ;
+    a fabio:JournalArticle .
 
 <http://dx.doi.org/10.5281/zenodo.7258860>
     dc:description "Fig. 3. Live images of palaeonemerteans, heteronemerteans, and polystiliferous hoplonemerteans collected along the Costa Rica margin. A. Tubulanus cf. lutescens (SIO-BIC N107) (Palaeonemertea). B. Dorsal surface of head region of Tubulanus cf. lutescens (SIO-BIC N233). C. Lineidae (SIO-BIC N254) (Heteronemertea). D–E. Reptantia (SIO-BIC N263) (Polystilifera) dorsal (D) and ventral view (E)." ;
@@ -19,62 +41,70 @@
     fabio:hasRepresentation "https://zenodo.org/record/7258864/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5852/ejt.2022.845.1959>
-    dc:creator "Döhren, Jörn von", "Rouse, Greg W.", "Sagorny, Christina", "Tilic, Ekin" ;
-    dc:date "2022" ;
-    dc:title "Cutting the ribbon: bathyal Nemertea from seeps along the Costa Rica margin, with descriptions of 2 new genera and 9 new species" ;
-    bibo:endPage "174" ;
-    bibo:issue "1" ;
-    bibo:journal "European Journal of Taxonomy" ;
-    bibo:pubDate "2022-10-27" ;
-    bibo:startPage "132" ;
-    bibo:volume "845" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7258860>, <http://dx.doi.org/10.5281/zenodo.7258864> ;
-    a fabio:JournalArticle .
-
 <http://taxon-concept.plazi.org/id/Animalia/Heteronemertea_Burger_1892>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Heteronemertea> ;
     dwc:class "Hoplonemertea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Heteronemertea" ;
     dwc:phylum "Nemertea" ;
     dwc:rank "order" ;
     dwc:scientificNameAuthorship "Burger, 1892" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Heteronemertea> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lineidae_McIntosh_1873>
+    dwc:class "Pilidiophora" ;
+    dwc:family "Lineidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Heteronemertea" ;
+    dwc:phylum "Nemertea" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "McIntosh, 1873" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lineidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Heteronemertea>
+    dwc:class "Hoplonemertea", "Pilidiophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Heteronemertea" ;
+    dwc:phylum "Nemertea" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hoplonemertea>, <http://taxon-name.plazi.org/id/Animalia/Pilidiophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hoplonemertea>
+    dwc:class "Hoplonemertea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nemertea" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemertea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nemertea>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Nemertea" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Heteronemertea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hoplonemertea> ;
-    dwc:class "Hoplonemertea" ;
+<http://taxon-name.plazi.org/id/Animalia/Lineidae>
+    dwc:class "Pilidiophora" ;
+    dwc:family "Lineidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Heteronemertea" ;
     dwc:phylum "Nemertea" ;
-    dwc:rank "order" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Heteronemertea> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hoplonemertea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemertea> ;
-    dwc:class "Hoplonemertea" ;
+<http://taxon-name.plazi.org/id/Animalia/Pilidiophora>
+    dwc:class "Pilidiophora" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Nemertea" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemertea> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nemertea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Nemertea" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/5F0F3852FFACFFF0FDC5FE64FE7829F7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Heteronemertea_Burger_1892> ;
-    trt:publishedIn <http://dx.doi.org/10.5852/ejt.2022.845.1959> ;
-    dc:creator "Döhren, Jörn von", "Rouse, Greg W.", "Sagorny, Christina", "Tilic, Ekin" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7258860>, <http://dx.doi.org/10.5281/zenodo.7258864> ;
-    a trt:Treatment .
-
