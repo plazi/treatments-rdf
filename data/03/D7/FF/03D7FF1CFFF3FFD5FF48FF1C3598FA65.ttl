@@ -1,29 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D7FF1CFFF3FFD5FF48FF1C3598FA65
+    dc:creator "Hielkema, Auke J.; Hielkema, Meindert A." ;
+    dc:title "Dichotomius (Luederwaldtinia) nisus" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dichotomius_nisus_Olivier_1789> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Scarabaeus_nisus_Olivier_1789>, <http://taxon-concept.plazi.org/id/Animalia/Pinotus_garbei_Luederwaldt_1922> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.3678492> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.3678492>
-    dc:creator "Hielkema, Auke J.", "Hielkema, Meindert A." ;
-    dc:date "2019" ;
-    dc:title "An annotated checklist of the Scarabaeoidea (Insecta: Coleoptera) of the Guianas" ;
     bibo:endPage "306" ;
     bibo:issue "732" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2019-10-25" ;
     bibo:startPage "1" ;
     bibo:volume "732" ;
+    dc:creator "Hielkema, Auke J.; Hielkema, Meindert A." ;
+    dc:date "2019" ;
+    dc:title "An annotated checklist of the Scarabaeoidea (Insecta: Coleoptera) of the Guianas" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dichotomius_nisus_Olivier_1789>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotomius_nisus> ;
-    dwc:ID-CoL "35NCJ" ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Dichotomius" ;
@@ -34,25 +41,11 @@
     dwc:scientificNameAuthorship "(Olivier, 1789)" ;
     dwc:species "nisus" ;
     dwc:subGenus "Luederwaldtinia" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Pinotus_garbei_Luederwaldt_1922>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pinotus_garbei> ;
-    dwc:ID-CoL "77LCF" ;
-    dwc:class "Insecta" ;
-    dwc:family "Scarabaeidae" ;
-    dwc:genus "Pinotus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Luederwaldt 1922: 11" ;
-    dwc:species "garbei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35NCJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichotomius_nisus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Scarabaeus_nisus_Olivier_1789>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scarabaeus_nisus> ;
-    dwc:ID-CoL "79W88" ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Scarabaeus" ;
@@ -60,44 +53,27 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Olivier 1789: 139" ;
+    dwc:scientificNameAuthorship "Olivier 1789: 139", "Olivier, 1789" ;
     dwc:species "nisus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35NCJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scarabaeus_nisus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dichotomius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pinotus_garbei_Luederwaldt_1922>
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
-    dwc:genus "Dichotomius" ;
+    dwc:genus "Pinotus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Luederwaldt 1922: 11", "Luederwaldt, 1922" ;
+    dwc:species "garbei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35NCJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pinotus_garbei> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dichotomius_nisus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotomius> ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Dichotomius" ;
@@ -106,29 +82,96 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "nisus" ;
+    dwc:subGenus "Luederwaldtinia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotomius_Luederwaldtinia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pinotus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Dichotomius_Luederwaldtinia>
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
-    dwc:genus "Pinotus" ;
+    dwc:genus "Dichotomius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Luederwaldtinia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichotomius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichotomius>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Dichotomius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeus_nisus>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Scarabaeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nisus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeus>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Scarabaeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pinotus_garbei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pinotus> ;
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
     dwc:genus "Pinotus" ;
@@ -137,22 +180,16 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "garbei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pinotus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Pinotus>
     dwc:class "Insecta" ;
     dwc:family "Scarabaeidae" ;
+    dwc:genus "Pinotus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03D7FF1CFFF3FFD5FF48FF1C3598FA65>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dichotomius_nisus_Olivier_1789> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pinotus_garbei_Luederwaldt_1922>, <http://taxon-concept.plazi.org/id/Animalia/Scarabaeus_nisus_Olivier_1789> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.3678492> ;
-    dc:creator "Hielkema, Auke J.", "Hielkema, Meindert A." ;
-    a trt:Treatment .
-
