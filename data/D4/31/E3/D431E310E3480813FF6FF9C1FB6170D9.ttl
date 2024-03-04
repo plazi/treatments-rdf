@@ -1,27 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:D431E310E3480813FF6FF9C1FB6170D9
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Tydeus_africanus_Baker_1970> ;
+    dc:creator "Silva, Guilherme Liberato Da; Metzelthin, Maicon Henrique; Silva, Onilda Santos Da; Ferla, Noeli Juarez" ;
+    dc:title "Tydeus Koch sensu Kazmierski" ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tydeus_(Kazmierski_1989> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4135.1.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4135.1.1>
-    dc:creator "Ferla, Noeli Juarez", "Metzelthin, Maicon Henrique", "Silva, Guilherme Liberato Da", "Silva, Onilda Santos Da" ;
-    dc:date "2016" ;
-    dc:title "Catalogue of the mite family Tydeidae (Acari: Prostigmata) with the world key to the species" ;
     bibo:endPage "68" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "4135" ;
+    dc:creator "Silva, Guilherme Liberato Da; Metzelthin, Maicon Henrique; Silva, Onilda Santos Da; Ferla, Noeli Juarez" ;
+    dc:date "2016" ;
+    dc:title "Catalogue of the mite family Tydeidae (Acari: Prostigmata) with the world key to the species" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Tydeus_%2528Kazmierski_1989>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_(Kazmierski_1989>
     dwc:class "Arachnida" ;
     dwc:family "Tydeidae" ;
     dwc:genus "Tydeus" ;
@@ -30,10 +39,23 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "(Koch, 1835) sensu (Kazmierski, 1989)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_kochi_Oudemans_1928>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Oudemans, 1928: 378" ;
+    dwc:species "kochi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_kochi> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tydeus_africanus_Baker_1970>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_africanus> ;
     dwc:class "Arachnida" ;
     dwc:family "Tydeidae" ;
     dwc:genus "Tydeus" ;
@@ -43,49 +65,658 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Baker, 1970: 172" ;
     dwc:species "africanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_africanus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Prostigmata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Prostigmata" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tydeidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostigmata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_bkaasifrini_Bayan_1986>
     dwc:class "Arachnida" ;
     dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bayan, 1986" ;
+    dwc:species "bkaasifrini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_bkaasifrini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_bohemiensis_Kazmierski_1989>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kazmierski, 1989b: 299" ;
+    dwc:species "bohemiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_bohemiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_calabrus_Castagnoli_1984>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Castagnoli, 1984" ;
+    dwc:species "calabrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_calabrus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_californicus_Banks_1904>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Banks, 1904" ;
+    dwc:species "californicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_californicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_caryae_Khanjani_2003>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Khanjani & Ueckermann, 2003" ;
+    dwc:species "caryae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_caryae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_caudatus_Duges_1834>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Duges, 1834" ;
+    dwc:species "caudatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_caudatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_cavernarus_Kuznetzov_1979>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuznetzov & Petrova, 1979: 30" ;
+    dwc:species "cavernarus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_cavernarus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_clavimaculatus_Ripka_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kazmierski in Ripka et al. 2013a" ;
+    dwc:species "clavimaculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_clavimaculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_maculatus_Silva_2016>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "maculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_maculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_chilensis_Baker_1970>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1970: 176" ;
+    dwc:species "chilensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_chilensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_costensis_Baker_1970>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1970: 174" ;
+    dwc:species "costensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_costensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_darekiwani_Sadeghi_2012>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sadeghi, Laniecka & Kazmierski in Sadeghi et al. 2012: 105" ;
+    dwc:species "darekiwani" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_darekiwani> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_dignus_Livshitz_1973>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Livshitz, in Kuznetzov & Livshitz, 1973: 51" ;
+    dwc:species "dignus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_dignus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_diversus_Kuznetzov_1972>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuznetzov, in Livshitz et al. 1972: 1579" ;
+    dwc:species "diversus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_diversus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_electus_Kuznetzov_1973>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuznetzov, 1973: 773" ;
+    dwc:species "electus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_electus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_gloveri_Ashmead_1879>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ashmead, 1879" ;
+    dwc:species "gloveri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_gloveri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_goetzi_Schruft_1972>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schruft, 1972: 124" ;
+    dwc:species "goetzi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_goetzi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_grabouwi_Meyer_1959>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyer & Ryke, 1959: 410" ;
+    dwc:species "grabouwi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_grabouwi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_helenipanoue_Kazmierski_1998>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kazmierski, 1998: 341" ;
+    dwc:species "helenipanoue" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_helenipanoue> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_inclutus_Livshitz_1973>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Livshitz, in Kuznetzov & Livshitz, 1973: 50" ;
+    dwc:species "inclutus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_inclutus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_kabutarahangensis_Khanjani_2003>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Khanjani & Ueckermann, 2003" ;
+    dwc:species "kabutarahangensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_kabutarahangensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_lambi_Baker_1970>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1970: 174" ;
+    dwc:species "lambi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_lambi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_linarocatus_Schiess_1981>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schiess, 1981" ;
+    dwc:species "linarocatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_linarocatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_lindquisti_Marshall_1970>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Marshall, 1970" ;
+    dwc:species "lindquisti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_lindquisti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_lolitae_Baker_1965>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1965" ;
+    dwc:species "lolitae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_lolitae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_lundqvisti_Momen_1996>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Momen & Solhoy, 1996: 23" ;
+    dwc:species "lundqvisti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_lundqvisti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_maculatus_Momen_1996>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Momen & Lundqvist, 1996c" ;
+    dwc:species "maculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_maculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_manoi_Silva_2014>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Silva, Rocha & Ferla, in Silva et al. 2014a: 504" ;
+    dwc:species "manoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_manoi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_martae_Kazmierski_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kazmierski, in Ripka et al. 2013a" ;
+    dwc:species "martae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_martae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_meshkinensis_Andre_2010>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Andre et al. 2010: 112" ;
+    dwc:species "meshkinensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_meshkinensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_mississippiensis_Baker_1970>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1970: 171" ;
+    dwc:species "mississippiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_mississippiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_momeni_Khanjani_2003>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Khanjani & Ueckermann, 2003: 5" ;
+    dwc:species "momeni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_momeni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Orthotydeus_longisetosus_El-Bagoury_1988>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Orthotydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "El-Bagoury & Momen, 1988" ;
+    dwc:species "longisetosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Orthotydeus_longisetosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_longisetosus_Kuznetzov_1972>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuznetzov & Zapletina in Livshitz et al. (1972)" ;
+    dwc:species "longisetosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_longisetosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_munsteri_Meyer_1959>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyer & Ryke, 1959: 413" ;
+    dwc:species "munsteri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_munsteri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_mvurwiensis_Andre_2010>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Andre et al. 2010: 112" ;
+    dwc:species "mvurwiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_mvurwiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_narolicatus_Kazmierski_2013>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kazmierski & Ripka, in Ripka et al. 2013a" ;
+    dwc:species "narolicatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_narolicatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_linarocatus_Silva_2016>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "linarocatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_linarocatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_nieuwkerkeni_Andre_2005>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Andre, 2005: 993" ;
+    dwc:species "nieuwkerkeni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_nieuwkerkeni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_oophorus_Kuznetzov_1978>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuznetzov & Sizova, 1978: 63" ;
+    dwc:species "oophorus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_oophorus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_praeditus_Livshitz_1972>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Livshitz & Zapletina, in Livshitz et al. 1972: 1578" ;
+    dwc:species "praeditus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_praeditus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_plumosus_Karg_1975>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Karg, 1975: 105" ;
+    dwc:species "plumosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_plumosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_quadrisetosus_Schiess_1981>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schiess, 1981" ;
+    dwc:species "quadrisetosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_quadrisetosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_rafalskii_Kazmierski_1997>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kazmierski, 1997a" ;
+    dwc:species "rafalskii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_rafalskii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_reticoxus_Ueckermann_1988>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ueckermann, in Smith-Meyer & Ueckermann 1988" ;
+    dwc:species "reticoxus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_reticoxus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_rhusi_Ueckermann_1988>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ueckermann, in Smith-Meyer and Ueckermann, 1988" ;
+    dwc:species "rhusi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_rhusi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_shabestariensis_Akbari_2015>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Akbari, Haddad & Kazmierski in Akbari et al. 2015b: 265" ;
+    dwc:species "shabestariensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_shabestariensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_spathatus_Meyer_1966>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyer" ;
+    dwc:species "spathatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_spathatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_spathulatus_Oudemans_1928>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Oudemans, 1928: 380" ;
+    dwc:species "spathulatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_spathulatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tydeus_taiwanensis_Baker_1970>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker, 1970" ;
+    dwc:species "taiwanensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus_taiwanensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tydeus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeidae> ;
     dwc:class "Arachnida" ;
     dwc:family "Tydeidae" ;
     dwc:genus "Tydeus" ;
@@ -93,10 +724,61 @@
     dwc:order "Prostigmata" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Prostigmata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Prostigmata>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_kochi>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "kochi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tydeus_africanus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
     dwc:class "Arachnida" ;
     dwc:family "Tydeidae" ;
     dwc:genus "Tydeus" ;
@@ -105,13 +787,592 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "africanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/D431E310E3480813FF6FF9C1FB6170D9>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tydeus_%2528Kazmierski_1989> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4135.1.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
-    dc:creator "Ferla, Noeli Juarez", "Metzelthin, Maicon Henrique", "Silva, Guilherme Liberato Da", "Silva, Onilda Santos Da" ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Tydeus_africanus_Baker_1970> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_bkaasifrini>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bkaasifrini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_bohemiensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bohemiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_calabrus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "calabrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_californicus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "californicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_caryae>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "caryae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_caudatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "caudatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_cavernarus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cavernarus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_clavimaculatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "clavimaculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_maculatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "maculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_chilensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "chilensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_costensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "costensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_darekiwani>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "darekiwani" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_dignus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dignus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_diversus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "diversus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_electus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "electus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_gloveri>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "gloveri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_goetzi>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "goetzi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_grabouwi>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grabouwi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_helenipanoue>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "helenipanoue" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_inclutus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "inclutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_kabutarahangensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "kabutarahangensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_lambi>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lambi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_linarocatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "linarocatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_lindquisti>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lindquisti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_lolitae>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lolitae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_lundqvisti>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lundqvisti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_manoi>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "manoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_martae>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "martae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_meshkinensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "meshkinensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_mississippiensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mississippiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_momeni>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "momeni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Orthotydeus_longisetosus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Orthotydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longisetosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orthotydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Orthotydeus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Orthotydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_longisetosus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longisetosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_munsteri>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "munsteri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_mvurwiensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mvurwiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_narolicatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "narolicatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_nieuwkerkeni>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nieuwkerkeni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_oophorus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "oophorus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_praeditus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "praeditus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_plumosus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "plumosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_quadrisetosus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "quadrisetosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_rafalskii>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rafalskii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_reticoxus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "reticoxus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_rhusi>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rhusi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_shabestariensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "shabestariensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_spathatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "spathatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_spathulatus>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "spathulatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tydeus_taiwanensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Tydeidae" ;
+    dwc:genus "Tydeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Prostigmata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "taiwanensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tydeus> ;
+    a dwcFP:TaxonName .
