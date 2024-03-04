@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B887EBDF7EFFA917AC06670A4DFE9C
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6877281>, <http://dx.doi.org/10.5281/zenodo.6877285>, <http://dx.doi.org/10.5281/zenodo.6877289> ;
+    dc:creator "Zhao, Ming-Zhi; Zorn, Carsten" ;
+    dc:title "Anomala inclinata Zhao & Zorn 2022, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B887EBDF7EFFA917AC06670A4DFE9C.mc.3B793CA0DF7EFFB5166A06F40CDBFD43>, <http://tb.plazi.org/GgServer/dwcaRecords/03B887EBDF7EFFA917AC06670A4DFE9C.mc.3B793CA0DF7EFFB513C206F409CCFD67> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Anomala_inclinata_Zhao_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5168.2.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5168.2.5>
-    dc:creator "Zhao, Ming-Zhi", "Zorn, Carsten" ;
-    dc:date "2022" ;
-    dc:title "Contribution to the genus Anomala Samouelle, 1819 (Coleoptera: Scarabaeidae Rutelinae) of China and adjacent regions. Part II: six new species from Taiwan and Hainan" ;
     bibo:endPage "195" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-07-21" ;
     bibo:startPage "175" ;
     bibo:volume "5168" ;
+    dc:creator "Zhao, Ming-Zhi; Zorn, Carsten" ;
+    dc:date "2022" ;
+    dc:title "Contribution to the genus Anomala Samouelle, 1819 (Coleoptera: Scarabaeidae Rutelinae) of China and adjacent regions. Part II: six new species from Taiwan and Hainan" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6877281>, <http://dx.doi.org/10.5281/zenodo.6877285>, <http://dx.doi.org/10.5281/zenodo.6877289> ;
     a fabio:JournalArticle .
 
@@ -37,8 +47,23 @@
     fabio:hasRepresentation "https://zenodo.org/record/6877289/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B887EBDF7EFFA917AC06670A4DFE9C.mc.3B793CA0DF7EFFB5166A06F40CDBFD43>
+    dwc:collectionCode "NMNS" ;
+    dwc:locality "Taitung" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3864839325" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B887EBDF7EFFA917AC06670A4DFE9C#3B793CA0DF7EFFB5166A06F40CDBFD43> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03B887EBDF7EFFA917AC06670A4DFE9C.mc.3B793CA0DF7EFFB513C206F409CCFD67>
+    dwc:collectionCode "CCPC" ;
+    dwc:locality "Taitung" ;
+    dwc:typeStatus "paratype" ;
+    trt:gbifOccurrenceId "3864839327" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B887EBDF7EFFA917AC06670A4DFE9C#3B793CA0DF7EFFB513C206F409CCFD67> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Anomala_inclinata_Zhao_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anomala_inclinata> ;
     dwc:class "Insecta" ;
     dwc:family "Rutelidae" ;
     dwc:genus "Anomala" ;
@@ -48,26 +73,61 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Zhao & Zorn" ;
     dwc:species "inclinata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anomala_inclinata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anomala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rutelidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Anomala_undefined-a_Zhao_2022>
     dwc:class "Insecta" ;
     dwc:family "Rutelidae" ;
     dwc:genus "Anomala" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "undefined-a" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anomala_undefined-a> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Anomala_linwenhsini_Zhao_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zhao & Zorn" ;
+    dwc:species "linwenhsini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anomala_linwenhsini> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Anomala_wutaiensis_Zhao_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zhao & Zorn" ;
+    dwc:species "wutaiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anomala_wutaiensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Anomala_kanshireiensis_Zorn_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zorn & Zhao" ;
+    dwc:species "kanshireiensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Anomala_kanshireiensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Anomala_inclinata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anomala> ;
     dwc:class "Insecta" ;
     dwc:family "Rutelidae" ;
     dwc:genus "Anomala" ;
@@ -76,46 +136,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "inclinata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anomala> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Anomala>
     dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rutelidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rutelidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Rutelidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B887EBDF7EFFA917AC06670A4DFE9C>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Anomala_inclinata_Zhao_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5168.2.5> ;
-    dc:creator "Zhao, Ming-Zhi", "Zorn, Carsten" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6877281>, <http://dx.doi.org/10.5281/zenodo.6877285>, <http://dx.doi.org/10.5281/zenodo.6877289> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anomala_undefined-a>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "undefined-a" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anomala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anomala_linwenhsini>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "linwenhsini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anomala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anomala_wutaiensis>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wutaiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anomala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anomala_kanshireiensis>
+    dwc:class "Insecta" ;
+    dwc:family "Rutelidae" ;
+    dwc:genus "Anomala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "kanshireiensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anomala> ;
+    a dwcFP:TaxonName .
