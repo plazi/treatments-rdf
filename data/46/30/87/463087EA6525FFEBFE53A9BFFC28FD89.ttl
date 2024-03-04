@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:463087EA6525FFEBFE53A9BFFC28FD89
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4290447> ;
+    dc:creator "Molin, Ana Dal; Woolley, James B." ;
+    dc:title "Chartocerus corvinus Girault 1913" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/463087EA6525FFEBFE53A9BFFC28FD89.mc.7EF13CA16525FFE9FEB1AEC1FD40F9BB> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chartocerus_corvinus_Girault_1913> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Signiphora_corvina_Girault_1913> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2020.1785573> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222933.2020.1785573>
-    dc:creator "Molin, Ana Dal", "Woolley, James B." ;
-    dc:date "2020" ;
-    dc:title "Notes on types of Australian Chartocerus Motschulsky (Hymenoptera: Signiphoridae)" ;
     bibo:endPage "702" ;
     bibo:issue "9" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2020-09-23" ;
     bibo:startPage "681" ;
     bibo:volume "54" ;
+    dc:creator "Molin, Ana Dal; Woolley, James B." ;
+    dc:date "2020" ;
+    dc:title "Notes on types of Australian Chartocerus Motschulsky (Hymenoptera: Signiphoridae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4290447> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4290447/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/463087EA6525FFEBFE53A9BFFC28FD89.mc.7EF13CA16525FFE9FEB1AEC1FD40F9BB>
+    dwc:catalogNumber "QM Hy 772" ;
+    dwc:collectionCode "QM" ;
+    dwc:eventDate "6 October 1911 '" ;
+    dwc:locality "Queensland" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2987373308" ;
+    trt:httpUri <https://treatment.plazi.org/id/463087EA6525FFEBFE53A9BFFC28FD89#7EF13CA16525FFE9FEB1AEC1FD40F9BB> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Chartocerus_corvinus_Girault_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chartocerus_corvinus> ;
-    dwc:ID-CoL "TPQP" ;
     dwc:class "Insecta" ;
     dwc:family "Signiphoridae" ;
     dwc:genus "Chartocerus" ;
@@ -39,11 +58,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Girault, 1913" ;
     dwc:species "corvinus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/TPQP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chartocerus_corvinus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Signiphora_corvina_Girault_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Signiphora_corvina> ;
-    dwc:ID-CoL "4XB7H" ;
     dwc:class "Insecta" ;
     dwc:family "Signiphoridae" ;
     dwc:genus "Signiphora" ;
@@ -53,33 +72,63 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Girault, 1913" ;
     dwc:species "corvina" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/TPQP> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Signiphora_corvina> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chartocerus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Signiphoridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Gonatocerus_huxleyi_Girault_1912>
     dwc:class "Insecta" ;
-    dwc:family "Signiphoridae" ;
-    dwc:genus "Chartocerus" ;
+    dwc:family "Mymaridae" ;
+    dwc:genus "Gonatocerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Girault" ;
+    dwc:species "huxleyi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gonatocerus_huxleyi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Abbella_subflava_Girault_1911>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Abbella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Girault, 1911" ;
+    dwc:species "subflava" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Abbella_subflava> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ufens_piceipes_Girault_1912>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Ufens" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Girault, 1912" ;
+    dwc:species "piceipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ufens_piceipes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Aphelinoidea_howardii_Girault_1912>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Aphelinoidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Girault, 1912" ;
+    dwc:species "howardii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Aphelinoidea_howardii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Chartocerus_corvinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chartocerus> ;
     dwc:class "Insecta" ;
     dwc:family "Signiphoridae" ;
     dwc:genus "Chartocerus" ;
@@ -88,73 +137,190 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "corvinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chartocerus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Signiphora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Signiphoridae> ;
+<http://taxon-name.plazi.org/id/Animalia/Chartocerus>
     dwc:class "Insecta" ;
     dwc:family "Signiphoridae" ;
-    dwc:genus "Signiphora" ;
+    dwc:genus "Chartocerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Signiphora_corvina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Signiphora> ;
-    dwc:class "Insecta" ;
-    dwc:family "Signiphoridae" ;
-    dwc:genus "Signiphora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "corvina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Signiphoridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Signiphoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Signiphoridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/463087EA6525FFEBFE53A9BFFC28FD89>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chartocerus_corvinus_Girault_1913> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Signiphora_corvina_Girault_1913> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2020.1785573> ;
-    dc:creator "Molin, Ana Dal", "Woolley, James B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4290447> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/463087EA6525FFEBFE53A9BFFC28FD89/QM%20Hy%20772> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/463087EA6525FFEBFE53A9BFFC28FD89/QM%20Hy%20772>
-    trt:gbifOccurrenceId "2987373308" ;
-    dwc:catalogNumber "QM Hy 772" ;
-    dwc:collectionCode "QM" ;
-    dwc:eventDate "6 October 1911 '" ;
-    dwc:locality "Queensland" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Signiphora_corvina>
+    dwc:class "Insecta" ;
+    dwc:family "Signiphoridae" ;
+    dwc:genus "Signiphora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "corvina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Signiphora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Signiphora>
+    dwc:class "Insecta" ;
+    dwc:family "Signiphoridae" ;
+    dwc:genus "Signiphora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Signiphoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gonatocerus_huxleyi>
+    dwc:class "Insecta" ;
+    dwc:family "Mymaridae" ;
+    dwc:genus "Gonatocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "huxleyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gonatocerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gonatocerus>
+    dwc:class "Insecta" ;
+    dwc:family "Mymaridae" ;
+    dwc:genus "Gonatocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mymaridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mymaridae>
+    dwc:class "Insecta" ;
+    dwc:family "Mymaridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Abbella_subflava>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Abbella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "subflava" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Abbella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Abbella>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Abbella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichogrammatidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichogrammatidae>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ufens_piceipes>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Ufens" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "piceipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ufens> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ufens>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Ufens" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichogrammatidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphelinoidea_howardii>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Aphelinoidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "howardii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aphelinoidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aphelinoidea>
+    dwc:class "Insecta" ;
+    dwc:family "Trichogrammatidae" ;
+    dwc:genus "Aphelinoidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichogrammatidae> ;
+    a dwcFP:TaxonName .
