@@ -1,26 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E18793E762FF8C15103FFEC5592B07
+    dc:creator "Samyn, Yves; Vandenspiegel, Didier; Massin, Claude" ;
+    dc:title "Actinopyga Bronn 1860" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Actinopyga_Bronn_1860> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.172021> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.172021>
-    dc:creator "Massin, Claude", "Samyn, Yves", "Vandenspiegel, Didier" ;
-    dc:date "2006" ;
-    dc:title "A new Indo­West Pacific species of Actinopyga (Holothuroidea: Aspidochirotida: Holothuriidae)" ;
     bibo:endPage "68" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "53" ;
     bibo:volume "1138" ;
+    dc:creator "Samyn, Yves; Vandenspiegel, Didier; Massin, Claude" ;
+    dc:date "2006" ;
+    dc:title "A new Indo­West Pacific species of Actinopyga (Holothuroidea: Aspidochirotida: Holothuriidae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Actinopyga_Bronn_1860>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Actinopyga> ;
     dwc:class "Holothuroidea" ;
     dwc:family "Holothuriidae" ;
     dwc:genus "Actinopyga" ;
@@ -29,15 +36,23 @@
     dwc:phylum "Echinodermata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Bronn, 1860" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Actinopyga> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Muelleria_echinites_Jaeger_1833>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:genus "Muelleria" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jaeger, 1833" ;
+    dwc:species "echinites" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Muelleria_echinites> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Actinopyga>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriidae> ;
     dwc:class "Holothuroidea" ;
     dwc:family "Holothuriidae" ;
     dwc:genus "Actinopyga" ;
@@ -45,45 +60,67 @@
     dwc:order "Aspidochirotida" ;
     dwc:phylum "Echinodermata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Aspidochirotida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
-    dwc:class "Holothuroidea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Aspidochirotida" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Echinodermata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Holothuriidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidochirotida> ;
     dwc:class "Holothuroidea" ;
     dwc:family "Holothuriidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Aspidochirotida" ;
     dwc:phylum "Echinodermata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Aspidochirotida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Aspidochirotida>
+    dwc:class "Holothuroidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Holothuroidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
     dwc:class "Holothuroidea" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Echinodermata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E18793E762FF8C15103FFEC5592B07>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Actinopyga_Bronn_1860> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.172021> ;
-    dc:creator "Massin, Claude", "Samyn, Yves", "Vandenspiegel, Didier" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Echinodermata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muelleria_echinites>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:genus "Muelleria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "species" ;
+    dwc:species "echinites" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Muelleria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Muelleria>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:genus "Muelleria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriidae> ;
+    a dwcFP:TaxonName .
