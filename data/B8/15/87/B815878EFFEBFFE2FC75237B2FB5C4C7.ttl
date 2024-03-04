@@ -1,29 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B815878EFFEBFFE2FC75237B2FB5C4C7
+    dc:creator "Brandt, Angelika" ;
+    dc:title "Fissarcturus : Brandt 1990" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Fissarcturus_Brandt_1990> ;
+    trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2007.00247.x> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1111/j.1096-3642.2007.00247.x>
-    dc:creator "Brandt, Angelika" ;
-    dc:date "2007" ;
-    dc:title "Three new species of Fissarcturus (Isopoda, Antarcturidae) from the Southern Ocean" ;
     bibo:endPage "290" ;
     bibo:issue "2" ;
     bibo:journal "Zoological Journal of the Linnean Society" ;
     bibo:pubDate "2007-02-28" ;
     bibo:startPage "263" ;
     bibo:volume "149" ;
+    dc:creator "Brandt, Angelika" ;
+    dc:date "2007" ;
+    dc:title "Three new species of Fissarcturus (Isopoda, Antarcturidae) from the Southern Ocean" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Fissarcturus_Brandt_1990>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fissarcturus> ;
-    dwc:ID-CoL "7P2JQ" ;
     dwc:class "Malacostraca" ;
     dwc:family "Antarcturidae" ;
     dwc:genus "Fissarcturus" ;
@@ -31,62 +37,82 @@
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "BRANDT, 1990" ;
+    dwc:scientificNameAuthorship "BRANDT, 1990", ": Brandt, 1990: 129" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P2JQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fissarcturus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Fissarcturus_emarginatus_Brandt_1990>
+    dwc:class "Malacostraca" ;
+    dwc:family "Antarcturidae" ;
+    dwc:genus "Fissarcturus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Brandt, 1990" ;
+    dwc:species "emarginatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fissarcturus_emarginatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Fissarcturus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Antarcturidae" ;
+    dwc:genus "Fissarcturus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Antarcturidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Antarcturidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
     dwc:class "Malacostraca" ;
     dwc:family "Antarcturidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Isopoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Fissarcturus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Antarcturidae> ;
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fissarcturus_emarginatus>
     dwc:class "Malacostraca" ;
     dwc:family "Antarcturidae" ;
     dwc:genus "Fissarcturus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:species "emarginatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fissarcturus> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Isopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Isopoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/B815878EFFEBFFE2FC75237B2FB5C4C7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Fissarcturus_Brandt_1990> ;
-    trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2007.00247.x> ;
-    dc:creator "Brandt, Angelika" ;
-    a trt:Treatment .
-
