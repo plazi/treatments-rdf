@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:1D65650BFFE7FFBAD0FC7601FB60F8B6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4407160> ;
+    dc:creator "Arruda, Eliane P." ;
+    dc:title "Corbula tryoni Smith 1880" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/1D65650BFFE7FFBAD0FC7601FB60F8B6.mc.25A4DE40FFE7FFBCD0AC75A8FC4CF916> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_Smith_1880> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_E.A.Smith_1880> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4851.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4851.1.1>
-    dc:creator "Arruda, Eliane P." ;
-    dc:date "2020" ;
-    dc:title "Taxonomic revision of the recent marine Corbulidae (Mollusca, Bivalvia) from Brazil" ;
     bibo:endPage "59" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-09-09" ;
     bibo:startPage "1" ;
     bibo:volume "4851" ;
+    dc:creator "Arruda, Eliane P." ;
+    dc:date "2020" ;
+    dc:title "Taxonomic revision of the recent marine Corbulidae (Mollusca, Bivalvia) from Brazil" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4407160> ;
     a fabio:JournalArticle .
 
@@ -27,8 +38,27 @@
     fabio:hasRepresentation "https://zenodo.org/record/4407160/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_E.A.Smith_1880>
+<http://tb.plazi.org/GgServer/dwcaRecords/1D65650BFFE7FFBAD0FC7601FB60F8B6.mc.25A4DE40FFE7FFBCD0AC75A8FC4CF916>
+    dwc:locality "Smith" ;
+    dwc:typeStatus "syntype" ;
+    trt:gbifOccurrenceId "3027170822" ;
+    trt:httpUri <https://treatment.plazi.org/id/1D65650BFFE7FFBAD0FC7601FB60F8B6#25A4DE40FFE7FFBCD0AC75A8FC4CF916> ;
+    a dwc:MaterialCitation .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_Smith_1880>
+    dwc:class "Bivalvia" ;
+    dwc:family "Corbulidae" ;
+    dwc:genus "Corbula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Smith, 1880", "Smith, 1880: 321" ;
+    dwc:species "tryoni" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corbula_tryoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_E.A.Smith_1880>
     dwc:class "Bivalvia" ;
     dwc:family "Corbulidae" ;
     dwc:genus "Corbula" ;
@@ -39,36 +69,10 @@
     dwc:scientificNameAuthorship "E.A.Smith, 1880" ;
     dwc:species "tryoni" ;
     dwc:subGenus "Corbula" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_Smith_1880>
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corbula_tryoni> ;
-    dwc:class "Bivalvia" ;
-    dwc:family "Corbulidae" ;
-    dwc:genus "Corbula" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Myoida" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Smith, 1880" ;
-    dwc:species "tryoni" ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Bivalvia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Corbula>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corbulidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Corbula_Bruguiere_1797>
     dwc:class "Bivalvia" ;
     dwc:family "Corbulidae" ;
     dwc:genus "Corbula" ;
@@ -76,10 +80,24 @@
     dwc:order "Myoida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Bruguiere, 1797" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corbula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corbula_patagonica_d'Orbigny_1846>
+    dwc:class "Bivalvia" ;
+    dwc:family "Corbulidae" ;
+    dwc:genus "Corbula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "d'Orbigny, 1846" ;
+    dwc:species "patagonica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corbula_patagonica> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Corbula_tryoni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corbula> ;
     dwc:class "Bivalvia" ;
     dwc:family "Corbulidae" ;
     dwc:genus "Corbula" ;
@@ -88,39 +106,80 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "tryoni" ;
+    dwc:subGenus "Corbula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corbula>, <http://taxon-name.plazi.org/id/Animalia/Corbula_Corbula> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corbula>
+    dwc:class "Bivalvia" ;
+    dwc:family "Corbulidae" ;
+    dwc:genus "Corbula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corbulidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Corbulidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myoida> ;
     dwc:class "Bivalvia" ;
     dwc:family "Corbulidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Myoida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myoida> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Myoida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
     dwc:class "Bivalvia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Myoida" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bivalvia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/1D65650BFFE7FFBAD0FC7601FB60F8B6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_Smith_1880> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Corbula_tryoni_E.A.Smith_1880> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4851.1.1> ;
-    dc:creator "Arruda, Eliane P." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4407160> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Bivalvia>
+    dwc:class "Bivalvia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corbula_Corbula>
+    dwc:class "Bivalvia" ;
+    dwc:family "Corbulidae" ;
+    dwc:genus "Corbula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Corbula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corbula> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corbula_patagonica>
+    dwc:class "Bivalvia" ;
+    dwc:family "Corbulidae" ;
+    dwc:genus "Corbula" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Myoida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "patagonica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corbula> ;
+    a dwcFP:TaxonName .
