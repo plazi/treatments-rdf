@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C31F000D193E476C4591A4E64E4F54C8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5826939>, <http://dx.doi.org/10.5281/zenodo.5826941> ;
+    dc:creator "Lis, Jerzy A.; Lis, Barbara" ;
+    dc:title "Geotomus granulosus Lis & Lis 2022, sp. n." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/C31F000D193E476C4591A4E64E4F54C8.mc.FBDEBB46193C476C4474A7164A8654E4>, <http://tb.plazi.org/GgServer/dwcaRecords/C31F000D193E476C4591A4E64E4F54C8.mc.FBDEBB46193C476C44C4A73A4E4B54C8> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Geotomus_granulosus_Lis_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5087.3.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5087.3.6>
-    dc:creator "Lis, Barbara", "Lis, Jerzy A." ;
-    dc:date "2022" ;
-    dc:title "Geotomus granulosus, a peculiar sehirine-like new species of the subfamily Cydninae (Hemiptera: Heteroptera: Cydnidae) from Burundi" ;
     bibo:endPage "493" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-01-07" ;
     bibo:startPage "489" ;
     bibo:volume "5087" ;
+    dc:creator "Lis, Jerzy A.; Lis, Barbara" ;
+    dc:date "2022" ;
+    dc:title "Geotomus granulosus, a peculiar sehirine-like new species of the subfamily Cydninae (Hemiptera: Heteroptera: Cydnidae) from Burundi" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5826939>, <http://dx.doi.org/10.5281/zenodo.5826941> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,25 @@
     fabio:hasRepresentation "https://zenodo.org/record/5826941/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/C31F000D193E476C4591A4E64E4F54C8.mc.FBDEBB46193C476C4474A7164A8654E4>
+    dwc:collectionCode "IBUO" ;
+    dwc:locality "Heiss" ;
+    dwc:recordedBy "Collection E. Heiss" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3427407301" ;
+    trt:httpUri <https://treatment.plazi.org/id/C31F000D193E476C4591A4E64E4F54C8#FBDEBB46193C476C4474A7164A8654E4> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/C31F000D193E476C4591A4E64E4F54C8.mc.FBDEBB46193C476C44C4A73A4E4B54C8>
+    dwc:collectionCode "IBUO" ;
+    dwc:locality "Lake Tanganyika" ;
+    dwc:recordedBy "Prof. E. Heiss" ;
+    dwc:typeStatus "paratype" ;
+    trt:gbifOccurrenceId "3427407302" ;
+    trt:httpUri <https://treatment.plazi.org/id/C31F000D193E476C4591A4E64E4F54C8#FBDEBB46193C476C44C4A73A4E4B54C8> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Geotomus_granulosus_Lis_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geotomus_granulosus> ;
     dwc:class "Insecta" ;
     dwc:family "Cydnidae" ;
     dwc:genus "Geotomus" ;
@@ -43,43 +70,98 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lis & Lis, 2022" ;
     dwc:species "granulosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geotomus_granulosus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cydnidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cydnidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Geotomus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cydnidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Geotomus_palustris_Linnavuori_1977>
     dwc:class "Insecta" ;
     dwc:family "Cydnidae" ;
     dwc:genus "Geotomus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnavuori, 1977" ;
+    dwc:species "palustris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geotomus_palustris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Geotomus_radialis_Signoret_1883>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Geotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Signoret, 1883" ;
+    dwc:species "radialis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geotomus_radialis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Geotomus_remedellii_Mancini_1954>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Geotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Mancini, 1954" ;
+    dwc:species "remedellii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geotomus_remedellii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ochetostethus_Fieber_1860>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Ochetostethus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Fieber, 1860" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ochetostethus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ochetostethomorpha_Schumacher_1913>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Ochetostethomorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Schumacher, 1913" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ochetostethomorpha> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sehirinae_Amyot_1843>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:scientificNameAuthorship "Amyot & Serville, 1843" ;
+    dwc:subFamily "Sehirinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sehirinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Fromundus_singularis_Horvath_1904>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Fromundus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Horvath, 1904)", "Horvath, 1904" ;
+    dwc:species "singularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Fromundus_singularis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Geotomus_granulosus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geotomus> ;
     dwc:class "Insecta" ;
     dwc:family "Cydnidae" ;
     dwc:genus "Geotomus" ;
@@ -88,29 +170,147 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "granulosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geotomus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geotomus>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Geotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cydnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cydnidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C31F000D193E476C4591A4E64E4F54C8>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Geotomus_granulosus_Lis_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5087.3.6> ;
-    dc:creator "Lis, Barbara", "Lis, Jerzy A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5826939>, <http://dx.doi.org/10.5281/zenodo.5826941> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geotomus_palustris>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Geotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "palustris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geotomus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geotomus_radialis>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Geotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "radialis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geotomus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geotomus_remedellii>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Geotomus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "remedellii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geotomus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ochetostethus>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Ochetostethus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cydnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ochetostethomorpha>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Ochetostethomorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cydnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sehirinae>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subFamily" ;
+    dwc:subFamily "Sehirinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cydnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fromundus_singularis>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Fromundus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "singularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Fromundus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Fromundus>
+    dwc:class "Insecta" ;
+    dwc:family "Cydnidae" ;
+    dwc:genus "Fromundus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cydnidae> ;
+    a dwcFP:TaxonName .
