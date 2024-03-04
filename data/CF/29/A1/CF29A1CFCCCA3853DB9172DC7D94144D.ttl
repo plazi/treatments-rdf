@@ -1,27 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CF29A1CFCCCA3853DB9172DC7D94144D
+    dc:creator "Deanna, Rocio; Gonzalez, Segundo Leiva; Barboza, Gloria Estela" ;
+    dc:title "Deprea Raf., Sylva Tellur. 57. 1838." ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Larnax_Miers_1849> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.46.9069> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Deprea> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.46.9069>
-    dc:creator "Barboza, Gloria Estela", "Deanna, Rocio", "Gonzalez, Segundo Leiva" ;
-    dc:date "2015" ;
-    dc:title "Changes in the circumscription of Deprea (Physalideae, Solanaceae): thirty two new combinations" ;
     bibo:endPage "87" ;
     bibo:journal "PhytoKeys" ;
     bibo:pubDate "2015-02-27" ;
     bibo:startPage "73" ;
     bibo:volume "46" ;
+    dc:creator "Deanna, Rocio; Gonzalez, Segundo Leiva; Barboza, Gloria Estela" ;
+    dc:date "2015" ;
+    dc:title "Changes in the circumscription of Deprea (Physalideae, Solanaceae): thirty two new combinations" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Plantae/Larnax_Miers_1849>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Larnax> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
     dwc:genus "Larnax" ;
@@ -30,15 +38,23 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Miers, 1849" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Larnax> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
+<http://taxon-concept.plazi.org/id/Plantae/Deprea_orinocensis_Kunth_1838>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Solanaceae" ;
+    dwc:genus "Deprea" ;
     dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+    dwc:order "Solanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Rafin, 1838" ;
+    dwc:species "orinocensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Deprea_orinocensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Deprea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanaceae> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
     dwc:genus "Deprea" ;
@@ -46,10 +62,49 @@
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Solanaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Solanaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Solanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Solanales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Solanales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Larnax>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanaceae> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
     dwc:genus "Larnax" ;
@@ -57,46 +112,17 @@
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanaceae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Solanaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Solanales> ;
+<http://taxon-name.plazi.org/id/Plantae/Deprea_orinocensis>
     dwc:class "Magnoliopsida" ;
     dwc:family "Solanaceae" ;
+    dwc:genus "Deprea" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Solanales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "orinocensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Deprea> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Solanales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Solanales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/CF29A1CFCCCA3853DB9172DC7D94144D>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Larnax_Miers_1849> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.46.9069> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Deprea> ;
-    dc:creator "Barboza, Gloria Estela", "Deanna, Rocio", "Gonzalez, Segundo Leiva" ;
-    a trt:Treatment .
-
