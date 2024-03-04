@@ -1,23 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:09CB9238476C5449B6AED1A8464A8963
+    cito:cites <http://dx.doi.org/10.3897/zookeys.1124.85952.figure7>, <http://dx.doi.org/10.3897/zookeys.1124.85952.figure8>, <http://dx.doi.org/10.3897/zookeys.1124.85952.figure9> ;
+    dc:creator "Zhang, Qiuqiu; Li, Shuqiang; Lin, Yucheng" ;
+    dc:title "Microdipoena menglunensis" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Microdipoena_menglunensis_Lin_2008> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Mysmenella_menglunensis_Lin_2008> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1124.85952> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1124.85952>
-    dc:creator "Li, Shuqiang", "Lin, Yucheng", "Zhang, Qiuqiu" ;
-    dc:date "2022" ;
-    dc:title "Taxonomic study on Mysmenidae spiders (Mysmenidae, Araneae) from Xishuangbanna of Yunnan, China" ;
     bibo:endPage "108" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2022-10-10" ;
     bibo:startPage "59" ;
     bibo:volume "1124" ;
+    dc:creator "Zhang, Qiuqiu; Li, Shuqiang; Lin, Yucheng" ;
+    dc:date "2022" ;
+    dc:title "Taxonomic study on Mysmenidae spiders (Mysmenidae, Araneae) from Xishuangbanna of Yunnan, China" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1124.85952.figure7>, <http://dx.doi.org/10.3897/zookeys.1124.85952.figure8>, <http://dx.doi.org/10.3897/zookeys.1124.85952.figure9> ;
     a fabio:JournalArticle .
 
@@ -37,7 +49,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Microdipoena_menglunensis_Lin_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microdipoena_menglunensis> ;
     dwc:LSID "09CB9238-476C-5449-B6AE-D1A8464A8963" ;
     dwc:class "Arachnida" ;
     dwc:family "Mysmenidae" ;
@@ -46,12 +57,12 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Lin & Li, 2008)" ;
+    dwc:scientificNameAuthorship "(Lin & Li, 2008)", "Lin & Li, 2008" ;
     dwc:species "menglunensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microdipoena_menglunensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Mysmenella_menglunensis_Lin_2008>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mysmenella_menglunensis> ;
     dwc:class "Arachnida" ;
     dwc:family "Mysmenidae" ;
     dwc:genus "Mysmenella" ;
@@ -61,50 +72,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lin & Li, 2008" ;
     dwc:species "menglunensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mysmenella_menglunensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Microdipoena>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mysmenidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Microdipoena_jobi_Kraus_1967>
     dwc:class "Arachnida" ;
     dwc:family "Mysmenidae" ;
     dwc:genus "Microdipoena" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kraus, 1967" ;
+    dwc:species "jobi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microdipoena_jobi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Microdipoena_samoensis_Marples_1955>
+    dwc:class "Arachnida" ;
+    dwc:family "Mysmenidae" ;
+    dwc:genus "Microdipoena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Marples, 1955" ;
+    dwc:species "samoensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Microdipoena_samoensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Microdipoena_menglunensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microdipoena> ;
     dwc:class "Arachnida" ;
     dwc:family "Mysmenidae" ;
     dwc:genus "Microdipoena" ;
@@ -113,23 +110,102 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "menglunensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microdipoena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microdipoena>
+    dwc:class "Arachnida" ;
+    dwc:family "Mysmenidae" ;
+    dwc:genus "Microdipoena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mysmenidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mysmenidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     dwc:class "Arachnida" ;
     dwc:family "Mysmenidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/09CB9238476C5449B6AED1A8464A8963>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Microdipoena_menglunensis_Lin_2008> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Mysmenella_menglunensis_Lin_2008> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1124.85952> ;
-    dc:creator "Li, Shuqiang", "Lin, Yucheng", "Zhang, Qiuqiu" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1124.85952.figure7>, <http://dx.doi.org/10.3897/zookeys.1124.85952.figure8>, <http://dx.doi.org/10.3897/zookeys.1124.85952.figure9> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mysmenella_menglunensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Mysmenidae" ;
+    dwc:genus "Mysmenella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "menglunensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mysmenella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mysmenella>
+    dwc:class "Arachnida" ;
+    dwc:family "Mysmenidae" ;
+    dwc:genus "Mysmenella" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mysmenidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microdipoena_jobi>
+    dwc:class "Arachnida" ;
+    dwc:family "Mysmenidae" ;
+    dwc:genus "Microdipoena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "jobi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microdipoena> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Microdipoena_samoensis>
+    dwc:class "Arachnida" ;
+    dwc:family "Mysmenidae" ;
+    dwc:genus "Microdipoena" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "samoensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Microdipoena> ;
+    a dwcFP:TaxonName .
