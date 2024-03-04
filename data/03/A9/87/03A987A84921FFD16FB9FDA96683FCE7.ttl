@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A987A84921FFD16FB9FDA96683FCE7
+    dc:creator "Hu, Shao-Ji; Cotton, Adam M.; Lamas, Gerardo; Duan, Kuang; Zhang, Xin" ;
+    dc:title "Lamproptera curius subsp. walkeri" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lamproptera_curius_walkeri_Moore_1902> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Leptocircus_walkeri_Moore_1902>, <http://taxon-concept.plazi.org/id/Animalia/Leptocircus_curius_magistralis_Fruhstorfer_1909> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5362.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5362.1.1>
-    dc:creator "Cotton, Adam M.", "Duan, Kuang", "Hu, Shao-Ji", "Lamas, Gerardo", "Zhang, Xin" ;
-    dc:date "2023" ;
-    dc:title "Checklist of Yunnan Papilionidae (Lepidoptera: Papilionoidea) with nomenclatural notes and descriptions of new subspecies" ;
     bibo:endPage "69" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-11-06" ;
     bibo:startPage "1" ;
     bibo:volume "5362" ;
+    dc:creator "Hu, Shao-Ji; Cotton, Adam M.; Lamas, Gerardo; Duan, Kuang; Zhang, Xin" ;
+    dc:date "2023" ;
+    dc:title "Checklist of Yunnan Papilionidae (Lepidoptera: Papilionoidea) with nomenclatural notes and descriptions of new subspecies" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Lamproptera_curius_walkeri_Moore_1902>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius_walkeri> ;
     dwc:class "Insecta" ;
     dwc:family "Papilionidae" ;
     dwc:genus "Lamproptera" ;
@@ -33,11 +41,23 @@
     dwc:scientificNameAuthorship "(Moore, 1902)" ;
     dwc:species "curius" ;
     dwc:subSpecies "walkeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius_walkeri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leptocircus_walkeri_Moore_1902>
+    dwc:class "Insecta" ;
+    dwc:family "Papilionidae" ;
+    dwc:genus "Leptocircus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Moore, 1902" ;
+    dwc:species "walkeri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptocircus_walkeri> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Leptocircus_curius_magistralis_Fruhstorfer_1909>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius_magistralis> ;
-    dwc:ID-CoL "5JB3D" ;
     dwc:class "Insecta" ;
     dwc:family "Papilionidae" ;
     dwc:genus "Leptocircus" ;
@@ -48,66 +68,11 @@
     dwc:scientificNameAuthorship "Fruhstorfer, 1909" ;
     dwc:species "curius" ;
     dwc:subSpecies "magistralis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius_magistralis> ;
     a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Leptocircus_walkeri_Moore_1902>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leptocircus_walkeri> ;
-    dwc:class "Insecta" ;
-    dwc:family "Papilionidae" ;
-    dwc:genus "Leptocircus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Moore, 1902" ;
-    dwc:species "walkeri" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lamproptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Papilionidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Papilionidae" ;
-    dwc:genus "Lamproptera" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamproptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Papilionidae" ;
-    dwc:genus "Lamproptera" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "curius" ;
-    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius_walkeri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius> ;
     dwc:class "Insecta" ;
     dwc:family "Papilionidae" ;
     dwc:genus "Lamproptera" ;
@@ -117,30 +82,72 @@
     dwc:rank "subSpecies" ;
     dwc:species "curius" ;
     dwc:subSpecies "walkeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamproptera_curius>
+    dwc:class "Insecta" ;
+    dwc:family "Papilionidae" ;
+    dwc:genus "Lamproptera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "curius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lamproptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lamproptera>
+    dwc:class "Insecta" ;
+    dwc:family "Papilionidae" ;
+    dwc:genus "Lamproptera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Papilionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Papilionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Papilionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Leptocircus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Papilionidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
     dwc:class "Insecta" ;
-    dwc:family "Papilionidae" ;
-    dwc:genus "Leptocircus" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptocircus> ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptocircus_walkeri>
     dwc:class "Insecta" ;
     dwc:family "Papilionidae" ;
     dwc:genus "Leptocircus" ;
@@ -148,11 +155,22 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "curius" ;
+    dwc:species "walkeri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptocircus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leptocircus>
+    dwc:class "Insecta" ;
+    dwc:family "Papilionidae" ;
+    dwc:genus "Leptocircus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Papilionidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius_magistralis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius> ;
     dwc:class "Insecta" ;
     dwc:family "Papilionidae" ;
     dwc:genus "Leptocircus" ;
@@ -162,10 +180,10 @@
     dwc:rank "subSpecies" ;
     dwc:species "curius" ;
     dwc:subSpecies "magistralis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Leptocircus_walkeri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptocircus> ;
+<http://taxon-name.plazi.org/id/Animalia/Leptocircus_curius>
     dwc:class "Insecta" ;
     dwc:family "Papilionidae" ;
     dwc:genus "Leptocircus" ;
@@ -173,23 +191,6 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "walkeri" ;
+    dwc:species "curius" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leptocircus> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Papilionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Papilionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03A987A84921FFD16FB9FDA96683FCE7>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lamproptera_curius_walkeri_Moore_1902> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Leptocircus_curius_magistralis_Fruhstorfer_1909>, <http://taxon-concept.plazi.org/id/Animalia/Leptocircus_walkeri_Moore_1902> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5362.1.1> ;
-    dc:creator "Cotton, Adam M.", "Duan, Kuang", "Hu, Shao-Ji", "Lamas, Gerardo", "Zhang, Xin" ;
-    a trt:Treatment .
-
