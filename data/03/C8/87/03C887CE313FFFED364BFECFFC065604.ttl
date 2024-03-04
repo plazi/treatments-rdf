@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C887CE313FFFED364BFECFFC065604
+    cito:cites <http://dx.doi.org/10.5281/zenodo.169852> ;
+    dc:creator "Disney, R. Henry L." ;
+    dc:title "Puliciphora epichaeta Borgmeier, comb. nov." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Puliciphora>, <http://taxon-name.plazi.org/id/Animalia/Puliciphora_occidentalis>, <http://taxon-name.plazi.org/id/Animalia/Homalophora_epichaeta> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Homalophora_epichaeta_Borgmeier_1960>, <http://taxon-concept.plazi.org/id/Animalia/Puliciphora_mexicanae_Disney_2003> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.169846> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Puliciphora_epichaeta> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.169846>
-    dc:creator "Disney, R. Henry L." ;
-    dc:date "2005" ;
-    dc:title "Rudimentary halteres of some flightless female Phoridae (Diptera) reassessed, and some taxonomic implications" ;
     bibo:endPage "54" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "39" ;
     bibo:volume "1042" ;
+    dc:creator "Disney, R. Henry L." ;
+    dc:date "2005" ;
+    dc:title "Rudimentary halteres of some flightless female Phoridae (Diptera) reassessed, and some taxonomic implications" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.169852> ;
     a fabio:JournalArticle .
 
@@ -26,8 +37,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Homalophora_epichaeta_Borgmeier_1960>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homalophora_epichaeta> ;
-    dwc:ID-CoL "8CCMV" ;
     dwc:class "Insecta" ;
     dwc:family "Phoridae" ;
     dwc:genus "Homalophora" ;
@@ -35,13 +44,13 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Borgmeier, 1960: 341" ;
+    dwc:scientificNameAuthorship "Borgmeier, 1960: 341", "Borgmeier. Borgmeier (1960)" ;
     dwc:species "epichaeta" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4QGGV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Homalophora_epichaeta> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Puliciphora_mexicanae_Disney_2003>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puliciphora_mexicanae> ;
-    dwc:ID-CoL "4QGJ5" ;
     dwc:class "Insecta" ;
     dwc:family "Phoridae" ;
     dwc:genus "Puliciphora" ;
@@ -51,60 +60,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Disney, 2003a: 13" ;
     dwc:species "mexicanae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4QGGV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Puliciphora_mexicanae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Phoridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Puliciphora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phoridae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Phoridae" ;
-    dwc:genus "Puliciphora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Puliciphora_epichaeta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puliciphora> ;
     dwc:class "Insecta" ;
     dwc:family "Phoridae" ;
     dwc:genus "Puliciphora" ;
@@ -113,10 +73,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "epichaeta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puliciphora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Puliciphora>
+    dwc:class "Insecta" ;
+    dwc:family "Phoridae" ;
+    dwc:genus "Puliciphora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phoridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Phoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Homalophora_epichaeta>
+    dwc:class "Insecta" ;
+    dwc:family "Phoridae" ;
+    dwc:genus "Homalophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "epichaeta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Homalophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Homalophora>
+    dwc:class "Insecta" ;
+    dwc:family "Phoridae" ;
+    dwc:genus "Homalophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phoridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Puliciphora_mexicanae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puliciphora> ;
     dwc:class "Insecta" ;
     dwc:family "Phoridae" ;
     dwc:genus "Puliciphora" ;
@@ -125,14 +158,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "mexicanae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Puliciphora> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03C887CE313FFFED364BFECFFC065604>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/C8/87/Homalophora_epichaeta>, <file:///workdir/tmprdf/data/03/C8/87/Puliciphora>, <file:///workdir/tmprdf/data/03/C8/87/Puliciphora_occidentalis> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Homalophora_epichaeta_Borgmeier_1960>, <http://taxon-concept.plazi.org/id/Animalia/Puliciphora_mexicanae_Disney_2003> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.169846> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Puliciphora_epichaeta> ;
-    dc:creator "Disney, R. Henry L." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.169852> ;
-    a trt:Treatment .
-
