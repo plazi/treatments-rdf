@@ -1,31 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://taxon-concept.plazi.org/id/Plantae/Callicarpa_lanata_Linnaeus_1771>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Callicarpa_lanata> ;
-    dwc:ID-CoL "6983K" ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Lamiaceae" ;
-    dwc:genus "Callicarpa" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus" ;
-    dwc:species "lanata" ;
-    a dwcFP:TaxonConcept .
+treatment:D05E09213AA198B5065FED83CD8FBC10
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Callicarpa tomentosa Linnaeus 1774" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/D05E09213AA198B5065FED83CD8FBC10.mc.EF6551AFFAB5B3B6276E19C268577B17> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Callicarpa_tomentosa_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Callicarpa_lanata_Linnaeus_1771>, <http://taxon-concept.plazi.org/id/Plantae/Tomex_tomentosa_Linnaeus_1753> ;
+    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
+    a trt:Treatment .
+
+<https://doi.org/10.5281/zenodo.291971>
+    bibo:endPage "473" ;
+    bibo:startPage "370" ;
+    dc:creator "Jarvis, Charlie" ;
+    dc:date "2007" ;
+    dc:title "Chapter 7: Linnaean Plant Names and their Types (part C)" ;
+    a fabio:BookSection .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/D05E09213AA198B5065FED83CD8FBC10.mc.EF6551AFFAB5B3B6276E19C268577B17>
+    dwc:catalogNumber "BM-000594496" ;
+    dwc:collectionCode "BM" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2612073045" ;
+    trt:httpUri <https://treatment.plazi.org/id/D05E09213AA198B5065FED83CD8FBC10#EF6551AFFAB5B3B6276E19C268577B17> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Plantae/Callicarpa_tomentosa_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Callicarpa_tomentosa> ;
-    dwc:ID-CoL "5WVSQ" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Callicarpa" ;
@@ -35,10 +45,25 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(L.) L." ;
     dwc:species "tomentosa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5WVSQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Callicarpa_tomentosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Callicarpa_lanata_Linnaeus_1771>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lamiaceae" ;
+    dwc:genus "Callicarpa" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus" ;
+    dwc:species "lanata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5WVSQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Callicarpa_lanata> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Tomex_tomentosa_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tomex_tomentosa> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Tomex" ;
@@ -48,15 +73,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "L. (1753)" ;
     dwc:species "tomentosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Tomex_tomentosa> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
+<http://taxon-name.plazi.org/id/Plantae/Callicarpa_tomentosa>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lamiaceae" ;
+    dwc:genus "Callicarpa" ;
     dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "tomentosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Callicarpa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Callicarpa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiaceae> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Callicarpa" ;
@@ -64,10 +96,49 @@
     dwc:order "Lamiales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lamiaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lamiaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Lamiales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Callicarpa_lanata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Callicarpa> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Callicarpa" ;
@@ -76,48 +147,10 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "lanata" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Lamiaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Lamiaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Lamiales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tomex>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Lamiaceae" ;
-    dwc:genus "Tomex" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Lamiales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Callicarpa> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tomex_tomentosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tomex> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Lamiaceae" ;
     dwc:genus "Tomex" ;
@@ -126,35 +159,16 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "tomentosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tomex> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Tomex>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Lamiaceae" ;
+    dwc:genus "Tomex" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Lamiales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Lamiaceae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/D05E09213AA198B5065FED83CD8FBC10>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Callicarpa_tomentosa_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Callicarpa_lanata_Linnaeus_1771>, <http://taxon-concept.plazi.org/id/Plantae/Tomex_tomentosa_Linnaeus_1753> ;
-    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/D05E09213AA198B5065FED83CD8FBC10/BM-000594496> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/D05E09213AA198B5065FED83CD8FBC10/BM-000594496>
-    trt:gbifOccurrenceId "2612073045" ;
-    dwc:catalogNumber "BM-000594496" ;
-    dwc:collectionCode "BM" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
-
-<https://doi.org/10.5281/zenodo.291971>
-    dc:creator "Jarvis, Charlie" ;
-    dc:date "2007" ;
-    dc:title "Chapter 7: Linnaean Plant Names and their Types (part C)" ;
-    bibo:endPage "473" ;
-    bibo:startPage "370" ;
-    a fabio:BookSection .
-
