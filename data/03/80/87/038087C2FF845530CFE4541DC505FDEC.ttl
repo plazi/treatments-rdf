@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038087C2FF845530CFE4541DC505FDEC
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5123754>, <http://dx.doi.org/10.5281/zenodo.5123762> ;
+    dc:creator "Zawal, Andrzej" ;
+    dc:title "Arrenurus maculator" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_maculator_Muller_1776> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_pseudomaculator_Piersig_1901>, <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_coronator_Georgewitsch_1906> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.1765.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.1765.1.1>
-    dc:creator "Zawal, Andrzej" ;
-    dc:date "2008" ;
-    dc:title "Morphological characteristics of water mite larvae of the genus Arrenurus Dugès, 1834, with notes on the phylogeny of the genus and an identification key" ;
     bibo:endPage "75" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2008-05-07" ;
     bibo:startPage "1" ;
     bibo:volume "1765" ;
+    dc:creator "Zawal, Andrzej" ;
+    dc:date "2008" ;
+    dc:title "Morphological characteristics of water mite larvae of the genus Arrenurus Dugès, 1834, with notes on the phylogeny of the genus and an identification key" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5123754>, <http://dx.doi.org/10.5281/zenodo.5123762> ;
     a fabio:JournalArticle .
 
@@ -32,21 +42,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/5123762/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Arrenurus_coronator_Georgewitsch_1906>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_coronator> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Arrenuridae" ;
-    dwc:genus "Arrenurus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Trombidiformes" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Georgewitsch, 1906" ;
-    dwc:species "coronator" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_maculator_Muller_1776>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_maculator> ;
     dwc:class "Arachnida" ;
     dwc:family "Arrenuridae" ;
     dwc:genus "Arrenurus" ;
@@ -56,10 +52,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(O. F. Muller, 1776)" ;
     dwc:species "maculator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_maculator> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hydrachna_maculator_Muller_1776>
+    dwc:class "Arachnida" ;
+    dwc:family "Hydrachnidae" ;
+    dwc:genus "Hydrachna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "O. F. Muller, 1776" ;
+    dwc:species "maculator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hydrachna_maculator> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_pseudomaculator_Piersig_1901>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_pseudomaculator> ;
     dwc:class "Arachnida" ;
     dwc:family "Arrenuridae" ;
     dwc:genus "Arrenurus" ;
@@ -69,44 +78,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Piersig, 1901" ;
     dwc:species "pseudomaculator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_pseudomaculator> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arrenuridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombidiformes> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Arrenuridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Trombidiformes" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arrenurus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenuridae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Arrenuridae" ;
-    dwc:genus "Arrenurus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Trombidiformes" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arrenurus_coronator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
+<http://taxon-concept.plazi.org/id/Animalia/Arrenurus_coronator_Georgewitsch_1906>
     dwc:class "Arachnida" ;
     dwc:family "Arrenuridae" ;
     dwc:genus "Arrenurus" ;
@@ -114,11 +89,51 @@
     dwc:order "Trombidiformes" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Georgewitsch, 1906" ;
     dwc:species "coronator" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_coronator> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Arrenurus_cuspidator_Muller_1776>
+    dwc:class "Arachnida" ;
+    dwc:family "Arrenuridae" ;
+    dwc:genus "Arrenurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "O. F. Muller, 1776" ;
+    dwc:species "cuspidator" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Arrenurus_cuspidator> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Coenagrion_puella_Linnaeus_1758>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:genus "Coenagrion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "puella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coenagrion_puella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Enallagma_cyathigerum_Davids_1997>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:genus "Enallagma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Davids, 1997" ;
+    dwc:species "cyathigerum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Enallagma_cyathigerum> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Arrenurus_maculator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
     dwc:class "Arachnida" ;
     dwc:family "Arrenuridae" ;
     dwc:genus "Arrenurus" ;
@@ -127,10 +142,93 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "maculator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arrenurus>
+    dwc:class "Arachnida" ;
+    dwc:family "Arrenuridae" ;
+    dwc:genus "Arrenurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenuridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arrenuridae>
+    dwc:class "Arachnida" ;
+    dwc:family "Arrenuridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombidiformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trombidiformes>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydrachna_maculator>
+    dwc:class "Arachnida" ;
+    dwc:family "Hydrachnidae" ;
+    dwc:genus "Hydrachna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "maculator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrachna> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydrachna>
+    dwc:class "Arachnida" ;
+    dwc:family "Hydrachnidae" ;
+    dwc:genus "Hydrachna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hydrachnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hydrachnidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Hydrachnidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trombidiformes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Arrenurus_pseudomaculator>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
     dwc:class "Arachnida" ;
     dwc:family "Arrenuridae" ;
     dwc:genus "Arrenurus" ;
@@ -139,29 +237,102 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pseudomaculator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Trombidiformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+<http://taxon-name.plazi.org/id/Animalia/Arrenurus_coronator>
     dwc:class "Arachnida" ;
+    dwc:family "Arrenuridae" ;
+    dwc:genus "Arrenurus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Trombidiformes" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "coronator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038087C2FF845530CFE4541DC505FDEC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_maculator_Muller_1776> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_coronator_Georgewitsch_1906>, <http://taxon-concept.plazi.org/id/Animalia/Arrenurus_pseudomaculator_Piersig_1901> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.1765.1.1> ;
-    dc:creator "Zawal, Andrzej" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5123754>, <http://dx.doi.org/10.5281/zenodo.5123762> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arrenurus_cuspidator>
+    dwc:class "Arachnida" ;
+    dwc:family "Arrenuridae" ;
+    dwc:genus "Arrenurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Trombidiformes" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cuspidator" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arrenurus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Coenagrion_puella>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:genus "Coenagrion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "puella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coenagrion> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coenagrion>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:genus "Coenagrion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coenagrionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coenagrionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Odonata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Odonata>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enallagma_cyathigerum>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:genus "Enallagma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "cyathigerum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Enallagma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Enallagma>
+    dwc:class "Insecta" ;
+    dwc:family "Coenagrionidae" ;
+    dwc:genus "Enallagma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Odonata" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coenagrionidae> ;
+    a dwcFP:TaxonName .
