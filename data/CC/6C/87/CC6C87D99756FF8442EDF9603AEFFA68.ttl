@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:CC6C87D99756FF8442EDF9603AEFFA68
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5419261>, <http://dx.doi.org/10.5281/zenodo.5419263>, <http://dx.doi.org/10.5281/zenodo.5419265> ;
+    dc:creator "Garavello, Julio Cesar; Shibatta, Oscar Akio" ;
+    dc:title "Pimelodus ortmanni Haseman 1911" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Haseman_1911> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Gosline_1945> ;
+    trt:publishedIn <http://dx.doi.org/10.1590/S1679-62252007000300008> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1590/S1679-62252007000300008>
-    dc:creator "Garavello, Julio Cesar", "Shibatta, Oscar Akio" ;
-    dc:date "2007" ;
-    dc:title "A new species of the genus Pimelodus La Cépède, 1803 from the rio Iguaçu basin and a reappraisal of Pimelodus ortmanni Haseman, 1911 from the rio Paraná system, Brazil (Ostariophysi: Siluriformes: Pimelodidae)" ;
     bibo:endPage "292" ;
     bibo:issue "3" ;
     bibo:journal "Neotropical Ichthyology" ;
     bibo:pubDate "2007-09-30" ;
     bibo:startPage "285" ;
     bibo:volume "5" ;
+    dc:creator "Garavello, Julio Cesar; Shibatta, Oscar Akio" ;
+    dc:date "2007" ;
+    dc:title "A new species of the genus Pimelodus La Cépède, 1803 from the rio Iguaçu basin and a reappraisal of Pimelodus ortmanni Haseman, 1911 from the rio Paraná system, Brazil (Ostariophysi: Siluriformes: Pimelodidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5419261>, <http://dx.doi.org/10.5281/zenodo.5419263>, <http://dx.doi.org/10.5281/zenodo.5419265> ;
     a fabio:JournalArticle .
 
@@ -37,21 +48,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/5419265/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Gosline_1945>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_ortmanni> ;
-    dwc:class "Actinopterygii" ;
-    dwc:family "Pimelodidae" ;
-    dwc:genus "Pimelodus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Siluriformes" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship ": Gosline, 1945: 4" ;
-    dwc:species "ortmanni" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Haseman_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_ortmanni> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Pimelodidae" ;
     dwc:genus "Pimelodus" ;
@@ -61,40 +58,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Haseman, 1911" ;
     dwc:species "ortmanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_ortmanni> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Actinopterygii" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pimelodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Gosline_1945>
     dwc:class "Actinopterygii" ;
     dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship ": Gosline, 1945: 4" ;
+    dwc:species "ortmanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_ortmanni> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Pimelodus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_Cepede_1803>
     dwc:class "Actinopterygii" ;
     dwc:family "Pimelodidae" ;
     dwc:genus "Pimelodus" ;
@@ -102,10 +82,193 @@
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "La Cepede, 1803" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_fur_Lutken_1874>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lutken, 1874" ;
+    dwc:species "fur" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_fur> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_heraldoi_Azpelicueta_2001>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Azpelicueta, 2001" ;
+    dwc:species "heraldoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_heraldoi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_absconditus_Azpelicueta_1995>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Azpelicueta, 1995" ;
+    dwc:species "absconditus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_absconditus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_albicans_Valenciennes_1840>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Valenciennes, 1840)" ;
+    dwc:species "albicans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_albicans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ornatus_Kner_1858>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kner, 1858" ;
+    dwc:species "ornatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_ornatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_tetramerus_Ribeiro_2006>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ribeiro & Lucena, 2006" ;
+    dwc:species "tetramerus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_tetramerus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_altissimus_Eigenmann_1942>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Eigenmann & Pearson" ;
+    dwc:species "altissimus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_altissimus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_argenteus_Perugia_1891>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Perugia, 1891" ;
+    dwc:species "argenteus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_argenteus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_atrobrunneus_Vidal_1999>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Vidal & Lucena, 1999" ;
+    dwc:species "atrobrunneus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_atrobrunneus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_blochii_Valenciennes_1840>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Valenciennes" ;
+    dwc:species "blochii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_blochii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_maculatus_Cepede_1803>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "La Cepede, 1803" ;
+    dwc:species "maculatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_maculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_mysteriosus_Azpelicueta_1998>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Azpelicueta, 1998" ;
+    dwc:species "mysteriosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_mysteriosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_paranaensis_Britski_1988>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Britski & Langeani, 1988" ;
+    dwc:species "paranaensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_paranaensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pimelodus_platicirris_Borodin_1927>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Borodin, 1927" ;
+    dwc:species "platicirris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pimelodus_platicirris> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pimelodus_ortmanni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Pimelodidae" ;
     dwc:genus "Pimelodus" ;
@@ -114,22 +277,223 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "ortmanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodidae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Siluriformes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Siluriformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
     dwc:class "Actinopterygii" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Siluriformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CC6C87D99756FF8442EDF9603AEFFA68>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Haseman_1911> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pimelodus_ortmanni_Gosline_1945> ;
-    trt:publishedIn <http://dx.doi.org/10.1590/S1679-62252007000300008> ;
-    dc:creator "Garavello, Julio Cesar", "Shibatta, Oscar Akio" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5419261>, <http://dx.doi.org/10.5281/zenodo.5419263>, <http://dx.doi.org/10.5281/zenodo.5419265> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_fur>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "fur" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_heraldoi>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "heraldoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_absconditus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "absconditus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_albicans>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "albicans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_ornatus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "ornatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_tetramerus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "tetramerus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_altissimus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "altissimus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_argenteus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "argenteus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_atrobrunneus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "atrobrunneus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_blochii>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "blochii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_maculatus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "maculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_mysteriosus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "mysteriosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_paranaensis>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "paranaensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pimelodus_platicirris>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Pimelodidae" ;
+    dwc:genus "Pimelodus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Siluriformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "platicirris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pimelodus> ;
+    a dwcFP:TaxonName .
