@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:B242A55EFFDDFF9CDD4FF9ABFBD9FBD9
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7745705> ;
+    dc:creator "Burckhardt, Daniel; Nel, André; Raisch, Manfred; Poschmann, Markus J." ;
+    dc:title "Permoridium fresenaci Burckhardt & Nel & Raisch & Poschmann 2022, sp. nov." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/B242A55EFFDDFF9CDD4FF9ABFBD9FBD9/UGKU%201096> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Permoridium_fresenaci_Burckhardt_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/08912963.2022.2067759> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/08912963.2022.2067759>
-    dc:creator "Burckhardt, Daniel", "Nel, André", "Poschmann, Markus J.", "Raisch, Manfred" ;
-    dc:date "2022" ;
-    dc:title "A new putative moss bug (Insecta: Hemiptera) from the lower Permian of the Saar-Nahe Basin, SW Germany, and the age of Coleorrhyncha" ;
     bibo:endPage "6" ;
     bibo:issue "2" ;
     bibo:journal "Historical Biology" ;
     bibo:pubDate "2022-04-21" ;
     bibo:startPage "1" ;
     bibo:volume "7" ;
+    dc:creator "Burckhardt, Daniel; Nel, André; Raisch, Manfred; Poschmann, Markus J." ;
+    dc:date "2022" ;
+    dc:title "A new putative moss bug (Insecta: Hemiptera) from the lower Permian of the Saar-Nahe Basin, SW Germany, and the age of Coleorrhyncha" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7745705> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/7745705/files/figure.png" ;
     a fabio:Figure .
 
+<http://treatment.plazi.org/id/B242A55EFFDDFF9CDD4FF9ABFBD9FBD9/UGKU%201096>
+    dwc:catalogNumber "UGKU 1096" ;
+    dwc:collectionCode "UGKU" ;
+    dwc:typeStatus "holotype" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Permoridium_fresenaci_Burckhardt_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Permoridium_fresenaci> ;
     dwc:class "Insecta" ;
     dwc:family "Progonocimicidae" ;
     dwc:genus "Permoridium" ;
@@ -38,50 +53,112 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Burckhardt & Nel & Raisch & Poschmann, 2022" ;
     dwc:species "fresenaci" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Permoridium_fresenaci> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Hemiptera_Linnaeus_1758>
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Cicadellidae_Nel_2012>
     dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Permoridium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Progonocimicidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Progonocimicidae" ;
-    dwc:genus "Permoridium" ;
+    dwc:family "Cicadellidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "(Nel et al. 2012)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Maguviopseidae_Shcherbakov_2011>
+    dwc:class "Insecta" ;
+    dwc:family "Maguviopseidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Shcherbakov, 2011" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Maguviopseidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Coleorrhyncha_China_1929>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subOrder" ;
+    dwc:scientificNameAuthorship "Myers and China, 1929" ;
+    dwc:subOrder "Coleorrhyncha" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coleorrhyncha> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Peloridium_hammoniorum_Breddin_1897>
+    dwc:class "Insecta" ;
+    dwc:family "Peloridiidae" ;
+    dwc:genus "Peloridium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Breddin 1897" ;
+    dwc:species "hammoniorum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Peloridium_hammoniorum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hoploridiidae_Shcherbakov_1991>
+    dwc:class "Insecta" ;
+    dwc:family "Hoploridiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Popov and Shcherbakov, 1991" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hoploridiidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Karabasiidae_Popov_1985>
+    dwc:class "Insecta" ;
+    dwc:family "Karabasiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Popov, 1985" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Karabasiidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Progonocimicidae_Handlirsch_1906>
+    dwc:class "Insecta" ;
+    dwc:family "Progonocimicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Handlirsch, 1906" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Progonocimicidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gakasha_calcaridentata_Jiang_2019>
+    dwc:class "Insecta" ;
+    dwc:family "Progonocimicidae" ;
+    dwc:genus "Gakasha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Jiang, Wang and Szwedo 2019" ;
+    dwc:species "calcaridentata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gakasha_calcaridentata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Permoridium_fresenaci>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Permoridium> ;
     dwc:class "Insecta" ;
     dwc:family "Progonocimicidae" ;
     dwc:genus "Permoridium" ;
@@ -90,29 +167,161 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "fresenaci" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Permoridium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Permoridium>
+    dwc:class "Insecta" ;
+    dwc:family "Progonocimicidae" ;
+    dwc:genus "Permoridium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Progonocimicidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Progonocimicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Progonocimicidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B242A55EFFDDFF9CDD4FF9ABFBD9FBD9>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Permoridium_fresenaci_Burckhardt_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/08912963.2022.2067759> ;
-    dc:creator "Burckhardt, Daniel", "Nel, André", "Poschmann, Markus J.", "Raisch, Manfred" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7745705> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/B242A55EFFDDFF9CDD4FF9ABFBD9FBD9/UGKU%201096> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/B242A55EFFDDFF9CDD4FF9ABFBD9FBD9/UGKU%201096>
-    dwc:catalogNumber "UGKU 1096" ;
-    dwc:collectionCode "UGKU" ;
-    dwc:typeStatus "holotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Maguviopseidae>
+    dwc:class "Insecta" ;
+    dwc:family "Maguviopseidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleorrhyncha>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subOrder" ;
+    dwc:subOrder "Coleorrhyncha" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peloridium_hammoniorum>
+    dwc:class "Insecta" ;
+    dwc:family "Peloridiidae" ;
+    dwc:genus "Peloridium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hammoniorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peloridium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peloridium>
+    dwc:class "Insecta" ;
+    dwc:family "Peloridiidae" ;
+    dwc:genus "Peloridium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Peloridiidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Peloridiidae>
+    dwc:class "Insecta" ;
+    dwc:family "Peloridiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hoploridiidae>
+    dwc:class "Insecta" ;
+    dwc:family "Hoploridiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Karabasiidae>
+    dwc:class "Insecta" ;
+    dwc:family "Karabasiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gakasha_calcaridentata>
+    dwc:class "Insecta" ;
+    dwc:family "Progonocimicidae" ;
+    dwc:genus "Gakasha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "calcaridentata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gakasha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gakasha>
+    dwc:class "Insecta" ;
+    dwc:family "Progonocimicidae" ;
+    dwc:genus "Gakasha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Progonocimicidae> ;
+    a dwcFP:TaxonName .
