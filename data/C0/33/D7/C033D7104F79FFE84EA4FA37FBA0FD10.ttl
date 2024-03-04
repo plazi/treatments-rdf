@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:C033D7104F79FFE84EA4FA37FBA0FD10
+    cito:cites <http://dx.doi.org/10.5281/zenodo.257774>, <http://dx.doi.org/10.5281/zenodo.257775> ;
+    dc:creator "Lima, Flávio C. T." ;
+    dc:title "Brycon" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.257769> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Brycon> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.257769>
-    dc:creator "Lima, Flávio C. T." ;
-    dc:date "2017" ;
-    dc:title "A revision of the cis-andean species of the genus Brycon Müller & Troschel (Characiformes: Characidae)" ;
     bibo:endPage "189" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "4222" ;
+    dc:creator "Lima, Flávio C. T." ;
+    dc:date "2017" ;
+    dc:title "A revision of the cis-andean species of the genus Brycon Müller & Troschel (Characiformes: Characidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.257774>, <http://dx.doi.org/10.5281/zenodo.257775> ;
     a fabio:JournalArticle .
 
@@ -31,21 +40,43 @@
     fabio:hasRepresentation "https://zenodo.org/record/257775/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Brycon_howesi_Lima_2017>
     dwc:class "Actinopterygii" ;
+    dwc:family "Bryconidae" ;
+    dwc:genus "Brycon" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Characiformes" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "howesi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brycon_howesi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brycon_dulcis_Lima_2017>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Bryconidae" ;
+    dwc:genus "Brycon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Characiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dulcis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brycon_dulcis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Brycon_vonoi_Lima_2017>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Bryconidae" ;
+    dwc:genus "Brycon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Characiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "vonoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Brycon_vonoi> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Brycon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bryconidae> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Bryconidae" ;
     dwc:genus "Brycon" ;
@@ -53,38 +84,80 @@
     dwc:order "Characiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bryconidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Bryconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Characiformes> ;
     dwc:class "Actinopterygii" ;
     dwc:family "Bryconidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Characiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Characiformes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Characiformes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
     dwc:class "Actinopterygii" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Characiformes" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/C033D7104F79FFE84EA4FA37FBA0FD10>
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.257769> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Brycon> ;
-    dc:creator "Lima, Flávio C. T." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.257774>, <http://dx.doi.org/10.5281/zenodo.257775> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Brycon_howesi>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Bryconidae" ;
+    dwc:genus "Brycon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Characiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "howesi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brycon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brycon_dulcis>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Bryconidae" ;
+    dwc:genus "Brycon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Characiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "dulcis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brycon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Brycon_vonoi>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Bryconidae" ;
+    dwc:genus "Brycon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Characiformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "vonoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Brycon> ;
+    a dwcFP:TaxonName .
