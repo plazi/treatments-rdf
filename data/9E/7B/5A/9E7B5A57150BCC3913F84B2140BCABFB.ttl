@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:9E7B5A57150BCC3913F84B2140BCABFB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.217211>, <http://dx.doi.org/10.5281/zenodo.217212>, <http://dx.doi.org/10.5281/zenodo.217213>, <http://dx.doi.org/10.5281/zenodo.217214>, <http://dx.doi.org/10.5281/zenodo.217215> ;
+    dc:creator "Mockford, Edward L.; Wynne, J. Judson" ;
+    dc:title "Cyptophania Banks 1931" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cyptophania_Banks_1931> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pteroxaniella_Karny_1932>, <http://taxon-concept.plazi.org/id/Animalia/Ptenocorium_Enderlein_1931> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3702.5.3> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3702.5.3>
-    dc:creator "Mockford, Edward L.", "Wynne, J. Judson" ;
-    dc:date "2013" ;
-    dc:title "Genus Cyptophania Banks (Psocodea: ‘ Psocoptera’: Lepidopsocidae): unique features, augmented description of the generotype, and descriptions of three new species" ;
     bibo:endPage "449" ;
     bibo:issue "5" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "437" ;
     bibo:volume "3702" ;
+    dc:creator "Mockford, Edward L.; Wynne, J. Judson" ;
+    dc:date "2013" ;
+    dc:title "Genus Cyptophania Banks (Psocodea: ‘ Psocoptera’: Lepidopsocidae): unique features, augmented description of the generotype, and descriptions of three new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.217211>, <http://dx.doi.org/10.5281/zenodo.217212>, <http://dx.doi.org/10.5281/zenodo.217213>, <http://dx.doi.org/10.5281/zenodo.217214>, <http://dx.doi.org/10.5281/zenodo.217215> ;
     a fabio:JournalArticle .
 
@@ -47,8 +57,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cyptophania_Banks_1931>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyptophania> ;
-    dwc:ID-CoL "8MRGR" ;
     dwc:class "Insecta" ;
     dwc:family "Lepidopsocidae" ;
     dwc:genus "Cyptophania" ;
@@ -57,22 +65,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Banks (1931)" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Ptenocorium_Enderlein_1931>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ptenocorium> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lepidopsocidae" ;
-    dwc:genus "Ptenocorium" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Psocodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Enderlein (1931)" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8MRGR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyptophania> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pteroxaniella_Karny_1932>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pteroxaniella> ;
     dwc:class "Insecta" ;
     dwc:family "Lepidopsocidae" ;
     dwc:genus "Pteroxaniella" ;
@@ -81,60 +78,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Karny (1932)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pteroxaniella> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cyptophania>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lepidopsocidae" ;
-    dwc:genus "Cyptophania" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Psocodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psocodea> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lepidopsocidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Psocodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Psocodea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Psocodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ptenocorium>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Ptenocorium_Enderlein_1931>
     dwc:class "Insecta" ;
     dwc:family "Lepidopsocidae" ;
     dwc:genus "Ptenocorium" ;
@@ -142,10 +89,85 @@
     dwc:order "Psocodea" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Enderlein (1931)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ptenocorium> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyptophania_pakaratii_Mockford_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:genus "Cyptophania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pakaratii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyptophania_pakaratii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyptophania_australica_Mockford_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:genus "Cyptophania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "australica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyptophania_australica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyptophania>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:genus "Cyptophania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psocodea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psocodea>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Pteroxaniella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae> ;
     dwc:class "Insecta" ;
     dwc:family "Lepidopsocidae" ;
     dwc:genus "Pteroxaniella" ;
@@ -153,13 +175,40 @@
     dwc:order "Psocodea" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/9E7B5A57150BCC3913F84B2140BCABFB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cyptophania_Banks_1931> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Ptenocorium_Enderlein_1931>, <http://taxon-concept.plazi.org/id/Animalia/Pteroxaniella_Karny_1932> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3702.5.3> ;
-    dc:creator "Mockford, Edward L.", "Wynne, J. Judson" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.217211>, <http://dx.doi.org/10.5281/zenodo.217212>, <http://dx.doi.org/10.5281/zenodo.217213>, <http://dx.doi.org/10.5281/zenodo.217214>, <http://dx.doi.org/10.5281/zenodo.217215> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Ptenocorium>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:genus "Ptenocorium" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidopsocidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cyptophania_pakaratii>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:genus "Cyptophania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pakaratii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyptophania> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyptophania_australica>
+    dwc:class "Insecta" ;
+    dwc:family "Lepidopsocidae" ;
+    dwc:genus "Cyptophania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "australica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyptophania> ;
+    a dwcFP:TaxonName .
