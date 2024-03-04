@@ -1,27 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:21D10E246716CBF60977C2A32229899C
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Caloidea>' due to issues with rank ;
+    dc:creator "Bousquet, Yves" ;
+    dc:title "Calleida Latreille 1824" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Calleida_Latreille_1824> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Carabus_decorus>, <http://taxon-name.plazi.org/id/Animalia/Callida> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Caloida_Bedel_1911> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.245.3416> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.245.3416>
-    dc:creator "Bousquet, Yves" ;
-    dc:date "2012" ;
-    dc:title "Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico" ;
     bibo:endPage "1722" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2012-11-28" ;
     bibo:startPage "1" ;
     bibo:volume "245" ;
+    dc:creator "Bousquet, Yves" ;
+    dc:date "2012" ;
+    dc:title "Catalogue of Geadephaga (Coleoptera, Adephaga) of America, north of Mexico" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Calleida_Latreille_1824>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Calleida> ;
     dwc:LSID "21D10E24-6716-CBF6-0977-C2A32229899C" ;
     dwc:class "Hexapoda" ;
     dwc:family "Carabidae" ;
@@ -31,10 +41,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Latreille, 1824" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Calleida> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Caloida_Bedel_1911>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Caloida> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Caloida" ;
@@ -43,22 +53,34 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Bedel, 1911" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Caloida> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Callidiola_Jeannel_1949>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Callidiola" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Jeannel, 1949" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Callidiola> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenocallida_Jeannel_1949>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Stenocallida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Jeannel, 1949" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenocallida> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Calleida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     dwc:class "Hexapoda" ;
     dwc:family "Carabidae" ;
     dwc:genus "Calleida" ;
@@ -66,10 +88,49 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carabidae>
+    dwc:class "Hexapoda", "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Hexapoda", "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda>, <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
+    dwc:class "Hexapoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Caloida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Caloida" ;
@@ -77,40 +138,35 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Carabidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Hexapoda" ;
-    dwc:family "Carabidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hexapoda> ;
-    dwc:class "Hexapoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hexapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Hexapoda" ;
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/21D10E246716CBF60977C2A32229899C>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Calleida_Latreille_1824> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/21/D1/0E/Callida>, <file:///workdir/tmprdf/data/21/D1/0E/Carabus_decorus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Caloida_Bedel_1911> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.245.3416> ;
-    dc:creator "Bousquet, Yves" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Callidiola>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Callidiola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Stenocallida>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Stenocallida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
