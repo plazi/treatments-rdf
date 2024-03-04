@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C387D7FFC92523FF3AEC81FA91FACC
+    cito:cites <http://dx.doi.org/10.5281/zenodo.253357> ;
+    dc:creator "Zhang, Xiao; Li, Yan; Yang, Ding" ;
+    dc:title "Rhipidia (Rhipidia) septentrionis Alexander 1913" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhipidia_septentrionis_Alexander_1913> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis_Alexander_1913> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3764.3.2> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3764.3.2>
-    dc:creator "Li, Yan", "Yang, Ding", "Zhang, Xiao" ;
-    dc:date "2014" ;
-    dc:title "A review of the genus Rhipidia Meigen from China, with descriptions of seven new species (Diptera, Limoniidae)" ;
     bibo:endPage "239" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "201" ;
     bibo:volume "3764" ;
+    dc:creator "Zhang, Xiao; Li, Yan; Yang, Ding" ;
+    dc:date "2014" ;
+    dc:title "A review of the genus Rhipidia Meigen from China, with descriptions of seven new species (Diptera, Limoniidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.253357> ;
     a fabio:JournalArticle .
 
@@ -26,24 +36,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/253357/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis_Alexander_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis> ;
-    dwc:ID-CoL "78SXL" ;
-    dwc:class "Insecta" ;
-    dwc:family "Limoniidae" ;
-    dwc:genus "Rhipidia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "Alexander, 1913: 206" ;
-    dwc:species "pulchra" ;
-    dwc:subSpecies "septentrionis" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Rhipidia_septentrionis_Alexander_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_septentrionis> ;
-    dwc:ID-CoL "78SXL" ;
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Rhipidia" ;
@@ -54,60 +47,26 @@
     dwc:scientificNameAuthorship "Alexander, 1913" ;
     dwc:species "septentrionis" ;
     dwc:subGenus "Rhipidia" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/78SXL> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_septentrionis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Limoniidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Limoniidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhipidia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limoniidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis_Alexander_1913>
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Rhipidia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Alexander, 1913: 206" ;
+    dwc:species "pulchra" ;
+    dwc:subSpecies "septentrionis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/78SXL> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia> ;
+<http://taxon-name.plazi.org/id/Animalia/Rhipidia_septentrionis>
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Rhipidia" ;
@@ -115,11 +74,74 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "pulchra" ;
+    dwc:species "septentrionis" ;
+    dwc:subGenus "Rhipidia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_Rhipidia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhipidia_Rhipidia>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Rhipidia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Rhipidia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhipidia>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:genus "Rhipidia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Limoniidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Limoniidae>
+    dwc:class "Insecta" ;
+    dwc:family "Limoniidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra> ;
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Rhipidia" ;
@@ -129,10 +151,10 @@
     dwc:rank "subSpecies" ;
     dwc:species "pulchra" ;
     dwc:subSpecies "septentrionis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Rhipidia_septentrionis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia> ;
+<http://taxon-name.plazi.org/id/Animalia/Rhipidia_pulchra>
     dwc:class "Insecta" ;
     dwc:family "Limoniidae" ;
     dwc:genus "Rhipidia" ;
@@ -140,14 +162,6 @@
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "septentrionis" ;
+    dwc:species "pulchra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhipidia> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03C387D7FFC92523FF3AEC81FA91FACC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhipidia_septentrionis_Alexander_1913> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhipidia_pulchra_septentrionis_Alexander_1913> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3764.3.2> ;
-    dc:creator "Li, Yan", "Yang, Ding", "Zhang, Xiao" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.253357> ;
-    a trt:Treatment .
-
