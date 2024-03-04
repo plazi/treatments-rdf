@@ -1,42 +1,46 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:D240430266E67AA0C11A294C95943EF6
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Trictenotomides>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Trictenotomidae>' due to issues with rank ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:title "Trictenotomidae Blanchard 1845" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trictenotomidae_Blanchard_1845> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Trictenotoma> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.88.807>
-    dc:creator "Alonso-Zarazaga, Miguel A.", "Bouchard, Patrice", "Bousquet, Yves", "Davies, Anthony E.", "Lawrence, John F.", "Lyal, Chris H. C.", "Newton, Alfred F.", "Reid, Chris A. M.", "Schmitt, Michael", "Smith, Andrew B. T.", "Ślipinski, S. Adam" ;
-    dc:date "2011" ;
-    dc:title "Family-group names in Coleoptera (Insecta)" ;
     bibo:endPage "972" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "1" ;
     bibo:volume "88" ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:date "2011" ;
+    dc:title "Family-group names in Coleoptera (Insecta)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trictenotomidae_Blanchard_1845>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trictenotomidae> ;
-    dwc:ID-CoL "6273L" ;
     dwc:ID-ENA "432918" ;
     dwc:family "Trictenotomidae" ;
     dwc:rank "family" ;
     dwc:scientificNameAuthorship "Blanchard, 1845" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6273L> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trictenotomidae> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Trictenotomidae>
+    # Warning: Could not determine parent name ;
     dwc:family "Trictenotomidae" ;
     dwc:rank "family" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/D240430266E67AA0C11A294C95943EF6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trictenotomidae_Blanchard_1845> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/D2/40/43/Trictenotoma> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
-    dc:creator "Alonso-Zarazaga, Miguel A.", "Bouchard, Patrice", "Bousquet, Yves", "Davies, Anthony E.", "Lawrence, John F.", "Lyal, Chris H. C.", "Newton, Alfred F.", "Reid, Chris A. M.", "Schmitt, Michael", "Smith, Andrew B. T.", "Ślipinski, S. Adam" ;
-    a trt:Treatment .
-
