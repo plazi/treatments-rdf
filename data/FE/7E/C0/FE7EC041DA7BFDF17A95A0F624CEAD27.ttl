@@ -1,24 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FE7EC041DA7BFDF17A95A0F624CEAD27
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Botrytis ramosa Pers." ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Fungi/Mucor_crustaceus_Linnaeus_1753> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4366460> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Fungi/Botrytis_ramosa> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4366460>
+    bibo:endPage "689" ;
+    bibo:startPage "651" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part M)" ;
-    bibo:endPage "689" ;
-    bibo:startPage "651" ;
     a fabio:BookSection .
 
 <http://taxon-concept.plazi.org/id/Fungi/Mucor_crustaceus_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Mucor_crustaceus> ;
     dwc:class "Zygomycetes" ;
     dwc:family "Mucoraceae" ;
     dwc:genus "Mucor" ;
@@ -26,35 +34,23 @@
     dwc:order "Mucorales" ;
     dwc:phylum "Zygomycota" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus" ;
+    dwc:scientificNameAuthorship "Linnaeus", "L." ;
     dwc:species "crustaceus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Mucor_crustaceus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Fungi>
-    dwc:kingdom "Fungi" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
-    dwc:kingdom "Fungi" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Botrytis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Sclerotiniaceae> ;
+<http://taxon-concept.plazi.org/id/Fungi/Sclerotiniaceae_Whetzel_1945>
     dwc:class "Leotiomycetes" ;
     dwc:family "Sclerotiniaceae" ;
-    dwc:genus "Botrytis" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Helotiales" ;
     dwc:phylum "Ascomycota" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Whetzel ex Whetzel, 1945" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Sclerotiniaceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Fungi/Botrytis_ramosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Botrytis> ;
     dwc:class "Leotiomycetes" ;
     dwc:family "Sclerotiniaceae" ;
     dwc:genus "Botrytis" ;
@@ -63,38 +59,60 @@
     dwc:phylum "Ascomycota" ;
     dwc:rank "species" ;
     dwc:species "ramosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Botrytis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Botrytis>
+    dwc:class "Leotiomycetes" ;
+    dwc:family "Sclerotiniaceae" ;
+    dwc:genus "Botrytis" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Helotiales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Sclerotiniaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Sclerotiniaceae>
+    dwc:class "Leotiomycetes" ;
+    dwc:family "Sclerotiniaceae" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Helotiales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Helotiales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Helotiales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Leotiomycetes> ;
     dwc:class "Leotiomycetes" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Helotiales" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Leotiomycetes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Leotiomycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
     dwc:class "Leotiomycetes" ;
     dwc:kingdom "Fungi" ;
     dwc:phylum "Ascomycota" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Fungi/Mucor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mucoraceae> ;
-    dwc:class "Zygomycetes" ;
-    dwc:family "Mucoraceae" ;
-    dwc:genus "Mucor" ;
+<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
     dwc:kingdom "Fungi" ;
-    dwc:order "Mucorales" ;
-    dwc:phylum "Zygomycota" ;
-    dwc:rank "genus" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Mucor_crustaceus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mucor> ;
     dwc:class "Zygomycetes" ;
     dwc:family "Mucoraceae" ;
     dwc:genus "Mucor" ;
@@ -103,56 +121,50 @@
     dwc:phylum "Zygomycota" ;
     dwc:rank "species" ;
     dwc:species "crustaceus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mucor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Mucor>
+    dwc:class "Zygomycetes" ;
+    dwc:family "Mucoraceae" ;
+    dwc:genus "Mucor" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Mucorales" ;
+    dwc:phylum "Zygomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mucoraceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Mucoraceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mucorales> ;
     dwc:class "Zygomycetes" ;
     dwc:family "Mucoraceae" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Mucorales" ;
     dwc:phylum "Zygomycota" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mucorales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Mucorales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Zygomycetes> ;
     dwc:class "Zygomycetes" ;
     dwc:kingdom "Fungi" ;
     dwc:order "Mucorales" ;
     dwc:phylum "Zygomycota" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Fungi/Sclerotiniaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Helotiales> ;
-    dwc:class "Leotiomycetes" ;
-    dwc:family "Sclerotiniaceae" ;
-    dwc:kingdom "Fungi" ;
-    dwc:order "Helotiales" ;
-    dwc:phylum "Ascomycota" ;
-    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Zygomycetes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Zygomycetes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Zygomycota> ;
     dwc:class "Zygomycetes" ;
     dwc:kingdom "Fungi" ;
     dwc:phylum "Zygomycota" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Zygomycota> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Fungi/Zygomycota>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
     dwc:kingdom "Fungi" ;
     dwc:phylum "Zygomycota" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/FE7EC041DA7BFDF17A95A0F624CEAD27>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Fungi/Mucor_crustaceus_Linnaeus_1753> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4366460> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Botrytis_ramosa> ;
-    dc:creator "Jarvis, Charlie" ;
-    a trt:Treatment .
-
