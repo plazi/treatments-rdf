@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:03DA682B2E17FFB6A398FF56FB273BD2
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7663554> ;
+    dc:creator "Danielopol, Dan L.; Cabral, M. Cristina; Horne, David J.; Namiotko, Tadeusz; Lord, Alan R." ;
+    dc:title "Sagmatocythere rectum" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5244.4.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere_rectum> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5244.4.1>
-    dc:creator "Cabral, M. Cristina", "Danielopol, Dan L.", "Horne, David J.", "Lord, Alan R.", "Namiotko, Tadeusz" ;
-    dc:date "2023" ;
-    dc:title "Reconciling diagnostic traits in living and fossil taxa: The taxonomy and evolution of the genus Microceratina (Crustacea, Ostracoda, Cytheruridae)" ;
     bibo:endPage "340" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-02-21" ;
     bibo:startPage "301" ;
     bibo:volume "5244" ;
+    dc:creator "Danielopol, Dan L.; Cabral, M. Cristina; Horne, David J.; Namiotko, Tadeusz; Lord, Alan R." ;
+    dc:date "2023" ;
+    dc:title "Reconciling diagnostic traits in living and fossil taxa: The taxonomy and evolution of the genus Microceratina (Crustacea, Ostracoda, Cytheruridae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7663554> ;
     a fabio:JournalArticle .
 
@@ -27,47 +37,58 @@
     fabio:hasRepresentation "https://zenodo.org/record/7663554/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Loxoconchidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podocopida> ;
+<http://taxon-concept.plazi.org/id/Animalia/Sagmatocythere_rectum_Brady_1868>
     dwc:class "Ostracoda" ;
     dwc:family "Loxoconchidae" ;
+    dwc:genus "Sagmatocythere" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Podocopida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Brady, 1868)" ;
+    dwc:species "rectum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere_rectum> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Ostracoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Bythocythere_Sars_1866>
     dwc:class "Ostracoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Podocopida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
-    dwc:class "Ostracoda" ;
+    dwc:family "Bythocytheridae" ;
+    dwc:genus "Bythocythere" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Podocopida" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Sars, 1866" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bythocythere> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Sagmatocythere>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Loxoconchidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Nannocythere_pavo_Malcomson_1886>
+    dwc:class "Ostracoda" ;
+    dwc:family "Loxoconchidae" ;
+    dwc:genus "Nannocythere" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Malcomson, 1886)", "Malcomson, 1886" ;
+    dwc:species "pavo" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nannocythere_pavo> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cytheropteron_rectum_Brady_1868>
+    dwc:class "Ostracoda" ;
+    dwc:family "Cytheruridae" ;
+    dwc:genus "Cytheropteron" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Brady, 1868" ;
+    dwc:species "rectum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cytheropteron_rectum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Sagmatocythere_Athersuch_1976>
     dwc:class "Ostracoda" ;
     dwc:family "Loxoconchidae" ;
     dwc:genus "Sagmatocythere" ;
@@ -75,10 +96,23 @@
     dwc:order "Podocopida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Athersuch, 1976" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nannocythere_Schafer_1953>
+    dwc:class "Ostracoda" ;
+    dwc:family "Loxoconchidae" ;
+    dwc:genus "Nannocythere" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Schafer, 1953" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nannocythere> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere_rectum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere> ;
     dwc:class "Ostracoda" ;
     dwc:family "Loxoconchidae" ;
     dwc:genus "Sagmatocythere" ;
@@ -87,12 +121,132 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "rectum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03DA682B2E17FFB6A398FF56FB273BD2>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5244.4.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Sagmatocythere_rectum> ;
-    dc:creator "Cabral, M. Cristina", "Danielopol, Dan L.", "Horne, David J.", "Lord, Alan R.", "Namiotko, Tadeusz" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7663554> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sagmatocythere>
+    dwc:class "Ostracoda" ;
+    dwc:family "Loxoconchidae" ;
+    dwc:genus "Sagmatocythere" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Loxoconchidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Loxoconchidae>
+    dwc:class "Ostracoda" ;
+    dwc:family "Loxoconchidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podocopida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Podocopida>
+    dwc:class "Ostracoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ostracoda>
+    dwc:class "Ostracoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bythocythere>
+    dwc:class "Ostracoda" ;
+    dwc:family "Bythocytheridae" ;
+    dwc:genus "Bythocythere" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bythocytheridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bythocytheridae>
+    dwc:class "Ostracoda" ;
+    dwc:family "Bythocytheridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podocopida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nannocythere_pavo>
+    dwc:class "Ostracoda" ;
+    dwc:family "Loxoconchidae" ;
+    dwc:genus "Nannocythere" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pavo" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nannocythere> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nannocythere>
+    dwc:class "Ostracoda" ;
+    dwc:family "Loxoconchidae" ;
+    dwc:genus "Nannocythere" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Loxoconchidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cytheropteron_rectum>
+    dwc:class "Ostracoda" ;
+    dwc:family "Cytheruridae" ;
+    dwc:genus "Cytheropteron" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rectum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cytheropteron> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cytheropteron>
+    dwc:class "Ostracoda" ;
+    dwc:family "Cytheruridae" ;
+    dwc:genus "Cytheropteron" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cytheruridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cytheruridae>
+    dwc:class "Ostracoda" ;
+    dwc:family "Cytheruridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Podocopida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Podocopida> ;
+    a dwcFP:TaxonName .
