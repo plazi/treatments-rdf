@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A887FA09600B67FF25FDF3FA0D75BA
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3353933> ;
+    dc:creator "Bezark, Larry G.; Santos-Silva, Antonio" ;
+    dc:title "Rosalba skelleyi Bezark & Santos-Silva 2019, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A887FA09600B67FF25FDF3FA0D75BA.mc.3B693CB109610B67FE30FEF6FB1E750E> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rosalba_skelleyi_Bezark_2019> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4648.1.4> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4648.1.4>
-    dc:creator "Bezark, Larry G.", "Santos-Silva, Antonio" ;
-    dc:date "2019" ;
-    dc:title "Synonymies and seven new species in Lamiinae from the Neotropical Region (Coleoptera, Cerambycidae)" ;
     bibo:endPage "110" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-07-29" ;
     bibo:startPage "92" ;
     bibo:volume "4648" ;
+    dc:creator "Bezark, Larry G.; Santos-Silva, Antonio" ;
+    dc:date "2019" ;
+    dc:title "Synonymies and seven new species in Lamiinae from the Neotropical Region (Coleoptera, Cerambycidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3353933> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/3353933/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03A887FA09600B67FF25FDF3FA0D75BA.mc.3B693CB109610B67FE30FEF6FB1E750E>
+    dwc:collectionCode "FSCA, ACMT" ;
+    dwc:eventDate "2012-09-22" ;
+    dwc:locality "Potrerillo Del Guenda" ;
+    dwc:recordedBy "J. Wappes & P. Skelley" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "375" ;
+    dwc:verbatimLatitude "-17.666666" ;
+    dwc:verbatimLongitude "-63.45" ;
+    trt:gbifOccurrenceId "2417946726" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A887FA09600B67FF25FDF3FA0D75BA#3B693CB109610B67FE30FEF6FB1E750E> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Rosalba_skelleyi_Bezark_2019>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rosalba_skelleyi> ;
-    dwc:ID-CoL "BLLPW" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Rosalba" ;
@@ -39,60 +60,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bezark & Santos-Silva, 2019" ;
     dwc:species "skelleyi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/BLLPW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rosalba_skelleyi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rosalba>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rosalba_strandi_Breuning_1943>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Rosalba" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Breuning, 1943)" ;
+    dwc:species "strandi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rosalba_strandi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rosalba_clinei_Tavakilian_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Rosalba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tavakilian, Santos-Silva & Galileo, 2018" ;
+    dwc:species "clinei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rosalba_clinei> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Rosalba_skelleyi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rosalba> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Rosalba" ;
@@ -101,12 +99,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "skelleyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rosalba> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A887FA09600B67FF25FDF3FA0D75BA>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rosalba_skelleyi_Bezark_2019> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4648.1.4> ;
-    dc:creator "Bezark, Larry G.", "Santos-Silva, Antonio" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3353933> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Rosalba>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Rosalba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rosalba_strandi>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Rosalba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "strandi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rosalba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rosalba_clinei>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Rosalba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "clinei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rosalba> ;
+    a dwcFP:TaxonName .
