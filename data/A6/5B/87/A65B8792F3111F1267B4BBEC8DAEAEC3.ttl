@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:A65B8792F3111F1267B4BBEC8DAEAEC3
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4927741>, <http://dx.doi.org/10.5281/zenodo.4927743>, <http://dx.doi.org/10.5281/zenodo.4927747> ;
+    dc:creator "Skuhrovec, Jiří; Gosik, Rafał; Caldara, Roberto" ;
+    dc:title "Tychius alpinus Hustache 1926" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/A65B8792F3111F1267B4BBEC8DAEAEC3.mc.9E9A3CD9F3111F1166A5B86D8C57AEC6> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tychius_alpinus_Hustache_1926> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3839.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3839.1.1>
-    dc:creator "Caldara, Roberto", "Gosik, Rafał", "Skuhrovec, Jiří" ;
-    dc:date "2014" ;
-    dc:title "Immatures of Palaearctic species of the weevil genus Tychius (Coleoptera, Curculionidae): new descriptions and new bionomic data with an evaluation of their value in a phylogenetic reconstruction of the genus" ;
     bibo:endPage "83" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2014-07-23" ;
     bibo:startPage "1" ;
     bibo:volume "3839" ;
+    dc:creator "Skuhrovec, Jiří; Gosik, Rafał; Caldara, Roberto" ;
+    dc:date "2014" ;
+    dc:title "Immatures of Palaearctic species of the weevil genus Tychius (Coleoptera, Curculionidae): new descriptions and new bionomic data with an evaluation of their value in a phylogenetic reconstruction of the genus" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4927741>, <http://dx.doi.org/10.5281/zenodo.4927743>, <http://dx.doi.org/10.5281/zenodo.4927747> ;
     a fabio:JournalArticle .
 
@@ -37,9 +47,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/4927747/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/A65B8792F3111F1267B4BBEC8DAEAEC3.mc.9E9A3CD9F3111F1166A5B86D8C57AEC6>
+    dwc:collectionCode "R" ;
+    dwc:eventDate "1990-06-10" ;
+    dwc:locality "Lavagnina" ;
+    trt:gbifOccurrenceId "3323411308" ;
+    trt:httpUri <https://treatment.plazi.org/id/A65B8792F3111F1267B4BBEC8DAEAEC3#9E9A3CD9F3111F1166A5B86D8C57AEC6> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Tychius_alpinus_Hustache_1926>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tychius_alpinus> ;
-    dwc:ID-CoL "59RQS" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Tychius" ;
@@ -49,60 +65,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hustache, 1926" ;
     dwc:species "alpinus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/59RQS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tychius_alpinus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tychius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tychius_brisouti_Tournier_1874>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Tychius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Tournier, 1874" ;
+    dwc:species "brisouti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tychius_brisouti> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tychius_intrusus_J.Faust_1889>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Tychius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "J.Faust, 1889" ;
+    dwc:species "intrusus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tychius_intrusus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tychius_alpinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tychius> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Tychius" ;
@@ -111,12 +104,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "alpinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tychius> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/A65B8792F3111F1267B4BBEC8DAEAEC3>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Tychius_alpinus_Hustache_1926> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3839.1.1> ;
-    dc:creator "Caldara, Roberto", "Gosik, Rafał", "Skuhrovec, Jiří" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4927741>, <http://dx.doi.org/10.5281/zenodo.4927743>, <http://dx.doi.org/10.5281/zenodo.4927747> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Tychius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Tychius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tychius_brisouti>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Tychius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brisouti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tychius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tychius_intrusus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Tychius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "intrusus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tychius> ;
+    a dwcFP:TaxonName .
