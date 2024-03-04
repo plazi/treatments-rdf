@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:23C640A4C3D1538A971287779004E869
+    cito:cites <http://dx.doi.org/10.3897/zookeys.1005.54882.figures36-45>, <http://dx.doi.org/10.3897/zookeys.1005.54882.figures46-50> ;
+    dc:creator "Babenko, Anatoly; Efeykin, Boris; Bizin, Mikhail" ;
+    dc:title "Xenylla arnei Babenko & Efeykin & Bizin 2020, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Xenylla_arnei_Babenko_2020> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1005.54882> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1005.54882>
-    dc:creator "Babenko, Anatoly", "Bizin, Mikhail", "Efeykin, Boris" ;
-    dc:date "2020" ;
-    dc:title "Three new and one little-known species of Hypogastruridae (Collembola) from Russia's northeast" ;
     bibo:endPage "20" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2020-12-18" ;
     bibo:startPage "1" ;
     bibo:volume "1005" ;
+    dc:creator "Babenko, Anatoly; Efeykin, Boris; Bizin, Mikhail" ;
+    dc:date "2020" ;
+    dc:title "Three new and one little-known species of Hypogastruridae (Collembola) from Russia's northeast" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1005.54882.figures36-45>, <http://dx.doi.org/10.3897/zookeys.1005.54882.figures46-50> ;
     a fabio:JournalArticle .
 
@@ -32,85 +41,98 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Xenylla_arnei_Babenko_2020>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xenylla_arnei> ;
     dwc:LSID "http://zoobank.org/4BB2F510-C7FE-4BDD-9412-7076B364C4D8" ;
     dwc:class "Insecta" ;
     dwc:family "Hypogastruridae" ;
     dwc:genus "Xenylla" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Poduromorpha" ;
+    dwc:order "Poduromorpha", "Collembola" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Babenko & Efeykin & Bizin, 2020" ;
     dwc:species "arnei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xenylla_arnei> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Xenylla_Tullberg_1869>
+    dwc:class "Insecta" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:genus "Xenylla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Tullberg, 1869" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Xenylla> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Xenylla_arnei>
+    dwc:class "Insecta" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:genus "Xenylla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Poduromorpha", "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "arnei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xenylla> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Xenylla>
+    dwc:class "Insecta" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:genus "Xenylla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Poduromorpha", "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hypogastruridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hypogastruridae>
+    dwc:class "Insecta" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Poduromorpha", "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poduromorpha>, <http://taxon-name.plazi.org/id/Animalia/Collembola> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Poduromorpha>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Poduromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hypogastruridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Poduromorpha> ;
-    dwc:class "Insecta" ;
-    dwc:family "Hypogastruridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Poduromorpha" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Collembola>
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Poduromorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Poduromorpha" ;
+    dwc:order "Collembola" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Xenylla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hypogastruridae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Hypogastruridae" ;
-    dwc:genus "Xenylla" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Poduromorpha" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Xenylla_arnei>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xenylla> ;
-    dwc:class "Insecta" ;
-    dwc:family "Hypogastruridae" ;
-    dwc:genus "Xenylla" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Poduromorpha" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "arnei" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/23C640A4C3D1538A971287779004E869>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Xenylla_arnei_Babenko_2020> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1005.54882> ;
-    dc:creator "Babenko, Anatoly", "Bizin, Mikhail", "Efeykin, Boris" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1005.54882.figures36-45>, <http://dx.doi.org/10.3897/zookeys.1005.54882.figures46-50> ;
-    a trt:Treatment .
-
