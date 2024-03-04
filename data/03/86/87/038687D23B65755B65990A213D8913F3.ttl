@@ -1,26 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:038687D23B65755B65990A213D8913F3
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_vittatus_Kluge_1967> ;
+    dc:creator "Hutchinson, Mark N.; Doughty, Paul; Oliver, Paul M." ;
+    dc:title "Diplodactylus Gray 1832" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_Gray_1832> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus_vittatus>, <http://taxon-name.plazi.org/id/Animalia/Diplodactylus> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.189132> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.189132>
-    dc:creator "Doughty, Paul", "Hutchinson, Mark N.", "Oliver, Paul M." ;
-    dc:date "2009" ;
-    dc:title "Taxonomic revision of the stone geckos (Squamata: Diplodactylidae: Diplodactylus) of southern Australia" ;
     bibo:endPage "46" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "25" ;
     bibo:volume "2167" ;
+    dc:creator "Hutchinson, Mark N.; Doughty, Paul; Oliver, Paul M." ;
+    dc:date "2009" ;
+    dc:title "Taxonomic revision of the stone geckos (Squamata: Diplodactylidae: Diplodactylus) of southern Australia" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_Gray_1832>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus> ;
     dwc:class "Reptilia" ;
     dwc:family "Diplodactylidae" ;
     dwc:genus "Diplodactylus" ;
@@ -29,10 +38,34 @@
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Gray, 1832" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_vittatus_Gray_1832>
+    dwc:class "Reptilia" ;
+    dwc:family "Diplodactylidae" ;
+    dwc:genus "Diplodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gray, 1832" ;
+    dwc:species "vittatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus_vittatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diplodactylidae_Han_2004>
+    dwc:class "Reptilia" ;
+    dwc:family "Diplodactylidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Han et al. 2004" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylidae> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_vittatus_Kluge_1967>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus_vittatus> ;
     dwc:class "Reptilia" ;
     dwc:family "Diplodactylidae" ;
     dwc:genus "Diplodactylus" ;
@@ -42,32 +75,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Kluge (1967)" ;
     dwc:species "vittatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus_vittatus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diplodactylidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Diplodactylidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Diplodactylus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplodactylidae> ;
     dwc:class "Reptilia" ;
     dwc:family "Diplodactylidae" ;
     dwc:genus "Diplodactylus" ;
@@ -75,30 +86,56 @@
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplodactylidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Diplodactylidae>
     dwc:class "Reptilia" ;
+    dwc:family "Diplodactylidae" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     dwc:class "Reptilia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/038687D23B65755B65990A213D8913F3>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_Gray_1832> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/86/87/Diplodactylus>, <file:///workdir/tmprdf/data/03/86/87/Diplodactylus_vittatus> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.189132> ;
-    dc:creator "Doughty, Paul", "Hutchinson, Mark N.", "Oliver, Paul M." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Diplodactylus_vittatus_Kluge_1967> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diplodactylus_vittatus>
+    dwc:class "Reptilia" ;
+    dwc:family "Diplodactylidae" ;
+    dwc:genus "Diplodactylus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "vittatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplodactylus> ;
+    a dwcFP:TaxonName .
