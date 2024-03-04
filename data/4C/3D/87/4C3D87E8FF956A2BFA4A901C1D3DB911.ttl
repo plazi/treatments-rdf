@@ -1,20 +1,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
+
+treatment:4C3D87E8FF956A2BFA4A901C1D3DB911
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6398533> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Plecotus sacrimontis G. M. Allen 1908" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Plecotus_sacrimontis_Allen_1908> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6397752> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.6397752>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2019" ;
-    dc:title "Vespertilionidae" ;
     bibo:endPage "981" ;
     bibo:startPage "716" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2019" ;
+    dc:title "Vespertilionidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6398533> ;
     a fabio:BookSection .
 
@@ -24,7 +34,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Plecotus_sacrimontis_Allen_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Plecotus_sacrimontis> ;
     dwc:authority "Wilson, 2019" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2019" ;
@@ -35,51 +44,23 @@
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "G. M. Allen, 1908" ;
     dwc:species "sacrimontis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Plecotus_sacrimontis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Geometridae_Leach_1815>
+    dwc:class "Insecta" ;
+    dwc:family "Geometridae" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Plecotus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespertilionidae> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Vespertilionidae" ;
-    dwc:genus "Plecotus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Chiroptera" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Leach, 1815" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Geometridae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Plecotus_sacrimontis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecotus> ;
     dwc:class "Mammalia" ;
     dwc:family "Vespertilionidae" ;
     dwc:genus "Plecotus" ;
@@ -88,22 +69,89 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "sacrimontis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecotus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Plecotus>
+    dwc:class "Mammalia" ;
+    dwc:family "Vespertilionidae" ;
+    dwc:genus "Plecotus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespertilionidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Vespertilionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
     dwc:class "Mammalia" ;
     dwc:family "Vespertilionidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Chiroptera" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chiroptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4C3D87E8FF956A2BFA4A901C1D3DB911>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Plecotus_sacrimontis_Allen_1908> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.6397752> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6398533> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chiroptera>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Chiroptera" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Geometridae>
+    dwc:class "Insecta" ;
+    dwc:family "Geometridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
