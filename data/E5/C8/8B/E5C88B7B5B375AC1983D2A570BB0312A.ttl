@@ -1,58 +1,62 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E5C88B7B5B375AC1983D2A570BB0312A
+    dc:creator "Sylvester, Steven P.; Peterson, Paul M.; Romaschenko, Konstantin; Bravo-Pedraza, William J.; Cuta-Alarcon, Lia E.; Soreng, Robert J." ;
+    dc:title "Podagrostis Scribn. & Merr. Contr. U. S. Natl. Herb. 13 (3): 58. 1910" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Plantae/Podagrostis> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.148.50042> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Podagrostis> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/phytokeys.148.50042>
-    dc:creator "Bravo-Pedraza, William J.", "Cuta-Alarcon, Lia E.", "Peterson, Paul M.", "Romaschenko, Konstantin", "Soreng, Robert J.", "Sylvester, Steven P." ;
-    dc:date "2020" ;
-    dc:title "New combinations and updated descriptions in Podagrostis (Agrostidinae, Poaceae) from the Neotropics and Mexico" ;
     bibo:endPage "50" ;
     bibo:journal "PhytoKeys" ;
     bibo:startPage "21" ;
     bibo:volume "148" ;
+    dc:creator "Sylvester, Steven P.; Peterson, Paul M.; Romaschenko, Konstantin; Bravo-Pedraza, William J.; Cuta-Alarcon, Lia E.; Soreng, Robert J." ;
+    dc:date "2020" ;
+    dc:title "New combinations and updated descriptions in Podagrostis (Agrostidinae, Poaceae) from the Neotropics and Mexico" ;
     a fabio:JournalArticle .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Liliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Poaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
+<http://taxon-concept.plazi.org/id/Plantae/Agrostis_canina_var._aequivalvis_Trin_1832>
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
+    dwc:genus "Agrostis" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Trin, 1832" ;
+    dwc:species "canina" ;
+    dwc:subSpecies "var." ;
+    dwc:variety "aequivalvis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Agrostis_canina_var._aequivalvis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Poales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+<http://taxon-concept.plazi.org/id/Plantae/Podagrostis_aequivalvis_Trin._1910>
     dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Podagrostis" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Scribn & Merr, 1910" ;
+    dwc:species "aequivalvis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Podagrostis_aequivalvis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Podagrostis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Podagrostis" ;
@@ -60,19 +64,106 @@
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E5C88B7B5B375AC1983D2A570BB0312A>
-    trt:citesTaxonName <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/E5/C8/8B/Agrostis> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/phytokeys.148.50042> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Podagrostis> ;
-    dc:creator "Bravo-Pedraza, William J.", "Cuta-Alarcon, Lia E.", "Peterson, Paul M.", "Romaschenko, Konstantin", "Soreng, Robert J.", "Sylvester, Steven P." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Agrostis_canina_var._aequivalvis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Agrostis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "variety" ;
+    dwc:species "canina" ;
+    dwc:subSpecies "var." ;
+    dwc:variety "aequivalvis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Agrostis_canina_var.> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Agrostis_canina_var.>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Agrostis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "canina" ;
+    dwc:subSpecies "var." ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Agrostis_canina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Agrostis_canina>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Agrostis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "canina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Agrostis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Agrostis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Agrostis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Podagrostis_aequivalvis>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Podagrostis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "aequivalvis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Podagrostis> ;
+    a dwcFP:TaxonName .
