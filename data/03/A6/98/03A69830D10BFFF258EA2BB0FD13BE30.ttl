@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A69830D10BFFF258EA2BB0FD13BE30
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Oryba_flaviplaga_Walker_1863>, <http://taxon-concept.plazi.org/id/Animalia/Oryba_regalis_Leech_1889>, <http://dx.doi.org/10.5281/zenodo.841574> ;
+    dc:creator "Qi, Mujie; Sun, Yongling; Li, Houhun" ;
+    dc:title "Orybina Snellen 1895" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Orybina_Snellen_1895> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Oryba_Walker_1863>, <http://taxon-concept.plazi.org/id/Animalia/Hirayamaia_Marumo_1917> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4303.4.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4303.4.6>
-    dc:creator "Li, Houhun", "Qi, Mujie", "Sun, Yongling" ;
-    dc:date "2017" ;
-    dc:title "Taxonomic review of the genus Orybina Snellen, 1895 (Lepidoptera, Pyralidae, Pyralinae), with description of two new species" ;
     bibo:endPage "558" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "545" ;
     bibo:volume "4303" ;
+    dc:creator "Qi, Mujie; Sun, Yongling; Li, Houhun" ;
+    dc:date "2017" ;
+    dc:title "Taxonomic review of the genus Orybina Snellen, 1895 (Lepidoptera, Pyralidae, Pyralinae), with description of two new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.841574> ;
     a fabio:JournalArticle .
 
@@ -26,21 +36,20 @@
     fabio:hasRepresentation "https://zenodo.org/record/841574/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Hirayamaia_Marumo_1917>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hirayamaia> ;
+<http://taxon-concept.plazi.org/id/Animalia/Orybina_Snellen_1895>
     dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Hirayamaia" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Orybina" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
+    dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Marumo, 1917" ;
+    dwc:scientificNameAuthorship "Snellen, 1895" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/92HHB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Orybina> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oryba_Walker_1863>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryba> ;
-    dwc:ID-CoL "92HH8" ;
     dwc:class "Insecta" ;
     dwc:family "Sphingidae" ;
     dwc:genus "Oryba" ;
@@ -49,10 +58,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Walker, 1863" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/92HHB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryba> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oryba_flaviplaga_Walker_1863>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryba_flaviplaga> ;
     dwc:class "Insecta" ;
     dwc:family "Sphingidae" ;
     dwc:genus "Oryba" ;
@@ -62,10 +72,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Walker, 1863" ;
     dwc:species "flaviplaga" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryba_flaviplaga> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hirayamaia_Marumo_1917>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Hirayamaia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Marumo, 1917" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hirayamaia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Oryba_regalis_Leech_1889>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryba_regalis> ;
     dwc:class "Insecta" ;
     dwc:family "Sphingidae" ;
     dwc:genus "Oryba" ;
@@ -75,11 +97,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Leech, 1889" ;
     dwc:species "regalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Oryba_regalis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Orybina_Snellen_1895>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Orybina> ;
-    dwc:ID-CoL "92HHB" ;
+<http://taxon-concept.plazi.org/id/Animalia/Trebania_Ragonot_1891>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:genus "Trebania" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Ragonot, 1891" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trebania> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Orybina>
     dwc:class "Insecta" ;
     dwc:family "Pyralidae" ;
     dwc:genus "Orybina" ;
@@ -87,70 +120,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Snellen, 1895" ;
-    a dwcFP:TaxonConcept .
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyralidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pyralidae>
+    dwc:class "Insecta" ;
+    dwc:family "Pyralidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hirayamaia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Hirayamaia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Oryba>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphingidae> ;
     dwc:class "Insecta" ;
     dwc:family "Sphingidae" ;
     dwc:genus "Oryba" ;
@@ -158,10 +170,20 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sphingidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Sphingidae>
+    dwc:class "Insecta" ;
+    dwc:family "Sphingidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oryba_flaviplaga>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryba> ;
     dwc:class "Insecta" ;
     dwc:family "Sphingidae" ;
     dwc:genus "Oryba" ;
@@ -170,10 +192,40 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "flaviplaga" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hirayamaia>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Hirayamaia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Oryba_regalis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryba> ;
     dwc:class "Insecta" ;
     dwc:family "Sphingidae" ;
     dwc:genus "Oryba" ;
@@ -182,44 +234,16 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "regalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oryba> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Orybina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyralidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Trebania>
     dwc:class "Insecta" ;
     dwc:family "Pyralidae" ;
-    dwc:genus "Orybina" ;
+    dwc:genus "Trebania" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pyralidae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pyralidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Pyralidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Sphingidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Sphingidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03A69830D10BFFF258EA2BB0FD13BE30>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Orybina_Snellen_1895> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Hirayamaia_Marumo_1917>, <http://taxon-concept.plazi.org/id/Animalia/Oryba_Walker_1863> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4303.4.6> ;
-    dc:creator "Li, Houhun", "Qi, Mujie", "Sun, Yongling" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.841574>, <http://taxon-concept.plazi.org/id/Animalia/Oryba_flaviplaga_Walker_1863>, <http://taxon-concept.plazi.org/id/Animalia/Oryba_regalis_Leech_1889> ;
-    a trt:Treatment .
-
