@@ -1,22 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03928754FFE1FFA012ECFDE3BE8243E6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.206650>, <http://dx.doi.org/10.5281/zenodo.206651>, <http://dx.doi.org/10.5281/zenodo.206652>, <http://dx.doi.org/10.5281/zenodo.206654> ;
+    dc:creator "Framenau, Volker W." ;
+    dc:title "Novaranea courti Framenau, 2011, new species" ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Novaranea_courti_Framenau_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.206649> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.206649>
-    dc:creator "Framenau, Volker W." ;
-    dc:date "2011" ;
-    dc:title "Description of a new orb-weaving spider species representing the first record of Novaranea in Australia (Araneae: Araneidae: Araneinae)" ;
     bibo:endPage "55" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "47" ;
     bibo:volume "2793" ;
+    dc:creator "Framenau, Volker W." ;
+    dc:date "2011" ;
+    dc:title "Description of a new orb-weaving spider species representing the first record of Novaranea in Australia (Araneae: Araneidae: Araneinae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.206650>, <http://dx.doi.org/10.5281/zenodo.206651>, <http://dx.doi.org/10.5281/zenodo.206652>, <http://dx.doi.org/10.5281/zenodo.206654> ;
     a fabio:JournalArticle .
 
@@ -41,8 +50,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Novaranea_courti_Framenau_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Novaranea_courti> ;
-    dwc:ID-CoL "4823R" ;
     dwc:authority "Framenau, 2011" ;
     dwc:authorityName "Framenau" ;
     dwc:authorityYear "2011" ;
@@ -53,61 +60,101 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Framenau, Volker W., 2011" ;
     dwc:species "courti" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4823R> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Novaranea_courti> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://taxon-concept.plazi.org/id/Plantae/Nothofagus_cunninghamii_Framenau_2011>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Nothofagaceae" ;
+    dwc:genus "Nothofagus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "cunninghamii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Nothofagus_cunninghamii> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Araneidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Novaranea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Novaranea_queribunda_Keyserling_1887>
     dwc:class "Arachnida" ;
     dwc:family "Araneidae" ;
     dwc:genus "Novaranea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Keyserling, 1887" ;
+    dwc:species "queribunda" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Novaranea_queribunda> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Eucalyptus_major_Framenau_2011>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eucalyptus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "major" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Eucalyptus_major> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Novaranea_queribunda_Framenau_2011>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Novaranea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "queribunda" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Novaranea_queribunda> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cryptaranea_invisibilis_Urquhart_1892>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Cryptaranea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Urquhart, 1892" ;
+    dwc:species "invisibilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cryptaranea_invisibilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Larinia_phthisica_Koch_1871>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Larinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "L. Koch, 1871" ;
+    dwc:species "phthisica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Larinia_phthisica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Cyrtobill_darwini_Framenau_2009>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Cyrtobill" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Framenau & Scharff, 2009" ;
+    dwc:species "darwini" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyrtobill_darwini> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Novaranea_courti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Novaranea> ;
     dwc:class "Arachnida" ;
     dwc:family "Araneidae" ;
     dwc:genus "Novaranea" ;
@@ -116,12 +163,240 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "courti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Novaranea> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03928754FFE1FFA012ECFDE3BE8243E6>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Novaranea_courti_Framenau_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.206649> ;
-    dc:creator "Framenau, Volker W." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.206650>, <http://dx.doi.org/10.5281/zenodo.206651>, <http://dx.doi.org/10.5281/zenodo.206652>, <http://dx.doi.org/10.5281/zenodo.206654> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Novaranea>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Novaranea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Araneidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Nothofagus_cunninghamii>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Nothofagaceae" ;
+    dwc:genus "Nothofagus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "cunninghamii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Nothofagus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Nothofagus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Nothofagaceae" ;
+    dwc:genus "Nothofagus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Nothofagaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Nothofagaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Nothofagaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fagales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fagales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fagales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Novaranea_queribunda>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Novaranea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "queribunda" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Novaranea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Eucalyptus_major>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eucalyptus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "major" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Eucalyptus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Eucalyptus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:genus "Eucalyptus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Myrtaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Myrtaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Myrtales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Myrtales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Myrtales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cryptaranea_invisibilis>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Cryptaranea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "invisibilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cryptaranea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cryptaranea>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Cryptaranea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Larinia_phthisica>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Larinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "phthisica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Larinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Larinia>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Larinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyrtobill_darwini>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Cyrtobill" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "darwini" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cyrtobill> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cyrtobill>
+    dwc:class "Arachnida" ;
+    dwc:family "Araneidae" ;
+    dwc:genus "Cyrtobill" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneidae> ;
+    a dwcFP:TaxonName .
