@@ -1,27 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0344FA79FFEAFF97230824D5C0965147
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Discoconchoecia_Martens_1979>, <http://taxon-concept.plazi.org/id/Animalia/Discoconchoecia_pseudodiscophora_Rudjakov_1962> ;
+    dc:creator "Schornikov, Evgeny I." ;
+    dc:title "Conchoeciinae Claus 1891" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Paraconchoecia> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.173519> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Conchoeciinae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.173519>
-    dc:creator "Schornikov, Evgeny I." ;
-    dc:date "2006" ;
-    dc:title "Checklist of the ostracod (Crustacea) fauna of Peter the Great Bay, Sea of Japan" ;
     bibo:endPage "59" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "29" ;
     bibo:volume "1294" ;
+    dc:creator "Schornikov, Evgeny I." ;
+    dc:date "2006" ;
+    dc:title "Checklist of the ostracod (Crustacea) fauna of Peter the Great Bay, Sea of Japan" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Discoconchoecia_Martens_1979>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia> ;
-    dwc:ID-CoL "84N8Z" ;
     dwc:class "Ostracoda" ;
     dwc:family "Halocyprididae" ;
     dwc:genus "Discoconchoecia" ;
@@ -30,11 +38,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Martens, 1979" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/85GHL> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Discoconchoecia_pseudodiscophora_Rudjakov_1962>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia_pseudodiscophora> ;
-    dwc:ID-CoL "6CZ6T" ;
     dwc:class "Ostracoda" ;
     dwc:family "Halocyprididae" ;
     dwc:genus "Discoconchoecia" ;
@@ -44,22 +52,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Rudjakov, 1962" ;
     dwc:species "pseudodiscophora" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/85GHL> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia_pseudodiscophora> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/CONCHOECIINAE>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halocyprididae> ;
+<http://taxon-name.plazi.org/id/Animalia/Conchoeciinae>
     dwc:class "Ostracoda" ;
     dwc:family "Halocyprididae" ;
     dwc:kingdom "Animalia" ;
@@ -67,10 +64,49 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Conchoeciinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halocyprididae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Halocyprididae>
+    dwc:class "Ostracoda" ;
+    dwc:family "Halocyprididae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Halocyprida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halocyprida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Halocyprida>
+    dwc:class "Ostracoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Halocyprida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ostracoda>
+    dwc:class "Ostracoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halocyprididae> ;
     dwc:class "Ostracoda" ;
     dwc:family "Halocyprididae" ;
     dwc:genus "Discoconchoecia" ;
@@ -78,10 +114,10 @@
     dwc:order "Halocyprida" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halocyprididae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia_pseudodiscophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia> ;
     dwc:class "Ostracoda" ;
     dwc:family "Halocyprididae" ;
     dwc:genus "Discoconchoecia" ;
@@ -90,40 +126,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "pseudodiscophora" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Discoconchoecia> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Halocyprida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostracoda> ;
-    dwc:class "Ostracoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Halocyprida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Halocyprididae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Halocyprida> ;
-    dwc:class "Ostracoda" ;
-    dwc:family "Halocyprididae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Halocyprida" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ostracoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Ostracoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/0344FA79FFEAFF97230824D5C0965147>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/44/FA/Paraconchoecia> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.173519> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/CONCHOECIINAE> ;
-    dc:creator "Schornikov, Evgeny I." ;
-    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Discoconchoecia_Martens_1979>, <http://taxon-concept.plazi.org/id/Animalia/Discoconchoecia_pseudodiscophora_Rudjakov_1962> ;
-    a trt:Treatment .
-
