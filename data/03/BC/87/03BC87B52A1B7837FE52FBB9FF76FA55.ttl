@@ -1,23 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.3161/00159301FF2016.59.2.115>
-    dc:creator "WESOŁOWSKA, Wanda", "WIŚNIEWSKI, Konrad" ;
-    dc:date "2016" ;
-    dc:title "Rare spider species (Araneae) from the Giant Mountains and the Izera Mountains - new records for the fauna of Poland" ;
+treatment:03BC87B52A1B7837FE52FBB9FF76FA55
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6290199> ;
+    dc:creator "WIŚNIEWSKI, Konrad; WESOŁOWSKA, Wanda" ;
+    dc:title "Panamomops sulcifrons" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03BC87B52A1B7837FE52FBB9FF76FA55.mc.3B7D3CFE2A1B7837FF46FB6DFBE7FB0D> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Panamomops_sulcifrons_Wider_1834> ;
+    trt:publishedIn <http://dx.doi.org/10.3161/00159301ff2016.59.2.115> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.3161/00159301ff2016.59.2.115>
     bibo:endPage "120" ;
     bibo:issue "2" ;
     bibo:journal "Fragmenta Faunistica" ;
     bibo:startPage "115" ;
     bibo:volume "59" ;
+    dc:creator "WIŚNIEWSKI, Konrad; WESOŁOWSKA, Wanda" ;
+    dc:date "2016" ;
+    dc:title "Rare spider species (Araneae) from the Giant Mountains and the Izera Mountains - new records for the fauna of Poland" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6290199> ;
     a fabio:JournalArticle .
 
@@ -26,9 +36,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/6290199/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03BC87B52A1B7837FE52FBB9FF76FA55.mc.3B7D3CFE2A1B7837FF46FB6DFBE7FB0D>
+    dwc:eventDate "2010-05-09" ;
+    dwc:locality "Izera Mts." ;
+    dwc:verbatimElevation "835" ;
+    dwc:verbatimLatitude "50.836388" ;
+    dwc:verbatimLongitude "15.373889" ;
+    trt:gbifOccurrenceId "3498173302" ;
+    trt:httpUri <https://treatment.plazi.org/id/03BC87B52A1B7837FE52FBB9FF76FA55#3B7D3CFE2A1B7837FF46FB6DFBE7FB0D> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Panamomops_sulcifrons_Wider_1834>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panamomops_sulcifrons> ;
-    dwc:ID-CoL "4C9BR" ;
     dwc:class "Arachnida" ;
     dwc:family "Linyphiidae" ;
     dwc:genus "Panamomops" ;
@@ -36,51 +54,36 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Wider, 1834)" ;
+    dwc:scientificNameAuthorship "(Wider, 1834)", "Wider, 1834" ;
     dwc:species "sulcifrons" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4C9BR> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Panamomops_sulcifrons> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Theridiidae_Sundevall_1833>
     dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Linyphiidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Linyphiidae" ;
+    dwc:family "Theridiidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Sundevall, 1833" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theridiidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Panamomops_sulcifrons>
+    dwc:class "Arachnida" ;
+    dwc:family "Linyphiidae" ;
+    dwc:genus "Panamomops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sulcifrons" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panamomops> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Panamomops>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Linyphiidae> ;
     dwc:class "Arachnida" ;
     dwc:family "Linyphiidae" ;
     dwc:genus "Panamomops" ;
@@ -88,24 +91,54 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Linyphiidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Panamomops_sulcifrons>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Panamomops> ;
+<http://taxon-name.plazi.org/id/Animalia/Linyphiidae>
     dwc:class "Arachnida" ;
     dwc:family "Linyphiidae" ;
-    dwc:genus "Panamomops" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "sulcifrons" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03BC87B52A1B7837FE52FBB9FF76FA55>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Panamomops_sulcifrons_Wider_1834> ;
-    trt:publishedIn <http://dx.doi.org/10.3161/00159301ff2016.59.2.115> ;
-    dc:creator "WESOŁOWSKA, Wanda", "WIŚNIEWSKI, Konrad" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6290199> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theridiidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Theridiidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
