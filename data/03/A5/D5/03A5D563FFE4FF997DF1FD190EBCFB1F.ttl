@@ -1,29 +1,43 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03A5D563FFE4FF997DF1FD190EBCFB1F
+    dc:creator "López, Eduardo" ;
+    dc:title "Bragasellus Henry & Magniez 1968" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03A5D563FFE4FF997DF1FD190EBCFB1F.mc.3B646E28FFE4FF997DF1FDA10EA0FB1F> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bragasellus_Henry_1968> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4861.2.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4861.2.6>
-    dc:creator "López, Eduardo" ;
-    dc:date "2020" ;
-    dc:title "A new species of Bragasellus (Isopoda, Asellidae) from NW Spain, with a key to the known species of the genus" ;
     bibo:endPage "269" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-10-16" ;
     bibo:startPage "257" ;
     bibo:volume "4861" ;
+    dc:creator "López, Eduardo" ;
+    dc:date "2020" ;
+    dc:title "A new species of Bragasellus (Isopoda, Asellidae) from NW Spain, with a key to the known species of the genus" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03A5D563FFE4FF997DF1FD190EBCFB1F.mc.3B646E28FFE4FF997DF1FDA10EA0FB1F>
+    dwc:locality "Braga" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3013391303" ;
+    trt:httpUri <https://treatment.plazi.org/id/03A5D563FFE4FF997DF1FD190EBCFB1F#3B646E28FFE4FF997DF1FDA10EA0FB1F> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Bragasellus_Henry_1968>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bragasellus> ;
-    dwc:ID-CoL "7NR5X" ;
     dwc:class "Malacostraca" ;
     dwc:family "Asellidae" ;
     dwc:genus "Bragasellus" ;
@@ -32,32 +46,25 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Henry & Magniez, 1968" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NR5X> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bragasellus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Asellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Asellus_peltatus_Braga_1944>
     dwc:class "Malacostraca" ;
     dwc:family "Asellidae" ;
+    dwc:genus "Asellus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Braga, 1944" ;
+    dwc:species "peltatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NR5X> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Asellus_peltatus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Bragasellus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Asellidae> ;
     dwc:class "Malacostraca" ;
     dwc:family "Asellidae" ;
     dwc:genus "Bragasellus" ;
@@ -65,28 +72,67 @@
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Asellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Asellidae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Asellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Isopoda> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Isopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
     dwc:class "Malacostraca" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Isopoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Malacostraca" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03A5D563FFE4FF997DF1FD190EBCFB1F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bragasellus_Henry_1968> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4861.2.6> ;
-    dc:creator "López, Eduardo" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Asellus_peltatus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Asellidae" ;
+    dwc:genus "Asellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "peltatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Asellus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Asellus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Asellidae" ;
+    dwc:genus "Asellus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Isopoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Asellidae> ;
+    a dwcFP:TaxonName .
