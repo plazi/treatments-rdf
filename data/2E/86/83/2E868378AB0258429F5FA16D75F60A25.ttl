@@ -1,26 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:2E868378AB0258429F5FA16D75F60A25
+    dc:creator "Palacios-Vargas, Jose G." ;
+    dc:title "Acheroxenylla Ellis 1976" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acheroxenylla_Ellis_1976> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/subtbiol.34.50673> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/subtbiol.34.50673>
-    dc:creator "Palacios-Vargas, Jose G." ;
-    dc:date "2020" ;
-    dc:title "Acheroxenylla (Collembola, Hypogastruridae), first record from the Americas with description of a new species from a Peruvian cave" ;
     bibo:endPage "119" ;
     bibo:journal "Subterranean Biology" ;
     bibo:startPage "109" ;
     bibo:volume "34" ;
+    dc:creator "Palacios-Vargas, Jose G." ;
+    dc:date "2020" ;
+    dc:title "Acheroxenylla (Collembola, Hypogastruridae), first record from the Americas with description of a new species from a Peruvian cave" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Acheroxenylla_Ellis_1976>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acheroxenylla> ;
     dwc:LSID "2E868378-AB02-5842-9F5F-A16D75F60A25" ;
     dwc:class "Collembola" ;
     dwc:family "Hypogastruridae" ;
@@ -30,53 +37,89 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Ellis, 1976 new modified diagnosis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acheroxenylla> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Hypogastruridae_Borner_1906>
+    dwc:family "Hypogastruridae" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Borner, 1906" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hypogastruridae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Acheroxenylla_Cretensis_Ellis_1976>
+    dwc:class "Collembola" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:genus "Acheroxenylla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Poduromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ellis, 1976" ;
+    dwc:species "Cretensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Acheroxenylla_Cretensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Acheroxenylla>
+    dwc:class "Collembola" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:genus "Acheroxenylla" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola", "Poduromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hypogastruridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hypogastruridae>
+    # Warning: Could not determine parent name ;
+    dwc:class "Collembola" ;
+    dwc:family "Hypogastruridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola", "Poduromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Collembola>, <http://taxon-name.plazi.org/id/Animalia/Poduromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Collembola>
+    dwc:class "Collembola" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Collembola" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order", "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Acheroxenylla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hypogastruridae> ;
+<http://taxon-name.plazi.org/id/Animalia/Acheroxenylla_Cretensis>
     dwc:class "Collembola" ;
     dwc:family "Hypogastruridae" ;
     dwc:genus "Acheroxenylla" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
+    dwc:order "Poduromorpha" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "species" ;
+    dwc:species "Cretensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acheroxenylla> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Collembola>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda>, <http://taxon-name.plazi.org/id/Animalia/Collembola> ;
+<http://taxon-name.plazi.org/id/Animalia/Poduromorpha>
     dwc:class "Collembola" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
+    dwc:order "Poduromorpha" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class", "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hypogastruridae>
+    dwc:rank "order" ;
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Collembola> ;
-    dwc:class "Collembola" ;
-    dwc:family "Hypogastruridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Collembola" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/2E868378AB0258429F5FA16D75F60A25>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Acheroxenylla_Ellis_1976> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/subtbiol.34.50673> ;
-    dc:creator "Palacios-Vargas, Jose G." ;
-    a trt:Treatment .
-
