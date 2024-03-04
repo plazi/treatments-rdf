@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:8D6D3579F85DAF3DFF065E07FC7DFE45
+    cito:cites <http://dx.doi.org/10.5281/zenodo.193626> ;
+    dc:creator "Haddad, Charles R.; Bosselaers, Jan" ;
+    dc:title "Procopius lesserti Strand 1916, comb. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Procopius_lesserti_Strand_1916> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Medmassa_lesserti_Strand_1916>, <http://taxon-concept.plazi.org/id/Animalia/Procopius_quaerens_Lessert_1946> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.193622> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.193622>
-    dc:creator "Bosselaers, Jan", "Haddad, Charles R." ;
-    dc:date "2010" ;
-    dc:title "A revision of the genus Medmassa Simon, 1887 (Araneae: Corinnidae) in the Afrotropical Region" ;
     bibo:endPage "12" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "2361" ;
+    dc:creator "Haddad, Charles R.; Bosselaers, Jan" ;
+    dc:date "2010" ;
+    dc:title "A revision of the genus Medmassa Simon, 1887 (Araneae: Corinnidae) in the Afrotropical Region" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.193626> ;
     a fabio:JournalArticle .
 
@@ -25,8 +35,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/193626/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Procopius_lesserti_Strand_1916>
+    dwc:class "Arachnida" ;
+    dwc:family "Corinnidae" ;
+    dwc:genus "Procopius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Strand, 1916" ;
+    dwc:species "lesserti" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4MP7R> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Procopius_lesserti> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Medmassa_lesserti_Strand_1916>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Medmassa_lesserti> ;
     dwc:class "Arachnida" ;
     dwc:family "Corinnidae" ;
     dwc:genus "Medmassa" ;
@@ -36,11 +59,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Strand, 1916: 96" ;
     dwc:species "lesserti" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Medmassa_lesserti> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Procopius_quaerens_Lessert_1946>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Procopius_quaerens> ;
-    dwc:ID-CoL "4MP7T" ;
     dwc:class "Arachnida" ;
     dwc:family "Corinnidae" ;
     dwc:genus "Procopius" ;
@@ -48,51 +70,13 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Lessert, 1946: 210" ;
+    dwc:scientificNameAuthorship "Lessert, 1946: 210", "Lessert, 1946" ;
     dwc:species "quaerens" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4MP7R> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Procopius_quaerens> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arachnida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Araneae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
-    dwc:class "Arachnida" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Corinnidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
-    dwc:class "Arachnida" ;
-    dwc:family "Corinnidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Araneae" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Procopius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corinnidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Procopius_Thorell_1899>
     dwc:class "Arachnida" ;
     dwc:family "Corinnidae" ;
     dwc:genus "Procopius" ;
@@ -100,10 +84,11 @@
     dwc:order "Araneae" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Thorell, 1899" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Procopius> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Procopius_lesserti>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Procopius> ;
     dwc:class "Arachnida" ;
     dwc:family "Corinnidae" ;
     dwc:genus "Procopius" ;
@@ -112,10 +97,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "lesserti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Procopius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Procopius>
+    dwc:class "Arachnida" ;
+    dwc:family "Corinnidae" ;
+    dwc:genus "Procopius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corinnidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corinnidae>
+    dwc:class "Arachnida" ;
+    dwc:family "Corinnidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Araneae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Araneae>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arachnida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arachnida>
+    dwc:class "Arachnida" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Medmassa_lesserti>
+    dwc:class "Arachnida" ;
+    dwc:family "Corinnidae" ;
+    dwc:genus "Medmassa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lesserti" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Medmassa> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Medmassa>
+    dwc:class "Arachnida" ;
+    dwc:family "Corinnidae" ;
+    dwc:genus "Medmassa" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Araneae" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corinnidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Procopius_quaerens>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Procopius> ;
     dwc:class "Arachnida" ;
     dwc:family "Corinnidae" ;
     dwc:genus "Procopius" ;
@@ -124,13 +182,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "quaerens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Procopius> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/8D6D3579F85DAF3DFF065E07FC7DFE45>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Medmassa_lesserti_Strand_1916>, <http://taxon-concept.plazi.org/id/Animalia/Procopius_quaerens_Lessert_1946> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.193622> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Procopius_lesserti> ;
-    dc:creator "Bosselaers, Jan", "Haddad, Charles R." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.193626> ;
-    a trt:Treatment .
-
