@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CF039A58FFFBC53117C40963E70BFE60
+    cito:cites <http://dx.doi.org/10.5281/zenodo.224906> ;
+    dc:creator "Houben, Albrecht M.; Steenkiste, Niels Van; Artois, Tom J." ;
+    dc:title "Phaenocora anophthalma (Vejdovsky, 1895) Hofsten 1907" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_anophthalma_Hofsten_1907> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Phoenocora_vejdovskyi> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Derostoma_anophtalmum_Vejdovsky_1895>, <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_anophthalma_Hofsten_1907>, <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_vejdovskyi_Graff_1913> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3889.3.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3889.3.1>
-    dc:creator "Artois, Tom J.", "Houben, Albrecht M.", "Steenkiste, Niels Van" ;
-    dc:date "2014" ;
-    dc:title "Revision of Phaenocora Ehrenberg, 1836 (Rhabditophora, Typhloplanidae, Phaenocorinae) with the description of two new species" ;
     bibo:endPage "354" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "301" ;
     bibo:volume "3889" ;
+    dc:creator "Houben, Albrecht M.; Steenkiste, Niels Van; Artois, Tom J." ;
+    dc:date "2014" ;
+    dc:title "Revision of Phaenocora Ehrenberg, 1836 (Rhabditophora, Typhloplanidae, Phaenocorinae) with the description of two new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.224906> ;
     a fabio:JournalArticle .
 
@@ -26,21 +37,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/224906/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Derostoma_anophtalmum_Vejdovsky_1895>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Derostoma_anophtalmum> ;
-    dwc:family "Catenulidae" ;
-    dwc:genus "Derostoma" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dolichomicrostomida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Vejdovsky 1895: 114" ;
-    dwc:species "anophtalmum" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_anophthalma_Hofsten_1907>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phaenocora_anophthalma> ;
-    dwc:ID-CoL "76W2W" ;
     dwc:class "Rhabditophora" ;
     dwc:family "Typhloplanidae" ;
     dwc:genus "Phaenocora" ;
@@ -50,11 +47,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Vejdovsky, 1895) Hofsten, 1907", "Hofsten 1907: 550" ;
     dwc:species "anophthalma" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/76W2W> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phaenocora_anophthalma> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Derostoma_anophtalmum_Vejdovsky_1895>
+    dwc:family "Catenulidae" ;
+    dwc:genus "Derostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dolichomicrostomida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Vejdovsky 1895: 114" ;
+    dwc:species "anophtalmum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Derostoma_anophtalmum> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_vejdovskyi_Graff_1913>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phaenocora_vejdovskyi> ;
-    dwc:ID-CoL "4FLVG" ;
     dwc:class "Rhabditophora" ;
     dwc:family "Typhloplanidae" ;
     dwc:genus "Phaenocora" ;
@@ -64,63 +73,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Graff 1913: 135" ;
     dwc:species "vejdovskyi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/76W2W> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phaenocora_vejdovskyi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Catenulidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichomicrostomida> ;
-    dwc:family "Catenulidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dolichomicrostomida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Derostoma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Catenulidae> ;
-    dwc:family "Catenulidae" ;
-    dwc:genus "Derostoma" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dolichomicrostomida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Derostoma_anophtalmum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Derostoma> ;
-    dwc:family "Catenulidae" ;
-    dwc:genus "Derostoma" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dolichomicrostomida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "species" ;
-    dwc:species "anophtalmum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dolichomicrostomida>
-    dwc:kingdom "Animalia" ;
-    dwc:order "Dolichomicrostomida" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phaenocora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Typhloplanidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phaenocora_aglobulata_Houben_2014>
     dwc:class "Rhabditophora" ;
     dwc:family "Typhloplanidae" ;
     dwc:genus "Phaenocora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rhabdocoela" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "aglobulata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phaenocora_aglobulata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Phaenocora_anophthalma>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phaenocora> ;
     dwc:class "Rhabditophora" ;
     dwc:family "Typhloplanidae" ;
     dwc:genus "Phaenocora" ;
@@ -129,10 +98,98 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "anophthalma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phaenocora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Phaenocora>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Typhloplanidae" ;
+    dwc:genus "Phaenocora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Typhloplanidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Typhloplanidae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Typhloplanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Derostoma_anophtalmum>
+    dwc:family "Catenulidae" ;
+    dwc:genus "Derostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dolichomicrostomida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "anophtalmum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Derostoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Derostoma>
+    dwc:family "Catenulidae" ;
+    dwc:genus "Derostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dolichomicrostomida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Catenulidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Catenulidae>
+    dwc:family "Catenulidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dolichomicrostomida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dolichomicrostomida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dolichomicrostomida>
+    dwc:kingdom "Animalia" ;
+    dwc:order "Dolichomicrostomida" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Phaenocora_vejdovskyi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phaenocora> ;
     dwc:class "Rhabditophora" ;
     dwc:family "Typhloplanidae" ;
     dwc:genus "Phaenocora" ;
@@ -141,48 +198,17 @@
     dwc:phylum "Platyhelminthes" ;
     dwc:rank "species" ;
     dwc:species "vejdovskyi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phaenocora> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
-    dwc:class "Rhabditophora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
-    dwc:class "Rhabditophora" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Rhabdocoela" ;
-    dwc:phylum "Platyhelminthes" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Typhloplanidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela> ;
+<http://taxon-name.plazi.org/id/Animalia/Phaenocora_aglobulata>
     dwc:class "Rhabditophora" ;
     dwc:family "Typhloplanidae" ;
+    dwc:genus "Phaenocora" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Rhabdocoela" ;
     dwc:phylum "Platyhelminthes" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "aglobulata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phaenocora> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/CF039A58FFFBC53117C40963E70BFE60>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_anophthalma_Hofsten_1907> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/CF/03/9A/Phoenocora_vejdovskyi> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Derostoma_anophtalmum_Vejdovsky_1895>, <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_anophthalma_Hofsten_1907>, <http://taxon-concept.plazi.org/id/Animalia/Phaenocora_vejdovskyi_Graff_1913> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3889.3.1> ;
-    dc:creator "Artois, Tom J.", "Houben, Albrecht M.", "Steenkiste, Niels Van" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.224906> ;
-    a trt:Treatment .
-

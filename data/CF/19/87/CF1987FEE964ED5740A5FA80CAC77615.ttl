@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:CF1987FEE964ED5740A5FA80CAC77615
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5380948>, <http://dx.doi.org/10.5281/zenodo.5381013> ;
+    dc:creator "Grimaldi, David A." ;
+    dc:title "Cretasolva burmitica Grimaldi 2016, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/CF1987FEE964ED5740A5FA80CAC77615.mc.F7D83CB5E965ED5442BFF9A8CFF87216> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cretasolva_burmitica_Grimaldi_2016> ;
+    trt:publishedIn <http://dx.doi.org/10.1206/0003-0090-408.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1206/0003-0090-408.1.1>
-    dc:creator "Grimaldi, David A." ;
-    dc:date "2016" ;
-    dc:title "Diverse Orthorrhaphan Flies (Insecta: Diptera: Brachycera) In Amber From The Cretaceous Of Myanmar: Brachycera In Cretaceous Amber, Part Vii David A. Grimaldi" ;
     bibo:endPage "132" ;
     bibo:issue "408" ;
     bibo:journal "Bulletin of the American Museum of Natural History" ;
     bibo:pubDate "2016-09-28" ;
     bibo:startPage "1" ;
     bibo:volume "2016" ;
+    dc:creator "Grimaldi, David A." ;
+    dc:date "2016" ;
+    dc:title "Diverse Orthorrhaphan Flies (Insecta: Diptera: Brachycera) In Amber From The Cretaceous Of Myanmar: Brachycera In Cretaceous Amber, Part Vii David A. Grimaldi" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5380948>, <http://dx.doi.org/10.5281/zenodo.5381013> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,13 @@
     fabio:hasRepresentation "https://zenodo.org/record/5381013/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/CF1987FEE964ED5740A5FA80CAC77615.mc.F7D83CB5E965ED5442BFF9A8CFF87216>
+    dwc:collectionCode "TYPE, AMNH" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/CF1987FEE964ED5740A5FA80CAC77615#F7D83CB5E965ED5442BFF9A8CFF87216> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Cretasolva_burmitica_Grimaldi_2016>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cretasolva_burmitica> ;
-    dwc:ID-CoL "8BLRW" ;
     dwc:class "Insecta" ;
     dwc:family "Xylomyidae" ;
     dwc:genus "Cretasolva" ;
@@ -44,33 +58,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Grimaldi, 2016" ;
     dwc:species "burmitica" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8BLRW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cretasolva_burmitica> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cretasolva>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xylomyidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Xylomyidae" ;
-    dwc:genus "Cretasolva" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Diptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Cretasolva_burmitica>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cretasolva> ;
     dwc:class "Insecta" ;
     dwc:family "Xylomyidae" ;
     dwc:genus "Cretasolva" ;
@@ -79,39 +71,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "burmitica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cretasolva> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-name.plazi.org/id/Animalia/Cretasolva>
     dwc:class "Insecta" ;
+    dwc:family "Xylomyidae" ;
+    dwc:genus "Cretasolva" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Xylomyidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Xylomyidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Xylomyidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/CF1987FEE964ED5740A5FA80CAC77615>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cretasolva_burmitica_Grimaldi_2016> ;
-    trt:publishedIn <http://dx.doi.org/10.1206/0003-0090-408.1.1> ;
-    dc:creator "Grimaldi, David A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5380948>, <http://dx.doi.org/10.5281/zenodo.5381013> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Diptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
