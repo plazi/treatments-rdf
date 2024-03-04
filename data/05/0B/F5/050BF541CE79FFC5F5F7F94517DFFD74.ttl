@@ -1,26 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:050BF541CE79FFC5F5F7F94517DFFD74
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylas_trachyrhinus>' due to issues with rank ;
+    dc:creator "Razzetti, Edoardo; Sindaco, Roberto; Grieco, Cristina; Pella, Francesca; Ziliani, Ugo; Pupin, Fabio; Riservato, Elisa; Pellitteri-Rosa, Daniele; Butikofer, Luca; Suleiman, Ahmed Saeed; Al-Aseily, Badar Awadh" ;
+    dc:title "Haemodracon trachyrhinus Boulenger 1899" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Haemodracon_trachyrhinus_Boulenger_1899> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Haemodracon_trachyrhinus>, <http://taxon-name.plazi.org/id/Animalia/Phyllodactylus_trachyrhinus>, <http://taxon-name.plazi.org/id/Plantae/Croton>, <http://taxon-name.plazi.org/id/Plantae/Tamarix> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Phyllodactylus_trachyrhynus_Boulenger_1899> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.277271> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.277271>
-    dc:creator "Al-Aseily, Badar Awadh", "Butikofer, Luca", "Grieco, Cristina", "Pella, Francesca", "Pellitteri-Rosa, Daniele", "Pupin, Fabio", "Razzetti, Edoardo", "Riservato, Elisa", "Sindaco, Roberto", "Suleiman, Ahmed Saeed", "Ziliani, Ugo" ;
-    dc:date "2011" ;
-    dc:title "Annotated checklist and distribution of the Socotran Archipelago Herpetofauna (Reptilia)" ;
     bibo:endPage "44" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "2826" ;
+    dc:creator "Razzetti, Edoardo; Sindaco, Roberto; Grieco, Cristina; Pella, Francesca; Ziliani, Ugo; Pupin, Fabio; Riservato, Elisa; Pellitteri-Rosa, Daniele; Butikofer, Luca; Suleiman, Ahmed Saeed; Al-Aseily, Badar Awadh" ;
+    dc:date "2011" ;
+    dc:title "Annotated checklist and distribution of the Socotran Archipelago Herpetofauna (Reptilia)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Haemodracon_trachyrhinus_Boulenger_1899>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Haemodracon_trachyrhinus> ;
     dwc:class "Reptilia" ;
     dwc:family "Phyllodactylidae" ;
     dwc:genus "Haemodracon" ;
@@ -30,10 +40,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Boulenger, 1899" ;
     dwc:species "trachyrhinus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Haemodracon_trachyrhinus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Phyllodactylus_trachyrhynus_Boulenger_1899>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylus_trachyrhynus> ;
     dwc:class "Reptilia" ;
     dwc:family "Phyllodactylidae" ;
     dwc:genus "Phyllodactylus" ;
@@ -43,33 +53,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Boulenger 1899: 4" ;
     dwc:species "trachyrhynus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylus_trachyrhynus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Haemodracon>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylidae> ;
-    dwc:class "Reptilia" ;
-    dwc:family "Phyllodactylidae" ;
-    dwc:genus "Haemodracon" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Squamata" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Haemodracon_trachyrhinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haemodracon> ;
     dwc:class "Reptilia" ;
     dwc:family "Phyllodactylidae" ;
     dwc:genus "Haemodracon" ;
@@ -78,31 +65,60 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "trachyrhinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haemodracon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haemodracon>
+    dwc:class "Reptilia" ;
+    dwc:family "Phyllodactylidae" ;
+    dwc:genus "Haemodracon" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Squamata" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Phyllodactylidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     dwc:class "Reptilia" ;
     dwc:family "Phyllodactylidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Squamata> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Phyllodactylus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Squamata>
     dwc:class "Reptilia" ;
-    dwc:family "Phyllodactylidae" ;
-    dwc:genus "Phyllodactylus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Reptilia>
+    dwc:class "Reptilia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Phyllodactylus_trachyrhynus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylus> ;
     dwc:class "Reptilia" ;
     dwc:family "Phyllodactylidae" ;
     dwc:genus "Phyllodactylus" ;
@@ -111,30 +127,16 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "trachyrhynus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Reptilia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Phyllodactylus>
     dwc:class "Reptilia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Squamata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reptilia> ;
-    dwc:class "Reptilia" ;
+    dwc:family "Phyllodactylidae" ;
+    dwc:genus "Phyllodactylus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Squamata" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Phyllodactylidae> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/050BF541CE79FFC5F5F7F94517DFFD74>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Haemodracon_trachyrhinus_Boulenger_1899> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/05/0B/F5/Croton>, <file:///workdir/tmprdf/data/05/0B/F5/Haemodracon_trachyrhinus>, <file:///workdir/tmprdf/data/05/0B/F5/Phyllodactylus_trachyrhinus>, <file:///workdir/tmprdf/data/05/0B/F5/Tamarix> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Phyllodactylus_trachyrhynus_Boulenger_1899> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.277271> ;
-    dc:creator "Al-Aseily, Badar Awadh", "Butikofer, Luca", "Grieco, Cristina", "Pella, Francesca", "Pellitteri-Rosa, Daniele", "Pupin, Fabio", "Razzetti, Edoardo", "Riservato, Elisa", "Sindaco, Roberto", "Suleiman, Ahmed Saeed", "Ziliani, Ugo" ;
-    a trt:Treatment .
-

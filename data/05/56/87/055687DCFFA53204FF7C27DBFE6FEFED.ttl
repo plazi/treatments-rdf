@@ -1,23 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:055687DCFFA53204FF7C27DBFE6FEFED
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/unifasciata>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.238438>, <http://dx.doi.org/10.5281/zenodo.238439> ;
+    dc:creator "Amati, Bruno; Smriglio, Carlo; Oliverio, Marco" ;
+    dc:title "Mitromorpha (Mitrolumna) karpathoensis Nordsieck 1969" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_karpathoensis_Nordsieck_1969> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitrolumna_olivoidea> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pusia_karpathoensis_Nordsieck_1969>, <http://taxon-concept.plazi.org/id/Animalia/Mitrolumna_crenipicta_Dautzenberg_1889> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3931.2.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3931.2.1>
-    dc:creator "Amati, Bruno", "Oliverio, Marco", "Smriglio, Carlo" ;
-    dc:date "2015" ;
-    dc:title "Revision of the Recent Mediterranean species of Mitromorpha Carpenter, 1865 (Gastropoda, Conoidea, Mitromorphidae) with the description of seven new species" ;
     bibo:endPage "195" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "151" ;
     bibo:volume "3931" ;
+    dc:creator "Amati, Bruno; Smriglio, Carlo; Oliverio, Marco" ;
+    dc:date "2015" ;
+    dc:title "Revision of the Recent Mediterranean species of Mitromorpha Carpenter, 1865 (Gastropoda, Conoidea, Mitromorphidae) with the description of seven new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.238438>, <http://dx.doi.org/10.5281/zenodo.238439> ;
     a fabio:JournalArticle .
 
@@ -31,22 +43,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/238439/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Mitrolumna_crenipicta_Dautzenberg_1889>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitrolumna_crenipicta> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Mitromorphidae" ;
-    dwc:genus "Mitrolumna" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Dautzenberg, 1889" ;
-    dwc:species "crenipicta" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_karpathoensis_Nordsieck_1969>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_karpathoensis> ;
-    dwc:ID-CoL "43RCQ" ;
     dwc:class "Gastropoda" ;
     dwc:family "Mitromorphidae" ;
     dwc:genus "Mitromorpha" ;
@@ -57,10 +54,11 @@
     dwc:scientificNameAuthorship "Nordsieck, 1969" ;
     dwc:species "karpathoensis" ;
     dwc:subGenus "Mitrolumna" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/43RCQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_karpathoensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pusia_karpathoensis_Nordsieck_1969>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pusia_karpathoensis> ;
     dwc:class "Gastropoda" ;
     dwc:family "Costellariidae" ;
     dwc:genus "Pusia" ;
@@ -71,34 +69,10 @@
     dwc:scientificNameAuthorship "Nordsieck, 1969:256" ;
     dwc:species "karpathoensis" ;
     dwc:subGenus "Pusionella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pusia_karpathoensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mitrolumna>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorphidae> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Mitromorphidae" ;
-    dwc:genus "Mitrolumna" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Neogastropoda" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mitrolumna_crenipicta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitrolumna> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mitrolumna_crenipicta_Dautzenberg_1889>
     dwc:class "Gastropoda" ;
     dwc:family "Mitromorphidae" ;
     dwc:genus "Mitrolumna" ;
@@ -106,22 +80,96 @@
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Dautzenberg, 1889" ;
     dwc:species "crenipicta" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitrolumna_crenipicta> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Mitromorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorphidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_alyssae_Amati_2015>
     dwc:class "Gastropoda" ;
     dwc:family "Mitromorphidae" ;
     dwc:genus "Mitromorpha" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "alyssae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_alyssae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_bogii_Amati_2015>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "bogii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_bogii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_mariottinii_Amati_2015>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "mariottinii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_mariottinii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_mifsudi_Amati_2015>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "mifsudi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_mifsudi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_nofronii_Amati_2015>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "nofronii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_nofronii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_cossyrae_Amati_2015>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "cossyrae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_cossyrae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_tricolorata_Amati_2015>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "tricolorata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_tricolorata> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_karpathoensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
     dwc:class "Gastropoda" ;
     dwc:family "Mitromorphidae" ;
     dwc:genus "Mitromorpha" ;
@@ -130,40 +178,221 @@
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "karpathoensis" ;
+    dwc:subGenus "Mitrolumna" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha_Mitrolumna>, <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_Mitrolumna>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Mitrolumna" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorphidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mitromorphidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:family "Mitromorphidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Neogastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     dwc:class "Gastropoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Neogastropoda" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/055687DCFFA53204FF7C27DBFE6FEFED>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Mitromorpha_karpathoensis_Nordsieck_1969> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/05/56/87/Mitrolumna_olivoidea> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Mitrolumna_crenipicta_Dautzenberg_1889>, <http://taxon-concept.plazi.org/id/Animalia/Pusia_karpathoensis_Nordsieck_1969> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3931.2.1> ;
-    dc:creator "Amati, Bruno", "Oliverio, Marco", "Smriglio, Carlo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.238438>, <http://dx.doi.org/10.5281/zenodo.238439> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pusia_karpathoensis>
+    dwc:class "Gastropoda" ;
+    dwc:family "Costellariidae" ;
+    dwc:genus "Pusia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "karpathoensis" ;
+    dwc:subGenus "Pusionella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pusia_Pusionella> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pusia_Pusionella>
+    dwc:class "Gastropoda" ;
+    dwc:family "Costellariidae" ;
+    dwc:genus "Pusia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Pusionella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pusia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pusia>
+    dwc:class "Gastropoda" ;
+    dwc:family "Costellariidae" ;
+    dwc:genus "Pusia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Costellariidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Costellariidae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Costellariidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Neogastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitrolumna_crenipicta>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitrolumna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "crenipicta" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitrolumna> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitrolumna>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitrolumna" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorphidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_alyssae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "alyssae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_bogii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "bogii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_mariottinii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "mariottinii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_mifsudi>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "mifsudi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_nofronii>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "nofronii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_cossyrae>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "cossyrae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mitromorpha_tricolorata>
+    dwc:class "Gastropoda" ;
+    dwc:family "Mitromorphidae" ;
+    dwc:genus "Mitromorpha" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Neogastropoda" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "species" ;
+    dwc:species "tricolorata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mitromorpha> ;
+    a dwcFP:TaxonName .
