@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03DF811D1E6E6020FF69FEE4883BFD2B
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5199786> ;
+    dc:creator "Barbosa, Julianna Freires; Ribeiro, José Ricardo Inacio; Nessimian, Jorge Luiz" ;
+    dc:title "Martarega oriximinaensis Barbosa, Ribeiro, Ferreira-Keppler 2010" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Martarega_oriximinaensis_Barbosa_2010> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Martarega_hungerfordi_Truxal_1949> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2011.651645> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222933.2011.651645>
-    dc:creator "Barbosa, Julianna Freires", "Nessimian, Jorge Luiz", "Ribeiro, José Ricardo Inacio" ;
-    dc:date "2012" ;
-    dc:title "A synopsis of Martarega White, 1879 (Insecta: Heteroptera: Notonectidae) occurring in the Brazilian Amazonia, with descriptions of three new species" ;
     bibo:endPage "1057" ;
     bibo:issue "17 - 18" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2012-05-31" ;
     bibo:startPage "1025" ;
     bibo:volume "46" ;
+    dc:creator "Barbosa, Julianna Freires; Ribeiro, José Ricardo Inacio; Nessimian, Jorge Luiz" ;
+    dc:date "2012" ;
+    dc:title "A synopsis of Martarega White, 1879 (Insecta: Heteroptera: Notonectidae) occurring in the Brazilian Amazonia, with descriptions of three new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5199786> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,21 @@
     fabio:hasRepresentation "https://zenodo.org/record/5199786/files/figure.png" ;
     a fabio:Figure .
 
+<http://taxon-concept.plazi.org/id/Animalia/Martarega_oriximinaensis_Barbosa_2010>
+    dwc:class "Insecta" ;
+    dwc:family "Notonectidae" ;
+    dwc:genus "Martarega" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Barbosa, Ribeiro, Ferreira-Keppler, 2010", "Barbosa, Ribeiro, Ferreira-Keppler, 2010: 60" ;
+    dwc:species "oriximinaensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3Y9S6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martarega_oriximinaensis> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Martarega_hungerfordi_Truxal_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martarega_hungerfordi> ;
-    dwc:ID-CoL "3Y9RX" ;
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:genus "Martarega" ;
@@ -39,11 +61,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Truxal, 1949" ;
     dwc:species "hungerfordi" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3Y9S6> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martarega_hungerfordi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Martarega_oriximinaensis_Barbosa_2010>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martarega_oriximinaensis> ;
-    dwc:ID-CoL "3Y9S6" ;
+<http://taxon-name.plazi.org/id/Animalia/Martarega_oriximinaensis>
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:genus "Martarega" ;
@@ -51,41 +73,11 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Barbosa, Ribeiro, Ferreira-Keppler, 2010" ;
     dwc:species "oriximinaensis" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Martarega> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Martarega>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notonectidae> ;
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:genus "Martarega" ;
@@ -93,10 +85,49 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Notonectidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Notonectidae>
+    dwc:class "Insecta" ;
+    dwc:family "Notonectidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Martarega_hungerfordi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Martarega> ;
     dwc:class "Insecta" ;
     dwc:family "Notonectidae" ;
     dwc:genus "Martarega" ;
@@ -105,35 +136,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "hungerfordi" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Martarega_oriximinaensis>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Martarega> ;
-    dwc:class "Insecta" ;
-    dwc:family "Notonectidae" ;
-    dwc:genus "Martarega" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "oriximinaensis" ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Notonectidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Notonectidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03DF811D1E6E6020FF69FEE4883BFD2B>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Martarega_oriximinaensis_Barbosa_2010> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Martarega_hungerfordi_Truxal_1949> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2011.651645> ;
-    dc:creator "Barbosa, Julianna Freires", "Nessimian, Jorge Luiz", "Ribeiro, José Ricardo Inacio" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5199786> ;
-    a trt:Treatment .
-
