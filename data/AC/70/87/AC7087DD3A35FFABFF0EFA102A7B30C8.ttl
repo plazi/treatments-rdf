@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:AC7087DD3A35FFABFF0EFA102A7B30C8
+    cito:cites <http://dx.doi.org/10.5281/zenodo.274504>, <http://dx.doi.org/10.5281/zenodo.274510> ;
+    dc:creator "Swift, Ian; Ray, Ann M." ;
+    dc:title "Tragidion annulatum LeConte" ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tragidion_annulatum_LeConte_1858>, <http://taxon-concept.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare_Linsley_1940> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.274503> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_annulatum> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.274503>
-    dc:creator "Ray, Ann M.", "Swift, Ian" ;
-    dc:date "2008" ;
-    dc:title "A review of the genus Tragidion Audinet-Serville, 1834 (Coleoptera: Cerambycidae: Cerambycinae: Trachyderini)" ;
     bibo:endPage "25" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "1892" ;
+    dc:creator "Swift, Ian; Ray, Ann M." ;
+    dc:date "2008" ;
+    dc:title "A review of the genus Tragidion Audinet-Serville, 1834 (Coleoptera: Cerambycidae: Cerambycinae: Trachyderini)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.274504>, <http://dx.doi.org/10.5281/zenodo.274510> ;
     a fabio:JournalArticle .
 
@@ -31,8 +41,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tragidion_annulatum_LeConte_1858>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_annulatum> ;
-    dwc:ID-CoL "7CN8M" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Tragidion" ;
@@ -42,11 +50,26 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "LeConte, 1858: 83" ;
     dwc:species "annulatum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7CN8M> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_annulatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare_Schaeffer_1908>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Tragidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Schaeffer, 1908:339" ;
+    dwc:species "peninsulare" ;
+    dwc:variety "peninsulare" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7CN8M> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare_Linsley_1940>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare> ;
-    dwc:ID-CoL "57W48" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Tragidion" ;
@@ -57,60 +80,51 @@
     dwc:scientificNameAuthorship "Linsley, 1940: 137" ;
     dwc:species "peninsulare" ;
     dwc:subSpecies "peninsulare" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7CN8M> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Tragidion>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Tragidion_peninsulare_californicum_Linsley_1940>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Tragidion" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linsley, 1940: 137" ;
+    dwc:species "peninsulare" ;
+    dwc:subSpecies "californicum" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7CN8M> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare_californicum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tragidion_annulatum_Swift_2008>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Tragidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "LeConte Ian Swift, 2008" ;
+    dwc:species "annulatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_annulatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Melanophila_(Sowards_2001>
+    dwc:class "Insecta" ;
+    dwc:family "Buprestidae" ;
+    dwc:genus "Melanophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Eschscholtz (Sowards et al., 2001)" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Melanophila> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Tragidion_annulatum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragidion> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Tragidion" ;
@@ -119,10 +133,86 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "annulatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragidion> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragidion>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Tragidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Tragidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety", "subSpecies" ;
+    dwc:species "peninsulare" ;
+    dwc:subSpecies "peninsulare" ;
+    dwc:variety "peninsulare" ;
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Tragidion" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "peninsulare" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragidion> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare_californicum>
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Tragidion" ;
@@ -131,14 +221,27 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
     dwc:species "peninsulare" ;
-    dwc:subSpecies "peninsulare" ;
+    dwc:subSpecies "californicum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tragidion_peninsulare> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/AC7087DD3A35FFABFF0EFA102A7B30C8>
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Tragidion_annulatum_LeConte_1858>, <http://taxon-concept.plazi.org/id/Animalia/Tragidion_peninsulare_peninsulare_Linsley_1940> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.274503> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tragidion_annulatum> ;
-    dc:creator "Ray, Ann M.", "Swift, Ian" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.274504>, <http://dx.doi.org/10.5281/zenodo.274510> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Melanophila>
+    dwc:class "Insecta" ;
+    dwc:family "Buprestidae" ;
+    dwc:genus "Melanophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Buprestidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Buprestidae>
+    dwc:class "Insecta" ;
+    dwc:family "Buprestidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
