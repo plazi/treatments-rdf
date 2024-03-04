@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B2652FFFA2FF9DDFD0FE4FCF8BFD4A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.3774935> ;
+    dc:creator "Heffern, Daniel; Santos-Silva, Antonio" ;
+    dc:title "Bebelis furcula" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B2652FFFA2FF9DDFD0FE4FCF8BFD4A.mc.3B73DE64FFA2FF9DDECCFDDBCFF8FD15> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bebelis_furcula_Bates_1880> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4767.4.5> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4767.4.5>
-    dc:creator "Heffern, Daniel", "Santos-Silva, Antonio" ;
-    dc:date "2020" ;
-    dc:title "New records, notes and new synonymies in American Cerambycidae (Coleoptera)" ;
     bibo:endPage "562" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2020-04-29" ;
     bibo:startPage "553" ;
     bibo:volume "4767" ;
+    dc:creator "Heffern, Daniel; Santos-Silva, Antonio" ;
+    dc:date "2020" ;
+    dc:title "New records, notes and new synonymies in American Cerambycidae (Coleoptera)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.3774935> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/3774935/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B2652FFFA2FF9DDFD0FE4FCF8BFD4A.mc.3B73DE64FFA2FF9DDECCFDDBCFF8FD15>
+    dwc:collectionCode "DHCO, MZSP" ;
+    dwc:eventDate "2012-05-16" ;
+    dwc:locality "Reserva Privada de Vida Silvestre Domitila" ;
+    dwc:recordedBy "D. Heffern" ;
+    trt:gbifOccurrenceId "2609409780" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B2652FFFA2FF9DDFD0FE4FCF8BFD4A#3B73DE64FFA2FF9DDECCFDDBCFF8FD15> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Bebelis_furcula_Bates_1880>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bebelis_furcula> ;
-    dwc:ID-CoL "L5SS" ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Bebelis" ;
@@ -39,33 +56,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Bates, 1880)" ;
     dwc:species "furcula" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/L5SS> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Bebelis_furcula> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Bebelis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Cerambycidae" ;
-    dwc:genus "Bebelis" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Bebelis_furcula>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bebelis> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:genus "Bebelis" ;
@@ -74,39 +69,55 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "furcula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Bebelis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Bebelis>
+    dwc:class "Insecta" ;
+    dwc:family "Cerambycidae" ;
+    dwc:genus "Bebelis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cerambycidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Cerambycidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Cerambycidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B2652FFFA2FF9DDFD0FE4FCF8BFD4A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Bebelis_furcula_Bates_1880> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4767.4.5> ;
-    dc:creator "Heffern, Daniel", "Santos-Silva, Antonio" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.3774935> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
