@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B487D35039FFC9FE23FA10FC94FD09
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4746800> ;
+    dc:creator "Kim, Sora; Heppner, John B.; Park, Kyu-Tek" ;
+    dc:title "Promalactis diazomatis Kim & Heppner & Park 2017, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B487D35039FFC9FE23FA10FC94FD09.mc.3B753C985032FFC9FF32FE68FBF6FE1B> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Promalactis_diazomatis_Kim_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2017.1353154> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.1080/00222933.2017.1353154>
-    dc:creator "Heppner, John B.", "Kim, Sora", "Park, Kyu-Tek" ;
-    dc:date "2017" ;
-    dc:title "Eight new species of the genus Promalactis (Lepidoptera: Oecophoridae) from Indonesia, with a checklist of the genus" ;
     bibo:endPage "1695" ;
     bibo:issue "29 - 30" ;
     bibo:journal "Journal of Natural History" ;
     bibo:pubDate "2017-08-15" ;
     bibo:startPage "1671" ;
     bibo:volume "51" ;
+    dc:creator "Kim, Sora; Heppner, John B.; Park, Kyu-Tek" ;
+    dc:date "2017" ;
+    dc:title "Eight new species of the genus Promalactis (Lepidoptera: Oecophoridae) from Indonesia, with a checklist of the genus" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4746800> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,16 @@
     fabio:hasRepresentation "https://zenodo.org/record/4746800/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B487D35039FFC9FE23FA10FC94FD09.mc.3B753C985032FFC9FF32FE68FBF6FE1B>
+    dwc:eventDate "1992-07-30" ;
+    dwc:locality "Parapat" ;
+    dwc:recordedBy "J. B. Heppner & E. W. Diehl & S. Kim. Paratype. One & No. & S. Kim." ;
+    dwc:typeStatus "paratype" ;
+    dwc:verbatimElevation "1400" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B487D35039FFC9FE23FA10FC94FD09#3B753C985032FFC9FF32FE68FBF6FE1B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Promalactis_diazomatis_Kim_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_diazomatis> ;
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Promalactis" ;
@@ -36,51 +54,38 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Kim" ;
+    dwc:scientificNameAuthorship "Kim", "Kim & Heppner & Park, 2017" ;
     dwc:species "diazomatis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_diazomatis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Oecophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_balikpapana_Lvovsky_2000>
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "balikpapana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_balikpapana> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Promalactis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oecophoridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_ellipsoidea_Wang_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wang, Du & Li, 2013" ;
+    dwc:species "ellipsoidea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_ellipsoidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_Meyrick_1908>
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Promalactis" ;
@@ -88,10 +93,389 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Meyrick, 1908" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_atrofasciella_Lvovsky_1988>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 1988" ;
+    dwc:species "atrofasciella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_atrofasciella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_autoclina_javanica_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 b" ;
+    dwc:species "autoclina" ;
+    dwc:subSpecies "javanica" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_autoclina_javanica> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_brevivalva_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a", "Lvovsky, 2000" ;
+    dwc:species "brevivalva" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_brevivalva> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_diehli_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a", "Lvovsky, 2000" ;
+    dwc:species "diehli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_diehli> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_dolokella_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "dolokella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_dolokella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_hamatella_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "hamatella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_hamatella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_ingenticula_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "ingenticula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_ingenticula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_irinae_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "irinae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_irinae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_jacobsoni_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "jacobsoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_jacobsoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_javana_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "javana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_javana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_kalimantana_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "kalimantana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_kalimantana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_laetusella_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "laetusella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_laetusella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_latifundus_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "latifundus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_latifundus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_lunisequa_Meyrick_1931>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyrick, 1931" ;
+    dwc:species "lunisequa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_lunisequa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_mentawirella_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "mentawirella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_mentawirella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_merangirella_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a", "Lvovsky, 2000" ;
+    dwc:species "merangirella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_merangirella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_minutispina_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "minutispina" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_minutispina> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_mooatana_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "mooatana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_mooatana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_multimaculella_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "multimaculella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_multimaculella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_nabokovi_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "nabokovi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_nabokovi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_nataliae_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a", "Lvovsky, 2000" ;
+    dwc:species "nataliae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_nataliae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_naumanni_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "naumanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_naumanni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_roesleri_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a", "Lvovsky, 2000" ;
+    dwc:species "roesleri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_roesleri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_submentawirella_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "submentawirella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_submentawirella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_sulawesiella_Lvovsky_2007>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2007" ;
+    dwc:species "sulawesiella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_sulawesiella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_sumatrana_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a", "Lvovsky, 2000" ;
+    dwc:species "sumatrana" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_sumatrana> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_trigonilancis_Kim_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kim & Heppner & Park, 2017" ;
+    dwc:species "trigonilancis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_trigonilancis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_unistriatella_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "unistriatella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_unistriatella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Promalactis_wegneri_Lvovsky_2000>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lvovsky, 2000 a" ;
+    dwc:species "wegneri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Promalactis_wegneri> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Promalactis_diazomatis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Promalactis" ;
@@ -100,12 +484,440 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "diazomatis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B487D35039FFC9FE23FA10FC94FD09>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Promalactis_diazomatis_Kim_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.1080/00222933.2017.1353154> ;
-    dc:creator "Heppner, John B.", "Kim, Sora", "Park, Kyu-Tek" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4746800> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Promalactis>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oecophoridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Oecophoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_balikpapana>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "balikpapana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_ellipsoidea>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ellipsoidea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_atrofasciella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "atrofasciella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_autoclina_javanica>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "autoclina" ;
+    dwc:subSpecies "javanica" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis_autoclina> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_autoclina>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "autoclina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_brevivalva>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brevivalva" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_diehli>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "diehli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_dolokella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dolokella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_hamatella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hamatella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_ingenticula>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ingenticula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_irinae>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "irinae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_jacobsoni>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "jacobsoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_javana>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "javana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_kalimantana>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "kalimantana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_laetusella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "laetusella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_latifundus>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latifundus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_lunisequa>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lunisequa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_mentawirella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mentawirella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_merangirella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "merangirella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_minutispina>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "minutispina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_mooatana>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "mooatana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_multimaculella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "multimaculella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_nabokovi>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nabokovi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_nataliae>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nataliae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_naumanni>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "naumanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_roesleri>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "roesleri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_submentawirella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "submentawirella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_sulawesiella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sulawesiella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_sumatrana>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sumatrana" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_trigonilancis>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "trigonilancis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_unistriatella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "unistriatella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Promalactis_wegneri>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Promalactis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wegneri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Promalactis> ;
+    a dwcFP:TaxonName .

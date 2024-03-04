@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/phytotaxa.591.1.5>
+treatment:03B487B3FFB0995B22B48405A4F560E4
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7784274>, <http://dx.doi.org/10.5281/zenodo.7784276> ;
     dc:creator "Song, Zhu-Qiu" ;
-    dc:date "2023" ;
-    dc:title "The identities of Millettia pseudoracemosa and M. pulchra var. munnarensis (Fabaceae: Millettieae) from South India" ;
+    dc:title "Millettia pulchra var. munnarensis Balan & Predeep 2017" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Millettia_pulchra_munnarensis_Balan_2017> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "63" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-03-30" ;
     bibo:startPage "55" ;
     bibo:volume "591" ;
+    dc:creator "Song, Zhu-Qiu" ;
+    dc:date "2023" ;
+    dc:title "The identities of Millettia pseudoracemosa and M. pulchra var. munnarensis (Fabaceae: Millettieae) from South India" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7784274>, <http://dx.doi.org/10.5281/zenodo.7784276> ;
     a fabio:JournalArticle .
 
@@ -33,8 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Plantae/Millettia_pulchra_munnarensis_Balan_2017>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra_munnarensis> ;
-    dwc:ID-CoL "9FDZQ" ;
     dwc:authority "Song, 2023" ;
     dwc:authorityName "Song" ;
     dwc:authorityYear "2023" ;
@@ -45,44 +52,14 @@
     dwc:order "Fabales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Balan & Predeep, 2017", "Balan & Predeep (2017: 97)" ;
     dwc:species "pulchra" ;
     dwc:variety "munnarensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/9FDZQ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra_munnarensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Fabaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Fabaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Fabales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Fabales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Fabales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Millettia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Millettia_Wight_1834>
     dwc:class "Magnoliopsida" ;
     dwc:family "Fabaceae" ;
     dwc:genus "Millettia" ;
@@ -90,10 +67,11 @@
     dwc:order "Fabales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Wight & Arnott, 1834" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Millettia> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Millettia> ;
+<http://taxon-concept.plazi.org/id/Plantae/Millettia_pseudoracemosa_Thothathri_1997>
     dwc:class "Magnoliopsida" ;
     dwc:family "Fabaceae" ;
     dwc:genus "Millettia" ;
@@ -101,11 +79,12 @@
     dwc:order "Fabales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:species "pulchra" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Thothathri & Ravikumar, 1997" ;
+    dwc:species "pseudoracemosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Millettia_pseudoracemosa> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra_munnarensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Fabaceae" ;
     dwc:genus "Millettia" ;
@@ -115,19 +94,79 @@
     dwc:rank "variety" ;
     dwc:species "pulchra" ;
     dwc:variety "munnarensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Millettia_pulchra>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Millettia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "pulchra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Millettia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Millettia>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Millettia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Fabales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Fabales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B487B3FFB0995B22B48405A4F560E4>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Millettia_pulchra_munnarensis_Balan_2017> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Song, Zhu-Qiu" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7784274>, <http://dx.doi.org/10.5281/zenodo.7784276> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Millettia_pseudoracemosa>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Fabaceae" ;
+    dwc:genus "Millettia" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Fabales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "pseudoracemosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Millettia> ;
+    a dwcFP:TaxonName .
