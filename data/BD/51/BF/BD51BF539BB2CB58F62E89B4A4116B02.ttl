@@ -1,27 +1,37 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:BD51BF539BB2CB58F62E89B4A4116B02
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Proboscoelus>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Proboscoelus_sculpturatus>' due to issues with rank ;
+    dc:creator "Morrone, Juan J." ;
+    dc:title "Nestrius Broun 1893" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nestrius_Broun_1893> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllodytes>, <http://taxon-name.plazi.org/id/Animalia/Phyllodytes_foveatus>, <http://taxon-name.plazi.org/id/Animalia/Phyllodytes_ovithorax>, <http://taxon-name.plazi.org/id/Animalia/Drymaria>, <http://taxon-name.plazi.org/id/Animalia/Drymaria_cilipes> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Plotnus_Broun_1893>, <http://taxon-concept.plazi.org/id/Animalia/Phyllodytesius_Schenkling_1929> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.273.4116> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.273.4116>
-    dc:creator "Morrone, Juan J." ;
-    dc:date "2013" ;
-    dc:title "The subtribes and genera of the tribe Listroderini (Coleoptera, Curculionidae, Cyclominae): Phylogenetic analysis with systematic and biogeographical accounts" ;
     bibo:endPage "71" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2013-02-28" ;
     bibo:startPage "15" ;
     bibo:volume "273" ;
+    dc:creator "Morrone, Juan J." ;
+    dc:date "2013" ;
+    dc:title "The subtribes and genera of the tribe Listroderini (Coleoptera, Curculionidae, Cyclominae): Phylogenetic analysis with systematic and biogeographical accounts" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Nestrius_Broun_1893>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
     dwc:LSID "BD51BF53-9BB2-CB58-F62E-89B4A4116B02" ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
@@ -31,22 +41,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Broun, 1893" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Phyllodytesius_Schenkling_1929>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllodytesius> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:genus "Phyllodytesius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Schenkling, 1929" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Plotnus_Broun_1893>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Plotnus> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Plotnus" ;
@@ -55,60 +53,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Broun, 1893" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Plotnus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nestrius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Curculionidae" ;
-    dwc:genus "Nestrius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Phyllodytesius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Phyllodytesius_Schenkling_1929>
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Phyllodytesius" ;
@@ -116,10 +64,189 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Schenkling, 1929" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Phyllodytesius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Gromilus_Blanchard_1853>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Gromilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Blanchard, 1853" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Gromilus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Falklandius_Enderlein_1907>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Falklandius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Enderlein, 1907" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Falklandius> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_bifurcus_Kuschel_1964>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuschel, 1964" ;
+    dwc:species "bifurcus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_bifurcus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_crassicornis_Broun_1914>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Broun, 1914" ;
+    dwc:species "crassicornis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_crassicornis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_hudsoni_Marshall_1953>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Marshall, 1953" ;
+    dwc:species "hudsoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_hudsoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_laqueorum_Kuschel_1964>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kuschel, 1964" ;
+    dwc:species "laqueorum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_laqueorum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_prolixus_Broun_1917>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Broun, 1917" ;
+    dwc:species "prolixus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_prolixus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_simmondsi_Broun_1921>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Broun, 1921" ;
+    dwc:species "simmondsi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_simmondsi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_sulcirostris_Broun_1917>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Broun, 1917" ;
+    dwc:species "sulcirostris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_sulcirostris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Nestrius_zenoscelis_Broun_1921>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Broun, 1921" ;
+    dwc:species "zenoscelis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Nestrius_zenoscelis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Curculionidae>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Plotnus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     dwc:class "Insecta" ;
     dwc:family "Curculionidae" ;
     dwc:genus "Plotnus" ;
@@ -127,13 +254,134 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/BD51BF539BB2CB58F62E89B4A4116B02>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Nestrius_Broun_1893> ;
-    trt:citesTaxonName <file:///workspace/rdf/data/BD/51/BF/Drymaria>, <file:///workspace/rdf/data/BD/51/BF/Drymaria_cilipes>, <file:///workspace/rdf/data/BD/51/BF/Phyllodytes>, <file:///workspace/rdf/data/BD/51/BF/Phyllodytes_foveatus>, <file:///workspace/rdf/data/BD/51/BF/Phyllodytes_ovithorax> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Phyllodytesius_Schenkling_1929>, <http://taxon-concept.plazi.org/id/Animalia/Plotnus_Broun_1893> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.273.4116> ;
-    dc:creator "Morrone, Juan J." ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Phyllodytesius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Phyllodytesius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Gromilus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Gromilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Falklandius>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Falklandius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Curculionidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_bifurcus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bifurcus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_crassicornis>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "crassicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_hudsoni>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hudsoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_laqueorum>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "laqueorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_prolixus>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "prolixus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_simmondsi>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "simmondsi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_sulcirostris>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sulcirostris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Nestrius_zenoscelis>
+    dwc:class "Insecta" ;
+    dwc:family "Curculionidae" ;
+    dwc:genus "Nestrius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "zenoscelis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nestrius> ;
+    a dwcFP:TaxonName .

@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:BD7387D9FFDB511BFF07F8D3FFB4F95A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1010181>, <http://dx.doi.org/10.5281/zenodo.1010183>, <http://dx.doi.org/10.5281/zenodo.1010185> ;
+    dc:creator "Häckel, Martin" ;
+    dc:title "Craspedophorus ruficrus Häckel 2017" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_ruficrus_Chaudoir_1861> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Epicosmus_ruficrus_Chaudoir_1861> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4330.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4330.1.1>
-    dc:creator "Häckel, Martin" ;
-    dc:date "2017" ;
-    dc:title "A contribution to the knowledge of the subfamily Panagaeinae Hope, 1838 from Africa. Part 3. Revision of the Craspedophorus strachani and C. brevicollis groups (Coleoptera: Carabidae)" ;
     bibo:endPage "67" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2017-10-11" ;
     bibo:startPage "1" ;
     bibo:volume "4330" ;
+    dc:creator "Häckel, Martin" ;
+    dc:date "2017" ;
+    dc:title "A contribution to the knowledge of the subfamily Panagaeinae Hope, 1838 from Africa. Part 3. Revision of the Craspedophorus strachani and C. brevicollis groups (Coleoptera: Carabidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1010181>, <http://dx.doi.org/10.5281/zenodo.1010183>, <http://dx.doi.org/10.5281/zenodo.1010185> ;
     a fabio:JournalArticle .
 
@@ -38,8 +48,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_ruficrus_Chaudoir_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficrus> ;
-    dwc:ID-CoL "Z5YW" ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Craspedophorus" ;
@@ -49,10 +57,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Chaudoir, 1861)" ;
     dwc:species "ruficrus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/Z5YW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficrus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Epicosmus_ruficrus_Chaudoir_1861>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epicosmus_ruficrus> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Epicosmus" ;
@@ -62,52 +71,116 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Chaudoir 1861: 340" ;
     dwc:species "ruficrus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Epicosmus_ruficrus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carabidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Carabidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Craspedophorus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_ruficrus_Chaudoir_1879>
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Craspedophorus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chaudoir 1879: 94", "Chaudoir, 1879" ;
+    dwc:species "ruficrus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/Z5YW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficrus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_ruficroides_H%C3%A4ckel_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Häckel, 2017" ;
+    dwc:species "ruficroides" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficroides> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_grossus_Hope_1842>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Hope, 1842)", "Hope, 1842" ;
+    dwc:species "grossus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_grossus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_tetrastigma_Chaudoir_1850>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Chaudoir, 1850", "(Chaudoir, 1850)" ;
+    dwc:species "tetrastigma" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_tetrastigma> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_glaber_Bates_1886>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Bates, 1886" ;
+    dwc:species "glaber" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_glaber> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_gabonicus_Thomson_1858>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "? Thomson" ;
+    dwc:species "gabonicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_gabonicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_ruficroides_thomsoni_H%C3%A4ckel_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Häckel, 2017" ;
+    dwc:species "ruficroides" ;
+    dwc:subSpecies "thomsoni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficroides_thomsoni> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_lemariei_H%C3%A4ckel_2017>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Häckel, 2017" ;
+    dwc:species "lemariei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_lemariei> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficrus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
     dwc:class "Insecta" ;
     dwc:family "Carabidae" ;
     dwc:genus "Craspedophorus" ;
@@ -116,21 +189,163 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ruficrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carabidae>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/BD7387D9FFDB511BFF07F8D3FFB4F95A>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Craspedophorus_ruficrus_Chaudoir_1861> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Epicosmus_ruficrus_Chaudoir_1861> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4330.1.1> ;
-    dc:creator "Häckel, Martin" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1010181>, <http://dx.doi.org/10.5281/zenodo.1010183>, <http://dx.doi.org/10.5281/zenodo.1010185> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Epicosmus_ruficrus>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Epicosmus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ruficrus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Epicosmus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Epicosmus>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Epicosmus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carabidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficroides>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ruficroides" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_grossus>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grossus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_tetrastigma>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "tetrastigma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_glaber>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "glaber" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_gabonicus>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "gabonicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficroides_thomsoni>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "ruficroides" ;
+    dwc:subSpecies "thomsoni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus_ruficroides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Craspedophorus_lemariei>
+    dwc:class "Insecta" ;
+    dwc:family "Carabidae" ;
+    dwc:genus "Craspedophorus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lemariei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Craspedophorus> ;
+    a dwcFP:TaxonName .

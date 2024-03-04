@@ -1,41 +1,44 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:BD832AD0AC455B039951C299F59D5CFC
+    dc:creator "Wongkamhaeng, Koraon; Nabhitabhata, Jaruwat; Towatana, Prawit" ;
+    dc:title "Corophiinae Leach 1814" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corophiinae_Leach_1814> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Paracorophium> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.505.9751> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.505.9751>
-    dc:creator "Nabhitabhata, Jaruwat", "Towatana, Prawit", "Wongkamhaeng, Koraon" ;
-    dc:date "2015" ;
-    dc:title "Corophiine amphipods of the genera Chelicorophium and Paracorophium from the lower Gulf of Thailand (Crustacea, Amphipoda, Corophiidae, Corophiinae)" ;
     bibo:endPage "50" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "35" ;
     bibo:volume "505" ;
+    dc:creator "Wongkamhaeng, Koraon; Nabhitabhata, Jaruwat; Towatana, Prawit" ;
+    dc:date "2015" ;
+    dc:title "Corophiine amphipods of the genera Chelicorophium and Paracorophium from the lower Gulf of Thailand (Crustacea, Amphipoda, Corophiidae, Corophiinae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Corophiinae_Leach_1814>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corophiinae> ;
-    dwc:ID-CoL "7ZJM8" ;
     dwc:rank "subFamily" ;
     dwc:scientificNameAuthorship "Leach, 1814" ;
     dwc:subFamily "Corophiinae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7ZJM8> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corophiinae> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Corophiinae>
+    # Warning: Could not determine parent name ;
     dwc:rank "subFamily" ;
     dwc:subFamily "Corophiinae" ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/BD832AD0AC455B039951C299F59D5CFC>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Corophiinae_Leach_1814> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/BD/83/2A/Paracorophium> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.505.9751> ;
-    dc:creator "Nabhitabhata, Jaruwat", "Towatana, Prawit", "Wongkamhaeng, Koraon" ;
-    a trt:Treatment .
-
