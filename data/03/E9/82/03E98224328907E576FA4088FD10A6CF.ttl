@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03E98224328907E576FA4088FD10A6CF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4272653>, <http://dx.doi.org/10.5281/zenodo.4272655>, <http://dx.doi.org/10.5281/zenodo.4272659>, <http://dx.doi.org/10.5281/zenodo.4272661> ;
+    dc:creator "Hoshina, Hideto" ;
+    dc:title "Leiodes ozakii Hoshina 2012, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03E98224328907E576FA4088FD10A6CF.mc.3B28396F328907E077C9410BFF59A73B> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Leiodes_ozakii_Hoshina_2012> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4272467> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.4272467>
-    dc:creator "Hoshina, Hideto" ;
-    dc:date "2012" ;
-    dc:title "Review of the tribes Sogdini and Leiodini from Japan and North Chishima Islands. Part II. Genera Hydnobius and Leiodes (Coleoptera: Leiodidae)" ;
     bibo:endPage "168" ;
     bibo:journal "Acta Entomologica Musei Nationalis Pragae" ;
     bibo:pubDate "2012-09-15" ;
     bibo:series "suppl. 1" ;
     bibo:startPage "1" ;
     bibo:volume "52" ;
+    dc:creator "Hoshina, Hideto" ;
+    dc:date "2012" ;
+    dc:title "Review of the tribes Sogdini and Leiodini from Japan and North Chishima Islands. Part II. Genera Hydnobius and Leiodes (Coleoptera: Leiodidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4272653>, <http://dx.doi.org/10.5281/zenodo.4272655>, <http://dx.doi.org/10.5281/zenodo.4272659>, <http://dx.doi.org/10.5281/zenodo.4272661> ;
     a fabio:JournalArticle .
 
@@ -42,9 +52,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4272661/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03E98224328907E576FA4088FD10A6CF.mc.3B28396F328907E077C9410BFF59A73B>
+    dwc:collectionCode "MNHAH" ;
+    dwc:eventDate "1997-05-31" ;
+    dwc:locality "Ozakishiroiwa" ;
+    dwc:recordedBy "T. Ozaki" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "2984087486" ;
+    trt:httpUri <https://treatment.plazi.org/id/03E98224328907E576FA4088FD10A6CF#3B28396F328907E077C9410BFF59A73B> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Leiodes_ozakii_Hoshina_2012>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leiodes_ozakii> ;
-    dwc:ID-CoL "6P7TF" ;
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:genus "Leiodes" ;
@@ -54,50 +72,37 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hoshina, 2012" ;
     dwc:species "ozakii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6P7TF> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leiodes_ozakii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Leiodes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Leiodes_irregularis_Portevin_1927>
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:genus "Leiodes" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Portevin, 1927" ;
+    dwc:species "irregularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leiodes_irregularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Leiodes_silesiaca_Kraatz_1852>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Leiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Kraatz, 1852)", "Kraatz, 1852" ;
+    dwc:species "silesiaca" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Leiodes_silesiaca> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Leiodes_ozakii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodes> ;
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:genus "Leiodes" ;
@@ -106,22 +111,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ozakii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leiodes>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Leiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Leiodidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Leiodidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03E98224328907E576FA4088FD10A6CF>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Leiodes_ozakii_Hoshina_2012> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.4272467> ;
-    dc:creator "Hoshina, Hideto" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4272653>, <http://dx.doi.org/10.5281/zenodo.4272655>, <http://dx.doi.org/10.5281/zenodo.4272659>, <http://dx.doi.org/10.5281/zenodo.4272661> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leiodes_irregularis>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Leiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "irregularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Leiodes_silesiaca>
+    dwc:class "Insecta" ;
+    dwc:family "Leiodidae" ;
+    dwc:genus "Leiodes" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "silesiaca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Leiodes> ;
+    a dwcFP:TaxonName .
