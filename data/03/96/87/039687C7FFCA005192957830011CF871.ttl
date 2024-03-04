@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039687C7FFCA005192957830011CF871
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6340571> ;
+    dc:creator "Liu, Yingqi; Pluot-Sigwalt, Dominique; Guilbert, Eric; Cai, Wanzhi" ;
+    dc:title "Reduvius carinatus Fabricius 1798" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/039687C7FFCA005192957830011CF871.mc.3B573C8CFFC1005192957913001FF90A> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Reduvius_carinatus_Fabricius_1798> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sirthenea_stria_carinata_Fabricius_1798> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5110.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5110.1.1>
-    dc:creator "Cai, Wanzhi", "Guilbert, Eric", "Liu, Yingqi", "Pluot-Sigwalt, Dominique" ;
-    dc:date "2022" ;
-    dc:title "Catalogue of type specimens of Peiratinae (Hemiptera: Heteroptera: Reduviidae) preserved in the Muséum National d’Histoire Naturelle, Paris" ;
     bibo:endPage "85" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-03-09" ;
     bibo:startPage "1" ;
     bibo:volume "5110" ;
+    dc:creator "Liu, Yingqi; Pluot-Sigwalt, Dominique; Guilbert, Eric; Cai, Wanzhi" ;
+    dc:date "2022" ;
+    dc:title "Catalogue of type specimens of Peiratinae (Hemiptera: Heteroptera: Reduviidae) preserved in the Muséum National d’Histoire Naturelle, Paris" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6340571> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/6340571/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/039687C7FFCA005192957830011CF871.mc.3B573C8CFFC1005192957913001FF90A>
+    dwc:locality "Carolina" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3874741457" ;
+    trt:httpUri <https://treatment.plazi.org/id/039687C7FFCA005192957830011CF871#3B573C8CFFC1005192957913001FF90A> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Reduvius_carinatus_Fabricius_1798>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reduvius_carinatus> ;
-    dwc:ID-CoL "4RPFM" ;
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
     dwc:genus "Reduvius" ;
@@ -39,11 +55,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Fabricius, 1798" ;
     dwc:species "carinatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4RPFM> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Reduvius_carinatus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Sirthenea_stria_carinata_Fabricius_1798>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria_carinata> ;
-    dwc:ID-CoL "7KRRL" ;
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
     dwc:genus "Sirthenea" ;
@@ -51,63 +67,79 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "(Fabricius, 1798)" ;
+    dwc:scientificNameAuthorship "Fabricius, 1798", "(Fabricius, 1798)" ;
     dwc:species "stria" ;
     dwc:subSpecies "carinata" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4RPFM> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria_carinata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Reduviidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pseudolestomerus_gracilis_Villiers_1964>
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
+    dwc:genus "Pseudolestomerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Villiers, 1964" ;
+    dwc:species "gracilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pseudolestomerus_gracilis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Reduvius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rapites_elongatum_Villiers_1948>
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
-    dwc:genus "Reduvius" ;
+    dwc:genus "Rapites" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Villiers, 1948" ;
+    dwc:species "elongatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rapites_elongatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rasahus_grandis_Fallou_1889>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fallou, 1889" ;
+    dwc:species "grandis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rasahus_grandis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rasahus_setosus_Berenger_2007>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Berenger, Gil-Santana, Pluot-Sigwalt & Blanchet, 2007" ;
+    dwc:species "setosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rasahus_setosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rasahus_sipolisii_Fallou_1887>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Fallou, 1887" ;
+    dwc:species "sipolisii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rasahus_sipolisii> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Reduvius_carinatus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduvius> ;
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
     dwc:genus "Reduvius" ;
@@ -116,33 +148,60 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "carinatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduvius> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Sirthenea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
+<http://taxon-name.plazi.org/id/Animalia/Reduvius>
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
-    dwc:genus "Sirthenea" ;
+    dwc:genus "Reduvius" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sirthenea> ;
+<http://taxon-name.plazi.org/id/Animalia/Reduviidae>
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
-    dwc:genus "Sirthenea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "stria" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria_carinata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria> ;
     dwc:class "Insecta" ;
     dwc:family "Reduviidae" ;
     dwc:genus "Sirthenea" ;
@@ -152,13 +211,121 @@
     dwc:rank "subSpecies" ;
     dwc:species "stria" ;
     dwc:subSpecies "carinata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039687C7FFCA005192957830011CF871>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Reduvius_carinatus_Fabricius_1798> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Sirthenea_stria_carinata_Fabricius_1798> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5110.1.1> ;
-    dc:creator "Cai, Wanzhi", "Guilbert, Eric", "Liu, Yingqi", "Pluot-Sigwalt, Dominique" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6340571> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Sirthenea_stria>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Sirthenea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Sirthenea> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Sirthenea>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Sirthenea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudolestomerus_gracilis>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Pseudolestomerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "gracilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pseudolestomerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pseudolestomerus>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Pseudolestomerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rapites_elongatum>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rapites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "elongatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rapites> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rapites>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rapites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rasahus_grandis>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "grandis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rasahus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rasahus>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Reduviidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rasahus_setosus>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "setosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rasahus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rasahus_sipolisii>
+    dwc:class "Insecta" ;
+    dwc:family "Reduviidae" ;
+    dwc:genus "Rasahus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sipolisii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rasahus> ;
+    a dwcFP:TaxonName .
