@@ -1,42 +1,53 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:572D1CF69F35CA3D992BDCB0350BECEF
+    dc:creator "Gkelis, Spyros; Ourailidis, Iordanis; Panou, Manthos; Pappas, Nikos" ;
+    dc:title "Lyngbya fm. minor Elenkin 1949" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lyngbya_minor_Elenkin_1949> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Bacteria/Lyngbya_aerugineo-coerulea_minor> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/BDJ.4.e10084> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/BDJ.4.e10084>
-    dc:creator "Gkelis, Spyros", "Ourailidis, Iordanis", "Panou, Manthos", "Pappas, Nikos" ;
-    dc:date "2016" ;
-    dc:title "Cyanobacteria of Greece: an annotated checklist" ;
     bibo:endPage "10084" ;
     bibo:journal "Biodiversity Data Journal" ;
     bibo:startPage "10084" ;
     bibo:volume "4" ;
+    dc:creator "Gkelis, Spyros; Ourailidis, Iordanis; Panou, Manthos; Pappas, Nikos" ;
+    dc:date "2016" ;
+    dc:title "Cyanobacteria of Greece: an annotated checklist" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/_Lyngbya_Elenkin_1949>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/_Lyngbya> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lyngbya_minor_Elenkin_1949>
     dwc:form "minor" ;
     dwc:infraspecific-rank "f." ;
     dwc:rank "form" ;
     dwc:scientificNameAuthorship "Elenkin, 1949" ;
     dwc:species "Lyngbya" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lyngbya_minor> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/_Lyngbya>
+<http://taxon-name.plazi.org/id/Animalia/Lyngbya_minor>
+    # Warning: Could not determine parent name ;
     dwc:form "minor" ;
     dwc:rank "form" ;
+    dwc:species "Lyngbya" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lyngbya> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/572D1CF69F35CA3D992BDCB0350BECEF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/_Lyngbya_Elenkin_1949> ;
-    trt:citesTaxonName <file:///home/runner/work/treatments-xml/treatments-xml/rdf/data/57/2D/1C/Lyngbya_aerugineo-coerulea> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/BDJ.4.e10084> ;
-    dc:creator "Gkelis, Spyros", "Ourailidis, Iordanis", "Panou, Manthos", "Pappas, Nikos" ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Lyngbya>
+    dwc:rank "species" ;
+    dwc:species "Lyngbya" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lyngbya_minor> ;
+    a dwcFP:TaxonName .
