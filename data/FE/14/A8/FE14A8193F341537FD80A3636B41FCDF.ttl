@@ -1,40 +1,48 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FE14A8193F341537FD80A3636B41FCDF
+    dc:creator "Huang, Shih-I; Lin, Ming-Hui" ;
+    dc:title "Verticosta migrans Huang & Lin 2020, n. comb." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Verticosta_migrans_Dall_1881> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Trichotropis_migrans_Dall_1881>, <http://taxon-concept.plazi.org/id/Animalia/Mesostoma_migrans_Dall_1881> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.5918620> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.5918620>
-    dc:creator "Huang, Shih-I", "Lin, Ming-Hui" ;
-    dc:date "2020" ;
-    dc:title "Verticosta n. gen. from Taiwan, Philippine, Gulf of Oman and North Atlantic Ocean (GASTROPODA, CAPULIDAE)" ;
     bibo:endPage "24" ;
     bibo:journal "Bulletin of Malacology, Taiwan" ;
     bibo:pubDate "2020-01-04" ;
     bibo:startPage "13" ;
     bibo:volume "43" ;
+    dc:creator "Huang, Shih-I; Lin, Ming-Hui" ;
+    dc:date "2020" ;
+    dc:title "Verticosta n. gen. from Taiwan, Philippine, Gulf of Oman and North Atlantic Ocean (GASTROPODA, CAPULIDAE)" ;
     a fabio:JournalArticle .
 
-<http://taxon-concept.plazi.org/id/Animalia/Mesostoma_migrans_Dall_1881>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mesostoma_migrans> ;
-    dwc:class "Rhabditophora" ;
-    dwc:family "Typhloplanidae" ;
-    dwc:genus "Mesostoma" ;
+<http://taxon-concept.plazi.org/id/Animalia/Verticosta_migrans_Dall_1881>
+    dwc:class "Gastropoda" ;
+    dwc:family "Capulidae" ;
+    dwc:genus "Verticosta" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Rhabdocoela" ;
-    dwc:phylum "Platyhelminthes" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Dall, 1881)" ;
     dwc:species "migrans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Verticosta_migrans> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Trichotropis_migrans_Dall_1881>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichotropis_migrans> ;
     dwc:class "Gastropoda" ;
     dwc:family "Capulidae" ;
     dwc:genus "Trichotropis" ;
@@ -44,10 +52,23 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Dall, 1881" ;
     dwc:species "migrans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichotropis_migrans> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Verticosta_migrans_Dall_1881>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Verticosta_migrans> ;
+<http://taxon-concept.plazi.org/id/Animalia/Mesostoma_migrans_Dall_1881>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Typhloplanidae" ;
+    dwc:genus "Mesostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Dall, 1881)" ;
+    dwc:species "migrans" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Mesostoma_migrans> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Verticosta_migrans>
     dwc:class "Gastropoda" ;
     dwc:family "Capulidae" ;
     dwc:genus "Verticosta" ;
@@ -55,51 +76,11 @@
     dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Dall, 1881)" ;
     dwc:species "migrans" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Capulidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
-    dwc:class "Gastropoda" ;
-    dwc:family "Capulidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Littorinimorpha" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Littorinimorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
-    dwc:class "Gastropoda" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Littorinimorpha" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mollusca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Mollusca" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Verticosta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Verticosta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capulidae> ;
     dwc:class "Gastropoda" ;
     dwc:family "Capulidae" ;
     dwc:genus "Verticosta" ;
@@ -107,24 +88,124 @@
     dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capulidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Verticosta_migrans>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Verticosta> ;
+<http://taxon-name.plazi.org/id/Animalia/Capulidae>
     dwc:class "Gastropoda" ;
     dwc:family "Capulidae" ;
-    dwc:genus "Verticosta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Littorinimorpha> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Littorinimorpha>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Gastropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Gastropoda>
+    dwc:class "Gastropoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichotropis_migrans>
+    dwc:class "Gastropoda" ;
+    dwc:family "Capulidae" ;
+    dwc:genus "Trichotropis" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Littorinimorpha" ;
     dwc:phylum "Mollusca" ;
     dwc:rank "species" ;
     dwc:species "migrans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Trichotropis> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FE14A8193F341537FD80A3636B41FCDF>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Verticosta_migrans_Dall_1881> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Mesostoma_migrans_Dall_1881>, <http://taxon-concept.plazi.org/id/Animalia/Trichotropis_migrans_Dall_1881> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.5918620> ;
-    dc:creator "Huang, Shih-I", "Lin, Ming-Hui" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Trichotropis>
+    dwc:class "Gastropoda" ;
+    dwc:family "Capulidae" ;
+    dwc:genus "Trichotropis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Littorinimorpha" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Capulidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mesostoma_migrans>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Typhloplanidae" ;
+    dwc:genus "Mesostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "species" ;
+    dwc:species "migrans" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mesostoma> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mesostoma>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Typhloplanidae" ;
+    dwc:genus "Mesostoma" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Typhloplanidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Typhloplanidae>
+    dwc:class "Rhabditophora" ;
+    dwc:family "Typhloplanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabdocoela> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabdocoela>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Rhabdocoela" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhabditophora> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhabditophora>
+    dwc:class "Rhabditophora" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Platyhelminthes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Platyhelminthes>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Platyhelminthes" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .

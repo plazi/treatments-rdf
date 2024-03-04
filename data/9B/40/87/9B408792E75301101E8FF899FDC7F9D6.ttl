@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:9B408792E75301101E8FF899FDC7F9D6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5164443>, <http://dx.doi.org/10.5281/zenodo.5164453>, <http://dx.doi.org/10.5281/zenodo.5164459>, <http://dx.doi.org/10.5281/zenodo.5164465> ;
+    dc:creator "Hamilton, R. W." ;
+    dc:title "Temnocerus potosi Hamilton 2010, new species" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/9B408792E75301101E8FF899FDC7F9D6.mc.A3813CD9E75201101FE7FE9EFCADFED6> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Temnocerus_potosi_Hamilton_2010> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5164439> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5164439>
-    dc:creator "Hamilton, R. W." ;
-    dc:date "2010" ;
-    dc:title "Central American Temnocerus Thunberg, 1815 (Coleoptera: Rhynchitidae)" ;
     bibo:endPage "42" ;
     bibo:issue "128" ;
     bibo:journal "Insecta Mundi" ;
     bibo:pubDate "2010-06-18" ;
     bibo:startPage "1" ;
     bibo:volume "2010" ;
+    dc:creator "Hamilton, R. W." ;
+    dc:date "2010" ;
+    dc:title "Central American Temnocerus Thunberg, 1815 (Coleoptera: Rhynchitidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5164443>, <http://dx.doi.org/10.5281/zenodo.5164453>, <http://dx.doi.org/10.5281/zenodo.5164459>, <http://dx.doi.org/10.5281/zenodo.5164465> ;
     a fabio:JournalArticle .
 
@@ -42,8 +52,15 @@
     fabio:hasRepresentation "https://zenodo.org/record/5164465/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/9B408792E75301101E8FF899FDC7F9D6.mc.A3813CD9E75201101FE7FE9EFCADFED6>
+    dwc:collectionCode "CMNC" ;
+    dwc:locality "Tamazunchale" ;
+    dwc:recordedBy "M. Kaulbars" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/9B408792E75301101E8FF899FDC7F9D6#A3813CD9E75201101FE7FE9EFCADFED6> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Temnocerus_potosi_Hamilton_2010>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Temnocerus_potosi> ;
     dwc:class "Insecta" ;
     dwc:family "Attelabidae" ;
     dwc:genus "Temnocerus" ;
@@ -53,60 +70,35 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Hamilton, 2010" ;
     dwc:species "potosi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Temnocerus_potosi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Attelabidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Attelabidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Temnocerus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Attelabidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Temnocerus_regularis_Hamilton_2010>
     dwc:class "Insecta" ;
     dwc:family "Attelabidae" ;
     dwc:genus "Temnocerus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "regularis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Temnocerus_regularis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Temnocerus_pseudaeratus_Hamilton_2010>
+    dwc:class "Insecta" ;
+    dwc:family "Attelabidae" ;
+    dwc:genus "Temnocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hamilton, 2010" ;
+    dwc:species "pseudaeratus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Temnocerus_pseudaeratus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Temnocerus_potosi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Temnocerus> ;
     dwc:class "Insecta" ;
     dwc:family "Attelabidae" ;
     dwc:genus "Temnocerus" ;
@@ -115,12 +107,79 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "potosi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Temnocerus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/9B408792E75301101E8FF899FDC7F9D6>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Temnocerus_potosi_Hamilton_2010> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5164439> ;
-    dc:creator "Hamilton, R. W." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5164443>, <http://dx.doi.org/10.5281/zenodo.5164453>, <http://dx.doi.org/10.5281/zenodo.5164459>, <http://dx.doi.org/10.5281/zenodo.5164465> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Temnocerus>
+    dwc:class "Insecta" ;
+    dwc:family "Attelabidae" ;
+    dwc:genus "Temnocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Attelabidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Attelabidae>
+    dwc:class "Insecta" ;
+    dwc:family "Attelabidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Temnocerus_regularis>
+    dwc:class "Insecta" ;
+    dwc:family "Attelabidae" ;
+    dwc:genus "Temnocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "regularis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Temnocerus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Temnocerus_pseudaeratus>
+    dwc:class "Insecta" ;
+    dwc:family "Attelabidae" ;
+    dwc:genus "Temnocerus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pseudaeratus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Temnocerus> ;
+    a dwcFP:TaxonName .
