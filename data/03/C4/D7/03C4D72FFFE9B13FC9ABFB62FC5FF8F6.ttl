@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C4D72FFFE9B13FC9ABFB62FC5FF8F6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8308473> ;
+    dc:creator "Smith, Gideon F." ;
+    dc:title "Kalanchoe beharensis Drake del Castillo 1903" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C4D72FFFE9B13FC9ABFB62FC5FF8F6.mc.3B056C64FFE9B13EC99EF9AEFC37F9D7> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_beharensis_Castillo_1903> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_vantieghemii_Hamet_1906> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.612.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/phytotaxa.612.1.1>
-    dc:creator "Smith, Gideon F." ;
-    dc:date "2023" ;
-    dc:title "Taxonomy and nomenclature of Kalanchoe beharensis (Crassulaceae subfam. Kalanchooideae), a variable, arborescent species from Madagascar, with reference to its horticultural derivatives" ;
     bibo:endPage "32" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-09-01" ;
     bibo:startPage "1" ;
     bibo:volume "612" ;
+    dc:creator "Smith, Gideon F." ;
+    dc:date "2023" ;
+    dc:title "Taxonomy and nomenclature of Kalanchoe beharensis (Crassulaceae subfam. Kalanchooideae), a variable, arborescent species from Madagascar, with reference to its horticultural derivatives" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8308473> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,18 @@
     fabio:hasRepresentation "https://zenodo.org/record/8308473/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03C4D72FFFE9B13FC9ABFB62FC5FF8F6.mc.3B056C64FFE9B13EC99EF9AEFC37F9D7>
+    dwc:catalogNumber "P00374194, P00374195" ;
+    dwc:collectionCode "P" ;
+    dwc:eventDate "1901-07-08" ;
+    dwc:locality "July" ;
+    dwc:recordedBy "G. Grandidier" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "4404426301" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C4D72FFFE9B13FC9ABFB62FC5FF8F6#3B056C64FFE9B13EC99EF9AEFC37F9D7> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_beharensis_Castillo_1903>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_beharensis> ;
-    dwc:ID-CoL "577G" ;
     dwc:ID-ENA "23012" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Crassulaceae" ;
@@ -40,11 +60,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Drake del Castillo" ;
     dwc:species "beharensis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/577G> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_beharensis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_vantieghemii_Hamet_1906>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_vantieghemii> ;
-    dwc:ID-CoL "3QYQJ" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Crassulaceae" ;
     dwc:genus "Kalanchoe" ;
@@ -52,27 +72,26 @@
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Hamet (1906: 110)" ;
+    dwc:scientificNameAuthorship "Hamet (1906: 110)", "Hamet, 1906" ;
     dwc:species "vantieghemii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/577G> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_vantieghemii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Crassulaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifragales> ;
+<http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_laxiflora_Baker_1887>
     dwc:class "Magnoliopsida" ;
     dwc:family "Crassulaceae" ;
+    dwc:genus "Kalanchoe" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baker (1887: 472)" ;
+    dwc:species "laxiflora" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_laxiflora> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae/Kalanchoe>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Crassulaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_Smith_2022>
     dwc:class "Magnoliopsida" ;
     dwc:family "Crassulaceae" ;
     dwc:genus "Kalanchoe" ;
@@ -80,10 +99,26 @@
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Smith, 2022" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/577G> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_beharensis_subnuda_Jacobsen_1970>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Crassulaceae" ;
+    dwc:genus "Kalanchoe" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Jacobsen (1970: 250)" ;
+    dwc:species "beharensis" ;
+    dwc:variety "subnuda" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_beharensis_subnuda> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_beharensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Crassulaceae" ;
     dwc:genus "Kalanchoe" ;
@@ -92,10 +127,60 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "beharensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Kalanchoe>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Crassulaceae" ;
+    dwc:genus "Kalanchoe" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Crassulaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Crassulaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Crassulaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Saxifragales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Saxifragales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_vantieghemii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Crassulaceae" ;
     dwc:genus "Kalanchoe" ;
@@ -104,48 +189,30 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "vantieghemii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+<http://taxon-name.plazi.org/id/Plantae/Kalanchoe_laxiflora>
     dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Saxifragales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
+    dwc:family "Crassulaceae" ;
+    dwc:genus "Kalanchoe" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:species "laxiflora" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+<http://taxon-name.plazi.org/id/Plantae/Kalanchoe_beharensis_subnuda>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Crassulaceae" ;
+    dwc:genus "Kalanchoe" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Saxifragales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
+    dwc:rank "variety" ;
+    dwc:species "beharensis" ;
+    dwc:variety "subnuda" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Kalanchoe_beharensis> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03C4D72FFFE9B13FC9ABFB62FC5FF8F6>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_beharensis_Castillo_1903> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Kalanchoe_vantieghemii_Hamet_1906> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/phytotaxa.612.1.1> ;
-    dc:creator "Smith, Gideon F." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8308473> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03C4D72FFFE9B13FC9ABFB62FC5FF8F6/P00374194%2C%20P00374195> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/03C4D72FFFE9B13FC9ABFB62FC5FF8F6/P00374194%2C%20P00374195>
-    trt:gbifOccurrenceId "4404426301" ;
-    dwc:catalogNumber "P00374194, P00374195" ;
-    dwc:collectionCode "P" ;
-    dwc:eventDate "1901-07-08" ;
-    dwc:locality "July" ;
-    dwc:recordedBy "G. Grandidier" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
-
