@@ -1,48 +1,52 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+treatment:4A7F455C2731D1063CF82E0FB61F8FA8
+    dc:creator "van Nieukerken, Erik J.; Geertsema, Henk" ;
+    dc:title "Holocacista varii Mey 2011, comb. n." ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Antispilina_varii>, <http://taxon-name.plazi.org/id/Plantae/Pelargonium_cucullatum> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Holocacista_varii_Mey_2011> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.507.9536> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.507.9536>
-    dc:creator "Geertsema, Henk", "van Nieukerken, Erik J." ;
-    dc:date "2015" ;
-    dc:title "A new leafminer on grapevine and Rhoicissus (Vitaceae) in South Africa within an expanded generic concept of Holocacista (Insecta, Lepidoptera, Heliozelidae)" ;
     bibo:endPage "97" ;
     bibo:journal "ZooKeys" ;
     bibo:startPage "41" ;
     bibo:volume "507" ;
+    dc:creator "van Nieukerken, Erik J.; Geertsema, Henk" ;
+    dc:date "2015" ;
+    dc:title "A new leafminer on grapevine and Rhoicissus (Vitaceae) in South Africa within an expanded generic concept of Holocacista (Insecta, Lepidoptera, Heliozelidae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Holocacista_varii_Mey_2011>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Holocacista_varii> ;
     dwc:genus "Holocacista" ;
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Mey, 2011" ;
     dwc:species "varii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Holocacista_varii> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Holocacista_varii>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Holocacista" ;
+    dwc:rank "species" ;
+    dwc:species "varii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holocacista> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Holocacista>
     dwc:genus "Holocacista" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holocacista_varii> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Holocacista_varii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holocacista> ;
-    dwc:genus "Holocacista" ;
-    dwc:rank "species" ;
-    dwc:species "varii" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/4A7F455C2731D1063CF82E0FB61F8FA8>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/4A/7F/45/Antispilina_varii>, <file:///workdir/tmprdf/data/4A/7F/45/Pelargonium_cucullatum> ;
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Holocacista_varii_Mey_2011> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.507.9536> ;
-    dc:creator "Geertsema, Henk", "van Nieukerken, Erik J." ;
-    a trt:Treatment .
-
