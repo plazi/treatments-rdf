@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B7C5020941FFAEE8FA7A47FB4DFB06
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7260579> ;
+    dc:creator "Schawaller, Wolfgang; Bellersheim, Aron" ;
+    dc:title "Dichillus grimmi Schawaller & Bellersheim 2022, sp. n." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B7C5020941FFAEE8FA7A47FB4DFB06.mc.3B767E490941FFACE9217AB4FD3AF818> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dichillus_grimmi_Schawaller_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5200.3.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5200.3.8>
-    dc:creator "Bellersheim, Aron", "Schawaller, Wolfgang" ;
-    dc:date "2022" ;
-    dc:title "Two new species of the genus Dichillus Jacquelin du Val, 1861 (Coleoptera: Tenebrionidae: Stenosini) from Thailand" ;
     bibo:endPage "300" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-10-28" ;
     bibo:startPage "296" ;
     bibo:volume "5200" ;
+    dc:creator "Schawaller, Wolfgang; Bellersheim, Aron" ;
+    dc:date "2022" ;
+    dc:title "Two new species of the genus Dichillus Jacquelin du Val, 1861 (Coleoptera: Tenebrionidae: Stenosini) from Thailand" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7260579> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/7260579/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B7C5020941FFAEE8FA7A47FB4DFB06.mc.3B767E490941FFACE9217AB4FD3AF818>
+    dwc:collectionCode "R, NMPC" ;
+    dwc:eventDate "2016-05-11" ;
+    dwc:locality "Sam Roi Yot" ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "10" ;
+    dwc:verbatimLatitude "12.266666" ;
+    dwc:verbatimLongitude "99.933334" ;
+    trt:gbifOccurrenceId "3948315309" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B7C5020941FFAEE8FA7A47FB4DFB06#3B767E490941FFACE9217AB4FD3AF818> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Dichillus_grimmi_Schawaller_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichillus_grimmi> ;
     dwc:class "Insecta" ;
     dwc:family "Tenebrionidae" ;
     dwc:genus "Dichillus" ;
@@ -38,31 +59,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Schawaller & Bellersheim, 2022" ;
     dwc:species "grimmi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichillus_grimmi> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dichillus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tenebrionidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dichillus_Val_1861>
     dwc:class "Insecta" ;
     dwc:family "Tenebrionidae" ;
     dwc:genus "Dichillus" ;
@@ -70,10 +70,50 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Jacquelin du Val, 1861" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichillus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichillus_siamicus_Schawaller_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Schawaller & Bellersheim, 2022" ;
+    dwc:species "siamicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichillus_siamicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichillus_chujoi_Kaszab_1966>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kaszab, 1966" ;
+    dwc:species "chujoi" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichillus_chujoi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dichillus_longicollis_Kaszab_1981>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kaszab, 1981" ;
+    dwc:species "longicollis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dichillus_longicollis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dichillus_grimmi>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichillus> ;
     dwc:class "Insecta" ;
     dwc:family "Tenebrionidae" ;
     dwc:genus "Dichillus" ;
@@ -82,30 +122,91 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "grimmi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichillus> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Dichillus>
     dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tenebrionidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tenebrionidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     dwc:class "Insecta" ;
     dwc:family "Tenebrionidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B7C5020941FFAEE8FA7A47FB4DFB06>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dichillus_grimmi_Schawaller_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5200.3.8> ;
-    dc:creator "Bellersheim, Aron", "Schawaller, Wolfgang" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7260579> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichillus_siamicus>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "siamicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichillus_chujoi>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "chujoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichillus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dichillus_longicollis>
+    dwc:class "Insecta" ;
+    dwc:family "Tenebrionidae" ;
+    dwc:genus "Dichillus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "longicollis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dichillus> ;
+    a dwcFP:TaxonName .
