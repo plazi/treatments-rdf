@@ -1,17 +1,41 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:45D58BD599BC71C958AF5AE446A26E52
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Barbarea vulgaris W. T. Aiton 1872" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/45D58BD599BC71C958AF5AE446A26E52.mc.24FD10F29B9A99EA38646D887D867B1D> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Barbarea_vulgaris_Aiton_1872> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Erysimum_barbarea_Linnaeus_1753> ;
+    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
+    a trt:Treatment .
+
+<https://doi.org/10.5281/zenodo.291971>
+    bibo:endPage "515" ;
+    bibo:startPage "490" ;
+    dc:creator "Jarvis, Charlie" ;
+    dc:date "2007" ;
+    dc:title "Chapter 7: Linnaean Plant Names and their Types (part E)" ;
+    a fabio:BookSection .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/45D58BD599BC71C958AF5AE446A26E52.mc.24FD10F29B9A99EA38646D887D867B1D>
+    dwc:catalogNumber "837.2" ;
+    dwc:collectionCode "LINN" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2611986370" ;
+    trt:httpUri <https://treatment.plazi.org/id/45D58BD599BC71C958AF5AE446A26E52#24FD10F29B9A99EA38646D887D867B1D> ;
+    a dwc:MaterialCitation .
 
 <http://taxon-concept.plazi.org/id/Plantae/Barbarea_vulgaris_Aiton_1872>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Barbarea_vulgaris> ;
-    dwc:ID-CoL "KM6S" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:genus "Barbarea" ;
@@ -21,11 +45,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "W. T. Aiton" ;
     dwc:species "vulgaris" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/KM6S> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Barbarea_vulgaris> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Erysimum_barbarea_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Erysimum_barbarea> ;
-    dwc:ID-CoL "37YN" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:genus "Erysimum" ;
@@ -35,26 +59,22 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "barbarea" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/KM6S> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Erysimum_barbarea> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Barbarea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Brassicaceae_G.T.Burnett_1835>
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
-    dwc:genus "Barbarea" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "G.T.Burnett, 1835" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Barbarea_vulgaris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Barbarea> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:genus "Barbarea" ;
@@ -63,40 +83,60 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "vulgaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Barbarea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Barbarea>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Barbarea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Brassicaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicales> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Brassicales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     dwc:class "Magnoliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Erysimum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
     dwc:class "Magnoliopsida" ;
-    dwc:family "Brassicaceae" ;
-    dwc:genus "Erysimum" ;
     dwc:kingdom "Plantae" ;
-    dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Erysimum_barbarea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Erysimum> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Brassicaceae" ;
     dwc:genus "Erysimum" ;
@@ -105,43 +145,16 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "barbarea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Erysimum> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+<http://taxon-name.plazi.org/id/Plantae/Erysimum>
     dwc:class "Magnoliopsida" ;
+    dwc:family "Brassicaceae" ;
+    dwc:genus "Erysimum" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Brassicales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Brassicaceae> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/45D58BD599BC71C958AF5AE446A26E52>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Barbarea_vulgaris_Aiton_1872> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Erysimum_barbarea_Linnaeus_1753> ;
-    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/45D58BD599BC71C958AF5AE446A26E52/837.2> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/45D58BD599BC71C958AF5AE446A26E52/837.2>
-    trt:gbifOccurrenceId "2611986370" ;
-    dwc:catalogNumber "837.2" ;
-    dwc:collectionCode "LINN" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
-
-<https://doi.org/10.5281/zenodo.291971>
-    dc:creator "Jarvis, Charlie" ;
-    dc:date "2007" ;
-    dc:title "Chapter 7: Linnaean Plant Names and their Types (part E)" ;
-    bibo:endPage "515" ;
-    bibo:startPage "490" ;
-    a fabio:BookSection .
-
