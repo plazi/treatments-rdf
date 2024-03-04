@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:039F6F02547CD333A485B038FE68FA8D
+    cito:cites <http://dx.doi.org/10.5281/zenodo.283666>, <http://dx.doi.org/10.5281/zenodo.283667>, <http://dx.doi.org/10.5281/zenodo.283668>, <http://dx.doi.org/10.5281/zenodo.283669> ;
+    dc:creator "Abraham, Robin Kurian; Pyron, R. Alexander; Zachariah, Arun; Zachariah, Anil" ;
+    dc:title "Mercurana myristicapalustris" ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3640.2.3> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Mercurana_myristicapalustris> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3640.2.3>
-    dc:creator "Abraham, Robin Kurian", "Pyron, R. Alexander", "Zachariah, Anil", "Zachariah, Arun" ;
-    dc:date "2013" ;
-    dc:title "Two novel genera and one new species of treefrog (Anura: Rhacophoridae) highlight cryptic diversity in the Western Ghats of India" ;
     bibo:endPage "189" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "177" ;
     bibo:volume "3640" ;
+    dc:creator "Abraham, Robin Kurian; Pyron, R. Alexander; Zachariah, Arun; Zachariah, Anil" ;
+    dc:date "2013" ;
+    dc:title "Two novel genera and one new species of treefrog (Anura: Rhacophoridae) highlight cryptic diversity in the Western Ghats of India" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.283666>, <http://dx.doi.org/10.5281/zenodo.283667>, <http://dx.doi.org/10.5281/zenodo.283668>, <http://dx.doi.org/10.5281/zenodo.283669> ;
     a fabio:JournalArticle .
 
@@ -41,48 +50,19 @@
     fabio:hasRepresentation "https://zenodo.org/record/283669/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amphibia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-concept.plazi.org/id/Animalia/Rana_Linnaeus_1758>
     dwc:class "Amphibia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Anura>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
-    dwc:class "Amphibia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Anura" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Mercurana>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhacophoridae> ;
-    dwc:class "Amphibia" ;
-    dwc:family "Rhacophoridae" ;
-    dwc:genus "Mercurana" ;
+    dwc:family "Ranidae" ;
+    dwc:genus "Rana" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rana> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Mercurana_myristicapalustris>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mercurana> ;
     dwc:class "Amphibia" ;
     dwc:family "Rhacophoridae" ;
     dwc:genus "Mercurana" ;
@@ -91,22 +71,76 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "myristicapalustris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mercurana> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mercurana>
+    dwc:class "Amphibia" ;
+    dwc:family "Rhacophoridae" ;
+    dwc:genus "Mercurana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhacophoridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhacophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     dwc:class "Amphibia" ;
     dwc:family "Rhacophoridae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Anura" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/039F6F02547CD333A485B038FE68FA8D>
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3640.2.3> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Mercurana_myristicapalustris> ;
-    dc:creator "Abraham, Robin Kurian", "Pyron, R. Alexander", "Zachariah, Anil", "Zachariah, Arun" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.283666>, <http://dx.doi.org/10.5281/zenodo.283667>, <http://dx.doi.org/10.5281/zenodo.283668>, <http://dx.doi.org/10.5281/zenodo.283669> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Anura>
+    dwc:class "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphibia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Amphibia>
+    dwc:class "Amphibia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rana>
+    dwc:class "Amphibia" ;
+    dwc:family "Ranidae" ;
+    dwc:genus "Rana" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ranidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ranidae>
+    dwc:class "Amphibia" ;
+    dwc:family "Ranidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Anura" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anura> ;
+    a dwcFP:TaxonName .
