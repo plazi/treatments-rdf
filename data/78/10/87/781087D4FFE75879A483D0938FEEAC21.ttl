@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: Failed to output a material citation, could not create identifier
 
-<http://dx.doi.org/10.11646/zootaxa.5258.4.2>
-    dc:creator "Wang, Shuxia", "Zhang, Li", "Zhu, Xiaoju" ;
-    dc:date "2023" ;
-    dc:title "New species and newly recorded species of the genus Agonopterix Hübner, [1825] (Lepidoptera: Depressariidae) from China" ;
+treatment:781087D4FFE75879A483D0938FEEAC21
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7784370>, <http://dx.doi.org/10.5281/zenodo.7784382>, <http://dx.doi.org/10.5281/zenodo.7784388> ;
+    dc:creator "Zhu, Xiaoju; Zhang, Li; Wang, Shuxia" ;
+    dc:title "Agonopterix abditella Hannemann 1959" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Agonopterix_abditella_Hannemann_1959> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "404" ;
     bibo:issue "4" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-03-30" ;
     bibo:startPage "379" ;
     bibo:volume "5258" ;
+    dc:creator "Zhu, Xiaoju; Zhang, Li; Wang, Shuxia" ;
+    dc:date "2023" ;
+    dc:title "New species and newly recorded species of the genus Agonopterix Hübner, [1825] (Lepidoptera: Depressariidae) from China" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7784370>, <http://dx.doi.org/10.5281/zenodo.7784382>, <http://dx.doi.org/10.5281/zenodo.7784388> ;
     a fabio:JournalArticle .
 
@@ -38,7 +48,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Agonopterix_abditella_Hannemann_1959>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agonopterix_abditella> ;
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Agonopterix" ;
@@ -46,17 +55,37 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Hannemann, 1959" ;
+    dwc:scientificNameAuthorship "Hannemann, 1959", "Hannemann, 1959: 40" ;
     dwc:species "abditella" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agonopterix_abditella> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Agonopterix_cochleata_Zhu_2023>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Agonopterix" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zhu & Zhang & Wang, 2023" ;
+    dwc:species "cochleata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Agonopterix_cochleata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Agonopterix_abditella>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:genus "Agonopterix" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "abditella" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agonopterix> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Agonopterix>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oecophoridae> ;
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Agonopterix" ;
@@ -64,10 +93,49 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oecophoridae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Agonopterix_abditella>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agonopterix> ;
+<http://taxon-name.plazi.org/id/Animalia/Oecophoridae>
+    dwc:class "Insecta" ;
+    dwc:family "Oecophoridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Agonopterix_cochleata>
     dwc:class "Insecta" ;
     dwc:family "Oecophoridae" ;
     dwc:genus "Agonopterix" ;
@@ -75,47 +143,6 @@
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "abditella" ;
+    dwc:species "cochleata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Agonopterix> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Oecophoridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Oecophoridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/781087D4FFE75879A483D0938FEEAC21>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Agonopterix_abditella_Hannemann_1959> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Wang, Shuxia", "Zhang, Li", "Zhu, Xiaoju" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7784370>, <http://dx.doi.org/10.5281/zenodo.7784382>, <http://dx.doi.org/10.5281/zenodo.7784388> ;
-    a trt:Treatment .
-

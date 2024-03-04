@@ -1,22 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:785687E1FFE1FFB8D2A5FEDCFE012EDB
+    cito:cites <http://dx.doi.org/10.5281/zenodo.202655>, <http://dx.doi.org/10.5281/zenodo.202656>, <http://dx.doi.org/10.5281/zenodo.202657> ;
+    dc:creator "Laurito, Magdalena; Almirón, Walter Ricardo; Rossi, Gustavo Carlos" ;
+    dc:title "Culex (Culex) ameliae Casal" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_ameliae>, <http://taxon-name.plazi.org/id/Animalia/Culicidae>, <http://taxon-name.plazi.org/id/Animalia/Culex>, <http://taxon-name.plazi.org/id/Animalia/Melanoconion>, <http://taxon-name.plazi.org/id/Animalia/Carrollia> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Culex_ameliae_Casal_1967> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.202653> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_ameliae> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.202653>
-    dc:creator "Almirón, Walter Ricardo", "Laurito, Magdalena", "Rossi, Gustavo Carlos" ;
-    dc:date "2011" ;
-    dc:title "Description of the immature stages of Culex (Culex) ameliae Casal and Culex (Culex) articularis Philippi (Diptera: Culicidae)" ;
     bibo:endPage "68" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "58" ;
     bibo:volume "2778" ;
+    dc:creator "Laurito, Magdalena; Almirón, Walter Ricardo; Rossi, Gustavo Carlos" ;
+    dc:date "2011" ;
+    dc:title "Description of the immature stages of Culex (Culex) ameliae Casal and Culex (Culex) articularis Philippi (Diptera: Culicidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.202655>, <http://dx.doi.org/10.5281/zenodo.202656>, <http://dx.doi.org/10.5281/zenodo.202657> ;
     a fabio:JournalArticle .
 
@@ -36,8 +47,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Culex_ameliae_Casal_1967>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_ameliae> ;
-    dwc:ID-CoL "8BMGV" ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -47,33 +56,24 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Casal, 1967: 29" ;
     dwc:species "ameliae" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8BMGV> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_ameliae> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Culex>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Culex_dolosus_(Casal_1967>
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Lynch Arribalzaga) (Casal 1967)" ;
+    dwc:species "dolosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_dolosus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Culex_ameliae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:genus "Culex" ;
@@ -82,41 +82,80 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "ameliae" ;
+    dwc:subGenus "Culex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex_Culex>, <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Culex" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culicidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Culicidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     dwc:class "Insecta" ;
     dwc:family "Culicidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Diptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Diptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/785687E1FFE1FFB8D2A5FEDCFE012EDB>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/78/56/87/Carrollia>, <file:///workdir/tmprdf/data/78/56/87/Culex>, <file:///workdir/tmprdf/data/78/56/87/Culex_ameliae>, <file:///workdir/tmprdf/data/78/56/87/Culicidae>, <file:///workdir/tmprdf/data/78/56/87/Melanoconion> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Culex_ameliae_Casal_1967> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.202653> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Culex_ameliae> ;
-    dc:creator "Almirón, Walter Ricardo", "Laurito, Magdalena", "Rossi, Gustavo Carlos" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.202655>, <http://dx.doi.org/10.5281/zenodo.202656>, <http://dx.doi.org/10.5281/zenodo.202657> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Culex_dolosus>
+    dwc:class "Insecta" ;
+    dwc:family "Culicidae" ;
+    dwc:genus "Culex" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Diptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "dolosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Culex> ;
+    a dwcFP:TaxonName .
