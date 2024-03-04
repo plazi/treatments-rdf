@@ -1,28 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03F187BAFFF0317AFF57FA52FCF0FBBB
+    dc:creator "Paulsen, M. J." ;
+    dc:title "Dorcus brevis" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dorcus_brevis_Say_1825> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Lucanus_brevis_Say_1825>, <http://taxon-concept.plazi.org/id/Animalia/Dorcus_caucasicus_Ganglbauer_1886>, <http://taxon-concept.plazi.org/id/Animalia/Dorcus_parallelus_Say_1823> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.3789580> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.3789580>
-    dc:creator "Paulsen, M. J." ;
-    dc:date "2010" ;
-    dc:title "Stag beetles of the genus Dorcus MacLeay in North America (Coleoptera, Lucanidae)" ;
     bibo:endPage "207" ;
     bibo:issue "34" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2010-01-28" ;
     bibo:startPage "199" ;
     bibo:volume "34" ;
+    dc:creator "Paulsen, M. J." ;
+    dc:date "2010" ;
+    dc:title "Stag beetles of the genus Dorcus MacLeay in North America (Coleoptera, Lucanidae)" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Dorcus_brevis_Say_1825>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcus_brevis> ;
     dwc:class "Insecta" ;
     dwc:family "Lucanidae" ;
     dwc:genus "Dorcus" ;
@@ -30,38 +38,12 @@
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Say, 1825)" ;
+    dwc:scientificNameAuthorship "(Say, 1825)", "Say, 1825" ;
     dwc:species "brevis" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Dorcus_caucasicus_Ganglbauer_1886>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcus_caucasicus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lucanidae" ;
-    dwc:genus "Dorcus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Ganglbauer 1886: 81" ;
-    dwc:species "caucasicus" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Dorcus_parallelus_Say_1823>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcus_parallelus> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lucanidae" ;
-    dwc:genus "Dorcus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Say, 1823" ;
-    dwc:species "parallelus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcus_brevis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Lucanus_brevis_Say_1825>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lucanus_brevis> ;
     dwc:class "Insecta" ;
     dwc:family "Lucanidae" ;
     dwc:genus "Lucanus" ;
@@ -71,42 +53,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Say 1825: 202" ;
     dwc:species "brevis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lucanus_brevis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Dorcus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lucanidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Dorcus_caucasicus_Ganglbauer_1886>
     dwc:class "Insecta" ;
     dwc:family "Lucanidae" ;
     dwc:genus "Dorcus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ganglbauer 1886: 81" ;
+    dwc:species "caucasicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcus_caucasicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dorcus_parallelus_Say_1823>
+    dwc:class "Insecta" ;
+    dwc:family "Lucanidae" ;
+    dwc:genus "Dorcus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Say, 1823" ;
+    dwc:species "parallelus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dorcus_parallelus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Dorcus_brevis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorcus> ;
     dwc:class "Insecta" ;
     dwc:family "Lucanidae" ;
     dwc:genus "Dorcus" ;
@@ -115,10 +91,83 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "brevis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorcus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dorcus>
+    dwc:class "Insecta" ;
+    dwc:family "Lucanidae" ;
+    dwc:genus "Dorcus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lucanidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lucanidae>
+    dwc:class "Insecta" ;
+    dwc:family "Lucanidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lucanus_brevis>
+    dwc:class "Insecta" ;
+    dwc:family "Lucanidae" ;
+    dwc:genus "Lucanus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brevis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lucanus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lucanus>
+    dwc:class "Insecta" ;
+    dwc:family "Lucanidae" ;
+    dwc:genus "Lucanus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lucanidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dorcus_caucasicus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorcus> ;
     dwc:class "Insecta" ;
     dwc:family "Lucanidae" ;
     dwc:genus "Dorcus" ;
@@ -127,10 +176,10 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "caucasicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorcus> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Dorcus_parallelus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorcus> ;
     dwc:class "Insecta" ;
     dwc:family "Lucanidae" ;
     dwc:genus "Dorcus" ;
@@ -139,30 +188,5 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "parallelus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dorcus> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lucanidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Lucanidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03F187BAFFF0317AFF57FA52FCF0FBBB>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Dorcus_brevis_Say_1825> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Dorcus_caucasicus_Ganglbauer_1886>, <http://taxon-concept.plazi.org/id/Animalia/Dorcus_parallelus_Say_1823>, <http://taxon-concept.plazi.org/id/Animalia/Lucanus_brevis_Say_1825> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.3789580> ;
-    dc:creator "Paulsen, M. J." ;
-    a trt:Treatment .
-
