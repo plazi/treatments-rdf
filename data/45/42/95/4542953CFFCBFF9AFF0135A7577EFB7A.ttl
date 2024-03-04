@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/phytotaxa.590.1.1>
-    dc:creator "Kirschner, Jan", "Štěpánek, Jan" ;
-    dc:date "2023" ;
-    dc:title "A taxonomic revision of Taraxacum sect. Dissecta, a continental steppe group common in Siberia and adjacent regions of Central Asia" ;
+treatment:4542953CFFCBFF9AFF0135A7577EFB7A
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7780373> ;
+    dc:creator "Kirschner, Jan; Štěpánek, Jan" ;
+    dc:title "Taraxacum jacuticum Tzvelev" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/4542953CFFCBFF9AFF0135A7577EFB7A.mc.7D832E77FFCBFF99FF6835FF5340F7B6> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Plantae/Taraxacum_jacuticum> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "1935" ;
     bibo:issue "1" ;
     bibo:journal "Phytotaxa" ;
     bibo:pubDate "2023-03-29" ;
     bibo:startPage "1921" ;
     bibo:volume "590" ;
+    dc:creator "Kirschner, Jan; Štěpánek, Jan" ;
+    dc:date "2023" ;
+    dc:title "A taxonomic revision of Taraxacum sect. Dissecta, a continental steppe group common in Siberia and adjacent regions of Central Asia" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7780373> ;
     a fabio:JournalArticle .
 
@@ -27,51 +37,56 @@
     fabio:hasRepresentation "https://zenodo.org/record/7780373/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
+<http://tb.plazi.org/GgServer/dwcaRecords/4542953CFFCBFF9AFF0135A7577EFB7A.mc.7D832E77FFCBFF99FF6835FF5340F7B6>
+    dwc:collectionCode "LE" ;
+    dwc:eventDate "1965-06-29" ;
+    dwc:locality "Bala" ;
+    dwc:recordedBy "V. I. Perfil'eva" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "4068767338" ;
+    trt:httpUri <https://treatment.plazi.org/id/4542953CFFCBFF9AFF0135A7577EFB7A#7D832E77FFCBFF99FF6835FF5340F7B6> ;
+    a dwc:MaterialCitation .
 
-<http://taxon-name.plazi.org/id/Plantae/Asteraceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asterales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Asteraceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Asterales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Asterales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Asterales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Taraxacum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asteraceae> ;
+<http://taxon-concept.plazi.org/id/Plantae/Dissecta_Soest_1982>
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Taraxacum" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Asterales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "section" ;
+    dwc:scientificNameAuthorship "R. Doll, 1982" ;
+    dwc:section "Dissecta" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Dissecta> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Taraxacum_divulgatum_Kirschner_2023>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Taraxacum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kirschner & Stepanek, 2023" ;
+    dwc:species "divulgatum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Taraxacum_divulgatum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Carex_duriuscula_Meyer_1831>
+    dwc:class "Liliopsida" ;
+    dwc:family "Cyperaceae" ;
+    dwc:genus "Carex" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Meyer (1831: 214)" ;
+    dwc:species "duriuscula" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Carex_duriuscula> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Taraxacum_jacuticum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Taraxacum> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Asteraceae" ;
     dwc:genus "Taraxacum" ;
@@ -80,19 +95,129 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "jacuticum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Taraxacum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Taraxacum>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Taraxacum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asteraceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Asteraceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Asterales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Asterales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/4542953CFFCBFF9AFF0135A7577EFB7A>
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Taraxacum_jacuticum> ;
-    dc:creator "Kirschner, Jan", "Štěpánek, Jan" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7780373> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Dissecta>
+    # Warning: Could not determine parent name ;
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Taraxacum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "section" ;
+    dwc:section "Dissecta" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Taraxacum_divulgatum>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Asteraceae" ;
+    dwc:genus "Taraxacum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Asterales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "divulgatum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Taraxacum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Carex_duriuscula>
+    dwc:class "Liliopsida" ;
+    dwc:family "Cyperaceae" ;
+    dwc:genus "Carex" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "duriuscula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Carex> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Carex>
+    dwc:class "Liliopsida" ;
+    dwc:family "Cyperaceae" ;
+    dwc:genus "Carex" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cyperaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cyperaceae>
+    dwc:class "Liliopsida" ;
+    dwc:family "Cyperaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Poales>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
