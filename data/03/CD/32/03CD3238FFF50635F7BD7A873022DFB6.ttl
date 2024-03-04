@@ -1,25 +1,39 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CD3238FFF50635F7BD7A873022DFB6
+    cito:cites <http://dx.doi.org/10.5281/zenodo.245403>, <http://dx.doi.org/10.5281/zenodo.245400>, <http://dx.doi.org/10.5281/zenodo.245401>, <http://dx.doi.org/10.5281/zenodo.245402> ;
+    dc:creator "Zagaja, Mirosław; Staniec, Bernard" ;
+    dc:title "Thiasophila szujeckii Zagaja & Staniec, sp. n." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Thiasophila_szujeckii_Zagaja_2015> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3955.3.8> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3955.3.8>
-    dc:creator "Staniec, Bernard", "Zagaja, Mirosław" ;
-    dc:date "2015" ;
-    dc:title "Thiasophila szujeckii sp. n. (Coleoptera, Staphylinidae, Aleocharinae) — a cryptic species associated with Formica truncorum in Poland" ;
     bibo:endPage "426" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "417" ;
     bibo:volume "3955" ;
-    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.245400>, <http://dx.doi.org/10.5281/zenodo.245401>, <http://dx.doi.org/10.5281/zenodo.245402>, <http://dx.doi.org/10.5281/zenodo.245403> ;
+    dc:creator "Zagaja, Mirosław; Staniec, Bernard" ;
+    dc:date "2015" ;
+    dc:title "Thiasophila szujeckii sp. n. (Coleoptera, Staphylinidae, Aleocharinae) — a cryptic species associated with Formica truncorum in Poland" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.245403>, <http://dx.doi.org/10.5281/zenodo.245400>, <http://dx.doi.org/10.5281/zenodo.245401>, <http://dx.doi.org/10.5281/zenodo.245402> ;
     a fabio:JournalArticle .
+
+<http://dx.doi.org/10.5281/zenodo.245403>
+    dc:description "FIGURE 31. The nest mound of Formica truncorum inhabited by T. szujeckii sp. n. with type locality (black circle on UTM map) of this species in Poland (A)." ;
+    fabio:hasRepresentation "https://zenodo.org/record/245403/files/figure.png" ;
+    a fabio:Figure .
 
 <http://dx.doi.org/10.5281/zenodo.245400>
     dc:description "FIGURES 1 – 10. T. szujeckii sp. n. (1 – 5, 7 – 10), T. angulata (6). Dorsal habitus of holotype, male (1) and paratype, female (2) with microstructure (2 A – C, E) and posterior margin near posterolateral corner (2 D); right antenna of male (3) and female (4); ligula (5, 6); eighth sternite of male (7) and female (8); eighth tergite of of male (9) and female (10)." ;
@@ -36,14 +50,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/245402/files/figure.png" ;
     a fabio:Figure .
 
-<http://dx.doi.org/10.5281/zenodo.245403>
-    dc:description "FIGURE 31. The nest mound of Formica truncorum inhabited by T. szujeckii sp. n. with type locality (black circle on UTM map) of this species in Poland (A)." ;
-    fabio:hasRepresentation "https://zenodo.org/record/245403/files/figure.png" ;
-    a fabio:Figure .
-
 <http://taxon-concept.plazi.org/id/Animalia/Thiasophila_szujeckii_Zagaja_2015>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thiasophila_szujeckii> ;
-    dwc:ID-CoL "56G7T" ;
     dwc:class "Insecta" ;
     dwc:family "Staphylinidae" ;
     dwc:genus "Thiasophila" ;
@@ -53,60 +60,205 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Zagaja & Staniec" ;
     dwc:species "szujeckii" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/56G7T> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thiasophila_szujeckii> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Formica_truncorum_Zagaja_2015>
     dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
+    dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "truncorum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_truncorum> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Staphylinidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Coleoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Thiasophila>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Thiasophila_angulata_Zagaja_2015>
     dwc:class "Insecta" ;
     dwc:family "Staphylinidae" ;
     dwc:genus "Thiasophila" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Coleoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:species "angulata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thiasophila_angulata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thiasophila_lohsei_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Thiasophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lohsei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thiasophila_lohsei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_aquilonia_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "aquilonia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_aquilonia> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_lugubris_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lugubris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_lugubris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_polyctena_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "polyctena" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_polyctena> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_pratensis_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pratensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_pratensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_rufa_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rufa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_rufa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_sanguinea_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sanguinea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_sanguinea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_uralensis_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "uralensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_uralensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lasius_brunneus_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Lasius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brunneus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lasius_brunneus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lasius_fuliginosus_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Lasius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fuliginosus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lasius_fuliginosus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thiasophila_lohsei_Zerche_1987>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Thiasophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zerche 1987" ;
+    dwc:species "lohsei" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thiasophila_lohsei> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Formica_ruf_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ruf" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Formica_ruf> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ostrinia_latipennis_Zagaja_2015>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Ostrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latipennis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ostrinia_latipennis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Ostrinia_ovalipennis_Ohno_2006>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Ostrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ohno et al. 2006" ;
+    dwc:species "ovalipennis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ostrinia_ovalipennis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Thiasophila_szujeckii>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thiasophila> ;
     dwc:class "Insecta" ;
     dwc:family "Staphylinidae" ;
     dwc:genus "Thiasophila" ;
@@ -115,12 +267,306 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "szujeckii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thiasophila> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03CD3238FFF50635F7BD7A873022DFB6>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Thiasophila_szujeckii_Zagaja_2015> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3955.3.8> ;
-    dc:creator "Staniec, Bernard", "Zagaja, Mirosław" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.245400>, <http://dx.doi.org/10.5281/zenodo.245401>, <http://dx.doi.org/10.5281/zenodo.245402>, <http://dx.doi.org/10.5281/zenodo.245403> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Thiasophila>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Thiasophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Staphylinidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Staphylinidae>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_truncorum>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "truncorum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formicidae>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thiasophila_angulata>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Thiasophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "angulata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thiasophila> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thiasophila_lohsei>
+    dwc:class "Insecta" ;
+    dwc:family "Staphylinidae" ;
+    dwc:genus "Thiasophila" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lohsei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thiasophila> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_aquilonia>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "aquilonia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_lugubris>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lugubris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_polyctena>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "polyctena" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_pratensis>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "pratensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_rufa>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "rufa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_sanguinea>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "sanguinea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_uralensis>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "uralensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lasius_brunneus>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Lasius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "brunneus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lasius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lasius>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Lasius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formicidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lasius_fuliginosus>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Lasius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fuliginosus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lasius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Formica_ruf>
+    dwc:class "Insecta" ;
+    dwc:family "Formicidae" ;
+    dwc:genus "Formica" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ruf" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Formica> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ostrinia_latipennis>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Ostrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "latipennis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostrinia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ostrinia>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Ostrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Crambidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Crambidae>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ostrinia_ovalipennis>
+    dwc:class "Insecta" ;
+    dwc:family "Crambidae" ;
+    dwc:genus "Ostrinia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "ovalipennis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ostrinia> ;
+    a dwcFP:TaxonName .
