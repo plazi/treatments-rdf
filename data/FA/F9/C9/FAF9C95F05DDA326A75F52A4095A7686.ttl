@@ -1,31 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://taxon-concept.plazi.org/id/Plantae/Cucumis_anguinus_Linnaeus_1759>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cucumis_anguinus> ;
-    dwc:ID-CoL "5727bafc-382d-4588-943d-f740cf5b79ce" ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Cucurbitaceae" ;
-    dwc:genus "Cucumis" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Linnaeus" ;
-    dwc:species "anguinus" ;
-    a dwcFP:TaxonConcept .
+treatment:FAF9C95F05DDA326A75F52A4095A7686
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Trichosanthes cucumerina Linnaeus 1753" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Trichosanthes_cucumerina_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Cucumis_anguinus_Linnaeus_1759> ;
+    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
+    a trt:Treatment .
+
+<https://doi.org/10.5281/zenodo.291971>
+    bibo:endPage "473" ;
+    bibo:startPage "370" ;
+    dc:creator "Jarvis, Charlie" ;
+    dc:date "2007" ;
+    dc:title "Chapter 7: Linnaean Plant Names and their Types (part C)" ;
+    a fabio:BookSection .
 
 <http://taxon-concept.plazi.org/id/Plantae/Trichosanthes_cucumerina_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Trichosanthes_cucumerina> ;
-    dwc:ID-CoL "58JLJ" ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Cucurbitaceae" ;
     dwc:genus "Trichosanthes" ;
@@ -35,26 +36,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "L." ;
     dwc:species "cucumerina" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/58JLJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Trichosanthes_cucumerina> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Cucumis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Cucurbitaceae" ;
-    dwc:genus "Cucumis" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Cucumis_anguinus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucumis> ;
+<http://taxon-concept.plazi.org/id/Plantae/Cucumis_anguinus_Linnaeus_1759>
     dwc:class "Magnoliopsida" ;
     dwc:family "Cucurbitaceae" ;
     dwc:genus "Cucumis" ;
@@ -62,56 +48,13 @@
     dwc:order "Cucurbitales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "anguinus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitales> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Cucurbitaceae" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Cucurbitales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
-    dwc:kingdom "Plantae" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Trichosanthes>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae> ;
-    dwc:class "Magnoliopsida" ;
-    dwc:family "Cucurbitaceae" ;
-    dwc:genus "Trichosanthes" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Cucurbitales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/58JLJ> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Cucumis_anguinus> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Plantae/Trichosanthes_cucumerina>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Trichosanthes> ;
     dwc:class "Magnoliopsida" ;
     dwc:family "Cucurbitaceae" ;
     dwc:genus "Trichosanthes" ;
@@ -120,20 +63,78 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "cucumerina" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Trichosanthes> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FAF9C95F05DDA326A75F52A4095A7686>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Trichosanthes_cucumerina_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Cucumis_anguinus_Linnaeus_1759> ;
-    trt:publishedIn <https://doi.org/10.5281/zenodo.291971> ;
-    dc:creator "Jarvis, Charlie" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Trichosanthes>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Cucurbitaceae" ;
+    dwc:genus "Trichosanthes" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae> ;
+    a dwcFP:TaxonName .
 
-<https://doi.org/10.5281/zenodo.291971>
-    dc:creator "Jarvis, Charlie" ;
-    dc:date "2007" ;
-    dc:title "Chapter 7: Linnaean Plant Names and their Types (part C)" ;
-    bibo:endPage "473" ;
-    bibo:startPage "370" ;
-    a fabio:BookSection .
+<http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Cucurbitaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitales> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Cucurbitales>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Magnoliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Magnoliopsida>
+    dwc:class "Magnoliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cucumis_anguinus>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Cucurbitaceae" ;
+    dwc:genus "Cucumis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "anguinus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucumis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Cucumis>
+    dwc:class "Magnoliopsida" ;
+    dwc:family "Cucurbitaceae" ;
+    dwc:genus "Cucumis" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Cucurbitales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Cucurbitaceae> ;
+    a dwcFP:TaxonName .

@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:FA55B266C566FFB9FF6EFD5BB7D3FABE
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4692791>, <http://dx.doi.org/10.5281/zenodo.4692793> ;
+    dc:creator "Carpintero, Diego Leonardo; Biase, Sebastián De" ;
+    dc:title "Hyperbius Stal 1868" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hyperbius_Stal_1868> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4958.1.42> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4958.1.42>
-    dc:creator "Biase, Sebastián De", "Carpintero, Diego Leonardo" ;
-    dc:date "2021" ;
-    dc:title "Hyperbius joceliae a new species of Ditomotarsinae from Tierra del Fuego, Argentina (Hemiptera: Acanthosomatidae)" ;
     bibo:endPage "677" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-04-14" ;
     bibo:startPage "668" ;
     bibo:volume "4958" ;
+    dc:creator "Carpintero, Diego Leonardo; Biase, Sebastián De" ;
+    dc:date "2021" ;
+    dc:title "Hyperbius joceliae a new species of Ditomotarsinae from Tierra del Fuego, Argentina (Hemiptera: Acanthosomatidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4692791>, <http://dx.doi.org/10.5281/zenodo.4692793> ;
     a fabio:JournalArticle .
 
@@ -33,8 +42,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Hyperbius_Stal_1868>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hyperbius> ;
-    dwc:ID-CoL "7P6Q7" ;
     dwc:class "Insecta" ;
     dwc:family "Acanthosomatidae" ;
     dwc:genus "Hyperbius" ;
@@ -42,63 +49,94 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Stal, 1868" ;
+    dwc:scientificNameAuthorship "Stal, 1868", "Stal, 1868: 534" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P6Q7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hyperbius> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Ditomotarsus_geniculatus_Signoret_1863>
+    dwc:class "Insecta" ;
+    dwc:family "Acanthosomatidae" ;
+    dwc:genus "Ditomotarsus" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Signoret, 1863" ;
+    dwc:species "geniculatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7P6Q7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ditomotarsus_geniculatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Hyperbius>
+    dwc:class "Insecta" ;
+    dwc:family "Acanthosomatidae" ;
+    dwc:genus "Hyperbius" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acanthosomatidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Acanthosomatidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Acanthosomatidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hyperbius>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acanthosomatidae> ;
-    dwc:class "Insecta" ;
-    dwc:family "Acanthosomatidae" ;
-    dwc:genus "Hyperbius" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/FA55B266C566FFB9FF6EFD5BB7D3FABE>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Hyperbius_Stal_1868> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4958.1.42> ;
-    dc:creator "Biase, Sebastián De", "Carpintero, Diego Leonardo" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4692791>, <http://dx.doi.org/10.5281/zenodo.4692793> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ditomotarsus_geniculatus>
+    dwc:class "Insecta" ;
+    dwc:family "Acanthosomatidae" ;
+    dwc:genus "Ditomotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "geniculatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ditomotarsus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Ditomotarsus>
+    dwc:class "Insecta" ;
+    dwc:family "Acanthosomatidae" ;
+    dwc:genus "Ditomotarsus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Acanthosomatidae> ;
+    a dwcFP:TaxonName .
