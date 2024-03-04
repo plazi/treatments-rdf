@@ -1,29 +1,51 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E91C8783824B42394EEC30B3FF2784C0
+    dc:creator "Lienhard, Charles; Ferreira, Rodrigo L." ;
+    dc:title "Psyllipsocus thaidis Lienhard 2014, n. spec." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/E91C8783824B42394EEC30B3FF2784C0.mc.D1DD3CC8824B423B4EB03157FE188756>, <http://tb.plazi.org/GgServer/dwcaRecords/E91C8783824B42394EEC30B3FF2784C0.mc.D1DD3CC8824B423B4EB034FEFCC48286> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_thaidis_Lienhard_2014> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6119958> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6119958>
-    dc:creator "Ferreira, Rodrigo L.", "Lienhard, Charles" ;
-    dc:date "2014" ;
-    dc:title "New species of Psyllipsocus from Brazilian caves (Psocodea: ‘ Psocoptera’: Psyllipsocidae)" ;
     bibo:endPage "246" ;
     bibo:issue "2" ;
     bibo:journal "Revue suisse de Zoologie" ;
     bibo:pubDate "2014-06-30" ;
     bibo:startPage "211" ;
     bibo:volume "121" ;
+    dc:creator "Lienhard, Charles; Ferreira, Rodrigo L." ;
+    dc:date "2014" ;
+    dc:title "New species of Psyllipsocus from Brazilian caves (Psocodea: ‘ Psocoptera’: Psyllipsocidae)" ;
     a fabio:JournalArticle .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/E91C8783824B42394EEC30B3FF2784C0.mc.D1DD3CC8824B423B4EB03157FE188756>
+    dwc:collectionCode "PI, R" ;
+    dwc:eventDate "2008-09" ;
+    dwc:locality "Coronel Jose Dias" ;
+    dwc:recordedBy "L. Ferreira." ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/E91C8783824B42394EEC30B3FF2784C0#D1DD3CC8824B423B4EB03157FE188756> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/E91C8783824B42394EEC30B3FF2784C0.mc.D1DD3CC8824B423B4EB034FEFCC48286>
+    dwc:collectionCode "T" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/E91C8783824B42394EEC30B3FF2784C0#D1DD3CC8824B423B4EB034FEFCC48286> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_thaidis_Lienhard_2014>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_thaidis> ;
-    dwc:ID-CoL "4PSB7" ;
     dwc:class "Insecta" ;
     dwc:family "Psyllipsocidae" ;
     dwc:genus "Psyllipsocus" ;
@@ -31,51 +53,39 @@
     dwc:order "Psocodea" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Lienhard" ;
+    dwc:scientificNameAuthorship "Lienhard", "Lienhard, 2014" ;
     dwc:species "thaidis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4PSB7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_thaidis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Psocodea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Psocodea" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Psyllipsocidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psocodea> ;
+<http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_falcifer_Lienhard_2014>
     dwc:class "Insecta" ;
     dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Psocodea" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lienhard, 2014" ;
+    dwc:species "falcifer" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_falcifer> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Psyllipsocus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_marconii_Lienhard_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lienhard, 2014" ;
+    dwc:species "marconii" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_marconii> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_Lienhard_2013>
     dwc:class "Insecta" ;
     dwc:family "Psyllipsocidae" ;
     dwc:genus "Psyllipsocus" ;
@@ -83,10 +93,37 @@
     dwc:order "Psocodea" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Lienhard & Ferreira, 2013" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_subtilis_Lienhard_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lienhard, 2014" ;
+    dwc:species "subtilis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_subtilis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_fuscistigma_Lienhard_2014>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lienhard, 2014" ;
+    dwc:species "fuscistigma" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_fuscistigma> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_thaidis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
     dwc:class "Insecta" ;
     dwc:family "Psyllipsocidae" ;
     dwc:genus "Psyllipsocus" ;
@@ -95,11 +132,103 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "thaidis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E91C8783824B42394EEC30B3FF2784C0>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Psyllipsocus_thaidis_Lienhard_2014> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6119958> ;
-    dc:creator "Ferreira, Rodrigo L.", "Lienhard, Charles" ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Psyllipsocus>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Psyllipsocidae>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psocodea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psocodea>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_falcifer>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "falcifer" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_marconii>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "marconii" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_subtilis>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "subtilis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Psyllipsocus_fuscistigma>
+    dwc:class "Insecta" ;
+    dwc:family "Psyllipsocidae" ;
+    dwc:genus "Psyllipsocus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Psocodea" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fuscistigma" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Psyllipsocus> ;
+    a dwcFP:TaxonName .
