@@ -1,29 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:0956B407FFC3FFD8FF4EFF21FB185EA8
+    dc:creator "Zhang, Lan; Xing, Jichun" ;
+    dc:title "Cyrta Melichar 1902" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cyrta_Melichar_1902> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Placidus_Distant_1908> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4658.2.12> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4658.2.12>
-    dc:creator "Xing, Jichun", "Zhang, Lan" ;
-    dc:date "2019" ;
-    dc:title "Key to species of the genus Cyrta Melichar (Hemiptera: Cicadellidae: Deltocephalinae) with description of a new species" ;
     bibo:endPage "388" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2019-08-22" ;
     bibo:startPage "383" ;
     bibo:volume "4658" ;
+    dc:creator "Zhang, Lan; Xing, Jichun" ;
+    dc:date "2019" ;
+    dc:title "Key to species of the genus Cyrta Melichar (Hemiptera: Cicadellidae: Deltocephalinae) with description of a new species" ;
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cyrta_Melichar_1902>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyrta> ;
-    dwc:ID-CoL "8HH7N" ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Cyrta" ;
@@ -31,12 +38,12 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Melichar" ;
+    dwc:scientificNameAuthorship "Melichar", "Melichar, 1902: 136", "Melichar, 1902" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HH7N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cyrta> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Placidus_Distant_1908>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Placidus> ;
-    dwc:ID-CoL "8JLTC" ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Placidus" ;
@@ -45,32 +52,25 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Distant, 1908: 342" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HH7N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Placidus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Placidus_hornei_Distant_1908>
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
+    dwc:genus "Placidus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Distant, 1908" ;
+    dwc:species "hornei" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/8HH7N> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Placidus_hornei> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cyrta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Cyrta" ;
@@ -78,27 +78,49 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cicadellidae>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Placidus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
     dwc:class "Insecta" ;
     dwc:family "Cicadellidae" ;
     dwc:genus "Placidus" ;
@@ -106,12 +128,17 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cicadellidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/0956B407FFC3FFD8FF4EFF21FB185EA8>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cyrta_Melichar_1902> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Placidus_Distant_1908> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4658.2.12> ;
-    dc:creator "Xing, Jichun", "Zhang, Lan" ;
-    a trt:Treatment .
-
+<http://taxon-name.plazi.org/id/Animalia/Placidus_hornei>
+    dwc:class "Insecta" ;
+    dwc:family "Cicadellidae" ;
+    dwc:genus "Placidus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "hornei" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Placidus> ;
+    a dwcFP:TaxonName .
