@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:5E3FD96DFFEC721B493EF518F7C07658
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6514203> ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:title "Diceros bicornis" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/5E3FD96DFFEC721B493EF518F7C07658.mc.66FE6226FFEC721A4444F4C9F7497636> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhinoceros_bicornis_Linnaeus_1758> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5720730> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.5720730>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2011" ;
-    dc:title "Rhinocerotidae" ;
     bibo:endPage "181" ;
     bibo:startPage "144" ;
+    dc:creator "Don E. Wilson; Russell A. Mittermeier" ;
+    dc:date "2011" ;
+    dc:title "Rhinocerotidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6514203> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6514203/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/5E3FD96DFFEC721B493EF518F7C07658.mc.66FE6226FFEC721A4444F4C9F7497636>
+    trt:gbifOccurrenceId "3785193304" ;
+    trt:httpUri <https://treatment.plazi.org/id/5E3FD96DFFEC721B493EF518F7C07658#66FE6226FFEC721A4444F4C9F7497636> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis> ;
-    dwc:ID-CoL "35JVB" ;
     dwc:authority "Wilson, 2011" ;
     dwc:authorityName "Wilson" ;
     dwc:authorityYear "2011" ;
@@ -36,12 +50,13 @@
     dwc:order "Perissodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "bicornis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35JVB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Rhinoceros_bicornis_Linnaeus_1758>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros_bicornis> ;
-    dwc:ID-CoL "5KW6H" ;
     dwc:class "Mammalia" ;
     dwc:family "Rhinocerotidae" ;
     dwc:genus "Rhinoceros" ;
@@ -51,33 +66,106 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus, 1758" ;
     dwc:species "bicornis" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/35JVB> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros_bicornis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Diceros>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinocerotidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_bicornis_Linnaeus_1758>
     dwc:class "Mammalia" ;
     dwc:family "Rhinocerotidae" ;
     dwc:genus "Diceros" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Perissodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "bicornis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_bicornis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_longipes_Zukowsky_1949>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Zukowsky, 1949" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "longipes" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_longipes> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_michaeli_Zukowsky_1965>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Zukowsky, 1965" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "michaeli" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_michaeli> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_minor_Drummond_1876>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Drummond, 1876" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "minor" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_minor> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhinoceros_unicornis_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Rhinoceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "unicornis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros_unicornis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhinoceros_sondaicus_Desmarest_1822>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Rhinoceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Desmarest, 1822" ;
+    dwc:species "sondaicus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros_sondaicus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Dicerorhinus_sumatrensis_G.Fischer_1814>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Dicerorhinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "G.Fischer, 1814" ;
+    dwc:species "sumatrensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Dicerorhinus_sumatrensis> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diceros> ;
     dwc:class "Mammalia" ;
     dwc:family "Rhinocerotidae" ;
     dwc:genus "Diceros" ;
@@ -86,40 +174,177 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "bicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diceros> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+<http://taxon-name.plazi.org/id/Animalia/Diceros>
     dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Perissodactyla>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Perissodactyla" ;
     dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinocerotidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Rhinocerotidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perissodactyla> ;
     dwc:class "Mammalia" ;
     dwc:family "Rhinocerotidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Perissodactyla" ;
     dwc:phylum "Chordata" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perissodactyla> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/5E3FD96DFFEC721B493EF518F7C07658>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Diceros_bicornis_Linnaeus_1758> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Rhinoceros_bicornis_Linnaeus_1758> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.5720730> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6514203> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Perissodactyla>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Mammalia>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinoceros_bicornis>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Rhinoceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "bicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinoceros>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Rhinoceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinocerotidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_bicornis>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "bicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_longipes>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "longipes" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_michaeli>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "michaeli" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis_minor>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Diceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "bicornis" ;
+    dwc:subSpecies "minor" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diceros_bicornis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinoceros_unicornis>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Rhinoceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "unicornis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhinoceros_sondaicus>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Rhinoceros" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sondaicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinoceros> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dicerorhinus_sumatrensis>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Dicerorhinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "sumatrensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Dicerorhinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Dicerorhinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Rhinocerotidae" ;
+    dwc:genus "Dicerorhinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perissodactyla" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhinocerotidae> ;
+    a dwcFP:TaxonName .
