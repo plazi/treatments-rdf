@@ -1,23 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03D0FB0AFFB22E2C09E0FCE1FA847C57
+    # Warning Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/lata>' due to issues with rank ;
+    cito:cites <http://dx.doi.org/10.5281/zenodo.286396> ;
+    dc:creator "Austin, William C.; Ott, Bruce S.; Reiswig, Henry M.; Romagosa, Paula; G, Neil" ;
+    dc:title "Suberites latus Lambe 1893" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Suberites_latus_Lambe_1893> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_montalbidus>, <http://taxon-name.plazi.org/id/Animalia/Ficulina_suberea>, <http://taxon-name.plazi.org/id/Animalia/Choanites_suberea>, <http://taxon-name.plazi.org/id/Animalia/Suberites_ficus>, <http://taxon-name.plazi.org/id/Animalia/Suberites_latus>, <http://taxon-name.plazi.org/id/Animalia/Pagurus_stevensae> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Suberites_domuncula_Olivi_1792>, <http://taxon-concept.plazi.org/id/Animalia/Suberites_ficus_Johnston_1842> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3823.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3823.1.1>
-    dc:creator "Austin, William C.", "G, Neil", "Ott, Bruce S.", "Reiswig, Henry M.", "Romagosa, Paula" ;
-    dc:date "2014" ;
-    dc:title "Taxonomic review of Hadromerida (Porifera, Demospongiae) from British Columbia, Canada, and adjacent waters, with the description of nine new species" ;
     bibo:endPage "84" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "1" ;
     bibo:volume "3823" ;
+    dc:creator "Austin, William C.; Ott, Bruce S.; Reiswig, Henry M.; Romagosa, Paula; G, Neil" ;
+    dc:date "2014" ;
+    dc:title "Taxonomic review of Hadromerida (Porifera, Demospongiae) from British Columbia, Canada, and adjacent waters, with the description of nine new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.286396> ;
     a fabio:JournalArticle .
 
@@ -26,34 +38,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/286396/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Suberites_domuncula_Olivi_1792>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_domuncula> ;
-    dwc:class "Demospongiae" ;
-    dwc:family "Suberitidae" ;
-    dwc:genus "Suberites" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hadromerida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Olivi, 1792" ;
-    dwc:species "domuncula" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Suberites_ficus_Johnston_1842>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_ficus> ;
-    dwc:class "Demospongiae" ;
-    dwc:family "Suberitidae" ;
-    dwc:genus "Suberites" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hadromerida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Johnston, 1842" ;
-    dwc:species "ficus" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Suberites_latus_Lambe_1893>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_latus> ;
     dwc:class "Demospongiae" ;
     dwc:family "Suberitidae" ;
     dwc:genus "Suberites" ;
@@ -63,50 +48,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Lambe, 1893" ;
     dwc:species "latus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_latus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hadromerida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
-    dwc:class "Demospongiae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hadromerida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Porifera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Suberites>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberitidae> ;
-    dwc:class "Demospongiae" ;
-    dwc:family "Suberitidae" ;
-    dwc:genus "Suberites" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hadromerida" ;
-    dwc:phylum "Porifera" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Suberites_domuncula>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberites> ;
+<http://taxon-concept.plazi.org/id/Animalia/Suberites_domuncula_Olivi_1792>
     dwc:class "Demospongiae" ;
     dwc:family "Suberitidae" ;
     dwc:genus "Suberites" ;
@@ -114,11 +59,51 @@
     dwc:order "Hadromerida" ;
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Olivi, 1792" ;
     dwc:species "domuncula" ;
-    a dwcFP:TaxonName .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_domuncula> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Suberites_ficus_Johnston_1842>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:genus "Suberites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hadromerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Johnston, 1842" ;
+    dwc:species "ficus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Suberites_ficus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Pagurus_stevensae_Hart_1971>
+    dwc:class "Malacostraca" ;
+    dwc:family "Paguridae" ;
+    dwc:genus "Pagurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Hart, 1971" ;
+    dwc:species "stevensae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pagurus_stevensae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Choanites_suberea_Montagu_1818>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:genus "Choanites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Suberitida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Montagu, 1818", "Montagu 1818" ;
+    dwc:species "suberea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Choanites_suberea> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Suberites_latus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberites> ;
     dwc:class "Demospongiae" ;
     dwc:family "Suberitidae" ;
     dwc:genus "Suberites" ;
@@ -127,24 +112,168 @@
     dwc:phylum "Porifera" ;
     dwc:rank "species" ;
     dwc:species "latus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberites> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Suberitidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hadromerida> ;
+<http://taxon-name.plazi.org/id/Animalia/Suberites>
     dwc:class "Demospongiae" ;
     dwc:family "Suberitidae" ;
+    dwc:genus "Suberites" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hadromerida" ;
     dwc:phylum "Porifera" ;
-    dwc:rank "family" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberitidae> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03D0FB0AFFB22E2C09E0FCE1FA847C57>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Suberites_latus_Lambe_1893> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/03/D0/FB/Choanites_suberea>, <file:///workdir/tmprdf/data/03/D0/FB/Ficulina_suberea>, <file:///workdir/tmprdf/data/03/D0/FB/Pagurus_stevensae>, <file:///workdir/tmprdf/data/03/D0/FB/Suberites_ficus>, <file:///workdir/tmprdf/data/03/D0/FB/Suberites_latus>, <file:///workdir/tmprdf/data/03/D0/FB/Suberites_montalbidus> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Suberites_domuncula_Olivi_1792>, <http://taxon-concept.plazi.org/id/Animalia/Suberites_ficus_Johnston_1842> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3823.1.1> ;
-    dc:creator "Austin, William C.", "G, Neil", "Ott, Bruce S.", "Reiswig, Henry M.", "Romagosa, Paula" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.286396> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Suberitidae>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hadromerida", "Suberitida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hadromerida>, <http://taxon-name.plazi.org/id/Animalia/Suberitida> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Hadromerida>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hadromerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Demospongiae>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Porifera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Porifera>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Suberites_domuncula>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:genus "Suberites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hadromerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "domuncula" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberites> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Suberites_ficus>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:genus "Suberites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hadromerida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "ficus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberites> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pagurus_stevensae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Paguridae" ;
+    dwc:genus "Pagurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stevensae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pagurus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pagurus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Paguridae" ;
+    dwc:genus "Pagurus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Paguridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Paguridae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Paguridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Choanites_suberea>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:genus "Choanites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Suberitida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "species" ;
+    dwc:species "suberea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Choanites> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Choanites>
+    dwc:class "Demospongiae" ;
+    dwc:family "Suberitidae" ;
+    dwc:genus "Choanites" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Suberitida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suberitidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Suberitida>
+    dwc:class "Demospongiae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Suberitida" ;
+    dwc:phylum "Porifera" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Demospongiae> ;
+    a dwcFP:TaxonName .
