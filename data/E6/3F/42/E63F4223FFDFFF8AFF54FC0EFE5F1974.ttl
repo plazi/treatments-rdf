@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:E63F4223FFDFFF8AFF54FC0EFE5F1974
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5360507> ;
+    dc:creator "Du, Sile; Yao, Yunzhi" ;
+    dc:title "Cucullitingis Du & Yao 2018, gen. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cucullitingis_Du_2018> ;
+    trt:publishedIn <http://dx.doi.org/10.11865/zs.201828> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11865/zs.201828>
-    dc:creator "Du, Sile", "Yao, Yunzhi" ;
-    dc:date "2018" ;
-    dc:title "A new genus and species of Tingidae (Heteroptera: Cimicomorpha) from Myanmar, with the analysis of the evolution of hood, carinae and paranota" ;
     bibo:endPage "293" ;
     bibo:issue "3" ;
     bibo:journal "Zoological Systematics" ;
     bibo:startPage "283" ;
     bibo:volume "43" ;
+    dc:creator "Du, Sile; Yao, Yunzhi" ;
+    dc:date "2018" ;
+    dc:title "A new genus and species of Tingidae (Heteroptera: Cimicomorpha) from Myanmar, with the analysis of the evolution of hood, carinae and paranota" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5360507> ;
     a fabio:JournalArticle .
 
@@ -27,7 +36,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Cucullitingis_Du_2018>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cucullitingis> ;
     dwc:class "Insecta" ;
     dwc:family "Tingidae" ;
     dwc:genus "Cucullitingis" ;
@@ -36,22 +44,34 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Du & Yao, 2018" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cucullitingis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
+<http://taxon-concept.plazi.org/id/Animalia/Cucullitingis_biacantha_Du_2018>
+    dwc:class "Insecta" ;
+    dwc:family "Tingidae" ;
+    dwc:genus "Cucullitingis" ;
     dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Du & Yao, 2018" ;
+    dwc:species "biacantha" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Cucullitingis_biacantha> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tingidae_Laporte_1833>
+    dwc:class "Insecta" ;
+    dwc:family "Tingidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Laporte, 1833" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tingidae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Cucullitingis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tingidae> ;
     dwc:class "Insecta" ;
     dwc:family "Tingidae" ;
     dwc:genus "Cucullitingis" ;
@@ -59,39 +79,56 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hemiptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tingidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Tingidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Tingidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/E63F4223FFDFFF8AFF54FC0EFE5F1974>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Cucullitingis_Du_2018> ;
-    trt:publishedIn <http://dx.doi.org/10.11865/zs.201828> ;
-    dc:creator "Du, Sile", "Yao, Yunzhi" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5360507> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cucullitingis_biacantha>
+    dwc:class "Insecta" ;
+    dwc:family "Tingidae" ;
+    dwc:genus "Cucullitingis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "biacantha" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cucullitingis> ;
+    a dwcFP:TaxonName .
