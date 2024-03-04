@@ -1,24 +1,40 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:9AC5B4ADC7E128C7CDF991FA6F0574FF
+    dc:creator "Jarvis, Charlie" ;
+    dc:title "Agropyron caninum P. Beauv." ;
+    dwc:basisOfRecord <http://treatment.plazi.org/id/9AC5B4ADC7E128C7CDF991FA6F0574FF/100.10> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Agropyron_caninum_Linnaeus_1753> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Triticum_caninum_Linnaeus_1753>, <http://taxon-concept.plazi.org/id/Plantae/Elymus_caninus_Linnaeus_1753> ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.4370424> ;
+    a trt:Treatment .
 
 <http://doi.org/10.5281/zenodo.4370424>
+    bibo:endPage "905" ;
+    bibo:startPage "878" ;
     dc:creator "Jarvis, Charlie" ;
     dc:date "2007" ;
     dc:title "Chapter 7: Linnaean Plant Names and their Types (part T)" ;
-    bibo:endPage "905" ;
-    bibo:startPage "878" ;
     a fabio:BookSection .
 
+<http://treatment.plazi.org/id/9AC5B4ADC7E128C7CDF991FA6F0574FF/100.10>
+    dwc:catalogNumber "100.10" ;
+    dwc:collectionCode "LINN US" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "2611640422" ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Plantae/Agropyron_caninum_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Agropyron_caninum> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Agropyron" ;
@@ -28,23 +44,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(L.) P. Beauv." ;
     dwc:species "caninum" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Plantae/Elymus_caninus_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Elymus_caninus> ;
-    dwc:class "Liliopsida" ;
-    dwc:family "Poaceae" ;
-    dwc:genus "Elymus" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Poales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(L.) L. (1755)" ;
-    dwc:species "caninus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Agropyron_caninum> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Plantae/Triticum_caninum_Linnaeus_1753>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Triticum_caninum> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Triticum" ;
@@ -54,26 +57,10 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Linnaeus" ;
     dwc:species "caninum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Triticum_caninum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Plantae>
-    dwc:kingdom "Plantae" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Elymus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
-    dwc:class "Liliopsida" ;
-    dwc:family "Poaceae" ;
-    dwc:genus "Elymus" ;
-    dwc:kingdom "Plantae" ;
-    dwc:order "Poales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Plantae/Elymus_caninus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Elymus> ;
+<http://taxon-concept.plazi.org/id/Plantae/Elymus_caninus_Linnaeus_1753>
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Elymus" ;
@@ -81,56 +68,74 @@
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(L.) L. (1755)" ;
     dwc:species "caninus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Elymus_caninus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Plantae/Agropyron_caninum>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Agropyron" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "caninum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Agropyron> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+<http://taxon-name.plazi.org/id/Plantae/Agropyron>
     dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Agropyron" ;
     dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
-    dwc:rank "class" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Poaceae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poales> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Poales>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
     dwc:class "Liliopsida" ;
     dwc:kingdom "Plantae" ;
     dwc:order "Poales" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Liliopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Liliopsida>
+    dwc:class "Liliopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     dwc:kingdom "Plantae" ;
     dwc:phylum "Tracheophyta" ;
     dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Plantae/Triticum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
-    dwc:class "Liliopsida" ;
-    dwc:family "Poaceae" ;
-    dwc:genus "Triticum" ;
+<http://taxon-name.plazi.org/id/Plantae>
     dwc:kingdom "Plantae" ;
-    dwc:order "Poales" ;
-    dwc:phylum "Tracheophyta" ;
-    dwc:rank "genus" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Plantae/Triticum_caninum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Triticum> ;
     dwc:class "Liliopsida" ;
     dwc:family "Poaceae" ;
     dwc:genus "Triticum" ;
@@ -139,19 +144,39 @@
     dwc:phylum "Tracheophyta" ;
     dwc:rank "species" ;
     dwc:species "caninum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Triticum> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/9AC5B4ADC7E128C7CDF991FA6F0574FF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Plantae/Agropyron_caninum_Linnaeus_1753> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Plantae/Elymus_caninus_Linnaeus_1753>, <http://taxon-concept.plazi.org/id/Plantae/Triticum_caninum_Linnaeus_1753> ;
-    trt:publishedIn <http://doi.org/10.5281/zenodo.4370424> ;
-    dc:creator "Jarvis, Charlie" ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/9AC5B4ADC7E128C7CDF991FA6F0574FF/100.10> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Plantae/Triticum>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Triticum" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/9AC5B4ADC7E128C7CDF991FA6F0574FF/100.10>
-    dwc:catalogNumber "100.10" ;
-    dwc:collectionCode "LINN US" ;
-    dwc:typeStatus "lectotype" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Plantae/Elymus_caninus>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Elymus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "caninus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Elymus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Plantae/Elymus>
+    dwc:class "Liliopsida" ;
+    dwc:family "Poaceae" ;
+    dwc:genus "Elymus" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Poales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Poaceae> ;
+    a dwcFP:TaxonName .
