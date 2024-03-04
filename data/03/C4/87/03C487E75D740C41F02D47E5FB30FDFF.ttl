@@ -1,24 +1,35 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03C487E75D740C41F02D47E5FB30FDFF
+    cito:cites <http://dx.doi.org/10.5281/zenodo.5057973> ;
+    dc:creator "Whitfield, James B." ;
+    dc:title "Pholetesor masneri" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03C487E75D740C41F02D47E5FB30FDFF.mc.3B053CAC5D740C4FF0E94797FDF3FCD4>, <http://tb.plazi.org/GgServer/dwcaRecords/03C487E75D740C41F02D47E5FB30FDFF.mc.3B053CAC5D7B0C40F315430DFCBFF8FF> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pholetesor_masneri_Mason_1981> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Teremys_masneri_Mason_1981> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.1144.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.1144.1.1>
-    dc:creator "Whitfield, James B." ;
-    dc:date "2006" ;
-    dc:title "Revision of the Nearctic species of the genus Pholetesor Mason (Hymenoptera: Braconidae)" ;
     bibo:endPage "94" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2006-03-10" ;
     bibo:startPage "1" ;
     bibo:volume "1144" ;
+    dc:creator "Whitfield, James B." ;
+    dc:date "2006" ;
+    dc:title "Revision of the Nearctic species of the genus Pholetesor Mason (Hymenoptera: Braconidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5057973> ;
     a fabio:JournalArticle .
 
@@ -27,9 +38,22 @@
     fabio:hasRepresentation "https://zenodo.org/record/5057973/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03C487E75D740C41F02D47E5FB30FDFF.mc.3B053CAC5D740C4FF0E94797FDF3FCD4>
+    dwc:collectionCode "CNC" ;
+    dwc:typeStatus "holotype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C487E75D740C41F02D47E5FB30FDFF#3B053CAC5D740C4FF0E94797FDF3FCD4> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03C487E75D740C41F02D47E5FB30FDFF.mc.3B053CAC5D7B0C40F315430DFCBFF8FF>
+    dwc:collectionCode "CNC" ;
+    dwc:eventDate "1939-08" ;
+    dwc:locality "Redding" ;
+    dwc:recordedBy "L. Masner & M. Sanborne & The" ;
+    dwc:typeStatus "paratype" ;
+    trt:httpUri <https://treatment.plazi.org/id/03C487E75D740C41F02D47E5FB30FDFF#3B053CAC5D7B0C40F315430DFCBFF8FF> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Pholetesor_masneri_Mason_1981>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pholetesor_masneri> ;
-    dwc:ID-CoL "4GLGT" ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Pholetesor" ;
@@ -39,10 +63,11 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "(Mason)" ;
     dwc:species "masneri" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4GLGT> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pholetesor_masneri> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Teremys_masneri_Mason_1981>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teremys_masneri> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Teremys" ;
@@ -52,49 +77,36 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Mason, 1981" ;
     dwc:species "masneri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Teremys_masneri> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Braconidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pholetesor_bucculatricis_Muesebeck_1921>
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
+    dwc:genus "Pholetesor" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Muesebeck, 1921" ;
+    dwc:species "bucculatricis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pholetesor_bucculatricis> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pholetesor_zelleriae_Whitfield_2006>
     dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Pholetesor" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Whitfield, 2006" ;
+    dwc:species "zelleriae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pholetesor_zelleriae> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Pholetesor>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Pholetesor_Mason_1981>
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Pholetesor" ;
@@ -102,10 +114,11 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Mason, 1981" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pholetesor> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Pholetesor_masneri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pholetesor> ;
     dwc:class "Insecta" ;
     dwc:family "Braconidae" ;
     dwc:genus "Pholetesor" ;
@@ -114,13 +127,102 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "masneri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pholetesor> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03C487E75D740C41F02D47E5FB30FDFF>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pholetesor_masneri_Mason_1981> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Teremys_masneri_Mason_1981> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.1144.1.1> ;
-    dc:creator "Whitfield, James B." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5057973> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Pholetesor>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Pholetesor" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Braconidae>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Teremys_masneri>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Teremys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "masneri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Teremys> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Teremys>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Teremys" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Braconidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pholetesor_bucculatricis>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Pholetesor" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "bucculatricis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pholetesor> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pholetesor_zelleriae>
+    dwc:class "Insecta" ;
+    dwc:family "Braconidae" ;
+    dwc:genus "Pholetesor" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "zelleriae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pholetesor> ;
+    a dwcFP:TaxonName .
