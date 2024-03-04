@@ -1,16 +1,27 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03CDD50F7C646400FF57BB7997E85639
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Hippolyte_Gibbes_1850>, <http://dx.doi.org/10.5281/zenodo.1138550>, <http://dx.doi.org/10.5281/zenodo.1138552> ;
+    dc:creator "Terossi, Mariana; Almeida, Alexandre O.; Buranelli, Raquel C.; Castilho, Antonio L.; Costa, Rogério C.; Zara, Fernando J.; Mantelatto, Fernando L." ;
+    dc:title "Lysmata wurdemanni" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03CDD50F7C646400FF57BB7997E85639.mc.3B0C6E447C646401FF57BA2C97F35065>, <http://tb.plazi.org/GgServer/dwcaRecords/03CDD50F7C646400FF57BB7997E85639.mc.3B0C6E447C646401FF57BA07960F5039> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lysmata_wurdemanni_Gibbes_1850> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4370.1.6> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4370.1.6>
-    dc:creator "Almeida, Alexandre O.", "Buranelli, Raquel C.", "Castilho, Antonio L.", "Costa, Rogério C.", "Mantelatto, Fernando L.", "Terossi, Mariana", "Zara, Fernando J." ;
+    dc:creator "Terossi, Mariana; Almeida, Alexandre O.; Buranelli, Raquel C.; Castilho, Antonio L.; Costa, Rogério C.; Zara, Fernando J.; Mantelatto, Fernando L." ;
+    dc:date "2018" ;
     dc:title "Checklist of decapods (Crustacea) from the coast of the São Paulo state (Brazil) supported by integrative molecular and morphological data: I. Infraorder Caridea: families Hippolytidae, Lysmatidae, Ogyrididae, Processidae and Thoridae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1138550>, <http://dx.doi.org/10.5281/zenodo.1138552> .
 
@@ -24,9 +35,41 @@
     fabio:hasRepresentation "https://zenodo.org/record/1138552/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03CDD50F7C646400FF57BB7997E85639.mc.3B0C6E447C646401FF57BA2C97F35065>
+    dwc:catalogNumber "CCDB 6258" ;
+    dwc:collectionCode "CCDB" ;
+    dwc:eventDate "2011-09-05" ;
+    dwc:locality "Material" ;
+    dwc:recordedBy "Ubatuba & D. Rosa" ;
+    dwc:verbatimElevation "35" ;
+    trt:gbifOccurrenceId "1802548221" ;
+    trt:httpUri <https://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639#3B0C6E447C646401FF57BA2C97F35065> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03CDD50F7C646400FF57BB7997E85639.mc.3B0C6E447C646401FF57BA07960F5039>
+    dwc:catalogNumber "CCDB 5510" ;
+    dwc:collectionCode "CCDB" ;
+    dwc:eventDate "2014-11-30" ;
+    dwc:locality "Enseada de Ubatuba" ;
+    dwc:recordedBy "Ubatuba & F. Mantelatto" ;
+    trt:gbifOccurrenceId "1802548222" ;
+    trt:httpUri <https://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639#3B0C6E447C646401FF57BA07960F5039> ;
+    a dwc:MaterialCitation .
+
+<http://taxon-concept.plazi.org/id/Animalia/Lysmata_wurdemanni_Gibbes_1850>
+    dwc:class "Malacostraca" ;
+    dwc:family "Hippolytidae" ;
+    dwc:genus "Lysmata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(Gibbes, 1850)", "Gibbes, 1850" ;
+    dwc:species "wurdemanni" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lysmata_wurdemanni> ;
+    a dwcFP:TaxonConcept .
+
 <http://taxon-concept.plazi.org/id/Animalia/Hippolyte_Gibbes_1850>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hippolyte> ;
-    dwc:ID-CoL "84P56" ;
     dwc:class "Malacostraca" ;
     dwc:family "Hippolytidae" ;
     dwc:genus "Hippolyte" ;
@@ -35,10 +78,11 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     dwc:scientificNameAuthorship "Wurdemanni Gibbes, 1850: 197" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Hippolyte> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Lysmata_wurdemanni_Gibbes_1850>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lysmata_wurdemanni> ;
+<http://taxon-concept.plazi.org/id/Animalia/Lysmata_bahia_Rhyne_2006>
     dwc:class "Malacostraca" ;
     dwc:family "Hippolytidae" ;
     dwc:genus "Lysmata" ;
@@ -46,33 +90,74 @@
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Gibbes, 1850)" ;
-    dwc:species "wurdemanni" ;
+    dwc:scientificNameAuthorship "Rhyne & Lin, 2006" ;
+    dwc:species "bahia" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Lysmata_bahia> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Lysmata_wurdemanni>
+    dwc:class "Malacostraca" ;
+    dwc:family "Hippolytidae" ;
+    dwc:genus "Lysmata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "wurdemanni" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lysmata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lysmata>
+    dwc:class "Malacostraca" ;
+    dwc:family "Hippolytidae" ;
+    dwc:genus "Lysmata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hippolytidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hippolytidae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Hippolytidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Decapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
 <http://taxon-name.plazi.org/id/Animalia/Hippolyte>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hippolytidae> ;
     dwc:class "Malacostraca" ;
     dwc:family "Hippolytidae" ;
     dwc:genus "Hippolyte" ;
@@ -80,31 +165,10 @@
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hippolytidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Hippolytidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lysmata>
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hippolytidae> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Hippolytidae" ;
-    dwc:genus "Lysmata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Lysmata_wurdemanni>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lysmata> ;
+<http://taxon-name.plazi.org/id/Animalia/Lysmata_bahia>
     dwc:class "Malacostraca" ;
     dwc:family "Hippolytidae" ;
     dwc:genus "Lysmata" ;
@@ -112,41 +176,6 @@
     dwc:order "Decapoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "wurdemanni" ;
+    dwc:species "bahia" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lysmata> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Lysmata_wurdemanni_Gibbes_1850> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4370.1.6> ;
-    dc:creator "Almeida, Alexandre O.", "Buranelli, Raquel C.", "Castilho, Antonio L.", "Costa, Rogério C.", "Mantelatto, Fernando L.", "Terossi, Mariana", "Zara, Fernando J." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1138550>, <http://dx.doi.org/10.5281/zenodo.1138552>, <http://taxon-concept.plazi.org/id/Animalia/Hippolyte_Gibbes_1850> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639/CCDB%205510>, <http://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639/CCDB%206258> ;
-    a trt:Treatment .
-
-<http://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639/CCDB%205510>
-    trt:gbifOccurrenceId "1802548222" ;
-    dwc:catalogNumber "CCDB 5510" ;
-    dwc:collectionCode "CCDB" ;
-    dwc:eventDate "2014-11-30" ;
-    dwc:locality "Enseada de Ubatuba" ;
-    dwc:recordedBy "Ubatuba & F. Mantelatto" ;
-    a dwc:MaterialCitation .
-
-<http://treatment.plazi.org/id/03CDD50F7C646400FF57BB7997E85639/CCDB%206258>
-    trt:gbifOccurrenceId "1802548221" ;
-    dwc:catalogNumber "CCDB 6258" ;
-    dwc:collectionCode "CCDB" ;
-    dwc:eventDate "2011-09-05" ;
-    dwc:locality "Material" ;
-    dwc:recordedBy "Ubatuba & D. Rosa" ;
-    dwc:verbatimElevation "35" ;
-    a dwc:MaterialCitation .
-
