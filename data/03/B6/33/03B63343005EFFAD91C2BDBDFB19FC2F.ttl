@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B63343005EFFAD91C2BDBDFB19FC2F
+    cito:cites <http://dx.doi.org/10.5281/zenodo.1188561>, <http://dx.doi.org/10.5281/zenodo.1188571> ;
+    dc:creator "Han, H. L.; Kononenko, V. S." ;
+    dc:title "Stenoloba albistriata Kononenko & Ronkay 2000" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/03B63343005EFFAD91C2BDBDFB19FC2F.mc.3B778808005EFFAD91C2BC2AFCBDFEEA>, <http://tb.plazi.org/GgServer/dwcaRecords/03B63343005EFFAD91C2BDBDFB19FC2F.mc.3B778808005EFFAD91C2BCC9FE06FE72> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stenoloba_albistriata_Kononenko_2000> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4388.3.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4388.3.1>
-    dc:creator "Han, H. L.", "Kononenko, V. S." ;
-    dc:date "2018" ;
-    dc:title "Twelve new species and four new records of Stenoloba Staudinger 1892 from China (Lepidoptera, Noctuidae: Bryophilinae)" ;
     bibo:endPage "327" ;
     bibo:issue "3" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2018-03-05" ;
     bibo:startPage "301" ;
     bibo:volume "4388" ;
+    dc:creator "Han, H. L.; Kononenko, V. S." ;
+    dc:date "2018" ;
+    dc:title "Twelve new species and four new records of Stenoloba Staudinger 1892 from China (Lepidoptera, Noctuidae: Bryophilinae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.1188561>, <http://dx.doi.org/10.5281/zenodo.1188571> ;
     a fabio:JournalArticle .
 
@@ -32,8 +42,26 @@
     fabio:hasRepresentation "https://zenodo.org/record/1188571/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/03B63343005EFFAD91C2BDBDFB19FC2F.mc.3B778808005EFFAD91C2BC2AFCBDFEEA>
+    dwc:collectionCode "BMNH" ;
+    dwc:locality "Myanmar" ;
+    dwc:recordedBy "Fort, Nr." ;
+    dwc:typeStatus "holotype" ;
+    dwc:verbatimElevation "2438" ;
+    trt:gbifOccurrenceId "1828903289" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B63343005EFFAD91C2BDBDFB19FC2F#3B778808005EFFAD91C2BC2AFCBDFEEA> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/03B63343005EFFAD91C2BDBDFB19FC2F.mc.3B778808005EFFAD91C2BCC9FE06FE72>
+    dwc:collectionCode "NEFU" ;
+    dwc:eventDate "2013-04" ;
+    dwc:locality "Guanpojiao" ;
+    dwc:recordedBy "Han & C. Zhang" ;
+    trt:gbifOccurrenceId "1828903074" ;
+    trt:httpUri <https://treatment.plazi.org/id/03B63343005EFFAD91C2BDBDFB19FC2F#3B778808005EFFAD91C2BCC9FE06FE72> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Stenoloba_albistriata_Kononenko_2000>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_albistriata> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Stenoloba" ;
@@ -43,60 +71,75 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Kononenko & Ronkay, 2000" ;
     dwc:species "albistriata" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_albistriata> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Noctuidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Stenoloba>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Stenoloba_olivacea_Wileman_1914>
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Stenoloba" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Wileman, 1914" ;
+    dwc:species "olivacea" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_olivacea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenoloba_fontinalis_Kononenko_1998>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Kononenko & Ronkay, 1998" ;
+    dwc:species "fontinalis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_fontinalis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenoloba_benedeki_Ronkay_2001>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Ronkay, 2001" ;
+    dwc:species "benedeki" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_benedeki> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenoloba_solaris_Pekarsky_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pekarsky & Saldatis, 2013" ;
+    dwc:species "solaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_solaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stenoloba_subsolaris_Pekarsky_2013>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pekarsky, Dvorak & G. Ronkay, 2013" ;
+    dwc:species "subsolaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stenoloba_subsolaris> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Stenoloba_albistriata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
     dwc:class "Insecta" ;
     dwc:family "Noctuidae" ;
     dwc:genus "Stenoloba" ;
@@ -105,12 +148,115 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "albistriata" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B63343005EFFAD91C2BDBDFB19FC2F>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Stenoloba_albistriata_Kononenko_2000> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4388.3.1> ;
-    dc:creator "Han, H. L.", "Kononenko, V. S." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.1188561>, <http://dx.doi.org/10.5281/zenodo.1188571> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Stenoloba>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Noctuidae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Noctuidae>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Lepidoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Lepidoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenoloba_olivacea>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "olivacea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenoloba_fontinalis>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "fontinalis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenoloba_benedeki>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "benedeki" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenoloba_solaris>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "solaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stenoloba_subsolaris>
+    dwc:class "Insecta" ;
+    dwc:family "Noctuidae" ;
+    dwc:genus "Stenoloba" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Lepidoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "subsolaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Stenoloba> ;
+    a dwcFP:TaxonName .
