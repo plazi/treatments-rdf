@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:ED428786597F985FD18D8E5D74919E97
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4819775> ;
+    dc:creator "Thofern, Detlef; Dupérré, Nadine; Harms, Danilo" ;
+    dc:title "Opisthemega lusitanum Verh. Verhoeff 1896" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/ED428786597F985FD18D8E5D74919E97.mc.D5833CCD597F985ED09F8DB875EC9894>, <http://tb.plazi.org/GgServer/dwcaRecords/ED428786597F985FD18D8E5D74919E97.mc.D5833CCD597F985ED0E18C9771A29990> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Opisthemega_lusitanum_Verhoeff_1896> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4977.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4977.1.1>
-    dc:creator "Dupérré, Nadine", "Harms, Danilo", "Thofern, Detlef" ;
-    dc:date "2021" ;
-    dc:title "An annotated type catalogue of the centipedes (Myriapoda: Chilopoda) held in the Zoological Museum Hamburg" ;
     bibo:endPage "103" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-05-27" ;
     bibo:startPage "1" ;
     bibo:volume "4977" ;
+    dc:creator "Thofern, Detlef; Dupérré, Nadine; Harms, Danilo" ;
+    dc:date "2021" ;
+    dc:title "An annotated type catalogue of the centipedes (Myriapoda: Chilopoda) held in the Zoological Museum Hamburg" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4819775> ;
     a fabio:JournalArticle .
 
@@ -27,8 +37,26 @@
     fabio:hasRepresentation "https://zenodo.org/record/4819775/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/ED428786597F985FD18D8E5D74919E97.mc.D5833CCD597F985ED09F8DB875EC9894>
+    dwc:catalogNumber "ZMH-A0000673, ZMH-A0009235" ;
+    dwc:collectionCode "ZMH-A" ;
+    dwc:locality "PORTUGAL" ;
+    dwc:typeStatus "syntype" ;
+    dwc:verbatimLatitude "38.716667" ;
+    dwc:verbatimLongitude "-9.15" ;
+    trt:gbifOccurrenceId "3312227508" ;
+    trt:httpUri <https://treatment.plazi.org/id/ED428786597F985FD18D8E5D74919E97#D5833CCD597F985ED09F8DB875EC9894> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/ED428786597F985FD18D8E5D74919E97.mc.D5833CCD597F985ED0E18C9771A29990>
+    dwc:collectionCode "ZMB" ;
+    dwc:locality "Portugal" ;
+    dwc:typeStatus "syntype" ;
+    trt:gbifOccurrenceId "3312227723" ;
+    trt:httpUri <https://treatment.plazi.org/id/ED428786597F985FD18D8E5D74919E97#D5833CCD597F985ED0E18C9771A29990> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Opisthemega_lusitanum_Verhoeff_1896>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opisthemega_lusitanum> ;
     dwc:class "Chilopoda" ;
     dwc:family "Plutoniumidae" ;
     dwc:genus "Opisthemega" ;
@@ -36,32 +64,50 @@
     dwc:order "Scolopendromorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Verhoeff, 1896" ;
+    dwc:scientificNameAuthorship "Verhoeff, 1896", "Verh. Verhoeff" ;
     dwc:species "lusitanum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opisthemega_lusitanum> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chilopoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-concept.plazi.org/id/Animalia/Opisthemega_lusitanum_Thofern_2021>
     dwc:class "Chilopoda" ;
+    dwc:family "Plutoniumidae" ;
+    dwc:genus "Opisthemega" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Scolopendromorpha" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Thofern & Dupérré & Harms, 2021" ;
+    dwc:species "lusitanum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opisthemega_lusitanum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Theatops_erythrocephalus_Koch_1847>
+    dwc:class "Chilopoda" ;
+    dwc:family "Cryptopidae" ;
+    dwc:genus "Theatops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scolopendromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "(C. L. Koch, 1847)" ;
+    dwc:species "erythrocephalus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Theatops_erythrocephalus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Opisthemega_lusitanum>
+    dwc:class "Chilopoda" ;
+    dwc:family "Plutoniumidae" ;
+    dwc:genus "Opisthemega" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scolopendromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "lusitanum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisthemega> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Opisthemega>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plutoniumidae> ;
     dwc:class "Chilopoda" ;
     dwc:family "Plutoniumidae" ;
     dwc:genus "Opisthemega" ;
@@ -69,54 +115,77 @@
     dwc:order "Scolopendromorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Opisthemega_lusitanum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisthemega> ;
-    dwc:class "Chilopoda" ;
-    dwc:family "Plutoniumidae" ;
-    dwc:genus "Opisthemega" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Scolopendromorpha" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "lusitanum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plutoniumidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Plutoniumidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scolopendromorpha> ;
     dwc:class "Chilopoda" ;
     dwc:family "Plutoniumidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scolopendromorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scolopendromorpha> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Scolopendromorpha>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chilopoda> ;
     dwc:class "Chilopoda" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Scolopendromorpha" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chilopoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/ED428786597F985FD18D8E5D74919E97>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Opisthemega_lusitanum_Verhoeff_1896> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4977.1.1> ;
-    dc:creator "Dupérré, Nadine", "Harms, Danilo", "Thofern, Detlef" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4819775> ;
-    dwc:basisOfRecord <http://treatment.plazi.org/id/ED428786597F985FD18D8E5D74919E97/ZMH-A0000673%2C%20ZMH-A0009235> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chilopoda>
+    dwc:class "Chilopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/ED428786597F985FD18D8E5D74919E97/ZMH-A0000673%2C%20ZMH-A0009235>
-    trt:gbifOccurrenceId "3312227508" ;
-    dwc:catalogNumber "ZMH-A0000673, ZMH-A0009235" ;
-    dwc:collectionCode "ZMH-A" ;
-    dwc:locality "PORTUGAL" ;
-    dwc:typeStatus "syntype" ;
-    dwc:verbatimLatitude "38.716667" ;
-    dwc:verbatimLongitude "-9.15" ;
-    a dwc:MaterialCitation .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theatops_erythrocephalus>
+    dwc:class "Chilopoda" ;
+    dwc:family "Cryptopidae" ;
+    dwc:genus "Theatops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scolopendromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "erythrocephalus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Theatops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Theatops>
+    dwc:class "Chilopoda" ;
+    dwc:family "Cryptopidae" ;
+    dwc:genus "Theatops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scolopendromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cryptopidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cryptopidae>
+    dwc:class "Chilopoda" ;
+    dwc:family "Cryptopidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Scolopendromorpha" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scolopendromorpha> ;
+    a dwcFP:TaxonName .

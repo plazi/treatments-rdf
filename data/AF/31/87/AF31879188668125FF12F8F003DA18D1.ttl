@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
 
-<http://dx.doi.org/10.11646/zootaxa.5221.1.1>
-    dc:creator "Miller, Douglass R.", "Stocks, Ian C." ;
-    dc:date "2022" ;
-    dc:title "New genera and species of felt scales (Hemiptera: Coccomorpha: Eriococcidae), with descriptions of new species and immature instars of described species" ;
+treatment:AF31879188668125FF12F8F003DA18D1
+    cito:cites <http://dx.doi.org/10.5281/zenodo.7441468> ;
+    dc:creator "Miller, Douglass R.; Stocks, Ian C." ;
+    dc:title "Carpochloroides mexicanus , Ferris 1957" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/AF31879188668125FF12F8F003DA18D1.mc.97F03CDA88668125FF12F871000A1DE9>, <http://tb.plazi.org/GgServer/dwcaRecords/AF31879188668125FF12F8F003DA18D1.mc.97F03CDA88678125FE54FE89003C1CBD> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Carpochloroides_mexicanus__1957> ;
+    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN>
     bibo:endPage "213" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2022-12-15" ;
     bibo:startPage "1" ;
     bibo:volume "5221" ;
+    dc:creator "Miller, Douglass R.; Stocks, Ian C." ;
+    dc:date "2022" ;
+    dc:title "New genera and species of felt scales (Hemiptera: Coccomorpha: Eriococcidae), with descriptions of new species and immature instars of described species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.7441468> ;
     a fabio:JournalArticle .
 
@@ -27,9 +37,24 @@
     fabio:hasRepresentation "https://zenodo.org/record/7441468/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/AF31879188668125FF12F8F003DA18D1.mc.97F03CDA88668125FF12F871000A1DE9>
+    dwc:collectionCode "UCD" ;
+    dwc:locality "Mexico" ;
+    dwc:recordedBy "G. F. Ferris" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "4003024303" ;
+    trt:httpUri <https://treatment.plazi.org/id/AF31879188668125FF12F8F003DA18D1#97F03CDA88668125FF12F871000A1DE9> ;
+    a dwc:MaterialCitation .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/AF31879188668125FF12F8F003DA18D1.mc.97F03CDA88678125FE54FE89003C1CBD>
+    dwc:collectionCode "UCD, USNM" ;
+    dwc:locality "Chivela" ;
+    dwc:typeStatus "lectotype" ;
+    trt:gbifOccurrenceId "4003024302" ;
+    trt:httpUri <https://treatment.plazi.org/id/AF31879188668125FF12F8F003DA18D1#97F03CDA88678125FE54FE89003C1CBD> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Carpochloroides_mexicanus__1957>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides_mexicanus> ;
-    dwc:ID-CoL "RG9D" ;
     dwc:class "Insecta" ;
     dwc:family "Eriococcidae" ;
     dwc:genus "Carpochloroides" ;
@@ -37,24 +62,13 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Ferris" ;
+    dwc:scientificNameAuthorship "Ferris", "Ferris 1957: 84", ", Ferris, 1957", ", Ferris (1957: 84)" ;
     dwc:species "mexicanus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/RG9D> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides_mexicanus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Carpochloroides>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eriococcidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Carpochloroides_Cockerell_1899>
     dwc:class "Insecta" ;
     dwc:family "Eriococcidae" ;
     dwc:genus "Carpochloroides" ;
@@ -62,10 +76,24 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Cockerell, 1899" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Carpochloroides_eugeniae_Miller_2022>
+    dwc:class "Insecta" ;
+    dwc:family "Eriococcidae" ;
+    dwc:genus "Carpochloroides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Miller & Stocks, 2022" ;
+    dwc:species "eugeniae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides_eugeniae> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Carpochloroides_mexicanus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides> ;
     dwc:class "Insecta" ;
     dwc:family "Eriococcidae" ;
     dwc:genus "Carpochloroides" ;
@@ -74,39 +102,67 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "mexicanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carpochloroides>
+    dwc:class "Insecta" ;
+    dwc:family "Eriococcidae" ;
+    dwc:genus "Carpochloroides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Eriococcidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Eriococcidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     dwc:class "Insecta" ;
     dwc:family "Eriococcidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/AF31879188668125FF12F8F003DA18D1>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Carpochloroides_mexicanus__1957> ;
-    trt:publishedIn <http://dx.doi.org/10.1094/PDIS-04-22-0755-PDN> ;
-    dc:creator "Miller, Douglass R.", "Stocks, Ian C." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.7441468> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Carpochloroides_eugeniae>
+    dwc:class "Insecta" ;
+    dwc:family "Eriococcidae" ;
+    dwc:genus "Carpochloroides" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "eugeniae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Carpochloroides> ;
+    a dwcFP:TaxonName .
