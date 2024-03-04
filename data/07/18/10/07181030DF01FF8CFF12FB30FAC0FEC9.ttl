@@ -1,24 +1,36 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:07181030DF01FF8CFF12FB30FAC0FEC9
+    cito:cites <http://dx.doi.org/10.5281/zenodo.8054291>, <http://dx.doi.org/10.5281/zenodo.8054384> ;
+    dc:creator "Grubbs, Scott A.; Baumann, Richard W." ;
+    dc:title "Zapada fumosa Baumann & Grubbs 2015" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/07181030DF01FF8CFF12FB30FAC0FEC9.mc.3FD9AB7BDF01FF8FFEBEFA7FFDFBFA10> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Zapada_fumosa_Baumann_2015> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Zapada_undefined-a> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Zapada_fumosa_Baumann_2015> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5306.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.5306.1.1>
-    dc:creator "Baumann, Richard W.", "Grubbs, Scott A." ;
-    dc:date "2023" ;
-    dc:title "The Nemourinae (Insecta, Nemouridae) of the eastern Nearctic" ;
     bibo:endPage "53" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2023-06-19" ;
     bibo:startPage "1" ;
     bibo:volume "5306" ;
+    dc:creator "Grubbs, Scott A.; Baumann, Richard W." ;
+    dc:date "2023" ;
+    dc:title "The Nemourinae (Insecta, Nemouridae) of the eastern Nearctic" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.8054291>, <http://dx.doi.org/10.5281/zenodo.8054384> ;
     a fabio:JournalArticle .
 
@@ -32,9 +44,14 @@
     fabio:hasRepresentation "https://zenodo.org/record/8054384/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/07181030DF01FF8CFF12FB30FAC0FEC9.mc.3FD9AB7BDF01FF8FFEBEFA7FFDFBFA10>
+    dwc:locality "Walker Camp Prong" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "4132510301" ;
+    trt:httpUri <https://treatment.plazi.org/id/07181030DF01FF8CFF12FB30FAC0FEC9#3FD9AB7BDF01FF8FFEBEFA7FFDFBFA10> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Zapada_fumosa_Baumann_2015>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zapada_fumosa> ;
-    dwc:ID-CoL "5CWWW" ;
     dwc:class "Insecta" ;
     dwc:family "Nemouridae" ;
     dwc:genus "Zapada" ;
@@ -42,51 +59,13 @@
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Baumann & Grubbs 2015", "Baumann & Grubbs, 2015" ;
+    dwc:scientificNameAuthorship "Baumann & Grubbs, 2015", "Baumann & Grubbs 2015" ;
     dwc:species "fumosa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/5CWWW> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zapada_fumosa> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Nemouridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
-    dwc:class "Insecta" ;
-    dwc:family "Nemouridae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Plecoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Plecoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Plecoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Zapada>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemouridae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Zapada_Ricker_1952>
     dwc:class "Insecta" ;
     dwc:family "Nemouridae" ;
     dwc:genus "Zapada" ;
@@ -94,10 +73,50 @@
     dwc:order "Plecoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "Ricker, 1952" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zapada> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Zapada_fumosa_Baumann_1315>
+    dwc:class "Insecta" ;
+    dwc:family "Nemouridae" ;
+    dwc:genus "Zapada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Baumann & Grubbs 2015:, 1315" ;
+    dwc:species "fumosa" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Zapada_fumosa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Picea_rubens_Sargent_1898>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Picea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Sargent, 1898" ;
+    dwc:species "rubens" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Picea_rubens> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Plantae/Abies_fraseri_Pursh_1817>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pursh, 1817" ;
+    dwc:species "fraseri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Plantae/Abies_fraseri> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Zapada_fumosa>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zapada> ;
     dwc:class "Insecta" ;
     dwc:family "Nemouridae" ;
     dwc:genus "Zapada" ;
@@ -106,14 +125,140 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "fumosa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Zapada> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/07181030DF01FF8CFF12FB30FAC0FEC9>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Zapada_fumosa_Baumann_2015> ;
-    trt:citesTaxonName <file:///workdir/tmprdf/data/07/18/10/Zapada_undefined-a> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Zapada_fumosa_Baumann_2015> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.5306.1.1> ;
-    dc:creator "Baumann, Richard W.", "Grubbs, Scott A." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.8054291>, <http://dx.doi.org/10.5281/zenodo.8054384> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Zapada>
+    dwc:class "Insecta" ;
+    dwc:family "Nemouridae" ;
+    dwc:genus "Zapada" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Nemouridae> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Nemouridae>
+    dwc:class "Insecta" ;
+    dwc:family "Nemouridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Plecoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Plecoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Plecoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Picea_rubens>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Picea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "rubens" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Picea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Picea>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Picea" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinaceae>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinales>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Pinopsida>
+    dwc:class "Pinopsida" ;
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Tracheophyta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Tracheophyta>
+    dwc:kingdom "Plantae" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae>
+    dwc:kingdom "Plantae" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Abies_fraseri>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "species" ;
+    dwc:species "fraseri" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Abies> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Plantae/Abies>
+    dwc:class "Pinopsida" ;
+    dwc:family "Pinaceae" ;
+    dwc:genus "Abies" ;
+    dwc:kingdom "Plantae" ;
+    dwc:order "Pinales" ;
+    dwc:phylum "Tracheophyta" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Plantae/Pinaceae> ;
+    a dwcFP:TaxonName .
