@@ -1,22 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03B187D7FF9AFFF41BBFFBB4FC9DF979
+    cito:cites <http://dx.doi.org/10.5281/zenodo.279177> ;
+    dc:creator "Csuzdi, Csaba; Pavlíček, Tomáš" ;
+    dc:title "Martiodrilus (Botaria) helleri Michaelsen 1918" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Michaelsen_1918> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Thamnodrilus_helleri_Michaelsen_1918>, <http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Zicsi_1998> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.279174> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.279174>
-    dc:creator "Csuzdi, Csaba", "Pavlíček, Tomáš" ;
-    dc:date "2011" ;
-    dc:title "New and little known species of the genus Martiodrilus Michaelsen, 1936 from French Guiana (Oligochaeta, Glossoscolecidae)" ;
     bibo:endPage "64" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "57" ;
     bibo:volume "3099" ;
+    dc:creator "Csuzdi, Csaba; Pavlíček, Tomáš" ;
+    dc:date "2011" ;
+    dc:title "New and little known species of the genus Martiodrilus Michaelsen, 1936 from French Guiana (Oligochaeta, Glossoscolecidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.279177> ;
     a fabio:JournalArticle .
 
@@ -26,7 +36,6 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Michaelsen_1918>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus_helleri> ;
     dwc:class "Clitellata" ;
     dwc:family "Glossoscolecidae" ;
     dwc:genus "Martiodrilus" ;
@@ -37,24 +46,10 @@
     dwc:scientificNameAuthorship "Michaelsen, 1918" ;
     dwc:species "helleri" ;
     dwc:subGenus "Botaria" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Zicsi_1998>
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus_helleri> ;
-    dwc:class "Clitellata" ;
-    dwc:family "Glossoscolecidae" ;
-    dwc:genus "Martiodrilus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Haplotaxida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Zicsi 1998: 150" ;
-    dwc:species "helleri" ;
-    dwc:subGenus "Botaria" ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Thamnodrilus_helleri_Michaelsen_1918>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thamnodrilus_helleri> ;
     dwc:class "Clitellata" ;
     dwc:family "Glossoscolecidae" ;
     dwc:genus "Thamnodrilus" ;
@@ -65,60 +60,37 @@
     dwc:scientificNameAuthorship "Michaelsen, 1918: 113" ;
     dwc:species "helleri" ;
     dwc:subGenus "Thamnodrilus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thamnodrilus_helleri> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Annelida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Clitellata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Glossoscolecidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haplotaxida> ;
-    dwc:class "Clitellata" ;
-    dwc:family "Glossoscolecidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Haplotaxida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Haplotaxida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
-    dwc:class "Clitellata" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Haplotaxida" ;
-    dwc:phylum "Annelida" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Martiodrilus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glossoscolecidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Righi_1995>
     dwc:class "Clitellata" ;
     dwc:family "Glossoscolecidae" ;
     dwc:genus "Martiodrilus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Haplotaxida" ;
     dwc:phylum "Annelida" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Righi 1995: 516" ;
+    dwc:species "helleri" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus_helleri> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Zicsi_1998>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:genus "Martiodrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Zicsi 1998: 150" ;
+    dwc:species "helleri" ;
+    dwc:subGenus "Botaria" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus_helleri> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Martiodrilus_helleri>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus> ;
     dwc:class "Clitellata" ;
     dwc:family "Glossoscolecidae" ;
     dwc:genus "Martiodrilus" ;
@@ -127,13 +99,104 @@
     dwc:phylum "Annelida" ;
     dwc:rank "species" ;
     dwc:species "helleri" ;
+    dwc:subGenus "Botaria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus_Botaria>, <http://taxon-name.plazi.org/id/Animalia/Martiodrilus> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03B187D7FF9AFFF41BBFFBB4FC9DF979>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Michaelsen_1918> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Martiodrilus_helleri_Zicsi_1998>, <http://taxon-concept.plazi.org/id/Animalia/Thamnodrilus_helleri_Michaelsen_1918> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.279174> ;
-    dc:creator "Csuzdi, Csaba", "Pavlíček, Tomáš" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.279177> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Martiodrilus_Botaria>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:genus "Martiodrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Botaria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Martiodrilus> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Martiodrilus>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:genus "Martiodrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glossoscolecidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Glossoscolecidae>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Haplotaxida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Haplotaxida>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Clitellata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Clitellata>
+    dwc:class "Clitellata" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Annelida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Annelida>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thamnodrilus_helleri>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:genus "Thamnodrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "species" ;
+    dwc:species "helleri" ;
+    dwc:subGenus "Thamnodrilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thamnodrilus_Thamnodrilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thamnodrilus_Thamnodrilus>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:genus "Thamnodrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Thamnodrilus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thamnodrilus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thamnodrilus>
+    dwc:class "Clitellata" ;
+    dwc:family "Glossoscolecidae" ;
+    dwc:genus "Thamnodrilus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Haplotaxida" ;
+    dwc:phylum "Annelida" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Glossoscolecidae> ;
+    a dwcFP:TaxonName .
