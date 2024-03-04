@@ -1,24 +1,33 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:03AE8B60AC17FFC96CC1FCFEFA28C485
+    cito:cites <http://taxon-concept.plazi.org/id/Animalia/Decapoda_Latreille_1802>, <http://taxon-concept.plazi.org/id/Animalia/Opis_leptochela_Bate_1868>, <http://dx.doi.org/10.5281/zenodo.5585752> ;
+    dc:creator "Lowry, J. K.; Kilgallen, N. M." ;
+    dc:title "Euonyx Norman 1867" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Euonyx_Norman_1867> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3867.1.1> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3867.1.1>
-    dc:creator "Kilgallen, N. M.", "Lowry, J. K." ;
-    dc:date "2014" ;
-    dc:title "A generic review of the lysianassoid family Uristidae and descriptions of new taxa from Australian waters (Crustacea, Amphipoda, Uristidae)" ;
     bibo:endPage "92" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2014-09-26" ;
     bibo:startPage "1" ;
     bibo:volume "3867" ;
+    dc:creator "Lowry, J. K.; Kilgallen, N. M." ;
+    dc:date "2014" ;
+    dc:title "A generic review of the lysianassoid family Uristidae and descriptions of new taxa from Australian waters (Crustacea, Amphipoda, Uristidae)" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.5585752> ;
     a fabio:JournalArticle .
 
@@ -27,20 +36,7 @@
     fabio:hasRepresentation "https://zenodo.org/record/5585752/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Decapoda_Latreille_1802>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
-    dwc:ID-CoL "33N" ;
-    dwc:class "Malacostraca" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    dwc:scientificNameAuthorship "Latreille, 1802" ;
-    a dwcFP:TaxonConcept .
-
 <http://taxon-concept.plazi.org/id/Animalia/Euonyx_Norman_1867>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
-    dwc:ID-CoL "7NZK7" ;
     dwc:class "Malacostraca" ;
     dwc:family "Uristidae" ;
     dwc:genus "Euonyx" ;
@@ -48,11 +44,23 @@
     dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
-    dwc:scientificNameAuthorship "Norman, 1867" ;
+    dwc:scientificNameAuthorship "Norman, 1867", "Norman, 1867: 202" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Decapoda_Latreille_1802>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Decapoda> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Opis_leptochela_Bate_1868>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opis_leptochela> ;
     dwc:class "Malacostraca" ;
     dwc:family "Opisidae" ;
     dwc:genus "Opis" ;
@@ -62,40 +70,92 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Bate & Westwood, 1868" ;
     dwc:species "leptochela" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Opis_leptochela> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Amphipoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+<http://taxon-concept.plazi.org/id/Animalia/Euonyx_chelatus_Norman_1867>
     dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Norman, 1867" ;
+    dwc:species "chelatus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx_chelatus> ;
+    a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Decapoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
+<http://taxon-concept.plazi.org/id/Animalia/Euonyx_coecus_Pirlot_1933>
     dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Decapoda" ;
+    dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Pirlot, 1933" ;
+    dwc:species "coecus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx_coecus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Euonyx_urania_Lowry_2014>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lowry & Kilgallen, 2014" ;
+    dwc:species "urania" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx_urania> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Euonyx_xarifa_Lowry_2014>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Lowry & Kilgallen, 2014" ;
+    dwc:species "xarifa" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx_xarifa> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Euonyx_conicurus_Barnard_1955>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "K. H. Barnard, 1955" ;
+    dwc:species "conicurus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/7NZK7> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Euonyx_conicurus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Stephonyx_Lowry_1989>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Stephonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Lowry & Stoddart, 1989" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Stephonyx> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Euonyx>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uristidae> ;
     dwc:class "Malacostraca" ;
     dwc:family "Uristidae" ;
     dwc:genus "Euonyx" ;
@@ -103,29 +163,58 @@
     dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uristidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Uristidae>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphipoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Amphipoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Malacostraca>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     dwc:class "Malacostraca" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Opis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisidae> ;
-    dwc:class "Malacostraca" ;
-    dwc:family "Opisidae" ;
-    dwc:genus "Opis" ;
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
     dwc:kingdom "Animalia" ;
-    dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "genus" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Decapoda>
+    dwc:class "Malacostraca" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Decapoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Malacostraca> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Opis_leptochela>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opis> ;
     dwc:class "Malacostraca" ;
     dwc:family "Opisidae" ;
     dwc:genus "Opis" ;
@@ -134,32 +223,97 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "leptochela" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Opis>
+    dwc:class "Malacostraca" ;
+    dwc:family "Opisidae" ;
+    dwc:genus "Opis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Opisidae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Opisidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphipoda> ;
     dwc:class "Malacostraca" ;
     dwc:family "Opisidae" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphipoda> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Uristidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Amphipoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Euonyx_chelatus>
     dwc:class "Malacostraca" ;
     dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Amphipoda" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "chelatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/03AE8B60AC17FFC96CC1FCFEFA28C485>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Euonyx_Norman_1867> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3867.1.1> ;
-    dc:creator "Kilgallen, N. M.", "Lowry, J. K." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.5585752>, <http://taxon-concept.plazi.org/id/Animalia/Decapoda_Latreille_1802>, <http://taxon-concept.plazi.org/id/Animalia/Opis_leptochela_Bate_1868> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Euonyx_coecus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "coecus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia/Euonyx_urania>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "urania" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Euonyx_xarifa>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "xarifa" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Euonyx_conicurus>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Euonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "conicurus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Euonyx> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Stephonyx>
+    dwc:class "Malacostraca" ;
+    dwc:family "Uristidae" ;
+    dwc:genus "Stephonyx" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Amphipoda" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Uristidae> ;
+    a dwcFP:TaxonName .
