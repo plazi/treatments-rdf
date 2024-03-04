@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:1925031BFF9B3E2BA1BBB640174CFBED
+    cito:cites <http://dx.doi.org/10.5281/zenodo.237842>, <http://dx.doi.org/10.5281/zenodo.237843> ;
+    dc:creator "Dos Santos Junior, José N. A.; Silveira, Orlando T.; Carpenter, James M." ;
+    dc:title "Protopolybia exigua" ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_sedula>, <http://taxon-name.plazi.org/id/Animalia/Protopolybia_minutissima>, <http://taxon-name.plazi.org/id/Animalia/Protopolybia_palmarum> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Protopolybia_palmarum_Blanchard_1868>, <http://taxon-concept.plazi.org/id/Animalia/Protopolybia_exigua_exigua_Richards_1978> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3956.2.1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.3956.2.1>
-    dc:creator "Carpenter, James M.", "Dos Santos Junior, José N. A.", "Silveira, Orlando T." ;
-    dc:date "2015" ;
-    dc:title "Phylogeny of Protopolybia Ducke, 1905 and taxonomic revision of the Protopolybia exigua species-group (Hymenoptera: Vespidae, Polistinae), with description of four new species" ;
     bibo:endPage "182" ;
     bibo:issue "2" ;
     bibo:journal "Zootaxa" ;
     bibo:startPage "151" ;
     bibo:volume "3956" ;
+    dc:creator "Dos Santos Junior, José N. A.; Silveira, Orlando T.; Carpenter, James M." ;
+    dc:date "2015" ;
+    dc:title "Phylogeny of Protopolybia Ducke, 1905 and taxonomic revision of the Protopolybia exigua species-group (Hymenoptera: Vespidae, Polistinae), with description of four new species" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.237842>, <http://dx.doi.org/10.5281/zenodo.237843> ;
     a fabio:JournalArticle .
 
@@ -31,9 +42,35 @@
     fabio:hasRepresentation "https://zenodo.org/record/237843/files/figure.png" ;
     a fabio:Figure .
 
-<http://taxon-concept.plazi.org/id/Animalia/Protopolybia_exigua_exigua_Richards_1978>
+<http://taxon-concept.plazi.org/id/Animalia/Protopolybia_palmarum_Blanchard_1868>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Protopolybia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Blanchard 1868: 415" ;
+    dwc:species "palmarum" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_palmarum> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Protopolybia_exigua_exigua_Bequaert_1944>
+    dwc:class "Insecta" ;
+    dwc:family "Vespidae" ;
+    dwc:genus "Protopolybia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hymenoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Bequaert 1944a: 108" ;
+    dwc:species "exigua" ;
+    dwc:variety "exigua" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4N6P3> ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua_exigua> ;
-    dwc:ID-CoL "4N6P3" ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Protopolybia_exigua_exigua_Richards_1978>
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Protopolybia" ;
@@ -44,10 +81,11 @@
     dwc:scientificNameAuthorship "Richards 1978: 138" ;
     dwc:species "exigua" ;
     dwc:subSpecies "exigua" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4N6P3> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua_exigua> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Protopolybia_palmarum_Blanchard_1868>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_palmarum> ;
+<http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua>
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Protopolybia" ;
@@ -55,41 +93,11 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Blanchard 1868: 415" ;
-    dwc:species "palmarum" ;
-    a dwcFP:TaxonConcept .
-
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Hymenoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
-    dwc:class "Insecta" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:species "exigua" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Protopolybia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Protopolybia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Protopolybia" ;
@@ -97,35 +105,49 @@
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Vespidae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Protopolybia> ;
+<http://taxon-name.plazi.org/id/Animalia/Vespidae>
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
-    dwc:genus "Protopolybia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "exigua" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua_exigua>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua> ;
+<http://taxon-name.plazi.org/id/Animalia/Hymenoptera>
     dwc:class "Insecta" ;
-    dwc:family "Vespidae" ;
-    dwc:genus "Protopolybia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "subSpecies" ;
-    dwc:species "exigua" ;
-    dwc:subSpecies "exigua" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Protopolybia_palmarum>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Protopolybia> ;
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
     dwc:genus "Protopolybia" ;
@@ -134,24 +156,19 @@
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
     dwc:species "palmarum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Protopolybia> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Vespidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hymenoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua_exigua>
     dwc:class "Insecta" ;
     dwc:family "Vespidae" ;
+    dwc:genus "Protopolybia" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hymenoptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "variety", "subSpecies" ;
+    dwc:species "exigua" ;
+    dwc:subSpecies "exigua" ;
+    dwc:variety "exigua" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/1925031BFF9B3E2BA1BBB640174CFBED>
-    trt:citesTaxonName <file:///workdir/tmprdf/data/19/25/03/Protopolybia_minutissima>, <file:///workdir/tmprdf/data/19/25/03/Protopolybia_palmarum>, <file:///workdir/tmprdf/data/19/25/03/Protopolybia_sedula> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Protopolybia_exigua_exigua_Richards_1978>, <http://taxon-concept.plazi.org/id/Animalia/Protopolybia_palmarum_Blanchard_1868> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.3956.2.1> ;
-    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Protopolybia_exigua> ;
-    dc:creator "Carpenter, James M.", "Dos Santos Junior, José N. A.", "Silveira, Orlando T." ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.237842>, <http://dx.doi.org/10.5281/zenodo.237843> ;
-    a trt:Treatment .
-
