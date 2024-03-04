@@ -1,23 +1,32 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6A75825C1F4E543EAD8331268388DCF5
+    cito:cites <http://dx.doi.org/10.3897/zookeys.1095.79375.figure1>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure2>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure3>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure4> ;
+    dc:creator "Villanueva, Brenda Anaid Yanez; Solis-Marin, Francisco Alonso; Laguarda-Figueras, Alfredo" ;
+    dc:title "Holothuria (Lessonothuria) coronata Villanueva & Solís-Marín & Laguarda-Figueras 2022, sp. nov." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Holothuria_coronata_Villanueva_2022> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1095.79375> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.3897/zookeys.1095.79375>
-    dc:creator "Laguarda-Figueras, Alfredo", "Solis-Marin, Francisco Alonso", "Villanueva, Brenda Anaid Yanez" ;
-    dc:date "2022" ;
-    dc:title "? Holothuria (Lessonothuria) coronata sp. nov. (Echinodermata, Holothuroidea), a new species of sea cucumber from Socorro Island, Mexico" ;
     bibo:endPage "12" ;
     bibo:journal "ZooKeys" ;
     bibo:pubDate "2022-04-13" ;
     bibo:startPage "1" ;
     bibo:volume "1095" ;
+    dc:creator "Villanueva, Brenda Anaid Yanez; Solis-Marin, Francisco Alonso; Laguarda-Figueras, Alfredo" ;
+    dc:date "2022" ;
+    dc:title "? Holothuria (Lessonothuria) coronata sp. nov. (Echinodermata, Holothuroidea), a new species of sea cucumber from Socorro Island, Mexico" ;
     fabio:hasPart <http://dx.doi.org/10.3897/zookeys.1095.79375.figure1>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure2>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure3>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure4> ;
     a fabio:JournalArticle .
 
@@ -42,86 +51,112 @@
     a fabio:Figure .
 
 <http://taxon-concept.plazi.org/id/Animalia/Holothuria_coronata_Villanueva_2022>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Holothuria_coronata> ;
     dwc:LSID "http://zoobank.org/0734862E-3F19-4790-AD3B-04440C36B869" ;
     dwc:class "Holothuroidea" ;
     dwc:family "Holothuriidae" ;
     dwc:genus "Holothuria" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Holothuriida" ;
+    dwc:order "Holothuriida", "Aspidochirotida" ;
     dwc:phylum "Echinodermata" ;
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Villanueva & Solís-Marín & Laguarda-Figueras, 2022" ;
     dwc:species "coronata" ;
-    dwc:subGenus "Lessonothuria" ;
+    dwc:subGenus "Lessonothuria", "L." ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Holothuria_coronata> ;
     a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Holothuria_coronata>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:genus "Holothuria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Holothuriida", "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "species" ;
+    dwc:species "coronata" ;
+    dwc:subGenus "Lessonothuria", "L." ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuria_Lessonothuria>, <http://taxon-name.plazi.org/id/Animalia/Holothuria_L.> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Holothuria_Lessonothuria>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:genus "Holothuria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Holothuriida", "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Lessonothuria" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuria> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Holothuria>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:genus "Holothuria" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Holothuriida", "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Holothuriidae>
+    dwc:class "Holothuroidea" ;
+    dwc:family "Holothuriidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Holothuriida", "Aspidochirotida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriida>, <http://taxon-name.plazi.org/id/Animalia/Aspidochirotida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Holothuriida>
+    dwc:class "Holothuroidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Holothuriida" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Holothuroidea>
+    dwc:class "Holothuroidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Echinodermata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Echinodermata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia>
     dwc:kingdom "Animalia" ;
     dwc:rank "kingdom" ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Echinodermata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Holothuria>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriidae> ;
-    dwc:class "Holothuroidea" ;
-    dwc:family "Holothuriidae" ;
-    dwc:genus "Holothuria" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Holothuriida" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "genus" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Holothuria_coronata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuria> ;
-    dwc:class "Holothuroidea" ;
-    dwc:family "Holothuriidae" ;
-    dwc:genus "Holothuria" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Holothuriida" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "species" ;
-    dwc:species "coronata" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Holothuriida>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
+<http://taxon-name.plazi.org/id/Animalia/Aspidochirotida>
     dwc:class "Holothuroidea" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Holothuriida" ;
+    dwc:order "Aspidochirotida" ;
     dwc:phylum "Echinodermata" ;
     dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuroidea> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Holothuriidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuriida> ;
+<http://taxon-name.plazi.org/id/Animalia/Holothuria_L.>
     dwc:class "Holothuroidea" ;
     dwc:family "Holothuriidae" ;
+    dwc:genus "Holothuria" ;
     dwc:kingdom "Animalia" ;
-    dwc:order "Holothuriida" ;
+    dwc:order "Aspidochirotida" ;
     dwc:phylum "Echinodermata" ;
-    dwc:rank "family" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "L." ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Holothuria> ;
     a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Holothuroidea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Echinodermata> ;
-    dwc:class "Holothuroidea" ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Echinodermata" ;
-    dwc:rank "class" ;
-    a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/6A75825C1F4E543EAD8331268388DCF5>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Holothuria_coronata_Villanueva_2022> ;
-    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.1095.79375> ;
-    dc:creator "Laguarda-Figueras, Alfredo", "Solis-Marin, Francisco Alonso", "Villanueva, Brenda Anaid Yanez" ;
-    cito:cites <http://dx.doi.org/10.3897/zookeys.1095.79375.figure1>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure2>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure3>, <http://dx.doi.org/10.3897/zookeys.1095.79375.figure4> ;
-    a trt:Treatment .
-

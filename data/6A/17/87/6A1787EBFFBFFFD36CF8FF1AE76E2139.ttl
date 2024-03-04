@@ -1,24 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:6A1787EBFFBFFFD36CF8FF1AE76E2139
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4691704>, <http://dx.doi.org/10.5281/zenodo.4691708> ;
+    dc:creator "Albuquerque, Flavio; De-Souza, Caroline Costa; Favacho, César Augusto Chaves; Carvalho-Filho, Fernando Da Silva" ;
+    dc:title "Schizoptera (Cantharocoris) savannensis Albuquerque & De-Souza & Favacho & Carvalho-Filho 2021, sp. nov." ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/6A1787EBFFBFFFD36CF8FF1AE76E2139.mc.52D63CA0FFBFFFD06D20FEAAE49124B1> ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Schizoptera_savannensis_Albuquerque_2021> ;
+    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4958.1.13> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.11646/zootaxa.4958.1.13>
-    dc:creator "Albuquerque, Flavio", "Carvalho-Filho, Fernando Da Silva", "De-Souza, Caroline Costa", "Favacho, César Augusto Chaves" ;
-    dc:date "2021" ;
-    dc:title "Minute litter bugs (Heteroptera: Schizopteridae) from the Brazilian Amazon savannas, a poorly sampled biome" ;
     bibo:endPage "260" ;
     bibo:issue "1" ;
     bibo:journal "Zootaxa" ;
     bibo:pubDate "2021-04-14" ;
     bibo:startPage "252" ;
     bibo:volume "4958" ;
+    dc:creator "Albuquerque, Flavio; De-Souza, Caroline Costa; Favacho, César Augusto Chaves; Carvalho-Filho, Fernando Da Silva" ;
+    dc:date "2021" ;
+    dc:title "Minute litter bugs (Heteroptera: Schizopteridae) from the Brazilian Amazon savannas, a poorly sampled biome" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4691704>, <http://dx.doi.org/10.5281/zenodo.4691708> ;
     a fabio:JournalArticle .
 
@@ -32,9 +42,17 @@
     fabio:hasRepresentation "https://zenodo.org/record/4691708/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/6A1787EBFFBFFFD36CF8FF1AE76E2139.mc.52D63CA0FFBFFFD06D20FEAAE49124B1>
+    dwc:collectionCode "MPEG" ;
+    dwc:eventDate "2019-06-15" ;
+    dwc:locality "Macapa" ;
+    dwc:recordedBy "F. S. Carvalho-Filho & Armadilha" ;
+    dwc:typeStatus "holotype" ;
+    trt:gbifOccurrenceId "3080401303" ;
+    trt:httpUri <https://treatment.plazi.org/id/6A1787EBFFBFFFD36CF8FF1AE76E2139#52D63CA0FFBFFFD06D20FEAAE49124B1> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Schizoptera_savannensis_Albuquerque_2021>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_savannensis> ;
-    dwc:ID-CoL "4374ad08-15df-4515-976c-c37b6ea56295" ;
     dwc:class "Insecta" ;
     dwc:family "Schizopteridae" ;
     dwc:genus "Schizoptera" ;
@@ -42,42 +60,93 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Albuquerque & Carvalho-Filho" ;
+    dwc:scientificNameAuthorship "Albuquerque & Carvalho-Filho", "Albuquerque & De-Souza & Favacho & Carvalho-Filho, 2021" ;
     dwc:species "savannensis" ;
     dwc:subGenus "Cantharocoris" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/4374ad08-15df-4515-976c-c37b6ea56295> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_savannensis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+<http://taxon-concept.plazi.org/id/Animalia/Corixidea_graziae_Albuquerque_2021>
     dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Corixidea" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "order" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Albuquerque & De-Souza & Favacho & Carvalho-Filho, 2021" ;
+    dwc:species "graziae" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corixidea_graziae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Corixidea_quilombola_Albuquerque_2021>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Corixidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Albuquerque & De-Souza & Favacho & Carvalho-Filho, 2021" ;
+    dwc:species "quilombola" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Corixidea_quilombola> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Schizoptera_grandi_Emsley_1969>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Schizoptera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Emsley, 1969" ;
+    dwc:species "grandi" ;
+    dwc:subGenus "Cantharocoris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_grandi> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Schizoptera_apatosulcata_Emsley_1969>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Schizoptera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Emsley, 1969" ;
+    dwc:species "apatosulcata" ;
+    dwc:subGenus "Cantharocoris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_apatosulcata> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Schizoptera_savannensis>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Schizoptera" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "savannensis" ;
+    dwc:subGenus "Cantharocoris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_Cantharocoris> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Insecta>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+<http://taxon-name.plazi.org/id/Animalia/Schizoptera_Cantharocoris>
     dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Schizoptera" ;
     dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "class" ;
+    dwc:rank "subGenus" ;
+    dwc:subGenus "Cantharocoris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizoptera> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Schizoptera>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizopteridae> ;
     dwc:class "Insecta" ;
     dwc:family "Schizopteridae" ;
     dwc:genus "Schizoptera" ;
@@ -85,10 +154,84 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizopteridae> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Schizoptera_savannensis>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizoptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Schizopteridae>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Hemiptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corixidea_graziae>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Corixidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "graziae" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corixidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corixidea>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Corixidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizopteridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Corixidea_quilombola>
+    dwc:class "Insecta" ;
+    dwc:family "Schizopteridae" ;
+    dwc:genus "Corixidea" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Hemiptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "quilombola" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Corixidea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Schizoptera_grandi>
     dwc:class "Insecta" ;
     dwc:family "Schizopteridae" ;
     dwc:genus "Schizoptera" ;
@@ -96,23 +239,20 @@
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:species "savannensis" ;
+    dwc:species "grandi" ;
+    dwc:subGenus "Cantharocoris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_Cantharocoris> ;
     a dwcFP:TaxonName .
 
-<http://taxon-name.plazi.org/id/Animalia/Schizopteridae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Hemiptera> ;
+<http://taxon-name.plazi.org/id/Animalia/Schizoptera_apatosulcata>
     dwc:class "Insecta" ;
     dwc:family "Schizopteridae" ;
+    dwc:genus "Schizoptera" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Hemiptera" ;
     dwc:phylum "Arthropoda" ;
-    dwc:rank "family" ;
+    dwc:rank "species" ;
+    dwc:species "apatosulcata" ;
+    dwc:subGenus "Cantharocoris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Schizoptera_Cantharocoris> ;
     a dwcFP:TaxonName .
-
-<http://treatment.plazi.org/id/6A1787EBFFBFFFD36CF8FF1AE76E2139>
-    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Schizoptera_savannensis_Albuquerque_2021> ;
-    trt:publishedIn <http://dx.doi.org/10.11646/zootaxa.4958.1.13> ;
-    dc:creator "Albuquerque, Flavio", "Carvalho-Filho, Fernando Da Silva", "De-Souza, Caroline Costa", "Favacho, César Augusto Chaves" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.4691704>, <http://dx.doi.org/10.5281/zenodo.4691708> ;
-    a trt:Treatment .
-
