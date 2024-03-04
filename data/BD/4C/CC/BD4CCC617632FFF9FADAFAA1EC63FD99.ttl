@@ -1,20 +1,31 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
 @prefix fabio: <http://purl.org/spar/fabio/> .
-@prefix mods: <http://www.loc.gov/mods/v3> .
 @prefix trt: <http://plazi.org/vocab/treatment#> .
-@prefix xlink: <http://www.w3.org/1999/xlink> .
+@prefix treatment: <http://treatment.plazi.org/id/> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+
+treatment:BD4CCC617632FFF9FADAFAA1EC63FD99
+    cito:cites <http://dx.doi.org/10.5281/zenodo.6611048> ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:title "Globicephala macrorhynchus Gray 1846" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/BD4CCC617632FFF9FADAFAA1EC63FD99.mc.858D772A7632FFFAF728F9C6EF32F9BD> ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Globicephala_macrorhynchus_Gray_1846> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Globicephalus_macrorhynchus_Gray_1846> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6610922> ;
+    a trt:Treatment .
 
 <http://dx.doi.org/10.5281/zenodo.6610922>
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    dc:date "2014" ;
-    dc:title "Delphinidae" ;
     bibo:endPage "526" ;
     bibo:startPage "410" ;
+    dc:creator "Russell A. Mittermeier; Don E. Wilson" ;
+    dc:date "2014" ;
+    dc:title "Delphinidae" ;
     fabio:hasPart <http://dx.doi.org/10.5281/zenodo.6611048> ;
     a fabio:BookSection .
 
@@ -23,9 +34,12 @@
     fabio:hasRepresentation "https://zenodo.org/record/6611048/files/figure.png" ;
     a fabio:Figure .
 
+<http://tb.plazi.org/GgServer/dwcaRecords/BD4CCC617632FFF9FADAFAA1EC63FD99.mc.858D772A7632FFFAF728F9C6EF32F9BD>
+    trt:gbifOccurrenceId "3802895321" ;
+    trt:httpUri <https://treatment.plazi.org/id/BD4CCC617632FFF9FADAFAA1EC63FD99#858D772A7632FFFAF728F9C6EF32F9BD> ;
+    a dwc:MaterialCitation .
+
 <http://taxon-concept.plazi.org/id/Animalia/Globicephala_macrorhynchus_Gray_1846>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Globicephala_macrorhynchus> ;
-    dwc:ID-CoL "3G9Z4" ;
     dwc:authority "Mittermeier, 2014" ;
     dwc:authorityName "Mittermeier" ;
     dwc:authorityYear "2014" ;
@@ -36,11 +50,13 @@
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Gray, 1846" ;
     dwc:species "macrorhynchus" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/3G9Z4> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Globicephala_macrorhynchus> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Globicephalus_macrorhynchus_Gray_1846>
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Globicephalus_macrorhynchus> ;
     dwc:class "Mammalia" ;
     dwc:family "Delphinidae" ;
     dwc:genus "Globicephalus" ;
@@ -50,52 +66,85 @@
     dwc:rank "species" ;
     dwc:scientificNameAuthorship "Gray, 1846" ;
     dwc:species "macrorhynchus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Globicephalus_macrorhynchus> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-name.plazi.org/id/Animalia>
-    dwc:kingdom "Animalia" ;
-    dwc:rank "kingdom" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Cetacea>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
-    dwc:class "Mammalia" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "order" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chordata>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
-    dwc:kingdom "Animalia" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "phylum" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Delphinidae>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
-    dwc:class "Mammalia" ;
-    dwc:family "Delphinidae" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Cetacea" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "family" ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Globicephala>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphinidae> ;
+<http://taxon-concept.plazi.org/id/Animalia/Globicephala_melas_Traill_1809>
     dwc:class "Mammalia" ;
     dwc:family "Delphinidae" ;
     dwc:genus "Globicephala" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Cetacea" ;
     dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Traill, 1809" ;
+    dwc:species "melas" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Globicephala_melas> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Histioteuthis_Ferussac_1841>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Histioteuthidae" ;
+    dwc:genus "Histioteuthis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
     dwc:rank "genus" ;
-    a dwcFP:TaxonName .
+    dwc:scientificNameAuthorship "d'Orbigny [in Ferussac & d'Orbigny, 1841" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Histioteuthis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Tursiops_truncatus_Montagu_1821>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Tursiops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Montagu, 1821" ;
+    dwc:species "truncatus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Tursiops_truncatus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Fungi/Stenella_Gray_1866>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Mycosphaerellaceae" ;
+    dwc:genus "Stenella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Capnodiales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "Gray, 1866" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Fungi/Stenella> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Thunnus_J.F.South_1845>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Scombridae" ;
+    dwc:genus "Thunnus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    dwc:scientificNameAuthorship "J.F.South, 1845" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Thunnus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-concept.plazi.org/id/Animalia/Orcinus_orca_Linnaeus_1758>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Orcinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Linnaeus, 1758" ;
+    dwc:species "orca" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Orcinus_orca> ;
+    a dwcFP:TaxonConcept .
 
 <http://taxon-name.plazi.org/id/Animalia/Globicephala_macrorhynchus>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Globicephala> ;
     dwc:class "Mammalia" ;
     dwc:family "Delphinidae" ;
     dwc:genus "Globicephala" ;
@@ -104,21 +153,269 @@
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
     dwc:species "macrorhynchus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Globicephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Globicephala>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Globicephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Delphinidae>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cetacea> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cetacea>
+    dwc:class "Mammalia" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mammalia> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Mammalia>
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     dwc:class "Mammalia" ;
     dwc:kingdom "Animalia" ;
     dwc:phylum "Chordata" ;
     dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
     a dwcFP:TaxonName .
 
-<http://treatment.plazi.org/id/BD4CCC617632FFF9FADAFAA1EC63FD99>
-    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Globicephala_macrorhynchus_Gray_1846> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Globicephalus_macrorhynchus_Gray_1846> ;
-    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.6610922> ;
-    dc:creator "Don E. Wilson", "Russell A. Mittermeier" ;
-    cito:cites <http://dx.doi.org/10.5281/zenodo.6611048> ;
-    a trt:Treatment .
+<http://taxon-name.plazi.org/id/Animalia/Chordata>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
 
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Globicephalus_macrorhynchus>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Globicephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "macrorhynchus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Globicephalus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Globicephalus>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Globicephalus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Globicephala_melas>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Globicephala" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "melas" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Globicephala> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Histioteuthis>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Histioteuthidae" ;
+    dwc:genus "Histioteuthis" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Histioteuthidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Histioteuthidae>
+    dwc:class "Cephalopoda" ;
+    dwc:family "Histioteuthidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Oegopsida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Oegopsida>
+    dwc:class "Cephalopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Oegopsida" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cephalopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cephalopoda>
+    dwc:class "Cephalopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Mollusca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Mollusca>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Mollusca" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tursiops_truncatus>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Tursiops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "truncatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tursiops> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tursiops>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Tursiops" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphinidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Stenella>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Mycosphaerellaceae" ;
+    dwc:genus "Stenella" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Capnodiales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Mycosphaerellaceae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Mycosphaerellaceae>
+    dwc:class "Dothideomycetes" ;
+    dwc:family "Mycosphaerellaceae" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Capnodiales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Capnodiales> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Capnodiales>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:order "Capnodiales" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Dothideomycetes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Dothideomycetes>
+    dwc:class "Dothideomycetes" ;
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi/Ascomycota> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi/Ascomycota>
+    dwc:kingdom "Fungi" ;
+    dwc:phylum "Ascomycota" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Fungi> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Fungi>
+    dwc:kingdom "Fungi" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thunnus>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Scombridae" ;
+    dwc:genus "Thunnus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scombridae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scombridae>
+    dwc:class "Actinopterygii" ;
+    dwc:family "Scombridae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Perciformes> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Perciformes>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Perciformes" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Actinopterygii> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Actinopterygii>
+    dwc:class "Actinopterygii" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chordata> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Orcinus_orca>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Orcinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "species" ;
+    dwc:species "orca" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Orcinus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Orcinus>
+    dwc:class "Mammalia" ;
+    dwc:family "Delphinidae" ;
+    dwc:genus "Orcinus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Cetacea" ;
+    dwc:phylum "Chordata" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Delphinidae> ;
+    a dwcFP:TaxonName .
