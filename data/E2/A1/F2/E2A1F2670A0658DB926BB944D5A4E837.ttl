@@ -11,11 +11,24 @@
 @prefix xlink: <http://www.w3.org/1999/xlink/> .
 
 treatment:E2A1F2670A0658DB926BB944D5A4E837
+    # Error: Could not add TaxonConceptCitation
+# SyntaxError: Invalid regular expression: /\(?(napi (Linnaeus, 1758)\)?[,:;\s]*/g: Unterminated group
+# SyntaxError: Invalid regular expression: /\(?(napi (Linnaeus, 1758)\)?[,:;\s]*/g: Unterminated group
+#     at new RegExp (<anonymous>)
+#     at makeTaxonConcept (file:///app/src/gg2rdf.ts:493:11)
+#     at addTaxonConceptCitation (file:///app/src/gg2rdf.ts:899:26)
+#     at file:///app/src/gg2rdf.ts:275:11
+#     at y.forEach (<anonymous>)
+#     at makeTreatment (file:///app/src/gg2rdf.ts:260:7)
+#     at gg2rdf (file:///app/src/gg2rdf.ts:86:5)
+#     at run (file:///app/src/action_worker.ts:143:13)
+#     at startTask (file:///app/src/action_worker.ts:35:5)
+#     at file:///app/src/action_worker.ts:20:1 ;
     cito:cites <http://taxon-concept.plazi.org/id/Animalia/Pieris_melete_Menetries_1857>, <http://dx.doi.org/10.3897/asp.81.e85191.figure13>, <http://dx.doi.org/10.3897/asp.81.e85191.figure5>, <http://dx.doi.org/10.3897/asp.81.e85191.figure8> ;
     dc:creator "Ge, Si Xun; Jiang, Zhuo Heng; Wang, Jia Qi; Song, Kui; Zhang, Chao; Hu, Shao Ji" ;
     dc:title "Pieris melete subsp. melete melete Menetries 1857" ;
     trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pieris_melete_melete_Menetries_1857> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_var_orientis_Oberthur_1880>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_orientis_Oberthur_1880>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_(Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_var_orientis_Oberthur_1880>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_orientis_Oberthur_1880> ;
     trt:publishedIn <http://dx.doi.org/10.3897/asp.81.e85191> ;
     a trt:Treatment .
 
@@ -34,6 +47,9 @@ treatment:E2A1F2670A0658DB926BB944D5A4E837
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_melete_melete_Menetries_1857>
     dwc:ID-ENA "320203" ;
     dwc:LSID "E2A1F267-0A06-58DB-926B-B944D5A4E837" ;
+    dwc:authority "melete Menetries, 1857" ;
+    dwc:authorityName "melete Menetries" ;
+    dwc:authorityYear "1857" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -49,6 +65,8 @@ treatment:E2A1F2670A0658DB926BB944D5A4E837
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_melete_Menetries_1857>
+    dwc:authorityName "Menetries" ;
+    dwc:authorityYear "1857" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -62,6 +80,8 @@ treatment:E2A1F2670A0658DB926BB944D5A4E837
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_var_orientis_Oberthur_1880>
+    dwc:authorityName "Oberthur" ;
+    dwc:authorityYear "1880" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -77,6 +97,8 @@ treatment:E2A1F2670A0658DB926BB944D5A4E837
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_orientis_Oberthur_1880>
+    dwc:authorityName "Oberthur" ;
+    dwc:authorityYear "1880" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -89,7 +111,11 @@ treatment:E2A1F2670A0658DB926BB944D5A4E837
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_orientis> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_(Linnaeus_1758>
+<http://taxon-concept.plazi.org/id/Animalia/Pieris_napi__1758>
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
+    dwc:baseAuthorityName "napi (Linnaeus" ;
+    dwc:baseAuthorityYear "1758" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -97,10 +123,8 @@ treatment:E2A1F2670A0658DB926BB944D5A4E837
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "napi (Linnaeus, 1758)" ;
     dwc:species "napi" ;
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_napi> ;
-    a dwcFP:TaxonConcept .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_napi> .
 
 <http://taxon-name.plazi.org/id/Animalia/Pieris_melete_melete>
     dwc:class "Insecta" ;
