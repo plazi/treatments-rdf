@@ -11,11 +11,24 @@
 @prefix xlink: <http://www.w3.org/1999/xlink/> .
 
 treatment:0389DF41FFBEA92AFCAEADCAFF04F973
+    # Error: Could not add TaxonConceptCitation
+# SyntaxError: Invalid regular expression: /\(?(chlorochromodes (Prout, 1916)\)?[,:;\s]*/g: Unterminated group
+# SyntaxError: Invalid regular expression: /\(?(chlorochromodes (Prout, 1916)\)?[,:;\s]*/g: Unterminated group
+#     at new RegExp (<anonymous>)
+#     at makeTaxonConcept (file:///app/src/gg2rdf.ts:493:11)
+#     at addTaxonConceptCitation (file:///app/src/gg2rdf.ts:899:26)
+#     at file:///app/src/gg2rdf.ts:275:11
+#     at y.forEach (<anonymous>)
+#     at makeTreatment (file:///app/src/gg2rdf.ts:260:7)
+#     at gg2rdf (file:///app/src/gg2rdf.ts:86:5)
+#     at run (file:///app/src/action_worker.ts:143:13)
+#     at startTask (file:///app/src/action_worker.ts:35:5)
+#     at file:///app/src/action_worker.ts:20:1 ;
     cito:cites <http://dx.doi.org/10.5281/zenodo.5408093>, <http://dx.doi.org/10.5281/zenodo.5408102>, <http://dx.doi.org/10.5281/zenodo.5408108>, <http://dx.doi.org/10.5281/zenodo.5408110>, <http://dx.doi.org/10.5281/zenodo.5408118> ;
     dc:creator "Han, Hongxiang; Galsworthy, Anthony C.; Xue, Dayong" ;
     dc:title "Chlorochromodes rhodocraspeda Han & Galsworthy & Xue 2012, SP. NOV." ;
     trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_rhodocraspeda_Han_2012> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_albicatena_Han_2012>, <http://taxon-concept.plazi.org/id/Animalia/Comostolodes_albicatena_Warren_1896>, <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_chlorochromodes_(Prout_1916>, <http://taxon-concept.plazi.org/id/Animalia/Hercoloxia_chlorochromodes_Prout_1916>, <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_dialitha_West_1930>, <http://taxon-concept.plazi.org/id/Animalia/Colutoceras_dialitha_West_1930>, <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_tenera_Warren_1896> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_albicatena_Han_2012>, <http://taxon-concept.plazi.org/id/Animalia/Comostolodes_albicatena_Warren_1896>, <http://taxon-concept.plazi.org/id/Animalia/Hercoloxia_chlorochromodes_Prout_1916>, <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_dialitha_West_1930>, <http://taxon-concept.plazi.org/id/Animalia/Colutoceras_dialitha_West_1930>, <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_tenera_Warren_1896> ;
     trt:publishedIn <http://dx.doi.org/10.1111/j.1096-3642.2012.00826.x> ;
     a trt:Treatment .
 
@@ -33,6 +46,9 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     a fabio:JournalArticle .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_rhodocraspeda_Han_2012>
+    dwc:authority "Han & Galsworthy & Xue, 2012" ;
+    dwc:authorityName "Han & Galsworthy & Xue" ;
+    dwc:authorityYear "2012" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Chlorochromodes" ;
@@ -46,6 +62,11 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_albicatena_Han_2012>
+    dwc:authority "(Warren, 1896 b)" ;
+    dwc:authorityName "Han & Galsworthy & Xue" ;
+    dwc:authorityYear "2012" ;
+    dwc:baseAuthorityName "Han & Galsworthy & Xue" ;
+    dwc:baseAuthorityYear "2012" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Chlorochromodes" ;
@@ -53,12 +74,16 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Warren, 1896)" ;
+    dwc:scientificNameAuthorship "(Han & Galsworthy & Xue, 2012)" ;
     dwc:species "albicatena" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chlorochromodes_albicatena> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Comostolodes_albicatena_Warren_1896>
+    dwc:authority "Warren, 1896 b: 309" ;
+    dwc:authorityName "Warren" ;
+    dwc:authorityPageNumber "309" ;
+    dwc:authorityYear "1896" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Comostolodes" ;
@@ -72,7 +97,12 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Comostolodes_albicatena> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_chlorochromodes_(Prout_1916>
+<http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_chlorochromodes__1916>
+    dwc:authority "chlorochromodes (Prout, 1916 a)" ;
+    dwc:authorityName "chlorochromodes (Prout" ;
+    dwc:authorityYear "1916" ;
+    dwc:baseAuthorityName "chlorochromodes (Prout" ;
+    dwc:baseAuthorityYear "1916" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Chlorochromodes" ;
@@ -80,13 +110,15 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "chlorochromodes (Prout, 1916)" ;
     dwc:species "chlorochromodes" ;
     rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/> ;
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chlorochromodes_chlorochromodes> ;
-    a dwcFP:TaxonConcept .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chlorochromodes_chlorochromodes> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Hercoloxia_chlorochromodes_Prout_1916>
+    dwc:authority "Prout, 1916 a: 12" ;
+    dwc:authorityName "Prout" ;
+    dwc:authorityPageNumber "12" ;
+    dwc:authorityYear "1916" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Hercoloxia" ;
@@ -101,6 +133,11 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_dialitha_West_1930>
+    dwc:authority "(West, 1930)" ;
+    dwc:authorityName "Han & Galsworthy & Xue" ;
+    dwc:authorityYear "2012" ;
+    dwc:baseAuthorityName "West" ;
+    dwc:baseAuthorityYear "1930" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Chlorochromodes" ;
@@ -108,12 +145,16 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(West, 1930)" ;
+    dwc:scientificNameAuthorship "(West, 1930) Han & Galsworthy & Xue, 2012" ;
     dwc:species "dialitha" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Chlorochromodes_dialitha> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Colutoceras_dialitha_West_1930>
+    dwc:authority "West, 1930: 260" ;
+    dwc:authorityName "West" ;
+    dwc:authorityPageNumber "260" ;
+    dwc:authorityYear "1930" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Colutoceras" ;
@@ -128,6 +169,10 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Chlorochromodes_tenera_Warren_1896>
+    dwc:authority "Warren, 1896 a", "Warren, 1896 a: 103" ;
+    dwc:authorityName "Warren" ;
+    dwc:authorityPageNumber "103" ;
+    dwc:authorityYear "1896" ;
     dwc:class "Insecta" ;
     dwc:family "Geometridae" ;
     dwc:genus "Chlorochromodes" ;
@@ -236,18 +281,6 @@ treatment:0389DF41FFBEA92AFCAEADCAFF04F973
     dwc:phylum "Arthropoda" ;
     dwc:rank "genus" ;
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Geometridae> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Chlorochromodes_chlorochromodes>
-    dwc:class "Insecta" ;
-    dwc:family "Geometridae" ;
-    dwc:genus "Chlorochromodes" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Lepidoptera" ;
-    dwc:phylum "Arthropoda" ;
-    dwc:rank "species" ;
-    dwc:species "chlorochromodes" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Chlorochromodes> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Hercoloxia_chlorochromodes>
