@@ -11,11 +11,24 @@
 @prefix xlink: <http://www.w3.org/1999/xlink/> .
 
 treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
+    # Error: Could not add TaxonConceptCitation
+# SyntaxError: Invalid regular expression: /\(?(?)\)?[,:;\s]*/g: Invalid group
+# SyntaxError: Invalid regular expression: /\(?(?)\)?[,:;\s]*/g: Invalid group
+#     at new RegExp (<anonymous>)
+#     at makeTaxonConcept (file:///app/src/gg2rdf.ts:493:11)
+#     at addTaxonConceptCitation (file:///app/src/gg2rdf.ts:899:26)
+#     at file:///app/src/gg2rdf.ts:275:11
+#     at y.forEach (<anonymous>)
+#     at makeTreatment (file:///app/src/gg2rdf.ts:260:7)
+#     at gg2rdf (file:///app/src/gg2rdf.ts:86:5)
+#     at run (file:///app/src/action_worker.ts:143:13)
+#     at startTask (file:///app/src/action_worker.ts:35:5)
+#     at gatherJobsForFullUpdate (file:///app/src/action_worker.ts:89:5) ;
     cito:cites <http://taxon-concept.plazi.org/id/Animalia/Ornithocheiridae_Rodrigues_2013> ;
     dc:creator "Rodrigues, Taissa; Kellner, Alexander Wilhelm Armin" ;
     dc:title "Palaeornis cliftii Mantell 1844, (nomen dubium)" ;
     trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Palaeornis_cliftii_Mantell_1844> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Palaeornis_cliftii_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_sylvestris_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_ornis_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithochirus_sic_clifti_sic__2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_clifti_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithostoma_sedgwicki_Rodrigues_2013> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Palaeornis_cliftii_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_sylvestris_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_ornis_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_clifti_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithostoma_sedgwicki_Rodrigues_2013> ;
     trt:publishedIn <http://dx.doi.org/10.3897/zookeys.308.5559> ;
     a trt:Treatment .
 
@@ -32,6 +45,9 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
 
 <http://taxon-concept.plazi.org/id/Animalia/Palaeornis_cliftii_Mantell_1844>
     dwc:LSID "FA5D53A9-69EC-71DD-3CCB-2D6BE0D01E8E" ;
+    dwc:authority "Mantell, 1844" ;
+    dwc:authorityName "Mantell" ;
+    dwc:authorityYear "1844" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Palaeornis" ;
@@ -45,6 +61,8 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Palaeornis_cliftii_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Palaeornis" ;
@@ -58,6 +76,8 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_sylvestris_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Pterodactylidae" ;
     dwc:genus "Pterodactylus" ;
@@ -71,6 +91,8 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_ornis_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Pterodactylidae" ;
     dwc:genus "Pterodactylus" ;
@@ -84,6 +106,10 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithochirus_sic_clifti_sic__2013>
+    dwc:authority "(?) clifti [sic]" ;
+    dwc:authorityName "clifti [sic" ;
+    dwc:authorityYear "2013" ;
+    dwc:baseAuthorityName "?" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Ornithochirus" ;
@@ -91,14 +117,14 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "variety" ;
-    dwc:scientificNameAuthorship "(?) clifti [sic]" ;
     dwc:species "sic" ;
     dwc:subSpecies "clifti" ;
     dwc:variety "sic" ;
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_clifti_sic> ;
-    a dwcFP:TaxonConcept .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_clifti_sic> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_clifti_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Anhangueridae" ;
     dwc:genus "Ornithocheirus" ;
@@ -112,6 +138,8 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithocheiridae_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:kingdom "Animalia" ;
@@ -123,6 +151,8 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithostoma_sedgwicki_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Pteranodontidae" ;
     dwc:genus "Ornithostoma" ;
@@ -240,56 +270,6 @@ treatment:FA5D53A969EC71DD3CCB2D6BE0D01E8E
     dwc:rank "species" ;
     dwc:species "ornis" ;
     trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pterodactylus> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_clifti_sic>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "variety" ;
-    dwc:species "sic" ;
-    dwc:subSpecies "clifti" ;
-    dwc:variety "sic" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_clifti> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_clifti>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "subSpecies" ;
-    dwc:species "sic" ;
-    dwc:subSpecies "clifti" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "sic" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithocheiridae> ;
     a dwcFP:TaxonName .
 
 <http://taxon-name.plazi.org/id/Animalia/Ornithocheirus_clifti>
