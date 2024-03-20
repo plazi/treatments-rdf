@@ -11,12 +11,25 @@
 @prefix xlink: <http://www.w3.org/1999/xlink/> .
 
 treatment:59BB653E8C1950B0B863E8393226197D
-    # Warning Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/narina_Ge_2023>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/ochsenheimeri_Ge_2023>' due to issues with rank ;
+    # Error: Could not add TaxonConceptCitation
+# SyntaxError: Invalid regular expression: /\(?(napi (Linnaeus, 1758)\)?[,:;\s]*/g: Unterminated group
+# SyntaxError: Invalid regular expression: /\(?(napi (Linnaeus, 1758)\)?[,:;\s]*/g: Unterminated group
+#     at new RegExp (<anonymous>)
+#     at makeTaxonConcept (file:///app/src/gg2rdf.ts:493:11)
+#     at addTaxonConceptCitation (file:///app/src/gg2rdf.ts:899:26)
+#     at file:///app/src/gg2rdf.ts:275:11
+#     at y.forEach (<anonymous>)
+#     at makeTreatment (file:///app/src/gg2rdf.ts:260:7)
+#     at gg2rdf (file:///app/src/gg2rdf.ts:86:5)
+#     at run (file:///app/src/action_worker.ts:143:13)
+#     at startTask (file:///app/src/action_worker.ts:35:5)
+#     at file:///app/src/action_worker.ts:20:1 ;
+    # Warning: Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/narina_Ge_2023>' due to issues with rank, Not adding 'trt:citesTaxonName <http://taxon-concept.plazi.org/id/Animalia/ochsenheimeri_Ge_2023>' due to issues with rank ;
     cito:cites <http://taxon-concept.plazi.org/id/Animalia/Rhopalocera_Ge_2023>, <http://dx.doi.org/10.3897/asp.81.e85191.figure9>, <http://dx.doi.org/10.3897/asp.81.e85191.figure5>, <http://dx.doi.org/10.3897/asp.81.e85191.figure6> ;
     dc:creator "Ge, Si Xun; Jiang, Zhuo Heng; Wang, Jia Qi; Song, Kui; Zhang, Chao; Hu, Shao Ji" ;
     dc:title "Pieris narina Verity 1908, stat. rev." ;
     trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Pieris_narina_Ge_2023> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_r_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_narina_narina_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_var_banghaasi_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_ochsenheimeri_narina_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_(Linnaeus_1758> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_r_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_narina_narina_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_var_banghaasi_Ge_2023>, <http://taxon-concept.plazi.org/id/Animalia/Pieris_ochsenheimeri_narina_Ge_2023> ;
     trt:publishedIn <http://dx.doi.org/10.3897/asp.81.e85191> ;
     a trt:Treatment .
 
@@ -34,6 +47,11 @@ treatment:59BB653E8C1950B0B863E8393226197D
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_narina_Ge_2023>
     dwc:LSID "59BB653E-8C19-50B0-B863-E8393226197D" ;
+    dwc:authority "Verity, 1908" ;
+    dwc:authorityName "Verity" ;
+    dwc:authorityYear "1908" ;
+    dwc:baseAuthorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:baseAuthorityYear "2023" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -41,12 +59,15 @@ treatment:59BB653E8C1950B0B863E8393226197D
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Verity, 1908" ;
+    dwc:scientificNameAuthorship "(Ge & Jiang & Wang & Song & Zhang & Hu, 2023) Verity, 1908" ;
     dwc:species "narina" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_narina> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_r_Ge_2023>
+    dwc:authority "r. narina" ;
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -54,13 +75,15 @@ treatment:59BB653E8C1950B0B863E8393226197D
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "r. narina" ;
+    dwc:scientificNameAuthorship "Ge & Jiang & Wang & Song & Zhang & Hu, 2023" ;
     dwc:species "napi" ;
     dwc:subSpecies "r." ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_napi_r> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Rhopalocera_Ge_2023>
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
     dwc:class "Insecta" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Lepidoptera" ;
@@ -71,6 +94,9 @@ treatment:59BB653E8C1950B0B863E8393226197D
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_narina_narina_Ge_2023>
+    dwc:authority "narina" ;
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -78,13 +104,15 @@ treatment:59BB653E8C1950B0B863E8393226197D
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "narina" ;
+    dwc:scientificNameAuthorship "Ge & Jiang & Wang & Song & Zhang & Hu, 2023" ;
     dwc:species "narina" ;
     dwc:subSpecies "narina" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_narina_narina> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_var_banghaasi_Ge_2023>
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -100,6 +128,8 @@ treatment:59BB653E8C1950B0B863E8393226197D
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pieris_ochsenheimeri_narina_Ge_2023>
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -113,7 +143,11 @@ treatment:59BB653E8C1950B0B863E8393226197D
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_ochsenheimeri_narina> ;
     a dwcFP:TaxonConcept .
 
-<http://taxon-concept.plazi.org/id/Animalia/Pieris_napi_(Linnaeus_1758>
+<http://taxon-concept.plazi.org/id/Animalia/Pieris_napi__1758>
+    dwc:authorityName "Ge & Jiang & Wang & Song & Zhang & Hu" ;
+    dwc:authorityYear "2023" ;
+    dwc:baseAuthorityName "napi (Linnaeus" ;
+    dwc:baseAuthorityYear "1758" ;
     dwc:class "Insecta" ;
     dwc:family "Pieridae" ;
     dwc:genus "Pieris" ;
@@ -121,10 +155,8 @@ treatment:59BB653E8C1950B0B863E8393226197D
     dwc:order "Lepidoptera" ;
     dwc:phylum "Arthropoda" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "napi (Linnaeus, 1758)" ;
     dwc:species "napi" ;
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_napi> ;
-    a dwcFP:TaxonConcept .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pieris_napi> .
 
 <http://taxon-name.plazi.org/id/Animalia/Pieris_narina>
     dwc:class "Insecta" ;
