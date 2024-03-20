@@ -11,11 +11,24 @@
 @prefix xlink: <http://www.w3.org/1999/xlink/> .
 
 treatment:E6FCB3B5605C2C0007475C3DC3B66777
+    # Error: Could not add TaxonConceptCitation
+# SyntaxError: Invalid regular expression: /\(?(diomedius [sic, 2013)\)?[,:;\s]*/g: Unterminated group
+# SyntaxError: Invalid regular expression: /\(?(diomedius [sic, 2013)\)?[,:;\s]*/g: Unterminated group
+#     at new RegExp (<anonymous>)
+#     at makeTaxonConcept (file:///app/src/gg2rdf.ts:493:11)
+#     at addTaxonConceptCitation (file:///app/src/gg2rdf.ts:899:26)
+#     at file:///app/src/gg2rdf.ts:275:11
+#     at y.forEach (<anonymous>)
+#     at makeTreatment (file:///app/src/gg2rdf.ts:260:7)
+#     at gg2rdf (file:///app/src/gg2rdf.ts:86:5)
+#     at run (file:///app/src/action_worker.ts:143:13)
+#     at startTask (file:///app/src/action_worker.ts:35:5)
+#     at file:///app/src/action_worker.ts:20:1 ;
     cito:cites <https://binary.pensoft.net/fig/22078> ;
     dc:creator "Rodrigues, Taissa; Kellner, Alexander Wilhelm Armin" ;
     dc:title "Camposipterus sedgwickii Rodrigues & Kellner 2013, comb. n." ;
     trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Camposipterus_sedgwickii_Owen_1859> ;
-    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_sedgwickii_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ptenodactylus_sedgwicki_sic_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_sedgwicki_sic_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Coloborhynchus_sedgwickii_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki_sic_%5Bsic_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_sedgwickii_Rodrigues_2013> ;
+    trt:deprecates <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_sedgwickii_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ptenodactylus_sedgwicki_sic_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_sedgwicki_sic_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Coloborhynchus_sedgwickii_Rodrigues_2013>, <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_sedgwickii_Rodrigues_2013> ;
     trt:publishedIn <http://dx.doi.org/10.3897/zookeys.308.5559> ;
     a trt:Treatment .
 
@@ -33,18 +46,27 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
 
 <http://taxon-concept.plazi.org/id/Animalia/Camposipterus_sedgwickii_Owen_1859>
     dwc:LSID "E6FCB3B5-605C-2C00-0747-5C3DC3B66777" ;
+    dwc:authority "(Owen, 1859)" ;
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
+    dwc:baseAuthorityName "Owen" ;
+    dwc:baseAuthorityYear "1859" ;
     dwc:class "Reptilia" ;
     dwc:genus "Camposipterus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "(Owen, 1859)" ;
+    dwc:scientificNameAuthorship "(Owen, 1859) Rodrigues & Kellner, 2013" ;
     dwc:species "sedgwickii" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Camposipterus_sedgwickii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Pterodactylus_sedgwickii_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
+    dwc:baseAuthorityName "Rodrigues & Kellner" ;
+    dwc:baseAuthorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Pterodactylidae" ;
     dwc:genus "Pterodactylus" ;
@@ -52,12 +74,15 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Rodrigues & Kellner, 2013" ;
+    dwc:scientificNameAuthorship "(Rodrigues & Kellner, 2013)" ;
     dwc:species "sedgwickii" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Pterodactylus_sedgwickii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ptenodactylus_sedgwicki_sic_Rodrigues_2013>
+    dwc:authority "" ;
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Ptenodactylus" ;
@@ -72,6 +97,11 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_sedgwicki_sic_Rodrigues_2013>
+    dwc:authority "" ;
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
+    dwc:baseAuthorityName "Rodrigues & Kellner" ;
+    dwc:baseAuthorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Anhangueridae" ;
     dwc:genus "Ornithocheirus" ;
@@ -79,13 +109,17 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "subSpecies" ;
-    dwc:scientificNameAuthorship "Rodrigues & Kellner, 2013" ;
+    dwc:scientificNameAuthorship "(Rodrigues & Kellner, 2013)" ;
     dwc:species "sedgwicki" ;
     dwc:subSpecies "sic" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ornithocheirus_sedgwicki_sic> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Coloborhynchus_sedgwickii_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
+    dwc:baseAuthorityName "Rodrigues & Kellner" ;
+    dwc:baseAuthorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Coloborhynchus" ;
@@ -93,12 +127,17 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "species" ;
-    dwc:scientificNameAuthorship "Rodrigues & Kellner, 2013" ;
+    dwc:scientificNameAuthorship "(Rodrigues & Kellner, 2013)" ;
     dwc:species "sedgwickii" ;
     trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Coloborhynchus_sedgwickii> ;
     a dwcFP:TaxonConcept .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki_sic_%5Bsic_2013>
+    dwc:authority "sedgwicki [sic]" ;
+    dwc:authorityName "sedgwicki [sic" ;
+    dwc:authorityYear "2013" ;
+    dwc:baseAuthorityName "diomedius [sic" ;
+    dwc:baseAuthorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Ornithochirus" ;
@@ -106,14 +145,14 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
     dwc:rank "variety" ;
-    dwc:scientificNameAuthorship "sedgwicki [sic]" ;
     dwc:species "sic" ;
     dwc:subSpecies "sedgwicki" ;
     dwc:variety "sic" ;
-    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki_sic> ;
-    a dwcFP:TaxonConcept .
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki_sic> .
 
 <http://taxon-concept.plazi.org/id/Animalia/Ornithocheirus_sedgwickii_Rodrigues_2013>
+    dwc:authorityName "Rodrigues & Kellner" ;
+    dwc:authorityYear "2013" ;
     dwc:class "Reptilia" ;
     dwc:family "Anhangueridae" ;
     dwc:genus "Ornithocheirus" ;
@@ -317,56 +356,6 @@ treatment:E6FCB3B5605C2C0007475C3DC3B66777
     dwc:class "Reptilia" ;
     dwc:family "Ornithocheiridae" ;
     dwc:genus "Coloborhynchus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "genus" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithocheiridae> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki_sic>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "variety" ;
-    dwc:species "sic" ;
-    dwc:subSpecies "sedgwicki" ;
-    dwc:variety "sic" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic_sedgwicki>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "subSpecies" ;
-    dwc:species "sic" ;
-    dwc:subSpecies "sedgwicki" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus_sic>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
-    dwc:kingdom "Animalia" ;
-    dwc:order "Pterosauria" ;
-    dwc:phylum "Chordata" ;
-    dwc:rank "species" ;
-    dwc:species "sic" ;
-    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Ornithochirus> ;
-    a dwcFP:TaxonName .
-
-<http://taxon-name.plazi.org/id/Animalia/Ornithochirus>
-    dwc:class "Reptilia" ;
-    dwc:family "Ornithocheiridae" ;
-    dwc:genus "Ornithochirus" ;
     dwc:kingdom "Animalia" ;
     dwc:order "Pterosauria" ;
     dwc:phylum "Chordata" ;
