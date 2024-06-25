@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/7DF931497BBB3F26E9010FE0189706C3>
+    dc:creator "Forsslund, K. - H." ;
+    dc:title "Suctolbelba grandis subsp. europaea Willmann" ;
+    trt:publishedIn <http://publication.plazi.org/id/596ACAAAFCC911D2D24FDE193E5F8E4D> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Suctolbelba_grandis_europaea> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/596ACAAAFCC911D2D24FDE193E5F8E4D>
+    bibo:endPage "396" ;
+    bibo:journal "Zoologiska Bidrag, Uppsala" ;
+    bibo:startPage "381" ;
+    bibo:volume "20" ;
+    dc:creator "Forsslund, K. - H." ;
+    dc:date "1941" ;
+    dc:title "Schwedische Arten der Gattung Suctobelba Paoli (Acari, Oribatei)." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Suctolbelba_grandis_europaea>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Suctolbelba" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "grandis" ;
+    dwc:subSpecies "europaea" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suctolbelba_grandis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Suctolbelba_grandis>
+    dwc:genus "Suctolbelba" ;
+    dwc:rank "species" ;
+    dwc:species "grandis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suctolbelba> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Suctolbelba>
+    dwc:genus "Suctolbelba" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Suctolbelba_grandis_europaea> ;
+    a dwcFP:TaxonName .

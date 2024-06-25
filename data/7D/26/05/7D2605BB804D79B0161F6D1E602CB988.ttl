@@ -1,0 +1,53 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/7D2605BB804D79B0161F6D1E602CB988>
+    dc:creator "Avalos-Hernandez, Omar; Kits, Joel; Trujano-Ortega, Marysol; Garcia-Vazquez, Uri Omar; Cano-Santana, Zenon" ;
+    dc:title "Rhynachantrax texanus Painter 1933" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Rhynachantrax_texanus_Painter_1933> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.422.7598> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.3897/zookeys.422.7598>
+    bibo:endPage "85" ;
+    bibo:journal "ZooKeys" ;
+    bibo:startPage "49" ;
+    bibo:volume "422" ;
+    dc:creator "Avalos-Hernandez, Omar; Kits, Joel; Trujano-Ortega, Marysol; Garcia-Vazquez, Uri Omar; Cano-Santana, Zenon" ;
+    dc:date "2014" ;
+    dc:title "New records of bee flies (Diptera, Bombyliidae) from Cuatro Cienegas, Coahuila, Mexico" ;
+    a fabio:JournalArticle .
+
+<http://taxon-concept.plazi.org/id/Animalia/Rhynachantrax_texanus_Painter_1933>
+    dwc:authority "Painter, 1933" ;
+    dwc:authorityName "Painter" ;
+    dwc:authorityYear "1933" ;
+    dwc:genus "Rhynachantrax" ;
+    dwc:rank "species" ;
+    dwc:scientificNameAuthorship "Painter, 1933" ;
+    dwc:species "texanus" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Rhynachantrax_texanus> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhynachantrax_texanus>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Rhynachantrax" ;
+    dwc:rank "species" ;
+    dwc:species "texanus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhynachantrax> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Rhynachantrax>
+    dwc:genus "Rhynachantrax" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Rhynachantrax_texanus> ;
+    a dwcFP:TaxonName .
