@@ -1,0 +1,64 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/16B3E8B2AF20D9943B4C125E85203CE0>
+    dc:creator "Santschi, F." ;
+    dc:title "Macromichoides aculeatus subsp. militaris Santschi, 1924, n. st." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Macromichoides_aculeatus_militaris_Santschi_1924> ;
+    trt:publishedIn <http://publication.plazi.org/id/7AE8E5F63FEA5F1211C7542F02CB7FFE> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/7AE8E5F63FEA5F1211C7542F02CB7FFE>
+    bibo:endPage "224" ;
+    bibo:journal "Revue de Zoologie Africaine" ;
+    bibo:startPage "195" ;
+    bibo:volume "12" ;
+    dc:creator "Santschi, F." ;
+    dc:date "1924" ;
+    dc:title "Descriptions de nouveaux formicides africains et notes diverses. - II." ;
+    a fabio:JournalArticle .
+
+<http://taxon-concept.plazi.org/id/Animalia/Macromichoides_aculeatus_militaris_Santschi_1924>
+    # Info: authority attributes generated from docAuthor ;
+    dwc:LSID-HNS "urn:lsid:biosci.ohio-state.edu:osuc_concepts:230297" ;
+    dwc:authority "Santschi, 1924" ;
+    dwc:authorityName "Santschi" ;
+    dwc:authorityYear "1924" ;
+    dwc:genus "Macromichoides" ;
+    dwc:rank "subSpecies" ;
+    dwc:scientificNameAuthorship "Santschi, 1924" ;
+    dwc:species "aculeatus" ;
+    dwc:subSpecies "militaris" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus_militaris> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus_militaris>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Macromichoides" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "aculeatus" ;
+    dwc:subSpecies "militaris" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus>
+    dwc:genus "Macromichoides" ;
+    dwc:rank "species" ;
+    dwc:species "aculeatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macromichoides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Macromichoides>
+    dwc:genus "Macromichoides" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus_militaris> ;
+    a dwcFP:TaxonName .
