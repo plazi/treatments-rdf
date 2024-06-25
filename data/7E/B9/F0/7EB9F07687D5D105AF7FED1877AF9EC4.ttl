@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/7EB9F07687D5D105AF7FED1877AF9EC4>
+    dc:creator "Forel, A." ;
+    dc:title "Tetramonium caespitum var. forte" ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.25586> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Tetramonium_caespitum_forte> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.5281/zenodo.25586>
+    bibo:endPage "388" ;
+    bibo:journal "Yezhegodnik Zoologicheskogo Muzeya Imperatorskoi Akademii Nauk" ;
+    bibo:startPage "368" ;
+    bibo:volume "8" ;
+    dc:creator "Forel, A." ;
+    dc:date "1904" ;
+    dc:title "Note sur les fourmis du Musée Zoologique de l'Académie Impériale des Sciences à St. Pétersbourg." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Tetramonium_caespitum_forte>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Tetramonium" ;
+    dwc:rank "variety" ;
+    dwc:species "caespitum" ;
+    dwc:variety "forte" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetramonium_caespitum> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tetramonium_caespitum>
+    dwc:genus "Tetramonium" ;
+    dwc:rank "species" ;
+    dwc:species "caespitum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetramonium> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Tetramonium>
+    dwc:genus "Tetramonium" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Tetramonium_caespitum_forte> ;
+    a dwcFP:TaxonName .
