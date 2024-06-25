@@ -1,0 +1,126 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/7F84CA1FBE7AC5178248B666BD6A3276>
+    # Warning: Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Thyphloiulus_illyricus>' due to issues with rank ;
+    dc:creator "Karl W. Verhoeff" ;
+    dc:title "Thyphloiulus illyricus" ;
+    dwc:basisOfRecord <http://tb.plazi.org/GgServer/dwcaRecords/7F84CA1FBE7AC5178248B666BD6A3276.mc.4E70147287A804615FC849E7296BDC17> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Cylindroiulus_nitidus>, <http://taxon-name.plazi.org/id/Animalia/Cylindroiulus_stygis> ;
+    trt:publishedIn <http://publication.plazi.org/id/D21C407988E01B86C1C536BDE5255BAE> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Thyphloiulus_illyricus> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/D21C407988E01B86C1C536BDE5255BAE>
+    bibo:endPage "21" ;
+    bibo:startPage "1" ;
+    dc:creator "Karl W. Verhoeff" ;
+    dc:date "1933" ;
+    dc:title "Arthropoden aus südostalpinen Höhlen" ;
+    a fabio:BookSection .
+
+<http://taxon-name.plazi.org/id/Animalia/Thyphloiulus_illyricus>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Thyphloiulus" ;
+    dwc:rank "species" ;
+    dwc:species "illyricus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thyphloiulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Thyphloiulus>
+    dwc:genus "Thyphloiulus" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Thyphloiulus_illyricus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cylindroiulus_nitidus>
+    dwc:class "Diplopoda" ;
+    dwc:family "Julidae" ;
+    dwc:genus "Cylindroiulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Julida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "nitidus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cylindroiulus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cylindroiulus>
+    dwc:class "Diplopoda" ;
+    dwc:family "Julidae" ;
+    dwc:genus "Cylindroiulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Julida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Julidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Julidae>
+    dwc:class "Diplopoda" ;
+    dwc:family "Julidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Julida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Julida> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Julida>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Julida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Diplopoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Diplopoda>
+    dwc:class "Diplopoda" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Cylindroiulus_stygis>
+    dwc:class "Diplopoda" ;
+    dwc:family "Julidae" ;
+    dwc:genus "Cylindroiulus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Julida" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "species" ;
+    dwc:species "stygis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Cylindroiulus> ;
+    a dwcFP:TaxonName .
+
+<http://tb.plazi.org/GgServer/dwcaRecords/7F84CA1FBE7AC5178248B666BD6A3276.mc.4E70147287A804615FC849E7296BDC17>
+    dwc:eventDate "1931-02-22" ;
+    dwc:locality "Pecina Glavici bei Pinguenta" ;
+    dwc:recordedBy "K. STRASSER" ;
+    dwc:verbatimElevation "380 m" ;
+    trt:gbifOccurrenceId "923892730" ;
+    trt:httpUri <https://treatment.plazi.org/id/7F84CA1FBE7AC5178248B666BD6A3276#4E70147287A804615FC849E7296BDC17> ;
+    a dwc:MaterialCitation .
