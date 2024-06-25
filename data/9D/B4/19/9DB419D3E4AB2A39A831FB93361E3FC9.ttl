@@ -1,0 +1,74 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/9DB419D3E4AB2A39A831FB93361E3FC9>
+    dc:creator "Forel, A." ;
+    dc:title "Atzeca paraensis subsp. gnava var. surubrensis Forel, 1908, n. var." ;
+    trt:definesTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Atzeca_paraensis_gnava_surubrensis_Forel_1908> ;
+    trt:publishedIn <http://publication.plazi.org/id/F5C49EF1EA0EFACF406662C1C3D75FA1> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/F5C49EF1EA0EFACF406662C1C3D75FA1>
+    bibo:endPage "72" ;
+    bibo:journal "Bulletin de la Societe Vaudoise des Sciences Naturelles" ;
+    bibo:startPage "35" ;
+    bibo:volume "44" ;
+    dc:creator "Forel, A." ;
+    dc:date "1908" ;
+    dc:title "Fourmis de Costa-Rica, récoltées par M. Paul Biolley." ;
+    a fabio:JournalArticle .
+
+<http://taxon-concept.plazi.org/id/Animalia/Atzeca_paraensis_gnava_surubrensis_Forel_1908>
+    # Info: authority attributes generated from docAuthor ;
+    dwc:LSID-HNS "urn:lsid:biosci.ohio-state.edu:osuc_concepts:231735" ;
+    dwc:authority "Forel, 1908" ;
+    dwc:authorityName "Forel" ;
+    dwc:authorityYear "1908" ;
+    dwc:genus "Atzeca" ;
+    dwc:rank "variety" ;
+    dwc:scientificNameAuthorship "Forel, 1908" ;
+    dwc:species "paraensis" ;
+    dwc:subSpecies "gnava" ;
+    dwc:variety "surubrensis" ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis_gnava_surubrensis> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis_gnava_surubrensis>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Atzeca" ;
+    dwc:rank "variety" ;
+    dwc:species "paraensis" ;
+    dwc:subSpecies "gnava" ;
+    dwc:variety "surubrensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis_gnava> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis_gnava>
+    dwc:genus "Atzeca" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "paraensis" ;
+    dwc:subSpecies "gnava" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis>
+    dwc:genus "Atzeca" ;
+    dwc:rank "species" ;
+    dwc:species "paraensis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atzeca> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Atzeca>
+    dwc:genus "Atzeca" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Atzeca_paraensis_gnava_surubrensis> ;
+    a dwcFP:TaxonName .
