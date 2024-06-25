@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/2530C3DD2A9244201518A1F3647F24CC>
+    # Warning: Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Blacius_blancoi>' due to issues with rank ;
+    dc:creator "Frahnert, Sylke; Roman, Rafaela Aguilera; Eckhoff, Pascal; Wiley, James W." ;
+    dc:title "Blacius blancoi Cabanis" ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zse.91.5550> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Blacius_blancoi> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.3897/zse.91.5550>
+    bibo:endPage "189" ;
+    bibo:issue "2" ;
+    bibo:journal "Zoosystematics and Evolution" ;
+    bibo:startPage "177" ;
+    bibo:volume "91" ;
+    dc:creator "Frahnert, Sylke; Roman, Rafaela Aguilera; Eckhoff, Pascal; Wiley, James W." ;
+    dc:date "2015" ;
+    dc:title "Juan Cristobal Gundlach's collections of Puerto Rican birds with special regard to types" ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Blacius_blancoi>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Blacius" ;
+    dwc:rank "species" ;
+    dwc:species "blancoi" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blacius> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Blacius>
+    dwc:genus "Blacius" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Blacius_blancoi> ;
+    a dwcFP:TaxonName .
