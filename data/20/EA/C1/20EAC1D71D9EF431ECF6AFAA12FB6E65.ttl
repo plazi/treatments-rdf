@@ -1,0 +1,42 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/20EAC1D71D9EF431ECF6AFAA12FB6E65>
+    dc:creator "Santschi, F." ;
+    dc:title "Macromichoides aculeatus Mayr" ;
+    trt:publishedIn <http://publication.plazi.org/id/7AE8E5F63FEA5F1211C7542F02CB7FFE> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/7AE8E5F63FEA5F1211C7542F02CB7FFE>
+    bibo:endPage "224" ;
+    bibo:journal "Revue de Zoologie Africaine" ;
+    bibo:startPage "195" ;
+    bibo:volume "12" ;
+    dc:creator "Santschi, F." ;
+    dc:date "1924" ;
+    dc:title "Descriptions de nouveaux formicides africains et notes diverses. - II." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Macromichoides" ;
+    dwc:rank "species" ;
+    dwc:species "aculeatus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macromichoides> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Macromichoides>
+    dwc:genus "Macromichoides" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Macromichoides_aculeatus> ;
+    a dwcFP:TaxonName .
