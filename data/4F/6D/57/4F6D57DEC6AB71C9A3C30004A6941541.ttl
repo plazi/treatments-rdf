@@ -1,0 +1,93 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/4F6D57DEC6AB71C9A3C30004A6941541>
+    # Warning: Not adding 'trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Scarabaeides>' due to issues with rank ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:title "Scarabaeidae Latreille 1802" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Scarabaeidae_Latreille_1802> ;
+    trt:citesTaxonName <http://taxon-name.plazi.org/id/Animalia/Scarabaeus> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.88.807> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.3897/zookeys.88.807>
+    bibo:endPage "972" ;
+    bibo:journal "ZooKeys" ;
+    bibo:startPage "1" ;
+    bibo:volume "88" ;
+    dc:creator "Bouchard, Patrice; Bousquet, Yves; Davies, Anthony E.; Alonso-Zarazaga, Miguel A.; Lawrence, John F.; Lyal, Chris H. C.; Newton, Alfred F.; Reid, Chris A. M.; Schmitt, Michael; Ślipinski, S. Adam; Smith, Andrew B. T." ;
+    dc:date "2011" ;
+    dc:title "Family-group names in Coleoptera (Insecta)" ;
+    a fabio:JournalArticle .
+
+<http://taxon-concept.plazi.org/id/Animalia/Scarabaeidae_Latreille_1802>
+    dwc:ID-ENA "7055" ;
+    dwc:authority "Latreille, 1802" ;
+    dwc:authorityName "Latreille" ;
+    dwc:authorityYear "1802" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:rank "family" ;
+    dwc:scientificNameAuthorship "Latreille, 1802" ;
+    rdfs:seeAlso <https://www.catalogueoflife.org/data/taxon/6278C> ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeidae>
+    # Warning: Could not determine parent name ;
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "family" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Coleoptera> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Scarabaeus>
+    dwc:class "Insecta" ;
+    dwc:family "Scarabaeidae" ;
+    dwc:genus "Scarabaeus" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Scarabaeidae> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Coleoptera>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:order "Coleoptera" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "order" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Insecta> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Insecta>
+    dwc:class "Insecta" ;
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "class" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Arthropoda> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Arthropoda>
+    dwc:kingdom "Animalia" ;
+    dwc:phylum "Arthropoda" ;
+    dwc:rank "phylum" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia>
+    dwc:kingdom "Animalia" ;
+    dwc:rank "kingdom" ;
+    a dwcFP:TaxonName .
