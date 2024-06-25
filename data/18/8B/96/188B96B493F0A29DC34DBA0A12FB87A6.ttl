@@ -1,0 +1,39 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/188B96B493F0A29DC34DBA0A12FB87A6>
+    dc:creator "Golovatch, Sergei I." ;
+    dc:title "Trichopolydesmoidea Verhoeff 1910" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Trichopolydesmoidea_Verhoeff_1910> ;
+    trt:publishedIn <http://dx.doi.org/10.3897/zookeys.340.6295> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.3897/zookeys.340.6295>
+    bibo:endPage "78" ;
+    bibo:journal "ZooKeys" ;
+    bibo:startPage "63" ;
+    bibo:volume "340" ;
+    dc:creator "Golovatch, Sergei I." ;
+    dc:date "2013" ;
+    dc:title "A reclassification of the millipede superfamily Trichopolydesmoidea, with descriptions of two new species from the Aegean region (Diplopoda, Polydesmida)" ;
+    a fabio:JournalArticle .
+
+<http://taxon-concept.plazi.org/id/Animalia/Trichopolydesmoidea_Verhoeff_1910>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Trichopolydesmoidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Trichopolydesmoidea>
+    # Warning: Could not determine parent name ;
+    dwc:rank "superFamily" ;
+    dwc:superFamily "Trichopolydesmoidea" ;
+    a dwcFP:TaxonName .
