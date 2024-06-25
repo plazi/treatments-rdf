@@ -1,0 +1,42 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/BFBB1C912C7FE0CD2C6DC7E319E9211B>
+    dc:creator "Forel, A." ;
+    dc:title "Campon brutus Forel, 1886, n. st." ;
+    trt:publishedIn <http://publication.plazi.org/id/378F84238253E15C64F5A6FFDAF858F2> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Campon_brutus> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/378F84238253E15C64F5A6FFDAF858F2>
+    bibo:endPage "215" ;
+    bibo:journal "Annales de la Societe Entomologique de Belgique" ;
+    bibo:startPage "131" ;
+    bibo:volume "30" ;
+    dc:creator "Forel, A." ;
+    dc:date "1886" ;
+    dc:title "Études myrmécologiques en 1886." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Campon_brutus>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Campon" ;
+    dwc:rank "species" ;
+    dwc:species "brutus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Campon> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Campon>
+    dwc:genus "Campon" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Campon_brutus> ;
+    a dwcFP:TaxonName .
