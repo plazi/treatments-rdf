@@ -1,0 +1,60 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+# Warning: Failed to output a material citation, could not create identifier
+
+<http://treatment.plazi.org/id/72F6B38FA1F9DB5C18000B1A9CFEE4A7>
+    dc:creator "Forel, A." ;
+    dc:title "Myrmococystus viaticus subsp. abyssinicus Forel, 1904, nov." ;
+    dwc:basisOfRecord <https://www.gbif.org/occurrence/3396416301> ;
+    trt:publishedIn <http://dx.doi.org/10.5281/zenodo.25586> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Myrmococystus_viaticus_abyssinicus> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.5281/zenodo.25586>
+    bibo:endPage "388" ;
+    bibo:journal "Yezhegodnik Zoologicheskogo Muzeya Imperatorskoi Akademii Nauk" ;
+    bibo:startPage "368" ;
+    bibo:volume "8" ;
+    dc:creator "Forel, A." ;
+    dc:date "1904" ;
+    dc:title "Note sur les fourmis du Musée Zoologique de l'Académie Impériale des Sciences à St. Pétersbourg." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Myrmococystus_viaticus_abyssinicus>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Myrmococystus" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "viaticus" ;
+    dwc:subSpecies "abyssinicus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmococystus_viaticus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myrmococystus_viaticus>
+    dwc:genus "Myrmococystus" ;
+    dwc:rank "species" ;
+    dwc:species "viaticus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmococystus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Myrmococystus>
+    dwc:genus "Myrmococystus" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Myrmococystus_viaticus_abyssinicus> ;
+    a dwcFP:TaxonName .
+
+<https://www.gbif.org/occurrence/3396416301>
+    dwc:eventDate "1904-01-01" ;
+    dwc:locality "Schoa" ;
+    dwc:recordedBy "M. Alfred Ilg, conseiller de S. M. le roi Menelik" ;
+    trt:gbifOccurrenceId "3396416301" ;
+    trt:httpUri <https://www.antweb.org/specimen/CASENT0912170> ;
+    a dwc:MaterialCitation .
