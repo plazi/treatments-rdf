@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/E61F8DDE6B68ED43F5A5C1A3F8F686AE>
+    dc:creator "Forel, A." ;
+    dc:title "Pachycondula fusco subsp. atra" ;
+    trt:publishedIn <http://publication.plazi.org/id/F5C49EF1EA0EFACF406662C1C3D75FA1> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Pachycondula_fusco_atra> ;
+    a trt:Treatment .
+
+<http://publication.plazi.org/id/F5C49EF1EA0EFACF406662C1C3D75FA1>
+    bibo:endPage "72" ;
+    bibo:journal "Bulletin de la Societe Vaudoise des Sciences Naturelles" ;
+    bibo:startPage "35" ;
+    bibo:volume "44" ;
+    dc:creator "Forel, A." ;
+    dc:date "1908" ;
+    dc:title "Fourmis de Costa-Rica, récoltées par M. Paul Biolley." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachycondula_fusco_atra>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Pachycondula" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "fusco" ;
+    dwc:subSpecies "atra" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachycondula_fusco> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachycondula_fusco>
+    dwc:genus "Pachycondula" ;
+    dwc:rank "species" ;
+    dwc:species "fusco" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachycondula> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Pachycondula>
+    dwc:genus "Pachycondula" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Pachycondula_fusco_atra> ;
+    a dwcFP:TaxonName .
