@@ -1,0 +1,50 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/369AC8749A336AFB34923BEBE34CF8B8>
+    dc:creator "W. Peters" ;
+    dc:title "Anacyrlus finis subsp. Guenther" ;
+    trt:publishedIn <http://doi.org/10.5281/zenodo.6294380> ;
+    trt:treatsTaxonName <http://taxon-name.plazi.org/id/Animalia/Anacyrlus_finis_Guenther> ;
+    a trt:Treatment .
+
+<http://doi.org/10.5281/zenodo.6294380>
+    bibo:endPage "473" ;
+    bibo:journal "Monatsberichte der Akademie der Wissenschaft zu Berlin" ;
+    bibo:startPage "469" ;
+    bibo:volume "1877" ;
+    dc:creator "W. Peters" ;
+    dc:date "1877" ;
+    dc:title "Hr. W. Peters las ueber die von Hrn. Dr. C. Sachs in Venezuela gesammelten Fische." ;
+    a fabio:JournalArticle .
+
+<http://taxon-name.plazi.org/id/Animalia/Anacyrlus_finis_Guenther>
+    # Warning: Could not determine parent name ;
+    dwc:genus "Anacyrlus" ;
+    dwc:rank "subSpecies" ;
+    dwc:species "finis" ;
+    dwc:subSpecies "Guenther" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anacyrlus_finis> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anacyrlus_finis>
+    dwc:genus "Anacyrlus" ;
+    dwc:rank "species" ;
+    dwc:species "finis" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anacyrlus> ;
+    a dwcFP:TaxonName .
+
+<http://taxon-name.plazi.org/id/Animalia/Anacyrlus>
+    dwc:genus "Anacyrlus" ;
+    dwc:rank "genus" ;
+    trt:hasParentName <http://taxon-name.plazi.org/id/Animalia/Anacyrlus_finis_Guenther> ;
+    a dwcFP:TaxonName .
