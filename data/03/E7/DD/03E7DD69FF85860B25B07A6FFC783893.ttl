@@ -1,0 +1,53 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwcFP: <http://filteredpush.org/ontologies/oa/dwcFP#> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix trt: <http://plazi.org/vocab/treatment#> .
+@prefix xlink: <http://www.w3.org/1999/xlink/> .
+# Warning: treatment taxon is missing ancestor kingdom, defaulting to 'Animalia'
+
+<http://treatment.plazi.org/id/03E7DD69FF85860B25B07A6FFC783893>
+    cito:cites <http://dx.doi.org/10.5281/zenodo.4538204>, <http://dx.doi.org/10.5281/zenodo.4538311> ;
+    dc:creator "Boessenecker, Robert W." ;
+    dc:title "Physeteroidea Gray 1868" ;
+    trt:augmentsTaxonConcept <http://taxon-concept.plazi.org/id/Animalia/Physeteroidea_Gray_1868> ;
+    trt:publishedIn <http://dx.doi.org/10.5252/g2013n4a5> ;
+    a trt:Treatment .
+
+<http://dx.doi.org/10.5252/g2013n4a5>
+    bibo:endPage "940" ;
+    bibo:issue "4" ;
+    bibo:journal "Geodiversitas" ;
+    bibo:pubDate "2013-12-31" ;
+    bibo:startPage "815" ;
+    bibo:volume "35" ;
+    dc:creator "Boessenecker, Robert W." ;
+    dc:date "2013" ;
+    dc:title "A new marine vertebrate assemblage from the Late Neogene Purisima Formation in Central California, part II: Pinnipeds and Cetaceans" ;
+    fabio:hasPart <http://dx.doi.org/10.5281/zenodo.4538204>, <http://dx.doi.org/10.5281/zenodo.4538311> ;
+    a fabio:JournalArticle .
+
+<http://taxon-concept.plazi.org/id/Animalia/Physeteroidea_Gray_1868>
+    # Error: Invalid Rank, Invalid taxon relation ;
+    trt:hasTaxonName <http://taxon-name.plazi.org/id/Animalia/Physeteroidea> ;
+    a dwcFP:TaxonConcept .
+
+<http://taxon-name.plazi.org/id/Animalia/Physeteroidea>
+    # Warning: Could not determine parent name ;
+    dwc:rank "superFamily" ;
+    dwc:superFamily "Physeteroidea" ;
+    a dwcFP:TaxonName .
+
+<http://dx.doi.org/10.5281/zenodo.4538204>
+    dc:description "FIG. 2. — Stratigraphy of the Purisima Formation: A, Stratigraphic column of the San Gregorio section of the Purisima Formation (in meters), showing stratigraphic position of UCMP vertebrate localities, dated ash beds, diatom floras, and species of Carcharodon; thickness measurements start over above missing section in uppermost part due lack of overlapping strata; epoch and stage boundaries marked as \"?\" are estimated; modified from Boessenecker (2011a); Pliocene-Pleistocene boundary after Hilgen et al. (2012); B, photograph of 3-4 m thick ash within Purisima Formation at mouth of San Gregorio Creek correlated with 2.5 Ma Ishi Tuff (Powell et al.2007); C, trace fossils in pervasively bioturbated sandstone,Purisima Formation,mouth of San Gregorio Creek; D, swaley cross-stratified sandstone, mouth of San Gregorio Creek. Abbreviations: Qt, Pleistocene terrace deposits; Tp, Purisima Formation; C, claystone; St, siltstone; Ss, sandstone. Scale bars: A, 2 m; B, C, 10 cm." ;
+    fabio:hasRepresentation <https://zenodo.org/record/4538204/files/figure.png> ;
+    a fabio:Figure .
+
+<http://dx.doi.org/10.5281/zenodo.4538311>
+    dc:description "FIG. 47. — Partial left squamosal of cf. Physeteroidea gen. et sp. indet. (UCMP 219108); A, lateral view; B, medial view; C, dorsal view. Scale bar: 3 cm." ;
+    fabio:hasRepresentation <https://zenodo.org/record/4538311/files/figure.png> ;
+    a fabio:Figure .
