@@ -1,0 +1,1 @@
+This repo is now here: https://git.ld.plazi.org/plazi/treatments-rdf.git
